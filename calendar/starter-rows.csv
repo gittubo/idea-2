@@ -1,0 +1,6 @@
+Title,Slug,Channel,Status,Publish date,Version,AI label,Notes
+Ridge 28 launch email,ridge-28-launch,Email,Idea,,1,FALSE,Use launch-email skill
+Ridge 28 launch blog post,ridge-28-blog,Blog,Idea,,1,FALSE,Use blog-post skill
+Win-back sequence (90 days no opens),win-back-90,Email,Idea,,1,FALSE,Use win-back skill
+Ridge 28 video ad (AI creator),ridge-28-ad-creator,Video ad,Idea,,1,TRUE,Label as AI; no testimonial
+Ridge 28 product-only ad,ridge-28-ad-product,Video ad,Idea,,1,FALSE,Real product footage for size claims
