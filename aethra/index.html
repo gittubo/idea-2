@@ -305,6 +305,8 @@ const sky = makeSky(); scene.add(sky);
 const N = 9, CELL = 60, HALF = N * CELL / 2; // 1 unit = 1 metre; roads 16 m wide every 60 m, blocks 44 m
 const ROADS = []; for (let k = 0; k <= N; k++) ROADS.push(-HALF + k * CELL);
 const boxes = []; // collision AABBs {x0,x1,z0,z1,h}
+const posts = []; // solid upright cylinders {x,z,r,h}: trunks, poles, bins, people
+const addBoxCollider = (cx, cz, w, d, h) => boxes.push({ x0: cx - w / 2, x1: cx + w / 2, z0: cz - d / 2, z1: cz + d / 2, h });
 const PARKS = new Set(['1,1', '7,7', '2,6', '6,2']);
 function canvasTex(draw, size, repeat, srgb = true) {
   const c = document.createElement('canvas'); c.width = c.height = size; draw(c.getContext('2d'), size);
@@ -370,11 +372,55 @@ function buildingGeo(w, h, d) {
   return g;
 }
 const roofProps = [];
-function addBuilding(cx, cz, w, d, h) {
+const SHOPS = ['CAFÉ LUNA', 'MARKET', 'PHARMACY', 'BAKERY', 'BARBER', 'BOOKS', 'DELI', 'FLOWERS', 'PIZZA', 'SNEAKERS'];
+const shopMats = SHOPS.map(name => {
+  // one tile = 12 m wide, 4.5 m tall: sign band, shop windows, a glass door, stone plinth
+  const W = 512, H = 192, c = document.createElement('canvas'), r = document.createElement('canvas');
+  c.width = r.width = W; c.height = r.height = H;
+  const g = c.getContext('2d'), rg = r.getContext('2d');
+  const band = `hsl(${rand(0, 360)},${rand(25, 55)}%,${rand(18, 32)}%)`;
+  g.fillStyle = '#2a2b2e'; g.fillRect(0, 0, W, H); rg.fillStyle = '#c8c8c8'; rg.fillRect(0, 0, W, H);
+  g.fillStyle = band; g.fillRect(0, 0, W, 38);
+  g.font = '700 26px "Saira", sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillStyle = '#f3efe4'; g.fillText(name, W / 2, 20);
+  const glass = (x, y, w, h) => {
+    const gr = g.createLinearGradient(x, y, x + w * 0.4, y + h); gr.addColorStop(0, '#9fb3c2'); gr.addColorStop(0.45, '#3b4a55'); gr.addColorStop(1, '#1d2328');
+    g.fillStyle = gr; g.fillRect(x, y, w, h); rg.fillStyle = '#121212'; rg.fillRect(x, y, w, h);
+    g.fillStyle = 'rgba(255,236,200,.18)'; g.fillRect(x + 4, y + h * 0.55, w - 8, h * 0.35); // lit shop interior
+  };
+  g.fillStyle = '#3a3c40'; g.fillRect(0, 38, W, 6);
+  glass(10, 48, 150, 120); glass(352, 48, 150, 120);
+  g.fillStyle = '#1b1c1e'; g.fillRect(212, 46, 88, 130); glass(218, 52, 76, 124); g.fillStyle = '#c9c9c9'; g.fillRect(282, 110, 4, 22);
+  g.fillStyle = '#6d6a64'; g.fillRect(0, 172, W, 20); speckle(g, W, 2500, 0.1);
+  const mk = (cv, srgb) => { const t = new THREE.CanvasTexture(cv); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = maxAniso; if (srgb) t.encoding = THREE.sRGBEncoding; return t; };
+  return new THREE.MeshStandardMaterial({ map: mk(c, true), roughnessMap: mk(r, false), roughness: 1, metalness: 0.2 });
+});
+const awningMats = ['#7a1f24', '#1f4a3a', '#22324f', '#5a4632', '#2b2b2b'].map(col => new THREE.MeshStandardMaterial({ color: col, roughness: 0.9, side: THREE.DoubleSide }));
+const awningGeo = new THREE.BoxGeometry(1, 0.08, 1.5);
+function shopGeo(w, d) {
+  const g = new THREE.BoxGeometry(w, 4.4, d), uv = g.attributes.uv;
+  for (let f = 0; f < 6; f++) if (f !== 2 && f !== 3) for (let k = 0; k < 4; k++) { const i = f * 4 + k; uv.setX(i, uv.getX(i) * Math.max(1, Math.round((f < 2 ? d : w) / 12))); }
+  return g;
+}
+// faces: outward normals [nx, nz] of the sides that front a street
+function addBuilding(cx, cz, w, d, h, faces = []) {
   const mat = h > 45 ? pick([FACADE.glass, FACADE.glass, FACADE.concrete]) : pick([FACADE.brick, FACADE.brick, FACADE.stone, FACADE.concrete]);
   const m = new THREE.Mesh(buildingGeo(w, h, d), [mat, mat, roofMat, roofMat, mat, mat]);
   m.position.set(cx, h / 2, cz); m.castShadow = m.receiveShadow = true; scene.add(m);
-  boxes.push({ x0: cx - w / 2, x1: cx + w / 2, z0: cz - d / 2, z1: cz + d / 2, h });
+  addBoxCollider(cx, cz, w, d, h);
+  if (faces.length) {
+    const sm = pick(shopMats), shop = new THREE.Mesh(shopGeo(w + 0.16, d + 0.16), [sm, sm, roofMat, roofMat, sm, sm]);
+    shop.position.set(cx, 2.2, cz); shop.receiveShadow = true; scene.add(shop);
+    if (Math.random() < 0.55) {
+      const am = pick(awningMats);
+      for (const [nx, nz] of faces) {
+        // group's local +z points out of the facade; the canvas slopes down toward the street
+        const g = new THREE.Group(), a = new THREE.Mesh(awningGeo, am);
+        g.rotation.y = Math.atan2(nx, nz); g.position.set(cx + nx * (w / 2), 3.75, cz + nz * (d / 2));
+        a.scale.x = (nx ? d : w) * 0.8; a.rotation.x = 0.25; a.position.z = 0.8; a.castShadow = true;
+        g.add(a); scene.add(g);
+      }
+    }
+  }
   let top = h;
   if (h > 50 && Math.random() < 0.7) {
     const h2 = h * rand(0.1, 0.22), t = new THREE.Mesh(buildingGeo(w * 0.7, h2, d * 0.7), [mat, mat, roofMat, roofMat, mat, mat]);
@@ -399,8 +445,8 @@ for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
   for (const t of [-11, 11]) for (const [sx, sz] of [[t, -21.2], [t, 21.2], [-21.2, t], [21.2, t]]) trees.push([cx + sx, cz + sz, rand(0.85, 1.1)]);
   if (center) continue;
   const dist = Math.hypot(cx, cz), tall = clamp(1 - dist / 360, 0.08, 1);
-  if (Math.random() < 0.2) addBuilding(cx, cz, rand(32, 37), rand(32, 37), rand(10, 18) + tall * rand(12, 110));
-  else for (const ox of [-10.5, 10.5]) for (const oz of [-10.5, 10.5]) addBuilding(cx + ox, cz + oz, rand(13, 17), rand(13, 17), rand(7, 14) + tall * rand(6, 95));
+  if (Math.random() < 0.2) addBuilding(cx, cz, rand(32, 37), rand(32, 37), rand(10, 18) + tall * rand(12, 110), [[1, 0], [-1, 0], [0, 1], [0, -1]]);
+  else for (const ox of [-10.5, 10.5]) for (const oz of [-10.5, 10.5]) addBuilding(cx + ox, cz + oz, rand(13, 17), rand(13, 17), rand(7, 14) + tall * rand(6, 95), [[Math.sign(ox), 0], [0, Math.sign(oz)]]);
 }
 function instanced(geo, mat, list, place, shadow) {
   const im = new THREE.InstancedMesh(geo, mat, list.length), o = new THREE.Object3D();
@@ -433,6 +479,7 @@ instanced(new THREE.CylinderGeometry(1.4, 1.4, 3, 14), new THREE.MeshStandardMat
     const cx = -HALF + CELL / 2 + i * CELL, cz = -HALF + CELL / 2 + j * CELL;
     for (const sx of [-1, 1]) for (const sz of [-1, 1]) pts.push([cx + sx * 21.5, cz + sz * 21.5, sx]);
   }
+  for (const p of pts) posts.push({ x: p[0], z: p[1], r: 0.2, h: 8 });
   const metal = new THREE.MeshStandardMaterial({ color: 0x4a4e52, roughness: 0.5, metalness: 0.7 });
   instanced(new THREE.CylinderGeometry(0.09, 0.14, 8, 8), metal, pts, (o, p) => o.position.set(p[0], 4, p[1]), true);
   instanced(new THREE.BoxGeometry(2.2, 0.1, 0.1), metal, pts, (o, p) => o.position.set(p[0] + p[2] * 1.1, 7.9, p[1]), true);
@@ -440,13 +487,54 @@ instanced(new THREE.CylinderGeometry(1.4, 1.4, 3, 14), new THREE.MeshStandardMat
 }
 // trees
 {
-  const trunkMat = new THREE.MeshStandardMaterial({ color: 0x5a4636, roughness: 1 });
-  const leafMat = new THREE.MeshStandardMaterial({ color: 0x2c4a1f, roughness: 1 });
+  for (const t of trees) posts.push({ x: t[0], z: t[1], r: 0.3 * t[2], h: 3.4 * t[2] });
+  const barkMap = canvasTex((g, S) => { g.fillStyle = '#4a3a2c'; g.fillRect(0, 0, S, S); for (let i = 0; i < 90; i++) { g.fillStyle = `rgba(${rand(20, 60)},${rand(15, 45)},${rand(10, 30)},.6)`; g.fillRect(rand(0, S), 0, rand(1, 4), S); } speckle(g, S, 3000, 0.2); }, 128, 1);
+  const leafMap = canvasTex((g, S) => {
+    g.fillStyle = '#1f3516'; g.fillRect(0, 0, S, S);
+    for (let i = 0; i < 2600; i++) {
+      g.save(); g.translate(rand(0, S), rand(0, S)); g.rotate(rand(0, TAU));
+      g.fillStyle = `hsl(${rand(78, 112)},${rand(30, 55)}%,${rand(14, 34)}%)`; g.beginPath(); g.ellipse(0, 0, rand(3, 6), rand(1.5, 3), 0, 0, TAU); g.fill(); g.restore();
+    }
+  }, 256, 2);
+  const trunkMat = new THREE.MeshStandardMaterial({ map: barkMap, roughness: 1 });
+  const leafMat = new THREE.MeshStandardMaterial({ map: leafMap, roughness: 0.95 });
   instanced(new THREE.CylinderGeometry(0.16, 0.24, 3.4, 7), trunkMat, trees, (o, t) => { o.scale.setScalar(t[2]); o.position.set(t[0], 1.7 * t[2], t[1]); }, true);
   const crown = new THREE.IcosahedronGeometry(1, 3);
   { const p = crown.attributes.position, v = new THREE.Vector3(); for (let i = 0; i < p.count; i++) { v.fromBufferAttribute(p, i); v.multiplyScalar(0.82 + 0.3 * Math.abs(Math.sin(v.x * 7.1) * Math.cos(v.y * 5.3 + v.z * 3.7))); p.setXYZ(i, v.x, v.y, v.z); } crown.computeVertexNormals(); }
   instanced(crown, leafMat, trees, (o, t) => { o.scale.set(2.3 * t[2], 2.0 * t[2], 2.3 * t[2]); o.position.set(t[0], 4.6 * t[2], t[1]); o.rotation.y = t[0]; }, true);
   instanced(crown, leafMat, trees, (o, t) => { o.scale.setScalar(1.5 * t[2]); o.position.set(t[0] + 0.7, 6.1 * t[2], t[1] - 0.4); }, true);
+}
+// street furniture: bins, hydrants, bus shelters (all solid)
+{
+  const bins = [], hydrants = [], shelters = [];
+  for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
+    if (PARKS.has(i + ',' + j)) continue;
+    const cx = -HALF + CELL / 2 + i * CELL, cz = -HALF + CELL / 2 + j * CELL;
+    for (const [nx, nz] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) {
+      const along = (t, off) => [cx + nx * off + (nz ? t : 0), cz + nz * off + (nx ? t : 0)];
+      if (Math.random() < 0.6) bins.push(along(pick([-5, 5]), 21.2));
+      if (Math.random() < 0.35) hydrants.push(along(pick([-16, 16]), 21.4));
+      if (Math.random() < 0.12 && !(i === 4 && j === 4)) shelters.push([...along(0, 21.3), nx, nz]); // clear of the pedestrian line at 20.1 m
+    }
+  }
+  for (const b of bins) posts.push({ x: b[0], z: b[1], r: 0.32, h: 1.05 });
+  for (const h of hydrants) posts.push({ x: h[0], z: h[1], r: 0.2, h: 0.75 });
+  instanced(new THREE.CylinderGeometry(0.3, 0.27, 1.05, 14), new THREE.MeshStandardMaterial({ color: 0x24402f, roughness: 0.6, metalness: 0.4 }), bins, (o, b) => o.position.set(b[0], 0.68, b[1]), true);
+  instanced(new THREE.CylinderGeometry(0.16, 0.2, 0.75, 10), new THREE.MeshStandardMaterial({ color: 0xa3201e, roughness: 0.5, metalness: 0.3 }), hydrants, (o, h) => o.position.set(h[0], 0.52, h[1]), true);
+  const frame = new THREE.MeshStandardMaterial({ color: 0x3b3f44, metalness: 0.8, roughness: 0.35 });
+  const pane = new THREE.MeshStandardMaterial({ color: 0x9fb4c0, metalness: 0.2, roughness: 0.05, transparent: true, opacity: 0.35 });
+  for (const [x, z, nx, nz] of shelters) {
+    const g = new THREE.Group(); g.position.set(x, 0.15, z); g.rotation.y = Math.atan2(nx, nz);
+    const back = new THREE.Mesh(new THREE.BoxGeometry(4, 2.3, 0.06), pane); back.position.set(0, 1.25, -0.8); g.add(back);
+    const roof = new THREE.Mesh(new THREE.BoxGeometry(4.3, 0.1, 1.9), frame); roof.position.set(0, 2.5, 0); roof.castShadow = true; g.add(roof);
+    for (const px of [-2, 2]) for (const pz of [-0.8, 0.8]) { const p = new THREE.Mesh(new THREE.BoxGeometry(0.08, 2.5, 0.08), frame); p.position.set(px, 1.25, pz); g.add(p); }
+    const seat = new THREE.Mesh(new THREE.BoxGeometry(3, 0.08, 0.4), frame); seat.position.set(0, 0.5, -0.55); g.add(seat);
+    scene.add(g);
+    // back panel and posts are solid; the open front lets you walk under the roof
+    const bx = x - nx * 0.8, bz = z - nz * 0.8;
+    addBoxCollider(bx, bz, nx ? 0.2 : 4, nx ? 4 : 0.2, 2.5);
+    for (const s of [-2, 2]) posts.push({ x: x + (nz ? s : 0) + nx * 0.8, z: z + (nx ? s : 0) + nz * 0.8, r: 0.1, h: 2.5 });
+  }
 }
 // plaza: fountain, benches, portal
 const stoneMat = new THREE.MeshStandardMaterial({ color: 0x5d564c, roughness: 0.85 });
@@ -456,15 +544,17 @@ const stoneMat = new THREE.MeshStandardMaterial({ color: 0x5d564c, roughness: 0.
   add(new THREE.CylinderGeometry(4.7, 4.7, 0.1, 48), new THREE.MeshStandardMaterial({ color: 0x2f6075, roughness: 0.05, metalness: 0.3, transparent: true, opacity: 0.9 }), 0, 0.64, 0);
   add(new THREE.CylinderGeometry(0.45, 0.6, 2.2, 16), stoneMat, 0, 1.8, 0);
   add(new THREE.CylinderGeometry(1.7, 0.6, 0.5, 32), stoneMat, 0, 3.0, 0);
-  boxes.push({ x0: -4.6, x1: 4.6, z0: -4.6, z1: 4.6, h: 0.7 });
+  posts.push({ x: 0, z: 0, r: 5.25, h: 0.7 }); // fountain rim: walk round it or jump up
+  for (let a = 0; a < 8; a++) { const x = Math.cos(a * TAU / 8) * 19, z = Math.sin(a * TAU / 8) * 19; if (Math.abs(z - 9) < 4 && x < -6) continue; add(new THREE.CylinderGeometry(0.12, 0.14, 0.9, 10), stoneMat, x, 0.6, z); posts.push({ x, z, r: 0.14, h: 0.9 }); }
   const wood = new THREE.MeshStandardMaterial({ color: 0x7a5a3c, roughness: 0.8 });
-  for (const [x, z, r] of [[9, 0, 0], [-9, 0, 0], [0, 9, Math.PI / 2]]) { const b = add(new THREE.BoxGeometry(0.6, 0.45, 2.4), wood, x, 0.45, z); b.rotation.y = r; }
+  for (const [x, z, r] of [[9, 0, 0], [-9, 0, 0], [0, 9, Math.PI / 2]]) { const b = add(new THREE.BoxGeometry(0.6, 0.45, 2.4), wood, x, 0.45, z); b.rotation.y = r; addBoxCollider(x, z, r ? 2.4 : 0.6, r ? 0.6 : 2.4, 0.7); }
 }
 const portal = new THREE.Group();
 {
   const ring = new THREE.Mesh(new THREE.TorusGeometry(3.4, 0.3, 12, 48), new THREE.MeshStandardMaterial({ color: 0x9aa3ad, metalness: 0.9, roughness: 0.25 }));
   const fill = new THREE.Mesh(new THREE.CircleGeometry(3.1, 40), new THREE.MeshBasicMaterial({ color: 0x8fd8ff, transparent: true, opacity: 0.35, side: THREE.DoubleSide }));
   ring.castShadow = true; portal.add(ring, fill); portal.position.set(0, 3.8, -15); scene.add(portal);
+  for (const x of [-3.3, 3.3]) posts.push({ x, z: -15, r: 0.45, h: 7.5 }); // sides of the ring; walk through the middle
 }
 const PORTAL_POS = new THREE.Vector3(0, 0, -15);
 
@@ -477,6 +567,32 @@ function textSprite(text, color, w = 4) {
   const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: t, transparent: true, fog: false })); s.scale.set(w, w * 80 / 256, 1); return s;
 }
 function setSpriteText(s, text, color) { const n = textSprite(text, color, s.scale.x); s.material.map.dispose(); s.material.dispose(); s.material = n.material; }
+// a car is three overlapping circles along its length, which hugs its 4.6 x 1.9 m body
+const CAR_CIRCLES = [-1.55, 0, 1.55], CAR_R = 1.0;
+function collideCar(c) {
+  let hit = false; const fx = Math.sin(c.heading), fz = Math.cos(c.heading), q = new THREE.Vector3();
+  for (let pass = 0; pass < 2; pass++) for (const o of CAR_CIRCLES) {
+    q.set(c.pos.x + fx * o, 0.5, c.pos.z + fz * o);
+    const x0 = q.x, z0 = q.z;
+    if (collideCircle(q, CAR_R)) { hit = true; c.pos.x += q.x - x0; c.pos.z += q.z - z0; }
+  }
+  return hit;
+}
+// nearest point on a car's footprint to (x, z), in world space
+function carFootprintPush(c, x, z, r) {
+  const fx = Math.sin(c.heading), fz = Math.cos(c.heading), rx = fz, rz = -fx;
+  const dx = x - c.pos.x, dz = z - c.pos.z, lz = dx * fx + dz * fz, lx = dx * rx + dz * rz;
+  const cz = clamp(lz, -2.35, 2.35), cx = clamp(lx, -1.0, 1.0);
+  let ox = lx - cx, oz = lz - cz, d = Math.hypot(ox, oz);
+  if (d >= r) return null;
+  if (d < 1e-4) { // centre inside the body: leave by the nearest side
+    if (1.0 - Math.abs(lx) < 2.35 - Math.abs(lz)) { ox = Math.sign(lx) || 1; oz = 0; } else { ox = 0; oz = Math.sign(lz) || 1; }
+    const ex = ox ? Math.sign(ox) * (1.0 + r) : lx, ez = oz ? Math.sign(oz) * (2.35 + r) : lz;
+    return { x: c.pos.x + fx * ez + rx * ex, z: c.pos.z + fz * ez + rz * ex };
+  }
+  const k = r / d, px = cx + ox * k, pz = cz + oz * k;
+  return { x: c.pos.x + fx * pz + rx * px, z: c.pos.z + fz * pz + rz * px };
+}
 function collideCircle(p, r, top) {
   let hit = false;
   for (const b of boxes) {
@@ -488,10 +604,38 @@ function collideCircle(p, r, top) {
     if (d2 > 1e-6) { const d = Math.sqrt(d2); p.x = nx + dx / d * r; p.z = nz + dz / d * r; }
     else { const m = [p.x - b.x0, b.x1 - p.x, p.z - b.z0, b.z1 - p.z]; const i = m.indexOf(Math.min(...m)); if (i === 0) p.x = b.x0 - r; else if (i === 1) p.x = b.x1 + r; else if (i === 2) p.z = b.z0 - r; else p.z = b.z1 + r; }
   }
+  for (const c of posts) {
+    if (p.y > c.h) continue;
+    const dx = p.x - c.x, dz = p.z - c.z, rr = r + c.r;
+    if (dx > rr || dx < -rr || dz > rr || dz < -rr) continue;
+    const d2 = dx * dx + dz * dz; if (d2 >= rr * rr) continue;
+    hit = true;
+    const d = Math.sqrt(d2) || 1e-3; p.x = c.x + (d2 ? dx / d : 1) * rr; p.z = c.z + (d2 ? dz / d : 0) * rr;
+  }
   const lim = HALF + 25;
   if (Math.abs(p.x) > lim) { p.x = Math.sign(p.x) * lim; hit = true; }
   if (Math.abs(p.z) > lim) { p.z = Math.sign(p.z) * lim; hit = true; }
   return hit;
+}
+function hitsSolid(p, r) {
+  for (const b of boxes) if (p.y < b.h && p.x > b.x0 - r && p.x < b.x1 + r && p.z > b.z0 - r && p.z < b.z1 + r) return true;
+  for (const c of posts) if (p.y < c.h && Math.hypot(p.x - c.x, p.z - c.z) < c.r + r) return true;
+  return false;
+}
+// distance along a ray to the first building it meets (for keeping the camera out of walls)
+function rayToBuildings(o, d, max) {
+  let best = max;
+  for (const b of boxes) {
+    if (b.h < 3) continue;
+    let t0 = 0, t1 = best, ok = true;
+    for (const [oo, dd, lo, hi] of [[o.x, d.x, b.x0, b.x1], [o.y, d.y, 0, b.h], [o.z, d.z, b.z0, b.z1]]) {
+      if (Math.abs(dd) < 1e-6) { if (oo < lo || oo > hi) { ok = false; break; } continue; }
+      let ta = (lo - oo) / dd, tb = (hi - oo) / dd; if (ta > tb) [ta, tb] = [tb, ta];
+      t0 = Math.max(t0, ta); t1 = Math.min(t1, tb); if (t0 > t1) { ok = false; break; }
+    }
+    if (ok && t0 < best) best = t0;
+  }
+  return best;
 }
 const effects = [];
 function addEffect(obj, life, upd) { scene.add(obj); effects.push({ obj, t: 0, life, upd }); }
@@ -595,9 +739,10 @@ const dancers = [];
 function spawnParty() {
   for (const [kind, x, z] of [['woman', -13, 9], ['woman', -11, 11.5], ['man', -15.5, 11]]) {
     const p = makePerson(kind); p.g.position.set(x, 0.15, z); p.g.rotation.y = Math.atan2(-12 - x, 13 - z); setAnim(p, 'dance', 0); p.mixer.update(rand(0, 3)); dancers.push(p);
+    posts.push({ x, z, r: 0.35, h: 1.8 });
   }
   const box = new THREE.MeshStandardMaterial({ color: 0x15161a, roughness: 0.4 });
-  for (const [x, z] of [[-17, 8], [-9, 14]]) { const s = new THREE.Mesh(new THREE.BoxGeometry(0.9, 1.6, 0.8), box); s.position.set(x, 0.95, z); s.castShadow = true; scene.add(s); }
+  for (const [x, z] of [[-17, 8], [-9, 14]]) { const s = new THREE.Mesh(new THREE.BoxGeometry(0.9, 1.6, 0.8), box); s.position.set(x, 0.95, z); s.castShadow = true; scene.add(s); addBoxCollider(x, z, 0.9, 0.8, 1.75); }
   const l = textSprite('STREET PARTY', '#ffcf5a', 3.5); l.position.set(-13, 5.5, 11); scene.add(l);
 }
 
@@ -669,16 +814,24 @@ function driveCar(c, throttle, steer, brake, dt) {
   c.heading += steer * (brake ? 2.9 : 2.1) * grip * dt * (1 - Math.min(0.45, Math.abs(c.speed) / 130));
   c.pos.x += Math.sin(c.heading) * c.speed * dt;
   c.pos.z += Math.cos(c.heading) * c.speed * dt;
-  if (collideCircle(c.pos, 2.1, 0)) c.speed *= 0.55;
+  if (collideCar(c)) c.speed *= 0.55;
   c.g.position.copy(c.pos); c.g.rotation.y = c.heading;
   for (const w of c.wheels) w.rotation.x += c.speed * dt / 0.36;
 }
 function carCollisions() {
   for (let i = 0; i < cars.length; i++) for (let j = i + 1; j < cars.length; j++) {
-    const a = cars[i], b = cars[j]; const dx = b.pos.x - a.pos.x, dz = b.pos.z - a.pos.z; const d2 = dx * dx + dz * dz;
-    if (d2 > 16 || d2 < 1e-4) continue;
-    const d = Math.sqrt(d2), push = (4 - d) / 2, nx = dx / d, nz = dz / d;
-    a.pos.x -= nx * push; a.pos.z -= nz * push; b.pos.x += nx * push; b.pos.z += nz * push;
+    const a = cars[i], b = cars[j];
+    if (Math.abs(b.pos.x - a.pos.x) > 6 || Math.abs(b.pos.z - a.pos.z) > 6) continue;
+    let touched = false;
+    for (const oa of CAR_CIRCLES) for (const ob of CAR_CIRCLES) {
+      const ax = a.pos.x + Math.sin(a.heading) * oa, az = a.pos.z + Math.cos(a.heading) * oa;
+      const bx = b.pos.x + Math.sin(b.heading) * ob, bz = b.pos.z + Math.cos(b.heading) * ob;
+      const dx = bx - ax, dz = bz - az, d = Math.hypot(dx, dz);
+      if (d >= 2 * CAR_R || d < 1e-4) continue;
+      const push = (2 * CAR_R - d) / 2, nx = dx / d, nz = dz / d;
+      a.pos.x -= nx * push; a.pos.z -= nz * push; b.pos.x += nx * push; b.pos.z += nz * push; touched = true;
+    }
+    if (!touched) continue;
     const avg = (a.speed + b.speed) / 2; a.speed = lerp(a.speed, avg, 0.5); b.speed = lerp(b.speed, avg, 0.5);
     a.g.position.copy(a.pos); b.g.position.copy(b.pos);
   }
@@ -720,8 +873,13 @@ function driveTraffic(c, dt) {
 function pushPlayerFromCars() {
   if (player.car || player.dead) return;
   for (const c of cars) {
-    const dx = player.pos.x - c.pos.x, dz = player.pos.z - c.pos.z, d = Math.hypot(dx, dz);
-    if (d < 2.4 && d > 1e-3) { player.pos.x = c.pos.x + dx / d * 2.4; player.pos.z = c.pos.z + dz / d * 2.4; if (Math.abs(c.speed) > 8) hurtPlayer(Math.abs(c.speed) * 0.6); }
+    if (player.pos.y > 1.5) continue; // standing on the roof
+    const out = carFootprintPush(c, player.pos.x, player.pos.z, 0.4);
+    if (out) { player.pos.x = out.x; player.pos.z = out.z; if (Math.abs(c.speed) > 8) hurtPlayer(Math.abs(c.speed) * 0.6); }
+  }
+  for (const p of peds) {
+    const dx = player.pos.x - p.g.position.x, dz = player.pos.z - p.g.position.z, d = Math.hypot(dx, dz);
+    if (d < 0.75 && d > 1e-4) { player.pos.x = p.g.position.x + dx / d * 0.75; player.pos.z = p.g.position.z + dz / d * 0.75; }
   }
 }
 
@@ -1148,6 +1306,7 @@ function update(dt) {
     player.pos.x += player.vel.x * dt; player.pos.z += player.vel.z * dt; player.pos.y += player.vy * dt;
     if (player.pos.y <= 0) { player.pos.y = 0; player.vy = 0; player.grounded = true; }
     for (const b of boxes) if (b.h < 4 && player.pos.x > b.x0 && player.pos.x < b.x1 && player.pos.z > b.z0 && player.pos.z < b.z1 && player.pos.y >= b.h - 0.4 && player.vy <= 0) { player.pos.y = b.h; player.vy = 0; player.grounded = true; }
+    for (const c of posts) if (c.h < 4 && c.r > 1 && Math.hypot(player.pos.x - c.x, player.pos.z - c.z) < c.r && player.pos.y >= c.h - 0.4 && player.vy <= 0) { player.pos.y = c.h; player.vy = 0; player.grounded = true; }
     collideCircle(player.pos, 0.4, 0);
     const hs = Math.hypot(player.vel.x, player.vel.z);
     if (len > 0.05) player.face += angDiff(player.face, Math.atan2(dir.x, dir.z)) * Math.min(1, 12 * dt);
@@ -1162,6 +1321,10 @@ function update(dt) {
   }
   updateRace(dt);
   carCollisions(); pushPlayerFromCars();
+  for (const c of cars) for (const p of peds) {
+    const out = carFootprintPush(c, p.g.position.x, p.g.position.z, 0.35);
+    if (out) { c.pos.x -= out.x - p.g.position.x; c.pos.z -= out.z - p.g.position.z; c.speed *= 0.2; c.g.position.copy(c.pos); }
+  }
   if (player.car) player.pos.copy(player.car.pos);
   updatePeds(dt);
 
@@ -1176,7 +1339,7 @@ function update(dt) {
     const goal = aggro ? player.pos.clone().add(new THREE.Vector3(Math.sin(d.bob * 0.3) * 10, 0, Math.cos(d.bob * 0.3) * 10)) : d.home.clone().add(new THREE.Vector3(Math.sin(d.bob * 0.2) * 12, 0, Math.cos(d.bob * 0.25) * 12));
     goal.y = 5 + Math.sin(d.bob) * 0.8;
     d.pos.lerp(goal, Math.min(1, dt * (aggro ? 0.9 : 0.4)));
-    d.pos.y = Math.max(2, d.pos.y);
+    d.pos.y = Math.max(2, d.pos.y); collideCircle(d.pos, 0.9);
     d.g.position.copy(d.pos); d.g.rotation.y += dt * 2;
     if (aggro) {
       d.shootT -= dt;
@@ -1189,7 +1352,7 @@ function update(dt) {
   }
   for (let i = orbs.length - 1; i >= 0; i--) {
     const o = orbs[i]; o.life -= dt; o.m.position.addScaledVector(o.vel, dt);
-    let gone = o.life <= 0 || o.m.position.y < 0;
+    let gone = o.life <= 0 || o.m.position.y < 0 || hitsSolid(o.m.position, 0.2);
     if (!gone && !player.car && !player.dead && o.m.position.distanceTo(pTarget) < 1.1) { hurtPlayer(o.dmg); gone = true; }
     if (gone) { scene.remove(o.m); orbs.splice(i, 1); }
   }
@@ -1197,7 +1360,7 @@ function update(dt) {
     const s = shots[i]; s.life -= dt; s.m.position.addScaledVector(s.vel, dt);
     let gone = s.life <= 0 || s.m.position.y < 0;
     if (!gone) for (const d of drones) if (d.deadT <= 0 && d.pos.distanceTo(s.m.position) < 1.5) { hurtDrone(d, s.dmg); burstFx(s.m.position, 0xff7a3d, 2.2, 0.3); gone = true; break; }
-    if (!gone) { const p = s.m.position; for (const b of boxes) if (p.y < b.h && p.x > b.x0 && p.x < b.x1 && p.z > b.z0 && p.z < b.z1) { burstFx(p, 0xff7a3d, 1.6, 0.25); gone = true; break; } }
+    if (!gone && hitsSolid(s.m.position, 0.3)) { burstFx(s.m.position, 0xff7a3d, 1.6, 0.25); gone = true; }
     if (gone) { scene.remove(s.m); shots.splice(i, 1); }
   }
   if (targetT > 0) targetT -= dt;
@@ -1228,7 +1391,12 @@ function updateCamera(dt) {
   camTarget.set(player.pos.x, player.pos.y + h, player.pos.z);
   const p = inCar ? clamp(cam.pitch, 0.12, 0.6) : cam.pitch;
   const fx = Math.sin(cam.yaw), fz = Math.cos(cam.yaw);
-  camera.position.set(camTarget.x - fx * dist * Math.cos(p), camTarget.y + dist * Math.sin(p), camTarget.z - fz * dist * Math.cos(p));
+  const back = new THREE.Vector3(-fx * Math.cos(p), Math.sin(p), -fz * Math.cos(p));
+  const free = rayToBuildings(camTarget, back, dist);
+  // stay on the open side of any wall behind the player; hide the body when the camera is pressed up to the head
+  const camDist = free < dist ? Math.max(0.05, Math.min(free - 0.3, free * 0.7)) : dist;
+  camera.position.copy(camTarget).addScaledVector(back, camDist);
+  if (!inCar && !player.dead && avatar) avatar.g.visible = camDist > 0.9;
   if (camera.position.y < 0.6) camera.position.y = 0.6;
   if (cam.shake > 0) { cam.shake -= dt; camera.position.x += rand(-0.3, 0.3); camera.position.y += rand(-0.3, 0.3); }
   camera.lookAt(camTarget);
