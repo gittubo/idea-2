@@ -37,6 +37,7 @@ This is the start of the realistic version of Aethra: a photoreal city and lifel
 - **People:** enable the **MetaHuman** plugin and create MetaHumans for the player and the pedestrians. MetaHumans can also be made from a 3D face scan, which is the route to "scan your face into the game". Check Epic's MetaHuman documentation for the current steps, as the tools change between engine versions.
 - **City:** build streets from photo-scanned assets on **Fab** (Quixel Megascans), and lay out blocks with the **PCG** framework. `Config/DefaultEngine.ini` already turns on Lumen lighting and reflections and virtual shadow maps.
 - **Motion:** replace the template animations with motion-captured walk, run, driving and combat moves.
+- **Solid objects:** every prop must block the player and cars. Fab and Megascans meshes ship with collision; check each one in the Static Mesh editor (Show → Simple Collision) and add a capsule or box where it is missing. For trees painted with the Foliage tool, set the foliage type's Collision Presets to **BlockAll** so trunks are solid. Keep **Use Complex Collision as Simple** off for props, so the physics stays fast.
 
 ## Rules tests
 

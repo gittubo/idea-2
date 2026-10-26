@@ -13,6 +13,8 @@ Open `index.html` in a modern browser. It loads Three.js r128 and three add-ons 
 - Two motion-captured characters (woman or man) that idle, walk, run and dance
 - Neon Haven in late-afternoon daylight: sun shadows, sky reflections, glass, brick, stone and concrete buildings, asphalt roads with markings, street lights and trees
 - Moving traffic you can stop and take, parked cars, pedestrians and a street party in the plaza
+- Shop fronts with signs and awnings, bus shelters, bins, hydrants and plaza bollards
+- Solid world: people, cars, drones and projectiles collide with buildings, tree trunks, street lights, street furniture, the fountain, other people and car bodies; the camera stays out of walls
 - Street race against 3 rivals, with Shard stakes and Clean or Power mode
 - Five elements (Fire, Air, Ice, Earth, Lightning) that unlock at levels 1–5 and rank up to 5
 - Rogue drones (levels 1–10); beating ones above your level pays up to 3× XP
