@@ -22,6 +22,10 @@ Open `index.html` in a modern browser. It loads Three.js r128 and three add-ons 
 
 Shards are earned only. Nothing in the prototype uses real money.
 
+## Avatar Lab
+
+`avatar-lab.html` shows the two characters built from atoms: 16,000 points per body (6,000 on phones), each pinned to a spot on the skin and coloured from the real texture. Atoms bond into molecules, one per bone, and molecules fuse into the solid body. Each frame, every atom follows its bones (linear blend skinning) through a spring, which keeps motion smooth. Buttons assemble the bodies from a cloud, break them apart, switch between the three stages and play idle, walk, run or dance.
+
 ## Character files
 
 `models/soldier.js` and `models/michelle.js` are the Soldier and Michelle `.glb` models from the three.js examples, stored as base64 so they load as scripts. Both are Mixamo characters. Mixamo allows use in projects but not redistribution as standalone files; replace them with Aethra's own characters before any public release.
