@@ -1,0 +1,501 @@
+<title>Aethra Avatar Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Saira:wght@400;500;600&display=swap">
+<style>
+/* Layout: full-screen studio stage; one control panel floats top-left (bottom sheet on phones). Single dark studio look by design. */
+:root {
+  --ink: #0b0c12;
+  --panel: rgba(14, 15, 24, 0.86);
+  --line: rgba(190, 200, 255, 0.16);
+  --text: #eceef8;
+  --muted: #9ea3bd;
+  --accent: #3ee6d2;
+  --atom: #8fd8ff;
+  --display: "Chakra Petch", "Trebuchet MS", sans-serif;
+  --body: "Saira", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+[hidden] { display: none !important; }
+html, body { height: 100%; overflow: hidden; }
+body { background: var(--ink); color: var(--text); font-family: var(--body); touch-action: none; }
+#stage { position: fixed; inset: 0; }
+#stage canvas { display: block; width: 100%; height: 100%; }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+#panel { position: fixed; top: calc(16px + env(safe-area-inset-top, 0px)); left: calc(16px + env(safe-area-inset-left, 0px)); width: min(360px, calc(100% - 32px)); box-sizing: border-box; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: grid; gap: 14px; backdrop-filter: blur(8px); }
+.brand { font-family: var(--display); font-weight: 700; font-size: 13px; letter-spacing: .22em; color: var(--accent); }
+h1 { margin: -6px 0 0; font-family: var(--display); font-size: 26px; line-height: 1.1; text-wrap: balance; }
+.lede { margin: -4px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.group { display: grid; gap: 6px; }
+.label { font-family: var(--display); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.seg { display: flex; gap: 4px; background: rgba(255,255,255,.04); border: 1px solid var(--line); border-radius: 7px; padding: 3px; }
+.seg button { flex: 1; background: none; border: 0; border-radius: 5px; padding: 7px 6px; font-family: var(--display); font-weight: 700; font-size: 13px; color: var(--muted); }
+.seg button.on { background: rgba(62,230,210,.16); color: var(--text); box-shadow: inset 0 0 0 1px rgba(62,230,210,.5); }
+.steps button { display: grid; gap: 1px; }
+.steps button small { font-family: var(--body); font-weight: 500; font-size: 10.5px; letter-spacing: .02em; color: var(--muted); }
+.explain { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--text); min-height: 3em; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn { flex: 1; background: transparent; border: 1px solid var(--line); border-radius: 7px; padding: 10px 12px; font-family: var(--display); font-weight: 700; letter-spacing: .03em; }
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--ink); }
+.stats { font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.note { font-size: 12px; color: var(--muted); border-left: 2px solid var(--atom); padding-left: 10px; line-height: 1.45; }
+#hint { position: fixed; right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(14px + env(safe-area-inset-bottom, 0px)); font-size: 12px; color: var(--muted); }
+#loading { position: fixed; inset: 0; display: grid; place-items: center; font-family: var(--display); letter-spacing: .1em; color: var(--muted); }
+@media (max-width: 720px) {
+  #panel { top: auto; bottom: calc(10px + env(safe-area-inset-bottom, 0px)); left: 10px; right: 10px; width: auto; padding: 14px; gap: 10px; max-height: 52vh; overflow: auto; }
+  h1 { font-size: 21px; }
+  .lede, .note { display: none; }
+  #hint { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .seg button { transition: none; } }
+</style>
+
+<div id="stage"></div>
+<div id="loading">Loading characters…</div>
+
+<section id="panel" aria-label="Avatar controls" hidden>
+  <div class="brand">AETHRA · AVATAR LAB</div>
+  <h1>Bodies built from atoms</h1>
+  <p class="lede">Thousands of atoms bond into molecules, and molecules fuse into a body that moves as one.</p>
+
+  <div class="group">
+    <span class="label">Stage</span>
+    <div class="seg steps" id="viewSeg">
+      <button data-view="atoms">Atoms<small>1</small></button>
+      <button data-view="molecules">Molecules<small>2</small></button>
+      <button data-view="body">Body<small>3</small></button>
+    </div>
+  </div>
+  <p class="explain" id="explain"></p>
+
+  <div class="group">
+    <span class="label">Motion</span>
+    <div class="seg" id="motionSeg">
+      <button data-motion="idle">Idle</button>
+      <button data-motion="walk">Walk</button>
+      <button data-motion="run">Run</button>
+      <button data-motion="dance">Dance</button>
+    </div>
+  </div>
+
+  <div class="group">
+    <span class="label">Character</span>
+    <div class="seg" id="whoSeg">
+      <button data-who="both">Both</button>
+      <button data-who="woman">Woman</button>
+      <button data-who="man">Man</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <button class="btn primary" id="assemble">Form from atoms</button>
+    <button class="btn" id="breakApart">Break apart</button>
+  </div>
+  <div class="stats" id="stats"></div>
+  <div class="note">Stand-in characters. In the Unreal Engine build, players' own face scans (MetaHuman) take their place.</div>
+</section>
+<div id="hint" hidden>Drag to turn · scroll or pinch to zoom</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/utils/SkeletonUtils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+(() => {
+'use strict';
+const $ = s => document.querySelector(s);
+const rand = (a, b) => a + Math.random() * (b - a);
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const TAU = Math.PI * 2;
+const isTouch = matchMedia('(pointer: coarse)').matches;
+if (!window.THREE || !THREE.GLTFLoader || !THREE.SkeletonUtils || !THREE.OrbitControls) {
+  $('#loading').textContent = 'The 3D engine could not load. Check your connection and reload.';
+  return;
+}
+const ATOMS_PER_BODY = isTouch ? 6000 : 16000;
+
+const EXPLAIN = {
+  atoms: 'Every point is an atom: one tiny spot of skin, cloth or hair, coloured from the real surface and held to its place on the skeleton.',
+  molecules: 'Atoms bond into molecules, one per body part, shown in their own colours. Each molecule follows its bone, so the body bends smoothly at every joint.',
+  body: 'Molecules fuse into one solid body: skin, clothes and hair as a single surface, driven by the same motion-captured skeleton.'
+};
+
+/* ---------- renderer and studio ---------- */
+const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
+renderer.setPixelRatio(Math.min(devicePixelRatio || 1, isTouch ? 1.5 : 2));
+renderer.setSize(innerWidth, innerHeight);
+renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.0;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+$('#stage').appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0b0c12);
+scene.fog = new THREE.Fog(0x0b0c12, 9, 22);
+const camera = new THREE.PerspectiveCamera(35, innerWidth / innerHeight, 0.05, 100);
+camera.position.set(0, 1.45, 5.6);
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 1.0, 0);
+controls.enableDamping = true; controls.enablePan = false;
+controls.minDistance = 1.4; controls.maxDistance = 9; controls.maxPolarAngle = Math.PI * 0.52;
+controls.autoRotate = true; controls.autoRotateSpeed = 0.5;
+controls.addEventListener('start', () => { controls.autoRotate = false; });
+
+// studio reflections: three soft boxes around the stage, baked into an environment map
+{
+  const env = new THREE.Scene();
+  env.add(new THREE.Mesh(new THREE.SphereGeometry(20, 32, 16), new THREE.MeshBasicMaterial({ color: 0x15161c, side: THREE.BackSide })));
+  for (const [x, y, z, w, h, c] of [[-6, 5, 4, 5, 4, 0xfff1e0], [7, 3, 2, 3, 6, 0xd8e6ff], [0, 6, -7, 8, 3, 0xffffff]]) {
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ color: c, side: THREE.DoubleSide }));
+    m.position.set(x, y, z); m.lookAt(0, 1, 0); env.add(m);
+  }
+  const pm = new THREE.PMREMGenerator(renderer); scene.environment = pm.fromScene(env, 0.04).texture; pm.dispose();
+}
+scene.add(new THREE.HemisphereLight(0xdfe6ff, 0x26201c, 0.35));
+const key = new THREE.DirectionalLight(0xfff0e0, 2.4); key.position.set(-3, 5, 4); key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048); Object.assign(key.shadow.camera, { left: -3, right: 3, top: 3, bottom: -3, near: 1, far: 15 }); key.shadow.bias = -0.0005;
+const rim = new THREE.DirectionalLight(0x9fc4ff, 1.6); rim.position.set(2, 3, -5);
+scene.add(key, rim);
+const floor = new THREE.Mesh(new THREE.CircleGeometry(6, 64), new THREE.MeshStandardMaterial({ color: 0x050507, roughness: 0.8, metalness: 0, envMapIntensity: 0.15 }));
+floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
+const ring = new THREE.Mesh(new THREE.RingGeometry(2.55, 2.58, 96), new THREE.MeshBasicMaterial({ color: 0x3ee6d2, transparent: true, opacity: 0.35 }));
+ring.rotation.x = -Math.PI / 2; ring.position.y = 0.002; scene.add(ring);
+
+/* ---------- characters ---------- */
+// Motion-captured stand-ins shared with the game (Mixamo rigs from the three.js examples). yaw turns each to face +z.
+const MODELS = { man: { url: 'models/soldier.js', yaw: Math.PI }, woman: { url: 'models/michelle.js', yaw: 0 } };
+const CLIPS = {};
+function loadModels() {
+  const loader = new THREE.GLTFLoader();
+  const loadScript = src => new Promise((res, rej) => { const el = document.createElement('script'); el.src = src; el.onload = res; el.onerror = rej; document.head.appendChild(el); });
+  const toBuffer = b64 => { const bin = atob(b64), u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return u.buffer; };
+  return Promise.all(Object.entries(MODELS).map(([k, m]) => loadScript(m.url).then(() => new Promise((res, rej) => {
+    loader.parse(toBuffer(window.AETHRA_MODELS[k]), '', g => { m.gltf = g; delete window.AETHRA_MODELS[k]; res(); }, rej);
+  })))).then(() => {
+    const man = MODELS.man.gltf.animations, woman = MODELS.woman.gltf.animations, find = (l, n) => l.find(a => a.name === n);
+    // both rigs share Mixamo bone names but differ in rest orientation: re-base each rotation key onto the target rig
+    const rest = s => { const m = {}; s.traverse(o => { if (o.isBone) m[o.name] = o.quaternion.clone(); }); return m; };
+    const rMan = rest(MODELS.man.gltf.scene), rWoman = rest(MODELS.woman.gltf.scene);
+    const retarget = (clip, from, to) => new THREE.AnimationClip(clip.name, clip.duration, clip.tracks.filter(t => /\.quaternion$/.test(t.name)).map(t => {
+      const bone = t.name.slice(0, t.name.lastIndexOf('.')), a = from[bone], b = to[bone], tr = t.clone();
+      if (!a || !b) return tr;
+      const corr = b.clone().multiply(a.clone().invert()), q = new THREE.Quaternion(), v = tr.values;
+      for (let i = 0; i < v.length; i += 4) q.fromArray(v, i).premultiply(corr).toArray(v, i);
+      return tr;
+    }));
+    CLIPS.man = { idle: find(man, 'Idle'), walk: find(man, 'Walk'), run: find(man, 'Run'), dance: retarget(find(woman, 'SambaDance'), rWoman, rMan) };
+    CLIPS.woman = { idle: retarget(CLIPS.man.idle, rMan, rWoman), walk: retarget(CLIPS.man.walk, rMan, rWoman), run: retarget(CLIPS.man.run, rMan, rWoman), dance: find(woman, 'SambaDance') };
+  });
+}
+
+// one channel of a vertex attribute. The getters handle interleaved buffers (the man's model uses them);
+// glTF may also pack skin weights as normalised 8- or 16-bit integers, which r128's getters leave raw.
+const GETTERS = ['getX', 'getY', 'getZ', 'getW'];
+function attrComponent(attr, i, k) {
+  const raw = attr[GETTERS[k]](i);
+  if (!attr.normalized) return raw;
+  const a = attr.array;
+  return a instanceof Uint8Array ? raw / 255 : a instanceof Uint16Array ? raw / 65535 : raw;
+}
+
+// texture lookup so each atom takes the colour of the exact spot of skin or cloth it sits on
+function texSampler(material) {
+  const mat = Array.isArray(material) ? material[0] : material;
+  const tint = mat.color ? mat.color.clone() : new THREE.Color(1, 1, 1);
+  const img = mat.map && mat.map.image;
+  const tr = tint.clone().convertLinearToSRGB(); // atom colours stay in sRGB: the shader writes them straight to the screen
+  if (!img || !img.width) return () => [tr.r, tr.g, tr.b];
+  const W = Math.min(1024, img.width), H = Math.min(1024, img.height), c = document.createElement('canvas'); c.width = W; c.height = H;
+  const g = c.getContext('2d'); g.drawImage(img, 0, 0, W, H);
+  const data = g.getImageData(0, 0, W, H).data;
+  return (u, v) => {
+    const x = clamp(Math.floor((u - Math.floor(u)) * W), 0, W - 1), y = clamp(Math.floor((v - Math.floor(v)) * H), 0, H - 1), i = (y * W + x) * 4;
+    return [data[i] / 255 * tr.r, data[i + 1] / 255 * tr.g, data[i + 2] / 255 * tr.b];
+  };
+}
+
+const atomMat = new THREE.ShaderMaterial({
+  transparent: true, depthWrite: true,
+  uniforms: { uSize: { value: 0.016 }, uScale: { value: 1 }, uOpacity: { value: 1 }, uMol: { value: 0 }, uTime: { value: 0 } },
+  vertexShader: `
+    attribute vec3 color; attribute vec3 mcolor; attribute float seed;
+    uniform float uSize, uScale, uMol, uTime;
+    varying vec3 vColor; varying float vPulse;
+    void main() {
+      vec4 mv = modelViewMatrix * vec4(position, 1.0);
+      gl_Position = projectionMatrix * mv;
+      vPulse = 0.85 + 0.15 * sin(uTime * 3.0 + seed * 40.0);
+      gl_PointSize = max(1.5, uSize * uScale / -mv.z * mix(1.0, 1.25, uMol));
+      vColor = mix(color, mcolor * 0.55 + color * 0.45, uMol);
+    }`,
+  fragmentShader: `
+    uniform float uOpacity; uniform float uMol;
+    varying vec3 vColor; varying float vPulse;
+    void main() {
+      float d = length(gl_PointCoord - 0.5);
+      if (d > 0.5) discard;
+      float core = smoothstep(0.5, 0.0, d);
+      vec3 c = vColor * (0.75 + 0.45 * core) * mix(1.0, vPulse, uMol);
+      gl_FragColor = vec4(c, uOpacity * smoothstep(0.5, 0.32, d));
+    }`
+});
+const bondMat = new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0, depthWrite: false });
+function resize() {
+  camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight);
+  atomMat.uniforms.uScale.value = innerHeight * renderer.getPixelRatio() / 2 / Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+}
+addEventListener('resize', resize);
+
+class AtomBody {
+  constructor(kind, x) {
+    this.kind = kind;
+    const m = MODELS[kind];
+    this.root = THREE.SkeletonUtils.clone(m.gltf.scene); this.root.rotation.y = m.yaw;
+    this.group = new THREE.Group(); this.group.add(this.root); this.group.position.x = x; scene.add(this.group);
+    this.meshes = [];
+    this.root.traverse(o => {
+      if (!o.isSkinnedMesh) return;
+      o.frustumCulled = false; o.castShadow = true;
+      o.material = Array.isArray(o.material) ? o.material.map(q => q.clone()) : o.material.clone();
+      for (const q of [].concat(o.material)) { q.transparent = true; q.envMapIntensity = 0.9; }
+      this.meshes.push(o);
+    });
+    this.mixer = new THREE.AnimationMixer(this.root);
+    this.actions = {}; for (const [k, c] of Object.entries(CLIPS[kind])) this.actions[k] = this.mixer.clipAction(c);
+    this.motion = null;
+    this.root.updateMatrixWorld(true);
+    this.sampleAtoms();
+    this.bodyAlpha = 0;
+  }
+
+  // Pick atoms across the skin in proportion to each mesh's size, and store what each atom needs to follow its bones.
+  sampleAtoms() {
+    const n = ATOMS_PER_BODY, meshes = this.meshes;
+    const counts = meshes.map(o => o.geometry.attributes.position.count), total = counts.reduce((a, b) => a + b, 0);
+    this.n = n;
+    this.meshOf = new Uint8Array(n); this.base = new Float32Array(n * 3);
+    this.sIdx = new Uint16Array(n * 4); this.sW = new Float32Array(n * 4);
+    this.pos = new Float32Array(n * 3); this.vel = new Float32Array(n * 3); this.tgt = new Float32Array(n * 3); this.cloud = new Float32Array(n * 3);
+    this.delay = new Float32Array(n);
+    const col = new Float32Array(n * 3), mcol = new Float32Array(n * 3), seed = new Float32Array(n);
+    const samplers = meshes.map(o => texSampler(o.material));
+    const molIds = new Map(); this.mol = new Uint16Array(n);
+    const v = new THREE.Vector3(), c = new THREE.Color();
+    for (let i = 0; i < n; i++) {
+      let r = Math.random() * total, mi = 0; while (r >= counts[mi]) { r -= counts[mi]; mi++; }
+      const o = meshes[mi], geo = o.geometry, vi = Math.floor(r);
+      this.meshOf[i] = mi;
+      v.fromBufferAttribute(geo.attributes.position, vi).applyMatrix4(o.bindMatrix);
+      this.base[i * 3] = v.x; this.base[i * 3 + 1] = v.y; this.base[i * 3 + 2] = v.z;
+      let best = 0, bestW = -1;
+      for (let k = 0; k < 4; k++) {
+        const bi = attrComponent(geo.attributes.skinIndex, vi, k), w = attrComponent(geo.attributes.skinWeight, vi, k);
+        this.sIdx[i * 4 + k] = bi; this.sW[i * 4 + k] = w;
+        if (w > bestW) { bestW = w; best = bi; }
+      }
+      // a molecule is every atom held mainly by the same bone
+      const key = mi * 1000 + best; if (!molIds.has(key)) molIds.set(key, molIds.size); this.mol[i] = molIds.get(key);
+      const uv = geo.attributes.uv;
+      col.set(uv ? samplers[mi](uv.getX(vi), uv.getY(vi)) : [0.8, 0.8, 0.8], i * 3);
+      seed[i] = Math.random();
+    }
+    this.molCount = molIds.size;
+    for (let i = 0; i < n; i++) { c.setHSL((this.mol[i] * 0.618034) % 1, 0.75, 0.6); mcol[i * 3] = c.r; mcol[i * 3 + 1] = c.g; mcol[i * 3 + 2] = c.b; }
+    this.geo = new THREE.BufferGeometry();
+    this.geo.setAttribute('position', new THREE.BufferAttribute(this.pos, 3).setUsage(THREE.DynamicDrawUsage));
+    this.geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
+    this.geo.setAttribute('mcolor', new THREE.BufferAttribute(mcol, 3));
+    this.geo.setAttribute('seed', new THREE.BufferAttribute(seed, 1));
+    this.points = new THREE.Points(this.geo, atomMat); this.points.frustumCulled = false; scene.add(this.points);
+    // bonds: a sample of atoms linked to the centre of their molecule
+    this.bondAtoms = []; for (let i = 0; i < n; i += 7) this.bondAtoms.push(i);
+    this.bondPos = new Float32Array(this.bondAtoms.length * 6);
+    const bcol = new Float32Array(this.bondAtoms.length * 6);
+    this.bondAtoms.forEach((a, j) => { for (let e = 0; e < 2; e++) for (let q = 0; q < 3; q++) bcol[j * 6 + e * 3 + q] = mcol[a * 3 + q]; });
+    this.bondGeo = new THREE.BufferGeometry();
+    this.bondGeo.setAttribute('position', new THREE.BufferAttribute(this.bondPos, 3).setUsage(THREE.DynamicDrawUsage));
+    this.bondGeo.setAttribute('color', new THREE.BufferAttribute(bcol, 3));
+    this.bonds = new THREE.LineSegments(this.bondGeo, bondMat); this.bonds.frustumCulled = false; scene.add(this.bonds);
+    this.molCentre = new Float32Array(this.molCount * 3); this.molN = new Float32Array(this.molCount);
+    this.mats = this.meshes.map(o => new Float32Array(o.skeleton.bones.length * 16));
+    this.computeTargets();
+    this.pos.set(this.tgt);
+    this.phase = 'formed';
+  }
+
+  // Where each atom belongs this frame: its rest position carried by up to four bones (linear blend skinning).
+  computeTargets() {
+    const W = new THREE.Matrix4(), M = new THREE.Matrix4();
+    this.meshes.forEach((o, mi) => {
+      W.multiplyMatrices(o.matrixWorld, o.bindMatrixInverse);
+      const bones = o.skeleton.bones, inv = o.skeleton.boneInverses, out = this.mats[mi];
+      for (let b = 0; b < bones.length; b++) { M.multiplyMatrices(W, bones[b].matrixWorld).multiply(inv[b]); out.set(M.elements, b * 16); }
+    });
+    const base = this.base, tgt = this.tgt, si = this.sIdx, sw = this.sW;
+    for (let i = 0; i < this.n; i++) {
+      const e = this.mats[this.meshOf[i]], x = base[i * 3], y = base[i * 3 + 1], z = base[i * 3 + 2];
+      let ox = 0, oy = 0, oz = 0;
+      for (let k = 0; k < 4; k++) {
+        const w = sw[i * 4 + k]; if (w === 0) continue;
+        const o = si[i * 4 + k] * 16;
+        ox += w * (e[o] * x + e[o + 4] * y + e[o + 8] * z + e[o + 12]);
+        oy += w * (e[o + 1] * x + e[o + 5] * y + e[o + 9] * z + e[o + 13]);
+        oz += w * (e[o + 2] * x + e[o + 6] * y + e[o + 10] * z + e[o + 14]);
+      }
+      tgt[i * 3] = ox; tgt[i * 3 + 1] = oy; tgt[i * 3 + 2] = oz;
+    }
+  }
+
+  setMotion(name) {
+    if (this.motion === name) return;
+    const next = this.actions[name]; next.reset().play();
+    if (this.motion) next.crossFadeFrom(this.actions[this.motion], 0.45, true);
+    this.motion = name;
+  }
+
+  setCloudPoint(i) {
+    const g = this.group.position, u = Math.random() * TAU, cz = rand(-1, 1), r = 1.1 * Math.cbrt(Math.random()) + 0.25, s = Math.sqrt(1 - cz * cz);
+    this.cloud[i * 3] = g.x + Math.cos(u) * s * r; this.cloud[i * 3 + 1] = 1.05 + cz * r * 1.15; this.cloud[i * 3 + 2] = g.z + Math.sin(u) * s * r;
+  }
+
+  breakApart() {
+    const g = this.group.position;
+    for (let i = 0; i < this.n; i++) {
+      const p = i * 3, dx = this.pos[p] - g.x, dy = this.pos[p + 1] - 1, dz = this.pos[p + 2] - g.z, d = Math.hypot(dx, dy, dz) || 1, s = rand(1.5, 4.5);
+      this.vel[p] += dx / d * s; this.vel[p + 1] += dy / d * s + rand(0, 1.5); this.vel[p + 2] += dz / d * s;
+      this.setCloudPoint(i);
+    }
+    this.phase = 'scattered';
+  }
+
+  // Start from a loose cloud; atoms bond into place from the feet up.
+  assemble(fromCloud) {
+    for (let i = 0; i < this.n; i++) {
+      if (fromCloud) { this.setCloudPoint(i); for (let a = 0; a < 3; a++) { this.pos[i * 3 + a] = this.cloud[i * 3 + a]; this.vel[i * 3 + a] = 0; } }
+      this.delay[i] = 0.1 + clamp(this.tgt[i * 3 + 1] / 1.9, 0, 1) * 1.7 + Math.random() * 0.35;
+    }
+    this.phase = 'assembling'; this.t = 0;
+  }
+
+  update(dt, time) {
+    this.mixer.update(dt);
+    this.root.updateMatrixWorld(true);
+    this.computeTargets();
+    const pos = this.pos, vel = this.vel, tgt = this.tgt, cloud = this.cloud, n = this.n;
+    if (this.phase === 'assembling') { this.t += dt; if (this.t > 2.6) this.phase = 'formed'; }
+    const K = 160, C = 2 * Math.sqrt(K) * 0.9; // stiff but slightly under-damped: atoms flow after their bones
+    for (let i = 0; i < n; i++) {
+      const p = i * 3;
+      let tx, ty, tz, k, c;
+      const bonded = this.phase === 'formed' || (this.phase === 'assembling' && this.t > this.delay[i]);
+      if (bonded) {
+        tx = tgt[p]; ty = tgt[p + 1]; tz = tgt[p + 2];
+        const ramp = this.phase === 'assembling' ? clamp((this.t - this.delay[i]) / 0.5, 0.15, 1) : 1;
+        k = K * ramp; c = C * Math.sqrt(ramp);
+      } else {
+        // free atoms drift gently around the cloud
+        tx = cloud[p] + Math.sin(time * 0.7 + i) * 0.05; ty = cloud[p + 1] + Math.cos(time * 0.9 + i * 1.3) * 0.05; tz = cloud[p + 2] + Math.sin(time * 0.8 + i * 0.7) * 0.05;
+        k = 3; c = 2.2;
+      }
+      vel[p] += ((tx - pos[p]) * k - vel[p] * c) * dt; pos[p] += vel[p] * dt;
+      vel[p + 1] += ((ty - pos[p + 1]) * k - vel[p + 1] * c) * dt; pos[p + 1] += vel[p + 1] * dt;
+      vel[p + 2] += ((tz - pos[p + 2]) * k - vel[p + 2] * c) * dt; pos[p + 2] += vel[p + 2] * dt;
+      if (pos[p + 1] < 0.004) { pos[p + 1] = 0.004; vel[p + 1] = Math.abs(vel[p + 1]) * 0.3; }
+    }
+    this.geo.attributes.position.needsUpdate = true;
+
+    // molecule centres and bonds
+    if (bondMat.opacity > 0.01) {
+      const mc = this.molCentre, mn = this.molN; mc.fill(0); mn.fill(0);
+      for (let i = 0; i < n; i++) { const m = this.mol[i]; mc[m * 3] += pos[i * 3]; mc[m * 3 + 1] += pos[i * 3 + 1]; mc[m * 3 + 2] += pos[i * 3 + 2]; mn[m]++; }
+      for (let m = 0; m < this.molCount; m++) if (mn[m]) { mc[m * 3] /= mn[m]; mc[m * 3 + 1] /= mn[m]; mc[m * 3 + 2] /= mn[m]; }
+      const bp = this.bondPos;
+      this.bondAtoms.forEach((a, j) => {
+        const m = this.mol[a];
+        bp[j * 6] = pos[a * 3]; bp[j * 6 + 1] = pos[a * 3 + 1]; bp[j * 6 + 2] = pos[a * 3 + 2];
+        bp[j * 6 + 3] = mc[m * 3]; bp[j * 6 + 4] = mc[m * 3 + 1]; bp[j * 6 + 5] = mc[m * 3 + 2];
+      });
+      this.bondGeo.attributes.position.needsUpdate = true;
+    }
+
+    // the solid surface fades in only when every atom is home
+    const want = view === 'body' && this.phase === 'formed' ? 1 : 0;
+    this.bodyAlpha += (want - this.bodyAlpha) * Math.min(1, dt * 3.5);
+    const vis = this.bodyAlpha > 0.01;
+    for (const o of this.meshes) {
+      o.visible = vis;
+      for (const q of [].concat(o.material)) { q.opacity = this.bodyAlpha; q.depthWrite = this.bodyAlpha > 0.6; }
+    }
+  }
+}
+
+/* ---------- state and UI ---------- */
+let view = 'atoms', who = 'both';
+const bodies = [];
+let seq = [], seqT = 0;
+function setView(v) {
+  view = v;
+  $('#viewSeg').querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.view === v));
+  $('#explain').textContent = EXPLAIN[v];
+}
+function setMotion(m) {
+  $('#motionSeg').querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.motion === m));
+  for (const b of bodies) b.setMotion(m);
+}
+function setWho(w) {
+  who = w;
+  $('#whoSeg').querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.who === w));
+  for (const b of bodies) b.group.visible = w === 'both' || w === b.kind;
+}
+function runAssembly() {
+  for (const b of bodies) b.assemble(true);
+  setView('atoms');
+  seq = [{ at: 2.9, fn: () => setView('molecules') }, { at: 4.9, fn: () => setView('body') }]; seqT = 0;
+}
+$('#viewSeg').addEventListener('click', e => { const b = e.target.closest('[data-view]'); if (b) { seq = []; setView(b.dataset.view); } });
+$('#motionSeg').addEventListener('click', e => { const b = e.target.closest('[data-motion]'); if (b) setMotion(b.dataset.motion); });
+$('#whoSeg').addEventListener('click', e => { const b = e.target.closest('[data-who]'); if (b) setWho(b.dataset.who); });
+$('#assemble').addEventListener('click', runAssembly);
+$('#breakApart').addEventListener('click', () => {
+  if (view === 'body') setView('atoms');
+  for (const b of bodies) b.breakApart();
+  seq = [{ at: 2.2, fn: () => { for (const b of bodies) b.assemble(false); } }, { at: 5.0, fn: () => setView('molecules') }, { at: 7.0, fn: () => setView('body') }]; seqT = 0;
+});
+
+/* ---------- loop ---------- */
+let last = performance.now(), time = 0;
+function frame(now) {
+  requestAnimationFrame(frame);
+  const dt = Math.min(0.033, (now - last) / 1000); last = now; time += dt;
+  seqT += dt; while (seq.length && seqT >= seq[0].at) seq.shift().fn();
+  for (const b of bodies) b.update(dt, time);
+  const molTarget = view === 'molecules' ? 1 : 0;
+  atomMat.uniforms.uMol.value += (molTarget - atomMat.uniforms.uMol.value) * Math.min(1, dt * 4);
+  atomMat.uniforms.uTime.value = time;
+  bondMat.opacity += (molTarget * 0.32 - bondMat.opacity) * Math.min(1, dt * 4);
+  const bodyA = bodies.length ? Math.max(...bodies.map(b => b.bodyAlpha)) : 0;
+  atomMat.uniforms.uOpacity.value = 1 - bodyA;
+  for (const b of bodies) { const on = b.group.visible; b.points.visible = on && bodyA < 0.99; b.bonds.visible = on; }
+  const tx = who === 'woman' ? -0.85 : who === 'man' ? 0.85 : 0;
+  controls.target.x += (tx - controls.target.x) * Math.min(1, dt * 3);
+  ring.material.opacity = 0.2 + 0.15 * Math.sin(time * 1.5);
+  controls.update();
+  renderer.render(scene, camera);
+}
+
+resize();
+setView('atoms');
+loadModels().then(() => {
+  bodies.push(new AtomBody('woman', -0.85), new AtomBody('man', 0.85));
+  $('#stats').textContent = `${ATOMS_PER_BODY.toLocaleString()} atoms per body · ${bodies[0].molCount} and ${bodies[1].molCount} molecules`;
+  setMotion('idle'); setWho('both');
+  $('#loading').hidden = true; $('#panel').hidden = false; $('#hint').hidden = false;
+  runAssembly();
+}).catch(err => { console.error(err); $('#loading').textContent = 'The characters could not load. Reload to try again.'; });
+requestAnimationFrame(t => { last = t; frame(t); });
+})();
+</script>
