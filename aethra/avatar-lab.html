@@ -160,7 +160,7 @@ const key = new THREE.DirectionalLight(0xfff0e0, 2.4); key.position.set(-3, 5, 4
 key.shadow.mapSize.set(2048, 2048); Object.assign(key.shadow.camera, { left: -3, right: 3, top: 3, bottom: -3, near: 1, far: 15 }); key.shadow.bias = -0.0005;
 const rim = new THREE.DirectionalLight(0x9fc4ff, 1.6); rim.position.set(2, 3, -5);
 scene.add(key, rim);
-const floor = new THREE.Mesh(new THREE.CircleGeometry(6, 64), new THREE.MeshStandardMaterial({ color: 0x050507, roughness: 0.8, metalness: 0, envMapIntensity: 0.15 }));
+const floor = new THREE.Mesh(new THREE.CircleGeometry(6, 64), new THREE.MeshLambertMaterial({ color: 0x0c0c11 }) /* matte: a shiny floor mirrors the studio lights at low camera angles */);
 floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
 const ring = new THREE.Mesh(new THREE.RingGeometry(2.55, 2.58, 96), new THREE.MeshBasicMaterial({ color: 0x3ee6d2, transparent: true, opacity: 0.35 }));
 ring.rotation.x = -Math.PI / 2; ring.position.y = 0.002; scene.add(ring);
@@ -177,21 +177,48 @@ function loadModels() {
     loader.parse(toBuffer(window.AETHRA_MODELS[k]), '', g => { m.gltf = g; delete window.AETHRA_MODELS[k]; res(); }, rej);
   })))).then(() => {
     const man = MODELS.man.gltf.animations, woman = MODELS.woman.gltf.animations, find = (l, n) => l.find(a => a.name === n);
-    // both rigs share Mixamo bone names but differ in rest orientation: re-base each rotation key onto the target rig
-    const rest = s => { const m = {}; s.traverse(o => { if (o.isBone) m[o.name] = o.quaternion.clone(); }); return m; };
-    const rMan = rest(MODELS.man.gltf.scene), rWoman = rest(MODELS.woman.gltf.scene);
-    const retarget = (clip, from, to) => new THREE.AnimationClip(clip.name, clip.duration, clip.tracks.filter(t => /\.quaternion$/.test(t.name)).map(t => {
-      const bone = t.name.slice(0, t.name.lastIndexOf('.')), a = from[bone], b = to[bone], tr = t.clone();
-      if (!a || !b) return tr;
-      const corr = b.clone().multiply(a.clone().invert()), q = new THREE.Quaternion(), v = tr.values;
-      for (let i = 0; i < v.length; i += 4) q.fromArray(v, i).premultiply(corr).toArray(v, i);
-      return tr;
-    }));
-    CLIPS.man = { idle: find(man, 'Idle'), walk: find(man, 'Walk'), run: find(man, 'Run'), dance: retarget(find(woman, 'SambaDance'), rWoman, rMan) };
-    CLIPS.woman = { idle: retarget(CLIPS.man.idle, rMan, rWoman), walk: retarget(CLIPS.man.walk, rMan, rWoman), run: retarget(CLIPS.man.run, rMan, rWoman), dance: find(woman, 'SambaDance') };
+    CLIPS.man = { idle: find(man, 'Idle'), walk: find(man, 'Walk'), run: find(man, 'Run'), dance: bakeRetarget(find(woman, 'SambaDance'), 'woman', 'man') };
+    CLIPS.woman = { idle: bakeRetarget(CLIPS.man.idle, 'man', 'woman'), walk: bakeRetarget(CLIPS.man.walk, 'man', 'woman'), run: bakeRetarget(CLIPS.man.run, 'man', 'woman'), dance: find(woman, 'SambaDance') };
   });
 }
 
+// World-space retargeting: play the clip on its own rig, measure how far each bone turns in the world
+// from its rest pose, and give the same turn to the matching bone on the other rig. The hips also carry
+// their movement, scaled to the other body's hip height, so the feet stay on the floor.
+function bakeRetarget(clip, from, to, fps = 30) {
+  const src = THREE.SkeletonUtils.clone(MODELS[from].gltf.scene), dst = THREE.SkeletonUtils.clone(MODELS[to].gltf.scene);
+  src.rotation.y = MODELS[from].yaw; dst.rotation.y = MODELS[to].yaw; // both face +z, as in the scene
+  src.updateMatrixWorld(true); dst.updateMatrixWorld(true);
+  const sBone = {}; src.traverse(o => { if (o.isBone) sBone[o.name] = o; });
+  const dBones = []; dst.traverse(o => { if (o.isBone) dBones.push(o); }); // parents come before children
+  const wq = o => o.getWorldQuaternion(new THREE.Quaternion());
+  const sRestInv = {}; for (const n in sBone) sRestInv[n] = wq(sBone[n]).invert();
+  const dRest = dBones.map(wq), dRestLocal = dBones.map(b => b.quaternion.clone());
+  const index = new Map(dBones.map((b, i) => [b, i]));
+  const staticParent = dBones.map(b => index.has(b.parent) ? null : wq(b.parent));
+  const sHips = Object.values(sBone).find(b => /Hips$/.test(b.name)), dHips = dBones.find(b => /Hips$/.test(b.name));
+  const sHip0 = sHips.getWorldPosition(new THREE.Vector3()), dHip0 = dHips.getWorldPosition(new THREE.Vector3());
+  const scale = dHip0.y / sHip0.y, dHipParentInv = dHips.parent.matrixWorld.clone().invert();
+  const mixer = new THREE.AnimationMixer(src); mixer.clipAction(clip).play();
+  const frames = Math.max(2, Math.round(clip.duration * fps) + 1), times = new Float32Array(frames);
+  const qv = dBones.map(() => new Float32Array(frames * 4)), pv = new Float32Array(frames * 3);
+  const world = dBones.map(() => new THREE.Quaternion()), q = new THREE.Quaternion(), local = new THREE.Quaternion(), p = new THREE.Vector3();
+  for (let f = 0; f < frames; f++) {
+    const t = Math.min(clip.duration, f / fps); times[f] = t;
+    mixer.setTime(t); src.updateMatrixWorld(true);
+    dBones.forEach((b, i) => {
+      const parentW = staticParent[i] || world[index.get(b.parent)], s = sBone[b.name];
+      if (s) world[i].copy(s.getWorldQuaternion(q)).multiply(sRestInv[b.name]).multiply(dRest[i]);
+      else world[i].copy(parentW).multiply(dRestLocal[i]);
+      local.copy(parentW).invert().multiply(world[i]).toArray(qv[i], f * 4);
+    });
+    sHips.getWorldPosition(p).sub(sHip0).multiplyScalar(scale).add(dHip0).applyMatrix4(dHipParentInv).toArray(pv, f * 3);
+  }
+  mixer.stopAllAction();
+  const tracks = dBones.map((b, i) => new THREE.QuaternionKeyframeTrack(b.name + '.quaternion', times, qv[i]));
+  tracks.push(new THREE.VectorKeyframeTrack(dHips.name + '.position', times, pv));
+  return new THREE.AnimationClip(clip.name, clip.duration, tracks);
+}
 // one channel of a vertex attribute. The getters handle interleaved buffers (the man's model uses them);
 // glTF may also pack skin weights as normalised 8- or 16-bit integers, which r128's getters leave raw.
 const GETTERS = ['getX', 'getY', 'getZ', 'getW'];
