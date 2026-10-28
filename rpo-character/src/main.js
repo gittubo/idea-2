@@ -77,36 +77,45 @@ function frameObject(object) {
 }
 
 const loader = new GLTFLoader();
+
+function showModel(gltf, label) {
+  character = gltf.scene;
+  character.traverse((node) => {
+    if (node.isMesh) {
+      node.castShadow = true;
+      node.receiveShadow = true;
+      if (node.material) {
+        node.material.needsUpdate = true;
+      }
+    }
+  });
+  scene.add(character);
+  frameObject(character);
+  if (gltf.animations?.length) {
+    mixer = new THREE.AnimationMixer(character);
+    mixer.clipAction(gltf.animations[0]).play();
+    status.textContent = `Loaded ${label} · ${gltf.animations.length} animation clip(s)`;
+  } else {
+    status.textContent = `Loaded ${label} · no animation clips embedded`;
+  }
+  loading.classList.add('hidden');
+}
+
 loader.load(
   '/models/RPO_Character.glb',
-  (gltf) => {
-    character = gltf.scene;
-    character.traverse((node) => {
-      if (node.isMesh) {
-        node.castShadow = true;
-        node.receiveShadow = true;
-        if (node.material) {
-          node.material.needsUpdate = true;
-        }
-      }
-    });
-    scene.add(character);
-    frameObject(character);
-    if (gltf.animations?.length) {
-      mixer = new THREE.AnimationMixer(character);
-      mixer.clipAction(gltf.animations[0]).play();
-      status.textContent = `Loaded RPO character · ${gltf.animations.length} animation clip(s)`;
-    } else {
-      status.textContent = 'Loaded RPO character · no animation clips embedded';
-    }
-    loading.classList.add('hidden');
-  },
+  (gltf) => showModel(gltf, 'RPO character'),
   (event) => {
     if (event.total) status.textContent = `Loading model… ${Math.round(event.loaded / event.total * 100)}%`;
   },
   (error) => {
     console.warn('RPO model not loaded yet:', error);
-    status.textContent = 'Model missing — add RPO_Character.glb to public/models/';
+    // Fall back to the primitive blockout until the real model exists.
+    loader.load(
+      '/models/RPO_Placeholder.glb',
+      (gltf) => showModel(gltf, 'PLACEHOLDER blockout (not the final model)'),
+      undefined,
+      () => { status.textContent = 'Model missing — add RPO_Character.glb to public/models/'; }
+    );
   }
 );
 

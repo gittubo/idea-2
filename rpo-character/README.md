@@ -23,6 +23,16 @@ Copy the final `.glb` to:
 
 The viewer uses Three.js `GLTFLoader` and `OrbitControls`, physically based material rendering, an environment map, and blue rim lighting. It will display embedded animation clip 1 if the file contains animation clips.
 
+## Placeholder model
+Until the real model exists, the viewer falls back to `public/models/RPO_Placeholder.glb`:
+a primitive blockout (boxes, cylinders, spheres) in the reference palette, about 1.78 m tall,
+Y-up, facing +Z, feet at Y=0, parts grouped as Head, Torso, Backpack, Arms, Legs, Boots.
+It has no rig, no textures and no animation, and is not a likeness. Regenerate it with:
+```bash
+npm run placeholder
+```
+Once `public/models/RPO_Character.glb` exists, the viewer loads that instead.
+
 ## Important asset requirements
 A reference sheet is not itself a 3D model. The GLB must be created by an image-to-3D service or in Blender. For a usable real-time character, check:
 - Full 360-degree shape and silhouette (not a flat/card-like mesh)
@@ -45,5 +55,6 @@ A reference sheet is not itself a 3D model. The GLB must be created by an image-
 ## Folder map
 - `src/main.js` — scene, lighting, controls and GLB loader
 - `src/style.css` — viewer UI
-- `public/models/` — place the actual model here
+- `public/models/` — place the actual model here (holds the placeholder for now)
+- `scripts/build-placeholder.mjs` — generates the placeholder GLB
 - `CLAUDE_HANDOFF.md` — modeling brief for Claude
