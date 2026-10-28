@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPO Character Viewer</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="hud">
+        <div class="brand">RPO <span>CHARACTER VIEWER</span></div>
+        <div id="status">Waiting for <code>/models/RPO_Character.glb</code></div>
+        <div class="controls">Drag to orbit · Scroll to zoom · <kbd>R</kbd> reset view</div>
+      </div>
+      <div id="loading" class="notice">
+        <strong>RPO 3D asset not installed yet</strong>
+        <p>Place the exported <code>RPO_Character.glb</code> in <code>public/models/</code>, then reload.</p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
