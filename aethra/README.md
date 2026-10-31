@@ -36,4 +36,22 @@ Shards are earned only. Nothing in the prototype uses real money.
 
 ## Universe Flight
 
-`universe-flight.html` turns the master map (`world/universe-map-2.jpg`) into a 3D space you fly through in an original ship. The Core and the ten places around it (Orbital Station, Nexus, Veladara, Kahem, Frostborn, Evermore, Astra, Velocity, Oblivion, Zephyr) sit where they are on the map, each an island of atoms coloured from its own part of the map art: a relief top, a rocky underside, orbit rings and a spire for The Core, and a ring for the station. Islands drift as loose clouds from afar and weave into solid worlds as you approach. Islands are solid, and glowing lanes link The Core to each world. Controls: keyboard and mouse, touch joystick and buttons, or a gamepad, plus a travel list that autopilots you to any world. About 220,000 atoms in all (90,000 on phones).
+`universe-flight.html` turns the master map (`world/universe-map-2.jpg`) into a 3D space you fly through in an original ship. The Core and the ten places around it (Orbital Station, Nexus, Veladara, Kahem, Frostborn, Evermore, Astra, Velocity, Oblivion, Zephyr) sit where they are on the map, each an island of atoms coloured from its own part of the map art: a relief top, a rocky underside, orbit rings and a spire for The Core, and a ring for the station. Islands drift as loose clouds from afar and weave into solid worlds as you approach. Islands are solid, and glowing lanes link The Core to each world. Controls: keyboard and mouse, touch joystick and buttons, or a gamepad, plus a travel list that autopilots you to any world. About 220,000 atoms in all (90,000 on phones). When you reach a world, the card offers **Land on …**, which opens that world in `worlds.html`.
+
+## Worlds
+
+`worlds.html` lets you walk all eleven worlds as the woman or the man. Open it with a world id in the hash (`#nexus`, `#kahem`, and so on) or pick one from the list. Each world takes its colours from its part of the master map. When you arrive, about 70,000 atoms (26,000 on phones) stream in from the sky and weave every structure, starting near you and spreading outward; then the structures turn solid.
+
+- **The Core:** the hub tower, a holographic globe and ten World Gates. Walk into a gate to travel.
+- **Orbital Station:** a hangar deck, docked ships and a planet beyond the windows.
+- **Nexus:** a lit neon metropolis.
+- **Veladara:** a castle, forest and floating islands.
+- **Kahem:** pyramids, obelisks and ruins in the dunes.
+- **Frostborn:** ice spikes, pines, a frozen lake and an outpost, with snow falling.
+- **Evermore:** a street of houses, a lake and a skyline.
+- **Astra:** crystals, glass domes and craters, with low gravity.
+- **Velocity:** an oval race track with boost pads.
+- **Oblivion:** lava pools, spires and a citadel.
+- **Zephyr:** a dense forest, a giant world tree and glowing mushrooms.
+
+Everything is solid: walls, trees, crystals and pillars stop you, and the camera stays out of walls. Each world has a gate back to The Core.
