@@ -33,3 +33,7 @@ Shards are earned only. Nothing in the prototype uses real money.
 ## World Weaver
 
 `world-weaver.html` weaves five scenes from The Virtual Universe concept art (`world/`: the universe map, The Core, the Arrival Plaza, the World Gates and the Space Docks) using the same atoms → molecules → solid principle. Each picture becomes about 180,000 atoms (70,000 on phones) coloured from the art, which stream in from a cosmic cloud, starting at the centre and weaving outward. Atoms then bond into molecules of 12 × 12 atoms, and molecules fuse into a diorama whose depth is estimated from the picture. It's a 2.5D diorama: you can turn it to look in, but not walk behind it.
+
+## Universe Flight
+
+`universe-flight.html` turns the master map (`world/universe-map-2.jpg`) into a 3D space you fly through in an original ship. The Core and the ten places around it (Orbital Station, Nexus, Veladara, Kahem, Frostborn, Evermore, Astra, Velocity, Oblivion, Zephyr) sit where they are on the map, each an island of atoms coloured from its own part of the map art: a relief top, a rocky underside, orbit rings and a spire for The Core, and a ring for the station. Islands drift as loose clouds from afar and weave into solid worlds as you approach. Islands are solid, and glowing lanes link The Core to each world. Controls: keyboard and mouse, touch joystick and buttons, or a gamepad, plus a travel list that autopilots you to any world. About 220,000 atoms in all (90,000 on phones).
