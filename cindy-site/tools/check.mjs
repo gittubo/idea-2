@@ -19,7 +19,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..', 'site');
 const originals = join(here, 'original');
 
-const pages = ['/', '/ai-system', '/about', '/contact', '/guides', '/guides/free-content-engine'];
+const pages = ['/', '/ai-system', '/about', '/contact', '/guides', '/media-kit', '/guides/free-content-engine'];
 const widths = [320, 360, 390, 768, 1024, 1366, 1920];
 // Labels that are new on purpose, listed so they stay visible in review.
 const allowedNewText = ['About', 'Home', 'Send a message', 'Your name', 'Your email', 'Your message', 'Send message'];
