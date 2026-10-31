@@ -1,0 +1,94 @@
+/* Contact page: handwritten title, three contact rows, "Send a message" card,
+   then her "I'd love to hear about" note and stats, with the robot sticker
+   sitting on the violet footer band. Shared pieces come from /styles.css. */
+
+.ct-stage{position:relative;}
+.ct-stage > .wrap,.ct-more > .wrap{max-width:1600px;}
+.ct-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(1.5rem,3vw,3rem);align-items:start;padding-block:clamp(1.5rem,-1rem + 6.5vw,6.5rem) var(--space-4);}
+.ct-intro{position:relative;padding-left:clamp(0px,1vw,18px);}
+
+/* title: all handwritten, "talk" keeps the pink brush underline */
+.ct-title{position:relative;display:inline-block;font:700 clamp(4.2rem,2.6rem + 6vw,9.8rem)/1 var(--font-handwritten);letter-spacing:0;color:#1F1B4D;margin:clamp(.5rem,1vw,1.25rem) 0 clamp(1rem,.6rem + 1.2vw,2rem);padding-right:.75em;transform:rotate(-1.5deg);}
+.ct-under{position:relative;display:inline-block;}
+.ct-under::after{content:"";position:absolute;z-index:-1;left:-1.1em;right:-.15em;bottom:-.08em;height:.16em;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M4 9C60 5 130 3 196 6' fill='none' stroke='%23F59BC0' stroke-width='5' stroke-linecap='round' opacity='.75'/%3E%3Cpath d='M30 12C90 9 140 8 180 9' fill='none' stroke='%23F59BC0' stroke-width='2.5' stroke-linecap='round' opacity='.45'/%3E%3C/svg%3E") center/100% 100% no-repeat;}
+.ct-title .ct-heart{right:-.05em;top:-.02em;width:.6em;color:var(--color-accent);transform:rotate(8deg);}
+.ct-title .ct-heart path{stroke-width:3.2;}
+.ct-title .ct-heart .pk{stroke:#F2789F;stroke-width:2.6;}
+
+.ct-lead{font:400 clamp(1.1rem,.75rem + 1.15vw,1.85rem)/1.5 var(--font-body);color:var(--color-ink);max-width:31em;margin-bottom:clamp(1.5rem,1rem + 1.6vw,2.75rem);}
+
+/* contact rows */
+.ct-rows{list-style:none;display:grid;gap:clamp(1.1rem,.7rem + 1.1vw,1.9rem);max-width:780px;}
+.ct-row{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(1rem,.7rem + 1vw,1.75rem);align-items:center;}
+.ct-ico{display:grid;place-items:center;width:clamp(60px,40px + 3.9vw,108px);aspect-ratio:1;border-radius:50%;background:#E6E0FF;box-shadow:inset 0 -3px 0 rgba(102,85,232,.12);}
+.ct-ico svg{width:54%;height:auto;}
+.ct-ico .f{fill:var(--color-accent);}
+.ct-ico .o{fill:none;stroke:var(--color-accent);stroke-width:2.6;}
+.ct-ico .w{fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+.ct-ico .wf{fill:#fff;}
+.ct-row b{display:block;font:800 clamp(1.15rem,.8rem + 1.1vw,2.1rem)/1.2 var(--font-heading);letter-spacing:-.015em;color:#1F1B4D;margin-bottom:.15em;}
+.ct-row a,.ct-row .ct-socials{font:500 clamp(1rem,.75rem + .8vw,1.7rem)/1.4 var(--font-body);color:var(--color-ink);text-decoration:none;}
+.ct-row a:hover{color:var(--color-accent-deep);text-decoration:underline;text-underline-offset:4px;}
+.ct-socials{display:flex;flex-wrap:wrap;}
+.ct-socials a + a::before{content:"|";padding-inline:.5em;color:var(--color-ink-2);display:inline-block;}
+.ct-row .ct-desc{display:block;font-size:clamp(.92rem,.8rem + .4vw,1.25rem);line-height:1.5;color:var(--color-ink-2);}
+.ct-row a.ct-kit{display:inline-flex;align-items:center;gap:.4em;margin-top:.35em;font:700 clamp(.98rem,.85rem + .4vw,1.3rem) var(--font-heading);color:var(--color-accent-deep);}
+.ct-row a.ct-kit::after{content:"";width:1em;height:.75em;background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 16'%3E%3Cpath d='M1.5 8.5c6-.4 12-.6 18-.3M13.5 2.5c2.2 2 4.2 3.7 6.2 5.8-2.1 1.8-4 3.6-6 5.4' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 16'%3E%3Cpath d='M1.5 8.5c6-.4 12-.6 18-.3M13.5 2.5c2.2 2 4.2 3.7 6.2 5.8-2.1 1.8-4 3.6-6 5.4' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;}
+
+.ct-row:first-child{position:relative;}
+.ct-row:last-child{align-items:start;}
+.ct-plane{right:clamp(0px,2vw,40px);top:-12%;width:clamp(80px,4vw + 50px,124px);color:#2E2A6B;transform:rotate(-4deg);}
+.ct-plane path{stroke-width:3.4;}
+.ct-plane .dash{stroke:var(--color-accent);stroke-width:3.4;}
+.ct-plane .pk{stroke:#F2789F;stroke-width:3.4;}
+
+/* the "Send a message" card */
+.ct-card{background:#fff;border-radius:22px;box-shadow:0 1px 0 rgba(36,36,36,.04),0 24px 50px -24px rgba(60,48,140,.38),0 4px 14px -8px rgba(60,48,140,.18);padding:clamp(1.4rem,1rem + 1.8vw,3rem);}
+.ct-card h2{font:800 clamp(1.5rem,.9rem + 1.75vw,2.95rem)/1.15 var(--font-heading);letter-spacing:-.02em;color:#1F1B4D;margin-bottom:clamp(1rem,.7rem + .8vw,1.6rem);}
+.ct-form{display:flex;flex-direction:column;}
+.ct-form label{font:700 clamp(1rem,.7rem + 1.1vw,1.85rem)/1.2 var(--font-heading);color:#1F1B4D;margin-bottom:.7em;}
+.ct-form label::after{content:" *";}
+.ct-form input,.ct-form textarea{width:100%;min-width:0;font:400 1.05rem/1.4 var(--font-body);color:var(--color-ink);background:#FAF8F5;border:1.5px solid #EEEAE4;border-radius:12px;padding:0 1em;height:clamp(52px,40px + 1.6vw,66px);margin-bottom:clamp(1.1rem,.8rem + .9vw,1.9rem);transition:border-color .15s,box-shadow .15s,background-color .15s;}
+.ct-form textarea{height:clamp(130px,100px + 3.6vw,166px);padding-block:.8em;resize:vertical;}
+.ct-form input:focus,.ct-form textarea:focus{outline:none;background:#fff;border-color:var(--color-accent);box-shadow:0 0 0 4px var(--color-accent-soft);}
+.ct-form .ct-send{align-self:flex-start;margin-top:clamp(.25rem,.6vw,.75rem);font-size:clamp(1.05rem,.8rem + .9vw,1.9rem);padding:.95em 1.7em;gap:.75em;background:linear-gradient(180deg,#7563F0,#5A48E0);border-color:transparent;box-shadow:0 14px 26px -12px rgba(90,72,224,.85);}
+
+/* her "I'd love to hear about" note and numbers */
+.ct-more{position:relative;padding-block:var(--space-4) clamp(6rem,3rem + 5vw,9.5rem);}
+.ct-more-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(1.5rem,3vw,3rem);align-items:center;padding-left:clamp(0px,1vw,18px);}
+.ct-hand{display:inline-block;font:700 clamp(2rem,1.5rem + 1.6vw,3.1rem)/1 var(--font-handwritten);letter-spacing:0;color:var(--color-accent-deep);transform:rotate(-2deg);margin-bottom:var(--space-2);}
+.ct-press p{max-width:34em;}
+.ct-press b{display:block;font:800 clamp(1.1rem,1rem + .4vw,1.4rem)/1.25 var(--font-heading);color:#1F1B4D;margin-bottom:.3em;}
+.ct-press span{color:var(--color-ink-2);font-size:clamp(1rem,.95rem + .2vw,1.12rem);line-height:1.6;}
+.ct-stats{margin-top:0;justify-content:flex-end;}
+.ct-stats .m{flex:1 1 0;min-width:150px;}
+
+/* robot sticker on the footer band */
+.ct-robot{position:absolute;z-index:5;left:clamp(8px,2.4vw,46px);bottom:calc(-1 * clamp(2.5rem,1rem + 5vw,6.5rem));width:clamp(104px,60px + 6vw,176px);pointer-events:none;}
+.ct-robot img{width:100%;height:auto;filter:drop-shadow(0 12px 14px rgba(60,48,140,.3));}
+.ct-rheart{position:absolute;right:-48%;bottom:22%;width:62%;transform:rotate(10deg);}
+.ct-rheart .rim{fill:#fff;stroke:#fff;stroke-width:9;stroke-linejoin:round;filter:drop-shadow(0 6px 6px rgba(60,48,140,.25));}
+.ct-rheart .fill{fill:#FFB2CC;stroke:#2E2A6B;stroke-width:2.6;stroke-linejoin:round;}
+.ct-rheart .tick{fill:none;stroke:#2E2A6B;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+.ct-sparks{color:#C8E04A;width:30%;}
+.ct-sparks path{stroke-width:4.2;}
+.ct-sparks.l{left:-26%;top:2%;}
+.ct-sparks.r{right:-62%;top:18%;}
+
+@media (max-width:900px){
+  .ct-grid{grid-template-columns:minmax(0,1fr);}
+  .ct-intro{padding-left:0;}
+  .ct-plane{display:none;}
+  .ct-more-grid{grid-template-columns:minmax(0,1fr);padding-left:0;}
+  .ct-stats{justify-content:flex-start;}
+}
+@media (max-width:640px){
+  .ct-title{transform:rotate(-1deg);}
+  .ct-form .ct-send{align-self:stretch;}
+  .ct-stats .m{flex:1 1 140px;min-width:0;}
+  .ct-more{padding-bottom:6rem;}
+  .ct-robot{bottom:-2.75rem;}
+}
