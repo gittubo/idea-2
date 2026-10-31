@@ -227,11 +227,6 @@ b,strong{font-weight:700;}
 .nav a.nav-cta::after{display:inline-block;}
 @media (max-width:860px){.navdrop .menu,.nav a.nav-search,.nav::after,.nav a.active:not(.btn)::before{display:none;}}
 
-/* reading progress line along the torn edge (browsers with scroll timelines) */
-@supports (animation-timeline: scroll()){
-  .topbar::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:3px;background:var(--color-accent);transform-origin:0 50%;animation:read-progress linear both;animation-timeline:scroll(root);z-index:2;border-radius:3px;}
-  @keyframes read-progress{from{transform:scaleX(0);}to{transform:scaleX(1);}}
-}
 
 footer.site-foot{
   position:relative;margin-top:var(--space-6);
@@ -247,6 +242,30 @@ footer.site-foot::before{content:"";position:absolute;left:0;right:0;top:-13px;h
 .foot-links a{color:#fff;text-decoration:none;padding:8px 0;font-weight:650;}
 .foot-links a:hover{text-decoration:underline;text-decoration-color:var(--color-lime);text-underline-offset:5px;text-decoration-thickness:2px;}
 .copyright{font-size:.85rem;color:#B7B0EA;}
+
+/* shared paper + paint, on every page (guides included) */
+:root{--color-paper:#F7F1E9;--paper:#F7F1E9;--color-footer:#5547E4;}
+body{background:linear-gradient(rgba(250,244,240,.72),rgba(250,244,240,.72)),#F7F1E9 url("img/paper.webp") 0 0/512px 512px repeat;}
+body::after{opacity:.03;}
+.topbar{background:linear-gradient(rgba(255,255,255,.82),rgba(255,255,255,.82)),#FCF9F4 url("img/paper.webp") 0 0/512px 512px repeat;-webkit-backdrop-filter:none;backdrop-filter:none;}
+.topbar::before{ /* deep torn paper edge under every header */
+  height:18px;background:inherit;filter:drop-shadow(0 4px 3px rgba(80,60,40,.16));
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 18' preserveAspectRatio='none'%3E%3Cpath d='M0 0h240v7l-6 3-5-4-7 6-6-3-8 5-5-6-9 4-4-2-8 6-7-5-6 3-8-4-5 6-9-3-4 5-7-6-8 4-6-2-5 5-8-6-7 4-5-3-9 5-6-4-4 3-8-5-7 6-6-4-5 2-8-5-7 6-5-3-9 4-4-5-8 6-6-3-7 4-5-5V0z'/%3E%3C/svg%3E") 0 0/360px 18px repeat-x;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 18' preserveAspectRatio='none'%3E%3Cpath d='M0 0h240v7l-6 3-5-4-7 6-6-3-8 5-5-6-9 4-4-2-8 6-7-5-6 3-8-4-5 6-9-3-4 5-7-6-8 4-6-2-5 5-8-6-7 4-5-3-9 5-6-4-4 3-8-5-7 6-6-4-5 2-8-5-7 6-5-3-9 4-4-5-8 6-6-3-7 4-5-5V0z'/%3E%3C/svg%3E") 0 0/360px 18px repeat-x;}
+.nav a.active:not(.btn),.nav a[aria-current=page]:not(.btn){background:url("img/brush.webp") center/100% 100% no-repeat;padding:.7em 1.3em;}
+.nav a.nav-cta{ /* handwritten pill with an arrow in a violet circle */
+  position:relative;display:inline-flex;align-items:center;gap:.45em;padding:.22em .3em .26em 1em;
+  font:700 1.55rem/1 var(--font-handwritten);color:var(--color-accent-deep);
+  background:#F1EEFF;border:2px solid var(--color-accent);border-radius:var(--radius-button);box-shadow:none;}
+.nav a.nav-cta::after{display:inline-block;-webkit-mask:none;mask:none;width:1.25em;height:1.25em;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Ccircle cx='15' cy='15' r='14' fill='%236655E8'/%3E%3Cpath d='M8 15.5h13M16 10l5.5 5.5L16 21' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;}
+.nav a.nav-cta::before{content:"";position:absolute;left:14px;bottom:-18px;width:20px;height:14px;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 14'%3E%3Cpath d='M2 2c1 6 6 9 11 7 3-1 2-5-1-4M15 6l3 3' fill='none' stroke='%236655E8' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat;}
+.nav a.nav-cta:hover{background:#E4DFFF;transform:rotate(-1deg);}
+footer.site-foot{background:var(--color-footer);color:#ECE9FF;margin-top:clamp(5rem,4rem + 4vw,8rem);padding-top:var(--space-4);}
+footer.site-foot::before{ /* the violet watercolour band rising out of the footer */
+  top:auto;bottom:calc(100% - 2px);height:clamp(60px,3rem + 4vw,120px);background:url("img/band.webp") center top/100% 320% no-repeat;-webkit-mask:none;mask:none;}
+.copyright{color:#CFC8FF;}
 
 /* ---------- 6. Notebook pieces (the design system) ---------- */
 
