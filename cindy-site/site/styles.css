@@ -250,8 +250,8 @@ body::after{opacity:.03;}
 .topbar{background:linear-gradient(rgba(255,255,255,.82),rgba(255,255,255,.82)),#FCF9F4 url("img/paper.webp") 0 0/512px 512px repeat;-webkit-backdrop-filter:none;backdrop-filter:none;}
 .topbar::before{ /* deep torn paper edge under every header */
   height:18px;background:inherit;filter:drop-shadow(0 4px 3px rgba(80,60,40,.16));
-  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 18' preserveAspectRatio='none'%3E%3Cpath d='M0 0h240v7l-6 3-5-4-7 6-6-3-8 5-5-6-9 4-4-2-8 6-7-5-6 3-8-4-5 6-9-3-4 5-7-6-8 4-6-2-5 5-8-6-7 4-5-3-9 5-6-4-4 3-8-5-7 6-6-4-5 2-8-5-7 6-5-3-9 4-4-5-8 6-6-3-7 4-5-5V0z'/%3E%3C/svg%3E") 0 0/360px 18px repeat-x;
-          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 18' preserveAspectRatio='none'%3E%3Cpath d='M0 0h240v7l-6 3-5-4-7 6-6-3-8 5-5-6-9 4-4-2-8 6-7-5-6 3-8-4-5 6-9-3-4 5-7-6-8 4-6-2-5 5-8-6-7 4-5-3-9 5-6-4-4 3-8-5-7 6-6-4-5 2-8-5-7 6-5-3-9 4-4-5-8 6-6-3-7 4-5-5V0z'/%3E%3C/svg%3E") 0 0/360px 18px repeat-x;}
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 18' preserveAspectRatio='none'%3E%3Cpath d='M0 0H240V8L233 9L224 6L218 7L212 9L205 12L197 10L189 13L181 8L172 5L163 6L154 6L147 8L142 7L133 9L124 6L115 7L107 9L101 13L96 8L91 11L82 5L76 6L67 5L59 13L54 8L49 11L41 6L36 8L27 5L20 6L11 6L6 11L0 8V0Z'/%3E%3C/svg%3E") 0 0/360px 18px repeat-x;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 18' preserveAspectRatio='none'%3E%3Cpath d='M0 0H240V8L233 9L224 6L218 7L212 9L205 12L197 10L189 13L181 8L172 5L163 6L154 6L147 8L142 7L133 9L124 6L115 7L107 9L101 13L96 8L91 11L82 5L76 6L67 5L59 13L54 8L49 11L41 6L36 8L27 5L20 6L11 6L6 11L0 8V0Z'/%3E%3C/svg%3E") 0 0/360px 18px repeat-x;}
 .nav a.active:not(.btn),.nav a[aria-current=page]:not(.btn){background:url("img/brush.webp") center/100% 100% no-repeat;padding:.7em 1.3em;}
 .nav a.nav-cta{ /* handwritten pill with an arrow in a violet circle */
   position:relative;display:inline-flex;align-items:center;gap:.45em;padding:.22em .3em .26em 1em;
