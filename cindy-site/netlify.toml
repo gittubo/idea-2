@@ -21,3 +21,16 @@
   from = "/terms"
   to = "https://cindyzhu.com.au/terms"
   status = 302
+
+# The preview carries one sample guide; every other guide (and the Canva film page)
+# lives on Cindy's site, so fall back to it. Not forced: the sample guide is still
+# served from here, and on her own site these never fire because the files exist.
+[[redirects]]
+  from = "/guides/*"
+  to = "https://cindyzhu.com.au/guides/:splat"
+  status = 302
+
+[[redirects]]
+  from = "/canva-film"
+  to = "https://cindyzhu.com.au/canva-film"
+  status = 302
