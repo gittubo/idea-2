@@ -74,7 +74,8 @@ text isn't on your current site. The only new labels are "Home" and "About" in t
 | Asset | Source | Licence |
 |---|---|---|
 | Manrope, DM Sans, Caveat | Google Fonts, self-hosted | SIL Open Font License 1.1 (`fonts/OFL-*.txt`) |
-| `img/cindy-cutout.webp`, `img/cindy-contact-cutout.webp` | Your own photos, background removed with Higgsfield | Your photos |
+| `img/hero-bg.webp`, `img/hero-cutout.webp` | Your beach photo. Higgsfield extended (outpainted) the beach to the sides so it fills the wide hero, then removed the background for the die-cut outline. You are untouched, but **the extra beach around you is AI-generated** | Your photo + AI extension |
+| `img/cindy-contact-cutout.webp` | Your own photo, background removed with Higgsfield | Your photo |
 | `img/robot-sticker.webp`, `img/thumb-*.webp` | Generated for this project with Higgsfield (GPT Image), no logos, no people | Commercial use under the Higgsfield plan used to create them. Worth confirming against your plan's terms |
 | Tape, stickers, doodles, hearts, crown, torn edges, icons | Drawn for this project in CSS / inline SVG | Yours |
 

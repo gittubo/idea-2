@@ -18,51 +18,63 @@
     <nav class="nav" aria-label="Main">
       <a href="/" class="active" aria-current="page">Home</a>
       <a href="/ai-system">AI System Club</a>
-      <a href="/guides">Free guides</a>
+      <div class="navdrop">
+        <a href="/guides">Free guides</a>
+        <div class="menu">
+          <a href="/guides/resume-unrejectable">4 Claude skills that make your resume unrejectable</a>
+          <a href="/guides/free-content-engine">Free content engine: 3 tools + Claude as the brain</a>
+          <a href="/guides/claude-full-time-designer">Turn Claude into your full-time designer</a>
+          <a href="/guides">See all guides</a>
+        </div>
+      </div>
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
       <a href="/media-kit">Media kit</a>
+      <a href="/guides" class="nav-search" aria-label="Browse free guides"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M16 16l5.5 5.5"/></svg></a>
       <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
     </nav>
   </div>
 </header>
 <span id="main" tabindex="-1"></span>
 
-<!-- Hero: a notebook page with Cindy as a die-cut sticker -->
-<section class="stage">
+<!-- Hero: copy on paper, Cindy's photo bleeding off the right with a die-cut outline -->
+<section class="stage home-stage">
+  <div class="hero-photo">
+    <img class="bg" src="img/hero-bg.webp" alt="" width="1440" height="900">
+    <img class="cutout" src="img/hero-cutout.webp" alt="Cindy Zhu" width="1440" height="900">
+    <div class="layer" data-depth="0.4">
+      <div class="gridpaper" aria-hidden="true"></div>
+      <svg class="doodle rays" viewBox="0 0 70 50" aria-hidden="true"><path d="M14 40L28 6M30 44l26-18M38 48h28"/></svg>
+    </div>
+    <div class="layer" data-depth="1">
+      <p class="note">AI obsessed ✨</p>
+    </div>
+    <div class="layer" data-depth="1.5">
+      <img class="robot" src="img/robot-sticker.webp" alt="" width="420" height="592" loading="lazy">
+      <svg class="doodle sparks" viewBox="0 0 52 44" aria-hidden="true"><path d="M8 12l20-8M10 24h24M8 36l20 6"/></svg>
+    </div>
+  </div>
   <div class="wrap">
     <div class="hero home-hero">
       <div class="hero-copy">
-        <svg class="doodle burst" viewBox="0 0 48 48" aria-hidden="true"><path d="M30 6l6-5M36 16l9-3M22 4l1-3"/></svg>
-        <svg class="doodle heart" viewBox="0 0 64 60" aria-hidden="true"><path d="M33 54C16 42 6 32 9 19 12 8 26 7 31 19c4-12 21-14 25-3 5 13-8 26-23 38z"/><path d="M20 20c2-3 5-4 8-3"/></svg>
+        <svg class="doodle burst" viewBox="0 0 54 50" aria-hidden="true"><path d="M30 18L22 4M40 24l12-6M18 28L4 26"/></svg>
+        <svg class="doodle heart" viewBox="0 0 64 60" aria-hidden="true"><path d="M33 54C16 42 6 32 9 19 12 8 26 7 31 19c4-12 21-14 25-3 5 13-8 26-23 38z"/><path d="M42 16c3 0 6 2 7 5"/></svg>
         <svg class="doodle star" viewBox="0 0 46 46" aria-hidden="true"><path d="M23 3l5 13 14 1-11 9 4 14-12-8-12 8 4-14L4 17l14-1z"/></svg>
         <span class="hi">Hi I'm Cindy</span>
         <h1><span class="line">Helping you</span> <span class="line">level up with <span class="scribble">AI</span></span></h1>
         <p class="lead">Follow along to build tasteful and efficient systems with AI, no code:) I share workflows I use every day that run my entire content and operations as a solo founder. Sharing everything so you can do the same.</p>
         <div class="cta-row">
           <a class="btn" href="/ai-system">Join the waitlist</a>
-          <a class="btn ghost" href="/guides">Browse free guides</a>
-        </div>
-      </div>
-      <div class="portrait">
-        <div class="portrait-bg" aria-hidden="true"></div>
-        <div class="layer" data-depth="0.3"><div class="gridpaper" aria-hidden="true"></div></div>
-        <img class="cutout" src="img/cindy-cutout.webp" alt="Cindy Zhu" width="615" height="824">
-        <div class="layer" data-depth="0.9">
-          <svg class="doodle rays" viewBox="0 0 64 56" aria-hidden="true"><path d="M8 50L20 22M30 46l16-24M42 52l18-10"/></svg>
-          <p class="note">AI obsessed ✨</p>
-        </div>
-        <div class="layer" data-depth="1.4">
-          <img class="robot" src="img/robot-sticker.webp" alt="" width="420" height="592" loading="lazy">
-          <svg class="doodle sparks" viewBox="0 0 52 40" aria-hidden="true"><path d="M6 8l14 6M4 22h16M8 34l12-6"/></svg>
+          <a class="btn ghost" href="/guides"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.5C10 5 7 4.5 3 5v13c4-.5 7 0 9 1.5 2-1.5 5-2 9-1.5V5c-4-.5-7 0-9 1.5zM12 6.5v13"/></svg>Browse free guides</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- The notebook row: proof, guides, club -->
+<!-- The notebook row: proof, popular guides, club -->
 <section class="wrap dash">
+  <svg class="doodle lsparks" viewBox="0 0 36 52" aria-hidden="true"><path d="M30 6L12 14M28 26H6M30 46l-16-8"/></svg>
   <div class="proof sheet tape blush" data-paste>
     <h2>440k+ followers across channels</h2>
     <ul class="checks">
@@ -70,55 +82,48 @@
       <li><span><b>2.61M</b> saves in 30 days</span></li>
       <li><span><b>6,000+ people</b> are already on the waitlist.</span></li>
     </ul>
+    <svg class="doodle pstar" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 2l2.6 7.4L23 12l-7.4 2.6L13 22l-2.6-7.4L3 12l7.4-2.6z"/></svg>
   </div>
 
   <div class="popular">
     <div class="head">
       <span class="eyebrow">most loved</span>
-      <h2>Start with these free guides</h2>
+      <svg class="doodle hsparks" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 20L18 4M20 26L36 14M24 36h14"/></svg>
     </div>
-    <p class="intro">A few of the most saved resources from my library. All free, all copy-paste.</p>
+    <h2 class="sr-only">Start with these free guides</h2>
     <div class="fcards">
       <a class="fcard" href="/guides/resume-unrejectable" data-paste>
         <div class="thumb"><img src="img/thumb-career.webp" alt="" width="640" height="430" loading="lazy"><span class="tag">Career &amp; job</span></div>
         <h3>4 Claude skills that make your resume unrejectable</h3>
-        <p>The exact agent team behind my most viral reel.</p>
         <span class="read">Read guide →</span>
       </a>
       <a class="fcard" href="/guides/free-content-engine" data-paste>
         <div class="thumb"><img src="img/thumb-content.webp" alt="" width="640" height="430" loading="lazy"><span class="tag">Marketing &amp; content</span></div>
         <h3>Free content engine: 3 tools + Claude as the brain</h3>
-        <p>The exact free stack I use to run my content.</p>
         <span class="read">Read guide →</span>
       </a>
       <a class="fcard" href="/guides/claude-full-time-designer" data-paste>
         <div class="thumb"><img src="img/thumb-design.webp" alt="" width="640" height="430" loading="lazy"><span class="tag">Design &amp; visuals</span></div>
         <h3>Turn Claude into your full-time designer</h3>
-        <p>World-class design, no designer required.</p>
         <span class="read">Read guide →</span>
       </a>
     </div>
-    <div class="all"><a class="btn ghost" href="/guides">See all guides</a></div>
   </div>
 
   <aside class="clubcard" id="club-waitlist" data-paste>
-    <svg class="crown" viewBox="0 0 60 48" aria-hidden="true"><path d="M8 38L4 12l14 12L30 4l12 20 14-12-4 26z" fill="#D8F36A" stroke="#242424" stroke-width="2.6" stroke-linejoin="round"/><path d="M9 44h42" stroke="#242424" stroke-width="2.6" stroke-linecap="round"/><circle cx="30" cy="4" r="3" fill="#FFB9D1" stroke="#242424" stroke-width="2"/></svg>
+    <svg class="crown" viewBox="0 0 66 56" aria-hidden="true"><path d="M10 46L6 18l14 12L33 10l13 20 14-12-4 28z" fill="#F2D94A" stroke="#242424" stroke-width="2.6" stroke-linejoin="round"/><path d="M11 52h44" stroke="#242424" stroke-width="2.6" stroke-linecap="round"/><path d="M52 4l2 5M60 10l-5 1M44 6l3 3" stroke="#242424" stroke-width="2" stroke-linecap="round"/></svg>
     <svg class="doodle heart" viewBox="0 0 64 60" aria-hidden="true"><path d="M33 54C16 42 6 32 9 19 12 8 26 7 31 19c4-12 21-14 25-3 5 13-8 26-23 38z"/></svg>
-    <span class="eyebrow">Waitlist is now open</span>
     <h2>AI System Club</h2>
-    <p>Build AI workflows, content systems, visuals, websites and career tools, with recorded lessons you can follow at your own pace. Keep access to your included lessons.</p>
-    <form action="/ai-system" class="home-waitlist-form wl-form" method="POST" name="waitlist">
-      <input type="hidden" name="form-name" value="waitlist">
-      <p hidden><label>Leave blank: <input name="bot-field"></label></p>
-      <label class="signup-email-label" for="home-waitlist-email">Your email</label>
-      <input id="home-waitlist-email" type="email" name="email" placeholder="Your email" autocomplete="email" required>
-      <button type="submit" class="btn">Join the waitlist</button>
-    </form>
-    <p class="arrow-note"><span>btw this list gets first dibs<br>the moment doors open :)</span></p>
+    <p>Inside the Club, I share the AI workflows I use to run my content and business.</p>
+    <a class="btn" href="/ai-system">Join the waitlist</a>
   </aside>
 </section>
 
-<div class="tornband"><p class="tagline">AI you can actually use</p></div>
+<div class="tornband">
+  <svg class="doodle l" viewBox="0 0 34 30" aria-hidden="true"><path d="M30 26L16 12M22 6L18 2M8 24L2 20"/></svg>
+  <p class="tagline"><span>AI you can</span> <span class="ul">actually use</span></p>
+  <svg class="doodle r" viewBox="0 0 34 30" aria-hidden="true"><path d="M4 8l16-6M6 16h22M4 26l18 2"/></svg>
+</div>
 
 <div class="growth-ribbon" role="region" aria-label="What you can build with AI">
   <p class="ribbon-accessible">Claude 101. AI agents and automation. Content and marketing systems. AI video, photo and design. Vibe code anything. AI career. Build ideas: Automated inbox. Brand deals hub. Finance. Script System. Automated ManyChat. Content System. Headshots. Presentations. Websites. Games. Dashboards. Automated job search.</p>
