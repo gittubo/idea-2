@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cindy Zhu · Media Kit</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<!--
+  ============================================================
+  CINDY ZHU MEDIA KIT  ·  Warm Tech / scrapbook
+  ------------------------------------------------------------
+  PHOTO: save your photo into THIS folder named  cindy.jpg
+         (Personal Brand/Media Kit/cindy.jpg) then refresh.
+         A placeholder shows until then.
+
+  KINDERGARTEN FONT: to use your exact brand font, drop the
+  font file in this folder and uncomment the @font-face block
+  near the top of the CSS. Until then it falls back to Caveat.
+
+  RATES: this is the PUBLIC version (rates hidden). To make a
+  private copy, search  RATES: PRIVATE TOGGLE  and follow notes.
+  ============================================================
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  /* handwritten accents use Caveat. Kindergarten reverted 2026-06-23 (too childish). */
+  :root{
+    --cream:#FAF7F2;
+    --paper:#F4ECE0;
+    --coral:#D97757;
+    --terra:#C96F4C;
+    --honey:#E0A951;
+    --sage:#A9B89E;
+    --rose:#ECBCA8;
+    --ink:#332E29;
+    --ink-soft:#736a60;
+    --line:#E0D6C6;
+    --serif:'Averia Serif Libre', Georgia, serif;
+    --sans:'Poppins', -apple-system, sans-serif;
+    --hand:'Caveat',cursive;
+    --print:'Patrick Hand',cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);font-weight:300;color:var(--ink);line-height:1.65;
+    background-color:var(--cream);
+    /* real paper texture image, very back layer only */
+    background-image:url("paper.webp");
+    background-repeat:repeat;
+    background-attachment:fixed;
+  }
+  .wrap{max-width:1060px;margin:0 auto;padding:0 26px;}
+  h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.12;}
+  a{color:inherit;text-decoration:none;}
+  .hand{font-family:var(--hand);color:var(--terra);}
+  .eyebrow{font-family:var(--hand);color:var(--terra);font-size:1.7rem;display:inline-block;transform:rotate(-2deg);margin-bottom:4px;}
+
+  /* washi tape helper */
+  .tape{position:relative;}
+  .tape::before{
+    content:'';position:absolute;top:-13px;left:50%;width:104px;height:28px;
+    transform:translateX(-50%) rotate(-3deg);
+    background:repeating-linear-gradient(45deg, rgba(224,169,81,.5) 0 7px, rgba(224,169,81,.35) 7px 14px);
+    box-shadow:0 1px 2px rgba(0,0,0,.05);
+  }
+  .tape.sage::before{background:repeating-linear-gradient(45deg, rgba(169,184,158,.5) 0 7px, rgba(169,184,158,.32) 7px 14px);}
+  .tape.rose::before{background:repeating-linear-gradient(45deg, rgba(232,183,168,.55) 0 7px, rgba(232,183,168,.35) 7px 14px);}
+
+  /* ---------- top bar ---------- */
+  .topbar{position:sticky;top:0;z-index:60;background:rgba(250,247,242,.85);backdrop-filter:blur(9px);border-bottom:1px dashed var(--line);}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;}
+  .brand{font-family:var(--serif);font-weight:700;font-size:1.2rem;}
+  .brand .dot{color:var(--coral);}
+  .nav{display:flex;gap:24px;align-items:center;font-size:.9rem;}
+  .nav a{color:var(--ink-soft);transition:color .2s;}
+  .nav a:hover{color:var(--coral);}
+  .nav a.btn{color:#fff;}
+  .btn{background:var(--coral);color:#fff;padding:10px 20px;border-radius:30px;font-weight:500;font-size:.88rem;transition:transform .15s,box-shadow .2s;box-shadow:0 6px 15px rgba(217,119,87,.3);}
+  .btn:hover{transform:translateY(-2px) rotate(-1deg);box-shadow:0 10px 22px rgba(217,119,87,.38);}
+  @media(max-width:820px){.nav{gap:15px;font-size:.82rem;}}
+  @media(max-width:560px){.topbar .wrap{flex-wrap:wrap;height:auto;padding-top:9px;padding-bottom:9px;row-gap:7px}.nav{width:100%;justify-content:flex-start;gap:14px;font-size:.78rem}.nav a{white-space:nowrap}}
+
+  /* ---------- hero ---------- */
+  .hero{padding:70px 0 40px;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;}
+  .hero .hi{font-family:var(--hand);font-size:2.1rem;color:var(--terra);transform:rotate(-2deg);display:inline-block;}
+  .hero h1{font-size:4.1rem;letter-spacing:-1px;margin:2px 0 14px;}
+  .hero h1 .u{position:relative;color:var(--coral);}
+  .hero h1 .u::after{content:'';position:absolute;left:0;right:0;bottom:6px;height:10px;background:rgba(217,119,87,.28);z-index:-1;transform:rotate(-1deg);}
+  .hero .tagline{display:inline-block;font-family:var(--print);font-size:1rem;color:var(--ink);background:var(--paper);border:1.5px dashed var(--terra);padding:5px 16px;border-radius:24px;margin-bottom:18px;transform:rotate(-1deg);}
+  .hero p.lead{font-size:1.12rem;color:var(--ink-soft);max-width:520px;margin-bottom:22px;}
+  .socials{display:flex;gap:10px;flex-wrap:wrap;}
+  .socials a{font-size:.85rem;color:var(--ink-soft);border:1px solid var(--line);background:#fff;padding:8px 15px;border-radius:24px;transition:all .2s;}
+  .socials a:hover{border-color:var(--coral);color:var(--coral);transform:translateY(-2px) rotate(-1deg);}
+
+  /* photo polaroid */
+  .photo-wrap{display:flex;justify-content:center;position:relative;}
+  .polaroid{background:#fdfbf5;padding:14px 14px 50px;box-shadow:0 9px 15px -7px rgba(51,46,41,.30),0 2px 4px rgba(51,46,41,.18),inset 0 1px 0 rgba(255,255,255,.6);transform:rotate(3.5deg);max-width:300px;position:relative;border:1px solid rgba(51,46,41,.07);border-radius:2px;}
+  .polaroid::before{content:'';position:absolute;top:-14px;left:50%;width:120px;height:30px;transform:translateX(-50%) rotate(-4deg);background:repeating-linear-gradient(45deg, rgba(232,183,168,.6) 0 7px, rgba(232,183,168,.38) 7px 14px);box-shadow:0 1px 2px rgba(0,0,0,.05);}
+  .polaroid img{width:100%;display:block;background:var(--paper);box-shadow:0 0 0 1px rgba(51,46,41,.06);}
+  .polaroid.noimg .ph{width:100%;height:320px;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--hand);color:var(--ink-soft);font-size:1.3rem;background:var(--paper);padding:20px;}
+  .polaroid .cap{position:absolute;bottom:11px;left:0;right:0;text-align:center;font-family:var(--hand);color:var(--ink);font-size:1.5rem;transform:rotate(-1.5deg);}
+  .sticker{position:absolute;font-family:var(--hand);font-weight:700;background:var(--honey);color:#fff;padding:8px 14px;border-radius:18px;box-shadow:0 6px 14px rgba(0,0,0,.12);font-size:1.05rem;}
+  .sticker.s1{top:-18px;right:-10px;transform:rotate(8deg);background:var(--coral);}
+  .sticker.s2{bottom:30px;left:-26px;transform:rotate(-7deg);background:var(--sage);}
+  @media(max-width:760px){.hero{grid-template-columns:1fr;text-align:center;padding:46px 0 20px;}.hero h1{font-size:2.8rem;}.socials{justify-content:center;}.sticker.s2{left:0;}}
+
+  /* ---------- headline stat band ---------- */
+  .statband{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:30px 0 6px;}
+  .statband .s{background:#fff;border-radius:18px;padding:26px 20px;text-align:center;box-shadow:0 8px 22px rgba(51,46,41,.06);position:relative;}
+  .statband .s:nth-child(1){transform:rotate(-1.5deg);}
+  .statband .s:nth-child(2){transform:rotate(1deg);}
+  .statband .s:nth-child(3){transform:rotate(-1deg);}
+  .statband .s .n{font-family:var(--serif);font-size:2.6rem;font-weight:700;color:var(--coral);line-height:1;}
+  .statband .s .l{font-size:.9rem;margin-top:9px;font-weight:500;}
+  .statband .s .sub{font-size:.76rem;color:var(--ink-soft);margin-top:3px;}
+  .annot{font-family:var(--hand);color:var(--terra);font-size:1.35rem;position:absolute;top:-26px;right:-6px;transform:rotate(7deg);white-space:nowrap;}
+  .annot::before{content:'';}
+  .miniband{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;margin-top:20px;}
+  .miniband .m{font-family:var(--print);font-size:.92rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:6px 15px;}
+  .miniband .m b{color:var(--terra);}
+  @media(max-width:760px){.statband{grid-template-columns:1fr;}}
+
+  /* ---------- sections ---------- */
+  section{padding:54px 0;}
+  .sec-head{text-align:center;margin-bottom:38px;}
+  .sec-head h2{font-size:2.1rem;}
+  .sec-head p{color:var(--ink-soft);font-size:.98rem;margin-top:4px;}
+  .torn{height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 10px,transparent 10px 18px);max-width:1060px;margin:0 auto;}
+
+  /* opportunity */
+  .opp{background:var(--paper);border-radius:24px;padding:42px 38px;display:grid;grid-template-columns:1.05fr 1fr;gap:38px;align-items:center;box-shadow:0 10px 26px rgba(51,46,41,.05);}
+  .opp h2{font-size:1.95rem;margin:6px 0 14px;}
+  .opp p{color:var(--ink-soft);margin-bottom:12px;font-size:.98rem;}
+  .opp .pts{display:grid;gap:15px;}
+  .opp .pt{background:#fff;border-radius:14px;padding:15px 18px;box-shadow:0 5px 14px rgba(51,46,41,.06);}
+  .opp .pt:nth-child(1){transform:rotate(-1deg);}
+  .opp .pt:nth-child(3){transform:rotate(1deg);}
+  .opp .pt b{display:block;font-size:1.05rem;color:var(--terra);font-family:var(--serif);}
+  .opp .pt span{font-size:.88rem;color:var(--ink-soft);}
+  @media(max-width:760px){.opp{grid-template-columns:1fr;padding:30px 24px;}}
+
+  /* platform tabs */
+  .tabs{display:flex;gap:9px;justify-content:center;margin-bottom:28px;flex-wrap:wrap;}
+  .tab{font-family:var(--print);font-size:.95rem;cursor:pointer;border:1.5px solid var(--line);background:#fff;color:var(--ink-soft);padding:9px 20px;border-radius:26px;transition:all .2s;}
+  .tab:hover{border-color:var(--coral);}
+  .tab.active{background:var(--coral);color:#fff;border-color:var(--coral);box-shadow:0 6px 15px rgba(217,119,87,.3);transform:rotate(-1deg);}
+  .panel{display:none;}
+  .panel.active{display:block;animation:fade .3s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .pgrid .c{background:#fff;border-radius:16px;padding:22px 16px;text-align:center;box-shadow:0 6px 16px rgba(51,46,41,.05);}
+  .pgrid .c:nth-child(even){transform:rotate(1deg);}
+  .pgrid .c:nth-child(odd){transform:rotate(-1deg);}
+  .pgrid .c .n{font-family:var(--serif);font-size:1.85rem;font-weight:700;color:var(--ink);}
+  .pgrid .c .l{font-size:.8rem;color:var(--ink-soft);margin-top:5px;}
+  @media(max-width:760px){.pgrid{grid-template-columns:1fr 1fr;}}
+
+  /* sticky-note callout */
+  .note{background:#FCEFC7;border-radius:6px;padding:18px 22px;margin:24px auto 0;max-width:640px;font-family:var(--print);font-size:1.02rem;color:var(--ink);text-align:center;box-shadow:3px 5px 14px rgba(51,46,41,.1);transform:rotate(-1deg);}
+  .note.coralnote{background:var(--rose);}
+
+  /* cards */
+  .cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .card{background:#fff;border-radius:18px;padding:26px;box-shadow:0 8px 22px rgba(51,46,41,.06);}
+  .card:nth-child(1){transform:rotate(-1deg);}
+  .card:nth-child(3){transform:rotate(1deg);}
+  .card h3{font-size:1.18rem;margin-bottom:16px;}
+  .row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--line);font-size:.93rem;}
+  .row:last-child{border-bottom:none;}
+  .row b{font-family:var(--serif);}
+  @media(max-width:760px){.cols3{grid-template-columns:1fr;}}
+
+  /* bars */
+  .bar{margin:11px 0;}
+  .bar .top{display:flex;justify-content:space-between;font-size:.88rem;margin-bottom:5px;}
+  .bar .track{height:10px;background:var(--paper);border-radius:10px;overflow:hidden;}
+  .bar .fill{height:100%;background:linear-gradient(90deg,var(--rose),var(--coral));border-radius:10px;}
+
+  /* table as paper clipping */
+  .clip{background:#fff;border-radius:14px;box-shadow:0 10px 26px rgba(51,46,41,.08);overflow:hidden;}
+  .tbl{width:100%;border-collapse:collapse;font-size:.9rem;}
+  .tbl th{background:var(--rose);text-align:left;padding:13px 15px;font-family:var(--serif);font-weight:700;font-size:.88rem;}
+  .tbl td{padding:12px 15px;border-top:1px dashed var(--line);color:var(--ink-soft);}
+  .tbl td b{color:var(--ink);}
+  .tbl tr:hover td{background:var(--cream);}
+  .scrollx{overflow-x:auto;}
+
+  /* about */
+  .about{display:grid;grid-template-columns:.7fr 1.3fr;gap:40px;align-items:center;max-width:900px;margin:0 auto;}
+  .about p{color:var(--ink-soft);font-size:1.05rem;margin-bottom:14px;}
+  .pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;}
+  .pill{font-family:var(--print);font-size:.9rem;padding:7px 16px;border-radius:24px;background:var(--terra);color:#fff;transform:rotate(-1deg);}
+  .pill:nth-child(2){background:#fff;color:var(--terra);border:1.5px solid var(--terra);transform:rotate(1deg);}
+  .pill:nth-child(3){background:var(--sage);color:#fff;transform:rotate(-1.5deg);}
+  @media(max-width:760px){.about{grid-template-columns:1fr;text-align:center;}.pills{justify-content:center;}}
+
+  /* packages */
+  .pkgs{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .pkg{background:#fff;border-radius:18px;padding:26px;box-shadow:0 8px 22px rgba(51,46,41,.06);transition:transform .2s,box-shadow .2s;}
+  .pkg:nth-child(odd){transform:rotate(-.8deg);}
+  .pkg:nth-child(even){transform:rotate(.8deg);}
+  .pkg:hover{transform:translateY(-4px) rotate(0deg);box-shadow:0 14px 30px rgba(51,46,41,.1);}
+  .pkg.feat{border:2px solid var(--coral);position:relative;}
+  .pkg.feat::after{content:'most popular';position:absolute;top:-12px;right:18px;background:var(--coral);color:#fff;font-family:var(--print);font-size:.78rem;padding:4px 13px;border-radius:18px;transform:rotate(2deg);}
+  .pkg h3{font-size:1.25rem;margin-bottom:8px;}
+  .pkg p{font-size:.9rem;color:var(--ink-soft);margin-bottom:13px;}
+  .pkg .price{font-family:var(--hand);font-size:1.5rem;color:var(--terra);font-weight:700;}
+  @media(max-width:760px){.pkgs{grid-template-columns:1fr;}}
+
+  /* contact */
+  .contact{background:var(--paper);border-radius:24px;padding:52px 38px;text-align:center;box-shadow:0 10px 26px rgba(51,46,41,.06);position:relative;}
+  .contact .big{font-family:var(--hand);color:var(--terra);font-size:clamp(1.7rem,8vw,2.3rem);transform:rotate(-2deg);display:inline-block;line-height:1.05;white-space:nowrap;} /* Cindy 29 Oct: wrapped lines sat too far apart */
+  .contact h2{font-size:2.1rem;margin:6px 0 12px;}
+  .contact p{color:var(--ink-soft);margin-bottom:24px;}
+  .contact .btn{font-size:1rem;padding:13px 28px;}
+
+  footer{text-align:center;padding:38px 0;color:var(--ink-soft);font-family:var(--print);font-size:.9rem;}
+
+  /* ---------- featured partnerships (reel marquee) ---------- */
+  .partner-intro{max-width:820px;margin:0 auto;text-align:center;}
+  .partner-intro p{color:var(--ink-soft);font-size:1.04rem;}
+  .partner-pts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:24px auto 0;}
+  .partner-pts .pt{background:#fff;border-radius:14px;padding:17px 19px;box-shadow:0 6px 16px rgba(51,46,41,.06);}
+  .partner-pts .pt:nth-child(1){transform:rotate(-1deg);}
+  .partner-pts .pt:nth-child(3){transform:rotate(1deg);}
+  .partner-pts .pt b{display:block;font-family:var(--serif);color:var(--terra);font-size:1rem;margin-bottom:3px;}
+  .partner-pts .pt span{font-size:.85rem;color:var(--ink-soft);}
+  @media(max-width:760px){.partner-pts{grid-template-columns:1fr;}}
+  .reel-marquee{margin-top:40px;overflow:hidden;padding:18px 0;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+            mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);}
+  .reel-track{display:flex;gap:28px;width:max-content;animation:reelscroll 55s linear infinite;}
+  .reel-card{flex:0 0 auto;width:212px;display:block;transition:transform .2s;}
+  .reel-card:nth-child(3n){transform:rotate(1.4deg);}
+  .reel-card:nth-child(3n+1){transform:rotate(-1.4deg);}
+  .reel-card:hover{transform:translateY(-6px) rotate(0deg);}
+  .phone{position:relative;width:212px;aspect-ratio:9/16;border-radius:26px;overflow:hidden;
+    background:var(--paper);border:5px solid #fff;
+    box-shadow:0 13px 27px -6px rgba(51,46,41,.32),0 3px 6px rgba(51,46,41,.16);}
+  .phone img{width:100%;height:100%;object-fit:cover;display:block;}
+  .phone .play{position:absolute;top:50%;left:50%;width:54px;height:54px;transform:translate(-50%,-50%);
+    border-radius:50%;background:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;
+    font-size:1.15rem;color:var(--terra);padding-left:4px;box-shadow:0 4px 12px rgba(0,0,0,.22);}
+  .phone .views{position:absolute;left:9px;bottom:9px;font-family:var(--print);font-size:.76rem;color:#fff;
+    background:rgba(51,46,41,.58);backdrop-filter:blur(3px);padding:3px 10px;border-radius:14px;}
+  .reel-meta{padding:13px 4px 0;text-align:center;}
+  .reel-meta b{font-family:var(--serif);font-size:1.04rem;color:var(--ink);display:block;}
+  .reel-meta span{font-size:.82rem;color:var(--ink-soft);display:block;margin-top:2px;line-height:1.35;}
+  .reel-meta span:not(.reel-stats){min-height:4em;}
+  .reel-stats{display:inline-block;margin-top:7px;font-family:var(--sans);font-size:.72rem;white-space:nowrap;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:3px 11px;}
+  .reel-metrics{display:flex;margin-top:9px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:7px 2px;}
+  .reel-metrics span{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;font-family:var(--sans);font-size:.63rem;color:var(--ink-soft);line-height:1.2;}
+  .reel-metrics span + span{border-left:1px solid var(--line);}
+  .reel-metrics b{font-family:var(--serif);font-weight:700;font-size:.88rem;color:var(--ink);}
+  @media(prefers-reduced-motion:reduce){.reel-marquee{overflow-x:auto;-webkit-overflow-scrolling:touch;}.reel-track{animation:none;}}
+  @keyframes reelscroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* Dated Insights cards, 24 October. Scoped to the media-kit statistics. */
+  #stats .sec-head h2{max-width:700px;margin:0 auto 14px;font-size:clamp(2rem,4vw,3rem)}
+  #stats .stats-stamp{text-align:center;color:var(--ink-soft);font:400 .8rem var(--sans);margin:0 0 22px}
+  #stats .pgrid .c{border:1px solid var(--line);padding:28px 12px;transform:none;position:relative}
+  #stats .pgrid .c:nth-child(1){background:var(--paper)}
+  #stats .pgrid .c:nth-child(2){background:var(--coral);border-color:var(--coral)}
+  #stats .pgrid .c:nth-child(2) :is(.n,.l,.metric-detail){color:#fff}
+  #stats .pgrid .n{font-size:clamp(1.8rem,3vw,2.5rem)}
+  #stats .metric-detail{color:var(--ink-soft);font-size:.65rem;margin-top:6px}
+  #stats .channel-card{max-width:680px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:20px;padding:36px;text-align:center}
+  #stats .channel-card h3{font-size:2rem;margin:8px 0 14px}
+  #stats .channel-card p{font-size:.9rem;color:var(--ink-soft);margin:12px auto;max-width:520px}
+  #stats .tab:focus-visible{outline:3px solid var(--terra);outline-offset:4px}
+  @media(max-width:520px){#stats .pgrid{gap:12px}#stats .pgrid .c{padding:22px 8px}#stats .tabs{gap:7px}#stats .tab{padding:9px 12px;font-size:.88rem}#stats .channel-card{padding:24px}}
+
+  /* media-kit-motion: keep final figures in the layout and accessibility tree. */
+  .mk-count{display:inline-grid;vertical-align:baseline;font-variant-numeric:tabular-nums}
+  .mk-count > span{grid-area:1 / 1;white-space:nowrap}
+  .mk-count .mk-count-final{opacity:0}
+  .mk-count .mk-count-visual{pointer-events:none}
+  .bar .fill.mk-fill-pending{transform:scaleX(0);transform-origin:left center}
+  .bar .fill.mk-fill-running{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.16,1,.3,1)}
+  @media(prefers-reduced-motion:reduce){
+    .mk-count .mk-count-final{opacity:1}
+    .mk-count .mk-count-visual{visibility:hidden}
+    .bar .fill.mk-fill-pending{transform:none;transition:none}
+    .panel.active{animation:none}
+  }
+/* One darker charcoal for all large dark surfaces, Cindy 25 Oct 2026. */
+:root{--surface-dark:#1C1B1A;}
+footer{background:var(--surface-dark);color:#DED4CA;}
+footer a{color:#EAA98D;}
+footer a:hover{color:#FAF7F2;}
+/* Photographic paper, contact shadows and translucent torn tape. */
+.polaroid,.polaroid-mini{
+  background-color:#FCFAF5;
+  background-image:linear-gradient(125deg,rgba(255,255,255,.9),rgba(255,255,255,.64) 55%,rgba(235,230,218,.38)),url('paper.webp');
+  background-size:auto,420px;
+  border:1px solid rgba(117,107,89,.15);
+  border-radius:1px;
+  box-shadow:0 1px 1px rgba(45,39,31,.13),1px 3px 0 -1px #E4DED2,2px 5px 5px -3px rgba(45,39,31,.24),5px 14px 18px -10px rgba(45,39,31,.27),10px 28px 32px -19px rgba(45,39,31,.22),inset 0 1px 0 #FFFFFF;
+}
+.polaroid{padding:14px 14px 46px;}
+.polaroid-mini{padding-bottom:32px;}
+.polaroid::before,.polaroid-mini::before{
+  top:-13px;width:122px;height:34px;z-index:2;
+  transform:translateX(-50%) rotate(-5deg);
+  background-color:rgba(231,190,172,.48);
+  background-image:repeating-linear-gradient(45deg,rgba(255,247,234,.23) 0 7px,rgba(209,157,137,.11) 7px 14px),linear-gradient(0deg,rgba(243,213,196,.12),rgba(255,247,232,.23));
+  border-top:1px solid rgba(255,251,241,.4);
+  border-bottom:1px solid rgba(174,130,106,.12);
+  clip-path:polygon(1% 0,16% 2%,30% 0,47% 2%,65% 0,81% 1%,99% 0,98% 12%,100% 25%,98% 37%,100% 49%,98% 62%,100% 74%,98% 87%,99% 100%,82% 98%,65% 100%,47% 98%,30% 100%,14% 98%,0 100%,2% 87%,0 75%,2% 62%,0 50%,2% 38%,0 25%,2% 12%);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.28),inset 0 -1px 1px rgba(105,75,55,.05);
+  pointer-events:none;
+}
+.polaroid img,.polaroid-mini img{
+  border:1px solid rgba(57,48,37,.13);
+  box-shadow:0 1px 0 rgba(255,255,255,.9),0 0 2px rgba(57,48,37,.08);
+}
+.polaroid .sticker{box-shadow:0 1px 1px rgba(45,39,31,.14),2px 4px 7px -4px rgba(45,39,31,.24);border:1px solid rgba(255,255,255,.2);}
+
+/* ---- polish 29 Oct: numbers first, balanced opportunity, icons, table, packages ---- */
+.hero{padding-bottom:20px;}
+.hero > .statband{grid-column:1 / -1;grid-row:2;margin:6px 0 0;}
+.hero > div:first-child{grid-row:1;grid-column:1;}
+.hero > .photo-wrap{grid-row:1;grid-column:2;}
+.statband{grid-template-columns:repeat(4,1fr);gap:18px;}
+.statband .s{padding:22px 14px;display:flex;flex-direction:column;justify-content:center;}
+.statband .s .n{font-size:clamp(2rem,3.4vw,2.6rem);}
+.statband .s:nth-child(4){transform:rotate(1.2deg);}
+.statband .srcline{grid-column:1 / -1;text-align:center;font-size:.76rem;color:var(--ink-soft);margin-top:4px;line-height:1.5;text-wrap:balance;}
+@media(max-width:760px){
+  .hero > .statband{grid-row:auto;grid-column:auto;order:2;}
+  .hero > div:first-child{order:1;grid-row:auto;grid-column:1;}
+  .hero > .photo-wrap{order:3;margin-top:14px;grid-row:auto;grid-column:1;}
+  .hero > .statband{grid-column:1;width:100%;}
+  .statband{grid-template-columns:1fr 1fr;gap:12px;}
+  .statband .s{aspect-ratio:1 / 1;padding:12px 8px;border-radius:16px;}
+  .statband .s .n{font-size:clamp(1.7rem,8.5vw,2.1rem);}
+  .statband .s .l{font-size:.8rem;margin-top:7px;line-height:1.3;}
+  .statband .s .sub{font-size:.68rem;line-height:1.3;}
+  .statband .s:nth-child(n){transform:rotate(0);}
+  .statband .s:nth-child(odd){transform:rotate(-1deg);}
+  .statband .s:nth-child(even){transform:rotate(1deg);}
+}
+@media(max-width:760px){.hero .photo-wrap{overflow:hidden;padding:20px 0 6px;}.sticker.s1{right:6px;}.sticker.s2{left:6px;}}
+/* opportunity block */
+.opp{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:stretch;gap:36px;}
+.opp h2{text-wrap:balance;}
+.opp p{text-wrap:pretty;}
+.opp .pts{grid-auto-rows:1fr;align-content:stretch;}
+.opp .pt{display:flex;flex-direction:column;justify-content:center;}
+.opp .pt:nth-child(n){transform:none;}
+@media(max-width:760px){.opp{grid-template-columns:1fr;}.opp .pts{grid-auto-rows:auto;}}
+/* audience icons */
+.card h3 .ic{vertical-align:-3px;margin-right:6px;flex:none;}
+/* top content table */
+.tbl .hm,.tbl .v{text-align:right;}
+.tbl th:nth-child(3){text-align:right;}
+.tbl td.dt{white-space:nowrap;}
+.tbl td.v b{font-weight:700;}
+@media(max-width:640px){
+  .tbl{font-size:.86rem;table-layout:fixed;}
+  .tbl .hm{display:none;}
+  .tbl th:first-child{width:auto;}
+  .tbl th:nth-child(2),.tbl td.dt{width:62px;padding-left:4px;padding-right:4px;}
+  .tbl th:nth-child(3),.tbl td.v{width:64px;}
+  .tbl th,.tbl td{padding:11px 10px;}
+  .tbl td.r{overflow-wrap:anywhere;}
+  .tbl td.v b{font-size:.95rem;}
+}
+/* packages: equal heights, aligned price lines */
+.pkgs{align-items:stretch;}
+.pkg{display:flex;flex-direction:column;}
+.pkg:nth-child(odd),.pkg:nth-child(even){transform:none;}
+.pkg:hover{transform:translateY(-4px);}
+.pkg p{flex:1 1 auto;text-wrap:pretty;}
+.pkg .price{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line);}
+/* marquee pauses on hover and keyboard focus */
+.reel-marquee:focus-within .reel-track{animation-play-state:paused;}
+.reel-card:focus-visible{outline:3px solid var(--terra);outline-offset:4px;border-radius:14px;}
+</style>
+<!-- seo:auto -->
+<meta name="description" content="Every partnership is a proper walkthrough. I take a pre-vetted viral concept, do the real technical research into how your product actually works, and...">
+<link rel="canonical" href="https://cindyzhu.com.au/media-kit">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Cindy Zhu · Media Kit">
+<meta property="og:description" content="Every partnership is a proper walkthrough. I take a pre-vetted viral concept, do the real technical research into how your product actually works, and...">
+<meta property="og:url" content="https://cindyzhu.com.au/media-kit">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cindy Zhu · Media Kit">
+<meta name="twitter:description" content="Every partnership is a proper walkthrough. I take a pre-vetted viral concept, do the real technical research into how your product actually works, and...">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Cindy Zhu · Media Kit","description":"Every partnership is a proper walkthrough. I take a pre-vetted viral concept, do the real technical research into how your product actually works, and...","url":"https://cindyzhu.com.au/media-kit","isPartOf":{"@type":"WebSite","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"}}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/chrome.css">
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit" class="active" aria-current="page">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+
+<!-- ============ HERO ============ -->
+<div class="wrap">
+  <section class="hero">
+    <div>
+      <span class="hi">hi, I'm</span>
+      <h1>Cindy <span class="u">Zhu</span></h1>
+      <span class="tagline">AI education · high-intent professionals 25–54</span>
+      <p class="lead">I'm an ex-digital-marketing lead who turned AI into content people act on, not just watch. My audience treats my reels as reference material and follows through: when a reel sends a resource by DM, 85 to 90% of the people who receive it click the link.</p>
+      <div class="socials">
+        <a href="https://instagram.com/cindiezhu" target="_blank">Instagram @cindiezhu</a>
+        <a href="https://instagram.com/cindie.zhu" target="_blank">@cindie.zhu</a>
+        <a href="https://tiktok.com/@cindiezhu" target="_blank">TikTok</a>
+        <a href="mailto:hello@cindyzhu.com.au">hello@cindyzhu.com.au</a>
+      </div>
+    </div>
+    <div class="photo-wrap">
+      <div class="polaroid" id="pola">
+        <img src="cindy.jpg" alt="Cindy Zhu" onerror="this.style.display='none';document.getElementById('pola').classList.add('noimg');document.getElementById('ph').style.display='flex';">
+        <div class="ph" id="ph" style="display:none;">save your photo here as<br>cindy.jpg 📸</div>
+        <div class="cap">it's me!</div>
+        <div class="sticker s1">300K 👥</div>
+        <div class="sticker s2">AI you can use ✨</div>
+      </div>
+    </div>
+    <div class="statband" aria-label="Headline numbers">
+      <div class="s"><div class="n">76.26M</div><div class="l">Content views</div><div class="sub">30 days</div></div>
+      <div class="s"><div class="n">2.61M</div><div class="l">Saves</div><div class="sub">same 30 days</div></div>
+      <div class="s"><div class="n">300K</div><div class="l">Instagram followers</div><div class="sub">+ 110K on my backup @cindie.zhu</div></div>
+      <div class="s"><div class="n">98.3%</div><div class="l">Views from non-followers</div><div class="sub">share of all views</div></div>
+      <p class="srcline">Views, saves and non-followers: Instagram Insights, @cindiezhu, 24 Sep to 23 Oct 2026, may include paid activity. Followers checked 28 Oct 2026.</p>
+    </div>
+  </section>
+</div>
+
+<div class="torn" style="margin-top:48px;"></div>
+
+<!-- ============ THE OPPORTUNITY ============ -->
+<section id="opportunity">
+  <div class="wrap">
+    <div class="opp">
+      <div>
+        <span class="eyebrow">the opportunity</span>
+        <h2>The AI audience most brands can't reach.</h2>
+        <p>Most AI creators reach hobbyists and other builders. My audience is action-oriented: marketers, business owners, and professionals who want AI to make money or save time. 74% of them are 25 to 54, the disposable-income, decision-maker bracket.</p>
+        <p>They don't treat my content as entertainment. They save my reels 1.6× more than they like them, so your message gets revisited, not scrolled past. And because I came up in paid media, I build every piece for conversion, not vanity views.</p>
+      </div>
+      <div class="pts">
+        <div class="pt"><b>Saves &gt; likes</b><span>Reference-material behaviour. Your integration gets bookmarked, not forgotten.</span></div>
+        <div class="pt"><b>85–90% of DM recipients click</b><span>Of everyone who receives the resource DM, 85 to 90% tap through to the link.</span></div>
+        <div class="pt"><b>Built by a marketer</b><span>Real paid-media experience behind every concept and hook.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="torn"></div>
+
+<!-- ============ FEATURED PARTNERSHIPS ============ -->
+<section id="partners">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">case studies</span>
+      <h2>What a partnership actually looks like</h2>
+      <p>Real integrations for AI tools, not a face reading a script. Roughly one in five of my posts is a partnership, so yours lands in a feed my audience still trusts.</p>
+    </div>
+  </div>
+  <div class="reel-marquee">
+    <div class="reel-track">
+      <!-- set 1 -->
+      <a class='reel-card' href='/canva-film' rel='noopener' target='_blank'><div class="phone"><img src="partners/canva.jpg" alt="Canva reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Canva</b><span>UGC brand film, concepted and edited end to end</span><span class="reel-stats">Watch the film &rarr;</span></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DdVCDnlBmCz/" target="_blank" rel="noopener"><div class="phone"><img src="partners/DdVCDnlBmCz.jpg" alt="Higgsfield ChatGPT video reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>Turn yourself into anyone with ChatGPT</span><div class="reel-metrics"><span><b>123.7k</b>views</span><span><b>4.2k</b>likes</span><span><b>5.6k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/Dc_liByp970/" target="_blank" rel="noopener"><div class="phone"><img src="partners/Dc_liByp970.jpg" alt="Higgsfield GPT-6 Astra launch reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>GPT-6 Astra is here: the launch reel</span><div class="reel-metrics"><span><b>1.56M</b>views</span><span><b>55.2k</b>likes</span><span><b>373</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DctQInrgSgA/" target="_blank" rel="noopener"><div class="phone"><img src="partners/DctQInrgSgA.jpg" alt="Higgsfield ChatGPT plugin reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>One product photo into ads, covers and UGC, inside ChatGPT</span><div class="reel-metrics"><span><b>395.6k</b>views</span><span><b>9.4k</b>likes</span><span><b>17.4k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/Dc6XfSgJEET/" target="_blank" rel="noopener"><div class="phone"><img src="partners/Dc6XfSgJEET.jpg" alt="Higgsfield GPT-6 Astra breakdown reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>GPT-6 Astra explained: what the benchmarks actually mean</span><div class="reel-metrics"><span><b>121.8k</b>views</span><span><b>3.6k</b>likes</span><span><b>1.5k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/Dc8fRcSpLXv/" target="_blank" rel="noopener"><div class="phone"><img src="partners/Dc8fRcSpLXv.jpg" alt="Higgsfield ChatGPT codes reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>Four ChatGPT codes that turn one photo into an ad</span><div class="reel-metrics"><span><b>114.8k</b>views</span><span><b>5.4k</b>likes</span><span><b>3.1k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DcfVitVBWKp/" target="_blank" rel="noopener"><div class="phone"><img src="partners/DcfVitVBWKp.jpg" alt="Arcads reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Arcads</b><span>Google's Omni Flash did every cut, inside Arcads</span><div class="reel-metrics"><span><b>249.7k</b>views</span><span><b>7.7k</b>likes</span><span><b>13.2k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/Ddbq-CIlFY1/" target="_blank" rel="noopener"><div class="phone"><img src="partners/Ddbq-CIlFY1.jpg" alt="ChatCut reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>ChatCut</b><span>A reel 80% edited by AI, and the trick that keeps it yours</span><div class="reel-metrics"><span><b>64.5k</b>views</span><span><b>1.7k</b>likes</span><span><b>2.3k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DasLm6opzIO/" target="_blank" rel="noopener"><div class="phone"><img src="partners/DasLm6opzIO.jpg" alt="Google Flow reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Google Flow</b><span>A $5k scroll animation, built with no code</span><div class="reel-metrics"><span><b>1.52M</b>views</span><span><b>48k</b>likes</span><span><b>33.8k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DbaWwnGpxCy/" target="_blank" rel="noopener"><div class="phone"><img src="partners/DbaWwnGpxCy.jpg" alt="Higgsfield headshots reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>20 LinkedIn headshots in 10 minutes, all actually you</span><div class="reel-metrics"><span><b>740.8k</b>views</span><span><b>15k</b>likes</span><span><b>10k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DboeMJfTiAa/" target="_blank" rel="noopener"><div class="phone"><img src="partners/DboeMJfTiAa.jpg" alt="Higgsfield money ideas reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>5 ways to make money with Claude</span><div class="reel-metrics"><span><b>56.1k</b>views</span><span><b>1.1k</b>likes</span><span><b>988</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DaQCNn0pgO_/" target="_blank" rel="noopener"><div class="phone"><img src="partners/DaQCNn0pgO_.jpg" alt="Reve reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Reve</b><span>AI posters that don't look AI-made</span><div class="reel-metrics"><span><b>168k</b>views</span><span><b>6.6k</b>likes</span><span><b>3.7k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DbtRE5JBcm6/" target="_blank" rel="noopener"><div class="phone"><img src="partners/DbtRE5JBcm6.jpg" alt="Higgsfield headshot prompts reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>10 prompts for LinkedIn headshots</span><div class="reel-metrics"><span><b>260.6k</b>views</span><span><b>5.7k</b>likes</span><span><b>5.3k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DbtEb3CJbsZ/" target="_blank" rel="noopener"><div class="phone"><img src="partners/DbtEb3CJbsZ.jpg" alt="Higgsfield portfolios reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>4 creative portfolios to build with Claude</span><div class="reel-metrics"><span><b>496.3k</b>views</span><span><b>13.5k</b>likes</span><span><b>4.5k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DZeMI6upTy3/" target="_blank" rel="noopener"><div class="phone"><img src="partners/DZeMI6upTy3.jpg" alt="Emergent reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Emergent</b><span>A $10k website, no agency: Claude plans, Emergent builds</span><div class="reel-metrics"><span><b>133k</b>views</span><span><b>4.5k</b>likes</span><span><b>3k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DaLUXu1p8Gh/" target="_blank" rel="noopener"><div class="phone"><img src="partners/DaLUXu1p8Gh.jpg" alt="Higgsfield reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>Overnight UGC-style product ads: Claude directs, Higgsfield produces</span><div class="reel-metrics"><span><b>120k</b>views</span><span><b>3.1k</b>likes</span><span><b>8.3k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DbleeXXJTk4/" target="_blank" rel="noopener"><div class="phone"><img src="partners/DbleeXXJTk4.jpg" alt="Higgsfield websites reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>4 websites to build with Claude</span><div class="reel-metrics"><span><b>50.6k</b>views</span><span><b>848</b>likes</span><span><b>1.3k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/Da2IoEKJh3D/" target="_blank" rel="noopener"><div class="phone"><img src="partners/Da2IoEKJh3D.jpg" alt="Fish Audio reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Fish Audio</b><span>Faceless YouTube channels with a real human voice</span><div class="reel-metrics"><span><b>146k</b>views</span><span><b>4.3k</b>likes</span><span><b>5.5k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DbB9RpQTHWM/" target="_blank" rel="noopener"><div class="phone"><img src="partners/DbB9RpQTHWM.jpg" alt="Higgsfield anime reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>A cinematic anime short: Claude directs, Higgsfield animates</span><div class="reel-metrics"><span><b>130.6k</b>views</span><span><b>4.9k</b>likes</span><span><b>4.9k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/Da-lLShJrJN/" target="_blank" rel="noopener"><div class="phone"><img src="partners/Da-lLShJrJN.jpg" alt="Arcads reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Arcads</b><span>A full batch of UGC ad variants from a few prompts in Claude</span><div class="reel-metrics"><span><b>139.3k</b>views</span><span><b>3.5k</b>likes</span><span><b>3.9k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DZ67stBpIOf/" target="_blank" rel="noopener"><div class="phone"><img src="partners/DZ67stBpIOf.jpg" alt="Perspective reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Perspective</b><span>Landing pages and funnels behind your ads, from a prompt</span><div class="reel-metrics"><span><b>93k</b>views</span><span><b>1.4k</b>likes</span><span><b>1.3k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DbEHuhCJFpL/" target="_blank" rel="noopener"><div class="phone"><img src="partners/DbEHuhCJFpL.jpg" alt="Higgsfield credits promo reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>Higgsfield's 24-hour free-credits drop, driven through DMs</span><div class="reel-metrics"><span><b>120.7k</b>views</span><span><b>3.2k</b>likes</span><span><b>2.7k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DaVgGMIJnIG/" target="_blank" rel="noopener"><div class="phone"><img src="partners/DaVgGMIJnIG.jpg" alt="Blink reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Blink</b><span>No-code founders shipping real software</span><div class="reel-metrics"><span><b>81k</b>views</span><span><b>2.1k</b>likes</span><span><b>1.6k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DZo9Q7lhtZ5/" target="_blank" rel="noopener"><div class="phone"><img src="partners/DZo9Q7lhtZ5.jpg" alt="Okara reel" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Okara</b><span>An AI CMO dashboard for your whole marketing</span><div class="reel-metrics"><span><b>59k</b>views</span><span><b>1.5k</b>likes</span><span><b>1.6k</b>comments</span></div></div></a>
+      <a aria-hidden='true' class='reel-card' href='/canva-film' rel='noopener' tabindex='-1' target='_blank'><div class="phone"><img src="partners/canva.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Canva</b><span>UGC brand film, concepted and edited end to end</span><span class="reel-stats">Watch the film &rarr;</span></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DdVCDnlBmCz/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/DdVCDnlBmCz.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>Turn yourself into anyone with ChatGPT</span><div class="reel-metrics"><span><b>123.7k</b>views</span><span><b>4.2k</b>likes</span><span><b>5.6k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/Dc_liByp970/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/Dc_liByp970.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>GPT-6 Astra is here: the launch reel</span><div class="reel-metrics"><span><b>1.56M</b>views</span><span><b>55.2k</b>likes</span><span><b>373</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DctQInrgSgA/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/DctQInrgSgA.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>One product photo into ads, covers and UGC, inside ChatGPT</span><div class="reel-metrics"><span><b>395.6k</b>views</span><span><b>9.4k</b>likes</span><span><b>17.4k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/Dc6XfSgJEET/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/Dc6XfSgJEET.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>GPT-6 Astra explained: what the benchmarks actually mean</span><div class="reel-metrics"><span><b>121.8k</b>views</span><span><b>3.6k</b>likes</span><span><b>1.5k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/Dc8fRcSpLXv/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/Dc8fRcSpLXv.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>Four ChatGPT codes that turn one photo into an ad</span><div class="reel-metrics"><span><b>114.8k</b>views</span><span><b>5.4k</b>likes</span><span><b>3.1k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DcfVitVBWKp/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/DcfVitVBWKp.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Arcads</b><span>Google's Omni Flash did every cut, inside Arcads</span><div class="reel-metrics"><span><b>249.7k</b>views</span><span><b>7.7k</b>likes</span><span><b>13.2k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/Ddbq-CIlFY1/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/Ddbq-CIlFY1.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>ChatCut</b><span>A reel 80% edited by AI, and the trick that keeps it yours</span><div class="reel-metrics"><span><b>64.5k</b>views</span><span><b>1.7k</b>likes</span><span><b>2.3k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DasLm6opzIO/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/DasLm6opzIO.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Google Flow</b><span>A $5k scroll animation, built with no code</span><div class="reel-metrics"><span><b>1.52M</b>views</span><span><b>48k</b>likes</span><span><b>33.8k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DbaWwnGpxCy/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/DbaWwnGpxCy.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>20 LinkedIn headshots in 10 minutes, all actually you</span><div class="reel-metrics"><span><b>740.8k</b>views</span><span><b>15k</b>likes</span><span><b>10k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DboeMJfTiAa/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/DboeMJfTiAa.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>5 ways to make money with Claude</span><div class="reel-metrics"><span><b>56.1k</b>views</span><span><b>1.1k</b>likes</span><span><b>988</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DaQCNn0pgO_/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/DaQCNn0pgO_.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Reve</b><span>AI posters that don't look AI-made</span><div class="reel-metrics"><span><b>168k</b>views</span><span><b>6.6k</b>likes</span><span><b>3.7k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DbtRE5JBcm6/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/DbtRE5JBcm6.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>10 prompts for LinkedIn headshots</span><div class="reel-metrics"><span><b>260.6k</b>views</span><span><b>5.7k</b>likes</span><span><b>5.3k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DbtEb3CJbsZ/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/DbtEb3CJbsZ.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>4 creative portfolios to build with Claude</span><div class="reel-metrics"><span><b>496.3k</b>views</span><span><b>13.5k</b>likes</span><span><b>4.5k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DZeMI6upTy3/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/DZeMI6upTy3.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Emergent</b><span>A $10k website, no agency: Claude plans, Emergent builds</span><div class="reel-metrics"><span><b>133k</b>views</span><span><b>4.5k</b>likes</span><span><b>3k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DaLUXu1p8Gh/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/DaLUXu1p8Gh.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>Overnight UGC-style product ads: Claude directs, Higgsfield produces</span><div class="reel-metrics"><span><b>120k</b>views</span><span><b>3.1k</b>likes</span><span><b>8.3k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DbleeXXJTk4/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/DbleeXXJTk4.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>4 websites to build with Claude</span><div class="reel-metrics"><span><b>50.6k</b>views</span><span><b>848</b>likes</span><span><b>1.3k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/Da2IoEKJh3D/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/Da2IoEKJh3D.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Fish Audio</b><span>Faceless YouTube channels with a real human voice</span><div class="reel-metrics"><span><b>146k</b>views</span><span><b>4.3k</b>likes</span><span><b>5.5k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DbB9RpQTHWM/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/DbB9RpQTHWM.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>A cinematic anime short: Claude directs, Higgsfield animates</span><div class="reel-metrics"><span><b>130.6k</b>views</span><span><b>4.9k</b>likes</span><span><b>4.9k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/Da-lLShJrJN/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/Da-lLShJrJN.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Arcads</b><span>A full batch of UGC ad variants from a few prompts in Claude</span><div class="reel-metrics"><span><b>139.3k</b>views</span><span><b>3.5k</b>likes</span><span><b>3.9k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DZ67stBpIOf/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/DZ67stBpIOf.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Perspective</b><span>Landing pages and funnels behind your ads, from a prompt</span><div class="reel-metrics"><span><b>93k</b>views</span><span><b>1.4k</b>likes</span><span><b>1.3k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DbEHuhCJFpL/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/DbEHuhCJFpL.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Higgsfield</b><span>Higgsfield's 24-hour free-credits drop, driven through DMs</span><div class="reel-metrics"><span><b>120.7k</b>views</span><span><b>3.2k</b>likes</span><span><b>2.7k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DaVgGMIJnIG/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/DaVgGMIJnIG.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Blink</b><span>No-code founders shipping real software</span><div class="reel-metrics"><span><b>81k</b>views</span><span><b>2.1k</b>likes</span><span><b>1.6k</b>comments</span></div></div></a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DZo9Q7lhtZ5/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="phone"><img src="partners/DZo9Q7lhtZ5.jpg" alt="" loading="lazy"><span class="play">&#9654;</span></div><div class="reel-meta"><b>Okara</b><span>An AI CMO dashboard for your whole marketing</span><div class="reel-metrics"><span><b>59k</b>views</span><span><b>1.5k</b>likes</span><span><b>1.6k</b>comments</span></div></div></a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="partner-intro">
+      <p>Every partnership is a proper walkthrough. I take a pre-vetted viral concept, do the real technical research into how your product actually works, and explain it warmly enough that a non-technical buyer gets it, wrapped in the overlay-heavy scrapbook style my audience saves and shares. A warm, genuinely technical creator doing deep AI walkthroughs stands out hard in a male-dominated, AI-generated feed, and that contrast is the reach.</p>
+    </div>
+    <div class="partner-pts">
+      <div class="pt"><b>Pre-vetted concepts</b><span>Your integration rides a format already proven to travel, not a guess.</span></div>
+      <div class="pt"><b>Genuinely technical</b><span>I learn your product and show the real workflow, so it lands as a credible demo.</span></div>
+      <div class="pt"><b>Cuts through the noise</b><span>Warm, human delivery in a sea of AI sameness. That is what makes people stop.</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="torn"></div>
+
+<!-- ============ PLATFORM STATS (TABS) ============ -->
+<section id="stats">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">The receipts</span><h2>Made to be saved. Built to be shared.</h2><p>Instagram @cindiezhu · 24 Sep–23 Oct 2026 · 30 days, UTC</p></div>
+    <div class="tabs" role="tablist" aria-label="Platform statistics">
+      <button class="tab active" data-p="ig" role="tab" aria-controls="ig" aria-selected="true">Instagram @cindiezhu</button>
+      <button class="tab" data-p="bk" role="tab" aria-controls="bk" aria-selected="false">Backup @cindie.zhu</button>
+      <button class="tab" data-p="tt" role="tab" aria-controls="tt" aria-selected="false">TikTok</button>
+      <button class="tab" data-p="combined" role="tab" aria-controls="combined" aria-selected="false">Across my channels</button>
+    </div>
+    <div class="panel active" id="ig" role="tabpanel"><p class="stats-stamp">Instagram Insights · 24 Sep to 23 Oct 2026</p><div class="pgrid"><div class="c"><div class="n" >300K</div><div class="l">Followers</div><div class="metric-detail">Checked 28 Oct 2026</div></div>
+<div class="c"><div class="n" title="76,259,106" >76.26M</div><div class="l">Content views</div><div class="metric-detail">30 days</div></div>
+<div class="c"><div class="n" title="38,262,217" >38.26M</div><div class="l">Accounts reached</div><div class="metric-detail">Estimated unique accounts</div></div>
+<div class="c"><div class="n" title="8,168,789" >8.17M</div><div class="l">Content interactions</div><div class="metric-detail">30 days</div></div>
+<div class="c"><div class="n" title="2,614,401" >2.61M</div><div class="l">Saves</div><div class="metric-detail">30 days</div></div>
+<div class="c"><div class="n" title="1,242,793" >1.24M</div><div class="l">Shares</div><div class="metric-detail">30 days</div></div>
+<div class="c"><div class="n" title="4,422,671" >4.42M</div><div class="l">Accounts engaged</div><div class="metric-detail">Estimated unique accounts</div></div>
+<div class="c"><div class="n">98.3%</div><div class="l">Views from non-followers</div><div class="metric-detail">Share of all content views</div></div></div>
+    </div>
+    <div class="panel" id="bk" role="tabpanel"><p class="stats-stamp">Followers checked 28 Oct 2026</p><div class="channel-card"><span class="eyebrow">Another place to connect</span><h3>110K followers</h3><p>@cindie.zhu</p><p>Selected content also appears on my backup Instagram account, separate from the @cindiezhu figures above.</p></div></div>
+    <div class="panel" id="tt" role="tabpanel"><p class="stats-stamp">Historical follower snapshot · 8 Oct 2026</p><div class="channel-card"><span class="eyebrow">On TikTok, too</span><h3>4k followers</h3><p>@cindiezhu</p><p>AI walkthroughs, adapted for TikTok. This is an older follower snapshot, not a current performance total.</p></div></div>
+    <div class="panel" id="combined" role="tabpanel"><div class="channel-card"><span class="eyebrow">One idea, different platforms</span><h3>Instagram + TikTok</h3><p>Content adapted for each channel.</p><p>Platform audiences can overlap, so follower counts are not presented as unique people across the network.</p></div></div>
+  </div>
+</section>
+
+<div class="torn"></div>
+
+<!-- ============ AUDIENCE ============ -->
+<section id="audience">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">who they are</span>
+      <h2>Audience demographics</h2>
+      <p>Historical snapshot · 8 Oct 2026</p>
+    </div>
+    <div class="cols3">
+      <div class="card tape">
+        <h3><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D9607A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg> Age</h3>
+        <div class="bar"><div class="top"><span>25–34</span><b>38.0%</b></div><div class="track"><div class="fill" style="width:38.0%"></div></div></div>
+        <div class="bar"><div class="top"><span>35–44</span><b>23.9%</b></div><div class="track"><div class="fill" style="width:23.9%"></div></div></div>
+        <div class="bar"><div class="top"><span>18–24</span><b>17.4%</b></div><div class="track"><div class="fill" style="width:17.4%"></div></div></div>
+        <div class="bar"><div class="top"><span>45–54</span><b>12.5%</b></div><div class="track"><div class="fill" style="width:12.5%"></div></div></div>
+      </div>
+      <div class="card tape sage">
+        <h3><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#E0698F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg> Gender</h3>
+        <div class="bar"><div class="top"><span>Men</span><b>68.6%</b></div><div class="track"><div class="fill" style="width:68.6%"></div></div></div>
+        <div class="bar"><div class="top"><span>Women</span><b>31.4%</b></div><div class="track"><div class="fill" style="width:31.4%"></div></div></div>
+        <h3 style="margin-top:22px;"><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D9863F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="7"/><path d="M12 9.5V13l2.5 1.5M5 4.5 3 6.5M19 4.5l2 2"/></svg> Best times</h3>
+        <p style="font-size:.92rem;color:var(--ink-soft);">Evenings, 6pm to 12am local time.</p>
+      </div>
+      <div class="card tape rose">
+        <h3><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#4F8FB5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5S14.5 17.900 12 20.500C9.500 17.900 8.400 15.100 8.400 12S9.500 6.100 12 3.500z"/></svg> Top markets</h3>
+        <div class="row"><span>🇺🇸 United States</span><b>19.4%</b></div>
+        <div class="row"><span>🇦🇺 Australia</span><b>10.6%</b></div>
+        <div class="row"><span>🇮🇳 India</span><b>10.1%</b></div>
+        <div class="row"><span>🇲🇾 Malaysia</span><b>5.2%</b></div>
+        <div class="row"><span>🇸🇬 Singapore</span><b>4.7%</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOP CONTENT ============ -->
+<section id="top">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">proof it works</span>
+      <h2>Top performing content</h2>
+      <p>Last 90 days · as of 8 Oct 2026</p>
+    </div>
+    <div class="clip">
+      <table class="tbl">
+        <thead><tr><th>Reel</th><th>Date</th><th>Views</th><th class="hm">Likes</th><th class="hm">Comments</th></tr></thead>
+        <tbody>
+          <tr><td class="r"><b>100 ChatGPT visual codes</b></td><td class="dt">1 Oct</td><td class="v"><b>10.2M</b></td><td class="hm">304.6K</td><td class="hm">7.5K</td></tr>
+          <tr><td class="r">The illustration app</td><td class="dt">21 Sep</td><td class="v"><b>2.74M</b></td><td class="hm">224.1K</td><td class="hm">11.1K</td></tr>
+          <tr><td class="r">Build your own Jarvis</td><td class="dt">15 Jul</td><td class="v"><b>1.57M</b></td><td class="hm">58.4K</td><td class="hm">31.1K</td></tr>
+          <tr><td class="r">GPT-6 Astra launch <span style="opacity:.6">(paid)</span></td><td class="dt">7 Sep</td><td class="v"><b>1.56M</b></td><td class="hm">55.2K</td><td class="hm">373</td></tr>
+          <tr><td class="r">Scroll animations, zero code</td><td class="dt">12 Jul</td><td class="v"><b>1.52M</b></td><td class="hm">48.0K</td><td class="hm">33.8K</td></tr>
+          <tr><td class="r">4 GitHub repos worth using</td><td class="dt">2 Sep</td><td class="v">824K</td><td class="hm">27.3K</td><td class="hm">14.3K</td></tr>
+          <tr><td class="r">20 LinkedIn headshots in 10 minutes <span style="opacity:.6">(paid)</span></td><td class="dt">30 Jul</td><td class="v">741K</td><td class="hm">15.0K</td><td class="hm">10.0K</td></tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="torn"></div>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">about</span><h2>The person behind the page</h2></div>
+    <div class="about">
+      <div class="photo-wrap">
+        <div class="polaroid" id="pola2" style="transform:rotate(-3deg);max-width:240px;">
+          <img src="cindy2.jpg" alt="Cindy Zhu" onerror="this.onerror=null;this.src='cindy.jpg';">
+          <div class="ph" id="ph2" style="display:none;">cindy2.jpg</div>
+          <div class="cap">hi again 👋</div>
+        </div>
+      </div>
+      <div>
+        <p>I make content that turns AI from a buzzword into a tool people actually use. Before this, I was a digital marketing lead running paid media for brands, so I build every piece the way I'd build a campaign: for conversion, not just reach.</p>
+        <p>My best-performing content is always the educational walkthrough, like turning Claude into your interior designer or your content engine. People save it, send it, and come back to it. That's the audience you want your product in front of.</p>
+        <div class="pills">
+          <span class="pill">Ex digital marketing lead</span>
+          <span class="pill">AI educator</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK WITH ME ============ -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">let's collab</span>
+      <h2>Work with me</h2>
+      <p>When you work with me, you work with me. No agency, no manager, fully hands-on.</p>
+    </div>
+    <div class="pkgs">
+      <div class="pkg">
+        <h3>Dedicated brand reel</h3>
+        <p>A full reel concept built around your product or tool, scripted and filmed by me.</p>
+        <div class="price">rates on request</div>
+      </div>
+      <div class="pkg feat">
+        <h3>Full package</h3>
+        <p>Reel + Stories + DM automation (85–90% of recipients click through) to your site + resource guide with embedded links, cross-posted across platforms.</p>
+        <div class="price">rates on request</div>
+      </div>
+      <div class="pkg">
+        <h3>Carousel feature</h3>
+        <p>An 8 to 10 slide educational carousel featuring your brand in a relevant, native way.</p>
+        <div class="price">rates on request</div>
+      </div>
+      <div class="pkg">
+        <h3>3-reel campaign</h3>
+        <p>Three integrated reels over 30 days, plus everything in the full package.</p>
+        <div class="price">rates on request</div>
+      </div>
+    </div>
+    <div class="note">Best fit for: AI tools, no-code and automation platforms, productivity apps, online education, and creator-economy products targeting AI-curious professionals. Happy to tailor a package around your goals, timeline, and budget. Usage rights, paid amplification, and category exclusivity available as add-ons.</div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact tape">
+      <span class="big">let's make something</span>
+      <h2>Ready when you are.</h2>
+      <p>Best for collabs, sponsorships, affiliate partnerships, and ambassador programs.</p>
+      <a href="mailto:hello@cindyzhu.com.au" class="btn">hello@cindyzhu.com.au</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+
+<script>
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.addEventListener('click', function(){
+      document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active');x.setAttribute('aria-selected','false');});
+      document.querySelectorAll('.panel').forEach(function(x){x.classList.remove('active');});
+      t.classList.add('active');t.setAttribute('aria-selected','true');
+      document.getElementById(t.dataset.p).classList.add('active');
+    });
+  });
+</script>
+
+<script id="media-kit-motion">
+(function(){
+  'use strict';
+  var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (motion.matches || !('IntersectionObserver' in window)) return;
+  var records = new Map();
+  var counts = [];
+  var fills = [];
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (!entry.isIntersecting) return;
+      var run = records.get(entry.target);
+      observer.unobserve(entry.target);
+      if (run) run();
+    });
+  }, {threshold:0.25});
+
+  document.querySelectorAll('.statband .n, .miniband b, #stats .pgrid .n, #stats .channel-card h3, #audience .bar .top b, #audience .row b').forEach(function(el){
+    var final = el.textContent.trim();
+    var parts = final.match(/^(\d[\d,]*(?:\.\d+)?)(.*)$/);
+    if (!parts) return;
+    var target = Number(parts[1].replace(/,/g,''));
+    var decimals = (parts[1].split('.')[1] || '').length;
+    var grouped = parts[1].indexOf(',') !== -1;
+    var suffix = parts[2];
+    var stable = document.createElement('span');
+    stable.className = 'mk-count-final';
+    stable.textContent = final;
+    var visual = document.createElement('span');
+    visual.className = 'mk-count-visual';
+    visual.setAttribute('aria-hidden','true');
+    visual.textContent = (0).toFixed(decimals) + suffix;
+    el.replaceChildren(stable,visual);
+    el.classList.add('mk-count');
+    counts.push({el:el,final:final});
+    records.set(el,function(){
+      var start = performance.now();
+      function tick(now){
+        var progress = motion.matches ? 1 : Math.min((now-start)/1100,1);
+        var value = target * (1-Math.pow(1-progress,3));
+        visual.textContent = progress === 1 ? final :
+          (grouped ? value.toLocaleString('en-US',{minimumFractionDigits:decimals,maximumFractionDigits:decimals}) : value.toFixed(decimals)) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+        else el.dataset.countComplete = 'true';
+      }
+      requestAnimationFrame(tick);
+    });
+    observer.observe(el);
+  });
+  document.querySelectorAll('#audience .bar .fill').forEach(function(fill){
+    fill.classList.add('mk-fill-pending');
+    fills.push(fill);
+    var track = fill.parentElement;
+    records.set(track,function(){fill.classList.add('mk-fill-running');});
+    observer.observe(track);
+  });
+  motion.addEventListener('change',function(event){
+    if (!event.matches) return;
+    observer.disconnect();
+    counts.forEach(function(item){
+      item.el.textContent = item.final;
+      item.el.classList.remove('mk-count');
+    });
+    fills.forEach(function(fill){fill.classList.remove('mk-fill-pending','mk-fill-running');});
+  });
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site-reveals.js" data-site-reveals defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

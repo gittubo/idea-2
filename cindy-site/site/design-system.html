@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Design system · Cindy Zhu</title>
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  /* page-only layout for this reference sheet */
+  .ds h2{font-size:var(--t-h2);margin-bottom:var(--s2);}
+  .ds .intro{color:var(--ink-2);max-width:40em;margin-bottom:var(--s6);}
+  .ds section{padding-block:var(--s8);border-top:2px dashed var(--line);}
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:var(--s4);}
+  .sw{background:var(--card);border-radius:var(--r);box-shadow:var(--lift-sm);overflow:hidden;font-size:.86rem;}
+  .sw i{display:block;height:84px;border-bottom:1px solid var(--line);}
+  .sw div{padding:var(--s3);}
+  .sw b{display:block;font-family:var(--display);}
+  .sw code{font-family:var(--mono);color:var(--ink-3);font-size:.8rem;}
+  .typerow{display:grid;grid-template-columns:140px minmax(0,1fr);gap:var(--s4);align-items:baseline;padding:var(--s4) 0;border-bottom:1px solid var(--line);}
+  .typerow code{font-family:var(--mono);font-size:.8rem;color:var(--ink-3);}
+  .space{display:flex;align-items:flex-end;gap:var(--s4);flex-wrap:wrap;}
+  .space div{background:var(--accent);border-radius:3px;}
+  .space span{display:block;font:.78rem var(--mono);color:var(--ink-3);margin-top:6px;}
+  .demo{display:flex;flex-wrap:wrap;gap:var(--s6);align-items:center;padding:var(--s6) 0;}
+  .demo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:var(--s6);align-items:start;}
+  .cap-note{font-size:.85rem;color:var(--ink-3);margin-top:var(--s3);}
+  @media(max-width:600px){.typerow{grid-template-columns:1fr;gap:4px;}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main"><a href="/" >Back to site</a></nav>
+  </div>
+</header>
+
+<main class="wrap ds">
+  <section style="border-top:0">
+    <span class="sticker sky">design system</span>
+    <h1 style="font-size:var(--t-h1);margin:var(--s5) 0 var(--s4)">Clean <span class="scribble">scrapbook</span></h1>
+    <p class="intro">Paper, tape and stickers, one bold ink colour, and plenty of white space so it stays easy to read. Every value below is a token at the top of <code>styles.css</code>, so a colour or size changes everywhere in one edit, including all the guides.</p>
+  </section>
+
+  <section>
+    <h2>Colour</h2>
+    <p class="intro">One bold colour, cobalt, does all the talking: buttons, links, scribbles, numbers. The tints are only for paper, tape and stickers, never for text.</p>
+    <div class="swatches">
+      <div class="sw"><i style="background:var(--accent)"></i><div><b>Cobalt</b><code>--accent #2E44E6</code></div></div>
+      <div class="sw"><i style="background:var(--ink)"></i><div><b>Ink</b><code>--ink #1C1A2E</code></div></div>
+      <div class="sw"><i style="background:var(--ink-2)"></i><div><b>Ink soft</b><code>--ink-2 #47445C</code></div></div>
+      <div class="sw"><i style="background:var(--paper)"></i><div><b>Paper</b><code>--paper #FFFDF8</code></div></div>
+      <div class="sw"><i style="background:var(--paper-2)"></i><div><b>Paper 2</b><code>--paper-2 #F5F2EA</code></div></div>
+      <div class="sw"><i style="background:var(--butter)"></i><div><b>Butter</b><code>--butter #FFE58A</code></div></div>
+      <div class="sw"><i style="background:var(--blush)"></i><div><b>Blush</b><code>--blush #FFC8D5</code></div></div>
+      <div class="sw"><i style="background:var(--mint)"></i><div><b>Mint</b><code>--mint #BDE8CE</code></div></div>
+      <div class="sw"><i style="background:var(--sky)"></i><div><b>Sky</b><code>--sky #C8D6FF</code></div></div>
+      <div class="sw"><i style="background:var(--lilac)"></i><div><b>Lilac</b><code>--lilac #E0D3FF</code></div></div>
+    </div>
+    <p class="cap-note" id="contrast">Contrast (WCAG AA needs 4.5:1): cobalt on paper 6.7:1, white on cobalt 6.8:1, ink-2 on paper 9.2:1, ink-3 on paper 5.1:1, ink on butter 13.6:1.</p>
+  </section>
+
+  <section>
+    <h2>Type</h2>
+    <p class="intro">Three free fonts, self-hosted, all SIL Open Font License (fine for commercial use, licences in <code>/fonts</code>).</p>
+    <div class="typerow"><code>Bricolage Grotesque<br>--t-hero</code><span style="font:780 var(--t-hero)/1 var(--display);letter-spacing:-.012em">Headings</span></div>
+    <div class="typerow"><code>--t-h2</code><span style="font:750 var(--t-h2)/1.1 var(--display)">Section title</span></div>
+    <div class="typerow"><code>--t-h3</code><span style="font:750 var(--t-h3)/1.2 var(--display)">Card title</span></div>
+    <div class="typerow"><code>Figtree<br>--t-lead</code><span class="lead">Lead text for the first paragraph under a heading.</span></div>
+    <div class="typerow"><code>Figtree<br>--t-body</code><span>Body text, 17px with a 1.65 line height, so long guides stay comfortable on a phone.</span></div>
+    <div class="typerow"><code>Shantell Sans<br>.eyebrow</code><span class="eyebrow" style="margin:0">handwritten notes, used sparingly</span></div>
+  </section>
+
+  <section>
+    <h2>Spacing</h2>
+    <p class="intro">A 4px base. Sections breathe with <code>--section</code>, which shrinks on phones.</p>
+    <div class="space">
+      <div><div style="width:4px;height:4px"></div><span>s1</span></div>
+      <div><div style="width:8px;height:8px"></div><span>s2</span></div>
+      <div><div style="width:12px;height:12px"></div><span>s3</span></div>
+      <div><div style="width:16px;height:16px"></div><span>s4</span></div>
+      <div><div style="width:24px;height:24px"></div><span>s5</span></div>
+      <div><div style="width:32px;height:32px"></div><span>s6</span></div>
+      <div><div style="width:48px;height:48px"></div><span>s7</span></div>
+      <div><div style="width:64px;height:64px"></div><span>s8</span></div>
+      <div><div style="width:96px;height:96px"></div><span>s9</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Buttons</h2>
+    <div class="demo">
+      <a class="btn" href="#">Primary <code style="opacity:.7;font-size:.75rem">.btn</code></a>
+      <a class="btn ghost" href="#">Secondary <code style="opacity:.6;font-size:.75rem">.btn.ghost</code></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Stickers, tape and marks</h2>
+    <div class="demo">
+      <span class="sticker">.sticker</span>
+      <span class="sticker blush" style="--tilt:4deg">.sticker.blush</span>
+      <span class="sticker mint" style="--tilt:-2deg">.sticker.mint</span>
+      <span class="sticker sky" style="--tilt:6deg">.sticker.sky</span>
+      <span class="sticker ink" style="--tilt:-3deg">.sticker.ink</span>
+      <span class="label">.label</span>
+      <span class="stamp">01</span>
+    </div>
+    <div class="demo" style="font:750 1.6rem var(--display)">
+      <span class="scribble">.scribble</span>
+      <span class="circled">.circled</span>
+      <span class="hl">.hl highlighter</span>
+    </div>
+    <p class="arrow-note"><span>.arrow-note for little asides</span></p>
+    <hr class="squiggle">
+    <p class="cap-note" style="text-align:center">hr.squiggle divider</p>
+  </section>
+
+  <section>
+    <h2>Paper</h2>
+    <div class="demo-grid">
+      <div class="polaroid tape butter" style="max-width:240px"><img src="/cindy.jpg" alt="Cindy Zhu"><div class="cap">.polaroid.tape</div></div>
+      <div class="sheet ruled"><svg class="paperclip" viewBox="0 0 26 64" aria-hidden="true"><path d="M8 20v28a5 5 0 0 0 10 0V12a8 8 0 0 0-16 0v38a11 11 0 0 0 22 0V22"/></svg><h3 style="margin-bottom:8px">.sheet.ruled</h3><p class="muted" style="line-height:32px">Notebook paper for longer personal notes.</p></div>
+      <div class="note"><h3 style="margin-bottom:8px">.note</h3><p>A sticky note for tips and asides.</p></div>
+      <div class="ticket" style="padding:var(--s5)"><h3>.ticket</h3><p class="muted">The waitlist card, punched like a ticket stub.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Guide pieces</h2>
+    <p class="intro">These style the class names the guides already use, so all 500+ guides pick them up with no HTML changes.</p>
+    <div style="max-width:var(--read)">
+      <div class="gtags"><span class="gtag topic">.gtag.topic</span><span class="gtag tool">.gtag.tool</span></div>
+      <div class="gcallout intro">.gcallout.intro: the "Hey, it's Cindy" note.</div>
+      <div class="gcallout orange">.gcallout.orange: the waitlist nudge.</div>
+      <span class="kicker">.kicker</span>
+      <div class="cardgrid"><div class="minicard"><b>.minicard</b> Index cards in a grid.</div><div class="minicard"><b>.minicard</b> Colour bands rotate on their own.</div></div>
+      <div class="tip">.tip</div>
+      <div class="tip calm">.tip.calm</div>
+      <div class="tip warn">.tip.warn</div>
+      <ol class="steps"><li><strong class="st">ol.steps .st</strong> Numbered steps with stamp numbers.</li><li><strong class="st">Second step</strong> Counters are automatic.</li></ol>
+      <div class="promptwrap"><span class="promptlabel">.promptwrap</span><pre><code>Prompt text keeps its line breaks, wraps on phones, and gets a Copy button from guide-kit.js.</code></pre></div>
+    </div>
+  </section>
+</main>
+<script src="/guide-kit.js" defer></script>
+</body>
+</html>

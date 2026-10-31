@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI System Club · the waitlist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ---- waitlist page extras (scoped) ---- */
+.wlform{display:flex;gap:10px;flex-wrap:wrap;max-width:480px;margin:6px 0 10px;}
+.wlform input{flex:1;min-width:200px;font-family:var(--sans);font-size:.98rem;padding:13px 16px;border:1.5px solid var(--line);border-radius:30px;background:#fff;color:var(--ink);}
+.wlform input:focus{outline:none;border-color:var(--coral);}
+.wlform button{border:none;cursor:pointer;}
+.wlnote{font-family:var(--print);color:var(--ink-soft);font-size:.86rem;}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step;}
+.steps .st{background:var(--card);border-radius:16px;padding:22px;box-shadow:0 8px 22px rgba(51,46,41,.06);position:relative;}
+.steps .st .num{font-family:var(--hand);font-size:2.2rem;color:var(--coral);line-height:1;}
+.steps .st h4{font-family:var(--serif);font-size:1.05rem;margin:4px 0 6px;}
+.steps .st p{font-size:.88rem;color:var(--ink-soft);}
+.bonuslist{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.bonus{display:flex;align-items:flex-start;gap:14px;background:var(--card);border-radius:14px;padding:16px 20px;box-shadow:0 6px 16px rgba(51,46,41,.05);}
+.bonus .be{font-size:1.4rem;}
+.bonus b{font-family:var(--serif);color:var(--ink);}
+.bonus p{font-size:.9rem;color:var(--ink-soft);margin-top:2px;}
+.qualbox{background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 8px 22px rgba(51,46,41,.06);}
+.qualbox h3{font-size:1.25rem;margin-bottom:14px;}
+.quallist{list-style:none;}
+.quallist li{font-size:.95rem;color:var(--ink-soft);margin-bottom:10px;padding-left:28px;position:relative;}
+.quallist li::before{position:absolute;left:0;top:0;font-size:1rem;}
+.quallist.yes li::before{content:'✅';}
+.quallist.no li::before{content:'🙅‍♀️';}
+.pricecard{background-color:#F3EADB;background-image:url("paper.webp");background-blend-mode:multiply;background-size:480px;border-radius:24px;padding:40px 34px;text-align:center;max-width:620px;margin:0 auto;box-shadow:0 9px 18px -8px rgba(51,46,41,.22),0 2px 5px rgba(51,46,41,.12);}
+.pricecard .tag{font-family:var(--hand);color:var(--terra);font-size:1.8rem;transform:rotate(-2deg);display:inline-block;}
+.pricecard h3{font-size:1.7rem;margin:6px 0 10px;}
+.pricecard p{color:var(--ink-soft);margin-bottom:18px;}
+.faq{max-width:720px;margin:0 auto;}
+.faq details{background:var(--card);border-radius:14px;padding:4px 22px;margin-bottom:12px;box-shadow:0 6px 16px rgba(51,46,41,.05);}
+.faq summary{font-family:var(--serif);font-weight:700;font-size:1.05rem;cursor:pointer;padding:16px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--ink);}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:'+';color:var(--coral);font-size:1.5rem;font-family:var(--sans);}
+.faq details[open] summary::after{content:'−';}
+.faq details p{font-size:.95rem;color:var(--ink-soft);padding:0 0 18px;}
+@media(max-width:760px){.steps{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.steps{grid-template-columns:1fr;}}
+/* Benefits flow as one reading section, not another card grid. */
+.club-learning{background-color:#FFF3EA;background-image:url("paper.webp");background-blend-mode:multiply;background-size:480px;padding:72px 0;}
+.club-learning .eyebrow{color:#B5583A;}
+.club-learning .club-learning-intro>p,.club-learning .club-learning-point p{color:#4A4038;font-weight:400;}
+.club-learning .club-learning-point{display:grid;grid-template-columns:78px minmax(0,1fr);gap:24px;align-items:start;}
+.cl-art{width:78px;height:78px;border-radius:20px;background:#FFFBF6;box-shadow:0 8px 18px -10px rgba(140,70,40,.45),0 1px 3px rgba(51,46,41,.10);display:flex;align-items:center;justify-content:center;transform:rotate(-2deg);}
+.club-learning-point:nth-child(2) .cl-art{transform:rotate(2deg);}
+.cl-art svg{width:58px;height:58px;overflow:visible;}
+.cl-art .ink{fill:none;stroke:#332E29;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+.cl-art .or{fill:#D97757;}
+.cl-art .ors{fill:none;stroke:#D97757;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+.cl-art *{transform-box:fill-box;transform-origin:center;}
+.cl-prog{transform-origin:left center !important;animation:clProg 3.2s ease-in-out infinite;}
+.cl-cursor{animation:clCursor 3.2s ease-in-out infinite;}
+.cl-play{animation:clPulse 3.2s ease-in-out infinite;}
+@keyframes clProg{0%{transform:scaleX(.05);}70%,100%{transform:scaleX(1);}}
+@keyframes clCursor{0%{transform:translate(-14px,6px);}45%{transform:translate(0,0);}55%{transform:translate(0,0) scale(.85);}62%,100%{transform:translate(0,0) scale(1);}}
+@keyframes clPulse{0%,50%{transform:scale(1);}58%{transform:scale(1.18);}70%,100%{transform:scale(1);}}
+.cl-block{animation:clSnap 3.6s cubic-bezier(.6,0,.2,1) infinite;}
+.cl-spark{animation:clSpark 3.6s ease-out infinite;opacity:0;}
+@keyframes clSnap{0%,15%{transform:translate(7px,-6px) rotate(9deg);}45%,100%{transform:translate(0,0) rotate(0);}}
+@keyframes clSpark{0%,42%{opacity:0;transform:scale(.3);}55%{opacity:1;transform:scale(1.1);}75%{opacity:1;transform:scale(1);}90%,100%{opacity:0;transform:scale(.8);}}
+.cl-b1{animation:clPop 3.4s ease-out infinite;}
+.cl-b2{animation:clPop2 3.4s ease-out infinite;}
+.cl-dot{animation:clDot 1.1s ease-in-out infinite;}
+.cl-dot:nth-of-type(2){animation-delay:.15s;}.cl-dot:nth-of-type(3){animation-delay:.3s;}
+@keyframes clPop{0%{opacity:0;transform:translateY(5px) scale(.9);}12%,88%{opacity:1;transform:none;}100%{opacity:0;}}
+@keyframes clPop2{0%,30%{opacity:0;transform:translateY(5px) scale(.9);}42%,88%{opacity:1;transform:none;}100%{opacity:0;}}
+@keyframes clDot{0%,100%{transform:translateY(0);}50%{transform:translateY(-2.5px);}}
+@media(prefers-reduced-motion:reduce){.cl-art *{animation:none !important;opacity:1 !important;}}
+.club-learning+.club-inclusions{margin-top:0;}
+.club-learning .club-learning-point{border-bottom-color:rgba(217,119,87,.25);}
+.club-learning-layout{display:grid;grid-template-columns:minmax(0, .85fr) minmax(0,1.15fr);gap:80px;align-items:start;}
+.club-learning-intro{padding-top:8px;}
+.club-learning-intro>p{color:var(--ink-soft);font-size:.92rem;line-height:1.75;margin:18px 0 0;}
+.club-learning-intro h2{font-size:clamp(2.2rem,3.5vw,3rem);line-height:1.12;margin:12px 0 0;}
+.club-learning-point{padding:25px 0;border-bottom:1px solid var(--line);}
+.club-learning-point:first-child{padding-top:8px;}
+.club-learning-point:last-child{border-bottom:0;padding-bottom:0;}
+.club-learning-point h3{font-size:1.4rem;margin:0 0 10px;}
+.club-learning-point p{font-size:.9rem;line-height:1.75;color:var(--ink-soft);margin:0;}
+@media(max-width:700px){.club-learning-layout{grid-template-columns:1fr;gap:28px;}.club-learning{padding:38px 0;}.club-learning-intro h2{font-size:2.25rem;}.club-learning-point{padding:22px 0;}.club-learning-point h3{font-size:1.3rem;}.club-learning .club-learning-point{grid-template-columns:60px minmax(0,1fr);gap:16px;}.cl-art{width:60px;height:60px;border-radius:16px;}.cl-art svg{width:44px;height:44px;}.club-learning-point p{font-size:.86rem;}}
+.creator-proof{max-width:800px;margin:0 auto 32px;text-align:center;}
+.creator-proof p{font:400 16px/1.7 var(--sans);color:var(--ink-soft);margin:0;}
+.creator-proof strong{color:var(--terra);font-weight:600;}
+.creator-proof p+p{margin-top:6px;}
+@media(max-width:760px){.creator-proof{margin-bottom:28px;}.creator-proof p{font-size:15px;}}
+.club-inclusions{padding:28px 0 42px;}
+.club-inclusions-inner{max-width:860px;margin:0 auto;padding:28px 32px;background:#F3EADB;border-radius:20px;}
+.club-inclusions h2{font-size:2rem;margin:0 0 6px;}
+.club-inclusions-intro{color:var(--ink-soft);font-size:.95rem;margin:0 0 20px;}
+.club-inclusions dl{margin:0;}
+.club-inclusions dl>div{display:grid;grid-template-columns:220px 1fr;gap:24px;padding:15px 0;border-top:1px solid var(--line);}
+.club-inclusions dt{font-family:var(--serif);font-size:1.1rem;font-weight:700;line-height:1.4;}
+.club-inclusions dd{margin:0;color:var(--ink-soft);font-size:.92rem;line-height:1.7;}
+@media(max-width:760px){.club-inclusions{padding:12px 0 28px;}.club-inclusions-inner{padding:24px;}.club-inclusions dl>div{grid-template-columns:1fr;gap:5px;padding:13px 0;}}
+.club-curriculum{padding-top:40px;}
+@media(max-width:760px){.club-curriculum{padding-top:32px;}}
+/* Match the approved homepage gap above the ribbon. */
+.waitlist-hero{padding-bottom:68px;}
+.waitlist-hero h1 .u{color:var(--ink);}
+@media(max-width:760px){.waitlist-hero{padding-bottom:48px;}}
+
+.waitlist-hero .wlcount{margin:14px 0 0;font:400 15px/1.5 var(--sans);color:var(--ink);opacity:.8;}
+.waitlist-hero .wlcount b{color:var(--terra);font-weight:600;}
+.waitlist-hero .wlnote{display:block;font:700 22px/1.2 var(--hand);color:var(--terra);margin-top:16px;}
+@media(max-width:760px){.waitlist-hero .wlnote{font-size:20px;}}
+
+/* 25 Oct (Claude): numbered index, colour band and flat FAQ instead of stacked cards. */
+.build-index{display:grid;grid-template-columns:1fr 1fr;column-gap:72px;max-width:980px;margin:8px auto 0;counter-reset:none;}
+.bi{display:grid;grid-template-columns:64px 1fr;column-gap:8px;padding:26px 0;border-top:1px solid var(--line);}
+.bi:nth-last-child(-n+2){border-bottom:1px solid var(--line);}
+.bi-n{grid-row:span 2;font:700 2.3rem/1 var(--hand);color:var(--coral);transform:rotate(-4deg);padding-top:2px;}
+.bi h3{font-size:1.3rem;margin:0 0 6px;}
+.bi p{font-size:.94rem;line-height:1.7;color:var(--ink-soft);margin:0;}
+@media(max-width:760px){.build-index{grid-template-columns:1fr;}.bi{grid-template-columns:52px 1fr;padding:20px 0;}.bi:nth-last-child(2){border-bottom:0;}.bi-n{font-size:2rem;}.bi h3{font-size:1.15rem;}}
+.club-inclusions{padding:56px 0;background:#2A2622;color:#F6F0E6;margin:24px 0 0;}
+.club-inclusions-inner{background:none;padding:0;border-radius:0;max-width:900px;}
+.club-inclusions h2{color:#F6F0E6;font-size:clamp(2rem,3.4vw,2.6rem);}
+.club-inclusions-intro{color:#CFC4B4;}
+.club-inclusions dl>div{border-top:1px solid rgba(246,240,230,.16);padding:20px 0;}
+.club-inclusions dt{color:#F6F0E6;}
+.club-inclusions dd{color:#CFC4B4;}
+@media(max-width:760px){.club-inclusions{padding:40px 0;}.club-inclusions-inner{padding:0;}}
+.faq details{background:none;box-shadow:none;border-radius:0;padding:0 2px;margin:0;border-top:1px solid var(--line);}
+.faq details:last-child{border-bottom:1px solid var(--line);}
+.faq summary{padding:20px 0;}
+.ai-or{color:var(--coral);}
+/* 29 Oct 2026 polish: 48px email-only forms, 16px text so iPhones don't zoom,
+   full-width stretched button on phones */
+.wlform input{font-size:16px;height:48px;}
+.wlform button{height:48px;padding:0 24px;}
+/* Cindy 29 Oct (desktop): closing button back to normal size, text a little bigger */
+.wlform button{font-family:var(--sans);font-size:1.05rem;font-weight:600;white-space:nowrap;}
+@media(max-width:600px){.wlform{flex-direction:column;}.wlform input,.wlform button{width:100%;flex:0 0 auto;}}
+</style>
+<!-- seo:auto -->
+<meta name="description" content="Explore Claude 101, agents and automation, content and marketing systems, AI video, photo and design, vibe coding, and AI career tools. Join AI System Club’s free waitlist.">
+<link rel="canonical" href="https://cindyzhu.com.au/ai-system">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="AI System Club · the waitlist">
+<meta property="og:description" content="Explore Claude 101, agents and automation, content and marketing systems, AI video, photo and design, vibe coding, and AI career tools. Join AI System Club’s free waitlist.">
+<meta property="og:url" content="https://cindyzhu.com.au/ai-system">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI System Club · the waitlist">
+<meta name="twitter:description" content="Explore Claude 101, agents and automation, content and marketing systems, AI video, photo and design, vibe coding, and AI career tools. Join AI System Club’s free waitlist.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"AI System Club · the waitlist","description":"Explore Claude 101, agents and automation, content and marketing systems, AI video, photo and design, vibe coding, and AI career tools. Join AI System Club’s free waitlist.","url":"https://cindyzhu.com.au/ai-system","isPartOf":{"@type":"WebSite","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"}}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+/* A narrow, soft terracotta ribbon replaces the dotted divider. */
+.growth-ribbon{position:relative;background:#E6B9A6;color:#332E29;}
+.ribbon-accessible{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+.growth-ribbon-window{overflow:hidden;}
+.growth-ribbon-track{display:flex;width:100%;max-width:100%;}
+.growth-ribbon-copy{width:100%;flex-shrink:0;margin:0;padding:18px 32px;font:400 15px/1.5 var(--sans);text-align:center;}
+.ribbon-point{display:inline-flex;align-items:center;gap:28px;padding:0 0 0 28px;font-weight:500;vertical-align:middle;}.ribbon-star{display:block;flex:0 0 19px;}
+.growth-ribbon-duplicate{display:none;}
+.growth-ribbon.is-moving .growth-ribbon-track{width:max-content;max-width:none;animation:growth-ribbon-scroll var(--ribbon-duration,38s) linear infinite;}
+.growth-ribbon.is-moving .growth-ribbon-copy{width:auto;display:block;min-width:0;white-space:nowrap;padding:18px 0;}
+@keyframes growth-ribbon-scroll{to{transform:translateX(calc(-1 * var(--ribbon-step)));}}
+@media(max-width:760px){.growth-ribbon-copy,.growth-ribbon.is-moving .growth-ribbon-copy{font-size:14px;padding-top:16px;padding-bottom:16px;}}
+@media(prefers-reduced-motion:reduce){.growth-ribbon.is-moving .growth-ribbon-window{margin:0;}.growth-ribbon.is-moving .growth-ribbon-track{animation:none;width:100%;max-width:100%;}.growth-ribbon.is-moving .growth-ribbon-copy{width:100%;min-width:0;white-space:normal;padding:18px 26px;}.growth-ribbon.is-moving .growth-ribbon-duplicate{display:none;}}
+@media(prefers-reduced-motion:reduce){.club-build-ribbons .growth-ribbon-copy{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 0;}.club-build-ribbons .growth-ribbon-duplicate{display:none;}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides">Free guides</a>
+      <a href="/ai-system" class="active" aria-current="page">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+
+<!-- ============ HERO ============ -->
+<div class="wrap">
+  <section class="hero waitlist-hero">
+    <div>
+      <span class="hi">p.s. the waitlist is now open</span>
+      <h1><span class="u"><span class="ai-or">AI</span> System Club</span></h1>
+      
+      <p class="lead">Build AI workflows, content systems, visuals, websites and career tools, with recorded lessons you can follow at your own pace.</p>
+      <form class='wlform' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="club-email-1">Your email</label>
+        <input id="club-email-1" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+      <p class="wlcount"><!-- waitlist-count --><b>6,000+ people</b> are already on the waitlist.</p>
+      <span class="wlnote">waitlisters get first dibs 🌱</span>
+    </div>
+    <div class="photo-wrap">
+      <div class="polaroid">
+        <img src="cindy.jpg" alt="Cindy Zhu">
+        <div class="sticker s2">AI obsessed ✨</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+<!-- club-build-ribbons:start -->
+<div class="club-build-ribbons">
+<div class="growth-ribbon" role="region" aria-label="What you can build with AI">
+  <p class="ribbon-accessible">Claude 101. AI agents and automation. Content and marketing systems. AI video, photo and design. Vibe code anything. AI career. Build ideas: Automated inbox. Brand deals hub. Finance. Script System. Automated ManyChat. Content System. Headshots. Presentations. Websites. Games. Dashboards. Automated job search.</p>
+  <div class="growth-ribbon-window" aria-hidden="true"><div class="growth-ribbon-track">
+    <p class="growth-ribbon-copy"><span class="ribbon-point">Claude 101<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">AI agents and automation<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Content and marketing systems<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">AI video, photo and design<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Vibe code anything<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">AI career<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Automated inbox<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Brand deals hub<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Finance<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Script System<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Automated ManyChat<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Content System<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Headshots<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Presentations<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Websites<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Games<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Dashboards<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Automated job search<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span></p>
+    <p class="growth-ribbon-copy growth-ribbon-duplicate"><span class="ribbon-point">Claude 101<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">AI agents and automation<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Content and marketing systems<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">AI video, photo and design<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Vibe code anything<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">AI career<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Automated inbox<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Brand deals hub<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Finance<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Script System<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Automated ManyChat<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Content System<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Headshots<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Presentations<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Websites<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Games<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Dashboards<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Automated job search<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span></p>
+  </div></div>
+</div>
+</div>
+<!-- club-build-ribbons:end -->
+
+
+<!-- ============ CURRICULUM / LANES ============ -->
+<section class="club-curriculum">
+  <div class="wrap">
+    <div class="creator-proof">
+      <p>I grew to <strong>440k+ followers and subscribers</strong> across channels in <strong>6 months</strong> as a solo operator.</p>
+      <p>Inside the Club, I share the AI workflows I use to run my content and business.</p>
+    </div>
+    <div class="sec-head">
+      <span class="eyebrow">what you’ll build:)</span>
+      <h2>Explore what you could build</h2>
+    </div>
+    <div class="build-index">
+      <div class="bi"><span class="bi-n">01</span><h3>Claude 101</h3><p>Learn setup, file organisation, token management and brand voice, plus skills, MCPs and subagents to connect tools and delegate tasks.</p></div>
+      <div class="bi"><span class="bi-n">02</span><h3>AI agents and automation</h3><p>Claude Code/Codex; automated emails, resource guides, niche analysis, research, content intelligence, brand deals, finance.</p></div>
+      <div class="bi"><span class="bi-n">03</span><h3>Content and marketing systems</h3><p>Automated content systems, scripts, editing, carousels, scheduling, tracking, automated ManyChat, SEO, paid ads.</p></div>
+      <div class="bi"><span class="bi-n">04</span><h3>AI video, photo and design</h3><p>Photorealistic images, headshots, video generation, presentations, designs, brand assets.</p></div>
+      <div class="bi"><span class="bi-n">05</span><h3>Vibe code anything</h3><p>Tasteful websites, apps, games, dashboards, systems.</p></div>
+      <div class="bi"><span class="bi-n">06</span><h3>AI career</h3><p>Automated job search, CVs, interview preparation, portfolios.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRACTICAL BENEFITS ============ -->
+<section class="club-learning" aria-labelledby="club-learning-title">
+  <div class="wrap club-learning-layout">
+    <div class="club-learning-intro">
+      <span class="eyebrow">beyond the free guides</span>
+      <h2 id="club-learning-title">See how I think,<br>then build with me.</h2>
+    </div>
+    <div class="club-learning-points">
+      <div class="club-learning-point"><div class="cl-art" aria-hidden="true"><svg viewBox="0 0 60 60"><rect class="ink" x="6" y="10" width="48" height="34" rx="5"/><path class="ink" d="M22 52h16M30 44v8"/><circle class="or cl-play" cx="30" cy="25" r="7.5"/><path d="M28 21.5l5 3.5-5 3.5z" fill="#FFFBF6"/><rect x="12" y="37" width="36" height="3" rx="1.5" fill="#EADFD2"/><rect class="or cl-prog" x="12" y="37" width="36" height="3" rx="1.5"/><path class="cl-cursor" d="M38 29l9 3.5-4 1.2-1.5 4z" fill="#332E29" stroke="#FFFBF6" stroke-width="1.2" stroke-linejoin="round"/></svg></div><div>
+        <h3>Follow a visual walkthrough</h3>
+        <p>Written guides can feel like a lot at once. Watch me build on screen, pause at each step and see how the whole workflow comes together.</p>
+      </div></div>
+      <div class="club-learning-point"><div class="cl-art" aria-hidden="true"><svg viewBox="0 0 60 60"><rect class="ink" x="8" y="10" width="44" height="40" rx="5"/><path class="ink" d="M14 18h20M14 23h12"/><rect class="ink" x="14" y="30" width="14" height="13" rx="2.5"/><rect class="or cl-block" x="32" y="30" width="14" height="13" rx="2.5"/><path class="ors cl-spark" d="M47 6v8M43 10h8"/></svg></div><div>
+        <h3>Learn what makes it tasteful</h3>
+        <p>See why I choose a layout, change a detail or rethink an approach. Learn to refine the result so it looks good and works for you.</p>
+      </div></div>
+      <div class="club-learning-point"><div class="cl-art" aria-hidden="true"><svg viewBox="0 0 60 60"><g class="cl-b1"><path class="ink" d="M8 12h28a4 4 0 014 4v10a4 4 0 01-4 4H18l-7 6v-6H8a4 4 0 01-4-4V16a4 4 0 014-4z"/><path class="ink" d="M11 19h16M11 24h10"/></g><g class="cl-b2"><path d="M24 34h28a4 4 0 014 4v8a4 4 0 01-4 4h-3v5l-6-5H24a4 4 0 01-4-4v-8a4 4 0 014-4z" fill="#D97757"/><circle class="cl-dot" cx="30" cy="42" r="2.2" fill="#FFFBF6"/><circle class="cl-dot" cx="37" cy="42" r="2.2" fill="#FFFBF6"/><circle class="cl-dot" cx="44" cy="42" r="2.2" fill="#FFFBF6"/></g></svg></div><div>
+        <h3>Get support for 30 days</h3>
+        <p>Get answers from the Club team as you build. Buy your lesson bundle once and keep ongoing access to its recorded lessons, guides, prompts and templates.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INCLUSIONS ============ -->
+<section class="club-inclusions" aria-labelledby="club-inclusions-title">
+  <div class="wrap"><div class="club-inclusions-inner">
+    <h2 id="club-inclusions-title">What you get</h2>
+    <p class="club-inclusions-intro">Buy once. Keep ongoing access to your lesson bundle and its resources.</p>
+    <dl><div><dt>Recorded build-alongs</dt><dd>Watch each included project take shape, with my decisions and refinements explained as I go.</dd></div><div><dt>AI agent starter kits</dt><dd>Reusable agent instructions for research, marketing, content and career tasks, ready to adapt to your work.</dd></div><div><dt>Prompts, skills and project files</dt><dd>Copy, customise and build with the prompts, reusable skills, templates and files that accompany your lessons.</dd></div><div><dt>30 days of team support</dt><dd>Ask questions, share your builds and get answers from the Club team as you put the lessons into practice.</dd></div></dl>
+  </div></div>
+</section>
+
+<!-- ============ BIO ============ -->
+<section class="club-bio">
+  <div class="wrap">
+    <div class="grid2" style="align-items:center;gap:40px;">
+      <div class="photo-wrap">
+        <div class="polaroid" style="transform:rotate(-3deg);max-width:260px;">
+          <img src="cindy2.jpg" alt="Cindy Zhu" onerror="this.onerror=null;this.src='cindy.jpg'">
+          <div class="cap">hey, it's me 💌</div>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">hey, I'm Cindy</span>
+        <h2 style="font-size:1.9rem;margin:4px 0 14px;">A marketer who went all in on AI</h2>
+        <p style="color:var(--ink-soft);margin-bottom:14px;">I started in digital marketing and taught myself to build with Claude. Now I use AI every day to run my content and the behind-the-scenes of my business.</p>
+        <p style="color:var(--ink-soft);">Inside AI System Club, I share those workflows through practical lessons and guided builds, so you can make them your own.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">questions</span><h2>Your questions, answered</h2></div>
+    <div class="faq">
+      <details><summary>How long do I have access?</summary><p>Buy the lesson bundle once and keep ongoing access to its recorded lessons and guides. Your 30 days of Club support is separate from lesson access, so you can keep learning afterwards. Future bundles are offered separately.</p></details>
+      <details><summary>How do the lessons work?</summary><p>Your lessons are ready when you join. Choose a project, follow the recorded walkthrough and use the written guide as you build. Pause, try a step and come back whenever you need.</p></details>
+      <details><summary>Can I join as a beginner?</summary><p>Yes. Start with Claude 101, from setup and clear instructions to skills, MCPs and subagents. I’ll explain what each does and show you how to use it as we build. No coding background needed.</p></details>
+      <details><summary>What if I get stuck?</summary><p>You get 30 days of support from the Club team. Ask questions, share what you’re making and get help when you’re stuck.</p></details>
+      <details><summary>What tools do I need?</summary><p>Bring a laptop and choose the project you want to try. I’ll show you which tools you need for it and how to get set up. Some builds need a paid tool plan, such as Claude, which you’ll pay for separately. I’ll list those costs before you join, so you can plan for the builds you’re interested in.</p></details>
+      <details><summary>When does it open?</summary><p>Join the waitlist and I’ll email you as soon as enrolment opens. You’ll get first access and a look inside the lessons 🌱</p></details>
+      <details><summary>Can I keep learning with you after the 30 days?</summary><p>After your 30 days of Club support, you can choose to join AI Nook, our graduate community for ongoing learning and new lessons. It’s a separate, optional subscription. Your purchased lesson bundle stays accessible whether you join or not.</p></details>
+      <details><summary>How much is it?</summary><p>The waitlist is free, and waitlisters get the founding price. I’ll email you the lesson bundle price, payment options, lesson collection and refund details before enrolment opens.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section id="join">
+  <div class="wrap">
+    <div class="closing tape">
+      <span class="big">last thing</span>
+      <h2>Get on the list, get the edge first.</h2>
+      <p>Join the free waitlist for first access and the founding price. I’ll email you when doors open.</p>
+      <form class='wlform' method='POST' name='waitlist' style='justify-content:center;margin:0 auto;'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="club-email-2">Your email</label>
+        <input id="club-email-2" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+      <p style="margin-top:14px;font-size:.85rem;">x Cindy 🌱</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script id="club-ribbons-motion">
+(() => {
+ window.initClubRibbons = (root=document) => {
+  root.querySelectorAll('.growth-ribbon:not([data-ribbon-ready])').forEach(ribbon => {
+   ribbon.dataset.ribbonReady='true';
+   const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
+   function sync(){
+    ribbon.classList.toggle('is-moving',!motion.matches);
+    if(!motion.matches){
+     const first=ribbon.querySelector('.growth-ribbon-copy'),track=ribbon.querySelector('.growth-ribbon-track');
+     const width=first.getBoundingClientRect().width;if(!width)return;
+     const count=Math.max(2,Math.ceil(ribbon.clientWidth/width)+1);
+     while(track.children.length<count){const copy=first.cloneNode(true);copy.classList.add('growth-ribbon-duplicate');track.append(copy);}
+     while(track.children.length>count)track.lastElementChild.remove();
+     ribbon.style.setProperty('--ribbon-step',`${width}px`);
+     ribbon.style.setProperty('--ribbon-duration',`${width/36}s`);
+    }
+   }
+   sync();document.fonts.ready.then(sync);window.addEventListener('resize',sync);motion.addEventListener('change',sync);
+  });
+ };
+ window.initClubRibbons();
+})();
+</script>
+<script src="/site-reveals.js" data-site-reveals defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

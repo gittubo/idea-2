@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free guides · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Every prompt pack, setup guide, and cheat sheet I have shared, in one place. All free, all copy-paste. Filter by what you want to do, or by the tool you use.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Free guides">
+<meta property="og:description" content="Every prompt pack, setup guide, and cheat sheet I have shared, in one place. All free, all copy-paste. Filter by what you want to do, or by the tool you use.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free guides">
+<meta name="twitter:description" content="Every prompt pack, setup guide, and cheat sheet I have shared, in one place. All free, all copy-paste. Filter by what you want to do, or by the tool you use.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Free guides","description":"Every prompt pack, setup guide, and cheat sheet I have shared, in one place. All free, all copy-paste. Filter by what you want to do, or by the tool you use.","url":"https://cindyzhu.com.au/guides","isPartOf":{"@type":"WebSite","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"}}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+
+<!-- ============ HEADER ============ -->
+<div class="wrap">
+  <div class="pagehead guides-head">
+    <span class="hi">the whole library</span>
+    <h1>Free <span class="u">guides</span></h1>
+    <p>Every prompt pack, setup guide, and cheat sheet I have shared, in one place. All free, all copy-paste. Filter by what you want to do, or by the tool you use.</p>
+  </div>
+</div>
+
+<!-- ============ FILTERS + LIBRARY ============ -->
+<section class="guides-lib" style="padding-top:24px;">
+  <div class="wrap">
+    <div class="filters">
+      <p class="comment-nudge">looking for a specific guide? comment the keyword under the reel on <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">@cindiezhu</a> and I'll DM it 💌</p>
+      <span class="flabel">filter by topic</span>
+      <div class="chips" id="topicChips"></div>
+      <span class="flabel">filter by AI tool</span>
+      <div class="chips" id="toolChips"></div>
+    </div>
+    <div class="gcount" id="count" role="status" aria-live="polite"></div>
+    <div class="glib" id="lib"></div>
+    <div class="more-row"><button type="button" class="btn ghost" id="more" hidden>Show more guides</button></div>
+    <div class="note" style="margin-top:34px;">New guides drop every week. Follow <a href="https://instagram.com/cindiezhu" target="_blank">@cindiezhu</a> so you never miss one.</div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+
+<script>
+/* ---- filter definitions ---- */
+const TOPICS = [
+  ['all','All'],['start','Getting started'],['marketing','Marketing & ads'],
+  ['career','Career & job'],['content','Content creation'],['design','Design & visuals'],
+  ['productivity','Productivity & thinking'],['building','Building & apps'],
+  ['life','Life & self'],['money','Money & savings'],['power','Power-user']
+];
+const TOOLS = [
+  ['all','All tools'],['claude','Claude'],['chatgpt','ChatGPT'],['lovart','Lovart'],
+  ['reve','Reve'],['nocode','No-code build'],['stack','Multi-tool']
+];
+const TOPIC_LABEL = Object.fromEntries(TOPICS);
+const TOOL_LABEL = Object.fromEntries(TOOLS);
+
+/* ---- the library (your real Resource Bank, now mapped onto this site) ---- */
+const GUIDES = [
+  {t:"10 ways to change how your AI behaves", u:"guides/qw-10-ways-to-change-how-your-ai-behaves.html", topic:"power", tool:"claude"},
+  {t:"How to go from beginner to pro at using AI", u:"guides/ai-beginner-to-pro-levels.html", topic:"productivity", tool:"claude"},
+  {t:"5 ChatGPT codes that help you learn 10x faster", u:"guides/5-chatgpt-study-codes.html", topic:"productivity", tool:"chatgpt"},
+  {t:"5 free AI certificates for 2026", u:"guides/5-free-ai-certificates-2026.html", topic:"career", tool:"stack"},
+  {t:"How to test your content before people see it using AI", u:"guides/test-your-content-before-people-see-it.html", topic:"marketing", tool:"stack"},
+  {t:"Korean profile photos, made at your desk with Soul ID", u:"guides/korean-profile-photos-seoul.html", topic:"design", tool:"stack"},
+  {t:"The styling plan ChatGPT builds from one selfie", u:"guides/optimised-version-of-yourself.html", topic:"life", tool:"chatgpt"},
+  {t:"Your makeup face chart, drawn on your own selfie", u:"guides/chatgpt-makeup-face-chart.html", topic:"life", tool:"chatgpt"},
+  {t:"4 free certificates to become the AI marketer on your team", u:"guides/4-free-certs-ai-marketer.html", topic:"marketing", tool:"stack"},
+  {t:"5 free AI courses for project managers (21 PDUs)", u:"guides/5-free-ai-courses-project-managers.html", topic:"career", tool:"stack"},
+  {t:"Build an agent team and prove it works", u:"guides/agent-strategist-proof-prompts.html", topic:"career", tool:"claude"},
+  {t:"The prompt that turns your reviews into ads", u:"guides/turn-reviews-into-ads-claude-prompt.html", topic:"marketing", tool:"claude"},
+  {t:"The prompt that plans 30 days of content from your 3 best posts", u:"guides/claude-plans-30-days-of-content.html", topic:"content", tool:"claude"},
+  {t:"The only 5 viral ChatGPT prompts worth keeping", u:"guides/5-viral-prompts-worth-keeping.html", topic:"productivity", tool:"chatgpt"},
+  {t:"5 ChatGPT image codes for your marketing", u:"guides/5-chatgpt-marketing-image-codes.html", topic:"marketing", tool:"chatgpt"},
+  {t:"25 ChatGPT image codes, with a prompt for each", u:"guides/25-chatgpt-image-codes.html", topic:"design", tool:"chatgpt"},
+  {t:"4 certificates to become an AI agent builder", u:"guides/4-certificates-ai-agent-builder.html", topic:"career", tool:"stack"},
+  {t:"5 free OpenAI certificates, in the order to do them", u:"guides/5-free-openai-certificates.html", topic:"career", tool:"chatgpt"},
+  {t:"Turn AI trading headlines into an evidence-based risk brief", u:"guides/understand-ai-market-risk.html", topic:"money", tool:"claude"},
+  {t:"Six ChatGPT photo codes you can make your own", u:"guides/chatgpt-photo-codes.html", topic:"design", tool:"chatgpt"},
+  {t:"Three ChatGPT study codes, plus your own", u:"guides/chatgpt-study-codes.html", topic:"productivity", tool:"chatgpt"},
+  {t:"Score your business idea before you build it", u:"guides/score-your-business-idea-before-building.html", topic:"money", tool:"claude"},
+  {t:"Track congressional trades with Claude", u:"guides/track-congress-trades-with-claude.html", topic:"money", tool:"claude"},
+  {t:"Run Codex inside Claude Code", u:"guides/run-codex-inside-claude-code.html", topic:"building", tool:"claude"},
+  {t:"Attention-max with Claude instead of scrolling", u:"guides/attention-maxxing-with-claude.html", topic:"productivity", tool:"claude"},
+  {t:"The 20-point Claude Code setup", u:"guides/twenty-point-claude-code-setup.html", topic:"productivity", tool:"claude"},
+  {t:"Find profitable app ideas with market data", u:"guides/find-profitable-app-ideas-with-market-data.html", topic:"money", tool:"claude"},
+  {t:"Connect Claude to a Robinhood Agentic account", u:"guides/connect-claude-to-robinhood-agentic-trading.html", topic:"money", tool:"claude"},
+  {t:"Run an after-action review on a long AI session", u:"guides/after-action-review-for-ai-sessions.html", topic:"productivity", tool:"claude"},
+  {t:"Vibe-code motion graphics with HyperFrames", u:"guides/vibe-code-motion-graphics-hyperframes.html", topic:"building", tool:"claude"},
+  {t:"Audit 20 ways a vibe-coded app gets hacked", u:"guides/twenty-vibe-code-security-checks.html", topic:"building", tool:"claude"},
+  {t:"Three fixes before you ship your app", u:"guides/three-fixes-before-you-ship-your-app.html", topic:"building", tool:"claude"},
+  {t:"Track Instagram search traffic in Google Search Console", u:"guides/instagram-search-console-seo-setup.html", topic:"marketing", tool:"claude"},
+  {t:"Anthropic's 10 finance agents: install path and the exact commands", u:"guides/anthropic-finance-agents.html", topic:"power", tool:"claude"},
+  {t:"Turn Claude into a social media research machine with the /topic skill", u:"guides/turn-claude-into-a-social-media-research-machine.html", topic:"content", tool:"claude"},
+  {t:"Three motion libraries that make a site look expensive", u:"guides/motion-libraries-premium-websites.html", topic:"design", tool:"claude"},
+  {t:"6 prompts that turn Claude into a personal tutor", u:"guides/claude-personal-tutor.html", topic:"start", tool:"claude"},
+  {t:"Turn Claude into your social media manager: the 6 prompts in order", u:"guides/claude-social-media-manager.html", topic:"content", tool:"claude"},
+  {t:"Give Claude vision: watch any video or carousel", u:"guides/give-claude-vision.html", topic:"power", tool:"claude"},
+  {t:"Make Claude Code write less code: the Ponytail skill", u:"guides/ponytail-write-less-code.html", topic:"building", tool:"claude"},
+  {t:"Event-driven lead response blueprint", u:"guides/event-driven-lead-response-blueprint.html", topic:"marketing", tool:"claude"},
+  {t:"Before you install that skill", u:"guides/before-you-install-that-skill.html", topic:"power", tool:"claude"},
+  {t:"The /hooks skill: build your hook machine", u:"guides/hooks-skill-guide.html", topic:"content", tool:"claude"},
+  {t:"The Human Writing Ultra Prompt", u:"guides/human-writing-ultra-prompt.html", topic:"content", tool:"claude"},
+  {t:"Read-only Google Ads analyst", u:"guides/read-only-google-ads-analyst.html", topic:"marketing", tool:"claude"},
+  {t:"The public proof engine", u:"guides/public-proof-engine.html", topic:"marketing", tool:"claude"},
+  {t:"Cross-model project folder", u:"guides/cross-model-project-folder.html", topic:"productivity", tool:"stack"},
+  {t:"Scroll-to-system template", u:"guides/scroll-to-system-template.html", topic:"building", tool:"claude"},
+  {t:"The AI-era marketing moat audit", u:"guides/ai-era-marketing-moat-audit.html", topic:"marketing", tool:"claude"},
+  {t:"The structural fingerprint checklist", u:"guides/structural-fingerprint-checklist.html", topic:"content", tool:"claude"},
+  {t:"Build a $10k-looking dashboard in Antigravity, no code (free)", u:"guides/antigravity-dashboard.html", topic:"building", tool:"claude"},
+  {t:"Build a 37-agent company operating map", u:"guides/build-37-ai-agent-company-map.html", topic:"building", tool:"claude"},
+  {t:"Spot AI-generated images with Claude", u:"guides/spot-ai-generated-images-claude.html", topic:"start", tool:"claude"},
+  {t:"War-game a hard decision with Claude", u:"guides/war-game-decisions-claude.html", topic:"power", tool:"claude"},
+  {t:"Research surprising claims with Claude", u:"guides/research-surprising-claims-claude.html", topic:"power", tool:"claude"},
+  {t:"Run a Claude model head-to-head test", u:"guides/claude-model-head-to-head-test.html", topic:"power", tool:"claude"},
+  {t:"Choose the best AI tool for each job", u:"guides/best-ai-tool-per-job.html", topic:"start", tool:"claude"},
+  {t:"Stretch your Claude Code usage limit", u:"guides/stretch-claude-code-usage-limit.html", topic:"power", tool:"claude"},
+  {t:"Build portfolio proof with Claude", u:"guides/portfolio-proof-with-claude.html", topic:"career", tool:"claude"},
+  {t:"Build hireable proof with Claude", u:"guides/hireable-proof-with-claude.html", topic:"career", tool:"claude"},
+  {t:"Share family photos more safely in the AI age", u:"guides/share-family-photos-safely-ai.html", topic:"start", tool:"claude"},
+  {t:"Turn a photo into a resale listing with Claude", u:"guides/photo-to-resale-listing-claude.html", topic:"money", tool:"claude"},
+  {t:"Turn prompts into saved Claude commands", u:"guides/claude-slash-commands-from-prompts.html", topic:"power", tool:"claude"},
+  {t:"Become a ship-fast generalist with Claude", u:"guides/ship-fast-generalist-claude.html", topic:"career", tool:"claude"},
+  {t:"The Claude idea stress-test prompt", u:"guides/claude-stress-test-ideas.html", topic:"productivity", tool:"claude"},
+  {t:"Build your own Jarvis with Claude", u:"guides/jarvis-mcp-skills-claude.html", topic:"building", tool:"claude"},
+  {t:"Turn Claude into a research analyst (3-prompt company breakdown kit)", u:"guides/claude-research-analyst-3-prompts.html", topic:"marketing", tool:"claude"},
+  {t:"Build an automatic safety check-in with Claude", u:"guides/automatic-safety-checkin-claude.html", topic:"productivity", tool:"claude"},
+  {t:"Give Claude the chores, keep the taste", u:"guides/claude-chores-keep-taste.html", topic:"productivity", tool:"claude"},
+  {t:"Learn from Anthropic's system-prompt patterns", u:"guides/claude-fable-system-prompt.html", topic:"power", tool:"claude"},
+  {t:"Build an earnings command center with Claude", u:"guides/earnings-command-center-claude.html", topic:"money", tool:"claude"},
+  {t:"Turn Claude into an image studio", u:"guides/claude-image-studio-connector.html", topic:"design", tool:"stack"},
+  {t:"Use Claude as a thinking partner", u:"guides/claude-thinking-partner.html", topic:"power", tool:"claude"},
+  {t:"Audit your whole Instagram with Claude", u:"guides/audit-instagram-claude-chrome.html", topic:"marketing", tool:"claude"},
+  {t:"5 useful Claude Code commands", u:"guides/5-hidden-claude-code-commands.html", topic:"power", tool:"claude"},
+  {t:"Build a standout GitHub profile with Claude", u:"guides/github-top-1-percent-claude.html", topic:"career", tool:"claude"},
+  {t:"Build a playable video game with Claude", u:"guides/playable-video-game-claude.html", topic:"building", tool:"claude"},
+  {t:"5 Claude Code skills that improve your sessions", u:"guides/5-claude-code-skills-10x.html", topic:"power", tool:"claude"},
+  {t:"3 saved Claude commands that make it think deeper", u:"guides/3-saved-claude-commands-think-deeper.html", topic:"power", tool:"claude"},
+  {t:"Build a job-proof skill with Claude", u:"guides/job-proof-skill-claude-tutor.html", topic:"career", tool:"claude"},
+  {t:"The 5 Claude skills I'd install first", u:"guides/5-claude-skills-to-install-first.html", topic:"power", tool:"claude"},
+  {t:"5 MCP servers that connect Claude to everything you do", u:"guides/5-mcp-servers-connect-claude-to-everything.html", topic:"productivity", tool:"claude"},
+  {t:"Turn 50 winning ads into 10 fresh angles with Claude", u:"guides/50-winning-ads-to-10-angles.html", topic:"marketing", tool:"claude"},
+  {t:"Build a full animated brand website with Claude Code", u:"guides/animated-brand-website-with-claude-code.html", topic:"building", tool:"claude"},
+  {t:"How to bulk-create ad creatives inside Claude", u:"guides/bulk-create-ad-creatives-claude.html", topic:"marketing", tool:"claude"},
+  {t:"Studio-quality headshots with Claude", u:"guides/studio-headshots-with-claude.html", topic:"career", tool:"claude"},
+  {t:"AI skin analysis from one selfie, then a routine that fits your shelf", u:"guides/ai-skin-analysis-from-one-selfie.html", topic:"life", tool:"claude"},
+  {t:"Turn Claude into your entire content team: design, video and visuals in one setup", u:"guides/turn-claude-into-your-content-team.html", topic:"content", tool:"claude"},
+  {t:"Write a month of content in one day", u:"guides/month-of-content-in-one-day.html", topic:"marketing", tool:"claude"},
+  {t:"Make an AI glow-up version of yourself (ChatGPT): the exact prompts", u:"guides/ai-glow-up-render-of-yourself.html", topic:"life", tool:"chatgpt"},
+  {t:"Turn a messy spreadsheet into a live dashboard with Claude", u:"guides/spreadsheet-to-live-dashboard-claude.html", topic:"productivity", tool:"claude"},
+  {t:"6 Claude prompts I run every week", u:"guides/6-weekly-claude-prompts.html", topic:"productivity", tool:"claude"},
+  {t:"Turn your closet into a capsule wardrobe with ChatGPT", u:"guides/capsule-wardrobe-with-chatgpt.html", topic:"productivity", tool:"chatgpt"},
+  {t:"The daily posting system: Notion idea bank + Claude setup", u:"guides/daily-posting-system-notion-claude.html", topic:"marketing", tool:"claude"},
+  {t:"8 AI agents to build with Claude from scratch (the build list)", u:"guides/8-ai-agents-to-build-from-scratch.html", topic:"building", tool:"claude"},
+  {t:"Make Claude write your DM sales-assistant prompt", u:"guides/dm-sales-assistant-prompt-claude.html", topic:"marketing", tool:"claude"},
+  {t:"How to let Claude run your ad campaigns through the API", u:"guides/run-ad-campaigns-through-the-api-with-claude.html", topic:"marketing", tool:"claude"},
+  {t:"The consultant grunt-work workflow in Claude", u:"guides/consultant-grunt-work-claude.html", topic:"career", tool:"claude"},
+  {t:"The honest AI resume system with Claude", u:"guides/job-search-resume-system-with-claude.html", topic:"career", tool:"claude"},
+  {t:"Think on a walk with Claude (the ramble prompt + 10 questions)", u:"guides/think-on-a-walk-with-claude.html", topic:"productivity", tool:"claude"},
+  {t:"Build your first Claude skill", u:"guides/build-your-first-claude-skill.html", topic:"building", tool:"claude"},
+  {t:"Diffusion text models: what actually changes", u:"guides/diffusion-text-models-what-changes.html", topic:"power", tool:"claude"},
+  {t:"Turn Claude into a marketing department with pre-built skills", u:"guides/claude-marketing-department-skills.html", topic:"marketing", tool:"claude"},
+  {t:"Run Claude Code on a free local model", u:"guides/claude-code-with-a-free-local-model.html", topic:"building", tool:"claude"},
+  {t:"The 10-minute Claude setup that actually knows you", u:"guides/claude-setup-that-knows-you.html", topic:"start", tool:"claude"},
+  {t:"The Claude outbound sales pipeline", u:"guides/claude-outbound-sales-pipeline.html", topic:"marketing", tool:"claude"},
+  {t:"Claude Design: the starter guide plus 3 power moves", u:"guides/claude-design-setup-plus-3-power-moves-most-people-miss.html", topic:"design", tool:"claude"},
+  {t:"Build Apple's scroll effect with Claude", u:"guides/apple-scroll-effect-with-claude.html", topic:"building", tool:"claude"},
+  {t:"How to AI-proof your job using Claude", u:"guides/ai-proof-your-job-with-claude.html", topic:"building", tool:"claude"},
+  {t:"Claude managed agents: the honest starter guide", u:"guides/claude-managed-agents-starter.html", topic:"building", tool:"claude"},
+  {t:"Audit all your ad accounts with Claude", u:"guides/audit-all-your-ad-accounts-with-claude.html", topic:"marketing", tool:"claude"},
+  {t:"The five stages of AI, and where the money actually is", u:"guides/five-stages-of-ai.html", topic:"power", tool:"claude"},
+  {t:"Connect Instagram to Claude with the Windsor.ai connector", u:"guides/connect-instagram-to-claude-windsor.html", topic:"marketing", tool:"claude"},
+  {t:"Delegate whole workflows to Claude", u:"guides/delegate-whole-workflows-to-claude.html", topic:"productivity", tool:"claude"},
+  {t:"Edit videos with Claude Code and Remotion: the full setup", u:"guides/edit-videos-with-claude-code-and-remotion-the-full-setup.html", topic:"design", tool:"claude"},
+  {t:"Run the open-source AI video studio, set up by Claude", u:"guides/open-source-ai-video-studio-claude-setup.html", topic:"building", tool:"claude"},
+  {t:"10 ways Claude gets you money you're already owed", u:"guides/money-youre-already-owed.html", topic:"money", tool:"claude"},
+  {t:"10 ways Claude fixes what you overpay", u:"guides/what-youre-overpaying.html", topic:"money", tool:"claude"},
+  {t:"Build websites for local businesses with Claude", u:"guides/websites-for-local-businesses.html", topic:"money", tool:"claude"},
+  {t:"Build your new income playbook with Claude", u:"guides/income-playbook-with-claude.html", topic:"money", tool:"claude"},
+  {t:"Learn with Claude without getting lazier", u:"guides/learn-with-claude-not-lazier.html", topic:"start", tool:"claude"},
+  {t:"The haircut that actually suits your face", u:"guides/haircut-that-suits-your-face.html", topic:"design", tool:"chatgpt"},
+  {t:"How to use premium AI models for free", u:"guides/use-premium-ai-models-free.html", topic:"start", tool:"claude"},
+  {t:"Train Claude to write your content", u:"guides/train-claude-to-write-your-content.html", topic:"marketing", tool:"claude"},
+  {t:"The one-hour Claude watchlist", u:"guides/one-hour-claude-watchlist.html", topic:"start", tool:"claude"},
+  {t:"Audit your AI spend with Claude", u:"guides/audit-your-ai-spend-with-claude.html", topic:"money", tool:"claude"},
+  {t:"The anti-brainrot Claude prompt pack", u:"guides/anti-brainrot-claude-prompt-pack.html", topic:"productivity", tool:"claude"},
+  {t:"Run a team of AI agents in Claude: the exact setup prompt", u:"guides/agent-team-setup-prompt-claude.html", topic:"building", tool:"claude"},
+  {t:"Make Claude your accountability coach", u:"guides/claude-accountability-coach.html", topic:"productivity", tool:"claude"},
+  {t:"Turn phone pics into studio product shots", u:"guides/phone-pics-to-studio-product-shots.html", topic:"design", tool:"claude"},
+  {t:"Train your writing voice with Claude", u:"guides/claude-voice-training-prompts.html", topic:"career", tool:"claude"},
+  {t:"How to pick your AI tool stack with Claude", u:"guides/pick-your-ai-tool-stack.html", topic:"building", tool:"claude"},
+  {t:"Learn Claude for free, straight from Anthropic", u:"guides/learn-claude-free-anthropic.html", topic:"start", tool:"claude"},
+  {t:"My Claude skills starter list", u:"guides/claude-skills-starter-list.html", topic:"power", tool:"claude"},
+  {t:"How to spy on your competitors with Claude", u:"guides/competitor-teardown-with-claude.html", topic:"marketing", tool:"claude"},
+  {t:"Clone your voice for free with Voicebox and Claude", u:"guides/clone-your-voice-free-with-voicebox.html", topic:"building", tool:"claude"},
+  {t:"Build a cozy personal internet space with Claude", u:"guides/cozy-personal-internet-space-website.html", topic:"building", tool:"claude"},
+  {t:"How to run a one person marketing agency with Claude", u:"guides/one-person-marketing-agency-with-claude.html", topic:"marketing", tool:"claude"},
+  {t:"The study stack: 3 Claude prompts that make you smarter (not lazier)", u:"guides/study-stack.html", topic:"productivity", tool:"claude"},
+  {t:"Build and sell websites to local businesses with Claude", u:"guides/sell-websites-to-local-businesses-with-claude.html", topic:"money", tool:"claude"},
+  {t:"One photo, six cinematic shots: Claude as your production assistant", u:"guides/one-photo-six-cinematic-shots.html", topic:"design", tool:"claude"},
+  {t:"My exact Claude starter structure (the 4 layers)", u:"guides/claude-starter-structure.html", topic:"building", tool:"claude"},
+  {t:"Let Claude list your old stuff on eBay", u:"guides/let-claude-list-your-stuff-on-ebay.html", topic:"money", tool:"claude"},
+  {t:"The creator-seat audit prompt for Claude", u:"guides/creator-seat-audit-claude.html", topic:"career", tool:"claude"},
+  {t:"The 4-prompt pressure test for Claude", u:"guides/four-prompt-pressure-test.html", topic:"building", tool:"claude"},
+  {t:"Build your income playbook with Claude", u:"guides/build-your-income-playbook-with-claude.html", topic:"money", tool:"claude"},
+  {t:"Turn a cold lead into a client with one Claude prompt", u:"guides/cold-lead-to-client-one-claude-prompt.html", topic:"money", tool:"claude"},
+  {t:"Clone any Pinterest aesthetic with Claude", u:"guides/clone-a-pinterest-aesthetic-with-claude.html", topic:"design", tool:"claude"},
+  {t:"Your first paid AI project: the starter guide", u:"guides/your-first-paid-ai-project.html", topic:"money", tool:"claude"},
+  {t:"10 ready-to-use Claude skills for your job", u:"guides/10-claude-skills-for-your-job.html", topic:"career", tool:"claude"},
+  {t:"The 6-tool stack I'd use to start a business today", u:"guides/six-tool-business-stack.html", topic:"design", tool:"claude"},
+  {t:"Automate your morning with Claude", u:"guides/morning-automation-claude.html", topic:"productivity", tool:"claude"},
+  {t:"OpenMontage: a free video production system inside Claude Code", u:"guides/openmontage-video-production-in-claude-code.html", topic:"building", tool:"claude"},
+  {t:"Design a full brand concept with Claude", u:"guides/brand-concept-with-claude.html", topic:"design", tool:"claude"},
+  {t:"Ask Claude what it knows about you: the full prompt list", u:"guides/what-claude-knows-about-you.html", topic:"productivity", tool:"claude"},
+  {t:"Connect Meta ads to Claude: the full setup", u:"guides/run-meta-ads-with-claude.html", topic:"marketing", tool:"claude"},
+  {t:"Connect Claude to Indeed and stop scrolling job boards", u:"guides/claude-indeed.html", topic:"career", tool:"nocode"},
+  {t:"How to make Claude run your computer for you", u:"guides/make-claude-run-your-computer.html", topic:"power", tool:"claude"},
+  {t:"The 3 levels of AI, and the exact setup for each", u:"guides/three-levels-of-ai-claude.html", topic:"power", tool:"claude"},
+  {t:"Anthropic vs the Pentagon: the full breakdown", u:"guides/anthropic-pentagon-breakdown.html", topic:"power", tool:"claude"},
+  {t:"How to make Claude write in your voice", u:"guides/claude-writes-in-your-voice.html", topic:"building", tool:"claude"},
+  {t:"The Claude setup checklist that gives you hours back", u:"guides/claude-setup-checklist-save-hours.html", topic:"productivity", tool:"claude"},
+  {t:"The curiosity gap prompt: fix a hook that gets skipped", u:"guides/curiosity-gap-prompt-claude.html", topic:"marketing", tool:"claude"},
+  {t:"The truth prompt: how to make AI stop lying to you", u:"guides/truth-prompt.html", topic:"productivity", tool:"claude"},
+  {t:"How to find the haircut that actually suits your face (ChatGPT)", u:"guides/haircut-that-suits-your-face-chatgpt.html", topic:"life", tool:"chatgpt"},
+  {t:"Build a custom gift app with Claude", u:"guides/build-a-custom-gift-app-with-claude.html", topic:"building", tool:"claude"},
+  {t:"Turn a fridge photo into a week of meals with Claude", u:"guides/fridge-photo-meal-plan-claude.html", topic:"productivity", tool:"claude"},
+  {t:"Build a language tutor in Claude", u:"guides/learn-any-language-with-claude.html", topic:"start", tool:"claude"},
+  {t:"How to fact-check a viral money claim with Claude", u:"guides/fact-check-viral-money-claims.html", topic:"money", tool:"claude"},
+  {t:"Claude in Excel, PowerPoint and Word: the full setup", u:"guides/claude-in-excel-powerpoint-word.html", topic:"career", tool:"claude"},
+  {t:"How to run an embedded job search with Claude", u:"guides/embedded-job-search-claude.html", topic:"career", tool:"claude"},
+  {t:"Claude does way more than writing: 4 starter prompts", u:"guides/claude-beyond-writing-4-starter-prompts.html", topic:"power", tool:"claude"},
+  {t:"How to stress-test a scary AI prediction with Claude", u:"guides/stress-test-scary-ai-predictions.html", topic:"productivity", tool:"claude"},
+  {t:"Turn your website into a brand design team with Claude", u:"guides/brand-dna-design-team-claude.html", topic:"design", tool:"claude"},
+  {t:"The Claude creative director prompt", u:"guides/claude-creative-director-prompt.html", topic:"design", tool:"claude"},
+  {t:"Claude connectors for Blender, Adobe and Fusion", u:"guides/claude-connectors-blender-adobe-fusion.html", topic:"design", tool:"claude"},
+  {t:"The briefing prompt for on-brand decks in Claude Design", u:"guides/on-brand-decks-with-claude-design.html", topic:"design", tool:"claude"},
+  {t:"How to turn any PDF into a slide deck with Claude", u:"guides/pdf-to-slide-deck-claude.html", topic:"productivity", tool:"claude"},
+  {t:"The Claude council: your 5-advisor AI decision system", u:"guides/claude-council.html", topic:"productivity", tool:"claude"},
+  {t:"Get a full color analysis with Claude, from one photo", u:"guides/color-analysis-with-claude.html", topic:"design", tool:"claude"},
+  {t:"Build a fitness coach skill in Claude", u:"guides/claude-fitness-coach-skill.html", topic:"productivity", tool:"claude"},
+  {t:"Run OpenClaw without a Mac Mini", u:"guides/run-openclaw-without-a-mac-mini.html", topic:"building", tool:"nocode"},
+  {t:"The CLAUDE.md file that makes Claude behave", u:"guides/claude-md-behavior-rules-file.html", topic:"building", tool:"claude"},
+  {t:"How to connect Claude to your TradingView charts", u:"guides/connect-claude-to-tradingview.html", topic:"building", tool:"claude"},
+  {t:"How to build a faceless YouTube channel with Claude", u:"guides/faceless-youtube-channel-claude-elevenlabs.html", topic:"money", tool:"claude"},
+  {t:"Launch Meta ad campaigns from Claude Code", u:"guides/launch-meta-campaigns-from-claude-code.html", topic:"marketing", tool:"claude"},
+  {t:"Connect Claude to thousands of apps: my connector setup", u:"guides/claude-zapier-connector-setup.html", topic:"building", tool:"claude"},
+  {t:"Turn your website into a week of ads with Claude", u:"guides/website-to-a-week-of-ads-claude.html", topic:"marketing", tool:"claude"},
+  {t:"Claude's finance plugins: the analyst research setup", u:"guides/claude-finance-plugins-analyst-setup.html", topic:"money", tool:"claude"},
+  {t:"Turn a bedroom video into a studio shoot", u:"guides/bedroom-video-to-studio-restyle.html", topic:"design", tool:"claude"},
+  {t:"5 installable skills that upgrade Claude", u:"guides/5-skills-that-upgrade-claude.html", topic:"power", tool:"claude"},
+  {t:"How to structure a team of AI agents like a company", u:"guides/ai-agent-org-chart.html", topic:"building", tool:"claude"},
+  {t:"How to run an ad creative engine with Claude", u:"guides/ad-creative-engine-claude.html", topic:"marketing", tool:"claude"},
+  {t:"Hand your browser admin to Claude", u:"guides/hand-your-browser-admin-to-claude.html", topic:"productivity", tool:"claude"},
+  {t:"Turn Claude into your Instagram algorithm analyst", u:"guides/instagram-algorithm-intelligence-claude.html", topic:"marketing", tool:"claude"},
+  {t:"Make a week of carousels overnight with Claude and Codex", u:"guides/overnight-carousels-claude-chatgpt.html", topic:"marketing", tool:"claude"},
+  {t:"Build a viral idea detector with Claude", u:"guides/viral-idea-detector.html", topic:"marketing", tool:"claude"},
+  {t:"Build a scriptwriting team inside Claude", u:"guides/scriptwriting-team-inside-claude.html", topic:"building", tool:"claude"},
+  {t:"5 AI automations to run your life (vol. 2)", u:"guides/5-ai-automations-life-vol-2.html", topic:"life", tool:"stack"},
+  {t:"5 AI automations to run your life (vol. 1)", u:"guides/5-ai-automations-life-vol-1.html", topic:"life", tool:"stack"},
+  {t:"5 Claude automations to run your whole life", u:"guides/5-claude-automations-life.html", topic:"life", tool:"claude"},
+  {t:"5 Claude Code projects to build this week", u:"guides/5-claude-code-projects.html", topic:"building", tool:"claude"},
+  {t:"5 AI agents you can build with zero experience", u:"guides/5-ai-agents-zero-experience.html", topic:"building", tool:"claude"},
+  {t:"5 AI automations for your portfolio", u:"guides/5-ai-automations-portfolio.html", topic:"building", tool:"claude"},
+  {t:"5 AI skills you need in 2026", u:"guides/5-ai-skills-2026.html", topic:"power", tool:"claude"},
+  {t:"How to run your whole business on one Claude setup", u:"guides/claude-whole-workflow-setup.html", topic:"start", tool:"claude"},
+  {t:"4 AI certificates actually worth doing", u:"guides/4-ai-certs-worth-doing.html", topic:"career", tool:"claude"},
+  {t:"My full 2026 AI stack: the 5 subscriptions Claude replaces", u:"guides/ai-stack-2026.html", topic:"money", tool:"claude"},
+  {t:"5 AI tools that run your job hunt", u:"guides/5-ai-tools-job-hunt.html", topic:"career", tool:"claude"},
+  {t:"5 free AI courses that certify you", u:"guides/5-free-ai-courses-certificate.html", topic:"career", tool:"claude"},
+  {t:"3 YouTube videos that teach you AI agents from zero", u:"guides/3-youtube-videos-ai-agents.html", topic:"building", tool:"claude"},
+  {t:"Top YouTube channels to learn AI", u:"guides/top-youtube-channels-learn-ai.html", topic:"career", tool:"claude"},
+  {t:"5 AI projects for career leverage", u:"guides/5-ai-projects-weekend-vol-3.html", topic:"career", tool:"claude"},
+  {t:"5 AI projects businesses pay for", u:"guides/5-ai-projects-weekend-vol-2.html", topic:"building", tool:"claude"},
+  {t:"5 AI projects you can complete this weekend", u:"guides/5-ai-projects-weekend-vol-1.html", topic:"building", tool:"claude"},
+  {t:"4 AI certificates you can finish in one weekend", u:"guides/4-ai-certs-one-weekend.html", topic:"career", tool:"claude"},
+  {t:"Have Claude find you 20 matched jobs", u:"guides/claude-find-matched-jobs-apify.html", topic:"career", tool:"claude"},
+  {t:"The AI learning map: where to learn every piece, free", u:"guides/the-ai-learning-map.html", topic:"start", tool:"claude"},
+  {t:"11 Claude features worth actually using", u:"guides/11-claude-features-worth-using.html", topic:"building", tool:"claude"},
+  {t:"The best free AI tool for every job", u:"guides/best-free-ai-tool-for-every-job.html", topic:"design", tool:"claude"},
+  {t:"5 ChatGPT prompts that turn it into your teacher", u:"guides/chatgpt-prompts-that-teach-you.html", topic:"power", tool:"chatgpt"},
+  {t:"Set up Claude in one day (the 5 things to do first)", u:"guides/set-up-claude-in-one-day.html", topic:"building", tool:"claude"},
+  {t:"The history of AI, from the perceptron to LLMs", u:"guides/history-of-ai-perceptron-to-llms.html", topic:"start", tool:"claude"},
+  {t:"Find the right Claude skill instead of installing blind", u:"guides/find-the-right-claude-skill.html", topic:"marketing", tool:"claude"},
+  {t:"Make a full YouTube video from one prompt", u:"guides/youtube-video-from-one-prompt.html", topic:"design", tool:"claude"},
+  {t:"Close the 3 security holes in every vibe-coded website", u:"guides/secure-your-vibe-coded-website.html", topic:"building", tool:"claude"},
+  {t:"Make Claude Code copy any website you love", u:"guides/claude-code-style-reference.html", topic:"building", tool:"claude"},
+  {t:"Turn Claude into your viral content strategist", u:"guides/claude-viral-content-strategist.html", topic:"marketing", tool:"claude"},
+  {t:"5 free AI courses, matched to what you want to do", u:"guides/5-free-ai-courses.html", topic:"building", tool:"claude"},
+  {t:"5 ways to make money with AI (and where to start free)", u:"guides/5-ways-to-make-money-with-ai.html", topic:"money", tool:"claude"},
+  {t:"Fix your whole LinkedIn in 5 minutes with Claude", u:"guides/fix-your-linkedin-in-5-minutes.html", topic:"career", tool:"claude"},
+  {t:"The 5 AI work archetypes (job titles are dead)", u:"guides/ai-work-archetypes.html", topic:"marketing", tool:"claude"},
+  {t:"Claude for Small Business: the free setup + 3 workflows", u:"guides/claude-for-small-business.html", topic:"power", tool:"claude"},
+  {t:"What is AI observability (and how to trace your own app)", u:"guides/what-is-ai-observability.html", topic:"building", tool:"claude"},
+  {t:"Find what's actually working in your niche with Claude", u:"guides/find-winning-topics-sandcastles.html", topic:"marketing", tool:"claude"},
+  {t:"Break down any creator's strategy with Claude", u:"guides/break-down-any-creator-sandcastles.html", topic:"building", tool:"claude"},
+  {t:"Build a viral-video watchlist that reports to Claude", u:"guides/viral-video-watchlist-sandcastles.html", topic:"building", tool:"claude"},
+  {t:"Deep-analyze any viral reel with Claude", u:"guides/deep-analyze-any-reel-sandcastles.html", topic:"marketing", tool:"claude"},
+  {t:"Learn from the best hooks in your niche with Claude", u:"guides/steal-the-best-hooks-sandcastles.html", topic:"marketing", tool:"claude"},
+  {t:"Never run out of video ideas with Claude", u:"guides/never-run-out-of-video-ideas-sandcastles.html", topic:"design", tool:"claude"},
+  {t:"Find the best creators in any niche with Claude", u:"guides/find-the-best-creators-sandcastles.html", topic:"marketing", tool:"claude"},
+  {t:"Find your niche's winning video formats with Claude", u:"guides/winning-video-formats-sandcastles.html", topic:"career", tool:"claude"},
+  {t:"Fix your eye contact on camera in one click (Captions)", u:"guides/captions-eye-contact-fix.html", topic:"marketing", tool:"claude"},
+  {t:"Have Claude remove your info from data-broker sites", u:"guides/remove-your-info-from-data-brokers.html", topic:"building", tool:"claude"},
+  {t:"Find viral video ideas free in Chrome (ViewRank)", u:"guides/viewrank-find-viral-ideas.html", topic:"design", tool:"claude"},
+  {t:"Stop wasting Claude tokens on PDFs (MarkItDown)", u:"guides/markitdown-save-claude-tokens.html", topic:"power", tool:"claude"},
+  {t:"3 fast AI certs every student needs", u:"guides/3-fast-ai-certs-for-students.html", topic:"career", tool:"claude"},
+  {t:"The 5 AI certs that actually get you hired", u:"guides/5-ai-certs-that-get-you-hired.html", topic:"career", tool:"claude"},
+  {t:"The AI user spectrum, and how to actually level up", u:"guides/ai-user-spectrum-level-up.html", topic:"power", tool:"claude"},
+  {t:"Anthropic's Claude Certified Architect cert (free to study)", u:"guides/claude-certified-architect-guide.html", topic:"career", tool:"claude"},
+  {t:"Local-business AI automations you can build and sell", u:"guides/local-business-automations-to-sell.html", topic:"money", tool:"claude"},
+  {t:"Build a viral outlier leaderboard in Claude", u:"guides/build-a-viral-outlier-leaderboard-in-claude.html", topic:"marketing", tool:"claude"},
+  {t:"The desire hook method", u:"guides/the-desire-hook-method.html", topic:"marketing", tool:"claude"},
+  {t:"Optimize your LinkedIn with Claude", u:"guides/optimize-linkedin-with-claude.html", topic:"career", tool:"claude"},
+  {t:"Build an interview room in Claude", u:"guides/interview-prep-with-claude.html", topic:"career", tool:"claude"},
+  {t:"4 free tools that make your vibe-coded site look designed", u:"guides/free-tools-vibe-coded-site-look-designed.html", topic:"building", tool:"claude"},
+  {t:"Vibe-code your own desktop pet with Claude", u:"guides/vibe-code-your-own-desktop-pet-with-claude.html", topic:"building", tool:"claude"},
+  {t:"Turn your Instagram Insights into a 30-day plan with Claude", u:"guides/instagram-growth-plan-with-claude.html", topic:"marketing", tool:"claude"},
+  {t:"Build a 3D world website with Claude and Higgsfield", u:"guides/3d-world-website-claude-higgsfield.html", topic:"building", tool:"stack"},
+  {t:"Build a parallax scroll website with Claude and Higgsfield", u:"guides/parallax-scroll-website-claude-higgsfield.html", topic:"building", tool:"stack"},
+  {t:"The 5 AI-era roles: designer, engineer, and manager are turning into", u:"guides/5-ai-era-roles.html", topic:"career", tool:"claude"},
+  {t:"Find every photo of yourself online with Claude (audit + takedown kit)", u:"guides/find-your-photos-claude.html", topic:"design", tool:"claude"},
+  {t:"Build a loop in Claude so it checks its own work", u:"guides/claude-loop-checks-its-work.html", topic:"building", tool:"claude"},
+  {t:"Build your own humanizer skill in Claude", u:"guides/humanizer-skill-claude.html", topic:"building", tool:"claude"},
+  {t:"Make your Claude usage last longer (the planner and executor setup)", u:"guides/claude-usage-planner-loop.html", topic:"productivity", tool:"claude"},
+  {t:"Stop Claude from lying to you (3 fixes)", u:"guides/stop-claude-lying-3-fixes.html", topic:"money", tool:"claude"},
+  {t:"Build a Canva carousel template with Claude", u:"guides/canva-carousel-template-claude-design.html", topic:"design", tool:"claude"},
+  {t:"Go from prompt to shipped UI with Claude", u:"guides/prompt-to-ui-claude-design.html", topic:"design", tool:"claude"},
+  {t:"Vibe-code an ASCII webcam with Claude", u:"guides/vibe-code-ascii-webcam-claude.html", topic:"building", tool:"claude"},
+  {t:"Write better AI image briefs with Claude", u:"guides/claude-art-brief-ai-images.html", topic:"design", tool:"claude"},
+  {t:"Stretch your Claude usage limit", u:"guides/dodge-claude-usage-limit.html", topic:"productivity", tool:"claude"},
+  {t:"Turn your saves into a searchable second brain with Claude", u:"guides/searchable-second-brain-claude.html", topic:"marketing", tool:"claude"},
+  {t:"Climb the 3 levels of AI with Claude", u:"guides/3-levels-of-ai-claude.html", topic:"start", tool:"claude"},
+  {t:"Build editable carousels with Claude and Canva", u:"guides/editable-carousels-claude-canva.html", topic:"marketing", tool:"claude"},
+  {t:"Find checkout codes with Claude", u:"guides/claude-find-checkout-codes.html", topic:"money", tool:"claude"},
+  {t:"Check your tone with Claude before sending", u:"guides/claude-tone-check-before-send.html", topic:"productivity", tool:"claude"},
+  {t:"Build a lead-qualifying agent with Claude", u:"guides/lead-qualifying-agent-claude.html", topic:"marketing", tool:"claude"},
+  {t:"Claude Code vs ChatGPT", u:"guides/claude-code-vs-chatgpt.html", topic:"start", tool:"claude"},
+  {t:"Map your job against Anthropic's AI exposure report", u:"guides/anthropic-job-exposure-report.html", topic:"career", tool:"claude"},
+  {t:"Use Claude without outsourcing your thinking", u:"guides/claude-without-outsourcing-thinking.html", topic:"power", tool:"claude"},
+  {t:"Run your job search with Claude in Chrome", u:"guides/job-search-claude-chrome.html", topic:"career", tool:"claude"},
+  {t:"Research any stock with Claude: the one-prompt scorecard", u:"guides/research-stocks-claude.html", topic:"power", tool:"claude"},
+  {t:"Build an animated website with Claude", u:"guides/animated-website-claude-stitch.html", topic:"building", tool:"claude"},
+  {t:"Find hidden subscriptions with Claude", u:"guides/find-hidden-subscriptions-claude.html", topic:"money", tool:"claude"},
+  {t:"Find every photo of yourself online", u:"guides/find-your-photos-online.html", topic:"power", tool:"chatgpt"},
+  {t:"The Claude Code plugin toolkit", u:"guides/5-claude-code-plugins.html", topic:"building", tool:"claude"},
+  {t:"Your niche trends dashboard: Claude reads your niche for you", u:"guides/competitor-dashboard-claude.html", topic:"content", tool:"claude"},
+  {t:"Make the your-next-opponent-is-you video with your younger self", u:"guides/next-opponent-video-younger-self.html", topic:"content", tool:"stack"},
+  {t:"Build a cozy web toy with Claude in one night", u:"guides/cozy-web-toy.html", topic:"building", tool:"claude"},
+  {t:"Design carousels in Canva with Claude", u:"guides/claude-canva-carousels.html", topic:"design", tool:"claude"},
+  {t:"Build a portfolio project recruiters can click", u:"guides/claude-portfolio-project.html", topic:"career", tool:"claude"},
+  {t:"Turn a folder of documents into a Claude knowledge base", u:"guides/claude-document-knowledge-base.html", topic:"productivity", tool:"claude"},
+  {t:"Build a Claude skill that analyzes prediction markets (educational build guide)", u:"guides/build-a-claude-skill-that-analyzes-prediction-markets-educational-build-guide.html", topic:"building", tool:"claude"},
+  {t:"5 Claude skills every beginner should install", u:"guides/5-claude-skills-every-beginner-should-install.html", topic:"power", tool:"claude"},
+  {t:"The free content engine, with Claude as the brain", u:"guides/free-content-engine.html", topic:"marketing", tool:"claude"},
+  {t:"Build a professional-looking website with Claude Code (no design background)", u:"guides/build-a-professional-looking-website-with-claude-code-no-design-background.html", topic:"building", tool:"claude"},
+  {t:"Build a converting landing page with Claude", u:"guides/build-converting-landing-page-claude.html", topic:"marketing", tool:"claude"},
+  {t:"Build your own AI agent, safely, in Claude", u:"guides/build-ai-agent-safely.html", topic:"building", tool:"claude"},
+  {t:"Run your whole job search with Claude", u:"guides/job-search-autopilot.html", topic:"career", tool:"claude"},
+  {t:"9 things to build with an AI voice", u:"guides/9-things-to-build-with-an-ai-voice.html", topic:"power", tool:"stack"},
+  {t:"Let AI interrogate you", u:"guides/let-ai-interrogate-you.html", topic:"power", tool:"claude"},
+  {t:"Apple's design rules as a Claude skill", u:"guides/apple-design-rules-as-a-claude-skill.html", topic:"design", tool:"claude"},
+  {t:"5 things to install in Claude", u:"guides/5-things-to-install-in-claude.html", topic:"power", tool:"claude"},
+  {t:"5 free tools that replace paid ones", u:"guides/5-free-repos-that-replace-paid-tools.html", topic:"power", tool:"stack"},
+  {t:"5 GitHub repos that teach you more than a paid course", u:"guides/5-github-repos-that-teach-you-more.html", topic:"career", tool:"stack"},
+  {t:"5 essential GitHub repos for Claude", u:"guides/5-essential-github-repos-for-claude.html", topic:"power", tool:"claude"},
+  {t:"5 Claude Code repos you need", u:"guides/5-claude-code-repos-you-need.html", topic:"power", tool:"claude"},
+  {t:"5 free tools that run on your own machine", u:"guides/5-free-open-source-vibe-coding-tools.html", topic:"power", tool:"stack"},
+  {t:"3 Claude agents you can build in 10 minutes", u:"guides/5-claude-agents-in-10-mins.html", topic:"power", tool:"claude"},
+  {t:"100 ChatGPT visual codes", u:"guides/100-chatgpt-visual-codes.html", topic:"design", tool:"chatgpt"},
+{t:"100 ChatGPT codes to study any book", u:"guides/chatgpt-codes-to-study-any-book.html", topic:"power", tool:"chatgpt"},
+  {t:"Niche sites for design inspiration", u:"guides/niche-sites-for-design-inspiration.html", topic:"design", tool:"claude"},
+  {t:"Three design libraries that hand you the prompt", u:"guides/design-libraries-that-give-you-the-prompt.html", topic:"design", tool:"claude"},
+  {t:"ChatGPT query finder and AI-answer page rewriter", u:"guides/ai-answer-visibility-audit.html", topic:"marketing", tool:"stack"},
+  {t:"How to find any discount code with AI", u:"guides/find-any-discount-code-with-ai.html", topic:"power", tool:"chatgpt"},
+  {t:"5 AI certifications to become a cybersecurity engineer", u:"guides/5-ai-certs-cybersecurity-engineer.html", topic:"career", tool:"stack"},
+  {t:"5 certifications to become an AI engineer", u:"guides/5-certs-become-ai-engineer.html", topic:"career", tool:"stack"},
+  {t:"4 YouTube videos that take you from zero to shipping with Claude Code", u:"guides/4-youtube-videos-claude-code.html", topic:"building", tool:"claude"},
+  {t:"5 YouTube channels for AI marketing, and the exact video to start on", u:"guides/5-youtube-channels-ai-marketing.html", topic:"marketing", tool:"stack"},
+  {t:"5 YouTube videos that take you from your first AI image to your first AI film", u:"guides/5-youtube-videos-ai-image-video.html", topic:"design", tool:"stack"},
+  {t:"7 free AI certificates for marketers, in the order to do them", u:"guides/7-days-7-ai-certificates-marketers.html", topic:"marketing", tool:"stack"},
+  {t:"7 AI agent certificates, in the order to do them", u:"guides/7-days-7-ai-agent-certificates.html", topic:"building", tool:"stack"},
+  {t:"7 AI certificates for your resume, in the order to do them", u:"guides/7-days-7-ai-certificates-resume.html", topic:"career", tool:"stack"},
+  {t:"6 free Claude certificates, in the order to do them", u:"guides/7-days-7-claude-certificates.html", topic:"start", tool:"claude"},
+  {t:"7 free AI certificates from Google, in the order to do them", u:"guides/7-days-7-ai-certificates-google.html", topic:"start", tool:"stack"},
+  {t:"5 leadership certs to become a Chief Agent Officer", u:"guides/5-leadership-certs-chief-agent-officer.html", topic:"career", tool:"stack"},
+  {t:"4 AI certifications to become an AI agent manager", u:"guides/5-certs-ai-agent-manager.html", topic:"career", tool:"stack"},
+  {t:"5 AI certifications to become an AI agent orchestrator", u:"guides/5-certs-ai-agent-orchestrator.html", topic:"career", tool:"stack"},
+  {t:"5 signs you actually know how to use AI", u:"guides/5-signs-you-actually-know-how-to-use-ai.html", topic:"power", tool:"claude"},
+  {t:"100 more photo effects and video prompts for Higgsfield", u:"guides/higgsfield-photo-effects-100-prompts.html", topic:"content", tool:"chatgpt"},
+  {t:"LinkedIn headshots: 10 looks + 150 more prompts", u:"guides/linkedin-headshots-150-prompts.html", topic:"career", tool:"stack"},
+  {t:"5 resources to learn AI automation in 2026", u:"guides/picture-ai-automation-resources.html", topic:"building", tool:"claude"},
+  {t:"How to build an AI content team from scratch", u:"guides/picture-ai-content-team.html", topic:"content", tool:"claude"},
+  {t:"Five GitHub repos to build, test and understand AI", u:"guides/picture-ai-github-repos.html", topic:"building", tool:"stack"},
+  {t:"5 GitHub repos to build a strong AI portfolio", u:"guides/picture-ai-portfolio-repos.html", topic:"career", tool:"stack"},
+  {t:"5 resources to master Claude Code in the exact order I do them", u:"guides/picture-claude-code-learning-path.html", topic:"building", tool:"claude"},
+  {t:"24 essentials in your Claude setup", u:"guides/picture-claude-setup-additions.html", topic:"power", tool:"claude"},
+  {t:"8 ways to cut your Claude token usage", u:"guides/picture-claude-token-usage.html", topic:"power", tool:"claude"},
+  {t:"5 GitHub repos for your next design project", u:"guides/picture-design-repositories.html", topic:"design", tool:"claude"},
+  {t:"5 design websites that\u2019ll take your designs to the next level", u:"guides/picture-design-websites.html", topic:"design", tool:"claude"},
+  {t:"5 free resources to build your first AI agent", u:"guides/picture-first-ai-agent.html", topic:"building", tool:"stack"},
+  {t:"How to learn Claude in 1 weekend", u:"guides/picture-learn-claude-weekend.html", topic:"start", tool:"claude"},
+  {t:"Learn machine learning maths in an order that connects", u:"guides/picture-machine-learning-maths.html", topic:"start", tool:"claude"},
+  {t:"Top skills to learn in 2026", u:"guides/picture-skills-2026.html", topic:"career", tool:"claude"},
+  {t:"Choose your AI course: five university resources and where to start", u:"guides/picture-university-ai-courses.html", topic:"start", tool:"stack"},
+  {t:"Five visual resources to understand neural networks", u:"guides/picture-visual-neural-networks.html", topic:"start", tool:"claude"},
+  {t:"4 Claude prompts that make your resume unrejectable", u:"guides/resume-unrejectable.html", topic:"career", tool:"claude"},
+  {t:"Turn yourself into anyone with ChatGPT and Higgsfield Genjutsu", u:"guides/turn-yourself-into-anyone-higgsfield-genjutsu.html", topic:"content", tool:"chatgpt"},
+  {t:"Turn yourself into your own drawing with ChatGPT and Higgsfield Genjutsu", u:"guides/turn-yourself-into-your-own-drawing-higgsfield-genjutsu.html", topic:"content", tool:"chatgpt"},
+  {t:"ATS scorecard builder", u:"guides/ats-scorecard-builder.html", topic:"career", tool:"claude"},
+  {t:"10 LinkedIn suit looks + 100 more headshot prompts", u:"guides/free-linkedin-headshot-prompts.html", topic:"career", tool:"stack"},
+  {t:"How to draw anime and cartoon characters", u:"guides/how-to-draw-anime-cartoon.html", topic:"design", tool:"stack"},
+  {t:"5 Claude Code codes that rescue a messy session", u:"guides/claude-code-codes-that-save-your-session.html", topic:"power", tool:"claude"},
+  {t:"100 Claude codes that actually work", u:"guides/viral-claude-codes-that-actually-work.html", topic:"power", tool:"claude"},
+  {t:"50 more GitHub repo tricks", u:"guides/read-any-github-repo-without-opening-the-code.html", topic:"power", tool:"claude"},
+  {t:"5 free OpenAI Academy badges", u:"guides/5-free-openai-academy-badges.html", topic:"career", tool:"chatgpt"},
+  {t:"The 3 most powerful Claude connectors", u:"guides/3-most-powerful-claude-connectors.html", topic:"power", tool:"claude"},
+  {t:"150 ChatGPT image codes for marketing", u:"guides/150-chatgpt-image-codes-for-marketing.html", topic:"marketing", tool:"chatgpt"},
+  {t:"The job hunt flip: 30 personalised emails instead of 600 applications", u:"guides/job-hunt-flip.html", topic:"career", tool:"claude"},
+  {t:"Build a faceless AI channel", u:"guides/build-a-faceless-ai-channel.html", topic:"marketing", tool:"stack"},
+  {t:"Context rot commands + 10 more Claude commands", u:"guides/claude-context-reset-kit.html", topic:"power", tool:"claude"},
+  {t:"Build a profitable AI app: the opportunity list", u:"guides/build-profitable-ai-apps.html", topic:"money", tool:"chatgpt"},
+  {t:"Run your whole job search inside Claude Code (the real setup)", u:"guides/ai-job-search-claude-setup.html", topic:"career", tool:"claude"},
+  {t:"Turn one photo into a cohesive Canva carousel", u:"guides/one-photo-to-canva-carousel.html", topic:"design", tool:"nocode"},
+  {t:"Build a hand-controlled network with Claude", u:"guides/hand-controlled-network-with-claude.html", topic:"building", tool:"claude"},
+  {"t": "Turn yourself into anyone with ChatGPT and Higgsfield Genjutsu", "u": "guides/turn-yourself-into-anyone-higgsfield-genjutsu.html", "topic": "content", "tool": "chatgpt"},
+  {t:"Turn one photo into a full carousel in Canva", u:"guides/one-photo-to-carousel-canva.html", topic:"content", tool:"stack"},
+  {t:"Beat trading bots by thinking in years, with Claude", u:"guides/think-in-years-stock-research-claude.html", topic:"money", tool:"claude"},
+  {t:"10 corporate AI headshots of yourself: the prompts + how to make them look like you", u:"guides/10-corporate-ai-headshots.html", topic:"career", tool:"stack"},
+  {t:"Build a hand-controlled brain visual with Claude (touch-design style)", u:"guides/claude-touch-design.html", topic:"design", tool:"claude"},
+  {"t": "5 signs you actually know how to use AI", "u": "guides/5-signs-you-actually-know-how-to-use-ai.html", "topic": "power", "tool": "claude"},
+  {"t": "100 more photo effects and video prompts for Higgsfield", "u": "guides/higgsfield-photo-effects-100-prompts.html", "topic": "content", "tool": "chatgpt"},
+  {"t": "LinkedIn headshots: 10 looks + 150 more prompts", "u": "guides/linkedin-headshots-150-prompts.html", "topic": "career", "tool": "stack"},
+  {"t": "5 resources to master Claude Code in the exact order I do them", "u": "guides/picture-claude-code-learning-path.html", "topic": "building", "tool": "claude"},
+  {"t": "Choose your AI course: five university resources and where to start", "u": "guides/picture-university-ai-courses.html", "topic": "start", "tool": "stack"},
+  {"t": "Five GitHub repos to build, test and understand AI", "u": "guides/picture-ai-github-repos.html", "topic": "building", "tool": "stack"},
+  {"t": "5 design websites that’ll take your designs to the next level", "u": "guides/picture-design-websites.html", "topic": "design", "tool": "claude"},
+  {"t": "5 GitHub repos for your next design project", "u": "guides/picture-design-repositories.html", "topic": "design", "tool": "claude"},
+  {"t": "5 resources to learn AI automation in 2026", "u": "guides/picture-ai-automation-resources.html", "topic": "building", "tool": "claude"},
+  {"t": "8 ways to cut your Claude token usage", "u": "guides/picture-claude-token-usage.html", "topic": "power", "tool": "claude"},
+  {"t": "Top skills to learn in 2026", "u": "guides/picture-skills-2026.html", "topic": "career", "tool": "claude"},
+  {"t": "5 free resources to build your first AI agent", "u": "guides/picture-first-ai-agent.html", "topic": "building", "tool": "stack"},
+  {"t": "24 essential additions to your Claude setup", "u": "guides/picture-claude-setup-additions.html", "topic": "power", "tool": "claude"},
+  {"t": "How to build an AI content team from scratch", "u": "guides/picture-ai-content-team.html", "topic": "content", "tool": "claude"},
+  {"t": "How to learn Claude in 1 weekend", "u": "guides/picture-learn-claude-weekend.html", "topic": "start", "tool": "claude"},
+  {"t": "5 GitHub repos to build a strong AI portfolio", "u": "guides/picture-ai-portfolio-repos.html", "topic": "career", "tool": "stack"},
+  {"t": "Learn machine learning maths in an order that connects", "u": "guides/picture-machine-learning-maths.html", "topic": "start", "tool": "claude"},
+  {"t": "Five visual resources to understand neural networks", "u": "guides/picture-visual-neural-networks.html", "topic": "start", "tool": "claude"},
+  {t:"Run a faceless channel on autopilot with FacelessReels", u:"guides/faceless-channel-on-autopilot-facelessreels.html", topic:"money", tool:"nocode"},
+{t:"Build an AI sales team that calls every lead in 60 seconds", u:"guides/ai-sales-team-astra-fish-audio.html", topic:"marketing", tool:"stack"},
+{t:"Vibe direct a whole brand with Luma Agents", u:"guides/vibe-direct-a-brand-with-luma-agents.html", topic:"design", tool:"nocode"},
+{t:"The Claude agent safety checklist (3 settings)", u:"guides/claude-agent-safety-checklist.html", topic:"power", tool:"claude"},
+  {t:"Give Claude eyes on 13+ platforms with Agent Reach", u:"guides/give-claude-eyes-with-agent-reach.html", topic:"power", tool:"claude"},
+  {t:"Build anything with GPT-6 Astra and Higgsfield: the full manual", u:"guides/gpt-6-astra-higgsfield-builds.html", topic:"building", tool:"stack"},
+  {t:"Run every customer chat from one AI inbox: the AgentFlow walkthrough", u:"guides/one-inbox-agentflow-sleekflow.html", topic:"marketing", tool:"nocode"},
+  {t:"8 things you can build with GPT-6 Astra and Fish Audio", u:"guides/8-things-to-build-gpt-6-astra-fish-audio.html", topic:"building", tool:"stack"},
+  {t:"Build a night Tokyo police chase game with GPT-6 Astra: the whole game as one prompt", u:"guides/build-a-tokyo-car-chase-game-with-claude.html", topic:"building", tool:"chatgpt"},
+  {t:"200 product visual codes and prompts (the Higgsfield plugin)", u:"guides/chatgpt-product-visual-codes.html", topic:"content", tool:"chatgpt"},
+  {t:"Edit a whole video with AI: the Arcads Omni 1.1 workflow", u:"guides/edit-video-with-ai-arcads-omni.html", topic:"content", tool:"stack"},
+  {t:"UGC that doesn't look AI", u:"guides/ugc-that-doesnt-look-ai.html", topic:"content", tool:"stack"},
+  {t:"5 AI certificates that land jobs in 2026", u:"guides/5-ai-certs-land-job-2026.html", topic:"career", tool:"stack"},
+  {t:"50 ChatGPT codes and 150 Higgsfield plugin prompts", u:"guides/chatgpt-codes-higgsfield-prompts.html", topic:"content", tool:"chatgpt"},
+  {t:"GPT-6 Astra: the full breakdown and what to actually use it for", u:"guides/gpt-6-astra-breakdown.html", topic:"power", tool:"stack"},
+  {t:"Edit your videos with AI: the good-take workflow", u:"guides/edit-your-videos-with-ai.html", topic:"productivity", tool:"chatgpt"},
+  {t:"10 ways Claude can save you money", u:"guides/10-ways-claude-saves-money.html", topic:"money", tool:"claude"},
+  {t:"Connect your ad account and your creative studio inside Claude", u:"guides/claude-ad-multiplier-setup.html", topic:"marketing", tool:"stack"},
+  {t:"Build a stock dashboard with Emergent", u:"guides/build-a-stock-dashboard-with-emergent.html", topic:"building", tool:"nocode"},
+  {t:"Get paid for the AI content you already make: the affiliate setup", u:"guides/higgsfield-affiliate-setup.html", topic:"marketing", tool:"stack"},
+  {t:"Train for the agent manager era: free courses, one weekend build, the vocabulary", u:"guides/agent-manager-training-claude.html", topic:"career", tool:"claude"},
+  {t:"Prompt to add human approval checkpoints", u:"guides/double-decker-ai-sandwich.html", topic:"productivity", tool:"claude"},
+  {t:"Fix your whole SEO with a free Claude skill", u:"guides/fix-seo-with-claude-skill.html", topic:"power", tool:"claude"},
+  {t:"See and delete the hidden file ChatGPT built on you", u:"guides/chatgpt-memory-file-prompts.html", topic:"power", tool:"chatgpt"},
+  {t:"Stop your AI chats from showing up on Google", u:"guides/stop-ai-chats-showing-on-google.html", topic:"career", tool:"claude"},
+  {t:"4 GitHub repos for insane design effects (with Claude Code)", u:"guides/4-github-design-repos.html", topic:"building", tool:"claude"},
+  {t:"How to find real jobs (not ghost jobs) with Claude", u:"guides/find-real-jobs-with-claude.html", topic:"career", tool:"claude"},
+  {t:"How to sell animated websites with ChatGPT and Higgsfield", u:"guides/build-a-business-website-with-chatgpt.html", topic:"building", tool:"chatgpt"},
+  {t:"10 LinkedIn photoshoot prompts (Higgsfield in ChatGPT)", u:"guides/10-linkedin-photoshoot-prompts.html", topic:"career", tool:"chatgpt"},
+  {t:"Build a Jarvis that briefs you every morning (Claude + Fish Audio)", u:"guides/build-a-jarvis-that-briefs-you.html", topic:"building", tool:"claude"},
+  {t:"Build a $10,000 website with Emergent", u:"guides/build-a-10k-website-with-emergent.html", topic:"building", tool:"nocode"},
+  {t:"Make a cinematic AI film of yourself (Tokyo night + the 144p reveal)", u:"guides/tokyo-night-144p-reveal.html", topic:"content", tool:"stack"},
+  {t:"Sort your whole messy files folder with one Claude prompt", u:"guides/sort-your-files-with-claude.html", topic:"productivity", tool:"claude"},
+  {t:"The 5-box system that organizes your whole AI setup", u:"guides/five-box-ai-system.html", topic:"start", tool:"claude"},
+  {t:"5 portfolio websites to build with Claude x Higgsfield", u:"guides/5-portfolio-websites-claude-higgsfield.html", topic:"building", tool:"stack"},
+  {t:"Make a cinematic video of yourself (Soul 2.0 + Seedance 2.5)", u:"guides/cinematic-video-of-yourself-soul-seedance.html", topic:"content", tool:"stack"},
+  {t:"5 ways to make money with Claude and Higgsfield", u:"guides/five-ways-to-make-money-claude-higgsfield.html", topic:"marketing", tool:"stack"},
+  {t:"Four websites to build with Claude x Higgsfield", u:"guides/four-websites-claude-higgsfield.html", topic:"building", tool:"stack"},
+  {t:"The future-self plan: turn your 10-year regrets into a weekly system with Claude", u:"guides/future-self-plan-claude.html", topic:"life", tool:"claude"},
+  {t:"Sell everything in your house with Claude", u:"guides/sell-everything-with-claude.html", topic:"productivity", tool:"claude"},
+  {t:"5 Claude plugins most people never install", u:"guides/claude-plugins-most-people-never-install.html", topic:"productivity", tool:"claude"},
+  {t:"Build your family tree with ChatGPT (free, starting tonight)", u:"guides/family-tree-chatgpt.html", topic:"life", tool:"chatgpt"},
+  {t:"Build a website your hand can control (the paper scrunch site)", u:"guides/hand-controlled-scrunch-website.html", topic:"building", tool:"stack"},
+  {t:"7 Cinematic Film Portrait Prompts", u:"guides/7-cinematic-film-portrait-prompts.html", topic:"design", tool:"stack"},
+  {t:"5 Photo Realistic Portrait Prompts", u:"guides/cinematic-film-portrait-prompts.html", topic:"design", tool:"stack"},
+  {t:"The levitating product ad system (2 prompts)", u:"guides/levitating-product-ad-higgsfield.html", topic:"marketing", tool:"stack"},
+  {t:"Build an interactive ripple landing page (zero code)", u:"guides/interactive-ripple-landing-page.html", topic:"building", tool:"nocode"},
+  {t:"Build a $5k assembly animation with zero code", u:"guides/5k-assembly-animation-higgsfield.html", topic:"building", tool:"nocode"},
+  {t:"Turn Claude into an entire anime studio (the Higgsfield setup)", u:"guides/turn-claude-into-an-anime-studio.html", topic:"content", tool:"claude"},
+  {t:"The Fish Audio voice-clone workflow: clone your voice + control the emotion", u:"guides/fish-audio-voice-clone.html", topic:"content", tool:"stack"},
+  {t:"5 AI certifications you can finish this weekend (all free)", u:"guides/5-ai-certs-this-weekend.html", topic:"career", tool:"stack"},
+  {t:"7 days, 7 AI certificates, absolutely free", u:"guides/7-days-7-ai-certificates.html", topic:"career", tool:"stack"},
+  {t:"5 projects to become an AI engineer (no CS degree)", u:"guides/5-projects-become-ai-engineer.html", topic:"building", tool:"stack"},
+  {t:"5 free certifications to become a Chief Agent Officer", u:"guides/5-free-certs-chief-agent-officer.html", topic:"career", tool:"stack"},
+  {t:"I feel so behind on AI? Start here (4 free things)", u:"guides/feel-behind-on-ai-start-here.html", topic:"start", tool:"stack"},
+  {t:"Where to start with Claude Code (4 videos, in order)", u:"guides/where-to-start-claude-code.html", topic:"start", tool:"claude"},
+  {t:"Build your own Jarvis with Claude (the full toolkit)", u:"guides/build-your-own-jarvis-with-claude.html", topic:"building", tool:"claude"},
+  {t:"Make UGC ads by chatting to Claude (the Arcads setup)", u:"guides/ugc-ads-by-chatting-to-claude-arcads.html", topic:"marketing", tool:"claude"},
+  {t:"How to run your job hunt with Claude (the Apify setup)", u:"guides/run-your-job-hunt-with-claude.html", topic:"career", tool:"claude"},
+  {t:"How to set up Claude Code the right way", u:"guides/claude-code-setup-the-right-way.html", topic:"start", tool:"claude"},
+  {t:"The FDE starter kit: practice the hottest job in AI with Claude", u:"guides/fde-starter-kit-claude.html", topic:"career", tool:"claude"},
+  {t:"Trip Palette: the app that packs for your destination", u:"guides/trip-palette-packing-app-with-claude.html", topic:"building", tool:"claude"},
+  {t:"Organize a year of receipts with Claude (tax time system)", u:"guides/organize-a-year-of-receipts-with-claude.html", topic:"productivity", tool:"claude"},
+  {t:"The /analyze skill: reverse-engineer any viral video", u:"guides/analyze-skill-viral-videos.html", topic:"content", tool:"claude"},
+  {t:"Generate 50 UGC video ads overnight with Claude and Higgsfield", u:"guides/generate-50-ugc-ads-overnight-claude-higgsfield.html", topic:"marketing", tool:"claude"},
+  {t:"5 Claude Code skills that replace your Meta ads agency", u:"guides/meta-ads-skills.html", topic:"marketing", tool:"claude"},
+  {t:"How to make the text wrap effect", u:"guides/text-wrap-effect.html", topic:"content", tool:"claude"},
+  {t:"5 secret Claude prompts", u:"guides/5-secret-claude-prompts.html", topic:"power", tool:"claude"},
+  {t:"Claude starter pack (setup guide)", u:"guides/claude-starter-pack.html", topic:"start", tool:"claude"},
+  {t:"Turn Claude into your interior designer", u:"guides/claude-interior-designer.html", topic:"life", tool:"claude"},
+  {t:"When to use Opus vs Sonnet vs Haiku", u:"guides/opus-sonnet-haiku.html", topic:"start", tool:"claude"},
+  {t:"Travel with Claude: your stress-free trip setup guide", u:"guides/travel-with-claude.html", topic:"life", tool:"claude"},
+  {t:"100 secret Claude codes (the cheat-sheet edition)", u:"guides/100-claude-codes.html", topic:"power", tool:"claude"},
+  {t:"Connect Meta ads to Claude", u:"guides/connect-meta-ads.html", topic:"marketing", tool:"claude"},
+  {t:"100 ChatGPT prompts (the unfair advantage edition)", u:"guides/100-chatgpt-prompts.html", topic:"power", tool:"chatgpt"},
+  {t:"Fridge to feast: the ChatGPT prompt that turns your fridge photo into 16+ meals", u:"guides/fridge-to-feast.html", topic:"life", tool:"chatgpt"},
+  {t:"5 Claude skills that replace your Meta ads agency", u:"guides/claude-skills-meta-ads.html", topic:"marketing", tool:"claude"},
+  {t:"7 Claude skills for creative teams (full setup guide)", u:"guides/claude-creative-teams.html", topic:"design", tool:"claude"},
+  {t:"The AI System Starter Pack: build your first AI system with Claude", u:"guides/ai-system-starter-pack.html", topic:"start", tool:"claude"},
+  {t:"5 ChatGPT cheat codes", u:"guides/5-chatgpt-cheat-codes.html", topic:"power", tool:"chatgpt"},
+  {t:"How to turn Claude into your full-time designer", u:"guides/claude-full-time-designer.html", topic:"design", tool:"claude"},
+  {t:"How to master Claude in one weekend", u:"guides/master-claude-weekend.html", topic:"start", tool:"claude"},
+  {t:"100 careers AI won't replace", u:"guides/100-careers-ai-wont-replace.html", topic:"career", tool:"stack"},
+  {t:"5 ChatGPT cheat codes no one's talking about", u:"guides/chatgpt-cheat-codes-secret.html", topic:"power", tool:"chatgpt"},
+  {t:"How I went from 0 to 30k in 3 weeks on IG using Claude", u:"guides/0-to-30k-ig.html", topic:"marketing", tool:"claude"},
+  {t:"The AI power-user stack (top tools, by use case)", u:"guides/ai-power-user-stack.html", topic:"power", tool:"stack"},
+  {t:"The Claude + Meta ads playbook", u:"guides/claude-meta-ads-playbook.html", topic:"marketing", tool:"claude"},
+  {t:"How to stop Claude from being your biggest yes-man", u:"guides/stop-claude-yes-man.html", topic:"productivity", tool:"claude"},
+  {t:"Claude usage cheat sheet: cut your token spend in half", u:"guides/claude-token-cheat-sheet.html", topic:"power", tool:"claude"},
+  {t:"Your 2026 AI toolkit: Claude, Lovart, ElevenLabs and Blotato", u:"guides/2026-ai-toolkit.html", topic:"power", tool:"stack"},
+  {t:"Diary-core Instagram pictures with Lovart: the full prompt + guide", u:"guides/diary-core-lovart.html", topic:"design", tool:"lovart"},
+  {t:"The $10,000 website: build yours with Claude + Emergent", u:"guides/10k-website-emergent.html", topic:"building", tool:"nocode"},
+  {t:"Which Claude AI model should you use?", u:"guides/which-claude-model.html", topic:"start", tool:"claude"},
+  {t:"5 ChatGPT glow-up prompts (part 1)", u:"guides/chatgpt-glow-up-prompts.html", topic:"life", tool:"chatgpt"},
+  {t:"The AI glow-up prompt pack: rate your face, plan your glow up, find your colors", u:"guides/glow-up-rate-face.html", topic:"life", tool:"chatgpt"},
+  {t:"The AI glow-up prompt pack: plan your full glow up + 6 more prompts", u:"guides/glow-up-full.html", topic:"life", tool:"chatgpt"},
+  {t:"The AI glow-up prompt pack: find your colors + 6 more prompts", u:"guides/glow-up-colors.html", topic:"life", tool:"chatgpt"},
+  {t:"Okara: your own AI CMO", u:"guides/okara-ai-cmo.html", topic:"marketing", tool:"nocode"},
+  {t:"Build a whole lead funnel from one Claude prompt (Perspective MCP)", u:"guides/lead-funnel-perspective.html", topic:"marketing", tool:"nocode"},
+  {t:"AI rates your face out of 10: the full 7-prompt glow-up set (ChatGPT)", u:"guides/ai-rates-face.html", topic:"life", tool:"chatgpt"},
+  {t:"Free color analysis from one selfie: your exact season, palette and hex codes (ChatGPT)", u:"guides/color-analysis-selfie.html", topic:"life", tool:"chatgpt"},
+  {t:"Build a $5k scroll animation with zero code", u:"guides/5k-scroll-animation.html", topic:"building", tool:"nocode"},
+  {t:"The 30-second prompt that actually shrinks your to-do list", u:"guides/30-second-todo.html", topic:"productivity", tool:"claude"},
+  {t:"Your 4-agent salary negotiation team", u:"guides/salary-negotiation-team.html", topic:"career", tool:"claude"},
+  {t:"Rebuild any website you love with Claude Code", u:"guides/rebuild-website-claude.html", topic:"building", tool:"claude"},
+  {t:"Design posters like a world-class designer (Reve reference trick)", u:"guides/posters-reve.html", topic:"design", tool:"reve"},
+  {t:"Turn selfies into a pro headshot (ChatGPT): the prompt pack", u:"guides/pro-headshot-chatgpt.html", topic:"life", tool:"chatgpt"},
+  {t:"How to use Claude to beat the ATS: your 4-agent resume team", u:"guides/beat-ats-4-agent.html", topic:"career", tool:"claude"},
+  {t:"The great prompt template (and 5 worked examples)", u:"guides/great-prompt-template.html", topic:"power", tool:"claude"},
+  {t:"Beat the ATS: your 6-agent resume team", u:"guides/beat-ats-6-agent.html", topic:"career", tool:"claude"},
+  {t:"The C.A.S.T method: the short version", u:"guides/cast-method.html", topic:"start", tool:"claude"},
+  {t:"11 free resources to go from Claude beginner to power user", u:"guides/11-free-resources.html", topic:"start", tool:"stack"},
+  {t:"Claude skills setup: save any content workflow as a one-word command", u:"guides/claude-skills-command.html", topic:"power", tool:"claude"},
+  {t:"The ultimate Claude starter pack: every link, in one place", u:"guides/ultimate-starter-pack.html", topic:"start", tool:"claude"},
+  {t:"The Claude skills actually worth installing", u:"guides/skills-worth-installing.html", topic:"power", tool:"claude"},
+  {t:"Cut your Claude Code bill by up to 80%: the 8-fix setup guide", u:"guides/cut-claude-bill.html", topic:"power", tool:"claude"},
+  {t:"The 8 Claude agents that run a marketing system: the full build guide", u:"guides/8-agents-marketing.html", topic:"marketing", tool:"claude"},
+  {t:"5 AI skills worth real money in 2026 (and where to learn each)", u:"guides/5-ai-skills-money.html", topic:"career", tool:"stack"},
+  {t:"24 things to install in Claude: the power-user setup guide", u:"guides/24-things-install-claude.html", topic:"power", tool:"claude"},
+  {t:"24 more things to install in Claude: the sequel setup guide", u:"guides/24-more-things-install-claude.html", topic:"power", tool:"claude"},
+  {t:"Build a SaaS app with Claude and Blink (full guide)", u:"guides/saas-app-blink.html", topic:"building", tool:"nocode"},
+  {t:"Build a mobile app with Claude and Blink (full guide)", u:"guides/mobile-app-blink.html", topic:"building", tool:"nocode"},
+  {t:"Free content engine: 3 tools + Claude as the brain", u:"guides/content-engine.html", topic:"content", tool:"stack"},
+  {t:"The faceless YouTube system: niche prompt + Fish Audio voice", u:"guides/faceless-youtube-system-claude-fish-audio.html", topic:"content", tool:"claude"},
+  {t:"Bulk ad voiceovers with Claude and Fish Audio", u:"guides/bulk-ad-voiceovers-claude-fish-audio.html", topic:"marketing", tool:"claude"},
+  {t:"Build a bedtime story app in your own voice with Claude", u:"guides/bedtime-story-app-your-own-voice.html", topic:"building", tool:"claude"},
+  {t:"9 Claude Code token-saving moves", u:"guides/9-claude-code-token-saving-moves.html", topic:"productivity", tool:"claude"},
+  {t:"How to build Claude skills to land a promotion", u:"guides/build-claude-skills-to-land-a-promotion.html", topic:"productivity", tool:"claude"},
+  {t:"Build a focus system with Claude (anti-scroll prompts)", u:"guides/build-a-focus-system-with-claude-anti-scroll-prompts.html", topic:"productivity", tool:"claude"},
+  {t:"How to make your first Claude subagent", u:"guides/how-to-make-your-first-claude-subagent.html", topic:"building", tool:"claude"},
+  {t:"Set up your first Claude agent (human-in-the-loop starter guide)", u:"guides/set-up-your-first-claude-agent-human-in-the-loop-starter-guide.html", topic:"building", tool:"claude"},
+  {t:"100 things to build with Claude Artifacts", u:"guides/build-with-artifacts.html", topic:"productivity", tool:"claude"},
+  {t:"Claude memory setup guide", u:"guides/claude-memory-setup.html", topic:"start", tool:"claude"},
+  {t:"How to set up Claude Cowork and Claude Code (the complete guide)", u:"guides/claude-cowork-code-setup.html", topic:"start", tool:"claude"},
+  {t:"Make Claude work while you sleep: the overnight setup", u:"guides/claude-overnight.html", topic:"power", tool:"claude"},
+  {t:"Turn any photo into a $10k-looking product ad (Claude + Reve)", u:"guides/product-ad-reve.html", topic:"design", tool:"reve"},
+  {t:"Never let Claude check its own work: the fresh-reviewer prompt kit", u:"guides/claude-fresh-context-reviewer.html", topic:"productivity", tool:"claude"},
+  {t:"Claude Code rewind + checkpoints: undo anything in one keystroke", u:"guides/claude-rewind-checkpoints.html", topic:"building", tool:"claude"},
+  {t:"Erase yourself from the internet with Claude", u:"guides/erase-yourself-from-the-internet-with-claude.html", topic:"power", tool:"claude"},
+  {t:"Make AI UGC that doesn't look fake (Soul 2.0 + Seedance 2.5)", u:"guides/ai-ugc-soul-seedance-workflow.html", topic:"marketing", tool:"claude"},
+  {t:"Build your own GoHighLevel with Claude + Emergent", u:"guides/build-your-own-gohighlevel-with-claude.html", topic:"building", tool:"nocode"},
+  {t:"How to make money building real apps with Claude and Emergent", u:"guides/make-money-building-apps-claude-emergent.html", topic:"building", tool:"nocode"},
+  {t:"Build a lead machine with Emergent", u:"guides/build-a-lead-machine-with-emergent.html", topic:"marketing", tool:"nocode"},
+  {t:"Build websites worth thousands with Claude and Emergent", u:"guides/build-websites-worth-thousands-claude-emergent.html", topic:"building", tool:"nocode"},
+  {t:"Build a $10,000 website with Claude + Replit Design", u:"guides/build-a-website-with-replit-design.html", topic:"building", tool:"nocode"},
+  {t:"Build a $10,000 website with Claude + Kombai", u:"guides/build-a-website-with-claude-and-kombai.html", topic:"building", tool:"nocode"},
+  {t:"Make a full music video in minutes with One More Shot", u:"guides/make-a-music-video-with-one-more-shot.html", topic:"content", tool:"stack"},
+  {t:"Replace your paid tools with Claude (the free-twin swap list)", u:"guides/replace-your-paid-tools-with-claude.html", topic:"productivity", tool:"claude"},
+  {t:"Shoot a whole fashion campaign of yourself (Higgsfield + Claude)", u:"guides/shoot-a-fashion-campaign-of-yourself-higgsfield.html", topic:"design", tool:"claude"},
+  {t:"Make your own professional headshots (Higgsfield + Claude)", u:"guides/make-your-own-professional-headshots-higgsfield.html", topic:"career", tool:"claude"},
+  {t:"10 LinkedIn headshot prompts (Higgsfield + Claude)", u:"guides/10-linkedin-headshot-prompts.html", topic:"career", tool:"claude"},
+  {t:"The AI video prompt enhancer skill (Claude + Arcads)", u:"guides/ai-video-prompt-enhancer-skill-arcads.html", topic:"content", tool:"claude"},
+  {t:"Edit your videos by talking to them (Arcads + Google Omni Flash)", u:"guides/edit-videos-by-talking-arcads-omni-flash.html", topic:"content", tool:"claude"},
+  {t:"The Claude prompt template: bad vs good vs great (+ 8 worked examples)", u:"guides/claude-prompt-template.html", topic:"start", tool:"claude"},
+  {t:"Set up Claude in one weekend: the C.A.S.T method", u:"guides/set-up-claude-in-one-weekend-cast-method.html", topic:"start", tool:"claude"},
+
+  /* ---- previously live but unlisted, added 2026-08-27 ---- */
+  {t:"LinkedIn headshots: 110 prompts, 10 with photos", u:"guides/linkedin-headshots-110-prompts.html", topic:"career", tool:"stack"},
+  {t:"4 free certificates to become an AI automation specialist", u:"guides/4-free-certs-ai-automation-specialist.html", topic:"career", tool:"nocode"},
+  {t:"5 AI certifications that will land you a job in 2026", u:"guides/5-ai-certifications-2026.html", topic:"career", tool:"stack"},
+  {t:"5 AI skills worth more than a degree: the free roadmap", u:"guides/5-ai-skills-worth-more-than-a-degree.html", topic:"career", tool:"stack"},
+  {t:"5 artifacts to build with Claude this week", u:"guides/5-artifacts-to-build-with-claude.html", topic:"building", tool:"claude"},
+  {t:"5 Claude skills that run your entire life", u:"guides/5-claude-skills-that-run-your-life.html", topic:"life", tool:"claude"},
+  {t:"The profile-to-client checklist: turn your profile into a page premium clients reach out to", u:"guides/attract-high-paying-clients-with-claude.html", topic:"marketing", tool:"claude"},
+  {t:"An open-source AI marketing team for Claude Code", u:"guides/claude-code-ai-marketing-team.html", topic:"marketing", tool:"claude"},
+  {t:"Top 5 Claude Code front-end skills: the anti-AI-slop toolkit", u:"guides/claude-code-frontend-design-tools.html", topic:"design", tool:"claude"},
+  {t:"Make on-brand product photos with Claude Code + Nano Banana 2", u:"guides/claude-code-nano-banana-brand-visuals.html", topic:"design", tool:"claude"},
+  {t:"4 Claude Code prompts that turn it into a super-employee", u:"guides/claude-code-teammate-not-chatbot.html", topic:"power", tool:"claude"},
+  {t:"The 4-tool stack that cuts Claude Code context waste", u:"guides/claude-context-waste-stack.html", topic:"power", tool:"claude"},
+  {t:"How to use Claude for agencies: the 5 highest-ROI workflows", u:"guides/claude-for-agencies.html", topic:"marketing", tool:"claude"},
+  {t:"Claude hooks that make your agent fix its own mistakes", u:"guides/claude-self-correcting-loop.html", topic:"power", tool:"claude"},
+  {t:"5 Claude setups for a brain that won't sit still", u:"guides/claude-setups-for-a-busy-brain.html", topic:"productivity", tool:"claude"},
+  {t:"Claude skills for designers: 5 that ship beautiful work", u:"guides/claude-skills-for-designers.html", topic:"design", tool:"claude"},
+  {t:"10 Claude skills every marketer needs (with links)", u:"guides/claude-skills-for-marketers.html", topic:"marketing", tool:"claude"},
+  {t:"Hand the thumbnail grind to Claude: the one-command setup", u:"guides/claude-thumbnail-command.html", topic:"content", tool:"claude"},
+  {t:"Put your week on autopilot with Claude", u:"guides/claude-week-on-autopilot.html", topic:"productivity", tool:"claude"},
+  {t:"Claude is a yes man: the council skill that makes it argue back", u:"guides/claude-yes-man-council-skill.html", topic:"power", tool:"claude"},
+  {t:"Build your content dashboard with Claude Code: the full prompt pack", u:"guides/content-dashboard-claude-code.html", topic:"content", tool:"claude"},
+  {t:"Build a content engine inside Claude: skills + your brand context", u:"guides/content-engine-inside-claude.html", topic:"content", tool:"claude"},
+  {t:"The 5 folders that let you build anything with AI (20 tools)", u:"guides/five-folders-build-anything.html", topic:"building", tool:"stack"},
+  {t:"Free vs paid AI tools: 6 swaps that do the same job for $0", u:"guides/free-vs-paid-ai-tools.html", topic:"start", tool:"stack"},
+  {t:"Idea to a working app with Claude Code: the build blueprint", u:"guides/idea-to-app-with-claude-code.html", topic:"building", tool:"claude"},
+  {t:"How to master Claude in one weekend: the 9-step playbook", u:"guides/master-claude-in-one-weekend.html", topic:"start", tool:"claude"},
+  {t:"Give Claude a memory: the second-brain setup with Obsidian", u:"guides/second-brain-claude-memory.html", topic:"productivity", tool:"claude"},
+];
+
+let activeTopic = 'all', activeTool = 'all', searchQuery = '';
+/* 29 Oct 2026: one card per guide (some were listed twice), 30 at a time with more
+   appearing as you scroll, real chip buttons, and a way back from an empty filter. */
+(function(){ const seen = new Set(), out = [];
+  GUIDES.forEach(g => { if (!seen.has(g.u)) { seen.add(g.u); out.push(g); } });
+  GUIDES.length = 0; out.forEach(g => GUIDES.push(g)); })();
+const PAGE = 30;
+let shownList = [], drawn = 0;
+
+function chip(label, value, group, isActive){
+  const d = document.createElement('button');
+  d.type = 'button';
+  d.className = 'chip' + (group==='tool'?' tool':'') + (isActive?' active':'');
+  d.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+  d.textContent = label;
+  d.onclick = function(){
+    if(group==='topic') activeTopic = value; else activeTool = value;
+    render(group + ':' + value);
+  };
+  return d;
+}
+
+function renderChips(focusKey){
+  const tc = document.getElementById('topicChips'); tc.innerHTML='';
+  TOPICS.forEach(([v,l])=> tc.appendChild(chip(l,v,'topic',v===activeTopic)));
+  const oc = document.getElementById('toolChips'); oc.innerHTML='';
+  TOOLS.forEach(([v,l])=> oc.appendChild(chip(l,v,'tool',v===activeTool)));
+  if (focusKey) {
+    const [grp, val] = focusKey.split(':');
+    const list = grp === 'topic' ? TOPICS : TOOLS, box = grp === 'topic' ? tc : oc;
+    const i = list.findIndex(x => x[0] === val);
+    if (i > -1 && box.children[i]) box.children[i].focus({preventScroll:true});
+  }
+}
+
+function card(g){
+  const a = document.createElement('a');
+  a.className='gcard'; a.href=g.u;
+  a.innerHTML =
+    '<h3>'+g.t+'</h3>'+
+    '<div class="gtags">'+
+      '<span class="gtag topic">'+TOPIC_LABEL[g.topic]+'</span>'+
+      '<span class="gtag tool">'+TOOL_LABEL[g.tool]+'</span>'+
+    '</div>'+
+    '<span class="read">Read guide →</span>';
+  return a;
+}
+
+function drawMore(){
+  const lib = document.getElementById('lib');
+  const frag = document.createDocumentFragment();
+  shownList.slice(drawn, drawn + PAGE).forEach(g => frag.appendChild(card(g)));
+  drawn = Math.min(drawn + PAGE, shownList.length);
+  lib.appendChild(frag);
+  document.getElementById('more').hidden = drawn >= shownList.length;
+}
+
+function render(focusKey){
+  renderChips(focusKey);
+  const lib = document.getElementById('lib'); lib.innerHTML='';
+  shownList = GUIDES.filter(g =>
+    (activeTopic==='all'||g.topic===activeTopic) &&
+    (activeTool==='all'||g.tool===activeTool) &&
+    g.t.toLowerCase().includes(searchQuery)
+  );
+  drawn = 0;
+  document.getElementById('count').textContent =
+    (activeTopic==='all' && activeTool==='all') ? GUIDES.length + ' guides' : shownList.length + ' of ' + GUIDES.length + ' guides';
+  if(!shownList.length){
+    const empty = document.createElement('div');
+    empty.className = 'search-empty';
+    empty.innerHTML = '<strong>No guides match that yet.</strong><span>Try another tool, or comment the idea under one of my reels.</span>';
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'btn'; b.textContent = 'Show all guides';
+    b.onclick = function(){ activeTopic = 'all'; activeTool = 'all'; render(); };
+    empty.appendChild(b);
+    lib.appendChild(empty);
+    document.getElementById('more').hidden = true;
+    return;
+  }
+  drawMore();
+}
+document.getElementById('more').onclick = drawMore;
+if ('IntersectionObserver' in window) {
+  new IntersectionObserver(es => { if (es[0].isIntersecting && drawn < shownList.length) drawMore(); },
+    {rootMargin: '0px 0px 600px 0px'}).observe(document.getElementById('more'));
+}
+render();
+</script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site-reveals.js" data-site-reveals defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

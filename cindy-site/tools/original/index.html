@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cindy Zhu · AI you can actually use</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Build tasteful, efficient systems with AI. Learn the setups and workflows I use, including the content systems behind 440,000+ followers and subscribers across channels.">
+<link rel="canonical" href="https://cindyzhu.com.au/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Cindy Zhu · AI you can actually use">
+<meta property="og:description" content="Build tasteful, efficient systems with AI. Learn the setups and workflows I use, including the content systems behind 440,000+ followers and subscribers across channels.">
+<meta property="og:url" content="https://cindyzhu.com.au/">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cindy Zhu · AI you can actually use">
+<meta name="twitter:description" content="Build tasteful, efficient systems with AI. Learn the setups and workflows I use, including the content systems behind 440,000+ followers and subscribers across channels.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Cindy Zhu","url":"https://cindyzhu.com.au","description":"Build tasteful, efficient systems with AI. Learn the setups and workflows I use, including the content systems behind 440,000+ followers and subscribers across channels.","publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"}}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+/* Homepage introduction: handwritten greeting, one clear headline. */
+.home-hero .hi{font-size:2.1rem;margin-bottom:9px;}
+.home-hero h1{font-size:clamp(44px,4.4vw,64px);line-height:1.06;letter-spacing:-1.2px;margin:0 0 22px;color:var(--ink);}
+.home-hero h1 span{display:block;}
+.home-hero h1 .ai-or{color:var(--coral);font-style:normal;}
+.home-hero .cta-row{margin-bottom:0;}
+@media(max-width:760px){.home-hero h1{font-size:clamp(36px,9.8vw,48px);letter-spacing:-.7px;}.home-hero .hi{font-size:2rem;}}
+
+/* Leave breathing room between the Polaroid and the scrolling strips. */
+.home-hero{padding-bottom:68px;}
+@media(max-width:760px){.home-hero{padding-bottom:48px;}}
+
+/* A small, occasional wiggle. Transform only: the photo and page never shift. */
+.home-hero .photo-crab{transform-origin:50% 78%;animation:photo-crab-wiggle 6s ease-in-out 1.2s infinite;}
+@keyframes photo-crab-wiggle{0%,68%,100%{transform:rotate(5deg)}74%{transform:translateY(-2px) rotate(1deg)}80%{transform:translateY(-2px) rotate(8deg)}86%{transform:rotate(3deg)}92%{transform:rotate(5deg)}}
+@media(prefers-reduced-motion:reduce){.home-hero .photo-crab{animation:none;transform:rotate(5deg);}}
+
+@media(max-width:380px){.polaroid.about-polaroid .photo-crab{right:-10px;}}
+@media(max-width:380px){.home-hero .mobile-face .polaroid-mini .photo-crab{right:-10px;}}
+</style>
+<style>
+/* One small Claude crab perched on the hero photograph, on both layouts. */
+.home-hero .photo-crab{position:absolute;top:-27px;right:-25px;width:90px;height:90px;background:url('/img/crab-tilt.png') -44px -33px/180px 180px no-repeat;z-index:3;pointer-events:none;filter:drop-shadow(1px 3px 1px rgba(45,39,31,.16));transform:rotate(5deg);}
+.home-hero .polaroid-mini .photo-crab{top:-25px;right:-23px;}
+@media(max-width:760px){.home-hero p.lead{font-size:1rem;line-height:1.65;margin-bottom:18px;}.home-hero .mobile-face{margin:24px 0 20px;}}
+</style>
+<style>
+/* The homepage Club section is a direct, email-only entry to the existing waitlist. */
+.home-club-signup{background:#F2E1D7;color:var(--ink);}
+.home-club-signup .sec-head .eyebrow{color:#B65E43;}
+.home-club-signup .sec-head h2{color:var(--ink);}
+.home-club-signup .sec-head p{color:#6C6259;}
+.home-club-signup .sec-head{margin-bottom:28px;}
+.home-club-logo{display:block;width:72px;height:66px;margin:0 auto 12px;color:#D97757;}
+.home-waitlist-form{display:flex;gap:12px;align-items:stretch;max-width:560px;margin:0 auto;}
+.home-waitlist-form input[type=email]{flex:1;min-width:0;width:100%;border:1px solid #FFFCF6;border-radius:30px;background:#FFFCF6;color:#332E29;font:400 16px/1.5 var(--sans);padding:13px 20px;}
+.home-waitlist-form input::placeholder{color:#736A60;opacity:1;}
+.home-waitlist-form button{border:1px solid #1C1B1A;background:#1C1B1A;color:#FAF7F2;white-space:nowrap;box-shadow:none;cursor:pointer;font-family:var(--sans);padding:13px 22px;}
+.home-waitlist-form button:hover{background:#332E29;transform:none;box-shadow:none;}
+.home-waitlist-form :is(input,button):focus-visible{outline:2px solid #1C1B1A;outline-offset:4px;}
+.home-waitlist-form [hidden]{display:none!important;}
+.signup-email-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+.home-signup-note{display:grid;grid-template-columns:22px auto;column-gap:12px;align-items:center;width:max-content;max-width:100%;text-align:center;font:700 22px/1.2 var(--hand);margin:18px auto 0;color:#B65E43;transform:rotate(-2deg);}
+.home-signup-note span{display:block;grid-column:2;}
+.signup-note-arrow{grid-column:1;grid-row:1 / span 2;width:22px;height:44px;transform:translateY(-4px);}
+@media(max-width:600px){.home-signup-note{grid-template-columns:20px auto;column-gap:8px;font-size:20px;margin-top:16px;}.signup-note-arrow{width:20px;height:40px;}}
+@media(max-width:600px){.home-waitlist-form{flex-direction:column;gap:14px;max-width:360px;}.home-waitlist-form button{width:100%;}.home-club-signup{padding:42px 0;}}
+</style>
+<style>
+/* Small paper details, scoped to the homepage. */
+.home-hero .photo-crab{top:-60px;right:-33px;}
+.home-hero .polaroid-mini .photo-crab{top:-60px;right:-33px;}
+.home-hero .sticker.s2{bottom:18px;border:0;border-radius:0;padding:9px 23px;background:repeating-linear-gradient(95deg,rgba(255,255,255,.06) 0 1px,transparent 1px 4px),rgba(199,213,187,.88);color:#283225;box-shadow:none;filter:drop-shadow(0 2px 1px rgba(45,39,31,.12));clip-path:polygon(2% 0,98% 2%,96% 12%,100% 23%,97% 35%,100% 46%,97% 59%,100% 72%,97% 85%,99% 100%,1% 97%,3% 85%,0 72%,3% 59%,0 47%,3% 33%,0 20%,3% 10%);transform:rotate(-11deg);}
+.about-polaroid .photo-crab{position:absolute;bottom:-28px;right:-38px;width:90px;height:90px;background:url('/img/crab-tilt.png') -44px -33px/180px 180px no-repeat;z-index:3;pointer-events:none;filter:drop-shadow(1px 3px 1px rgba(45,39,31,.16));transform:rotate(6deg);}
+.home-featured .fcard.reveal-ready,.home-closing.reveal-ready{opacity:0;translate:0 28px;transition:opacity .65s ease,translate .65s cubic-bezier(.22,1,.36,1),transform .2s,box-shadow .2s;transition-delay:var(--reveal-delay,0ms);}
+.home-featured .fcard.reveal-ready.is-visible,.home-closing.reveal-ready.is-visible{opacity:1;translate:0 0;}
+@media(max-width:760px){.home-hero .mobile-face{margin-top:50px;}.home-hero .polaroid-mini .photo-crab{top:-42px;right:-22px;width:70px;height:70px;background-position:-34px -26px;background-size:140px 140px;}.home-featured .fcard{--reveal-delay:0ms!important;}}
+@media(prefers-reduced-motion:reduce){.home-featured .fcard.reveal-ready,.home-closing.reveal-ready{opacity:1;translate:none;transition:none;}}
+</style>
+<style>
+/* A narrow, soft terracotta ribbon replaces the dotted divider. */
+.growth-ribbon{position:relative;background:#E6B9A6;color:#332E29;}
+.ribbon-accessible{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+.growth-ribbon-window{overflow:hidden;}
+.growth-ribbon-track{display:flex;width:100%;max-width:100%;}
+.growth-ribbon-copy{width:100%;flex-shrink:0;margin:0;padding:18px 32px;font:400 15px/1.5 var(--sans);text-align:center;}
+.ribbon-point{display:inline-flex;align-items:center;gap:28px;padding:0 0 0 28px;font-weight:500;vertical-align:middle;}.ribbon-star{display:block;flex:0 0 19px;}
+.growth-ribbon-duplicate{display:none;}
+.growth-ribbon.is-moving .growth-ribbon-track{width:max-content;max-width:none;animation:growth-ribbon-scroll var(--ribbon-duration,38s) linear infinite;}
+.growth-ribbon.is-moving .growth-ribbon-copy{width:auto;display:block;min-width:0;white-space:nowrap;padding:18px 0;}
+@keyframes growth-ribbon-scroll{to{transform:translateX(calc(-1 * var(--ribbon-step)));}}
+@media(max-width:760px){.growth-ribbon-copy,.growth-ribbon.is-moving .growth-ribbon-copy{font-size:14px;padding-top:16px;padding-bottom:16px;}}
+@media(prefers-reduced-motion:reduce){.growth-ribbon.is-moving .growth-ribbon-window{margin:0;}.growth-ribbon.is-moving .growth-ribbon-track{animation:none;width:100%;max-width:100%;}.growth-ribbon.is-moving .growth-ribbon-copy{width:100%;min-width:0;white-space:normal;padding:18px 26px;}.growth-ribbon.is-moving .growth-ribbon-duplicate{display:none;}}
+@media(prefers-reduced-motion:reduce){.club-build-ribbons .growth-ribbon-copy{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 0;}.club-build-ribbons .growth-ribbon-duplicate{display:none;}}
+/* 29 Oct 2026 polish: smaller phone polaroid so both buttons sit on the first screen,
+   orange Club band button (Cindy: "maybe the waitlist button should be orange"), cards are links */
+@media(max-width:760px){.home-hero .mobile-face{margin:36px 0 14px;}.home-hero .polaroid-mini{width:200px;padding:9px 9px 11px;}.home-hero .polaroid-mini img{height:200px;}.home-hero .polaroid-mini::before{width:90px;height:22px;top:-10px;}}
+.home-waitlist-form button{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 6px 15px rgba(217,119,87,.3);}
+.home-waitlist-form button:hover{background:#CF6C4C;}
+a.fcard{display:block;color:inherit;}
+.fcard .read{display:inline-block;margin-top:10px;font-family:var(--print);color:var(--coral);font-weight:600;}
+.fcard .gi-ic{display:inline-block;width:30px;height:30px;color:var(--gl);}
+.fcard .gi-ic svg{width:100%;height:100%;display:block;}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+
+<!-- ============ HERO ============ -->
+<div class="wrap">
+  <section class="hero home-hero">
+    <div>
+      <span class="hi">Hi I'm Cindy</span>
+      <h1><span>Helping you</span> <span>level up with <em class="ai-or">AI</em></span></h1>
+      <div class="mobile-face"><div class="polaroid-mini"><img src="cindy.jpg" alt="Cindy Zhu"><span class="photo-crab" aria-hidden="true"></span></div></div>
+      <p class="lead">Follow along to build tasteful and efficient systems with AI, no code:) I share workflows I use every day that run my entire content and operations as a solo founder. Sharing everything so you can do the same.</p>
+      <div class="cta-row">
+        <a class='btn' href='/ai-system'>Join the waitlist</a>
+        <a class='btn ghost' href='/guides'>Browse free guides</a>
+      </div>
+    </div>
+    <div class="photo-wrap">
+      <div class="polaroid">
+        <img src="cindy.jpg" alt="Cindy Zhu"><span class="photo-crab" aria-hidden="true"></span>
+        <div class="sticker s2">AI obsessed ✨</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- club-build-ribbons:start -->
+<div class="club-build-ribbons">
+<div class="growth-ribbon" role="region" aria-label="What you can build with AI">
+  <p class="ribbon-accessible">Claude 101. AI agents and automation. Content and marketing systems. AI video, photo and design. Vibe code anything. AI career. Build ideas: Automated inbox. Brand deals hub. Finance. Script System. Automated ManyChat. Content System. Headshots. Presentations. Websites. Games. Dashboards. Automated job search.</p>
+  <div class="growth-ribbon-window" aria-hidden="true"><div class="growth-ribbon-track">
+    <p class="growth-ribbon-copy"><span class="ribbon-point">Claude 101<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">AI agents and automation<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Content and marketing systems<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">AI video, photo and design<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Vibe code anything<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">AI career<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Automated inbox<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Brand deals hub<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Finance<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Script System<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Automated ManyChat<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Content System<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Headshots<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Presentations<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Websites<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Games<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Dashboards<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Automated job search<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span></p>
+    <p class="growth-ribbon-copy growth-ribbon-duplicate"><span class="ribbon-point">Claude 101<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">AI agents and automation<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Content and marketing systems<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">AI video, photo and design<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Vibe code anything<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">AI career<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Automated inbox<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Brand deals hub<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Finance<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Script System<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Automated ManyChat<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Content System<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Headshots<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Presentations<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Websites<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Games<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Dashboards<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span><span class="ribbon-point">Automated job search<svg class="ribbon-star" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="#fff" d="M12 0C13.1 9.3 14.7 10.9 24 12C14.7 13.1 13.1 14.7 12 24C10.9 14.7 9.3 13.1 0 12C9.3 10.9 10.9 9.3 12 0Z"/></svg></span></p>
+  </div></div>
+</div>
+</div>
+<!-- club-build-ribbons:end -->
+
+<!-- ============ AI SYSTEM WAITLIST TEASER ============ -->
+<section class="home-club-signup" id="club-waitlist">
+  <div class="wrap">
+    <div class="sec-head">
+      <svg xmlns="http://www.w3.org/2000/svg" class="home-club-logo" viewBox="110 125 310 280" width="72" height="66" color="#D97757" role="img" aria-label="AI System Club house logo"><title>AI System Club house logo</title><g transform="translate(20.48 0) scale(.92 1)"><path d="M242 141Q257 129 272 141L325 184Q329 187 329 181V163Q329 149 343 149H351Q366 149 366 163V207Q366 212 371 216L400 241Q420 260 413 273Q409 281 395 281H389Q381 281 382 290L388 351Q390 390 351 390H271Q268 390 268 387V316Q268 298 250 298H224Q206 298 206 316V387Q206 390 203 390H178C145 390 136 373 138 342L144 290Q145 281 135 281H128Q111 281 109 270Q107 257 122 244Z M315 310V280A18 18 0 0 1 351 280V310Q351 316 345 316H321Q315 316 315 310Z" fill="currentColor" fill-rule="evenodd"/></g></svg>
+      <span class="eyebrow">Waitlist is now open</span>
+      <h2>AI System Club</h2>
+      <p>Build AI workflows, content systems, visuals, websites and career tools, with recorded lessons you can follow at your own pace. Keep access to your included lessons.</p>
+    </div>
+    <div class="center">
+      <form action='/ai-system' class='home-waitlist-form wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="signup-email-label" for="home-waitlist-email">Your email</label>
+        <input id="home-waitlist-email" type="email" name="email" placeholder="Your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+      <p class="home-signup-note"><svg class="signup-note-arrow" viewBox="0 0 44 82" aria-hidden="true"><path d="M23 77C7 54 8 29 37 7M23 9L37 7L35 22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs</span><span>the moment doors open :)</span></p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============ FEATURED GUIDES ============ -->
+<section class="home-featured">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">most loved</span>
+      <h2>Start with these free guides</h2>
+      <p>A few of the most saved resources from my library. All free, all copy-paste.</p>
+    </div>
+    <div class="grid3">
+      <a class="fcard" href="/guides/resume-unrejectable">
+        <span class="ic gi-ic" style="--gl:#9380A9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7L16 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 11L12 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 21.5V21C13 18.1716 13 16.7574 13.8787 15.8787C14.7574 15 16.1716 15 19 15H19.5M20 13.3431V10C20 6.22876 20 4.34315 18.8284 3.17157C17.6569 2 15.7712 2 12 2C8.22877 2 6.34315 2 5.17157 3.17157C4 4.34314 4 6.22876 4 10L4 14.5442C4 17.7892 4 19.4117 4.88607 20.5107C5.06508 20.7327 5.26731 20.9349 5.48933 21.1139C6.58831 22 8.21082 22 11.4558 22C12.1614 22 12.5141 22 12.8372 21.886C12.9044 21.8623 12.9702 21.835 13.0345 21.8043C13.3436 21.6564 13.593 21.407 14.0919 20.9081L18.8284 16.1716C19.4065 15.5935 19.6955 15.3045 19.8478 14.9369C20 14.5694 20 14.1606 20 13.3431Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span>
+        <h3>4 Claude skills that make your resume unrejectable</h3>
+        <p>The exact agent team behind my most viral reel.</p>
+        <span class="read">Read guide →</span>
+      </a>
+      <a class="fcard" href="/guides/free-content-engine">
+        <span class="ic gi-ic" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span>
+        <h3>Free content engine: 3 tools + Claude as the brain</h3>
+        <p>The exact free stack I use to run my content.</p>
+        <span class="read">Read guide →</span>
+      </a>
+      <a class="fcard" href="/guides/claude-full-time-designer">
+        <span class="ic gi-ic" style="--gl:#BF7362" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C12.8417 22 14 22.1163 14 21C14 20.391 13.6832 19.9212 13.3686 19.4544C12.9082 18.7715 12.4523 18.0953 13 17C13.6667 15.6667 14.7778 15.6667 16.4815 15.6667C17.3334 15.6667 18.3334 15.6667 19.5 15.5C21.601 15.1999 22 13.9084 22 12Z" stroke="currentColor" stroke-width="1.5"/><circle cx="9.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M7.125 15H7M7.25 15C7.25 15.1381 7.13807 15.25 7 15.25C6.86193 15.25 6.75 15.1381 6.75 15C6.75 14.8619 6.86193 14.75 7 14.75C7.13807 14.75 7.25 14.8619 7.25 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span>
+        <h3>Turn Claude into your full-time designer</h3>
+        <p>World-class design, no designer required.</p>
+        <span class="read">Read guide →</span>
+      </a>
+    </div>
+    <div class="center" style="margin-top:30px;">
+      <a href="/guides" class="btn" id="all-guides-btn">See all guides</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT SNIPPET ============ -->
+<section>
+  <div class="wrap">
+    <div class="grid2" style="align-items:center;gap:40px;">
+      <div class="photo-wrap">
+        <div class="polaroid about-polaroid" style="transform:rotate(-3deg);max-width:260px;">
+          <img src="cindy2.jpg" alt="Cindy Zhu" onerror="this.onerror=null;this.src='cindy.jpg'"><span class="photo-crab" aria-hidden="true"></span>
+          
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">about me</span>
+        <h2 style="font-size:1.9rem;margin:4px 0 14px;">A marketer who fell for AI</h2>
+        <p style="color:var(--ink-soft);margin-bottom:14px;">I was a digital marketing specialist, running paid ad campaigns for brands and learning what actually moves the needle. Then AI changed how I work, so I went all in. Now it handles a huge chunk of my content and the behind-the-scenes of my business. I'm not a developer. I'm not an AI researcher. I'm a marketer who figured out what actually works, and I share all of it so you can do the same.</p>
+        <a class='btn ghost' href='/contact'>Work with me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING CTA ============ -->
+<section>
+  <div class="wrap">
+    <div class="closing tape home-closing">
+      <span class="big">come say hi</span>
+      <h2>Let's build something with AI.</h2>
+      <p>Follow along for daily AI you can actually use, or reach out about a collab.</p>
+      <div class="cta-row" style="justify-content:center;">
+        <a class='btn' href='/ai-system'>Join the waitlist</a>
+        <a href="https://instagram.com/cindiezhu" target="_blank" class="btn ghost">Follow on Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank">@cindiezhu</a> · AI you can actually use
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+
+<script id="club-ribbons-motion">
+(() => {
+ window.initClubRibbons = (root=document) => {
+  root.querySelectorAll('.growth-ribbon:not([data-ribbon-ready])').forEach(ribbon => {
+   ribbon.dataset.ribbonReady='true';
+   const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
+   function sync(){
+    ribbon.classList.toggle('is-moving',!motion.matches);
+    if(!motion.matches){
+     const first=ribbon.querySelector('.growth-ribbon-copy'),track=ribbon.querySelector('.growth-ribbon-track');
+     const width=first.getBoundingClientRect().width;if(!width)return;
+     const count=Math.max(2,Math.ceil(ribbon.clientWidth/width)+1);
+     while(track.children.length<count){const copy=first.cloneNode(true);copy.classList.add('growth-ribbon-duplicate');track.append(copy);}
+     while(track.children.length>count)track.lastElementChild.remove();
+     ribbon.style.setProperty('--ribbon-step',`${width}px`);
+     ribbon.style.setProperty('--ribbon-duration',`${width/36}s`);
+    }
+   }
+   sync();document.fonts.ready.then(sync);window.addEventListener('resize',sync);motion.addEventListener('change',sync);
+  });
+ };
+ window.initClubRibbons();
+})();
+</script>
+<script src="/site-reveals.js" data-site-reveals defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

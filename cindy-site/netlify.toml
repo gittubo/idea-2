@@ -1,0 +1,10 @@
+# Plain static site: no build step. Netlify serves the site/ folder as-is,
+# and turns /ai-system into ai-system.html automatically (Pretty URLs).
+[build]
+  publish = "site"
+  command = ""
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
