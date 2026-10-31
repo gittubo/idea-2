@@ -9,7 +9,7 @@ Hi Cindy,
 I went ahead and redesigned your site so you can see the direction instead of
 imagining it:
 
-**[PREVIEW LINK]**: home, AI System Club, guides, about, contact and media kit.
+**https://cindy-site.netlify.app/**: home, AI System Club, guides, about, contact and media kit.
 **[YOUR OTHER LIVE SITE, if you have one]**
 
 What's different from a typical "AI template" site:
