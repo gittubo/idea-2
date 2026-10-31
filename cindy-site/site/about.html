@@ -30,8 +30,9 @@
 </header>
 <span id="main" tabindex="-1"></span>
 
+<section class="stage">
 <div class="wrap">
-  <section class="hero">
+  <div class="hero">
     <div>
       <span class="hi sticker lilac">about me</span>
       <h1>A marketer who fell for <span class="circled">AI</span></h1>
@@ -43,32 +44,33 @@
       </div>
     </div>
     <div class="photo-wrap">
-      <svg class="doodle loop" viewBox="0 0 58 40" aria-hidden="true"><path d="M3 30c10-2 16-10 12-17s-14 0-9 7 22 8 32-4 8-14 16-12"/></svg>
-      <div class="polaroid tape blush">
+      <div class="layer" data-depth="1.5"><svg class="doodle loop" viewBox="0 0 58 40" aria-hidden="true"><path d="M3 30c10-2 16-10 12-17s-14 0-9 7 22 8 32-4 8-14 16-12"/></svg></div>
+      <div class="layer" data-depth="1"><div class="polaroid tape blush">
         <img src="cindy2.jpg" alt="Cindy Zhu" width="760" height="914">
         <div class="cap">hey, it's me 💌</div>
-      </div>
-      <span class="sticker s-b mint">AI obsessed ✨</span>
+      </div></div>
+      <div class="layer" data-depth="1.6"><span class="sticker s-b mint">AI obsessed ✨</span></div>
     </div>
-  </section>
+  </div>
 </div>
+</section>
 
 <section class="section band sky">
   <div class="wrap">
-    <div class="creator-proof">
+    <div class="creator-proof" data-paste>
       <p>I grew to <strong>440k+ followers and subscribers</strong> across channels in <strong>6 months</strong> as a solo operator.</p>
     </div>
     <div class="statstrip" style="justify-content:center">
-      <div class="m"><b>440k+</b> followers across channels</div>
-      <div class="m"><b>76M</b> views in 30 days</div>
-      <div class="m"><b>2.61M</b> saves in 30 days</div>
+      <div class="m" data-paste><b>440k+</b> followers across channels</div>
+      <div class="m" data-paste><b>76M</b> views in 30 days</div>
+      <div class="m" data-paste><b>2.61M</b> saves in 30 days</div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap about-body">
-    <div class="sheet ruled">
+    <div class="sheet ruled" data-paste>
       <svg class="paperclip" viewBox="0 0 26 64" aria-hidden="true"><path d="M8 20v28a5 5 0 0 0 10 0V12a8 8 0 0 0-16 0v38a11 11 0 0 0 22 0V22"/></svg>
       <span class="eyebrow">hey, I'm Cindy</span>
       <h2 style="font-size:var(--t-h2);margin-bottom:var(--s4)">A marketer who went all in on AI</h2>
@@ -78,7 +80,8 @@
   </div>
 </section>
 
-<section class="section">
+<section class="finale" data-scene>
+  <div class="finale-img" aria-hidden="true"><img src="cindy.jpg" alt="" loading="lazy"></div>
   <div class="wrap closing">
     <span class="big">come say hi</span>
     <h2>Let's build something with AI.</h2>
@@ -95,6 +98,7 @@
   <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/about">About</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
   <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
 </footer>
+<script src="/cinema.js" defer></script>
 <script src="/site.js" defer></script>
 </body>
 </html>

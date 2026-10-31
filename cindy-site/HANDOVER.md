@@ -17,12 +17,39 @@ site/                     ← everything Netlify publishes
   guides/free-content-engine.html   ← your live guide, byte-for-byte unchanged, as the proof
   fonts/                  ← self-hosted fonts + their licences
   ribbon.js               ← the moving topic ribbon (your inline script, moved into a file)
+  cinema.js               ← the cinematic layer (see below)
+  mark.svg                ← the peeled-sticker brand mark
   site.js, guide-kit.js, site-reveals.js   ← your existing scripts, unchanged
   cindy*.jpg, favicon.svg ← your existing images
 tools/check.mjs           ← pre-publish checks (see below)
 tools/original/           ← snapshots of the live pages, used by the wording check
 netlify.toml              ← tells Netlify to publish site/ with no build
 ```
+
+## The cinematic layer
+
+The brief said the old site felt boring, so the pages play like scenes:
+
+- **The desk (opening shot).** A full-height hero with soft, drifting light leaks. Your photos are fanned on the desk at different depths, they shift with the mouse and as you scroll, and the headline rises in.
+- **Pasted in, drawn on.** Cards, notes and stats stick down with a small overshoot as you scroll, and the scribbles and circles draw themselves.
+- **The screening room.** The waitlist ticket glows under a spotlight on a dark band with torn paper edges.
+- **The film reel.** On desktop, the six "what you could build" cards become a pinned filmstrip that scrolls sideways. On phones they stack as normal cards.
+- **The receipt prints**, and **the final frame** is a full-bleed cobalt duotone of your beach photo with halftone dots.
+- **Everywhere, guides included:** a fine film grain, a reading-progress line under the header, and the new peeled-sticker mark as the dot in "Cindy Zhu."
+
+All of it lives in `cinema.js` plus section 13 of `styles.css`. It only switches on when the
+visitor's device allows motion. With reduced motion turned on, or no JavaScript, every page is
+complete and still, and nothing is hidden. Guides stay calm for reading: they get the grain,
+progress line and mark, but no pinned or moving scenes.
+
+## Brand kit
+
+`brand/brandkit.png` is the one-page identity board (built from `brand/brandkit.html`):
+the peeled-sticker mark and how it's built, colour, type, paper pieces, image direction
+and system details. The mark itself is `site/mark.svg`. The idea behind it: your guides are
+"all free, all copy-paste", and a sticker is the scrapbook version of paste. The corner
+peels up as if it was just stuck down. Your current favicon is unchanged. Swapping it for
+the mark is your call.
 
 ## How every guide picks up the new look
 

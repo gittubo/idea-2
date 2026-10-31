@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Cindy Zhu mark">
+  <!-- the peeled sticker dot: a cobalt circle with its top-right corner lifting off -->
+  <path d="M56.95 10.61A40 40 0 1 0 89.39 43.05Z" fill="#2E44E6"/>
+  <path d="M56.95 10.61A40 40 0 0 0 89.39 43.05Z" fill="#FFFDF8" stroke="#1C1A2E" stroke-width="1.5" stroke-linejoin="round"/>
+</svg>
