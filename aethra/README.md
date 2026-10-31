@@ -29,3 +29,7 @@ Shards are earned only. Nothing in the prototype uses real money.
 ## Character files
 
 `models/soldier.js` and `models/michelle.js` are the Soldier and Michelle `.glb` models from the three.js examples, stored as base64 so they load as scripts. Both are Mixamo characters. Mixamo allows use in projects but not redistribution as standalone files; replace them with Aethra's own characters before any public release.
+
+## World Weaver
+
+`world-weaver.html` weaves five scenes from The Virtual Universe concept art (`world/`: the universe map, The Core, the Arrival Plaza, the World Gates and the Space Docks) using the same atoms → molecules → solid principle. Each picture becomes about 180,000 atoms (70,000 on phones) coloured from the art, which stream in from a cosmic cloud, starting at the centre and weaving outward. Atoms then bond into molecules of 12 × 12 atoms, and molecules fuse into a diorama whose depth is estimated from the picture. It's a 2.5D diorama: you can turn it to look in, but not walk behind it.
