@@ -40,52 +40,47 @@
 <main class="wrap ds">
   <section style="border-top:0">
     <span class="sticker sky">design system</span>
-    <h1 style="font-size:var(--t-h1);margin:var(--s5) 0 var(--s4)">Clean <span class="scribble">scrapbook</span></h1>
-    <p class="intro">Paper, tape and stickers, one bold ink colour, and plenty of white space so it stays easy to read. Every value below is a token at the top of <code>styles.css</code>, so a colour or size changes everywhere in one edit, including all the guides.</p>
+    <h1 style="font-size:var(--t-h1);margin:var(--s5) 0 var(--s4)">The Creative AI <span class="scribble">Notebook</span></h1>
+    <p class="intro">Paper surfaces, small stickers and handwritten notes that decorate the page without competing with the content, one bold violet, and generous spacing so it stays easy to read. Every value below is a token at the top of <code>styles.css</code>, so a colour or size changes everywhere in one edit, including all the guides.</p>
   </section>
 
   <section>
     <h2>Colour</h2>
-    <p class="intro">One bold colour, cobalt, does all the talking: buttons, links, scribbles, numbers. The tints are only for paper, tape and stickers, never for text.</p>
+    <p class="intro">Electric violet does the talking: buttons, links, headings in guides, the club card. Lime and bubblegum are for stickers, highlights and tape, never for text.</p>
     <div class="swatches">
-      <div class="sw"><i style="background:var(--accent)"></i><div><b>Cobalt</b><code>--accent #2E44E6</code></div></div>
-      <div class="sw"><i style="background:var(--ink)"></i><div><b>Ink</b><code>--ink #1C1A2E</code></div></div>
-      <div class="sw"><i style="background:var(--ink-2)"></i><div><b>Ink soft</b><code>--ink-2 #47445C</code></div></div>
-      <div class="sw"><i style="background:var(--paper)"></i><div><b>Paper</b><code>--paper #FFFDF8</code></div></div>
-      <div class="sw"><i style="background:var(--paper-2)"></i><div><b>Paper 2</b><code>--paper-2 #F5F2EA</code></div></div>
-      <div class="sw"><i style="background:var(--butter)"></i><div><b>Butter</b><code>--butter #FFE58A</code></div></div>
-      <div class="sw"><i style="background:var(--blush)"></i><div><b>Blush</b><code>--blush #FFC8D5</code></div></div>
-      <div class="sw"><i style="background:var(--mint)"></i><div><b>Mint</b><code>--mint #BDE8CE</code></div></div>
-      <div class="sw"><i style="background:var(--sky)"></i><div><b>Sky</b><code>--sky #C8D6FF</code></div></div>
-      <div class="sw"><i style="background:var(--lilac)"></i><div><b>Lilac</b><code>--lilac #E0D3FF</code></div></div>
+      <div class="sw"><i style="background:var(--color-paper)"></i><div><b>Notebook Paper</b><code>--color-paper #F9F7F0</code></div></div>
+      <div class="sw"><i style="background:var(--color-ink)"></i><div><b>Ink</b><code>--color-ink #242424</code></div></div>
+      <div class="sw"><i style="background:var(--color-accent)"></i><div><b>Electric Violet</b><code>--color-accent #6655E8</code></div></div>
+      <div class="sw"><i style="background:var(--color-accent-deep)"></i><div><b>Deep Violet</b><code>--color-accent-deep #4B3BCB</code></div></div>
+      <div class="sw"><i style="background:var(--color-lime)"></i><div><b>Lime Sticker</b><code>--color-lime #D8F36A</code></div></div>
+      <div class="sw"><i style="background:var(--color-pink)"></i><div><b>Bubblegum</b><code>--color-pink #FFB9D1</code></div></div>
+      <div class="sw"><i style="background:var(--color-accent-soft)"></i><div><b>Violet tint</b><code>--color-accent-soft #ECE9FF</code></div></div>
+      <div class="sw"><i style="background:var(--color-night)"></i><div><b>Night</b><code>--color-night #2A2164</code></div></div>
     </div>
-    <p class="cap-note" id="contrast">Contrast (WCAG AA needs 4.5:1): cobalt on paper 6.7:1, white on cobalt 6.8:1, ink-2 on paper 9.2:1, ink-3 on paper 5.1:1, ink on butter 13.6:1.</p>
+    <p class="cap-note" id="contrast">Contrast (WCAG AA needs 4.5:1): violet on paper 4.9:1, white on violet 5.2:1, deep violet on paper 7.0:1, ink on lime 12.5:1, ink on bubblegum 9.7:1.</p>
   </section>
 
   <section>
     <h2>Type</h2>
     <p class="intro">Three free fonts, self-hosted, all SIL Open Font License (fine for commercial use, licences in <code>/fonts</code>).</p>
-    <div class="typerow"><code>Bricolage Grotesque<br>--t-hero</code><span style="font:780 var(--t-hero)/1 var(--display);letter-spacing:-.012em">Headings</span></div>
-    <div class="typerow"><code>--t-h2</code><span style="font:750 var(--t-h2)/1.1 var(--display)">Section title</span></div>
-    <div class="typerow"><code>--t-h3</code><span style="font:750 var(--t-h3)/1.2 var(--display)">Card title</span></div>
-    <div class="typerow"><code>Figtree<br>--t-lead</code><span class="lead">Lead text for the first paragraph under a heading.</span></div>
-    <div class="typerow"><code>Figtree<br>--t-body</code><span>Body text, 17px with a 1.65 line height, so long guides stay comfortable on a phone.</span></div>
-    <div class="typerow"><code>Shantell Sans<br>.eyebrow</code><span class="eyebrow" style="margin:0">handwritten notes, used sparingly</span></div>
+    <div class="typerow"><code>Manrope<br>--t-hero</code><span style="font:800 var(--t-hero)/1.05 var(--font-heading);letter-spacing:-.025em">Headings</span></div>
+    <div class="typerow"><code>--t-h2</code><span style="font:800 var(--t-h2)/1.1 var(--font-heading)">Section title</span></div>
+    <div class="typerow"><code>--t-h3</code><span style="font:750 var(--t-h3)/1.2 var(--font-heading)">Card title</span></div>
+    <div class="typerow"><code>DM Sans<br>--t-lead</code><span class="lead">Lead text for the first paragraph under a heading.</span></div>
+    <div class="typerow"><code>DM Sans<br>--t-body</code><span>Body text, 17px with a 1.65 line height, so long guides stay comfortable on a phone.</span></div>
+    <div class="typerow"><code>Caveat<br>.eyebrow</code><span class="eyebrow" style="margin:0">handwritten notes and labels, never paragraphs</span></div>
   </section>
 
   <section>
     <h2>Spacing</h2>
-    <p class="intro">A 4px base. Sections breathe with <code>--section</code>, which shrinks on phones.</p>
+    <p class="intro"><code>--space-1</code> to <code>--space-6</code> (0.5rem to 4.5rem). Sections breathe with <code>--section</code>, which shrinks on phones.</p>
     <div class="space">
-      <div><div style="width:4px;height:4px"></div><span>s1</span></div>
-      <div><div style="width:8px;height:8px"></div><span>s2</span></div>
-      <div><div style="width:12px;height:12px"></div><span>s3</span></div>
-      <div><div style="width:16px;height:16px"></div><span>s4</span></div>
-      <div><div style="width:24px;height:24px"></div><span>s5</span></div>
-      <div><div style="width:32px;height:32px"></div><span>s6</span></div>
-      <div><div style="width:48px;height:48px"></div><span>s7</span></div>
-      <div><div style="width:64px;height:64px"></div><span>s8</span></div>
-      <div><div style="width:96px;height:96px"></div><span>s9</span></div>
+      <div><div style="width:var(--space-1);height:var(--space-1)"></div><span>space-1</span></div>
+      <div><div style="width:var(--space-2);height:var(--space-2)"></div><span>space-2</span></div>
+      <div><div style="width:var(--space-3);height:var(--space-3)"></div><span>space-3</span></div>
+      <div><div style="width:var(--space-4);height:var(--space-4)"></div><span>space-4</span></div>
+      <div><div style="width:var(--space-5);height:var(--space-5)"></div><span>space-5</span></div>
+      <div><div style="width:var(--space-6);height:var(--space-6)"></div><span>space-6</span></div>
     </div>
   </section>
 

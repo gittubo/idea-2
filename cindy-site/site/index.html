@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cindy Zhu · AI you can actually use</title>
 <meta name="description" content="Follow along to build tasteful and efficient systems with AI, no code.">
-<link rel="preload" href="/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/caveat.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
@@ -16,45 +16,109 @@
   <div class="wrap">
     <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
     <nav class="nav" aria-label="Main">
-      <a href="/guides">Free guides</a>
+      <a href="/" class="active" aria-current="page">Home</a>
       <a href="/ai-system">AI System Club</a>
+      <a href="/guides">Free guides</a>
       <a href="/about">About</a>
-      <a href="/media-kit">Media kit</a>
       <a href="/contact">Contact</a>
+      <a href="/media-kit">Media kit</a>
       <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
     </nav>
   </div>
 </header>
 <span id="main" tabindex="-1"></span>
 
-<!-- Scene 1: the desk -->
+<!-- Hero: a notebook page with Cindy as a die-cut sticker -->
 <section class="stage">
   <div class="wrap">
     <div class="hero home-hero">
-      <div>
-        <span class="hi sticker sky">Hi I'm Cindy</span>
-        <h1><span class="line">Helping you</span> <span class="line">level up with <span class="circled">AI</span></span></h1>
-        <div class="mobile-face" aria-hidden="true"><div class="polaroid"><img src="cindy.jpg" alt=""></div></div>
+      <div class="hero-copy">
+        <svg class="doodle burst" viewBox="0 0 48 48" aria-hidden="true"><path d="M30 6l6-5M36 16l9-3M22 4l1-3"/></svg>
+        <svg class="doodle heart" viewBox="0 0 64 60" aria-hidden="true"><path d="M33 54C16 42 6 32 9 19 12 8 26 7 31 19c4-12 21-14 25-3 5 13-8 26-23 38z"/><path d="M20 20c2-3 5-4 8-3"/></svg>
+        <svg class="doodle star" viewBox="0 0 46 46" aria-hidden="true"><path d="M23 3l5 13 14 1-11 9 4 14-12-8-12 8 4-14L4 17l14-1z"/></svg>
+        <span class="hi">Hi I'm Cindy</span>
+        <h1><span class="line">Helping you</span> <span class="line">level up with <span class="scribble">AI</span></span></h1>
         <p class="lead">Follow along to build tasteful and efficient systems with AI, no code:) I share workflows I use every day that run my entire content and operations as a solo founder. Sharing everything so you can do the same.</p>
         <div class="cta-row">
           <a class="btn" href="/ai-system">Join the waitlist</a>
           <a class="btn ghost" href="/guides">Browse free guides</a>
         </div>
       </div>
-      <div class="photo-wrap photo-stack">
-        <div class="layer" data-depth="0.45"><div class="polaroid back-l tape mint"><img src="cindy2.jpg" alt="" width="760" height="914"></div></div>
-        <div class="layer" data-depth="0.7"><div class="polaroid back-r"><img src="cindy-contact.jpg" alt="" width="600" height="800"></div></div>
-        <div class="layer" data-depth="1.1"><div class="polaroid front tape butter"><img src="cindy.jpg" alt="Cindy Zhu" width="828" height="1100"></div></div>
-        <div class="layer" data-depth="1.6">
-          <svg class="doodle loop" viewBox="0 0 58 40" aria-hidden="true"><path d="M3 30c10-2 16-10 12-17s-14 0-9 7 22 8 32-4 8-14 16-12"/></svg>
-          <span class="sticker s-a blush">AI obsessed ✨</span>
-          <svg class="doodle star" viewBox="0 0 46 46" aria-hidden="true"><path d="M23 4c1 10 4 15 19 19-15 3-18 8-19 19-1-11-5-16-19-19 14-4 18-9 19-19z"/></svg>
+      <div class="portrait">
+        <div class="portrait-bg" aria-hidden="true"></div>
+        <div class="layer" data-depth="0.3"><div class="gridpaper" aria-hidden="true"></div></div>
+        <img class="cutout" src="img/cindy-cutout.webp" alt="Cindy Zhu" width="615" height="824">
+        <div class="layer" data-depth="0.9">
+          <svg class="doodle rays" viewBox="0 0 64 56" aria-hidden="true"><path d="M8 50L20 22M30 46l16-24M42 52l18-10"/></svg>
+          <p class="note">AI obsessed ✨</p>
+        </div>
+        <div class="layer" data-depth="1.4">
+          <img class="robot" src="img/robot-sticker.webp" alt="" width="420" height="592" loading="lazy">
+          <svg class="doodle sparks" viewBox="0 0 52 40" aria-hidden="true"><path d="M6 8l14 6M4 22h16M8 34l12-6"/></svg>
         </div>
       </div>
     </div>
   </div>
-  <svg class="cue" viewBox="0 0 30 44" aria-hidden="true"><path d="M15 3c-2 12 2 24 0 36M6 30l9 10 9-10"/></svg>
 </section>
+
+<!-- The notebook row: proof, guides, club -->
+<section class="wrap dash">
+  <div class="proof sheet tape blush" data-paste>
+    <h2>440k+ followers across channels</h2>
+    <ul class="checks">
+      <li><span><b>76M</b> views in 30 days</span></li>
+      <li><span><b>2.61M</b> saves in 30 days</span></li>
+      <li><span><b>6,000+ people</b> are already on the waitlist.</span></li>
+    </ul>
+  </div>
+
+  <div class="popular">
+    <div class="head">
+      <span class="eyebrow">most loved</span>
+      <h2>Start with these free guides</h2>
+    </div>
+    <p class="intro">A few of the most saved resources from my library. All free, all copy-paste.</p>
+    <div class="fcards">
+      <a class="fcard" href="/guides/resume-unrejectable" data-paste>
+        <div class="thumb"><img src="img/thumb-career.webp" alt="" width="640" height="430" loading="lazy"><span class="tag">Career &amp; job</span></div>
+        <h3>4 Claude skills that make your resume unrejectable</h3>
+        <p>The exact agent team behind my most viral reel.</p>
+        <span class="read">Read guide →</span>
+      </a>
+      <a class="fcard" href="/guides/free-content-engine" data-paste>
+        <div class="thumb"><img src="img/thumb-content.webp" alt="" width="640" height="430" loading="lazy"><span class="tag">Marketing &amp; content</span></div>
+        <h3>Free content engine: 3 tools + Claude as the brain</h3>
+        <p>The exact free stack I use to run my content.</p>
+        <span class="read">Read guide →</span>
+      </a>
+      <a class="fcard" href="/guides/claude-full-time-designer" data-paste>
+        <div class="thumb"><img src="img/thumb-design.webp" alt="" width="640" height="430" loading="lazy"><span class="tag">Design &amp; visuals</span></div>
+        <h3>Turn Claude into your full-time designer</h3>
+        <p>World-class design, no designer required.</p>
+        <span class="read">Read guide →</span>
+      </a>
+    </div>
+    <div class="all"><a class="btn ghost" href="/guides">See all guides</a></div>
+  </div>
+
+  <aside class="clubcard" id="club-waitlist" data-paste>
+    <svg class="crown" viewBox="0 0 60 48" aria-hidden="true"><path d="M8 38L4 12l14 12L30 4l12 20 14-12-4 26z" fill="#D8F36A" stroke="#242424" stroke-width="2.6" stroke-linejoin="round"/><path d="M9 44h42" stroke="#242424" stroke-width="2.6" stroke-linecap="round"/><circle cx="30" cy="4" r="3" fill="#FFB9D1" stroke="#242424" stroke-width="2"/></svg>
+    <svg class="doodle heart" viewBox="0 0 64 60" aria-hidden="true"><path d="M33 54C16 42 6 32 9 19 12 8 26 7 31 19c4-12 21-14 25-3 5 13-8 26-23 38z"/></svg>
+    <span class="eyebrow">Waitlist is now open</span>
+    <h2>AI System Club</h2>
+    <p>Build AI workflows, content systems, visuals, websites and career tools, with recorded lessons you can follow at your own pace. Keep access to your included lessons.</p>
+    <form action="/ai-system" class="home-waitlist-form wl-form" method="POST" name="waitlist">
+      <input type="hidden" name="form-name" value="waitlist">
+      <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+      <label class="signup-email-label" for="home-waitlist-email">Your email</label>
+      <input id="home-waitlist-email" type="email" name="email" placeholder="Your email" autocomplete="email" required>
+      <button type="submit" class="btn">Join the waitlist</button>
+    </form>
+    <p class="arrow-note"><span>btw this list gets first dibs<br>the moment doors open :)</span></p>
+  </aside>
+</section>
+
+<div class="tornband"><p class="tagline">AI you can actually use</p></div>
 
 <div class="growth-ribbon" role="region" aria-label="What you can build with AI">
   <p class="ribbon-accessible">Claude 101. AI agents and automation. Content and marketing systems. AI video, photo and design. Vibe code anything. AI career. Build ideas: Automated inbox. Brand deals hub. Finance. Script System. Automated ManyChat. Content System. Headshots. Presentations. Websites. Games. Dashboards. Automated job search.</p>
@@ -63,57 +127,8 @@
   </div></div>
 </div>
 
-<!-- Scene 2: the screening room -->
-<section class="section screen" id="club-waitlist">
-  <div class="wrap">
-    <div class="ticket" data-paste>
-      <span class="sticker mint stub-sticker" aria-hidden="true">🌱</span>
-      <span class="eyebrow">Waitlist is now open</span>
-      <h2>AI System Club</h2>
-      <p>Build AI workflows, content systems, visuals, websites and career tools, with recorded lessons you can follow at your own pace. Keep access to your included lessons.</p>
-      <form action="/ai-system" class="home-waitlist-form wl-form" method="POST" name="waitlist">
-        <input type="hidden" name="form-name" value="waitlist">
-        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
-        <label class="signup-email-label" for="home-waitlist-email">Your email</label>
-        <input id="home-waitlist-email" type="email" name="email" placeholder="Your email" autocomplete="email" required>
-        <button type="submit" class="btn">Join the waitlist</button>
-      </form>
-      <p class="arrow-note"><span>btw this list gets first dibs<br>the moment doors open :)</span></p>
-    </div>
-  </div>
-</section>
-
-<!-- Scene 3: the guides, pinned to the board -->
+<!-- About -->
 <section class="section">
-  <div class="wrap">
-    <div class="sec-head" data-paste>
-      <span class="eyebrow">most loved</span>
-      <h2>Start with these free guides</h2>
-      <p>A few of the most saved resources from my library. All free, all copy-paste.</p>
-    </div>
-    <div class="fcards">
-      <a class="fcard tape" href="/guides/resume-unrejectable" data-paste>
-        <h3>4 Claude skills that make your resume unrejectable</h3>
-        <p>The exact agent team behind my most viral reel.</p>
-        <span class="read">Read guide →</span>
-      </a>
-      <a class="fcard tape" href="/guides/free-content-engine" data-paste>
-        <h3>Free content engine: 3 tools + Claude as the brain</h3>
-        <p>The exact free stack I use to run my content.</p>
-        <span class="read">Read guide →</span>
-      </a>
-      <a class="fcard tape" href="/guides/claude-full-time-designer" data-paste>
-        <h3>Turn Claude into your full-time designer</h3>
-        <p>World-class design, no designer required.</p>
-        <span class="read">Read guide →</span>
-      </a>
-    </div>
-    <div class="center"><a class="btn" href="/guides">See all guides</a></div>
-  </div>
-</section>
-
-<!-- Scene 4: about -->
-<section class="section band sky">
   <div class="wrap about-split">
     <div class="polaroid tape blush" data-paste>
       <img src="cindy2.jpg" alt="Cindy Zhu" width="760" height="914" loading="lazy">
@@ -128,9 +143,9 @@
   </div>
 </section>
 
-<!-- Scene 5: the final frame -->
-<section class="finale" data-scene>
-  <div class="finale-img" aria-hidden="true"><img src="cindy.jpg" alt="" loading="lazy"></div>
+<!-- Closing: a torn violet page -->
+<section class="finale">
+  <div class="finale-img" aria-hidden="true"><img src="img/cindy-contact-cutout.webp" alt="" width="486" height="693" loading="lazy"></div>
   <div class="wrap closing">
     <span class="big">come say hi</span>
     <h2>Let's build something with AI.</h2>

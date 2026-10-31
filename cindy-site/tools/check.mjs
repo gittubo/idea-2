@@ -22,7 +22,7 @@ const originals = join(here, 'original');
 const pages = ['/', '/ai-system', '/about', '/contact', '/guides/free-content-engine'];
 const widths = [320, 360, 390, 768, 1024, 1366, 1920];
 // Labels that are new on purpose, listed so they stay visible in review.
-const allowedNewText = ['About'];
+const allowedNewText = ['About', 'Home'];
 
 const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml', '.woff2': 'font/woff2' };
 const server = createServer((req, res) => {
@@ -64,7 +64,7 @@ if (sha(join(root, 'guides/free-content-engine.html')) !== sha(join(originals, '
 // 3. wording
 const page = await browser.newPage();
 let corpus = '';
-for (const f of ['index.html', 'ai-system.html', 'contact.html', 'media-kit.html', 'guides.html']) {
+for (const f of ['index.html', 'ai-system.html', 'contact.html', 'media-kit.html', 'guides.html', 'guide-free-content-engine.html', 'guide-resume-unrejectable.html', 'guide-claude-full-time-designer.html']) {
   await page.setContent(readFileSync(join(originals, f), 'utf8'), { waitUntil: 'domcontentloaded' });
   corpus += ' ' + norm(await page.evaluate(() => document.body.textContent));
 }

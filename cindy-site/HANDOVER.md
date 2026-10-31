@@ -1,24 +1,25 @@
 # cindyzhu.com.au redesign: handover
 
-A "clean scrapbook" restyle of the site: paper, washi tape, stickers and handwritten
-notes, with one bold accent colour (ballpoint cobalt `#2E44E6`) replacing the beige
-and terracotta. It's still plain HTML and CSS, with no framework and no build step.
+**Direction: The Creative AI Notebook.** Clean editorial pages on notebook paper, decorated
+(never crowded) with small stickers, washi tape and handwritten notes. There's one bold
+accent, electric violet, with lime and bubblegum for the stickers. It's still plain HTML and
+CSS on Netlify, with no framework and no build step.
 
 ## What's in here
 
 ```
 site/                     ← everything Netlify publishes
-  styles.css              ← the ONE stylesheet: design tokens, components, pages, guide template
+  styles.css              ← the ONE stylesheet: tokens, components, pages, guide template
   index.html              ← Home
   ai-system.html          ← AI System Club
   about.html              ← About (new page, see "Needs your OK")
   contact.html            ← Contact
-  design-system.html      ← reference sheet of colours, type, spacing and components (noindex)
+  design-system.html      ← live reference of colours, type, spacing and components (noindex)
   guides/free-content-engine.html   ← your live guide, byte-for-byte unchanged, as the proof
-  fonts/                  ← self-hosted fonts + their licences
+  img/                    ← new images (see "Images and licences")
+  fonts/                  ← self-hosted Manrope, DM Sans, Caveat + their licences
+  cinema.js               ← gentle motion: pasted-in cards, self-drawing underlines, light parallax
   ribbon.js               ← the moving topic ribbon (your inline script, moved into a file)
-  cinema.js               ← the cinematic layer (see below)
-  mark.svg                ← the peeled-sticker brand mark
   site.js, guide-kit.js, site-reveals.js   ← your existing scripts, unchanged
   cindy*.jpg, favicon.svg ← your existing images
 tools/check.mjs           ← pre-publish checks (see below)
@@ -26,57 +27,71 @@ tools/original/           ← snapshots of the live pages, used by the wording c
 netlify.toml              ← tells Netlify to publish site/ with no build
 ```
 
-## The cinematic layer
+**Why `styles.css` stays one file at the root, not `css/design-system.css` + `main.css` + `guide.css`:**
+every one of your 500+ guides already links `../styles.css`. Splitting it would mean editing
+every guide. Instead, the design-system tokens sit at the top of `styles.css` as CSS variables
+(`--color-accent`, `--font-heading`, `--space-3`, `--radius-card` …), followed by components,
+pages, and the guide template. URLs stay as they are (`/ai-system`, not `/ai-system-club`).
 
-The brief said the old site felt boring, so the pages play like scenes:
+## Design system
 
-- **The desk (opening shot).** A full-height hero with soft, drifting light leaks. Your photos are fanned on the desk at different depths, they shift with the mouse and as you scroll, and the headline rises in.
-- **Pasted in, drawn on.** Cards, notes and stats stick down with a small overshoot as you scroll, and the scribbles and circles draw themselves.
-- **The screening room.** The waitlist ticket glows under a spotlight on a dark band with torn paper edges.
-- **The film reel.** On desktop, the six "what you could build" cards become a pinned filmstrip that scrolls sideways. On phones they stack as normal cards.
-- **The receipt prints**, and **the final frame** is a full-bleed cobalt duotone of your beach photo with halftone dots.
-- **Everywhere, guides included:** a fine film grain, a reading-progress line under the header, and the new peeled-sticker mark as the dot in "Cindy Zhu."
+| Token | Value | Use |
+|---|---|---|
+| `--color-paper` | `#F9F7F0` Notebook Paper | page background |
+| `--color-ink` | `#242424` Ink | text and headings |
+| `--color-accent` | `#6655E8` Electric Violet | buttons, links, club card, active nav |
+| `--color-accent-deep` | `#4B3BCB` | violet text on tinted surfaces, guide headings |
+| `--color-lime` | `#D8F36A` Lime Sticker | stickers, tags, highlights (never text) |
+| `--color-pink` | `#FFB9D1` Bubblegum | tape, secondary details (never text) |
+| `--font-heading` | Manrope | headings and interface |
+| `--font-body` | DM Sans | body copy |
+| `--font-handwritten` | Caveat | notes and labels only, never paragraphs |
 
-All of it lives in `cinema.js` plus section 13 of `styles.css`. It only switches on when the
-visitor's device allows motion. With reduced motion turned on, or no JavaScript, every page is
-complete and still, and nothing is hidden. Guides stay calm for reading: they get the grain,
-progress line and mark, but no pinned or moving scenes.
-
-## Brand kit
-
-`brand/brandkit.png` is the one-page identity board (built from `brand/brandkit.html`):
-the peeled-sticker mark and how it's built, colour, type, paper pieces, image direction
-and system details. The mark itself is `site/mark.svg`. The idea behind it: your guides are
-"all free, all copy-paste", and a sticker is the scrapbook version of paste. The corner
-peels up as if it was just stuck down. Your current favicon is unchanged. Swapping it for
-the mark is your call.
+Contrast checked against WCAG AA (4.5:1): violet on paper 4.9:1, white on violet 5.2:1,
+deep violet on paper 7.0:1, ink on lime 12.5:1. The `/design-system` page shows every
+token and component live.
 
 ## How every guide picks up the new look
 
-Your guides already load `../styles.css`, so the restyle is entirely in that file. The
-CSS targets the class names the guides already use (`guidehead`, `gtag`, `gcallout`,
-`minicard`, `tip`, `steps`, `promptwrap`, `wl-card`, and so on). **No guide HTML changes,
-so no guide text changes.** `guides/free-content-engine.html` is a copy of the live page,
-and the check below proves it's identical.
+The CSS targets the class names your guides already use (`guidehead`, `gtag`, `gcallout`,
+`minicard`, `tip`, `steps`, `promptwrap`, `wl-card` …). **No guide HTML changes, so no guide
+text changes.** Each guide becomes a white paper page taped to the notebook, with violet
+section headings, lime topic labels, the "Hey, it's Cindy" intro as a lime sticky note, and
+prompts in paper cards with a Copy button. To roll it out, replace `styles.css` in your current
+repo and add the `fonts/` folder. That's the whole change for every guide.
 
-To roll it out: replace `styles.css` in your current repo with this one, and add the
-`fonts/` folder next to it. That's the whole change for all 500+ guides.
+## Your words, kept
+
+The reference mockup used placeholder copy ("Join 500,000+ learners", "monthly workshops",
+"Dream bigger…"). None of that is on your site, and two of those are factual claims, so
+I didn't use any of it. Every word on the new pages is yours, moved around to fit the new
+layout. For example, the taped proof card uses your real numbers from the contact page, and
+the guide-card tags are the topic labels from the guides themselves. `tools/check.mjs` fails if any visible
+text isn't on your current site. The only new labels are "Home" and "About" in the menu.
+
+## Images and licences: all fine for commercial use
+
+| Asset | Source | Licence |
+|---|---|---|
+| Manrope, DM Sans, Caveat | Google Fonts, self-hosted | SIL Open Font License 1.1 (`fonts/OFL-*.txt`) |
+| `img/cindy-cutout.webp`, `img/cindy-contact-cutout.webp` | Your own photos, background removed with Higgsfield | Your photos |
+| `img/robot-sticker.webp`, `img/thumb-*.webp` | Generated for this project with Higgsfield (GPT Image), no logos, no people | Commercial use under the Higgsfield plan used to create them. Worth confirming against your plan's terms |
+| Tape, stickers, doodles, hearts, crown, torn edges, icons | Drawn for this project in CSS / inline SVG | Yours |
+
+There are no stock photos and no third-party brand logos. The mockup's ChatGPT, Canva and
+Notion marks were swapped for original illustrations, because those logos are other
+companies' trademarks.
 
 ## Push it live on Netlify yourself
 
-**Option A: new repo (cleanest).**
-1. Create a repo you own on GitHub and push this folder to it (`netlify.toml` at the top level).
-2. In Netlify: Add new site → Import an existing project → pick the repo.
-   Leave the build command empty. Netlify reads `publish = "site"` from `netlify.toml`.
-3. Every push to `main` then redeploys, and every pull request gets its own preview URL.
-   That's where you leave feedback each round.
+**Option A: new repo.** Push this folder to a GitHub repo you own. In Netlify, choose Add new site
+→ Import an existing project → pick the repo. Leave the build command empty;
+`netlify.toml` publishes `site/`. Each pull request then gets its own preview URL for feedback rounds.
 
-**Option B: keep your current repo.** Copy the contents of `site/` over your current site
-files (keep your other guides, `media-kit.html`, `privacy`, `terms` and so on), commit and push.
-Your existing Netlify settings keep working.
+**Option B: your current repo.** Copy the contents of `site/` over your current files (keep your
+other guides, media kit, privacy and terms), commit and push.
 
-Your Netlify Forms waitlist keeps working: the forms keep the same `name="waitlist"`,
-`form-name` and `bot-field` fields, and `site.js` still submits them in the background.
+Your Netlify Forms waitlist keeps working: same `name="waitlist"`, `form-name` and `bot-field`.
 
 ## Check before you publish
 
@@ -85,40 +100,15 @@ npm i -D playwright && npx playwright install chromium
 node tools/check.mjs
 ```
 
-It loads every page at 320, 360, 390, 768, 1024, 1366 and 1920 px wide and fails on any
-sideways scrolling. It confirms the sample guide's HTML is unchanged. It also confirms
-that every piece of visible text on the new pages already exists on your current site,
-so no wording was rewritten. The last run passed.
+The check loads every page at 320–1920 px and fails on sideways scrolling. It confirms the
+sample guide's HTML is unchanged, and that every visible word already exists on your site. The last run passed.
 
-## Licences: all fine for commercial use
+## Needs your OK
 
-| Asset | Source | Licence |
-|---|---|---|
-| Bricolage Grotesque (headings) | Google Fonts, self-hosted | SIL Open Font License 1.1 (`fonts/OFL-bricolagegrotesque.txt`) |
-| Figtree (body) | Google Fonts, self-hosted | SIL OFL 1.1 (`fonts/OFL-figtree.txt`) |
-| Shantell Sans (handwritten notes) | Google Fonts, self-hosted | SIL OFL 1.1 (`fonts/OFL-shantellsans.txt`) |
-| Tape, stickers, scribbles, arrows, paperclip, torn edge, icons | Drawn for this project in CSS/inline SVG | Yours |
-| Photos, favicon | Your existing files | Yours |
-
-There are no stock images, no icon packs and no paid fonts. Emoji come from each visitor's own device.
-
-## Needs your OK (I haven't changed these without asking)
-
-1. **"About" in the menu.** The live site has no About page (`/about` is a 404), so I
-   added one plus an "About" link in the header and footer of the new pages. Every
-   sentence on it is copied from your current home, Club and contact pages. Send me
-   real About copy whenever you like.
-2. **Guide headers.** The guides keep their own header markup, which has no "About" link.
-   If you want it there too, it's a one-line find-and-replace across the guides. That
-   changes menu markup, not guide text, so I'd only do it with your go-ahead.
-3. **Old font link on guides.** Guides still load your old Google Fonts link (Averia,
-   Poppins, Caveat, Patrick Hand). It does no harm, but removing it makes guides load
-   faster. It's another one-line find-and-replace, again only if you agree.
-4. **Not restyled yet:** the guides index (`/guides`) and the media kit. The media kit uses
-   its own inline styles and `chrome.css`. Both are easy follow-ups using the same tokens.
-
-## Changing the look later
-
-Everything starts from the tokens at the top of `styles.css`. Change `--accent` and the
-whole site recolours, including buttons, links, scribbles, numbers and every guide. The
-`/design-system` page shows every token and component live.
+1. **"About" page and menu link.** The live `/about` is a 404. The new page uses only sentences from your other pages.
+2. **Guide menus.** Guides keep their own header markup (no Home/About links). Updating them
+   is a one-line find-and-replace across guides. It changes the menu only, not guide text.
+3. **Old font link on guides.** Guides still load your old Google Fonts link. It's harmless, but
+   removing it makes guides faster. It's another one-line find-and-replace.
+4. **Not restyled yet:** the guides index and media kit (it uses its own inline styles + `chrome.css`).
+   Both can inherit these tokens next.
