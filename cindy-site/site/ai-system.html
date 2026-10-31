@@ -8,9 +8,10 @@
 <link rel="preload" href="/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/caveat.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/css/club.css">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
-<body>
+<body class="club-page">
 <a class="skip" href="#main">Skip to content</a>
 <header class="topbar">
   <div class="wrap">
@@ -37,35 +38,77 @@
 </header>
 <span id="main" tabindex="-1"></span>
 
-<section class="stage">
-<div class="wrap">
-  <div class="hero club-hero">
-    <div>
-      <span class="hi sticker mint">p.s. the waitlist is now open</span>
-      <h1><span class="scribble">AI System Club</span></h1>
-      <div class="mobile-face" aria-hidden="true"><div class="polaroid"><img src="cindy.jpg" alt=""></div></div>
-      <p class="lead">Build AI workflows, content systems, visuals, websites and career tools, with recorded lessons you can follow at your own pace.</p>
-      <form method="POST" name="waitlist" class="wl-form">
-        <input type="hidden" name="form-name" value="waitlist">
-        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
-        <label class="sr-only" for="club-email-1">Your email</label>
-        <input id="club-email-1" type="email" name="email" placeholder="your email" autocomplete="email" required>
-        <button type="submit" class="btn">Join the waitlist</button>
-      </form>
-      <p class="wlcount"><span class="hl">6,000+ people</span> are already on the waitlist.</p>
-      <span class="wlnote arrow-note">waitlisters get first dibs 🌱</span>
-    </div>
-    <div class="photo-wrap photo-stack">
-      <div class="layer" data-depth="0.5"><div class="polaroid back-l tape blush"><img src="cindy2.jpg" alt="" width="760" height="914"></div></div>
-      <div class="layer" data-depth="1.1"><div class="polaroid front tape sky"><img src="cindy.jpg" alt="Cindy Zhu" width="828" height="1100"></div></div>
-      <div class="layer" data-depth="1.6">
-        <svg class="doodle loop" viewBox="0 0 58 40" aria-hidden="true"><path d="M3 30c10-2 16-10 12-17s-14 0-9 7 22 8 32-4 8-14 16-12"/></svg>
-        <span class="sticker s-a">AI obsessed ✨</span>
-        <svg class="doodle star" viewBox="0 0 46 46" aria-hidden="true"><path d="M23 4c1 10 4 15 19 19-15 3-18 8-19 19-1-11-5-16-19-19 14-4 18-9 19-19z"/></svg>
+<section class="club-stage">
+<div class="wrap club-hero">
+  <div class="club-copy">
+    <svg class="doodle c-spark" viewBox="0 0 40 34" aria-hidden="true"><path d="M8 30L4 16M18 26l8-20M28 30l9-8"/></svg>
+    <h1 class="club-title">AI System Club</h1>
+    <p class="club-sub">Inside the Club, I share the AI workflows I use to run my content and business.</p>
+    <p class="club-lead">Build AI workflows, content systems, visuals, websites and career tools, with recorded lessons you can follow at your own pace.</p>
+    <form method="POST" name="waitlist" class="wl-form club-form">
+      <input type="hidden" name="form-name" value="waitlist">
+      <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+      <label class="sr-only" for="club-email-1">Your email</label>
+      <input id="club-email-1" type="email" name="email" placeholder="your email" autocomplete="email" required>
+      <button type="submit" class="btn">Join the waitlist</button>
+    </form>
+    <p class="wlcount"><span class="hl">6,000+ people</span> are already on the waitlist.</p>
+  </div>
+  <div class="club-photo">
+    <div class="layer" data-depth="0.6">
+      <div class="club-frame">
+        <span class="club-tape" aria-hidden="true"></span>
+        <img src="cindy.jpg" alt="Cindy Zhu" width="828" height="1100">
       </div>
+    </div>
+    <div class="layer" data-depth="1.3">
+      <span class="sticker club-ps">p.s. the waitlist is now open</span>
+      <p class="club-note"><span>waitlisters get first dibs 🌱</span><svg viewBox="0 0 30 28" aria-hidden="true"><path d="M15 25C7 19 2 14 3.5 8.5 5 3.5 11 3 14.5 8c2-5 9-6 11.5-1.5 3 5.5-3.5 12-11 18.5z"/></svg></p>
+      <svg class="doodle pink c-arrow" viewBox="0 0 44 40" aria-hidden="true"><path d="M6 6c4 10 2 20-2 28M4 34c8-4 14-12 16-22 4 8 10 12 20 12"/></svg>
+      <svg class="doodle c-dots" viewBox="0 0 30 20" aria-hidden="true"><path d="M4 14l2-2M14 8l2-3M24 12l1-1"/></svg>
     </div>
   </div>
 </div>
+</section>
+
+<!-- What you get: four pinned cards -->
+<section class="club-included">
+  <div class="wrap">
+    <div class="inc-head">
+      <svg class="doodle lime inc-l" viewBox="0 0 34 30" aria-hidden="true"><path d="M30 26L16 14M30 6L18 9M10 28L4 22"/></svg>
+      <h2 class="inc-title">What you get</h2>
+      <svg class="doodle inc-r" viewBox="0 0 34 30" aria-hidden="true"><path d="M4 8l14-6M6 16h22M4 26l18 2"/></svg>
+      <p class="inc-intro">Buy once. Keep ongoing access to your lesson bundle and its resources.</p>
+    </div>
+    <div class="inc-cards">
+      <div class="inc-card" data-paste><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="3" y="6" width="26" height="20" rx="5"/><path class="f" d="M13 11.5v9l8-4.5z"/></svg></span><h3>Recorded build-alongs</h3><p>Watch each included project take shape, with my decisions and refinements explained as I go.</p></div>
+      <div class="inc-card" data-paste><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="4" y="7" width="24" height="21" rx="4"/><path class="s" d="M10 4v6M22 4v6M4 13h24"/><path class="d" d="M10 18h3M15 18h3M20 18h2M10 23h3M15 23h3"/></svg></span><h3>AI agent starter kits</h3><p>Reusable agent instructions for research, marketing, content and career tasks, ready to adapt to your work.</p></div>
+      <div class="inc-card" data-paste><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="f" d="M4 17h7l2 3h6l2-3h7v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z"/><path class="s" d="M16 3v12M11 10l5 5 5-5"/></svg></span><h3>Prompts, skills and project files</h3><p>Copy, customise and build with the prompts, reusable skills, templates and files that accompany your lessons.</p></div>
+      <div class="inc-card" data-paste><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><circle class="f" cx="16" cy="10" r="4.5"/><circle class="f" cx="7" cy="12.5" r="3.4"/><circle class="f" cx="25" cy="12.5" r="3.4"/><path class="f" d="M8 27c0-5 3.5-8.5 8-8.5s8 3.5 8 8.5zM1.5 25c0-4 2.3-6.5 5.5-6.5 1.3 0 2.4.3 3.2 1-1.7 1.5-2.7 3.4-3 5.5zM30.5 25c0-4-2.3-6.5-5.5-6.5-1.3 0-2.4.3-3.2 1 1.7 1.5 2.7 3.4 3 5.5z"/></svg></span><h3>30 days of team support</h3><p>Ask questions, share your builds and get answers from the Club team as you put the lessons into practice.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA: the violet watercolour band -->
+<section class="club-band" id="join">
+  <svg class="doodle pink band-heart" viewBox="0 0 64 60" aria-hidden="true"><path d="M33 54C16 42 6 32 9 19 12 8 26 7 31 19c4-12 21-14 25-3 5 13-8 26-23 38z"/></svg>
+  <div class="wrap band-inner">
+    <span class="big">last thing</span>
+    <div class="band-line">
+      <svg class="doodle lime b-l" viewBox="0 0 34 30" aria-hidden="true"><path d="M30 26L16 14M30 6L18 9M10 28L4 22"/></svg>
+      <h2>Get on the list, get the edge first.</h2>
+      <svg class="doodle lime b-r" viewBox="0 0 34 30" aria-hidden="true"><path d="M4 8l14-6M6 16h22M4 26l18 2"/></svg>
+    </div>
+    <p>Join the free waitlist for first access and the founding price. I’ll email you when doors open.</p>
+    <form class="wlform" method="POST" name="waitlist">
+      <input type="hidden" name="form-name" value="waitlist">
+      <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+      <label class="sr-only" for="club-email-2">Your email</label>
+      <input id="club-email-2" type="email" name="email" placeholder="your email" autocomplete="email" required>
+      <button type="submit" class="btn">Join the waitlist</button>
+    </form>
+    <p class="sign">x Cindy 🌱</p>
+  </div>
 </section>
 
 <div class="growth-ribbon" role="region" aria-label="What you can build with AI">
@@ -80,7 +123,6 @@
   <div class="wrap">
     <div class="creator-proof" data-paste>
       <p>I grew to <strong>440k+ followers and subscribers</strong> across channels in <strong>6 months</strong> as a solo operator.</p>
-      <p>Inside the Club, I share the AI workflows I use to run my content and business.</p>
     </div>
   </div>
 </section>
@@ -122,18 +164,6 @@
   </div>
 </section>
 
-<!-- What you get -->
-<section class="section club-inclusions">
-  <div class="wrap">
-    <div class="receipt" data-print>
-      <div class="receipt-paper" aria-hidden="true"></div>
-      <h2>What you get</h2>
-      <p class="club-inclusions-intro">Buy once. Keep ongoing access to your lesson bundle and its resources.</p>
-      <dl><div><dt>Recorded build-alongs</dt><dd>Watch each included project take shape, with my decisions and refinements explained as I go.</dd></div><div><dt>AI agent starter kits</dt><dd>Reusable agent instructions for research, marketing, content and career tasks, ready to adapt to your work.</dd></div><div><dt>Prompts, skills and project files</dt><dd>Copy, customise and build with the prompts, reusable skills, templates and files that accompany your lessons.</dd></div><div><dt>30 days of team support</dt><dd>Ask questions, share your builds and get answers from the Club team as you put the lessons into practice.</dd></div></dl>
-    </div>
-  </div>
-</section>
-
 <!-- Bio -->
 <section class="section">
   <div class="wrap about-split">
@@ -163,25 +193,6 @@
       <details data-paste><summary>When does it open?</summary><p>Join the waitlist and I’ll email you as soon as enrolment opens. You’ll get first access and a look inside the lessons 🌱</p></details>
       <details data-paste><summary>Can I keep learning with you after the 30 days?</summary><p>After your 30 days of Club support, you can choose to join AI Nook, our graduate community for ongoing learning and new lessons. It’s a separate, optional subscription. Your purchased lesson bundle stays accessible whether you join or not.</p></details>
       <details data-paste><summary>How much is it?</summary><p>The waitlist is free, and waitlisters get the founding price. I’ll email you the lesson bundle price, payment options, lesson collection and refund details before enrolment opens.</p></details>
-    </div>
-  </div>
-</section>
-
-<!-- Final CTA -->
-<section class="section screen" id="join">
-  <div class="wrap">
-    <div class="ticket closing" data-paste>
-      <span class="big">last thing</span>
-      <h2>Get on the list, get the edge first.</h2>
-      <p>Join the free waitlist for first access and the founding price. I’ll email you when doors open.</p>
-      <form class="wlform" method="POST" name="waitlist">
-        <input type="hidden" name="form-name" value="waitlist">
-        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
-        <label class="sr-only" for="club-email-2">Your email</label>
-        <input id="club-email-2" type="email" name="email" placeholder="your email" autocomplete="email" required>
-        <button type="submit" class="btn">Join the waitlist</button>
-      </form>
-      <p class="sign">x Cindy 🌱</p>
     </div>
   </div>
 </section>
