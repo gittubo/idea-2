@@ -26,6 +26,12 @@
   .demo{display:flex;flex-wrap:wrap;gap:var(--s6);align-items:center;padding:var(--s6) 0;}
   .demo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:var(--s6);align-items:start;}
   .cap-note{font-size:.85rem;color:var(--ink-3);margin-top:var(--s3);}
+  .ds .stage{position:relative;padding:var(--s7) var(--s5) var(--s6);border-radius:var(--r);background:var(--accent-soft);overflow:hidden;}
+  .ds .stage .topbar{position:relative;top:auto;}
+  .ds .stage-paper{background:var(--paper-2);padding-bottom:0;}
+  .ds .stage-paper footer.site-foot{margin:var(--s7) calc(var(--s5) * -1) 0;}
+  .ds .navdemo{padding:var(--s5) var(--s6);}
+  .ds .clubstage{padding:var(--s4);max-width:420px;}
   @media(max-width:600px){.typerow{grid-template-columns:1fr;gap:4px;}}
 </style>
 </head>
@@ -48,16 +54,16 @@
     <h2>Colour</h2>
     <p class="intro">Electric violet does the talking: buttons, links, headings in guides, the club card. Lime and bubblegum are for stickers, highlights and tape, never for text.</p>
     <div class="swatches">
-      <div class="sw"><i style="background:var(--color-paper)"></i><div><b>Notebook Paper</b><code>--color-paper #F9F7F0</code></div></div>
+      <div class="sw"><i style="background:var(--color-paper)"></i><div><b>Notebook Paper</b><code>--color-paper #F7F1E9</code></div></div>
       <div class="sw"><i style="background:var(--color-ink)"></i><div><b>Ink</b><code>--color-ink #242424</code></div></div>
       <div class="sw"><i style="background:var(--color-accent)"></i><div><b>Electric Violet</b><code>--color-accent #6655E8</code></div></div>
       <div class="sw"><i style="background:var(--color-accent-deep)"></i><div><b>Deep Violet</b><code>--color-accent-deep #4B3BCB</code></div></div>
       <div class="sw"><i style="background:var(--color-lime)"></i><div><b>Lime Sticker</b><code>--color-lime #D8F36A</code></div></div>
       <div class="sw"><i style="background:var(--color-pink)"></i><div><b>Bubblegum</b><code>--color-pink #FFB9D1</code></div></div>
       <div class="sw"><i style="background:var(--color-accent-soft)"></i><div><b>Violet tint</b><code>--color-accent-soft #ECE9FF</code></div></div>
-      <div class="sw"><i style="background:var(--color-night)"></i><div><b>Night</b><code>--color-night #2A2164</code></div></div>
+      <div class="sw"><i style="background:var(--color-footer)"></i><div><b>Footer Violet</b><code>--color-footer #5547E4</code></div></div>
     </div>
-    <p class="cap-note" id="contrast">Contrast (WCAG AA needs 4.5:1): violet on paper 4.9:1, white on violet 5.2:1, deep violet on paper 7.0:1, ink on lime 12.5:1, ink on bubblegum 9.7:1.</p>
+    <p class="cap-note" id="contrast">Contrast (WCAG AA needs 4.5:1): violet on paper 4.6:1, white on violet 5.2:1, deep violet on paper 6.7:1, ink on lime 12.5:1, ink on bubblegum 9.7:1, white on footer violet 6.2:1.</p>
   </section>
 
   <section>
@@ -89,6 +95,58 @@
     <div class="demo">
       <a class="btn" href="#">Primary <code style="opacity:.7;font-size:.75rem">.btn</code></a>
       <a class="btn ghost" href="#">Secondary <code style="opacity:.6;font-size:.75rem">.btn.ghost</code></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Header pieces</h2>
+    <p class="intro">The active menu item sits on a painted brush blob (<code>img/brush.webp</code>). The call to action is a handwritten outlined pill with a white arrow in a violet circle. Both come from <code>.nav</code> in <code>styles.css</code>.</p>
+    <div class="stage navdemo">
+      <nav class="nav" aria-label="Demo menu">
+        <a href="#" class="active" aria-current="page">.active</a>
+        <a href="#">Plain link</a>
+        <a href="#" class="btn nav-cta">.nav-cta</a>
+      </nav>
+    </div>
+  </section>
+
+  <section>
+    <h2>Torn paper edge</h2>
+    <p class="intro">Every header ends in a torn edge (<code>.topbar::before</code>) on the crumpled paper texture. Here it sits over a violet tint so you can see the tear.</p>
+    <div class="stage" style="padding-top:0;padding-bottom:var(--s6)">
+      <div class="topbar"><div class="wrap"><span class="brand">Cindy Zhu<span class="dot">.</span></span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Watercolour footer band</h2>
+    <p class="intro">The violet footer (<code>--color-footer</code>) has a painted band rising out of it (<code>footer.site-foot::before</code>, <code>img/band.webp</code>).</p>
+    <div class="stage stage-paper">
+      <footer class="site-foot">
+        <p class="foot-line">Footer line in <a href="#">handwriting</a></p>
+        <nav class="foot-links" aria-label="Demo footer"><a href="#">Link</a><a href="#">Link</a><a href="#">Link</a></nav>
+        <div class="copyright">.copyright</div>
+      </footer>
+    </div>
+  </section>
+
+  <section>
+    <h2>Checklist and club card</h2>
+    <div class="demo-grid">
+      <ul class="checks">
+        <li><span><b>.checks</b> lime tick bullets</span></li>
+        <li><span>One short line per item</span></li>
+        <li><span>Used for proof points</span></li>
+      </ul>
+      <div class="clubstage">
+        <aside class="clubcard">
+          <svg class="crown" viewBox="0 0 66 56" aria-hidden="true"><path d="M10 46L6 18l14 12L33 10l13 20 14-12-4 28z" fill="#F2D94A" stroke="#242424" stroke-width="2.6" stroke-linejoin="round"/><path d="M11 52h44" stroke="#242424" stroke-width="2.6" stroke-linecap="round"/><path d="M52 4l2 5M60 10l-5 1M44 6l3 3" stroke="#242424" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg class="doodle heart" viewBox="0 0 64 60" aria-hidden="true"><path d="M33 54C16 42 6 32 9 19 12 8 26 7 31 19c4-12 21-14 25-3 5 13-8 26-23 38z"/></svg>
+          <h2>.clubcard</h2>
+          <p>The violet card, tilted a little, with a crown and a heart doodle.</p>
+          <a class="btn" href="#">Button on violet</a>
+        </aside>
+      </div>
     </div>
   </section>
 
