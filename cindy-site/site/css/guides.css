@@ -70,7 +70,7 @@
 .gcard .thumb{display:block;border-radius:14px;overflow:hidden;aspect-ratio:16/9;background:var(--color-paper-2);}
 .gcard .thumb img{width:100%;height:100%;object-fit:cover;transition:scale .4s ease;}
 .gcard:hover .thumb img{scale:1.04;}
-.gcard h3{font:800 clamp(1.08rem,.9rem + .55vw,1.5rem)/1.28 var(--font-heading);letter-spacing:-.018em;padding-inline:.5rem;margin:clamp(.8rem,.6rem + .5vw,1.2rem) 0 clamp(.7rem,.5rem + .4vw,1rem);}
+.gcard h2{font:800 clamp(1.08rem,.9rem + .55vw,1.5rem)/1.28 var(--font-heading);letter-spacing:-.018em;padding-inline:.5rem;margin:clamp(.8rem,.6rem + .5vw,1.2rem) 0 clamp(.7rem,.5rem + .4vw,1rem);}
 .gcard .read{margin-top:auto;padding-inline:.5rem;font:700 clamp(.95rem,.9rem + .15vw,1.08rem) var(--font-heading);color:var(--color-accent);}
 .gcard:hover .read{color:var(--color-accent-deep);}
 .gx-sparks{right:-4px;top:clamp(15rem,10rem + 12vw,22rem);width:46px;z-index:2;}

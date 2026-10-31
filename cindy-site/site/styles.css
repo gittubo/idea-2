@@ -216,7 +216,7 @@ b,strong{font-weight:700;}
 .navdrop > a::after{content:"";width:.65em;height:.4em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1.5 1.5l4.5 4.5 4.5-4.5' fill='none' stroke='%23242424' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;transition:rotate .2s;}
 .navdrop .menu{position:absolute;left:50%;top:calc(100% + 8px);translate:-50% 0;min-width:280px;display:grid;gap:2px;padding:.5rem;background:#fff;border:1px solid var(--color-line);border-radius:16px;box-shadow:var(--shadow-lift);opacity:0;visibility:hidden;transition:opacity .15s, visibility .15s;z-index:70;}
 .navdrop .menu a{border-radius:10px;font-weight:600;font-size:.92rem;line-height:1.35;padding:.6em .8em;}
-.navdrop:hover .menu,.navdrop:focus-within .menu{opacity:1;visibility:visible;}
+.navdrop:hover .menu,.navdrop:focus-within .menu{opacity:1;visibility:visible;transition:opacity .15s, visibility 0s;} /* visible at once, so fast Tab presses still land on the items */
 .navdrop:hover > a::after,.navdrop:focus-within > a::after{rotate:180deg;}
 .nav a.nav-search{display:grid;place-items:center;width:44px;height:44px;padding:0;margin-left:var(--space-2);}
 .nav a.nav-search svg{width:24px;height:24px;}
@@ -265,7 +265,7 @@ body::after{opacity:.03;}
 footer.site-foot{background:var(--color-footer);color:#ECE9FF;margin-top:clamp(5rem,4rem + 4vw,8rem);padding-top:var(--space-4);}
 footer.site-foot::before{ /* the violet watercolour band rising out of the footer */
   top:auto;bottom:calc(100% - 2px);height:clamp(60px,3rem + 4vw,120px);background:url("img/band.webp") center top/100% 320% no-repeat;-webkit-mask:none;mask:none;}
-.copyright{color:#CFC8FF;}
+.copyright{color:#E4E0FF;}
 
 /* ---------- 6. Notebook pieces (the design system) ---------- */
 
@@ -608,7 +608,7 @@ footer.site-foot::before{ /* the violet watercolour band rising out of the foote
 .finale .closing > *{max-width:640px;}
 .finale .closing .big{color:var(--color-lime);}
 .finale .closing h2{color:#fff;font-size:clamp(2.6rem,1.6rem + 4.5vw,5rem);line-height:1;letter-spacing:-.035em;}
-.finale .closing > p{color:#EDEAFF;}
+.finale .closing > p{color:#F6F4FF;}
 .finale .closing .cta-row{justify-content:flex-start;}
 .finale .btn{background:#fff;color:var(--color-ink);border-color:#fff;box-shadow:0 12px 24px -12px rgba(0,0,0,.5);}
 .finale .btn:hover{background:var(--color-lime);border-color:var(--color-lime);}
