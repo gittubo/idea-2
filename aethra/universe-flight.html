@@ -35,6 +35,7 @@ button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 #card .acts { font-size: 13px; color: var(--muted); }
 #card .dist { font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
 #card a, #card .soon { pointer-events: auto; margin-top: 6px; font-family: var(--display); font-weight: 700; font-size: 13px; color: var(--ink); background: var(--gold); border-radius: 6px; padding: 7px 10px; text-decoration: none; justify-self: start; }
+#card a.alt { margin-top: 0; background: transparent; color: var(--text); border: 1px solid var(--line); }
 #card .soon { background: transparent; color: var(--muted); border: 1px solid var(--line); font-weight: 500; pointer-events: none; }
 #travel { padding: 10px; display: grid; gap: 6px; pointer-events: auto; }
 #travel .label { font-family: var(--display); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
@@ -133,7 +134,7 @@ const angDiff = (a, b) => ((b - a + Math.PI) % TAU + TAU) % TAU - Math.PI;
 const isTouch = matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
 if (isTouch) document.body.classList.add('touch');
 if (!window.THREE) { $('#loading').textContent = 'The 3D engine could not load. Check your connection and reload.'; return; }
-const WEAVER_URL = 'https://claude.ai/artifact/Cff1dR2xkScxkQXFYXo8Xu';
+const WEAVER_URL = 'https://claude.ai/artifact/Cff1dR2xkScxkQXFYXo8Xu', WORLDS_URL = 'https://claude.ai/artifact/ANdZXbtaWfUJA4kiBpvXEB';
 
 // Worlds from your master map. map: where it sits on the map (768 x 512 grid), which sets its place in space.
 // crop: the part of the map art (fractions of the image) that the island's atoms are coloured from.
@@ -438,7 +439,7 @@ let cardKey = '';
 function updateCard(w, dist) {
   const arrive = dist < w.R * 1.8, near = dist < w.R * 7;
   const status = arrive ? 'Arrived' : near ? 'Approaching' : 'Nearest world';
-  const action = !arrive ? '' : w.id === 'core' ? `<a href="${WEAVER_URL}" target="_blank" rel="noopener">See The Core up close</a>` : '<span class="soon">Landing here comes in a later build</span>';
+  const action = !arrive ? '' : `<a href="${WORLDS_URL}#${w.id}" target="_blank" rel="noopener">Land on ${w.name}</a>` + (w.id === 'core' ? `<a class="alt" href="${WEAVER_URL}" target="_blank" rel="noopener">See the concept art woven</a>` : '');
   const key = w.id + status;
   if (key !== cardKey) {
     cardKey = key;
