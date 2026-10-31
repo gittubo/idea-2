@@ -8,3 +8,16 @@
   for = "/fonts/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# The preview has no privacy/terms pages, so send those links to Cindy's live ones.
+# Netlify skips a redirect when a file exists at the path (no force = true),
+# so this does nothing once the site runs alongside her real privacy.html/terms.html.
+[[redirects]]
+  from = "/privacy"
+  to = "https://cindyzhu.com.au/privacy"
+  status = 302
+
+[[redirects]]
+  from = "/terms"
+  to = "https://cindyzhu.com.au/terms"
+  status = 302
