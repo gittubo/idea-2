@@ -22,7 +22,7 @@ const originals = join(here, 'original');
 const pages = ['/', '/ai-system', '/about', '/contact', '/guides', '/guides/free-content-engine'];
 const widths = [320, 360, 390, 768, 1024, 1366, 1920];
 // Labels that are new on purpose, listed so they stay visible in review.
-const allowedNewText = ['About', 'Home'];
+const allowedNewText = ['About', 'Home', 'Send a message', 'Your name', 'Your email', 'Your message', 'Send message'];
 
 const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml', '.woff2': 'font/woff2' };
 const server = createServer((req, res) => {
