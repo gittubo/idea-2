@@ -59,6 +59,12 @@
         head.appendChild(btn);
         wrap.insertBefore(head, pre);
         wrap.classList.add("has-head");
+        // long prompts scroll inside the box: let keyboard users focus and scroll them too
+        if (pre.scrollHeight > pre.clientHeight + 1) {
+          pre.tabIndex = 0;
+          pre.setAttribute("role", "region");
+          pre.setAttribute("aria-label", label.textContent);
+        }
       } else {
         wrap.appendChild(btn);
       }
