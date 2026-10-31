@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="How to build a hand-controlled visual from your own notes by pasting one prompt into Claude Code.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a hand-controlled brain visual with Claude (touch-design style) · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-touch-design">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build a hand-controlled brain visual with Claude (touch-design style)">
+<meta property="og:description" content="How to build a hand-controlled visual from your own notes by pasting one prompt into Claude Code.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-touch-design">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build a hand-controlled brain visual with Claude (touch-design style)">
+<meta name="twitter:description" content="How to build a hand-controlled visual from your own notes by pasting one prompt into Claude Code.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build a hand-controlled brain visual with Claude (touch-design style)", u:"guides/claude-touch-design.html", topic:"design", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Design &amp; visuals</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Build a hand-controlled brain visual with Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 How to build a hand-controlled visual from your own notes by pasting one prompt into Claude Code.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">try it first</span>
+<h2>Play with mine first <span class="gi" style="--gl:#9481A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.544 11.045C21.848 11.4713 22 11.6845 22 12C22 12.3155 21.848 12.5287 21.544 12.955C20.1779 14.8706 16.6892 19 12 19C7.31078 19 3.8221 14.8706 2.45604 12.955C2.15201 12.5287 2 12.3155 2 12C2 11.6845 2.15201 11.4713 2.45604 11.045C3.8221 9.12944 7.31078 5 12 5C16.6892 5 20.1779 9.12944 21.544 11.045Z" stroke="currentColor" stroke-width="1.5"/><path d="M15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>Before you build your own, go play with the live one I made: <a href="../brain/">cindyzhu.com.au/brain</a>. Open it on a laptop in Chrome and allow the camera, then open your palm to expand the web, make a fist to collapse it, hold up 1, 2, or 3 fingers for different shapes, and rotate your wrist to spin it.</p>
+<div class="tip warn">📱 One heads-up: open it in a real browser like Chrome or Safari, not the little in-app browser inside Instagram, because that one often blocks the camera.</div>
+<hr class="rule">
+<span class="kicker">before you start</span>
+<h2>What you need <span class="gi" style="--gl:#DB5C78" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15V14H21V15C21 17.8284 21 19.2426 20.1213 20.1213C19.2426 21 17.8284 21 15 21H9C6.17157 21 4.75736 21 3.87868 20.1213C3 19.2426 3 17.8284 3 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 14L3.00001 12.9999C3.00003 11.5278 3.00004 10.7918 3.31675 10.1584C3.63347 9.52493 4.22231 9.08329 5.39999 8.20002C6.19297 7.60528 6.58946 7.30791 7.05132 7.15395C7.51317 7 8.00879 7 9.00002 7H15C15.9912 7 16.4868 7 16.9487 7.15395C17.4105 7.3079 17.807 7.60527 18.6 8.2C19.7777 9.08328 20.3666 9.52492 20.6833 10.1584C21 10.7918 21 11.5279 21 13V14H3Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 12V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 12V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.49997 7.00006V6.50006C8.49997 5.0956 8.49997 4.39337 8.83703 3.88892C8.98295 3.67054 9.17045 3.48304 9.38883 3.33712C9.89328 3.00006 10.5955 3.00006 12 3.00006C13.4044 3.00006 14.1067 3.00006 14.6111 3.33712C14.8295 3.48304 15.017 3.67054 15.1629 3.88892C15.5 4.39337 15.5 5.0956 15.5 6.50006V7.00006" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+  <div class="minicard"><b>💻 Claude Code installed</b> Included with Claude Pro and Max, start at <a href="https://claude.com/product/claude-code" target="_blank" rel="noopener">claude.com/product/claude-code</a></div>
+  <div class="minicard"><b>📓 Your own notes</b> An Obsidian vault, a folder of text files, a Notion export, or just a list of your topics</div>
+  <div class="minicard"><b>🌐 Google Chrome and a webcam</b></div>
+  <div class="minicard"><b>⏱️ About 15 to 20 minutes</b></div>
+</div>
+<hr class="rule">
+<span class="kicker">copy this</span>
+<h2>The mega prompt <span class="gi" style="--gl:#BA791B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9258 12.7775L11.7775 10.6292C11.4847 10.3364 11.3383 10.19 11.1803 10.1117C10.8798 9.96277 10.527 9.96277 10.2264 10.1117C10.0685 10.19 9.92207 10.3364 9.62923 10.6292C9.33638 10.9221 9.18996 11.0685 9.11169 11.2264C8.96277 11.527 8.96277 11.8798 9.11169 12.1803C9.18996 12.3383 9.33638 12.4847 9.62923 12.7775L11.7775 14.9258M13.9258 12.7775L20.3708 19.2225C20.6636 19.5153 20.81 19.6617 20.8883 19.8197C21.0372 20.1202 21.0372 20.473 20.8883 20.7736C20.81 20.9315 20.6636 21.0779 20.3708 21.3708C20.0779 21.6636 19.9315 21.81 19.7736 21.8883C19.473 22.0372 19.1202 22.0372 18.8197 21.8883C18.6617 21.81 18.5153 21.6636 18.2225 21.3708L11.7775 14.9258M13.9258 12.7775L11.7775 14.9258" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 2L17.2948 2.7966C17.6813 3.84117 17.8746 4.36345 18.2556 4.74445C18.6366 5.12545 19.1588 5.31871 20.2034 5.70523L21 6L20.2034 6.29477C19.1588 6.68129 18.6366 6.87456 18.2556 7.25555C17.8746 7.63655 17.6813 8.15883 17.2948 9.2034L17 10L16.7052 9.2034C16.3187 8.15884 16.1254 7.63655 15.7444 7.25555C15.3634 6.87455 14.8412 6.68129 13.7966 6.29477L13 6L13.7966 5.70523C14.8412 5.31871 15.3634 5.12545 15.7444 4.74445C16.1254 4.36345 16.3187 3.84117 16.7052 2.7966L17 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 4L6.22108 4.59745C6.51097 5.38087 6.65592 5.77259 6.94167 6.05834C7.22741 6.34408 7.61913 6.48903 8.40255 6.77892L9 7L8.40255 7.22108C7.61913 7.51097 7.22741 7.65592 6.94166 7.94167C6.65592 8.22741 6.51097 8.61913 6.22108 9.40255L6 10L5.77892 9.40255C5.48903 8.61913 5.34408 8.22741 5.05833 7.94167C4.77259 7.65592 4.38087 7.51097 3.59745 7.22108L3 7L3.59745 6.77892C4.38087 6.48903 4.77259 6.34408 5.05833 6.05833C5.34408 5.77259 5.48903 5.38087 5.77892 4.59745L6 4Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Copy everything in the box and paste it into Claude Code. It will ask you a couple of quick questions, then build the whole thing for you, around your notes, not mine.</p>
+<div class="promptwrap">
+<span class="promptlabel">🪄 the mega prompt</span>
+<pre><code>Build me a single, self-contained HTML file called brain.html that turns my webcam into a hand-controlled, expanding map of my own notes. Think of the Obsidian graph view, but it follows my hand in real time, expands when I open my palm, and spins when I rotate my wrist. I am going to film myself using it.
+
+Before you build, ask me these 3 questions, then build it:
+1. Where my notes live: a folder of text or Obsidian files, a Notion export, or I will paste a list of 12 to 20 topics with a few sub-notes under each. Use MY real notes as the graph. Do not invent generic placeholder data.
+2. Which side of the frame I will sit on, left or right, so you keep that side bright for my face.
+3. My colour vibe (suggest a default if I do not care).
+
+Then build it with these exact requirements:
+
+TRACKING
+- Use Google MediaPipe Tasks Vision (hand landmarker) from a pinned CDN version, GPU delegate, running mode VIDEO, one hand.
+- Mirror the webcam so moving my hand feels natural.
+
+THE GRAPH (my second brain)
+- Turn my notes into nodes (one per note or topic) and edges (links between them, and group sub-notes under their topic). Make the most-connected topics bigger and brighter.
+- Lay it out with a simple force-directed layout so related notes clump into glowing clusters joined by thin lines. Cap it around 150 to 250 visible nodes for smoothness.
+
+HAND CONTROLS
+- The whole graph hangs off my palm and follows my hand as I move.
+- Opening my palm wider makes it expand bigger. A fist collapses it smoothly down to a single glowing seed.
+- Finger count changes the shape: 1 finger is a star radiating from the centre, 2 fingers is separate clusters, 3 fingers is a dense mesh, and an open hand is the full bloom that also reveals more sub-notes as it grows.
+- Rotating my wrist spins the graph with me. Keep all text labels upright and readable.
+
+LOOK (for filming)
+- Dark background. Paint a left-to-right dark gradient over the webcam so the graph side stays dark and readable, and the side I sit on stays bright and flattering for my face.
+- Glowing nodes and edges using additive blending, with subtle motion so it feels alive.
+
+PERFORMANCE (must stay smooth)
+- Redraw each frame, use additive lighter compositing for the glow instead of heavy blur, batch edges by colour into single paths, skip anything off-screen, and keep the node count capped.
+
+ROBUSTNESS (avoid the common bugs)
+- Define all data and variables before any function that uses them runs. Do not call the layout function before the node data exists.
+- Add a click to start button that requests the camera, because browsers only allow the camera after a click. Show a clear on-screen message if the camera fails.
+- The camera only works over http://localhost or https, never from double-clicking the file.
+
+WHEN DONE
+- Start a local server for me (run python3 -m http.server 8000), then tell me to open http://localhost:8000/brain.html in Chrome, click start, and allow the camera.
+- If anything errors, open the page in a browser yourself, read the console, fix it, and only then tell me it is ready.</code></pre>
+</div>
+<hr class="rule">
+<span class="kicker">the setup</span>
+<h2>How to run it <span class="gi" style="--gl:#428BDD" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M15.9453 12.3948C15.7686 13.0215 14.9333 13.4644 13.2629 14.3502C11.648 15.2064 10.8406 15.6346 10.1899 15.4625C9.9209 15.3913 9.6758 15.2562 9.47812 15.0701C9 14.6198 9 13.7465 9 12C9 10.2535 9 9.38018 9.47812 8.92995C9.6758 8.74381 9.9209 8.60868 10.1899 8.53753C10.8406 8.36544 11.648 8.79357 13.2629 9.64983C14.9333 10.5356 15.7686 10.9785 15.9453 11.6052C16.0182 11.8639 16.0182 12.1361 15.9453 12.3948Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🛠️ Let it build.</strong> Let Claude Code finish building and start the local server for you.</li>
+<li><strong class="st">🌐 Open the link.</strong> Open the link it gives you (it looks like http://localhost:8000/brain.html) in Chrome.</li>
+<li><strong class="st">🎥 Allow the camera.</strong> Click start, then allow the camera.</li>
+<li><strong class="st">✋ Play with it.</strong> Move your hand to carry the web, open your palm to expand it, make a fist to collapse it, hold up 1, 2, or 3 fingers to change the shape, and rotate your wrist to spin it.</li>
+<li><strong class="st">🔴 Film it.</strong> Screen record it, then add your captions, music, and effects after.</li>
+</ol>
+<div class="tip warn">⚠️ The camera only works on the http://localhost link (or a deployed https site). If you just double-click the file, the camera will not turn on. That is normal, always use the localhost link.</div>
+<hr class="rule">
+<span class="kicker">go further</span>
+<h2>Want the real-deal version (TouchDesigner) <span class="gi" style="--gl:#8F7FB3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.99963 5.00055L9.99963 5.00031" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.9996 5.00031L19.9996 5.00031" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.9996 9.00031L15.9996 15.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M9.99963 2.00031L9.99963 8.00031" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M11.9996 16.0003L11.9996 22.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.9996 12.0001L19.9996 12.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M3.99963 12.0005L12.9996 12.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M11.9996 19.0003L19.9996 19.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M3.99963 19.0005L8.99963 19.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>The browser build is the easy way in. The truly cinematic versions you see online are usually made in TouchDesigner, a free node-based visual tool, with hand tracking piped into it.</p>
+<ul>
+<li>🎛️ TouchDesigner, free for Mac and PC: <a href="https://derivative.ca/" target="_blank">derivative.ca</a></li>
+<li>✋ MediaPipe plugin, free hand and face tracking into TouchDesigner: <a href="https://github.com/torinmb/mediapipe-touchdesigner" target="_blank">github.com/torinmb/mediapipe-touchdesigner</a></li>
+<li>🎓 Hand tracking master class, free tutorial: <a href="https://derivative.ca/community-post/tutorial/hand-tracking-master-class-touchdesigner-mediapipe/71352" target="_blank">on derivative.ca</a></li>
+</ul>
+<hr class="rule">
+<span class="kicker">why it lands</span>
+<h2>Why this is the fun one <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip calm">Most AI demos are someone typing into a box. This one you control with your body, it is your actual ideas, and it looks like something from a film. That is what makes people stop scrolling. Build it with your own notes, film it once, and you have a piece nobody else can copy because the brain inside it is yours.</div>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

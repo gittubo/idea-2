@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="This is the whole game as one prompt. You paste it into GPT-6 Astra once, it writes every file.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a night Tokyo police chase game with GPT-6 Astra: the whole game as one prompt · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<link rel="canonical" href="https://cindyzhu.com.au/guides/build-a-tokyo-car-chase-game-with-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build a night Tokyo police chase game with GPT-6 Astra: the whole game as one prompt">
+<meta property="og:description" content="This is the whole game as one prompt. You paste it into GPT-6 Astra once, it writes every file.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/build-a-tokyo-car-chase-game-with-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build a night Tokyo police chase game with GPT-6 Astra: the whole game as one prompt">
+<meta name="twitter:description" content="This is the whole game as one prompt. You paste it into GPT-6 Astra once, it writes every file.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build a night Tokyo police chase game with GPT-6 Astra: the whole game as one prompt", u:"guides/build-a-tokyo-car-chase-game-with-claude.html", topic:"building", tool:"chatgpt"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building &amp; apps</span>
+        <span class="gtag tool">ChatGPT</span>
+      </div>
+      <h1>Build a night Tokyo police chase game with GPT-6 Astra</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This is the whole game as one prompt. You paste it into GPT-6 Astra once, it writes every file.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p><a class="btn" href="../play/neon-pursuit/" target="_blank">🎮 Play the game</a></p>
+
+<div class="tip"><strong>What you are building.</strong> A midnight Tokyo street. You drive a red sports coupe through six lanes of traffic at 260 km/h, tap SPACE to boost to 360, chain near misses for points, and try not to let the three police cruisers on your tail fill the bust meter. Photo-real building facades, glowing signboards, wet asphalt, umbrellas on the sidewalk, rain, engine and siren sound. Astra writes the code from one prompt. The art comes from <a href="https://higgsfield.ai?fpr=cindy44" target="_blank">Higgsfield</a>. Your job is taste: play it and give notes.</div>
+
+<hr class="rule">
+<div class="kicker">step one</div>
+<h2>Switch ChatGPT to GPT-6 Astra and turn the thinking up <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the kind of task Astra is actually for. The prompt hands it a whole interlocking system, a treadmill world, traffic rules, police AI, a post-processing chain, and expects it to hold all of it at once. That is the "novel environment" strength from the benchmarks (the full breakdown is in <a href='/guides/gpt-6-astra-breakdown'>my Astra guide</a>). On the older models this prompt comes back as a skeleton with comments saying "add traffic here". On Astra it comes back as a game.</p>
+<div class="cardgrid">
+<div class="minicard"><strong>1. Pick the model</strong><br>Open a new chat, open the model picker at the top, and switch it to GPT-6 Astra. Do not leave it on auto: a long build prompt is exactly what auto routes to a cheaper model.</div>
+<div class="minicard"><strong>2. Turn the thinking level up</strong><br>Next to the model, set the thinking level. High is fine for a first pass. Extra high is what I used for this game. If your plan shows Ultra (Astra Ultra), use it: the extra time goes on the parts that break, the police logic and the bloom.</div>
+<div class="minicard"><strong>3. Paste the prompt below, once</strong><br>Copy the whole box in step two and send it as one message. Ask for the files in full, no placeholders. If it offers a zip, take the zip.</div>
+<div class="minicard"><strong>4. Run it</strong><br>Save the files into one folder and open that folder with any local server (the Live Server extension in VS Code, or "python3 -m http.server" in a terminal), then open index.html. Double-clicking the file on its own will not load the models.</div>
+</div>
+<div class="tip calm">🌱 <strong>Give it notes like a person.</strong> Astra gets 90 percent of this right on the first pass. Then drive for two minutes and tell it what you feel: "the cops need to be on my tail", "the road is too dark", "the lights are too glowy", "normal speed should feel like a boost". Every one of those was a real note on this game and each was a two-minute fix. You are the art director, not the programmer.</div>
+
+<hr class="rule">
+<div class="kicker">step two</div>
+<h2>The one prompt <span class="gi" style="--gl:#5F4696" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 13H13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 9V3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20.1526 20.9174C22.0143 20.3289 22.5597 16.7547 21.3708 12.9344C20.1819 9.11398 17.709 6.49405 15.8474 7.08259C14.6972 7.44619 14.6438 8.86174 13.6968 9.378C13.473 9.5 13.1595 9.5 12.5324 9.5H11.4676C10.8405 9.5 10.527 9.5 10.3032 9.378C9.35625 8.86174 9.30278 7.44619 8.15264 7.08259C6.29102 6.49405 3.8181 9.11398 2.62922 12.9344C1.44035 16.7547 1.98573 20.3289 3.84736 20.9174C5.20631 21.347 6.891 20.067 8.16417 17.8583C9.01333 16.3851 9.39787 16 11.1039 16H12.8961C14.6021 16 14.9867 16.3851 15.8358 17.8583C17.109 20.067 18.7937 21.347 20.1526 20.9174Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>Everything is in here: the game, the tuning numbers, the traps, and the exact image prompts for the assets. It is long on purpose so Astra builds the finished thing rather than a demo. Do not trim it.</p>
+<div class="promptwrap">
+<span class="promptlabel">🎮 paste this into GPT-6 Astra</span>
+<pre><code>You are building a complete browser game for me in one go. Produce every file in full, no placeholders, no "add later" comments. If anything is ambiguous, pick the option that looks best and keep going. At the end, give me the asset list from the ASSETS section so I can generate them in Higgsfield and drop them into the folder.
+
+Build a browser game called Neon Pursuit: a night-time Tokyo street chase. Vanilla JavaScript with Three.js (ES modules, an importmap, no bundler, no framework). Everything lives in one folder: index.html, client.js, a vendor folder for Three.js plus its postprocessing and GLTFLoader modules, a models folder, a tex folder. It must run from any static host through a local server, with every asset path relative. It must run immediately with procedural fallbacks (box-built cars, canvas textures) before any asset exists.
+
+THE FANTASY
+Third-person chase camera low behind a red 1990s Japanese sports coupe. Six lanes of one-way traffic to weave through. Police cruisers glued to my bumper. Neon canyon of buildings on both sides, rain, wet reflective road, a Tokyo skyline with Tokyo Tower at the vanishing point. It should feel like a Forza or Need for Speed screenshot, not a tech demo.
+
+WORLD (treadmill)
+The player car stays near the origin facing negative Z. Everything else (road texture, buildings, traffic, pedestrians, police) moves toward positive Z at the player's speed and is recycled when it passes behind the camera. Road is 24 m wide (lanes at x = -10, -6, -2, 2, 6, 10), a 440 m long plane. City is built from 16 recycled slots of 24 m each on both sides: random building boxes 10 to 26 m wide, 14 to 70 m tall, with a separate 4.6 m ground-floor box. Every slot also has a streetlight, a concrete utility pole with three sagging wires drawn as line segments, a 50 percent chance of a glowing vending machine, and every fifth slot either a green overhead highway gantry sign (Japanese and English text drawn on a canvas texture) or a zebra crossing decal. Sidewalks are 5 m wide with a curb. Behind everything, a huge photo panorama of the Tokyo skyline on a plane at z = -600, 900 units tall so the widest field of view never sees its edge, with fog disabled on it.
+
+GROUND
+Three scrolling layers: asphalt texture on the road (metalness 0.45, roughness driven by a canvas puddle map so reflections break into patches, envMapIntensity 0.7), a transparent lane-paint decal on top with polygon offset, and a sidewalk texture. Scroll all of them every frame by distance travelled divided by tile length, and ADD to the offset (v grows away from the camera, so adding slides the pattern toward the player). Wrap offsets with modulo 1 so they never drift. Under every neon sign and streetlight lay a thin additive gradient streak plane on the road in that sign's colour: that is the wet reflection.
+
+LOOK
+ACES tone mapping, exposure 1.0. Scene fog dark indigo from 45 to 300 m. Hemisphere light 0.5, ambient 0.25, one warm directional key light at 0.85 from behind the camera so the hero paint reads, one spotlight headlight on the player. Postprocessing chain: RenderPass, UnrealBloomPass at half resolution (strength 0.6, radius 0.38, threshold 1.04), then a custom grade ShaderPass (cool blue shadow tint 0.74/0.84/1.18 mixed in below 70 percent luminance, 12 percent desaturation, vignette 0.6, lift 0.9), then OutputPass. Only things meant to glow may exceed 1.0: multiply neon sign colours by about 2.1, sign halos by 1.6, streetlight lamps by 1.7, taillight bars by 1.6, exhaust flames by 2.6. Building facades use the photo texture as both map and emissive map with emissive intensity 0.55 (storefronts 0.9) so windows glow without blooming. Reflections come from a PMREM environment generated once from a tiny room scene of magenta, cyan and warm emissive panels.
+
+CARS
+Load five GLB models: player, police, taxi, sedan, van. Normalise each on load: rotate so the longest horizontal axis runs along Z, scale to a real length (player 4.5 m, police 4.8, taxi 4.7, sedan 4.5, van 4.4), drop the base to y = 0, rotate 180 degrees if the model faces the camera. Set emissiveIntensity to 0.22 on every loaded material (generated models ship a full-strength emissive map that makes cars self-glow), metalness at most 0.55, roughness at least 0.38. Tint police to 0.5 and vans to 0.6 with matte settings so white bodywork never blooms. Until a model loads, use the box-built fallback car. Add slim emissive taillight bars, small additive glow sprites for lights, a pink additive underglow under the player, and two additive cone flames behind the exhausts that only show while boosting.
+
+HANDLING
+Forward: hold W for throttle, accelerate at (16 minus 0.1 times speed) m/s squared toward a 72 m/s (260 km/h) top speed, S brakes at 26, coasting decays at 5 with a floor of 8 m/s so the car never stalls mid-run. SPACE boost: a meter of 2.6 seconds that recharges over 9 seconds, plus 0.18 per near miss, only ignites above 5 percent, pushes to 100 m/s (360 km/h) at 34 m/s squared. Lateral: A and D set a target lateral velocity of (9 plus 0.16 times speed) m/s, damped at rate 7, position clamped to plus or minus 10.8 m with a spark burst and speed scrub when you scrape the curb. Visual yaw of minus 0.022 times lateral velocity, roll of 0.01 times it, slight pitch on boost and brake.
+
+TRAFFIC
+Pool of 56 cars (22 percent taxis, 14 percent vans, the rest sedans in white, silver, black, navy, maroon, green). Target count 30 at the start rising to 50 by distance travelled. Guarantee a spawn attempt every 14 m travelled plus random extras, spawning 260 to 330 m ahead in a random free lane, never more than 5 cars within a 14 m band so one lane always stays open, 16 m minimum gap per lane. Speeds 12 to 28 m/s. Cars change lanes every 3 to 9 seconds if the neighbouring lane is clear. Cull 30 m behind the player.
+
+COLLISIONS AND NEAR MISSES
+Axis-aligned box test against the player. Rear-ending drops the player to max(traffic speed times 0.9, speed minus 0.7 times the closing speed); a side swipe scrubs 15 percent. A crash cancels boost, costs a quarter of the meter, kicks the player sideways, spins the other car, spawns 40 orange sparks, shakes the camera, resets the combo and gives 0.9 s of invulnerability. A near miss counts when a car passes within 1.3 m of the player's side above 25 m/s without touching: combo plus one, 100 points times combo, boost plus 0.18, a whoosh and a rising ding, a floating "NEAR MISS x3" label. Combo resets after 3 seconds.
+
+POLICE
+Three cruisers. Each owns a lane offset (minus 3.4, 0, plus 3.4 m from the player) and a staggered base gap (6, 9.2, 12.4 m), so they never overlap. Desired gap = base divided by the square root of an aggression value (1 plus distance over 2500, capped at 3.5) plus 0.5 times how far the player is above 62 m/s, minus a surge, plus 14 m while boosting, never closer than 4.8 m. Every 4 to 10 seconds a cruiser surges. From heat level 3 (heat is one star per 1500 m) a cruiser alongside within 5.4 m performs a PIT shove: sideways kick of 7 m/s, sparks, a 7 second cooldown. Bust meter: after a 4 second grace at the start, it fills at 0.38 per second when the nearest cruiser is within 5.2 m and the player is below 18 m/s, at 0.2 per second when within 5.2 m below 30 m/s, slowly when within 7.5 m and slow, and drains otherwise. Full meter ends the run. If no cruiser is within 55 m for 6 seconds, award 2500 points and show LOST THEM. Light bars alternate red and blue at 14 Hz with two point lights on the nearest cruiser, and a siren whose volume rises with proximity and pans to its side.
+
+CAMERA
+Position (0.75 times player x, 3.6 plus a little with speed, 8.2 plus 1.6 times speed fraction), damped at rates 6, 6 and 4, looking at (0.9 times player x plus a lead from lateral velocity, 0.4, minus 16). Field of view 62 plus 26 times speed fraction squared plus 8 while boosting. Shake from crashes decays at 2.2 per second, with a small constant tremor at top speed. A 2D canvas overlay draws radial speed lines above 45 m/s.
+
+EXTRAS
+Rain as 500 line segments that fall and lean backward with speed. 48 pedestrians with capsule bodies, spherical heads, swinging cylinder legs and cone umbrellas walking both sidewalks in both directions. Sparks as pooled additive point bursts with gravity and floor bounce. WebAudio with no audio files: sawtooth plus square engine through a lowpass that opens with speed, a two-oscillator siren wail, filtered-noise whoosh for near misses, a sine drop plus noise burst for crashes, a rising sawtooth for boost. Audio starts on the first click.
+
+SCREENS
+Title screen over the hero image: kicker MIDNIGHT TOKYO, huge gradient title NEON PURSUIT, one line of copy, four key chips, a pink START ENGINE pill. HUD: distance in km, points and combo, heat stars top left; speed in km/h with a boost bar top right; floating combo text; a POLICE CLOSING IN bar that appears only when the meter is above 2 percent; a control hint at the bottom. Game over: PULLED OVER, BUSTED, distance, score, best (kept in localStorage), RUN AGAIN.
+
+TRAPS TO AVOID
+Load the Japanese web font (Noto Sans JP) before drawing sign textures or the kanji render as boxes. GLTFLoader from the Three.js examples imports a BufferGeometryUtils file from a sibling utils folder; vendor both. Keep bloom threshold at or above 1.0 and push only real light sources above 1.0, otherwise white cars and windows bloom into blobs. Halve the bloom resolution for performance. Cap the pixel ratio at 1.5. When the road looks like it is standing still, the texture offsets are not being scrolled; when it runs backwards, the sign is wrong. Do not add a physics engine: lanes are numbers and collisions are boxes, that is why it runs at 60 fps in a tab.
+
+ASSETS (I generate these in Higgsfield, you wire them in)
+Expect these files and load each one only if it exists: models/player.glb, models/police.glb, models/taxi.glb, models/sedan.glb, models/van.glb, tex/facade0.jpg to tex/facade3.jpg (portrait facade photos, tile 9 m wide by 16 m tall), tex/storefront.jpg (a wide strip for the ground floors, one tile per 12 m), tex/asphalt.jpg (convert to grey on load with a canvas grayscale filter, tile 24 m long), tex/sidewalk.jpg, skyline.jpg (crop to the top 62 percent, horizon about 89 percent down), cover.jpg for the title screen. When I say "assets are in", wire them in using the CARS rules above. Here are the exact image prompts I will run, so you know what each file looks like:
+
+models/player.glb, from an image-to-3D of: Product photo of a candy-red 1990s Japanese sports coupe with a low rear wing and smooth rounded body, glossy paint, dark tinted windows, 3/4 front-left view, the entire car fully visible with generous margin, centered, on a flat seamless neutral light-gray studio background, soft even lighting, no cast shadows on the background, no reflections on the floor, no text, no logos.
+
+models/police.glb, from: Product photo of a Japanese police patrol sedan, white upper body with black lower body panels, red light bar on the roof, Toyota Crown style four-door, 3/4 front-left view, the entire car fully visible with generous margin, centered, flat seamless neutral light-gray studio background, soft even lighting, no cast shadows, no text.
+
+models/taxi.glb, from: Product photo of a Tokyo taxi, black Toyota Crown Comfort four-door sedan with a small yellow roof lamp and chrome trim, 3/4 front-left view, the entire car fully visible with generous margin, centered, flat seamless neutral light-gray studio background, soft even lighting, no cast shadows, no text.
+
+models/sedan.glb, from: Product photo of a silver modern Japanese compact four-door sedan, clean simple body, 3/4 front-left view, the entire car fully visible with generous margin, centered, flat seamless neutral light-gray studio background, soft even lighting, no cast shadows, no text.
+
+models/van.glb, from: Product photo of a white boxy Japanese kei delivery van with a tall body and small wheels, 3/4 front-left view, the entire van fully visible with generous margin, centered, flat seamless neutral light-gray studio background, soft even lighting, no cast shadows, no text.
+
+tex/facade0.jpg (9:16): Seamless tileable texture, perfectly straight-on orthographic view of a modern Tokyo office tower facade at night, a regular grid of glass and dark concrete, floors of mixed lit and dark windows with cool blue-white and warm interior light, edge-to-edge with no borders, no ground floor, no sky, no perspective, flat elevation, photoreal.
+
+tex/facade1.jpg (9:16): Seamless tileable texture, perfectly straight-on orthographic view of a Tokyo residential apartment building facade at night, rows of concrete balconies with metal railings, air-conditioner units, warm lit windows with curtains, a few dark windows, edge-to-edge with no borders, no ground floor, no sky, no perspective, flat elevation, photoreal.
+
+tex/facade2.jpg (9:16): Seamless tileable texture, perfectly straight-on orthographic view of a narrow Tokyo commercial building facade at night in Kabukicho style, stacked colorful illuminated signboards for bars, karaoke and restaurants with Japanese text, vertical neon signs, small windows between signs, edge-to-edge with no borders, no ground floor, no sky, no perspective, flat elevation, photoreal.
+
+tex/facade3.jpg (9:16): Seamless tileable texture, perfectly straight-on orthographic view of an older weathered Tokyo building facade at night, beige tiled walls, small windows with lit paper screens and frosted glass, exposed pipes and cables, rust stains, a few air-conditioner units, edge-to-edge with no borders, no ground floor, no sky, no perspective, flat elevation, photoreal.
+
+tex/storefront.jpg (21:9): Seamless wide tileable strip, perfectly straight-on view of a row of Tokyo ground-floor storefronts at night in the rain: an izakaya with red paper lanterns and a noren curtain, a brightly glowing convenience store, a ramen shop with steam, a lit vending machine, a pachinko entrance with flashing lights, a shuttered shop, all under a continuous line of awnings, wet pavement along the bottom edge, edge-to-edge with no borders, no sky, no perspective, flat elevation, photoreal.
+
+tex/asphalt.jpg (1:1): Seamless tileable texture, top-down view of wet dark asphalt at night, fine grain, a few shallow puddles, subtle cracks, no lane markings, no objects, edge-to-edge, photoreal.
+
+tex/sidewalk.jpg (1:1): Seamless tileable texture, top-down view of Japanese sidewalk paving, gray square concrete pavers with a yellow tactile guide strip running along one edge, slightly wet at night, edge-to-edge, no objects, photoreal.
+
+skyline.jpg (21:9): Ultra-wide panoramic photograph of the Tokyo skyline at night seen from far away across a dark city, horizontal horizon exactly at the vertical center of the frame. Dense skyscrapers with thousands of lit windows, Tokyo Tower glowing orange-red on the right third, faint neon magenta and cyan light haze rising from the streets, low rain clouds lit purple from below, wet humid atmosphere, fog density 30 percent. Sky above the horizon: deep indigo fading to near black at the top. Everything below the horizon line is a flat dark ground plane with only distant light pinpricks, no foreground objects, no road, no people, no text. Photoreal, cinematic, moody.
+
+cover.jpg (16:9): Cinematic video-game key art, rear three-quarter view of a glossy candy-red sports coupe with a low rear wing racing through a rain-soaked Shibuya street at night at 250 km/h. The camera sits low behind the car at bumper height, the car in the lower-left third of frame, motion blur streaking the neon signs into long lines. Wet asphalt mirrors magenta, cyan and orange neon from towering Japanese signboards on both sides of the street. Red taillights glowing hot, orange sparks scattering from the rear diffuser, spray kicking off the tyres. Two police cars far behind in the fog with red and blue light bars flaring. Traffic taillights ahead as soft red bokeh. Rain streaks lit by the neon. Photoreal AAA racing-game render, high contrast, deep blacks, saturated neon, film grain 10 percent, no text, no logos, no watermark.</code></pre>
+</div>
+<div class="tip"><strong>What Astra does with this.</strong> It builds the treadmill first, then the car, then the traffic and police as separate systems, then the post-processing, and hands you back the asset list at the end. Read its plan before the code lands. If it proposes a physics engine, tell it no.</div>
+
+<hr class="rule">
+<div class="kicker">step three</div>
+<h2>Make the assets in Higgsfield <span class="gi" style="--gl:#D75862" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The prompts are already in the box above, next to the filename each one becomes. Run the five car images in <a href="https://higgsfield.ai?fpr=cindy44" target="_blank">Higgsfield</a>, then put each one through the image-to-3D tool and save the result under the matching name in the models folder. Run the texture, skyline and cover prompts as images and save them under their names. Then tell Astra "assets are in".</p>
+<div class="tip"><strong>Image to 3D settings in <a href="https://higgsfield.ai?fpr=cindy44" target="_blank">Higgsfield</a>.</strong> Texture on, PBR on, rigging off, target polycount 20,000, symmetry on. Each model comes out about 9 MB and facing the camera, which is why the prompt tells Astra to rotate them 180 degrees and turn the baked-in self-illumination down. Skip that and every car glows like a lantern.</div>
+<div class="tip warn">⚠️ <strong>The asphalt goes grey on load, on purpose.</strong> The generated one has faint pink and blue puddle reflections baked in, and on a repeating tile your eye spots the pattern instantly. The prompt tells Astra to grayscale it. The colour comes back through the neon streaks, which move with the buildings and never repeat.</div>
+
+<hr class="rule">
+<div class="kicker">step four</div>
+<h2>The notes that made it feel good <span class="gi" style="--gl:#9082A7" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 7.10593C17.9999 8.55778 16.5891 9.89558 14.4697 11.9901C13.1062 13.3376 10.8936 13.336 9.52937 11.9892C7.41145 9.8961 5.99988 8.55754 6 7.10568C6.00012 5.65383 6.3543 5.36258 9.60848 2.14658C9.92161 1.83445 10.4602 2.05389 10.4602 2.49338L10.4604 5.80524C10.4604 6.64587 11.1488 7.32849 11.9994 7.32842C12.85 7.32835 13.5396 6.64688 13.5398 5.80625L13.5405 2.49435C13.5406 2.05485 14.0793 1.83532 14.3924 2.14739C17.646 5.36287 18.0001 5.65408 18 7.10593Z" stroke="currentColor" stroke-width="1.5"/><path d="M15 12L15 19.1652C15 20.7308 13.6569 22 12 22C10.3431 22 9 20.7308 9 19.1652L9 12" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0063 18.9995L12 19.0059" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>These are the notes I gave, in order, after playing each build. Give Astra the same ones if you see the same things.</p>
+<div class="cardgrid">
+<div class="minicard"><strong>Normal speed should feel like a boost</strong><br>The first build topped out at 187 km/h and felt parked. 260 normal, 360 on boost, with the field of view widening with the square of speed, is where it started feeling fast.</div>
+<div class="minicard"><strong>Cops on the bumper, not in your face</strong><br>Base gap of six metres, each cruiser in its own lane offset, camera lifted to 3.6 m so they sit along the bottom edge of the screen. The bust meter only climbs when you are slow with one right behind you.</div>
+<div class="minicard"><strong>Never let the road run empty</strong><br>A random spawn chance leaves gaps. A guaranteed spawn attempt every 14 m of travel, with one lane always kept open, keeps it dense and fair.</div>
+<div class="minicard"><strong>Glow is a budget, not a slider</strong><br>Bloom threshold above 1.0, then decide what earns a multiplier: signs 2.1, lamps 1.7, taillights 1.6. Everything else stays below 1.0 or the whole frame turns to soup.</div>
+<div class="minicard"><strong>Moody first, neon second</strong><br>Exposure 1.0, low ambient, cool shadow tint and a vignette give the night. Then push the signs, storefronts and reflections up on top. Dimming the signs to get "night" was the wrong lever.</div>
+<div class="minicard"><strong>Watch the model materials</strong><br>Generated 3D cars come with self-illumination at full strength. Nothing in the lighting will fix that. Set it near zero on load.</div>
+</div>
+
+<hr class="rule">
+<h2>The honest bit <span class="gi" style="--gl:#119B5B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5L10.5 15L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><strong>Astra writes the code, Higgsfield makes the art</strong><br>Two tools, not one button. The <a href="https://higgsfield.ai?fpr=cindy44" target="_blank">Higgsfield</a> game builder is a separate product on its own model; this recipe uses Higgsfield for images and 3D and lets Astra write the game so you own every file.</div>
+<div class="minicard"><strong>It is arcade, not simulation</strong><br>The world moves past a parked car, lanes are numbers, collisions are boxes. That is exactly why it runs at 60 fps in a browser tab with no engine.</div>
+<div class="minicard"><strong>Five models is 46 MB</strong><br>The first load takes a few seconds on a normal connection. If you want it lighter, generate the models at 10,000 polygons or compress the textures inside the GLBs.</div>
+<div class="minicard"><strong>Budget roughly 400 credits</strong><br>Twelve images plus five image-to-3D conversions plus the hero and skyline is the whole asset bill in <a href="https://higgsfield.ai?fpr=cindy44" target="_blank">Higgsfield</a>. Generate the car images first and convert only the ones you like.</div>
+</div>
+
+<hr class="rule">
+<h2>The links <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>🎨 Higgsfield (cars, textures, skyline, hero art): <a href="https://higgsfield.ai?fpr=cindy44" target="_blank">higgsfield.ai</a></p>
+<p>🎮 Play it: <a href="../play/neon-pursuit/" target="_blank">cindyzhu.com.au/play/neon-pursuit</a></p>
+<p>🧠 GPT-6 Astra, the full breakdown: <a href='/guides/gpt-6-astra-breakdown'>my Astra guide</a></p>
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn machine learning maths in an order that connects · Cindy Zhu</title><meta name="description" content="The machine learning maths in order, from one small calculation up to a neural-network layer, with the exact lessons for each stage."><link rel="canonical" href="https://cindyzhu.com.au/guides/picture-machine-learning-maths">
+<meta property="og:title" content="Learn machine learning maths in an order that connects"><meta property="og:description" content="The machine learning maths in order, from one small calculation up to a neural-network layer, with the exact lessons for each stage."><meta property="og:url" content="https://cindyzhu.com.au/guides/picture-machine-learning-maths"><meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles.css"><!-- seo:auto -->
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Learn machine learning maths in an order that connects">
+<meta name="twitter:description" content="The machine learning maths in order, from one small calculation up to a neural-network layer, with the exact lessons for each stage.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body><!-- GUIDES_CARD {t:"Learn machine learning maths in an order that connects", u:"guides/picture-machine-learning-maths.html", topic:"start", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap"><main class="guidewrap"><a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a><div class="guidehead"><div class="gtags"><span class="gtag topic">Start with AI</span><span class="gtag tool">Claude</span></div><h1>Learn machine learning maths in an order that connects</h1></div><div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 The machine learning maths in order, from one small calculation up to a neural-network layer, with the exact lessons for each stage.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>You don't need to understand every branch of mathematics before exploring machine learning. You do need enough of the foundations to know what the model is calculating and what a training update changes. This is a suggested learning route, not a claim that there is one official order.</p>
+<hr class="rule"/><span class="kicker">part 01</span><h2>Before the first lesson</h2>
+<p>Check that you can rearrange <code>2x + 3 = 11</code>, read a coordinate such as <code>(2, 1)</code>, and work with fractions and powers. The equation gives <code>x = 4</code>. If the steps feel unfamiliar, use <a href="https://www.khanacademy.org/math/algebra" rel="noopener noreferrer" target="_blank">Khan Academy Algebra 1</a> as a refresher before the later topics.</p>
+<p>The linked lessons, Harvard lectures and online Mathematics for Machine Learning book provide public learning material. You can do the original examples here with paper and a calculator. Python is useful when you start coding, but no paid API or GPU is needed for these calculations.</p>
+<p>Keep a note with the question you're trying to answer. After each lesson, explain the example without looking at the solution. If you can only repeat the words from the video, work through a smaller example before moving on.</p>
+<hr class="rule"/><span class="kicker">part 02</span><h2>1. Vectors and matrices: represent and transform numbers</h2>
+<p>Start with <a href="https://www.3blue1brown.com/lessons/vectors/" rel="noopener noreferrer" target="_blank">3Blue1Brown's vectors lesson</a>, then continue through the linear-algebra series to matrix transformations. For a more formal follow-up, use Chapter 2 of <a href="https://mml-book.github.io/" rel="noopener noreferrer" target="_blank">Mathematics for Machine Learning</a>.</p>
+<p>A vector is an ordered collection of numbers. In the simple two-dimensional picture, the vector <code>(2, 1)</code> can also be drawn as an arrow two units right and one unit up. A matrix can transform that vector into another one.</p>
+<p><strong>Work through this:</strong> take the matrix with rows <code>(2, 0)</code> and <code>(0, 3)</code>. Multiply it by the column vector <code>(2, 1)</code>.</p>
+<pre><code class="language-text">First output:  2 × 2 + 0 × 1 = 4
+Second output: 0 × 2 + 3 × 1 = 3
+Result: (4, 3)
+</code></pre>
+<p>The transformation doubled the horizontal coordinate and tripled the vertical one. Now change the original vector to <code>(1, 2)</code> and calculate the result yourself: it should become <code>(2, 6)</code>.</p>
+<p><strong>Your checkpoint:</strong> describe the transformation in words and calculate a new example. If the multiplication feels arbitrary, draw both arrows on the same coordinate grid.</p>
+<hr class="rule"/><span class="kicker">part 03</span><h2>2. Calculus: understand how a change travels</h2>
+<p>Open <a href="https://www.3blue1brown.com/lessons/derivatives/" rel="noopener noreferrer" target="_blank">The paradox of the derivative</a>, then <a href="https://www.3blue1brown.com/lessons/chain-rule-and-product-rule/" rel="noopener noreferrer" target="_blank">the chain-rule lesson</a>. Chapter 5 of <a href="https://mml-book.github.io/" rel="noopener noreferrer" target="_blank">Mathematics for Machine Learning</a> extends this to several variables.</p>
+<p>For <code>f(x) = x²</code>, the derivative is <code>2x</code>. At <code>x = 1</code>, a very small change in x produces an output change of approximately twice that size. Going from <code>1</code> to <code>1.01</code> changes the output from <code>1</code> to <code>1.0201</code>, a difference of <code>0.0201</code>. The derivative's local estimate is <code>0.02</code>.</p>
+<p>The chain rule connects changes through intermediate steps. Let <code>u = 2x + 1</code> and <code>y = u²</code>. At <code>x = 1</code>, u is <code>3</code>. The derivative of y with respect to u is <code>2u = 6</code>, and the derivative of u with respect to x is <code>2</code>. Multiply them to get <code>dy/dx = 12</code> at that point.</p>
+<p><strong>Your checkpoint:</strong> explain which two changes the chain rule combines. Then distinguish a derivative's local estimate from the exact output change over a finite step. Later, a gradient collects partial derivatives for several adjustable inputs.</p>
+<hr class="rule"/><span class="kicker">part 04</span><h2>3. Probability: update a belief using evidence</h2>
+<p>Use <a href="https://stat110.hsites.harvard.edu/youtube" rel="noopener noreferrer" target="_blank">Harvard Stat 110's lecture index</a>. Lecture 4 covers conditional probability and Bayes' rule. The <a href="https://stat110.hsites.harvard.edu/" rel="noopener noreferrer" target="_blank">course home</a> also links learning and practice materials. Begin with events and conditional probability before random variables, expectation and variance.</p>
+<p>Here is an original, deliberately small example. Imagine 100 fictional messages. Twenty are sales enquiries. Twelve of those mention pricing. Among the other 80 messages, eight mention pricing.</p>
+<p>There are 20 pricing messages in total, and 12 are sales. So the probability of a message being sales given that it mentions pricing is <code>12/20 = 0.6</code>, or 60% in this made-up dataset.</p>
+<p>Bayes' rule expresses the same calculation:</p>
+<pre><code class="language-text">P(sales | pricing) = P(pricing | sales) × P(sales) / P(pricing)
+                  = 0.6 × 0.2 / 0.2
+                  = 0.6
+</code></pre>
+<p>Notice that “pricing given sales” and “sales given pricing” ask different questions, even though this example happens to give the same number for both. If only four non-sales messages mentioned pricing, the second probability would become <code>12/16 = 0.75</code>, while the first would stay <code>12/20 = 0.6</code>.</p>
+<p><strong>Your checkpoint:</strong> identify the group you're counting within. The denominator is often where the confusion starts. Bayes' rule requires the conditioning event to have nonzero probability.</p>
+<hr class="rule"/><span class="kicker">part 05</span><h2>4. Optimisation: use the gradient to change a parameter</h2>
+<p>Open <a href="https://www.3blue1brown.com/lessons/gradient-descent/" rel="noopener noreferrer" target="_blank">3Blue1Brown's gradient-descent lesson</a>, with Chapter 7 of <a href="https://mml-book.github.io/" rel="noopener noreferrer" target="_blank">Mathematics for Machine Learning</a> as the next reading.</p>
+<p>A loss function measures an error you want to reduce. Gradient descent changes the parameters in the direction opposite the gradient, with a learning rate controlling the step size.</p>
+<p>Try the simple loss <code>L(w) = (w - 3)²</code>. Its derivative is <code>2(w - 3)</code>. At <code>w = 0</code>, the loss is <code>9</code> and the derivative is <code>-6</code>.</p>
+<p>With a learning rate of <code>0.1</code>, the update is <code>w_new = 0 - 0.1 × (-6) = 0.6</code>. The new loss is <code>(0.6 - 3)² = 5.76</code>, which is smaller.</p>
+<p>Now try a learning rate of <code>1.1</code>. The update gives <code>w_new = 6.6</code>, and the loss becomes <code>12.96</code>. The larger step made this example worse. This shows why increasing a learning rate isn't automatically an improvement.</p>
+<p><strong>Your checkpoint:</strong> calculate one step and compare the loss before and after it. This toy function has a simple minimum; real neural-network training has more complicated behaviour.</p>
+<hr class="rule"/><span class="kicker">part 06</span><h2>5. Put the pieces into one neural-network layer</h2>
+<p>Use <a href="https://www.3blue1brown.com/lessons/neural-networks/" rel="noopener noreferrer" target="_blank">3Blue1Brown's neural-network introduction</a> followed by <a href="https://www.3blue1brown.com/lessons/backpropagation/" rel="noopener noreferrer" target="_blank">the backpropagation lesson</a>. Follow one small calculation rather than trying to memorise a large architecture.</p>
+<p>A layer can be written <code>a = σ(Wx + b)</code>. The matrix W combines inputs x, b adds a bias, and the activation function σ transforms the result.</p>
+<p>For one original neuron example, use inputs <code>(2, 1)</code>, weights <code>(0.5, -1)</code> and bias <code>0.2</code>. The weighted sum is <code>0.5 × 2 - 1 × 1 + 0.2 = 0.2</code>. With ReLU activation, which returns the larger of zero and its input, the output is <code>0.2</code>. If the weighted sum had been <code>-0.2</code>, ReLU would output <code>0</code>.</p>
+<p>Training involves calculating an error and adjusting weights. Backpropagation computes gradients through the calculation using the chain rule; an optimiser uses those gradients to make an update. Those are connected jobs, but they aren't the same operation.</p>
+<p><strong>Your checkpoint:</strong> point to the input, weights, bias and activation. Then explain which values training adjusts and which value comes from the example being processed.</p>
+<hr class="rule"/><span class="kicker">part 07</span><h2>Paste this into Claude when a step stops making sense</h2>
+<div class="promptwrap"><span class="promptlabel">copy this prompt</span><pre><code class="language-prompt">Act as a patient maths tutor and help me understand one machine learning calculation.
+
+My current topic: [vectors / derivatives / conditional probability / gradient descent / one neural-network layer]
+The exact step I don't understand: [paste it]
+My current comfort with algebra: [one sentence]
+
+Use small original numbers. First explain the purpose of the calculation in plain language. Define every symbol, then work through one complete example with no skipped arithmetic. Check the result by a second method when practical.
+
+Give me one similar problem to try, followed by a clearly separated worked answer. Include one common mistake and show how it changes the result. End with a two-sentence explanation connecting this calculation to machine learning.
+
+Don't claim I understand a topic just because I read the explanation. If a prerequisite is missing, teach that exact step before continuing. If I supply a university assessment, help with the concept using a different original example instead of providing its solution.
+</code></pre></div>
+<p>Your next action is the first vector example. Draw it, calculate it, and explain what changed. You can return to the bigger network picture once the individual operations start making sense.</p>
+<div class="gcallout">Keep building from here. Find more practical walkthroughs in <a href='/guides'>my free guide library</a>.</div>
+</div></main></div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer><script src="../guide-kit.js" defer></script><script src="/site.js" defer></script>
+</body></html>

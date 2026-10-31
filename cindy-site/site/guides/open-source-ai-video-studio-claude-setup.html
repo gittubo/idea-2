@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Run the open-source AI video studio, set up by Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Run the open-source AI video studio, set up by Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/open-source-ai-video-studio-claude-setup">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Run the open-source AI video studio, set up by Claude">
+<meta property="og:description" content="Run the open-source AI video studio, set up by Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/open-source-ai-video-studio-claude-setup">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Run the open-source AI video studio, set up by Claude">
+<meta name="twitter:description" content="Run the open-source AI video studio, set up by Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Run the open-source AI video studio, set up by Claude", u:"guides/open-source-ai-video-studio-claude-setup.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building things</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Run the open-source AI video studio, set up by Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Here is everything from the reel: the GitHub link, my exact Claude Code setup prompt, the no-terminal route if you have never touched a repo.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p><strong>The repo:</strong> <a href="https://github.com/Anil-matcha/Open-Generative-AI" target="_blank">github.com/Anil-matcha/Open-Generative-AI</a>. That exact one, built by Anil Matcha, MIT licensed, sitting at over 26,000 stars. There are copycat forks with near-identical names, so check the username before you download anything.</p>
+
+<div class="tip warn">💡 <strong>The one thing to understand before you start.</strong> Open source means the <em>software</em> is free, not the generation. The app is a beautiful front end. The heavy lifting still runs on paid model APIs through your own key, so you pay per generation with no subscription. The exception is local image generation, which really is free because it runs on your own machine (details further down). Anyone telling you this gives you unlimited free video has not read the setup page.</div>
+
+<span class="kicker">what it actually is</span>
+<h2>What you are installing <span class="gi" style="--gl:#8776B8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11C2 7.70017 2 6.05025 3.02513 5.02513C4.05025 4 5.70017 4 9 4H10C13.2998 4 14.9497 4 15.9749 5.02513C17 6.05025 17 7.70017 17 11V13C17 16.2998 17 17.9497 15.9749 18.9749C14.9497 20 13.2998 20 10 20H9C5.70017 20 4.05025 20 3.02513 18.9749C2 17.9497 2 16.2998 2 13V11Z" stroke="currentColor" stroke-width="1.5"/><path d="M17 8.90585L17.1259 8.80196C19.2417 7.05623 20.2996 6.18336 21.1498 6.60482C22 7.02628 22 8.42355 22 11.2181V12.7819C22 15.5765 22 16.9737 21.1498 17.3952C20.2996 17.8166 19.2417 16.9438 17.1259 15.198L17 15.0941" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><circle cx="11.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>It is a desktop studio that puts hundreds of image, video, lip sync and audio models behind one interface, instead of you juggling six different sites. The README's own model table counts 70+ text-to-image, 70+ image-to-image, 85+ text-to-video, 120+ image-to-video, 15 lip sync and 15+ audio models, and names the ones you have heard of: Flux, Kling, Veo, Sora, Seedream, Seedance, Wan and Nano Banana 2.</p>
+<div class="cardgrid">
+<div class="minicard"><b>🎥 Cinema Studio</b> The one from the reel. You choose camera body, lens, focal length and aperture like a cinematographer and it composes the structured prompt for you, so you direct a shot instead of guessing adjectives.</div>
+<div class="minicard"><b>🖼 Image Studio</b> Switches between text-to-image and image-to-image the moment you upload a reference. Nano Banana 2 Edit takes up to 14 reference images, which is how you keep a product or a face consistent.</div>
+<div class="minicard"><b>🎞 Video Studio</b> Text-to-video by default, and it flips to image-to-video the second you drop in a start frame. Same model picker, so you can price-check a cheap model against a frontier one on the same idea.</div>
+<div class="minicard"><b>💬 Lip Sync Studio</b> Feed it a portrait or a video plus an audio track and it syncs the mouth, across 9 dedicated models. This is the piece people usually pay a separate subscription for.</div>
+<div class="minicard"><b>🔁 Workflow Studio</b> A node editor for chaining models together: image, then video, then audio, run as one pipeline. Where it stops being a toy and starts being a production line.</div>
+<div class="minicard"><b>⚡ Local Models</b> A settings panel that runs image models on your own hardware with no key and no per-image cost. Desktop app only, and the single genuinely free part of all of this.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">easiest first</span>
+<h2>Route 1: no terminal, nothing to build <span class="gi" style="--gl:#8A878D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.74061 17.0888C4.93047 19.4803 6.82417 21.511 9.26502 21.8118C10.1626 21.9223 11.0752 22 12 22C12.9247 22 13.8373 21.9223 14.7349 21.8118C17.1758 21.511 19.0694 19.4803 19.2593 17.0888C19.3909 15.4317 19.5 13.732 19.5 12C19.5 10.268 19.3909 8.56832 19.2593 6.91118C19.0694 4.51965 17.1758 2.48893 14.7349 2.1882C13.8373 2.07762 12.9247 2 12 2C11.0752 2 10.1626 2.07762 9.26502 2.1882C6.82417 2.48893 4.93047 4.51965 4.74061 6.91118C4.60903 8.56832 4.5 10.268 4.5 12C4.5 13.732 4.60903 15.4317 4.74061 17.0888Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 6L12 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Start here if you have never touched a repo. The maintainers publish prebuilt installers, so there is no Node, no cloning, no commands.</p>
+<ol class="steps">
+<li><strong class="st">⬇️ Download the installer.</strong> Go to the <a href="https://github.com/Anil-matcha/Open-Generative-AI/releases" target="_blank">releases page</a> and take the file for your machine: the arm64 DMG for Apple Silicon Macs, the plain DMG for Intel Macs, the .exe for Windows, or the .AppImage or .deb for Linux.</li>
+<li><strong class="st">🍎 On Mac, get past Gatekeeper once.</strong> The build is not notarised by Apple, so macOS blocks it on first launch. Drag the app to Applications, then either run <code>xattr -cr "/Applications/Open Generative AI.app"</code> in Terminal and right click the app and choose Open, or go to System Settings, Privacy and Security, find "Open Generative AI was blocked" and click Open Anyway. One time only.</li>
+<li><strong class="st">🪟 On Windows, click through SmartScreen once.</strong> The installer is not code signed, so SmartScreen warns you. Click More info, then Run anyway. It installs to your local app data folder with a Start Menu shortcut.</li>
+<li><strong class="st">🔑 Create a MuAPI access key.</strong> The cloud models run through MuAPI. Make an account, generate a key at <a href="https://muapi.ai/access-keys" target="_blank">muapi.ai/access-keys</a>, and copy the key <em>value</em>, not the key name or label (this trips up a lot of people). Paste it when the app asks. The key is stored locally on your machine, not on someone's server.</li>
+<li><strong class="st">💰 Top up a small amount.</strong> MuAPI is pay per generation, so treat it like a gift card, not a credit card. Add a small balance, run a few cheap image generations to learn the interface, and check the current per-model prices on <a href="https://muapi.ai/pricing" target="_blank">the pricing page</a> before you run a batch of video.</li>
+<li><strong class="st">🎬 Open Cinema Studio and shoot one shot.</strong> Pick your camera, lens, focal length and aperture, describe the scene in plain language, and let it build the prompt. Do your learning on a cheap image model before you spend on video.</li>
+</ol>
+<div class="tip calm">Want to try it before installing anything at all? There is a hosted version in the browser at <a href="https://muapi.ai/open-generative-ai" target="_blank">muapi.ai/open-generative-ai</a>, same studios, no download. The trade-off is that local generation on your own hardware is desktop only.</div>
+
+<hr class="rule">
+<span class="kicker">the reel version</span>
+<h2>Route 2: let Claude Code set it up <span class="gi" style="--gl:#9A7BBC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the route from the video, and it is worth doing if you want the version you can update, tweak and actually own. You are not writing code. You are handing Claude a link and letting it do the terminal work, then explain what it did.</p>
+<ol class="steps">
+<li><strong class="st">💻 Install Claude Code.</strong> Grab it from <a href="https://claude.ai/download" target="_blank">claude.ai/download</a> and open a terminal in a folder where you keep projects. If you have never used it, this is a genuinely good first job for it because every step is verifiable.</li>
+<li><strong class="st">📋 Paste the setup prompt.</strong> The full prompt is below. It tells Claude to check your prerequisites first, clone with submodules (the part everyone gets wrong), install, and explain where the key goes.</li>
+<li><strong class="st">🧱 Let it handle Node.</strong> The project needs <a href="https://nodejs.org/" target="_blank">Node.js</a> version 18 or newer. Claude will check what you have and walk you through installing it if you are missing it or on an old version.</li>
+<li><strong class="st">🔑 Add your key when prompted.</strong> The app asks for your MuAPI key on first use and stores it locally in the app, not in the code. Skip it entirely if you only want to run the local image models.</li>
+<li><strong class="st">🚀 Launch it.</strong> The desktop version runs with <code>npm run electron:dev</code> and the browser version with <code>npm run dev</code> at localhost:3000. Ask Claude which one it started and how to start it again next week, then write that line down.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">👩‍💻 the Claude Code setup prompt</span>
+<pre><code>Set up this open-source project on my machine and walk me through it as we go: https://github.com/Anil-matcha/Open-Generative-AI (the Anil-matcha repo specifically, not a fork). I am not a developer, so before you run anything, tell me in plain language what the command does and what it will change on my computer.
+
+Start by checking my prerequisites: confirm whether git and Node.js are installed and print the versions, and if Node is missing or older than v18, tell me the safest way to install or update it for my operating system and wait for me to say go. Then clone the repository into this folder using --recurse-submodules (the workflow and agent packages are submodules and the app breaks without them), run the setup script the README specifies, and report any warnings instead of hiding them.
+
+When the install finishes, start the desktop version, tell me the exact command you used so I can run it again myself, and explain where the app expects my MuAPI access key, why it is needed, and what still works if I skip it. Finally, write a short README-for-me file in the project folder with three things: the command to launch it, the command to update it later, and a plain-English list of what I would be charged for versus what runs on my own machine at no cost.</code></pre>
+</div>
+<div class="tip warn">Read what Claude proposes before you approve it. Setting up a repo means running real commands on your machine, and the habit of skimming the plan is a good one to build now, on a low-stakes project, rather than later on something that matters.</div>
+
+<hr class="rule">
+<span class="kicker">the fun part</span>
+<h2>Direct your first shot in Cinema Studio <span class="gi" style="--gl:#5A3B76" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 8L13 8" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M2 11C2 7.70017 2 6.05025 3.02513 5.02513C4.05025 4 5.70017 4 9 4H10C13.2998 4 14.9497 4 15.9749 5.02513C17 6.05025 17 7.70017 17 11V13C17 16.2998 17 17.9497 15.9749 18.9749C14.9497 20 13.2998 20 10 20H9C5.70017 20 4.05025 20 3.02513 18.9749C2 17.9497 2 16.2998 2 13V11Z" stroke="currentColor" stroke-width="1.5"/><path d="M17 8.90585L17.1259 8.80196C19.2417 7.05623 20.2996 6.18336 21.1498 6.60482C22 7.02628 22 8.42355 22 11.2181V12.7819C22 15.5765 22 16.9737 21.1498 17.3952C20.2996 17.8166 19.2417 16.9438 17.1259 15.198L17 15.0941" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Cinema Studio is the reason people install this. Instead of writing "cinematic, 4k, beautiful lighting" and hoping, you pick real camera settings from dropdowns and the app translates them into prompt modifiers behind the scenes. These are the actual options in the app, so you can decide your look before you open it.</p>
+<ol class="steps">
+<li><strong class="st">📷 Pick the camera body.</strong> The choices are Modular 8K Digital, Full-Frame Cine Digital, Grand Format 70mm Film, Studio Digital S35, Classic 16mm Film and Premium Large Format Digital. Film options carry grain and warmth, digital options are cleaner. Classic 16mm Film is the one that reads as nostalgic home-video.</li>
+<li><strong class="st">🔍 Pick the lens character.</strong> Eleven options, including Classic Anamorphic, Compact Anamorphic, Swirl Bokeh Portrait, Vintage Prime, Warm Cinema Prime, Halation Diffusion, 70s Cinema Prime, Extreme Macro, Creative Tilt and Clinical Sharp Prime. Anamorphic gives you the wide cinematic squeeze, Halation Diffusion gives you that soft glow around highlights.</li>
+<li><strong class="st">📏 Pick the focal length.</strong> 8mm ultra-wide, 14mm, 24mm, 35mm (closest to how your eye sees), 50mm for portraits, 85mm for tight portraits. Wide for environments and energy, long for faces and compression.</li>
+<li><strong class="st">🌗 Pick the aperture.</strong> Three options: f/1.4 for shallow depth of field and a blurred background, f/4 for balanced, f/11 for deep focus where everything is sharp. Shallow reads as premium, deep reads as documentary.</li>
+<li><strong class="st">✍️ Describe the scene in plain language.</strong> Subject, action, setting, time of day, mood. The camera settings handle the "how it looks" part, so your description only needs to carry the "what is happening" part.</li>
+<li><strong class="st">🧪 Test on an image model first.</strong> Same settings, cheap model, one still. When the frame looks right, run the same brief through a video model. This one habit is the difference between a $2 experiment and a $40 one.</li>
+</ol>
+<p>If you are not sure what to describe, let Claude write the brief for you and paste its answer into the scene box:</p>
+<div class="promptwrap">
+<span class="promptlabel">🎬 write my shot brief</span>
+<pre><code>You are my cinematographer. I am generating a single shot in an AI video studio that has separate dropdowns for camera body, lens, focal length and aperture, so do not describe those in the text. Here is what I want the shot to be: [describe the moment in one messy sentence, for example "me pouring coffee at my desk early in the morning while it rains outside"].
+
+Write me the scene description that goes in the prompt box. Keep it to three or four sentences covering subject, exact action, setting details, time of day and light source, and the emotional mood. Use concrete visual nouns instead of adjectives like beautiful or cinematic, and describe one clear movement rather than several, because generated clips are short.
+
+Then, separately, tell me which camera body, lens, focal length and aperture you would choose from these lists and why in one line each. Cameras: Modular 8K Digital, Full-Frame Cine Digital, Grand Format 70mm Film, Studio Digital S35, Classic 16mm Film, Premium Large Format Digital. Lenses: Creative Tilt, Compact Anamorphic, Extreme Macro, 70s Cinema Prime, Classic Anamorphic, Premium Modern Prime, Warm Cinema Prime, Swirl Bokeh Portrait, Vintage Prime, Halation Diffusion, Clinical Sharp Prime. Focal lengths: 8mm, 14mm, 24mm, 35mm, 50mm, 85mm. Apertures: f/1.4, f/4, f/11.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">the genuinely free part</span>
+<h2>Local generation on your own machine <span class="gi" style="--gl:#D6692D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.22576 11.3294L12.224 2.34651C12.7713 1.64397 13.7972 2.08124 13.7972 3.01707V9.96994C13.7972 10.5305 14.1995 10.985 14.6958 10.985H18.0996C18.8729 10.985 19.2851 12.0149 18.7742 12.6706L11.776 21.6535C11.2287 22.356 10.2028 21.9188 10.2028 20.9829V14.0301C10.2028 13.4695 9.80048 13.015 9.3042 13.015H5.90035C5.12711 13.015 4.71494 11.9851 5.22576 11.3294Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The desktop app ships with a bundled local engine called sd.cpp, from the open-source <a href="https://github.com/leejet/stable-diffusion.cpp" target="_blank">stable-diffusion.cpp</a> project. It runs image models on your own hardware with no API key and no per-image cost at all, using Metal on Apple Silicon Macs and CUDA, Vulkan or ROCm on Windows and Linux.</p>
+<ol class="steps">
+<li><strong class="st">⚙️ Open Settings, then Local Models.</strong> This section only exists in the desktop app. The hosted browser version always uses cloud APIs.</li>
+<li><strong class="st">⬇️ Install the sd.cpp engine.</strong> One click, it downloads automatically, then download a model from the same panel. Weights are multiple gigabytes, so check your disk space first.</li>
+<li><strong class="st">⚡ Flip the Local toggle in Image Studio.</strong> The toggle sits next to the model selector. Pick your local model and generate, no key required.</li>
+<li><strong class="st">🧠 Match the model to your RAM.</strong> The project's own note: the Z-Image model wants around 16GB of RAM, and on a base 8GB M-series Mac it is known to hang the system, so stay on SD 1.5 there.</li>
+<li><strong class="st">🎞 For local video, there is a second engine.</strong> Wan2GP is a bring-your-own server option in the same Local Models panel, and it does run video models (Wan 2.2, Hunyuan, LTX) plus bigger image models. The catch is real: the server needs an NVIDIA or AMD GPU and you have to run it yourself. The desktop app only sends prompts to it.</li>
+<li><strong class="st">🔍 Check it is actually using your GPU.</strong> On Apple Silicon a healthy run prints a VRAM figure rather than 0.00MB. If it prints zero, the engine fell back to CPU and it will be slow, so reinstall the engine from the same Local Models panel.</li>
+</ol>
+<div class="tip">The honest split, so you can budget: local image generation costs nothing to run but is lower fidelity than the frontier models. Cloud video through your MuAPI key is where the quality lives and where the money goes. Most people end up drafting locally and rendering the keeper in the cloud, which is a genuinely good workflow.</div>
+
+<hr class="rule">
+<span class="kicker">the real maths</span>
+<h2>What you actually pay for <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>The app: $0</b> MIT licensed, download and run it forever, no seat fee and no subscription. This is the part that is truly free, and it is the part being replaced.</div>
+<div class="minicard"><b>Cloud generations: per run</b> Every cloud image or video is billed to your MuAPI balance at that model's rate. Frontier video models cost meaningfully more than images, so check <a href="https://muapi.ai/pricing" target="_blank">the pricing page</a> per model.</div>
+<div class="minicard"><b>Local images: $0 plus electricity</b> sd.cpp runs on hardware you already own. No key, no cap, no per-image charge. Slower and lower fidelity, perfect for drafting.</div>
+<div class="minicard"><b>Your time: the hidden line</b> Self-hosted means you handle updates, breakages and model changes. Worth it if you generate weekly. Not worth it if you make three videos a year.</div>
+</div>
+<div class="tip calm">The way to keep this cheap is boring and it works: draft locally or on a cheap image model, only spend on video once the frame is already right, and top up your balance in small amounts so a runaway batch cannot cost you more than you decided to risk.</div>
+
+<hr class="rule">
+<span class="kicker">worth knowing</span>
+<h2>Before you commit an evening to this <span class="gi" style="--gl:#B97C11" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9248 21H10.0752C5.44476 21 3.12955 21 2.27636 19.4939C1.42317 17.9879 2.60736 15.9914 4.97574 11.9985L6.90057 8.75333C9.17559 4.91778 10.3131 3 12 3C13.6869 3 14.8244 4.91777 17.0994 8.75332L19.0243 11.9985C21.3926 15.9914 22.5768 17.9879 21.7236 19.4939C20.8704 21 18.5552 21 13.9248 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 9V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li><strong>Check the username, not the repo name.</strong> Copycat forks exist. The one this guide covers is <a href="https://github.com/Anil-matcha/Open-Generative-AI" target="_blank">Anil-matcha/Open-Generative-AI</a>.</li>
+<li><strong>The installers are unsigned.</strong> That is why macOS and Windows both warn you. It is expected for an independent open-source build, and it is also exactly the situation where you should download from the official releases page and nowhere else.</li>
+<li><strong>The app advertises no content filters.</strong> The models behind it still have their own rules, and so do the platforms you post to. Everything you generate is your responsibility, including likeness and copyright, and lip sync on a real person's face without their say-so is a line worth keeping on the right side of.</li>
+<li><strong>Self-hosted means self-maintained.</strong> Updates, breakages and model changes are yours to manage. That is the real price of owning it.</li>
+<li><strong>Your key is a wallet.</strong> Top up small amounts, check the price of a model before you queue ten renders of it, and do not paste your key into a chat or a shared file.</li>
+</ul>
+
+<hr class="rule">
+<span class="kicker">all the links</span>
+<h2>Everything in one place <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li><strong>The repo</strong> (source of truth, MIT licensed): <a href="https://github.com/Anil-matcha/Open-Generative-AI" target="_blank">github.com/Anil-matcha/Open-Generative-AI</a></li>
+<li><strong>Prebuilt installers</strong> (Mac, Windows, Linux): <a href="https://github.com/Anil-matcha/Open-Generative-AI/releases" target="_blank">the releases page</a></li>
+<li><strong>Hosted version</strong> (browser, no install): <a href="https://muapi.ai/open-generative-ai" target="_blank">muapi.ai/open-generative-ai</a></li>
+<li><strong>Your API key</strong> (copy the value, not the label): <a href="https://muapi.ai/access-keys" target="_blank">muapi.ai/access-keys</a></li>
+<li><strong>Per-model prices</strong> (check before batching video): <a href="https://muapi.ai/pricing" target="_blank">muapi.ai/pricing</a></li>
+<li><strong>Claude Code</strong> (the setup route above): <a href="https://claude.ai/download" target="_blank">claude.ai/download</a></li>
+<li><strong>Node.js</strong> (v18 or newer, only for the build-from-source route): <a href="https://nodejs.org/" target="_blank">nodejs.org</a></li>
+<li><strong>stable-diffusion.cpp</strong> (the local engine underneath): <a href="https://github.com/leejet/stable-diffusion.cpp" target="_blank">github.com/leejet/stable-diffusion.cpp</a></li>
+</ul>
+
+<div class="gcallout"><strong>Want to build and run things like this properly?</strong> Inside AI System Club I teach people to learn AI from scratch and build real systems, for work and for their own business. Doors open soon and founding pricing dies at close. 🌱 <a href='/ai-system' target='_blank'>Join the waitlist</a> (link in my bio too).</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

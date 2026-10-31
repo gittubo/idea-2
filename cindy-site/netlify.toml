@@ -34,3 +34,29 @@
   from = "/canva-film"
   to = "https://cindyzhu.com.au/canva-film"
   status = 302
+
+# Her interactive demo pages linked from guides are separate apps on her site.
+[[redirects]]
+  from = "/ripple-demo"
+  to = "https://cindyzhu.com.au/ripple-demo"
+  status = 302
+
+[[redirects]]
+  from = "/scrunch-demo"
+  to = "https://cindyzhu.com.au/scrunch-demo"
+  status = 302
+
+[[redirects]]
+  from = "/bedtime-story-demo"
+  to = "https://cindyzhu.com.au/bedtime-story-demo"
+  status = 302
+
+[[redirects]]
+  from = "/brain"
+  to = "https://cindyzhu.com.au/brain"
+  status = 302
+
+[[redirects]]
+  from = "/play/*"
+  to = "https://cindyzhu.com.au/play/:splat"
+  status = 302

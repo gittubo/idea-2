@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stop wasting Claude tokens on PDFs (MarkItDown) · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="If you&#x27;ve ever dropped a chunky PDF into Claude and watched it eat through your usage, this is the fix.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/markitdown-save-claude-tokens">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Stop wasting Claude tokens on PDFs (MarkItDown)">
+<meta property="og:description" content="If you&#x27;ve ever dropped a chunky PDF into Claude and watched it eat through your usage, this is the fix.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/markitdown-save-claude-tokens">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stop wasting Claude tokens on PDFs (MarkItDown)">
+<meta name="twitter:description" content="If you&#x27;ve ever dropped a chunky PDF into Claude and watched it eat through your usage, this is the fix.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Stop wasting Claude tokens on PDFs (MarkItDown)", u:"guides/markitdown-save-claude-tokens.html", topic:"power", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Make money</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Stop wasting Claude tokens on PDFs (MarkItDown)</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 If you've ever dropped a chunky PDF into Claude and watched it eat through your usage, this is the fix.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip calm">💡 <strong>The one move.</strong> Convert the file to Markdown once, then feed Claude the Markdown. You strip out the per-page image overhead and keep the headings, lists and tables that actually carry the meaning.</div>
+
+<hr class="rule">
+<span class="kicker">the problem</span>
+<h2>Why PDFs quietly burn your tokens <span class="gi" style="--gl:#D86629" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.8561 22C26.0783 19 19.2338 7 10.9227 2C9.9453 5.5 8.47838 6.5 5.54497 10C1.66121 14.6339 3.5895 20 8.96719 22C8.1524 21 6.04958 18.9008 7.5 16C8 15 9 14 8.5 12C9.47778 12.5 11.5 13 12 15.5C12.8148 14.5 13.6604 12.4 12.8783 10C19 14.5 16.5 19 13.8561 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>When you upload a PDF, Claude doesn't get a tidy text file. It gets extracted text plus a picture of every page, so it can also see charts, scans and layout. Those page images are far heavier than plain words, and that is where your tokens go.</p>
+<div class="cardgrid">
+<div class="minicard"><b>It's read as images</b> Each page is rendered as a picture so the model can see figures and scans, and image tokens dwarf the cost of the same content as text.</div>
+<div class="minicard"><b>The layout tax</b> Columns, tables and headers force the model to work out structure from pixels, piling tokens on top of the words themselves.</div>
+<div class="minicard"><b>Every upload re-sends it</b> Re-attach the same PDF in a fresh chat and you pay the full token cost again, from zero, every single time.</div>
+<div class="minicard"><b>Long chats re-read it</b> As the conversation grows, that heavy document keeps riding along in context and quietly inflates every reply.</div>
+</div>
+<div class="tip">🎯 <strong>The savings are real, not magic.</strong> People who convert first often cut what a document costs by a big chunk, some report up to 70%, because the image overhead disappears and only structured text is left. How much you save depends on the file.</div>
+
+<hr class="rule">
+<span class="kicker">the tool</span>
+<h2>Meet MarkItDown, free from Microsoft <span class="gi" style="--gl:#9380A9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7L16 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 11L12 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 21.5V21C13 18.1716 13 16.7574 13.8787 15.8787C14.7574 15 16.1716 15 19 15H19.5M20 13.3431V10C20 6.22876 20 4.34315 18.8284 3.17157C17.6569 2 15.7712 2 12 2C8.22877 2 6.34315 2 5.17157 3.17157C4 4.34314 4 6.22876 4 10L4 14.5442C4 17.7892 4 19.4117 4.88607 20.5107C5.06508 20.7327 5.26731 20.9349 5.48933 21.1139C6.58831 22 8.21082 22 11.4558 22C12.1614 22 12.5141 22 12.8372 21.886C12.9044 21.8623 12.9702 21.835 13.0345 21.8043C13.3436 21.6564 13.593 21.407 14.0919 20.9081L18.8284 16.1716C19.4065 15.5935 19.6955 15.3045 19.8478 14.9369C20 14.5694 20 14.1606 20 13.3431Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p><a href="https://github.com/microsoft/markitdown" target="_blank">MarkItDown</a> is a lightweight open-source utility built by Microsoft's AutoGen team. It converts almost any file into clean Markdown made specifically for LLMs, keeping headings, lists and tables intact so the structure survives the trip. It is free and open source under the MIT license, so there is nothing to buy.</p>
+<div class="cardgrid">
+<div class="minicard"><b>Documents</b> PDF, Word (.docx) and PowerPoint (.pptx) all come out as clean, readable Markdown.</div>
+<div class="minicard"><b>Spreadsheets</b> Excel (.xlsx) and CSV convert to Markdown tables Claude can actually reason over.</div>
+<div class="minicard"><b>Web and data</b> HTML, JSON and XML flatten into structured text instead of raw markup.</div>
+<div class="minicard"><b>Images</b> OCR pulls the text out of a picture, and EXIF metadata comes along with it.</div>
+<div class="minicard"><b>Audio</b> Speech gets transcribed to text, so a recording becomes something you can search.</div>
+<div class="minicard"><b>YouTube and links</b> Pass a YouTube URL and it pulls the transcript, so you skip the video entirely.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the setup</span>
+<h2>Set it up in your terminal <span class="gi" style="--gl:#987CBE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3175 7.14139L20.8239 6.28479C20.4506 5.63696 20.264 5.31305 19.9464 5.18388C19.6288 5.05472 19.2696 5.15664 18.5513 5.36048L17.3311 5.70418C16.8725 5.80994 16.3913 5.74994 15.9726 5.53479L15.6357 5.34042C15.2766 5.11043 15.0004 4.77133 14.8475 4.37274L14.5136 3.37536C14.294 2.71534 14.1842 2.38533 13.9228 2.19657C13.6615 2.00781 13.3143 2.00781 12.6199 2.00781H11.5051C10.8108 2.00781 10.4636 2.00781 10.2022 2.19657C9.94085 2.38533 9.83106 2.71534 9.61149 3.37536L9.27753 4.37274C9.12465 4.77133 8.84845 5.11043 8.48937 5.34042L8.15249 5.53479C7.73374 5.74994 7.25259 5.80994 6.79398 5.70418L5.57375 5.36048C4.85541 5.15664 4.49625 5.05472 4.17867 5.18388C3.86109 5.31305 3.67445 5.63696 3.30115 6.28479L2.80757 7.14139C2.45766 7.74864 2.2827 8.05227 2.31666 8.37549C2.35061 8.69871 2.58483 8.95918 3.05326 9.48012L4.0843 10.6328C4.3363 10.9518 4.51521 11.5078 4.51521 12.0077C4.51521 12.5078 4.33636 13.0636 4.08433 13.3827L3.05326 14.5354C2.58483 15.0564 2.35062 15.3168 2.31666 15.6401C2.2827 15.9633 2.45766 16.2669 2.80757 16.8741L3.30114 17.7307C3.67443 18.3785 3.86109 18.7025 4.17867 18.8316C4.49625 18.9608 4.85542 18.8589 5.57377 18.655L6.79394 18.3113C7.25263 18.2055 7.73387 18.2656 8.15267 18.4808L8.4895 18.6752C8.84851 18.9052 9.12464 19.2442 9.2775 19.6428L9.61149 20.6403C9.83106 21.3003 9.94085 21.6303 10.2022 21.8191C10.4636 22.0078 10.8108 22.0078 11.5051 22.0078H12.6199C13.3143 22.0078 13.6615 22.0078 13.9228 21.8191C14.1842 21.6303 14.294 21.3003 14.5136 20.6403L14.8476 19.6428C15.0004 19.2442 15.2765 18.9052 15.6356 18.6752L15.9724 18.4808C16.3912 18.2656 16.8724 18.2055 17.3311 18.3113L18.5513 18.655C19.2696 18.8589 19.6288 18.9608 19.9464 18.8316C20.264 18.7025 20.4506 18.3785 20.8239 17.7307L21.3175 16.8741C21.6674 16.2669 21.8423 15.9633 21.8084 15.6401C21.7744 15.3168 21.5402 15.0564 21.0718 14.5354L20.0407 13.3827C19.7887 13.0636 19.6098 12.5078 19.6098 12.0077C19.6098 11.5078 19.7888 10.9518 20.0407 10.6328L21.0718 9.48012C21.5402 8.95918 21.7744 8.69871 21.8084 8.37549C21.8423 8.05227 21.6674 7.74864 21.3175 7.14139Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.5195 12C15.5195 13.933 13.9525 15.5 12.0195 15.5C10.0865 15.5 8.51953 13.933 8.51953 12C8.51953 10.067 10.0865 8.5 12.0195 8.5C13.9525 8.5 15.5195 10.067 15.5195 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🐍 Check you have Python 3.10 or newer.</strong> MarkItDown runs on Python. Check your version, and if you don't have it, grab it free from python.org.
+<div class="promptwrap"><pre><code>python3 --version</code></pre></div></li>
+<li><strong class="st">📦 Install MarkItDown with every format.</strong> The <code>[all]</code> part pulls in support for PDF, Office files, audio and the rest in one go.
+<div class="promptwrap"><pre><code>pip install 'markitdown[all]'</code></pre></div></li>
+<li><strong class="st">✅ Convert your first file.</strong> Point it at any file and save the Markdown. Open the result, or paste it straight into Claude instead of the original.
+<div class="promptwrap"><pre><code>markitdown report.pdf -o report.md</code></pre></div></li>
+</ol>
+<div class="tip">💡 <strong>One command, any file type.</strong> The same <code>markitdown</code> command works for Word, Excel and slides too. Just swap the file name.
+<div class="promptwrap"><pre><code>markitdown deck.pptx -o deck.md
+markitdown budget.xlsx -o budget.md
+markitdown contract.docx -o contract.md</code></pre></div></div>
+
+<hr class="rule">
+<span class="kicker">hands-free</span>
+<h2>Connect it to Claude so files convert themselves <span class="gi" style="--gl:#4C395C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 2V6M8.5 6V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.00446 7.61331C5.93719 6.74273 6.63957 6 7.53014 6H16.4699C17.3604 6 18.0628 6.74273 17.9955 7.61331L17.8117 9.99197C17.6796 11.7019 17.1011 13.3498 16.132 14.7773L15.5312 15.6622C14.9638 16.4979 14.0077 17 12.9838 17H11.0162C9.99228 17 9.03617 16.4979 8.46881 15.6622L7.86803 14.7773C6.89885 13.3498 6.32041 11.7019 6.18827 9.99197L6.00446 7.61331Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 9H13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The same project ships a second piece, <strong>markitdown-mcp</strong>, an MCP server that hands Claude a single tool called <code>convert_to_markdown</code>. Once it's connected, you point Claude at a file or a link and it runs the conversion itself, so only the lean Markdown lands in the chat instead of the raw document. No API keys, no config.</p>
+<ol class="steps">
+<li><strong class="st">🖥️ Add it to Claude Code.</strong> One line in your terminal. This uses <code>uvx</code> from Astral's uv, or you can run <code>pip install markitdown-mcp</code> first.
+<div class="promptwrap"><pre><code>claude mcp add markitdown -- uvx markitdown-mcp</code></pre></div></li>
+<li><strong class="st">🧩 Or add it to Claude Desktop.</strong> Drop this into your MCP config, then fully quit and reopen the app so it loads.
+<div class="promptwrap"><pre><code>{
+  "mcpServers": {
+    "markitdown": {
+      "command": "uvx",
+      "args": ["markitdown-mcp"]
+    }
+  }
+}</code></pre></div></li>
+<li><strong class="st">🎯 Point Claude at the file.</strong> Give it a path or a link and let it convert before it reads. What enters the chat is clean Markdown, not a heavy PDF.</li>
+</ol>
+<div class="promptwrap"><span class="promptlabel">paste into Claude</span><pre><code>Convert the file at [path or URL] to clean Markdown using MarkItDown, then read only the Markdown version. Give me a 5-point summary and pull any numbers into a table. Don't load the original PDF into context.</code></pre></div>
+
+<hr class="rule">
+<span class="kicker">the honest bit</span>
+<h2>Where it wins and where it doesn't <span class="gi" style="--gl:#CF516C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21L8 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13.2585 18.8714C9.51516 18.0215 5.97844 14.4848 5.12853 10.7415C4.99399 10.1489 4.92672 9.85266 5.12161 9.37197C5.3165 8.89129 5.55457 8.74255 6.03071 8.44509C7.10705 7.77265 8.27254 7.55888 9.48209 7.66586C11.1793 7.81598 12.0279 7.89104 12.4512 7.67048C12.8746 7.44991 13.1622 6.93417 13.7376 5.90269L14.4664 4.59604C14.9465 3.73528 15.1866 3.3049 15.7513 3.10202C16.316 2.89913 16.6558 3.02199 17.3355 3.26771C18.9249 3.84236 20.1576 5.07505 20.7323 6.66449C20.978 7.34417 21.1009 7.68401 20.898 8.2487C20.6951 8.8134 20.2647 9.05346 19.4039 9.53358L18.0672 10.2792C17.0376 10.8534 16.5229 11.1406 16.3024 11.568C16.0819 11.9955 16.162 12.8256 16.3221 14.4859C16.4399 15.7068 16.2369 16.88 15.5555 17.9697C15.2577 18.4458 15.1088 18.6839 14.6283 18.8786C14.1477 19.0733 13.8513 19.006 13.2585 18.8714Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip warn">🚫 <strong>Text wins, visuals get flattened.</strong> Markdown keeps words, headings and tables, but a chart or a photo becomes a caption or a rough description at best. If the meaning of a page lives in a graph, keep the original PDF for that page and convert the rest. Scanned or photographed PDFs have no text layer either, so MarkItDown falls back to OCR, which is slower and less exact. Skim the output before you trust it.</div>
+<div class="tip calm">💡 <strong>What it costs: nothing.</strong> MarkItDown and its MCP server are both free and open source under the MIT license. The only spend is your normal Claude usage, which is the exact thing you are cutting down here.</div>
+
+<hr class="rule">
+<span class="kicker">the links</span>
+<h2>Grab it <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li><a href="https://github.com/microsoft/markitdown" target="_blank">MarkItDown on GitHub</a>, the library, the <code>markitdown</code> command line tool, and the <code>markitdown-mcp</code> server all live in this one repo. Free, MIT licensed.</li>
+</ul>
+
+<div class="gcallout"><strong>Want to build little AI systems like this with me?</strong> Inside AI System Club I teach people to set up AI that actually saves them time and money, step by step, from scratch. Doors open soon and founding pricing dies at close. 🌱 <a href='/ai-system' target='_blank'>Join the waitlist</a> (link in my bio too).</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

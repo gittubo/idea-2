@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Make Claude Code write less code: the Ponytail skill · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="This is a free, open-source Claude Code skill called Ponytail. It makes your coding agent look for a reason not to write code before it writes anything.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/ponytail-write-less-code">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Make Claude Code write less code: the Ponytail skill">
+<meta property="og:description" content="This is a free, open-source Claude Code skill called Ponytail. It makes your coding agent look for a reason not to write code before it writes anything.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/ponytail-write-less-code">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Make Claude Code write less code: the Ponytail skill">
+<meta name="twitter:description" content="This is a free, open-source Claude Code skill called Ponytail. It makes your coding agent look for a reason not to write code before it writes anything.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Make Claude Code write less code: the Ponytail skill", u:"guides/ponytail-write-less-code.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Coding with AI</span>
+        <span class="gtag tool">Claude Code</span>
+      </div>
+      <h1>Make Claude Code write less code: the Ponytail skill</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This is a free, open-source Claude Code skill called Ponytail. It makes your coding agent look for a reason not to write code before it writes anything.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>If you have ever watched an AI agent write 500 lines for something that only needed 50, this is for you. The agent is not being lazy, it is being the opposite: it happily rebuilds things that already exist and pads out simple jobs. More code sounds productive, but it usually means more bugs, more to maintain, and a bigger bill.</p>
+
+<p>Ponytail is a skill by <a href="https://github.com/DietrichGebert/ponytail" target="_blank" rel="noopener">DietrichGebert</a> (over 100,000 stars on GitHub) that fixes this. It forces the agent through a short decision ladder <em>before</em> it writes anything.</p>
+
+<h2>What it actually does</h2>
+<p>Before writing new code, the agent has to answer, in order:</p>
+<ul>
+<li>Does this code need to exist at all?</li>
+<li>Does it already exist somewhere in the project?</li>
+<li>Can the standard library, a built-in platform feature, or a dependency you already have do it?</li>
+<li>Only if all of those are no does it write something new.</li>
+</ul>
+<p>The tagline sums it up: the best code is the code you never wrote.</p>
+
+<h2>Install it (Claude Code)</h2>
+<p>It is two commands. Open Claude Code and run:</p>
+<div class="promptwrap">
+<span class="promptlabel">🐴 Add the marketplace</span>
+<pre><code>/plugin marketplace add DietrichGebert/ponytail</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">🐴 Install the skill</span>
+<pre><code>/plugin install ponytail@ponytail</code></pre>
+</div>
+<p>That is it. From now on it runs on your coding sessions automatically.</p>
+
+<h2>Using another editor?</h2>
+<p>Ponytail also ships rule files for other agents. Copy the matching file from the repo into your editor's rules folder:</p>
+<ul>
+<li>Cursor: <code>.cursor/rules/</code></li>
+<li>Windsurf: <code>.windsurf/rules/</code></li>
+<li>Cline: <code>.clinerules/</code></li>
+<li>Anything that reads <code>AGENTS.md</code>: drop it in at the project root.</li>
+</ul>
+
+<h2>What to expect (honest numbers)</h2>
+<p>On the author's own benchmark (a real full-stack repo, 12 feature tickets), Ponytail produced up to <strong>54% less code, about 20% cheaper, and 27% faster</strong>, using around 22% fewer tokens.</p>
+<p>Two honest caveats so you are not disappointed:</p>
+<ul>
+<li>That 54% is a best case, driven by obvious over-build traps (one date picker went from 404 lines to 23). On code that is already lean, the savings are close to zero.</li>
+<li>An independent <a href="https://blog.jetbrains.com/ai/2026/07/ponytail-skill-claude-tested/" target="_blank" rel="noopener">JetBrains test</a> across 80 paired tasks found smaller real-world gains, around 15% less code and 10% cheaper. Still a free win, just not magic.</li>
+</ul>
+<p>The point underneath the numbers is the good part: it only writes what the task actually needs, and it never cuts corners on validation, error handling, or security to hit a smaller number.</p>
+
+<h2>Links</h2>
+<ul>
+<li>Repo: <a href="https://github.com/DietrichGebert/ponytail" target="_blank" rel="noopener">github.com/DietrichGebert/ponytail</a></li>
+<li>Benchmarks: <a href="https://github.com/DietrichGebert/ponytail/tree/main/benchmarks" target="_blank" rel="noopener">the author's benchmark folder</a></li>
+<li>Independent test: <a href="https://blog.jetbrains.com/ai/2026/07/ponytail-skill-claude-tested/" target="_blank" rel="noopener">JetBrains</a></li>
+</ul>
+
+<div class="gcallout">Try it on your next build and watch how often it says "you don't need to write this." 👩‍💻</div>
+    </div>
+  </div>
+</div>
+<script src="../guide-kit.js" defer></script>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="/site.js" defer></script>
+</body>
+</html>

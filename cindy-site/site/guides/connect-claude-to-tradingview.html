@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to connect Claude to your TradingView charts · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="This uses an open-source MCP bridge that lets Claude Code read and control the TradingView Desktop app running on your own machine.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/connect-claude-to-tradingview">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="How to connect Claude to your TradingView charts">
+<meta property="og:description" content="This uses an open-source MCP bridge that lets Claude Code read and control the TradingView Desktop app running on your own machine.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/connect-claude-to-tradingview">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to connect Claude to your TradingView charts">
+<meta name="twitter:description" content="This uses an open-source MCP bridge that lets Claude Code read and control the TradingView Desktop app running on your own machine.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"How to connect Claude to your TradingView charts", u:"guides/connect-claude-to-tradingview.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building things</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>How to connect Claude to your TradingView charts</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This uses an open-source MCP bridge that lets Claude Code read and control the TradingView Desktop app running on your own machine.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn"><strong>Read this before you start.</strong> This is analysis help, not financial advice, and nothing here places a trade. The bridge is a community project by <a href="https://github.com/tradesdontlie/tradingview-mcp" target="_blank">tradesdontlie</a>, not a TradingView product, and it is not affiliated with or endorsed by TradingView. It works by talking to undocumented internals of the desktop app, so a TradingView update can break it without warning. The repo also notes that programmatic interaction with TradingView data may conflict with their terms of use, and that responsibility sits with you.</div>
+
+<span class="kicker">before you start</span>
+<h2>What you actually need <span class="gi" style="--gl:#DB5C78" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15V14H21V15C21 17.8284 21 19.2426 20.1213 20.1213C19.2426 21 17.8284 21 15 21H9C6.17157 21 4.75736 21 3.87868 20.1213C3 19.2426 3 17.8284 3 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 14L3.00001 12.9999C3.00003 11.5278 3.00004 10.7918 3.31675 10.1584C3.63347 9.52493 4.22231 9.08329 5.39999 8.20002C6.19297 7.60528 6.58946 7.30791 7.05132 7.15395C7.51317 7 8.00879 7 9.00002 7H15C15.9912 7 16.4868 7 16.9487 7.15395C17.4105 7.3079 17.807 7.60527 18.6 8.2C19.7777 9.08328 20.3666 9.52492 20.6833 10.1584C21 10.7918 21 11.5279 21 13V14H3Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 12V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 12V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.49997 7.00006V6.50006C8.49997 5.0956 8.49997 4.39337 8.83703 3.88892C8.98295 3.67054 9.17045 3.48304 9.38883 3.33712C9.89328 3.00006 10.5955 3.00006 12 3.00006C13.4044 3.00006 14.1067 3.00006 14.6111 3.33712C14.8295 3.48304 15.017 3.67054 15.1629 3.88892C15.5 4.39337 15.5 5.0956 15.5 6.50006V7.00006" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>One correction on the version of this going around: it is not free on both sides. Here is the honest gate.</p>
+<div class="cardgrid">
+<div class="minicard"><b>TradingView Desktop, paid plan</b> The <a href="https://www.tradingview.com/desktop/" target="_blank">desktop app</a>, not the browser tab. The bridge reads the real-time data your account already has, and the maintainer states a valid TradingView subscription is required.</div>
+<div class="minicard"><b>Claude Code on Pro or Max</b> <a href="https://claude.com/product/claude-code" target="_blank">Claude Code</a> runs in your terminal and is included with Pro and Max, not with the free plan (<a href="https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan" target="_blank">Anthropic's plan note</a>). Pro starts at $20 a month.</div>
+<div class="minicard"><b>Node.js 18 or newer</b> Grab it from <a href="https://nodejs.org/en/download" target="_blank">nodejs.org</a> if you do not have it. Check with <code>node --version</code> in your terminal before you begin.</div>
+<div class="minicard"><b>About 10 minutes</b> Five if everything cooperates. The step that trips people up is launching TradingView with the debug flag, so that one gets its own section below.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">copy this</span>
+<h2>The one-prompt setup <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Open your terminal, type <code>claude</code> to start Claude Code, and paste this. It does the install, the registration, the launch, and the health check, and it will not tell you it worked until the connection actually responds.</p>
+<div class="promptwrap">
+<span class="promptlabel">👩‍💻 install the TradingView bridge</span>
+<pre><code>Install the TradingView MCP bridge for me and get it working end to end. The repo is https://github.com/tradesdontlie/tradingview-mcp and it connects you to my locally running TradingView Desktop app over the Chrome DevTools Protocol on port 9222.
+
+Do this in order and tell me what you are doing at each step.
+
+1. Check that I have Node.js 18 or newer by running node --version. If I do not, stop and tell me instead of continuing.
+
+2. Clone the repo into ~/tradingview-mcp, cd into it, and run npm install. Show me any errors in full rather than summarising them.
+
+3. Register it with Claude Code as a stdio MCP server named tradingview, pointing at src/server.js inside that folder using the absolute path, never a relative one. Show me the exact command you ran and the resulting config entry.
+
+4. Launch TradingView Desktop with remote debugging enabled, using the launch script in the repo's scripts folder for my operating system. If TradingView is already running without the debug flag, tell me to quit it completely first, because that flag only applies at launch and a running instance will not pick it up.
+
+5. Run tv_health_check and show me the raw result. If it fails, diagnose it properly: check whether port 9222 is listening, whether the desktop app is actually running, and whether the server shows as connected in claude mcp list. Do not tell me the setup succeeded until the health check passes.
+
+At the end, list the tools you now have available and give me three example things I could ask you to do with my chart.</code></pre>
+</div>
+<div class="tip calm">If Claude asks permission to run commands, that is the expected behaviour. Read what it is about to run, then approve. You can always ask it to explain a command before you say yes.</div>
+
+<hr class="rule">
+<span class="kicker">the manual route</span>
+<h2>Or install it by hand <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>Same result, four steps, and you see exactly what lands on your machine.</p>
+<ol class="steps">
+<li><strong class="st">📦 Clone and install.</strong> In your terminal, run the three commands below. This pulls the bridge down and installs its dependencies. Nothing is running yet.
+<pre><code>git clone https://github.com/tradesdontlie/tradingview-mcp.git
+cd tradingview-mcp
+npm install</code></pre></li>
+<li><strong class="st">🔌 Launch TradingView with the debug port open.</strong> Quit TradingView Desktop completely first, then run the script for your system from inside the repo folder. The debug port is off by default and only turns on at launch, which is why a running app will not work.
+<pre><code># macOS
+./scripts/launch_tv_debug_mac.sh
+
+# Windows
+scripts\launch_tv_debug.bat
+
+# Linux
+./scripts/launch_tv_debug_linux.sh</code></pre></li>
+<li><strong class="st">➕ Register it with Claude Code.</strong> Run this from anywhere, swapping in your real home path. The <code>--</code> separates the Claude Code flags from the command that actually starts the server (<a href="https://code.claude.com/docs/en/mcp" target="_blank">MCP reference</a>).
+<pre><code>claude mcp add --transport stdio tradingview -- node /Users/you/tradingview-mcp/src/server.js</code></pre></li>
+<li><strong class="st">✅ Verify before you trust it.</strong> Run <code>claude mcp list</code> and look for <code>tradingview</code> with a connected status. Then start Claude Code and ask it to run <code>tv_health_check</code>. If both come back clean, you are connected. Inside a session, <code>/mcp</code> shows the same panel.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">what to ask</span>
+<h2>The 5 things worth asking once it is connected <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>These are prompts for Claude Code, once the bridge is live and your chart is open. Swap the bracketed parts for yours.</p>
+<div class="promptwrap">
+<span class="promptlabel">1 · read my chart and mark the levels</span>
+<pre><code>Read my current TradingView chart and tell me what is actually on it: the symbol, the timeframe, the recent price action, and any indicators I already have loaded. Then identify the clearest support and resistance levels in the visible range and draw each one onto the chart as a horizontal line labelled with its price. Explain in plain language why you chose each level, and tell me which ones you consider weak, so I am judging your reasoning rather than trusting a line because it appeared.</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">2 · build me a custom indicator</span>
+<pre><code>Write me a Pine Script indicator that does this: [describe it in one sentence, for example "a 14-period RSI that shades the chart background when it crosses above 70 or below 30"]. Inject it into my TradingView Pine editor, compile it, and fix any compilation errors yourself before you show me anything. Then add an alert condition for each of those states so I am notified without watching the screen, and tell me exactly what I still need to click inside TradingView to activate the alert, since that part is not something you can do for me.</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">3 · scan my whole watchlist</span>
+<pre><code>Read my TradingView watchlist, then work through each symbol one at a time on the daily timeframe and record where price is sitting relative to its 50 and 200 period moving averages, plus whether it is near a recent high or low. Build me one table at the end, ranked from cleanest setup to messiest, with a single sentence of reasoning per row. Tell me up front roughly how long this will take given the number of symbols, and skip any symbol whose data does not load rather than filling it in with a guess.</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">4 · test the idea instead of assuming it</span>
+<pre><code>Turn this idea into a Pine Script strategy so I can test it rather than believe it: [describe the entry, the exit, and the stop in one or two sentences]. Write it, inject it into my Pine editor, compile it, and fix any errors before showing me. Then tell me where to read the results in TradingView's Strategy Tester panel, which numbers actually matter (net profit, max drawdown, number of trades, profit factor), and how few trades would make the whole result statistically meaningless.</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">5 · practise on replay</span>
+<pre><code>Set my chart to [symbol] on the [timeframe] and start bar replay from [date] so I can practise reading price without knowing what happens next. Step forward one bar at a time whenever I say next, and do not reveal anything beyond the current bar under any circumstances, including in your commentary. When I call an entry, log my reasoning as I gave it, then keep stepping and afterwards tell me what actually happened and what a disciplined exit would have looked like compared to what I said.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">know this</span>
+<h2>What it can and cannot do <span class="gi" style="--gl:#B97C11" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9248 21H10.0752C5.44476 21 3.12955 21 2.27636 19.4939C1.42317 17.9879 2.60736 15.9914 4.97574 11.9985L6.90057 8.75333C9.17559 4.91778 10.3131 3 12 3C13.6869 3 14.8244 4.91777 17.0994 8.75332L19.0243 11.9985C21.3926 15.9914 22.5768 17.9879 21.7236 19.4939C20.8704 21 18.5552 21 13.9248 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 9V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Can read your chart</b> Symbol, timeframe, price data, indicator values, existing drawings and alerts, plus screenshots it can look at directly.</div>
+<div class="minicard"><b>Can write Pine Script</b> Draft, inject, compile, read the errors, and iterate. This is the part that genuinely saves hours (<a href="https://www.tradingview.com/pine-script-docs/" target="_blank">Pine Script docs</a>).</div>
+<div class="minicard"><b>Cannot place trades</b> Chart interaction only. Nothing here touches a broker, an order, or your money.</div>
+<div class="minicard"><b>Cannot reach TradingView's servers</b> Everything runs against the app on your own machine over localhost, so your data and scripts stay local.</div>
+</div>
+<div class="tip warn"><strong>The backtest caveat that matters most.</strong> Claude writes the strategy, but TradingView's <a href="https://www.tradingview.com/support/solutions/43000481368-strategy-tester/" target="_blank">Strategy Tester</a> produces the numbers, and a backtest is a description of the past, not a promise. A strategy that looks brilliant across 12 trades has told you almost nothing. Ask Claude for the trade count and the max drawdown before you look at the profit figure.</div>
+
+<hr class="rule">
+<span class="kicker">if it breaks</span>
+<h2>Troubleshooting <span class="gi" style="--gl:#DC5D76" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🔌 Health check fails.</strong> Nine times out of ten TradingView is running without the debug flag. Quit it fully, including from the dock or system tray, then relaunch with the script from step 2 and try again.</li>
+<li><strong class="st">🔎 Check the port yourself.</strong> Run <code>curl http://localhost:9222/json/version</code>. A JSON response means the debug port is open and the problem is elsewhere. An error means TradingView is not listening and the launch step did not take.</li>
+<li><strong class="st">📁 The server shows as failed.</strong> Run <code>claude mcp list</code>. A failure here is almost always a relative path or a wrong home directory in the registration. Re-register with the full absolute path to <code>src/server.js</code>, and confirm <code>node --version</code> reports 18 or higher.</li>
+<li><strong class="st">🌱 It worked yesterday, not today.</strong> A TradingView update probably changed something internal. Check the repo's <a href="https://github.com/tradesdontlie/tradingview-mcp/issues" target="_blank">issues page</a> to see whether others hit the same break, and consider pinning your desktop version if you rely on this daily.</li>
+</ol>
+
+<div class="tip">Worth saying plainly: a tool that reads charts faster does not make you a better trader, and a confident summary from an AI is still a summary. The honest use here is doing the boring parts quickly, testing ideas instead of assuming them, and keeping every decision yours.</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://github.com/tradesdontlie/tradingview-mcp" target="_blank">TradingView MCP bridge, source and full tool list</a><br>
+  <a href="https://code.claude.com/docs/en/mcp" target="_blank">Claude Code, connecting MCP servers</a><br>
+  <a href="https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan" target="_blank">Using Claude Code with your Pro or Max plan</a><br>
+  <a href="https://www.tradingview.com/desktop/" target="_blank">TradingView Desktop</a><br>
+  <a href="https://www.tradingview.com/pine-script-docs/" target="_blank">Pine Script documentation</a><br>
+  <a href="https://nodejs.org/en/download" target="_blank">Node.js downloads</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

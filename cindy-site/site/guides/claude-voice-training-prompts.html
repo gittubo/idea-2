@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Claude voice-training prompt stack · Cindy Zhu</title>
+<!-- GUIDES_CARD {t:"Train your writing voice with Claude", u:"guides/claude-voice-training-prompts.html", topic:"career", tool:"claude"} -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="The Claude voice-training prompt stack. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-voice-training-prompts">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="The Claude voice-training prompt stack">
+<meta property="og:description" content="The Claude voice-training prompt stack. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-voice-training-prompts">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Claude voice-training prompt stack">
+<meta name="twitter:description" content="The Claude voice-training prompt stack. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Career growth</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>The Claude voice-training prompt stack</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented STORY, so here is the whole thing: four prompts that teach Claude how you actually sound.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">why this pays</span>
+<h2>Sounding human became a priced skill <span class="gi" style="--gl:#884158" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.00127 8.5L1.99911 13.997C1.99782 17.2979 1.99717 18.9484 3.02235 19.974C4.04754 20.9996 5.69801 20.9996 8.99895 20.9997L15 20.9998C18.2994 20.9999 19.949 21 20.9741 19.9751C21.9992 18.9502 21.9996 17.3005 22.0002 14.0012L22.0013 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.49857 6.5C8.49857 5.09554 8.49857 4.39331 8.83563 3.88886C8.98154 3.67048 9.16904 3.48298 9.38743 3.33706C9.89187 3 10.5941 3 11.9986 3C13.403 3 14.1053 3 14.6097 3.33706C14.8281 3.48298 15.0156 3.67048 15.1615 3.88886C15.4986 4.39331 15.4986 5.09554 15.4986 6.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19.998 6.50016L3.99885 6.5C2.8944 6.50007 1.99876 7.39568 1.99866 8.50013C1.99876 10.7091 3.79005 12.5004 5.99901 12.5006H17.9978C20.2068 12.5005 21.998 10.7093 21.9981 8.5003C21.998 7.39582 21.1024 6.50023 19.998 6.50016Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.99857 12.5V13.5C9.99857 13.965 9.99857 14.1975 10.0497 14.3882C10.1884 14.9059 10.5927 15.3102 11.1103 15.4489C11.3011 15.5 11.5336 15.5 11.9986 15.5C12.4636 15.5 12.696 15.5 12.8868 15.4489C13.4044 15.3102 13.8088 14.9059 13.9475 14.3882C13.9986 14.1975 13.9986 13.965 13.9986 13.5V12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The reason this is worth thirty minutes is not vibes. Companies are paying enormous money for people who can make things sound like a person wrote them. Netflix listed a director of product and technology communications role paying up to <a href="https://www.entrepreneur.com/business-news/netflix-anthropic-openai-paying-775000-no-coding-experience" target="_blank">$775,000 a year</a>, OpenAI has communications openings around $400,000, and the same reporting puts the average US director of communications at about $107,000. Fortune covered the wider pattern of <a href="https://fortune.com/article/big-tech-million-dollar-communications-jobs-ai-anthropic-openai-netflix/" target="_blank">seven-figure packages for communications hires</a> at AI companies. None of those postings ask you to code.</p>
+<p>The title moving fastest is storyteller. The share of US LinkedIn postings using the word <a href="https://www.standardadv.com/2026/02/16/wsj-companies-are-desperately-seeking-storytellers/" target="_blank">doubled in the year to late November</a>, covering roughly 50,000 marketing listings and more than 20,000 under media and communications, and executives said "storyteller" or "storytelling" on earnings calls 469 times in 2025 against 359 across all of 2024.</p>
+<div class="tip">💡 The market logic is straightforward. Draft-quality writing went to roughly zero cost, so everyone has more of it and all of it sounds the same. What went up in value is the layer AI cannot fake for you: a real opinion, a specific detail from your own week, and a voice a reader recognises. That is trainable, and this guide is the training.</div>
+
+<hr class="rule">
+<span class="kicker">before you start</span>
+<h2>Pick three things you actually wrote <span class="gi" style="--gl:#9380A9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7L16 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 11L12 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 21.5V21C13 18.1716 13 16.7574 13.8787 15.8787C14.7574 15 16.1716 15 19 15H19.5M20 13.3431V10C20 6.22876 20 4.34315 18.8284 3.17157C17.6569 2 15.7712 2 12 2C8.22877 2 6.34315 2 5.17157 3.17157C4 4.34314 4 6.22876 4 10L4 14.5442C4 17.7892 4 19.4117 4.88607 20.5107C5.06508 20.7327 5.26731 20.9349 5.48933 21.1139C6.58831 22 8.21082 22 11.4558 22C12.1614 22 12.5141 22 12.8372 21.886C12.9044 21.8623 12.9702 21.835 13.0345 21.8043C13.3436 21.6564 13.593 21.407 14.0919 20.9081L18.8284 16.1716C19.4065 15.5935 19.6955 15.3045 19.8478 14.9369C20 14.5694 20 14.1606 20 13.3431Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The whole system is only as good as what you feed it, and three pieces is the minimum that lets Claude tell a habit apart from a one-off.</p>
+<ol class="steps">
+<li><strong class="st">📝 One piece you wrote carefully.</strong> A report, a long post, an essay, a cover letter you were proud of. This shows your structured voice, meaning how you build an argument and how formal you get when you are trying.</li>
+<li><strong class="st">💬 One piece you wrote fast.</strong> A long message to a colleague, a Slack explanation, a comment you left somewhere. Your real rhythm lives here, and this is the sample that stops the output reading like a template.</li>
+<li><strong class="st">🎯 One piece in the register you want more of.</strong> If the goal is better emails, feed it your best email. The profile leans towards whatever you give it most of, so choose on purpose.</li>
+<li><strong class="st">🚫 Nothing an AI touched.</strong> Feeding in something a model helped with teaches it to imitate the exact sound you are trying to escape. Three to five hundred words per sample is plenty.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">prompt one</span>
+<h2>Profile your natural voice <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This one is long on purpose. A vague request gets you a profile that says you write "clearly and engagingly", which describes every human on earth and is therefore useless as an instruction.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 build my voice profile</span>
+<pre><code>I am pasting three things I wrote myself, with no AI involved anywhere in them. Reverse-engineer how I write and turn it into a voice profile you can follow from now on.
+
+Do not compliment me, and do not describe my writing with adjectives like clear, engaging or conversational, because those describe nobody. Measure it instead. Give me my average sentence length and how much it swings, how I open and close a piece, how often I use contractions, questions and fragments, my punctuation habits including whether I use semicolons or dashes at all, my default level of formality, and the words and constructions I reach for repeatedly. Separately list the moves I never make, because the absences are as distinctive as the habits.
+
+Then write the profile as direct instructions to you, in the second person, 300 to 500 words, using rules I could actually check. "Keep sentences short" is not checkable. "Average 14 words, drop to 4 words when landing a point" is. Finish with three lines quoted from my samples that are the most characteristically me, one sentence each on why, and a short do-not list of moves that would immediately read as not me.
+
+Here are the samples:
+[paste sample 1]
+---
+[paste sample 2]
+---
+[paste sample 3]</code></pre>
+</div>
+<p>When it comes back, read it as a spec rather than a compliment. A profile is working when a stranger could follow it and produce something recognisably yours. These four things are what separate a usable profile from a horoscope.</p>
+<div class="cardgrid">
+<div class="minicard"><b>Sentence rhythm</b> Not the average, the swing. Human writing lurches from twenty-two words to four. Default AI writing settles into a steady seventeen-word hum, and that evenness is the loudest tell there is.</div>
+<div class="minicard"><b>Openings and closings</b> How you get in and out. Most people start mid-thought and stop when they are done. Models announce the topic, then summarise it back at you.</div>
+<div class="minicard"><b>Punctuation fingerprint</b> Whether you use semicolons, brackets, ellipses, dashes. I banned dashes from everything I write, and that single rule does a surprising amount of work.</div>
+<div class="minicard"><b>The absences</b> The words and structures you never use. A profile that only lists what you do lets everything else back in through the side door.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">prompt two</span>
+<h2>Save the profile so it loads every time <span class="gi" style="--gl:#AE8002" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7H16.75C18.8567 7 19.91 7 20.6667 7.50559C20.9943 7.72447 21.2755 8.00572 21.4944 8.33329C22 9.08996 22 10.1433 22 12.25C22 15.7612 22 17.5167 21.1573 18.7779C20.7926 19.3238 20.3238 19.7926 19.7779 20.1573C18.5167 21 16.7612 21 13.25 21H12C7.28595 21 4.92893 21 3.46447 19.5355C2 18.0711 2 15.714 2 11V7.94427C2 6.1278 2 5.21956 2.38032 4.53806C2.65142 4.05227 3.05227 3.65142 3.53806 3.38032C4.21956 3 5.1278 3 6.94427 3C8.10802 3 8.6899 3 9.19926 3.19101C10.3622 3.62712 10.8418 4.68358 11.3666 5.73313L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>A profile sitting in one chat is dead by Thursday. This prompt compresses it into something you can paste into a project, and into a skill file if you want it portable across every chat you have.</p>
+<div class="promptwrap">
+<span class="promptlabel">📁 make the profile reusable</span>
+<pre><code>Compress the voice profile we built into two reusable formats.
+
+Version one is a project instructions block, under 1,500 characters, that keeps every checkable rule and drops all the commentary and analysis. Lead with the three rules that matter most, because those are the ones you need to hold onto when a request gets long and complicated and you start drifting back to your default voice.
+
+Version two is a SKILL.md file for a skill called my-voice. Give it a lowercase hyphenated name, a description line that states exactly when it should trigger (for example, use whenever you draft or edit any prose for me), and then the same rules written as instructions. Keep the whole file under one page. At the end, tell me how to save it as a zipped folder so I can upload it.</code></pre>
+</div>
+<ol class="steps">
+<li><strong class="st">🗂️ Create a project.</strong> On claude.ai or in the Claude app, create a project and call it something you will recognise, like "My writing". Projects work on every plan, and free accounts can have up to five, per Anthropic's <a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">projects documentation</a>.</li>
+<li><strong class="st">🧭 Paste version one into the project instructions.</strong> That field is applied to every conversation inside the project, so your rules are loaded before you type a word.</li>
+<li><strong class="st">📎 Upload your three samples to project knowledge too.</strong> The instructions give Claude the rules, the samples let it hear the music. Both together is noticeably better than either alone.</li>
+<li><strong class="st">➕ Optional: install version two as a skill.</strong> In the Claude app, go to Customize, then Skills, then Add, then Upload a skill, and upload the zipped folder. A skill works across all your chats rather than one project. Anthropic's <a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills" target="_blank">create custom skills</a> article has the full walkthrough, and skills are available from Free through Enterprise.</li>
+<li><strong class="st">✍️ Then actually work inside it.</strong> This is the part people drop. If you draft in a random new chat out of muscle memory, you get default voice back and conclude the setup did not work.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">prompt three</span>
+<h2>Flag every line that reads like slop <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the prompt I use most, and it works on anything: your own draft, a teammate's, or something a model produced. It is an edit pass, not a rewrite, so you stay the author.</p>
+<div class="promptwrap">
+<span class="promptlabel">🔎 slop audit</span>
+<pre><code>Audit this draft against my voice profile and flag every line that reads like default AI writing. Here is the draft: [paste it].
+
+Give me a table with four columns: the line as written, which rule from my profile it breaks, how serious it is (high, medium or low), and a rewrite in my voice. Only flag genuine breaks. If you flag everything I will stop reading the table, so hold the bar high and leave lines alone when they are fine.
+
+Pay specific attention to runs of sentences that are all the same length, openings that announce what the piece is about instead of starting it, the "it is not X, it is Y" construction, tidy three-part lists I did not ask for, hedging that removes any actual position, and words nobody says out loud like delve, tapestry, landscape, testament, or leverage used as a verb.
+
+Finish with one honest verdict sentence and the single change that would do the most to make this sound like a person wrote it.</code></pre>
+</div>
+<div class="tip calm">🌱 If you want Claude working from a sourced list of tells rather than your instincts, point it at the Wikipedia page <a href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing" target="_blank">Signs of AI writing</a> once and ask it to fold the concrete patterns into your profile. Editors maintain that page for exactly this reason.</div>
+
+<hr class="rule">
+<span class="kicker">prompt four</span>
+<h2>Make it interview you before it drafts <span class="gi" style="--gl:#A678B3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.50003L8.91302 9.42465C11.4387 10.8585 12.5613 10.8585 15.087 9.42465L22 5.50003" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M11.5 19.9959C11.0337 19.9898 9.56682 20.0077 9.09883 19.9959C5.95033 19.9166 4.37608 19.877 3.24496 18.7394C2.11383 17.6018 2.08114 16.0661 2.01577 12.9947C1.99475 12.0071 1.99474 11.0254 2.01576 10.0378C2.08114 6.96642 2.11382 5.43072 3.24495 4.29312C4.37608 3.15551 5.95033 3.11588 9.09882 3.03663C11.0393 2.98779 12.9607 2.98779 14.9012 3.03664C18.0497 3.1159 19.6239 3.15553 20.755 4.29313C21.8862 5.43073 21.9189 6.96643 21.9842 10.0378C21.9983 10.6973 22.0029 10.3542 21.9982 11.012" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15.015 14.3866C16.0876 13.7469 17.0238 14.0047 17.5863 14.4153C17.8169 14.5837 17.9322 14.6679 18 14.6679C18.0678 14.6679 18.1831 14.5837 18.4137 14.4153C18.9762 14.0047 19.9124 13.7469 20.985 14.3866C22.3928 15.2261 22.7113 17.9958 19.4642 20.3324C18.8457 20.7775 18.5365 21 18 21C17.4635 21 17.1543 20.7775 16.5358 20.3324C13.2887 17.9958 13.6072 15.2261 15.015 14.3866Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the beat almost everyone skips, and it is the one that keeps the ideas yours. A model asked to write about a topic writes the average of everything it has read. A model that interviews you first has to build the piece out of your material, which is the only material nobody else has.</p>
+<div class="promptwrap">
+<span class="promptlabel">💌 interview me first</span>
+<pre><code>Before you draft anything, interview me. I am writing [what it is] for [who it is for], and what I want them to think or do afterwards is [the outcome].
+
+Ask me one question at a time and wait for my answer before asking the next. Go after the things only I have: the specific thing that happened, the number or detail from my own work, what I actually believe about this including the part that might be unpopular, and how I would explain it to a friend over coffee. If I answer in generalities, say so and ask the same thing in a narrower way, because the vague answer is exactly where the writing goes generic.
+
+Stop after about eight questions and show me the raw material you collected as a bullet list so I can correct it and add anything you missed. Only then write the draft, following my voice profile, and build it out of my answers rather than general knowledge about the topic. Mark any sentence where you filled a gap with something I did not tell you, so I can check it or cut it.</code></pre>
+</div>
+<div class="tip">💡 The eight-question limit matters. Left open-ended, this turns into an hour of questions and you never write anything. Eight is enough to get two or three details worth keeping, which is all a short piece needs.</div>
+
+<hr class="rule">
+<span class="kicker">the loop</span>
+<h2>How the four fit together each week <span class="gi" style="--gl:#179B71" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.9999 15.9988C16.4999 16.999 14.6842 18.9772 14 22M15 19.3372C12.6321 14.0106 17.4087 12.2141 21.0443 12.0143C21.4831 11.9902 21.7025 11.9782 21.86 12.1336C22.0176 12.289 22.0085 12.5106 21.9903 12.9536C21.8394 16.638 20.3286 21.707 15 19.3372Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 20H6.02099C3.73502 20 2.59203 20 2.15185 19.2655C1.71168 18.531 2.2625 17.5428 3.36416 15.5666L4.79185 13.0054C5.53109 11.6793 5.90071 11.0162 6.47924 11.0003C7.05776 10.9844 7.46426 11.6261 8.27725 12.9095L8.97855 14.0166" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 8.03384L8.99165 6.15531C10.4526 3.38777 11.1831 2.004 12.2929 2.00001C13.4027 1.99601 14.1419 3.37449 15.6204 6.13145L15.8647 6.58709C16.7821 8.29766 17.2407 9.15294 16.8728 9.68491C16.5048 10.2169 15.6024 10.0032 13.7975 9.5758L13.715 9.55628" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🎤 Start with the interview.</strong> Open your project, run prompt four, answer honestly, and let it draft from your answers. Two minutes of answering beats twenty minutes of re-prompting.</li>
+<li><strong class="st">🔎 Run the slop audit on the draft.</strong> Accept the high-severity rewrites, argue with the rest. Every argument you win is a rule that needs sharpening in the profile.</li>
+<li><strong class="st">🌱 Do the last mile yourself.</strong> Add the example only you have, cut the paragraph that restates the previous one, read it out loud, and fix anything you stumble over. Put one clear opinion in it, because hedging is what makes writing forgettable.</li>
+<li><strong class="st">🔁 Refresh the profile monthly.</strong> Paste in the two or three things you wrote most recently and ask what changed. Your voice moves, and a profile from last year quietly makes you sound like an older version of yourself.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">point it somewhere</span>
+<h2>Four places this turns into career proof <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A voice profile in a project is a nice tool. Pointed at the right surfaces, it becomes evidence you are the person who makes things sound human, which is the thing being paid for.</p>
+<div class="cardgrid">
+<div class="minicard"><b>Your team's voice doc</b> Run the profiling prompt on your company's five best-performing pieces instead of your own writing. You now own the document everyone else drafts against.</div>
+<div class="minicard"><b>One public post a week</b> Interview prompt, slop audit, publish. Fifty-two pieces a year in a recognisable voice is a portfolio, and it is visible to people who hire.</div>
+<div class="minicard"><b>The stuff nobody reads</b> Release notes, internal updates, onboarding docs. These are usually the worst-written things in a company, so the improvement is obvious and easy to point at.</div>
+<div class="minicard"><b>Your own profiles</b> Your LinkedIn about section, your bio, your résumé summary. Run the slop audit over them and cut every line that could belong to anyone else.</div>
+</div>
+<div class="tip warn">⚠️ One honest limit. None of this reliably beats an AI detector, because nothing does, and chasing detectors is the wrong game. What it does is make your drafts sound like you again. If you are a student, the honest use is drafting and editing work that is genuinely yours.</div>
+
+<hr class="rule">
+<span class="kicker">sources</span>
+<h2>Where the numbers come from <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li><strong>Netflix at $775,000, OpenAI around $400,000, average comms director about $107,000</strong>: <a href="https://www.entrepreneur.com/business-news/netflix-anthropic-openai-paying-775000-no-coding-experience" target="_blank">Entrepreneur</a></li>
+<li><strong>Seven-figure communications packages at AI companies</strong>: <a href="https://fortune.com/article/big-tech-million-dollar-communications-jobs-ai-anthropic-openai-netflix/" target="_blank">Fortune</a></li>
+<li><strong>Storyteller postings doubling, and the earnings-call counts</strong>: <a href="https://www.standardadv.com/2026/02/16/wsj-companies-are-desperately-seeking-storytellers/" target="_blank">summary of the Wall Street Journal report</a></li>
+<li><strong>Claude projects and plan availability</strong>: <a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">Anthropic support</a></li>
+<li><strong>Creating and uploading custom skills</strong>: <a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills" target="_blank">Anthropic support</a></li>
+<li><strong>The sourced list of AI writing tells</strong>: <a href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing" target="_blank">Wikipedia, Signs of AI writing</a></li>
+</ul>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 GitHub repos to build a strong AI portfolio · Cindy Zhu</title><meta name="description" content="GitHub repos to build a strong AI portfolio, plus how to turn one into an original project you can show."><link rel="canonical" href="https://cindyzhu.com.au/guides/picture-ai-portfolio-repos">
+<meta property="og:title" content="5 GitHub repos to build a strong AI portfolio"><meta property="og:description" content="GitHub repos to build a strong AI portfolio, plus how to turn one into an original project you can show."><meta property="og:url" content="https://cindyzhu.com.au/guides/picture-ai-portfolio-repos"><meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles.css"><!-- seo:auto -->
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="5 GitHub repos to build a strong AI portfolio">
+<meta name="twitter:description" content="GitHub repos to build a strong AI portfolio, plus how to turn one into an original project you can show.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body><!-- GUIDES_CARD {t:"5 GitHub repos to build a strong AI portfolio", u:"guides/picture-ai-portfolio-repos.html", topic:"career", tool:"stack"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap"><main class="guidewrap"><a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a><div class="guidehead"><div class="gtags"><span class="gtag topic">Career</span><span class="gtag tool">Resource collection</span></div><h1>5 GitHub repos to build a strong AI portfolio</h1></div><div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 GitHub repos to build a strong AI portfolio, plus how to turn one into an original project you can show.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>A portfolio gets more interesting when someone can see what you changed and why. These repositories give you useful starting structures. Your part is choosing a real problem, testing the result and making it easy for another person to understand your work.</p>
+<hr class="rule"/><span class="kicker">part 01</span><h2>Choose the result before choosing the repository</h2>
+<p>Write one sentence: “This helps [person] do [task] using [input], and returns [output].” Our worked example is a public-information assistant that answers workshop questions from a small set of published documents and shows the supporting source.</p>
+<p>Decide what you can build with the time and skills you have. If Python is new, a small interactive data app is a more manageable starting point than a production deployment pipeline. If you already build models, choose a project that shows evaluation or operations rather than another introductory notebook.</p>
+<p>The learning materials and repositories below are public, but model APIs, hosting and cloud infrastructure can cost money. Begin locally. Read the licence before adapting or publishing code, retain required attribution and explain which parts came from the starting repository.</p>
+<hr class="rule"/><span class="kicker">part 02</span><h2>1. LLM Zoomcamp: show how you evaluate an information assistant</h2>
+<p><a href="https://github.com/DataTalksClub/llm-zoomcamp" rel="noopener noreferrer" target="_blank">DataTalks.Club's LLM Zoomcamp</a> covers the pieces behind an assistant that answers from a knowledge base, including retrieval and evaluation. Follow the setup and the first relevant lesson before changing the dataset.</p>
+<p>For your own version, collect a small set of public documents you have permission to use. Write ten realistic questions and identify the source paragraph for each answer before testing the assistant. Include questions the documents cannot answer.</p>
+<p>Your portfolio can then show a useful distinction: did the search find the right information, and did the final answer use it correctly? A failure in retrieval is different from an answer that ignores a good source. Describe one failure you fixed and one limitation that remains. You need Python familiarity and whatever model access your chosen lesson requires; public lessons do not cover a separate API bill.</p>
+<hr class="rule"/><span class="kicker">part 03</span><h2>2. Made With ML: turn a notebook into organised model code</h2>
+<p><a href="https://github.com/GokuMohandas/Made-With-ML" rel="noopener noreferrer" target="_blank">Made With ML</a> is useful when you want to learn how training, evaluation, prediction and serving fit together. Read its environment and setup instructions rather than installing a random collection of packages from an old tutorial.</p>
+<p>A portfolio adaptation could classify support requests into a few categories using a permitted, labelled dataset. Establish a simple baseline first. Keep a held-out test set separate from the data used to improve the model, and show examples where the system confuses two categories.</p>
+<p>The result should include the dataset description, how you split it, the baseline and the command that reproduces your evaluation. That is more informative than a single accuracy number with no context. Choose this path when you can already read Python and want a more maintainable project structure.</p>
+<hr class="rule"/><span class="kicker">part 04</span><h2>3. MLOps Zoomcamp: show what happens after a model works</h2>
+<p><a href="https://github.com/DataTalksClub/mlops-zoomcamp" rel="noopener noreferrer" target="_blank">MLOps Zoomcamp</a> includes experiment tracking, orchestration, deployment and monitoring. There's no live cohort planned for 2026, but the full course is available self-paced. Do not assume a self-paced certificate is included.</p>
+<p>Bring a small model with a clear input and output. Record the data version and settings for each experiment, then document how you would detect a change in input data or prediction quality. For example, a support classifier may receive an increasing number of requests unlike its training examples.</p>
+<p>This route expects programming and tooling familiarity, including command-line work and Docker in relevant modules. Cloud services can have their own charges. Build the smallest local version first and include instructions for shutting down any cloud resources you create. Your original contribution is the operating decision: what gets monitored and what happens when it changes.</p>
+<hr class="rule"/><span class="kicker">part 05</span><h2>4. Full Stack FastAPI Template: make the project usable</h2>
+<p>The <a href="https://github.com/fastapi/full-stack-fastapi-template" rel="noopener noreferrer" target="_blank">Full Stack FastAPI Template</a> provides an application starting point with a Python backend, React interface, database support and tests. It is a template, not an AI model or a completed portfolio project.</p>
+<p>Use it when your idea needs users to interact with records or a more complete application interface. For example, a support triage app could accept a request, suggest a category and let a person correct it. That correction should be stored explicitly rather than silently treated as a perfect prediction.</p>
+<p>Follow the repository's setup guide in a new copy. Get its original app running before adding the AI feature. Document what the template supplied and what you built. Review configuration and deployment requirements before exposing it publicly; using a template does not automatically make your application production-ready.</p>
+<hr class="rule"/><span class="kicker">part 06</span><h2>5. Streamlit: build a demo people can explore</h2>
+<p><a href="https://github.com/streamlit/streamlit" rel="noopener noreferrer" target="_blank">Streamlit</a> is a Python library for interactive apps. It is useful for a dataset explorer, model comparison or a small demonstration around an existing analysis. Follow the <a href="https://docs.streamlit.io/get-started/installation" rel="noopener noreferrer" target="_blank">installation guide</a> to create an isolated environment and install it.</p>
+<p>For the workshop assistant, a small interface could accept a question and display both the answer and supporting excerpts. For a classifier, use sample inputs and a threshold control so visitors can see how behaviour changes. Make the limitations visible beside the result.</p>
+<p>Once your environment is ready, a local app normally runs with <code>streamlit run app.py</code>. The file must exist and its dependencies must be installed. Get a tiny page rendering before connecting an API. Local software use and hosted model calls are separate cost decisions.</p>
+<hr class="rule"/><span class="kicker">part 07</span><h2>Build one project in five passes</h2>
+<ol class="steps">
+<li>Define the user, input, output and one thing the project will not do. Write your test cases before polishing the interface.</li>
+<li>Run the upstream example unchanged. Record the repository version or commit and its setup instructions.</li>
+<li>Replace the example data or problem with your own permitted material. Keep the first adaptation small enough to debug.</li>
+<li>Test normal inputs, ambiguous inputs and missing information. Save actual results and explain failures without inventing benchmark numbers.</li>
+<li>Package a runnable demo, a clear README and a short walkthrough. Another person should be able to understand the point without reading every file.</li>
+</ol>
+<hr class="rule"/><span class="kicker">part 08</span><h2>Use this prompt to turn the repository into your project</h2>
+<div class="promptwrap"><span class="promptlabel">copy this prompt</span><pre><code class="language-prompt">I want to build a portfolio project using this repository: [URL]. My experience is [experience], my available time is [time], and the problem I want to solve is [problem]. Read the current README and setup instructions before recommending a plan.
+
+Propose the smallest original adaptation with a clear user, input, output and success check. Separate the upstream code from the work I need to add. Identify dependencies, data permissions, model access and possible hosting or API costs, then guide me through running the original example before changing it.
+
+Create an implementation plan and a test set covering normal cases, missing information and failure cases. When there is running code, inspect the actual results and help me fix one meaningful weakness. Finish with a README covering setup, architecture, evaluation, limitations and attribution, plus a two-minute demo outline. Do not claim anything ran or passed unless it actually did, and do not invent hiring outcomes or performance numbers.
+</code></pre></div>
+<hr class="rule"/><span class="kicker">part 09</span><h2>What a strong README should answer</h2>
+<p>Explain who the project is for, what goes in and what comes out. Show the quickest local setup, required environment variables by name without secret values, and one reproducible example. Include the tests you ran, the result and the limitation a reviewer should know first.</p>
+<p>If installation fails, check the repository's documented runtime version and lockfile before changing unrelated packages. If the output looks good but evidence is weak, improve the evaluation before adding another feature. If the demo needs a paid API, provide recorded example outputs clearly labelled as examples, while keeping the live path optional.</p>
+<p>Your finish line is one project you can explain, run and critique. A repository cannot guarantee a job; your decisions and evidence give someone useful material to assess. Start by writing the one-sentence project promise, then find more walkthroughs in <a href="https://cindyzhu.com.au/guides" rel="noopener noreferrer" target="_blank">all free guides</a>.</p>
+<div class="gcallout">Keep building from here. Find more practical walkthroughs in <a href='/guides'>my free guide library</a>.</div>
+</div></main></div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer><script src="../guide-kit.js" defer></script><script src="/site.js" defer></script>
+</body></html>

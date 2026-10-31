@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is AI observability (and how to trace your own app) · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="A beginner breakdown of AI observability: how to see what your AI agent is actually doing, and why the trace is the key.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/what-is-ai-observability">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="What is AI observability (and how to trace your own app)">
+<meta property="og:description" content="A beginner breakdown of AI observability: how to see what your AI agent is actually doing, and why the trace is the key.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/what-is-ai-observability">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is AI observability (and how to trace your own app)">
+<meta name="twitter:description" content="A beginner breakdown of AI observability: how to see what your AI agent is actually doing, and why the trace is the key.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"What is AI observability (and how to trace your own app)", u:"guides/what-is-ai-observability.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building with AI</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>What is AI observability (and how to trace your own app)</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 A beginner breakdown of AI observability: how to see what your AI agent is actually doing, and why the trace is the key.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn"><strong>One thing to get straight first.</strong> A green dashboard does not mean your AI is right. Even the top models hallucinate at a rate that is never quite zero and changes with the task, which you can watch move on the <a href="https://github.com/vectara/hallucination-leaderboard/" target="_blank">Vectara hallucination leaderboard</a>. So "it looked fine when I tested it" is not a safety net. Tracing is.</div>
+
+<span class="kicker">start here</span>
+<h2>Monitoring watches the machine, observability watches the decision <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Normal software fails loudly. The page crashes, the API slows down, the database throws an error, and your monitoring lights up red. That is monitoring: it watches the machine.</p>
+<p>AI fails quietly. The app is up, the response is fast, and the answer is just wrong. Nothing "breaks", so nothing turns red. Observability is different from monitoring because it watches the decision, not the machine: what the model was asked, what information it pulled in, what it actually replied, and whether that reply was any good.</p>
+
+<hr class="rule">
+<span class="kicker">the one word</span>
+<h2>The trace: the full journey of one answer <span class="gi" style="--gl:#179B71" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.9999 15.9988C16.4999 16.999 14.6842 18.9772 14 22M15 19.3372C12.6321 14.0106 17.4087 12.2141 21.0443 12.0143C21.4831 11.9902 21.7025 11.9782 21.86 12.1336C22.0176 12.289 22.0085 12.5106 21.9903 12.9536C21.8394 16.638 20.3286 21.707 15 19.3372Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 20H6.02099C3.73502 20 2.59203 20 2.15185 19.2655C1.71168 18.531 2.2625 17.5428 3.36416 15.5666L4.79185 13.0054C5.53109 11.6793 5.90071 11.0162 6.47924 11.0003C7.05776 10.9844 7.46426 11.6261 8.27725 12.9095L8.97855 14.0166" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 8.03384L8.99165 6.15531C10.4526 3.38777 11.1831 2.004 12.2929 2.00001C13.4027 1.99601 14.1419 3.37449 15.6204 6.13145L15.8647 6.58709C16.7821 8.29766 17.2407 9.15294 16.8728 9.68491C16.5048 10.2169 15.6024 10.0032 13.7975 9.5758L13.715 9.55628" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A trace is the step-by-step record of a single AI request, from the question to the final answer. When something goes wrong, you open that one trace and see exactly where it went sideways. Here is what a good trace captures.</p>
+<ol class="steps">
+<li><strong class="st">💬 The input.</strong> The exact question the user asked, plus any system prompt or settings in play at the time.</li>
+<li><strong class="st">📚 The context it retrieved.</strong> For a RAG or search app, the documents or data the model pulled in to answer. Most wrong answers start here, with the model retrieving the wrong thing.</li>
+<li><strong class="st">🧠 The model call.</strong> The prompt actually sent, the model used, and the tokens, cost, and latency of that call.</li>
+<li><strong class="st">📤 The output.</strong> The final answer the user saw, so you can compare it against what was retrieved.</li>
+<li><strong class="st">✅ A score.</strong> An automatic check on whether the answer was faithful to the context, so you can filter for the bad ones without reading every single trace.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">do it yourself</span>
+<h2>How to trace your own AI app, free <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>You do not need a paid platform to start. Pick one free tool, wrap your model calls, and you will see your first trace in an afternoon. Have Claude do the wiring with you:</p>
+<div class="promptwrap">
+<span class="promptlabel">🛠️ add tracing to your app</span>
+<pre><code>I have a small AI app (a chatbot or RAG app) and I want to add tracing so I can see what happens inside each answer. Walk me through adding Langfuse to it step by step: whether to use the free cloud tier or self-host, where to get my API keys, and the exact code to wrap my model calls so every request logs the user's question, the context I retrieved, the model's answer, plus latency and token cost.
+
+Then show me how to open one trace and actually read it. Assume I am not an experienced engineer, so explain each step, name the files I am editing, and do not skip the setup.</code></pre>
+</div>
+<p>Then add a cheap automatic check so the bad answers surface themselves:</p>
+<div class="promptwrap">
+<span class="promptlabel">✅ add a faithfulness score</span>
+<pre><code>Now help me add a simple faithfulness check to my traces. For each answer my AI gives, I want a second, cheap model call that reads the context I retrieved and the final answer, then scores from 0 to 1 whether the answer is actually supported by that context, with a one-line reason.
+
+Show me exactly where to attach that score to the Langfuse trace so I can filter for low-scoring answers in the dashboard. That filtered list is my pile of silent failures, so explain how to read it and what to fix first.</code></pre>
+</div>
+
+<span class="kicker">the free tools</span>
+<h2>4 free observability tools worth knowing <span class="gi" style="--gl:#DB5C78" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15V14H21V15C21 17.8284 21 19.2426 20.1213 20.1213C19.2426 21 17.8284 21 15 21H9C6.17157 21 4.75736 21 3.87868 20.1213C3 19.2426 3 17.8284 3 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 14L3.00001 12.9999C3.00003 11.5278 3.00004 10.7918 3.31675 10.1584C3.63347 9.52493 4.22231 9.08329 5.39999 8.20002C6.19297 7.60528 6.58946 7.30791 7.05132 7.15395C7.51317 7 8.00879 7 9.00002 7H15C15.9912 7 16.4868 7 16.9487 7.15395C17.4105 7.3079 17.807 7.60527 18.6 8.2C19.7777 9.08328 20.3666 9.52492 20.6833 10.1584C21 10.7918 21 11.5279 21 13V14H3Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 12V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 12V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.49997 7.00006V6.50006C8.49997 5.0956 8.49997 4.39337 8.83703 3.88892C8.98295 3.67054 9.17045 3.48304 9.38883 3.33712C9.89328 3.00006 10.5955 3.00006 12 3.00006C13.4044 3.00006 14.1067 3.00006 14.6111 3.33712C14.8295 3.48304 15.017 3.67054 15.1629 3.88892C15.5 4.39337 15.5 5.0956 15.5 6.50006V7.00006" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Langfuse</b> Open source, with a free cloud tier and a one-command self-host. Great default: tracing, evals, and cost tracking in one place.</div>
+<div class="minicard"><b>Arize Phoenix</b> Open source and fully free. Strong on visualising traces and running evals locally, no account needed to start.</div>
+<div class="minicard"><b>LangSmith</b> By the LangChain team, free developer tier. Easiest if your app is already built on LangChain.</div>
+<div class="minicard"><b>Helicone</b> Free tier, and the lightest lift: it sits in front of your model as a proxy, so you get logging by changing one line.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">what to watch</span>
+<h2>The 4 signals that catch silent failures <span class="gi" style="--gl:#DD5D6A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Faithfulness</b> Is the answer actually backed by what the model retrieved, or did it invent a policy that does not exist? This is the big one.</div>
+<div class="minicard"><b>Retrieval quality</b> Did it pull the right documents in the first place? A confident answer built on the wrong source is still wrong.</div>
+<div class="minicard"><b>Latency and cost</b> Slow, expensive answers quietly bleed money and users. Traces show you which step is the culprit.</div>
+<div class="minicard"><b>User feedback</b> A thumbs-down or a "that's not right" reply, tied back to its trace, so you can open the exact answer that annoyed someone.</div>
+</div>
+
+<div class="tip calm">You do not need to be an engineer to start. Add one tool, log your traces, and set up one faithfulness check. That single view of "answers my model got wrong" is worth more than any dashboard full of green.</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude does way more than writing: 4 starter prompts · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Claude does way more than writing: 4 starter prompts. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-beyond-writing-4-starter-prompts">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Claude does way more than writing: 4 starter prompts">
+<meta property="og:description" content="Claude does way more than writing: 4 starter prompts. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-beyond-writing-4-starter-prompts">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude does way more than writing: 4 starter prompts">
+<meta name="twitter:description" content="Claude does way more than writing: 4 starter prompts. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Claude does way more than writing: 4 starter prompts", u:"guides/claude-beyond-writing-4-starter-prompts.html", topic:"power", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Power moves</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Claude does way more than writing: 4 starter prompts</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented EDGE, so here are the four jobs I would hand Claude: analysing a spreadsheet, mapping a hard decision, building a clickable mockup, and automating something repetitive.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>Worth knowing why this matters right now: AI literacy came in at number one on LinkedIn's Skills on the Rise 2025 list of the fastest-growing skills in the US, described as the ability to understand and use AI tools for business purposes (<a href="https://www.linkedin.com/pulse/linkedin-skills-rise-2025-15-fastest-growing-us-linkedin-news-hy0le" target="_blank">LinkedIn News</a>). Being able to draft an email with AI is not that skill. Handing it real work is.</p>
+
+<div class="tip calm">🌱 <strong>Plan honesty before you start.</strong> Everything in jobs 1, 2 and 3 runs on the free Claude plan on the web, desktop and mobile: file uploads, code execution and artifacts are all included, with a 30MB limit per file (<a href="https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude" target="_blank">Anthropic's file docs</a>). Job 4 has a free path too. Only the Claude Code version of job 4 needs a paid plan, and it is optional.</div>
+
+<hr class="rule">
+<span class="kicker">job one</span>
+<h2>1. Turn a spreadsheet into an actual analysis <span class="gi" style="--gl:#9281A4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L7 13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 17L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17 17L17 11" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the one people are most surprised by. When you upload a CSV or an Excel file and ask a numbers question, Claude does not eyeball the rows and guess. It writes and runs code on your file inside the conversation, then reports what the code found, which is why it can handle a file far too long to read (<a href="https://www.anthropic.com/news/analysis-tool" target="_blank">Anthropic's analysis tool announcement</a>).</p>
+<ol class="steps">
+<li><strong class="st">📁 Export the raw file.</strong> Not a screenshot, not a pasted table. Download the CSV or XLSX from wherever the data lives so the column headers and every row come with it.</li>
+<li><strong class="st">🧹 Fix the header row.</strong> One row of clear column names at the top, no merged cells above it, no blank rows. Ninety percent of confusing answers come from a messy header, not from the model.</li>
+<li><strong class="st">📎 Attach it and ask.</strong> Use the paperclip in a new chat, upload the file, then paste the prompt below. Uploads work on every plan, up to 30MB per file (<a href="https://support.claude.com/en/articles/8241126-upload-files-to-claude" target="_blank">upload files to Claude</a>).</li>
+<li><strong class="st">🔍 Check its working.</strong> Pick one number from its answer and verify it in the spreadsheet yourself. Do this the first three times and you will know exactly how far to trust it after that.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">📊 the data analysis prompt</span>
+<pre><code>Here is my [describe the data, for example "last 12 months of sales by product and region"]. Before you analyse anything, read the file and tell me what columns you actually have, how many rows, what date range it covers, and anything obviously broken like blanks, duplicates or values in the wrong format.
+
+Then run the analysis: the top three trends over the period, the biggest outliers and what makes them outliers, and any relationship between columns that I probably have not noticed. Show me the numbers behind each claim, not a summary of them.
+
+Finish with the three things you would look at next if this were your business, ranked by how much money or time is attached to each. If a pattern is based on too few rows to be meaningful, say so plainly instead of presenting it as a finding.</code></pre>
+</div>
+<div class="tip">💡 A good answer names its numbers and its date range. If it says "sales are trending up" without a figure, a period and a comparison, ask "show me the exact numbers and the rows you used" and watch how fast the answer sharpens.</div>
+
+<hr class="rule">
+<span class="kicker">job two</span>
+<h2>2. Map a decision instead of asking for advice <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Asking "what should I do" gets you an opinion shaped by however you framed the question. The move is asking for the structure underneath the decision: what each option costs, what has to be true for it to work, and what would tell you early that it is not working. You keep the call, and you make it with the tradeoffs written down.</p>
+<ol class="steps">
+<li><strong class="st">🗒️ Brain-dump the mess.</strong> Paste everything: the constraints, the numbers, the politics, the deadline, the thing you are embarrassed about. Context is the whole input here, and a tidy summary throws away the parts that actually decide it.</li>
+<li><strong class="st">🎯 Name the real decision.</strong> One sentence, in the form "I need to decide whether to X or Y by [date]". Vague inputs produce advice-column answers.</li>
+<li><strong class="st">🧾 Ask for structure, not a verdict.</strong> Use the prompt below. It forces risks, assumptions and reversal costs into the open.</li>
+<li><strong class="st">🔁 Then argue with it.</strong> Reply with "argue the opposite case as strongly as you can" and see which of your reasons survive. That second pass is where most of the value is.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">🧠 the decision map prompt</span>
+<pre><code>I have a decision to make and I want the structure of it, not your recommendation yet. Here is the full context, including the messy parts: [paste everything].
+
+Lay it out for me as a table of the realistic options, and for each one give me: the cost in money and in time, what has to be true for it to work, the main risk, how reversible it is if I am wrong, and roughly when I would know either way.
+
+Then tell me the single assumption the whole decision rests on, and the cheapest test I could run this week to check that assumption before committing. Separate what you know from my context from what you are inferring, and if there is an option I have not considered, add it to the table and say why it belongs there.</code></pre>
+</div>
+<div class="tip calm">🌱 The version of this that changed how I work: after it answers, say "now tell me what you would need to know that I have not told you". The gaps it names are usually the questions I was avoiding.</div>
+
+<hr class="rule">
+<span class="kicker">job three</span>
+<h2>3. Build a clickable mockup, not a picture of one <span class="gi" style="--gl:#BF7362" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C12.8417 22 14 22.1163 14 21C14 20.391 13.6832 19.9212 13.3686 19.4544C12.9082 18.7715 12.4523 18.0953 13 17C13.6667 15.6667 14.7778 15.6667 16.4815 15.6667C17.3334 15.6667 18.3334 15.6667 19.5 15.5C21.601 15.1999 22 13.9084 22 12Z" stroke="currentColor" stroke-width="1.5"/><circle cx="9.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M7.125 15H7M7.25 15C7.25 15.1381 7.13807 15.25 7 15.25C6.86193 15.25 6.75 15.1381 6.75 15C6.75 14.8619 6.86193 14.75 7 14.75C7.13807 14.75 7.25 14.8619 7.25 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the part that gets confused with image generation. Claude can build the real thing: a working page or small app that renders in a panel beside the chat, where you can click buttons, type in fields and see what actually happens. Those are artifacts, and you can publish one as a link that anyone can open without a Claude account (<a href="https://support.claude.com/en/articles/11649427-use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-code" target="_blank">Anthropic's artifacts guide</a>).</p>
+<ol class="steps">
+<li><strong class="st">🎯 Decide what you want to test.</strong> A landing page, an internal dashboard, a pricing calculator, an onboarding flow. Name the one thing a viewer should be able to do with it.</li>
+<li><strong class="st">🎨 Bring your brand.</strong> Paste your hex codes and font names in the first message. Two minutes here is the difference between a generic template and something that looks like yours.</li>
+<li><strong class="st">🖱️ Prompt, then click everything.</strong> The artifact opens beside the chat. Actually use it, find the dead ends, and say "the pricing toggle does nothing, make it switch the numbers" in plain English.</li>
+<li><strong class="st">🔗 Publish and send it.</strong> Use the publish button in the artifact panel to get a link you can put in front of a client or a teammate (<a href="https://support.claude.com/en/articles/9547008-publish-and-share-artifacts" target="_blank">publish and share artifacts</a>). Feedback on a thing people can click beats feedback on a description every time.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">🎨 the clickable mockup prompt</span>
+<pre><code>Build me a working, clickable artifact for [describe the page or tool, for example "a landing page for a 4-week course for beginners"]. I want something I can actually interact with in the preview, not a static image or a description.
+
+The audience is [who], the one action I want them to take is [the action], and the sections I need are [list them]. Use my brand: [hex codes] for colours, [font] for headings and [font] for body, and keep it clean rather than busy. Make it responsive so it holds up on a phone.
+
+Every interactive element has to genuinely work: buttons change state, forms validate and show a confirmation, toggles switch what is displayed. When it is built, list the assumptions you made that I should confirm, and give me three specific things about it you would test with a real user before I commit to this direction.</code></pre>
+</div>
+<div class="tip">💡 Iterate on one thing at a time. "Make the hero section shorter and move the pricing above the testimonials" lands cleanly. "Make it better" gets you a different design you now have to re-review from scratch.</div>
+
+<hr class="rule">
+<span class="kicker">job four</span>
+<h2>4. Automate the boring repeat job <span class="gi" style="--gl:#448BDC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.3884 3L17.3913 3.97574C17.8393 4.41165 18.0633 4.62961 17.9844 4.81481C17.9056 5 17.5888 5 16.9552 5H9.19422C5.22096 5 2 8.13401 2 12C2 13.4872 2.47668 14.8662 3.2895 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7.61156 21L6.60875 20.0243C6.16074 19.5883 5.93673 19.3704 6.01557 19.1852C6.09441 19 6.4112 19 7.04478 19H14.8058C18.779 19 22 15.866 22 12C22 10.5128 21.5233 9.13383 20.7105 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Anything you do the same way every week is a candidate: renaming and sorting files, merging four exports into one report, pulling the same numbers into the same template. You describe the task in plain English and Claude writes the thing that does it. You do not need to read the code, but you do need to test it on copies first.</p>
+<ol class="steps">
+<li><strong class="st">📝 Describe the task like a handover note.</strong> What the input looks like, what the output should look like, and every rule and exception. Write it as if a new starter has to do it without asking you a question.</li>
+<li><strong class="st">🧪 Give it a real sample.</strong> Upload two or three example files so it can see your actual formats instead of designing for an imaginary one.</li>
+<li><strong class="st">📁 Test on copies, always.</strong> Duplicate the folder or file first and run it there. This is the rule that keeps an automation experiment from becoming an incident.</li>
+<li><strong class="st">♻️ Turn the keeper into a skill.</strong> Once it works twice, ask Claude to package the process into a reusable skill. Install it in the app under <strong>Customize</strong>, then <strong>Skills</strong>, then <strong>Add</strong>, then <strong>Upload a skill</strong>. Skills are available on every plan, Free included (<a href="https://support.claude.com/en/articles/12512198-creating-custom-skills" target="_blank">creating custom skills</a>).</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">🔁 the automation prompt</span>
+<pre><code>I do this task manually every [week / month] and I want to stop: [describe the task exactly as you would hand it to a new starter, including every rule and exception].
+
+The input looks like this: [describe or attach a sample]. The output I need looks like this: [describe or attach an example of the finished thing]. Before you build anything, ask me the questions you need answered to get the edge cases right, and tell me what you would do with a file that does not match the expected format.
+
+Then build it and hand it back in a form I can actually run without being technical. Tell me in plain English exactly what to click or type, step by step, from a completely fresh start. Include a way to test it on copies of my files first, and tell me what a successful run should look like so I know it worked.</code></pre>
+</div>
+<div class="tip warn">💡 <strong>Never point a first run at your only copy.</strong> Duplicate the folder, run it on the duplicate, compare the result with what you would have done by hand, and only then use it for real. Same rule applies to anything that sends, deletes or overwrites.</div>
+
+<hr class="rule">
+<span class="kicker">the actual skill</span>
+<h2>What separates the two groups <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The people getting real leverage out of Claude are not writing cleverer prompts. They are being more specific: naming the file, the date range, the constraint, the audience, the format they want back. Every prompt above is long for exactly that reason. Vague in, generic out, every time.</p>
+<div class="cardgrid">
+<div class="minicard"><b>📎 Give it the source</b> The actual file, the real numbers, the messy context. It cannot analyse what it cannot see, and a summary throws away the deciding detail.</div>
+<div class="minicard"><b>🎯 Name the output</b> Say what shape you want back: a table, a 400-word summary, a clickable page, a step-by-step you can follow. Unstated format is a guess.</div>
+<div class="minicard"><b>🔍 Ask it to show working</b> Numbers with their source, assumptions labelled as assumptions. This is how you catch a confident wrong answer in ten seconds instead of next quarter.</div>
+<div class="minicard"><b>♻️ Save the ones that work</b> Anything you run twice belongs in a project or a skill. The compounding comes from not rebuilding the same prompt every month.</div>
+</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://www.linkedin.com/pulse/linkedin-skills-rise-2025-15-fastest-growing-us-linkedin-news-hy0le" target="_blank">LinkedIn Skills on the Rise 2025, AI literacy at number one</a><br>
+  <a href="https://www.anthropic.com/news/analysis-tool" target="_blank">Anthropic, introducing the analysis tool</a><br>
+  <a href="https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude" target="_blank">Create and edit files with Claude</a><br>
+  <a href="https://support.claude.com/en/articles/8241126-upload-files-to-claude" target="_blank">Upload files to Claude</a><br>
+  <a href="https://support.claude.com/en/articles/11649427-use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-code" target="_blank">Use artifacts to visualise and create AI apps</a><br>
+  <a href="https://support.claude.com/en/articles/12512198-creating-custom-skills" target="_blank">Creating custom skills</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

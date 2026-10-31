@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build your first Claude skill · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Here is how to turn something you already redo every week into your first Claude skill, start to finish, with the exact prompts.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/build-your-first-claude-skill">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build your first Claude skill">
+<meta property="og:description" content="Here is how to turn something you already redo every week into your first Claude skill, start to finish, with the exact prompts.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/build-your-first-claude-skill">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build your first Claude skill">
+<meta name="twitter:description" content="Here is how to turn something you already redo every week into your first Claude skill, start to finish, with the exact prompts.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build your first Claude skill", u:"guides/build-your-first-claude-skill.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building things</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Build your first Claude skill</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Here is how to turn something you already redo every week into your first Claude skill, start to finish, with the exact prompts.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip calm">🌱 <strong>The plan gate, up front.</strong> Skills are available on Free, Pro, Max, Team and Enterprise plans (<a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills" target="_blank">Anthropic's guide to creating custom skills</a>). There is nothing to install, no code to write, and no toggle to find. The whole thing lives in the Claude app under Customize.</div>
+
+<span class="kicker">what you're building</span>
+<h2>A skill is a workflow you only explain once <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A prompt is a one-off instruction. A skill is a folder Claude keeps, containing a file called <code>SKILL.md</code>: your instructions written in plain English, plus a short description telling Claude when to reach for them. When something you ask matches that description, Claude opens the file and follows your process. When it does not match, the file stays closed and costs you nothing, which is why you can have a dozen skills sitting there without slowing anything down. Anthropic calls that progressive disclosure, and the mechanics are documented in the <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" target="_blank">Agent Skills overview</a>.</p>
+<p>The shift is subtle and it is the whole point. Without a skill, every good result you get is a one-time result, and next Tuesday you are re-explaining your format, your tone and your rules from scratch. With a skill, the fifth time is as good as the best time, because the best time got written down.</p>
+<div class="cardgrid">
+<div class="minicard"><b>🔁 Good skill candidate</b> Something you do on a repeating rhythm, with a format you would recognise if it came out wrong: your weekly post, your client update, your outreach email, your meeting notes.</div>
+<div class="minicard"><b>🚫 Bad skill candidate</b> A one-off task, or something where you cannot describe what "done properly" looks like. If you cannot write the rules down, Claude cannot follow them.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the build</span>
+<h2>Five steps, about half an hour <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">✍️ Pick the thing you redo weekly.</strong> Not the most impressive task, the most repeated one. In the reel it was a property listing post. For you it might be the Monday carousel, the Friday client recap, the caption you rewrite for every product drop, or turning your messy notes into a proper meeting summary. Write the name of it down before you open Claude.</li>
+<li><strong class="st">🧪 Do it with Claude once, manually, and get it genuinely right.</strong> This is the step people skip and it is the one that matters. Start a normal chat, walk Claude through the task, and correct it until the output is something you would actually publish. Every correction you make here becomes a rule in the skill, so the messy back and forth is not wasted time, it is the raw material.</li>
+<li><strong class="st">📝 Have Claude write the SKILL.md from what just happened.</strong> Paste the capture prompt below into that same chat. Claude turns your conversation, including the corrections, into a proper skill file with a name, a description, your step by step process, and your rules.</li>
+<li><strong class="st">📦 Save it as a folder, then zip it.</strong> Make a folder named after your skill in lowercase with hyphens, for example <code>weekly-post</code>. Inside it, save Claude's output as a file called <code>SKILL.md</code>. Add any supporting files you want it to use, like a template document or a voice guide. Then compress that folder into a zip. One trap worth knowing: the skill folder has to be the root of the zip, not sitting inside another folder.</li>
+<li><strong class="st">⬆️ Upload it and test the trigger.</strong> In the Claude app, open <strong>Customize</strong>, then <strong>Skills</strong>, then <strong>Add</strong>, then <strong>Upload a skill</strong>, and choose your zip. Now start a brand new chat and ask for the task in your own everyday words, without naming the skill. If Claude picks it up on its own, you built it right. If it does not, the description needs work, and the next section fixes exactly that.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">copy these</span>
+<h2>The three prompts <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>First, the capture prompt. Run this at the end of the chat where you got the output you liked, so Claude is writing down what actually worked rather than guessing:</p>
+<div class="promptwrap">
+<span class="promptlabel">📝 turn this chat into a skill</span>
+<pre><code>Turn everything we just did into a reusable skill file so you can repeat this exact process without me explaining it again.
+
+Write it as a SKILL.md with YAML frontmatter containing a name in lowercase-with-hyphens and a description. The description has to say both what the skill does and when you should use it, and it should include the everyday phrases I would naturally type when I want this task done, because that is what you match against. In the body, write the process as numbered steps in the order we actually did them, then a rules section capturing every correction I gave you in this chat, then a section describing what a finished result looks like and what would make it wrong. Write it for a version of you with no memory of this conversation, so spell out anything I only said once.</code></pre>
+</div>
+
+<p>Then the pressure test, before you trust it with anything real:</p>
+<div class="promptwrap">
+<span class="promptlabel">🔍 stress-test the skill file</span>
+<pre><code>Read the SKILL.md you just wrote back to me as if you had never seen our conversation, and tell me where it would fail.
+
+Specifically: which steps are vague enough that you would have to guess, which rules contradict each other, and what context you would be missing that I have in my head but never typed. Then tell me honestly whether the description would actually trigger this skill if I typed [paste the sentence you would really write], and if not, rewrite the description so it would. Finish by giving me the corrected full file, ready to save.</code></pre>
+</div>
+
+<p>And the upgrade prompt, once the skill has run a few times and you know where it drifts:</p>
+<div class="promptwrap">
+<span class="promptlabel">🌱 make the skill better each week</span>
+<pre><code>Here is what the skill produced this week, and here is what I changed by hand before I used it: [paste both].
+
+Work out what rule was missing that would have prevented each of my edits, and write those rules in the same voice as the rest of the file. Do not just add more instructions, that is how a skill file gets bloated and starts contradicting itself. Where a new rule replaces an old one, say so and remove the old line. Give me the updated SKILL.md in full, and a one-line note on what changed so I can see the file getting sharper over time.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">the make or break</span>
+<h2>The description does all the work <span class="gi" style="--gl:#CD5174" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M14 2.20004C13.3538 2.06886 12.6849 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.3151 21.9311 10.6462 21.8 10" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0303 11.9625L16.5832 7.4096M19.7404 4.34462L19.1872 2.35748C19.0853 2.03011 18.6914 1.89965 18.4259 2.11662C16.9898 3.29018 15.4254 4.87091 16.703 7.36419C19.2771 8.56455 20.7466 6.94584 21.8733 5.5853C22.0975 5.3146 21.9623 4.90767 21.6247 4.81005L19.7404 4.34462Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Almost every "my skill never triggers" problem is a description problem. Claude only sees each skill's name and description until something matches, so that one sentence is the entire hiring decision. Anthropic's <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices" target="_blank">skill authoring best practices</a> are worth a read, and the short version is this: say what it does <em>and</em> when to use it, in the words you would actually type.</p>
+<div class="cardgrid">
+<div class="minicard"><b>🚫 Won't trigger</b> "Helps with content." Too vague to match anything, so Claude never opens it and you assume skills do not work.</div>
+<div class="minicard"><b>✅ Will trigger</b> "Writes my weekly Instagram carousel from a topic, in my brand voice and format. Use when I ask for a carousel, slides, a post for this week, or say I need something to post."</div>
+<div class="minicard"><b>📛 Naming rules</b> Lowercase letters, numbers and hyphens only, 64 characters max, and the words "claude" and "anthropic" are reserved and cannot be used in a skill name.</div>
+<div class="minicard"><b>🧩 Keep it narrow</b> One skill, one job. A single skill that writes posts, drafts emails and books meetings triggers on everything and does none of them well. Three small skills beat one giant one.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the worked example</span>
+<h2>The weekly content skill, written out <span class="gi" style="--gl:#BA7A10" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the reel's workflow, generalised so you can lift it. Swap the specifics for whatever you post. Save it as <code>SKILL.md</code> inside a folder called <code>weekly-post</code>:</p>
+<div class="promptwrap">
+<span class="promptlabel">📄 SKILL.md, ready to adapt</span>
+<pre><code>---
+name: weekly-post
+description: Builds my weekly [post type] end to end, from picking the subject through to the finished caption in my voice. Use when I ask for this week's post, say I need something to post, mention my weekly [post type], or ask to prep content for tomorrow.
+---
+
+# Weekly post
+
+## What this does
+Takes my recurring [post type] from a blank page to a draft I can review in one pass.
+
+## Steps
+1. Ask me for the subject, or if I have not given one, propose three options from what we have discussed recently and wait for me to pick.
+2. Research the subject properly before writing. Pull the specific details that make the post concrete: real numbers, names, dates. If a detail cannot be verified, flag it rather than writing around it.
+3. If the post needs permission from someone else (a client, a partner, a source), draft the request email and show it to me. Never send anything, only draft.
+4. List the images or assets the post needs and where each one comes from. If I have to supply one, tell me exactly which.
+5. Rebuild my template around this week's subject using the structure and rules below.
+6. Hand me the finished draft plus a one-line note on anything you were unsure about.
+
+## My template
+[Paste your actual post structure here, section by section, exactly as you use it.]
+
+## Rules
+- Sentence case, no em dashes, no corporate filler.
+- Lead with the specific thing, never a general statement.
+- Every claim traceable to something real.
+- Draft, never send or publish. I approve everything.
+
+## Done looks like
+A draft I would post after a light read, not a rewrite. If I am rewriting more than two lines, a rule is missing and you should ask me what it is.</code></pre>
+</div>
+<div class="tip">💡 <strong>Add your real files alongside it.</strong> A skill folder can hold more than the one file. Drop in your template document, a page of your best past posts, or a short voice guide, and reference them by filename inside <code>SKILL.md</code>. Claude reads them only when the skill runs, so extra material makes the output more like yours without slowing anything else down.</div>
+
+<hr class="rule">
+<span class="kicker">the overnight part</span>
+<h2>Getting it to run while you sleep <span class="gi" style="--gl:#B47E1A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.5 14.0784C20.3003 14.7189 18.9301 15.0821 17.4751 15.0821C12.7491 15.0821 8.91792 11.2509 8.91792 6.52485C8.91792 5.06986 9.28105 3.69968 9.92163 2.5C5.66765 3.49698 2.5 7.31513 2.5 11.8731C2.5 17.1899 6.8101 21.5 12.1269 21.5C16.6849 21.5 20.503 18.3324 21.5 14.0784Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Here is the honest version, because the reel makes it look like the skill wakes itself up. It does not. A skill is the recipe, not the timer. What it gives you is a task that runs start to finish from one short message instead of twenty minutes of directing, and that is what makes automating it possible at all. There are three levels, and most people should stop at the first:</p>
+<ol class="steps">
+<li><strong class="st">☕ Level one: one line, first thing.</strong> You open Claude with your coffee and type "do this week's post". The skill does the rest while you read your emails. Free, no setup, and genuinely the version I use most.</li>
+<li><strong class="st">⏰ Level two: put it on a schedule in Claude Code.</strong> <a href="https://code.claude.com/docs/en/skills" target="_blank">Claude Code</a> reads skills straight from a folder on your computer, personal ones in <code>~/.claude/skills/</code> or per-project ones in <code>.claude/skills/</code>, with no zip and no upload. From there you can have it run on a timer so the draft is waiting when you wake up. This is the real "before you wake up" version, and it does mean getting comfortable in a terminal.</li>
+<li><strong class="st">🔒 Level three: keep yourself as the approval step.</strong> Whatever level you land on, have the skill draft and stop. Emails drafted, not sent. Posts written, not published. The agent in the reel drafted a permission email and left it sitting there for a human to read, which is exactly right, and it is the habit that keeps automation from becoming a story you tell about a mistake.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">before you upload anything</span>
+<h2>Two safety notes <span class="gi" style="--gl:#C47612" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5V17.5M13 14.5C13 15.0523 12.5523 15.5 12 15.5C11.4477 15.5 11 15.0523 11 14.5C11 13.9477 11.4477 13.5 12 13.5C12.5523 13.5 13 13.9477 13 14.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16.5 9V6.5C16.5 4.01472 14.4853 2 12 2C9.51471 2 7.49999 4.01472 7.49999 6.5V9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M4.2678 18.8447C4.49268 20.515 5.87612 21.8235 7.55965 21.9009C8.97627 21.966 10.4153 22 12 22C13.5847 22 15.0237 21.966 16.4403 21.9009C18.1239 21.8235 19.5073 20.515 19.7322 18.8447C19.8789 17.7547 20 16.6376 20 15.5C20 14.3624 19.8789 13.2453 19.7322 12.1553C19.5073 10.485 18.1239 9.17649 16.4403 9.09909C15.0237 9.03397 13.5847 9 12 9C10.4153 9 8.97627 9.03397 7.55965 9.09909C5.87612 9.17649 4.49268 10.485 4.2678 12.1553C4.12104 13.2453 3.99999 14.3624 3.99999 15.5C3.99999 16.6376 4.12104 17.7547 4.2678 18.8447Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>🕵️ Only install skills you trust</b> A skill can contain scripts, not just instructions. Anthropic's guidance is to use skills you wrote yourself or got from Anthropic, and to read every file in anything else before you add it.</div>
+<div class="minicard"><b>📄 Watch what you put in the file</b> Skill files are not the place for passwords, API keys or client data. Reference where something lives, do not paste the thing itself.</div>
+</div>
+<div class="tip calm">🌱 Want to see how a well-written skill is put together before you write yours? Anthropic publishes theirs openly in the <a href="https://github.com/anthropics/skills" target="_blank">skills repository</a>, including <a href="https://github.com/anthropics/skills/tree/main/skills/skill-creator" target="_blank">skill-creator</a>, which is a skill whose whole job is helping you build skills. Reading two or three real <code>SKILL.md</code> files teaches the format faster than any explanation.</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills" target="_blank">Anthropic, how to create custom skills (plan availability and the upload path)</a><br>
+  <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" target="_blank">Agent Skills overview (SKILL.md structure, naming rules, security guidance)</a><br>
+  <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices" target="_blank">Skill authoring best practices</a><br>
+  <a href="https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills" target="_blank">Teach Claude your way of working using skills</a><br>
+  <a href="https://code.claude.com/docs/en/skills" target="_blank">Using skills in Claude Code (the folder paths)</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

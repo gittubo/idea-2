@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build your own AI agent, safely, in Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="This shows you how to build your own AI agent safely inside Claude (using Claude in Chrome), so it books, fills, and researches for you.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/build-ai-agent-safely">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build your own AI agent, safely, in Claude">
+<meta property="og:description" content="This shows you how to build your own AI agent safely inside Claude (using Claude in Chrome), so it books, fills, and researches for you.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/build-ai-agent-safely">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build your own AI agent, safely, in Claude">
+<meta name="twitter:description" content="This shows you how to build your own AI agent safely inside Claude (using Claude in Chrome), so it books, fills, and researches for you.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build your own AI agent, safely, in Claude", u:"guides/build-ai-agent-safely.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building &amp; apps</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Build your own AI agent, safely, in Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This shows you how to build your own AI agent safely inside Claude (using Claude in Chrome), so it books, fills, and researches for you.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>AI agents have gotten good enough to do real-world tasks for you, book a table, fill a form, compare prices, run a weekly research job. The problem is the popular way to get one is a sketchy open-source tool that runs with full access to your computer, and earlier in 2026 tens of thousands of those got left exposed and leaked people's passwords. You do not need that risk to get the upside.</p>
+<p>You can do all of it inside Claude, safely. The key feature is Claude in Chrome: it drives your own browser, does the clicking and typing for you, and pauses before anything sensitive like confirming or paying. Nothing happens behind your back. Below is the safe setup, the starter prompt, and three more tasks to grow into once you trust it.</p>
+
+<span class="kicker">start here</span>
+<h2>The safe setup <span class="gi" style="--gl:#9281AD" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">💳 Be on a paid Claude plan and install Claude in Chrome.</strong> Claude in Chrome is available on all paid plans (Pro and Max). Install the extension so Claude can act inside your own browser, on your own logins.</li>
+<li><strong class="st">🔑 Stay logged in to the sites you'll use.</strong> Sign in to OpenTable, your airline, your shop, whatever the task needs, in that same Chrome. Claude uses your existing sessions, so you never hand it a password.</li>
+<li><strong class="st">✋ Ask for the task and watch it pause.</strong> Claude navigates, fills the form, and stops before anything irreversible like confirming a booking or making a purchase, then waits for you to approve. That pause is the whole safety model.</li>
+<li><strong class="st">📱 Run it from your phone with Cowork Dispatch.</strong> Open Cowork in the Claude desktop app, leave your computer awake, and send tasks from the Claude mobile app while you're out. Your computer does the work at home and reports back.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">copy this</span>
+<h2>The mega prompt <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>With Claude in Chrome installed and you logged in to OpenTable, paste this into Claude.</p>
+<div class="promptwrap">
+<span class="promptlabel">🍽️ Your first agent task</span>
+<pre><code>Using Claude in Chrome, go to OpenTable and book me a table for 2 this Friday at 7pm at [restaurant name]. If that exact time isn't available, show me the closest options and let me pick. Fill in my details, but stop and show me the full booking before you confirm anything. Don't complete the reservation until I say go.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">go further</span>
+<h2>3 bonus prompts to run next <span class="gi" style="--gl:#AB8209" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 11V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 9C3 8.25231 3 7.87846 3.20096 7.6C3.33261 7.41758 3.52197 7.26609 3.75 7.16077C4.09808 7 4.56538 7 5.5 7H18.5C19.4346 7 19.9019 7 20.25 7.16077C20.478 7.26609 20.6674 7.41758 20.799 7.6C21 7.87846 21 8.25231 21 9C21 9.74769 21 10.1215 20.799 10.4C20.6674 10.5824 20.478 10.7339 20.25 10.8392C19.9019 11 19.4346 11 18.5 11H5.5C4.56538 11 4.09808 11 3.75 10.8392C3.52197 10.7339 3.33261 10.5824 3.20096 10.4C3 10.1215 3 9.74769 3 9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 3.78571C6 2.79949 6.79949 2 7.78571 2H8.14286C10.2731 2 12 3.7269 12 5.85714V7H9.21429C7.43908 7 6 5.56091 6 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 3.78571C18 2.79949 17.2005 2 16.2143 2H15.8571C13.7269 2 12 3.7269 12 5.85714V7H14.7857C16.5609 7 18 5.56091 18 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 11L12 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Once the dinner booking feels easy, these stretch into real time-savers. Same setup, just stay logged in to the right sites.</p>
+<div class="gcallout">🛒 <strong>Price-compare and build a cart.</strong> Using Claude in Chrome, I need [product, e.g. a specific pair of running shoes in my size]. Check it across [site A], [site B], and [site C], compare the total price including shipping, tell me which is cheapest and whether it's in stock, then add the best option to the cart. Stop before checkout and show me the cart so I can review it. Do not pay or place the order.</div>
+<div class="gcallout">📝 <strong>Fill this form for me.</strong> Using Claude in Chrome, open [form URL] and fill it out using these details: [paste the info, e.g. name, email, answers]. Work through every field, flag anything you're unsure about instead of guessing, and stop and show me the completed form before you submit. Wait for my okay to hit send.</div>
+<div class="gcallout">🔁 <strong>Weekly scheduled research.</strong> Set up a weekly task: every Monday morning, search the web for the latest news, tools, and notable updates in [my niche], pull the 5 most relevant items, summarise each in two lines with the link, and write it up as a short brief I can read in under five minutes. Save it to [Notion page / doc] and flag the single most important thing at the top.</div>
+
+<hr class="rule">
+<span class="kicker">use it well</span>
+<h2>How to get the most out of it <span class="gi" style="--gl:#4C326D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.99805 7.99928C1.99805 9.34126 10.0943 13 11.9857 13C13.8772 13 21.9734 9.34126 21.9734 7.99928C21.9734 6.6573 13.8772 2.99854 11.9857 2.99854C10.0943 2.99854 1.99805 6.6573 1.99805 7.99928Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.99219 11L7.24348 16.8002C7.32919 17.1975 7.52703 17.5687 7.85696 17.8054C10.0787 19.3998 13.8908 19.3998 16.1126 17.8054C16.4426 17.5687 16.6404 17.1975 16.7261 16.8002L17.9774 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20.4774 9.49951V16.5006M20.4774 16.5006C19.6864 17.9471 19.3366 18.7221 18.9813 20.0011C18.9042 20.4562 18.9654 20.6855 19.2786 20.8891C19.4059 20.9718 19.5588 21.0012 19.7104 21.0012H21.229C21.3904 21.0012 21.5533 20.9675 21.6863 20.8757C21.9774 20.6747 22.0523 20.4541 21.9734 20.0011C21.662 18.8135 21.2653 18.0016 20.4774 16.5006Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🐣 Start tiny this weekend.</strong> Book one dinner. Watching Claude fill the form and pause before confirming is what makes you trust it, and once you trust it, you stop doing your own busywork fast.</li>
+<li><strong class="st">🔍 Be specific so it doesn't guess.</strong> "Book a table" leaves too much open. Give it the size, day, time, and place, and tell it what to do if your first choice isn't available, so it asks you instead of picking for you.</li>
+<li><strong class="st">🛑 Keep the pause on for anything money or personal.</strong> The stop-before-sensitive-actions behaviour is your seatbelt. Don't tell it to "just confirm everything," especially on purchases, payments, or anything you can't undo. Review, then approve.</li>
+<li><strong class="st">🪜 Brand new? Use it for read-and-fill tasks first</strong> (looking things up, drafting a form) before letting it transact. Power user? Chain steps in one task (research, then fill, then summarise) and use Cowork Dispatch to kick off the long ones from your phone while your computer works at home.</li>
+</ol>
+
+<hr class="rule">
+<h2>Why Claude, not OpenClaw <span class="gi" style="--gl:#119B5B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5L10.5 15L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>OpenClaw is a real tool, but it runs with full access to your computer, and in 2026 a large number of instances were left exposed and leaked users' credentials. Claude in Chrome is first-party, works inside your own logged-in browser, and pauses before risky actions by default. For everyday tasks, you get the agent upside without handing your whole machine to something unvetted. That trade is the entire point.</p>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

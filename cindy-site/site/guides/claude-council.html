@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Claude council: your 5-advisor AI decision system · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="This is the Claude Council, a free skill that runs any decision past 5 independent AI advisors and hands you one clear verdict.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-council">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="The Claude council: your 5-advisor AI decision system">
+<meta property="og:description" content="This is the Claude Council, a free skill that runs any decision past 5 independent AI advisors and hands you one clear verdict.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-council">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Claude council: your 5-advisor AI decision system">
+<meta name="twitter:description" content="This is the Claude Council, a free skill that runs any decision past 5 independent AI advisors and hands you one clear verdict.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"The Claude council: your 5-advisor AI decision system", u:"guides/claude-council.html", topic:"productivity", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Productivity &amp; thinking</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>The Claude council: your 5-advisor AI decision system</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This is the Claude Council, a free skill that runs any decision past 5 independent AI advisors and hands you one clear verdict.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>You know that thing where you ask one AI one question, get one confident answer, and have absolutely no way to tell if it is brilliant or quietly wrong? That is the trap. A single AI gives you a single take, often delivered with total confidence even when it is missing something obvious. And for the decisions that actually matter (your pricing, your positioning, whether to take the deal), one confident answer is not enough.</p>
+<p>This fixes that. It is a free skill called the LLM Council, built by Ole Lehmann and adapted from Andrej Karpathy's "LLM Council" methodology. I call it the Claude Council in my reel because it runs entirely inside Claude, but its real name is the LLM Council, so do not get confused when you go to install it. Instead of one answer, it runs your question through 5 independent advisors, has them anonymously review each other's answers, then a chairman pulls it all into one clear verdict. It is like having a board of advisors on call, for free, any time you are stuck.</p>
+<span class="kicker">how it works</span>
+<h2>What the Council actually does <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Here is the whole thing in plain language. Four steps, all happening inside one Claude chat.</p>
+<ol class="steps">
+<li><strong class="st">🎯 It frames your question and quietly pulls in context.</strong> Claude takes what you asked, sharpens it into the real decision, and quietly reads relevant context from your workspace so the advisors are not flying blind.</li>
+<li><strong class="st">👥 It spawns all 5 advisors at once.</strong> Five different thinkers answer your question in parallel, and each one leans all the way into its own angle with zero hedging. No watered-down committee answer.</li>
+<li><strong class="st">🕵️ It runs an anonymized peer review.</strong> Each advisor's answer gets relabeled Response A through E, then all 5 review the set blind. They each call out which answer is strongest, which has the biggest blind spot, and what every single one of them missed. Because it is anonymous, they are judging the thinking, not the source.</li>
+<li><strong class="st">⚖️ A chairman synthesizes one verdict.</strong> Finally, a chairman reads everything (the answers and the peer reviews) and gives you one clear decision, not a wishy-washy "it depends."</li>
+</ol>
+<hr class="rule">
+<span class="kicker">the cast</span>
+<h2>Meet the 5 advisors <span class="gi" style="--gl:#4F337C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.4995 20.5C18.2663 17.5685 15.8417 15.2477 12.808 15.0521L11.9995 15C11.7107 15.0076 11.4416 15.0178 11.1877 15.0298C8.18075 15.1723 5.7304 17.5974 5.49951 20.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15.2495 9.25C15.2495 11.0449 13.7944 12.5 11.9995 12.5C10.2046 12.5 8.74952 11.0449 8.74952 9.25C8.74952 7.45507 10.2046 6 11.9995 6C13.7944 6 15.2495 7.45507 15.2495 9.25Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.50249 8.5C5.17908 7.99485 4.99158 7.39432 4.99158 6.75C4.99158 4.95507 6.44665 3.5 8.24157 3.5C8.68752 3.5 9.1125 3.58982 9.49939 3.75235" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M18.4963 8.5C18.8197 7.99485 19.0072 7.39432 19.0072 6.75C19.0072 4.95507 17.5521 3.5 15.7572 3.5C15.3113 3.5 14.8863 3.58982 14.4994 3.75235" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M22.0007 17.9996C21.8208 15.7374 19.9995 13.5 17.9995 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M1.99927 17.9996C2.17923 15.7374 4.00049 13.5 6.00049 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>These are thinking lenses, not job titles. Each one is deliberately one-sided so that together they cover your blind spots.</p>
+<ol class="steps">
+<li><strong class="st">🔪 The Contrarian.</strong> Actively hunts for what is wrong, missing, or about to fail. Assumes your idea has a fatal flaw and goes looking for it. The friend who saves you from a bad deal by asking the question you have been avoiding.</li>
+<li><strong class="st">🧱 The First Principles Thinker.</strong> Ignores your surface question and asks "what are we actually trying to solve here?" Strips away assumptions and rebuilds from the ground up. Will sometimes tell you that you are asking the wrong question entirely.</li>
+<li><strong class="st">🚀 The Expansionist.</strong> Looks for the upside everyone else is missing. What could be bigger, what adjacent opportunity is hiding, what you are undervaluing. Cares about what happens if this works even better than you expect.</li>
+<li><strong class="st">👽 The Outsider.</strong> Has zero context about you or your field and responds purely to what is in front of it. Catches the curse of knowledge: the stuff that is obvious to you but confusing to everyone else. Honestly the most underrated of the five.</li>
+<li><strong class="st">🔨 The Executor.</strong> Only cares whether this can actually get done and the fastest path to doing it. Ignores theory completely. Looks at everything through "OK, but what do you do Monday morning?" If your idea has no clear first step, the Executor says so.</li>
+</ol>
+<hr class="rule">
+<span class="kicker">what to expect</span>
+<h2>What you get back: the verdict <span class="gi" style="--gl:#B67D09" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="5" r="2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10 5H4M14 5H20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 21H7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 7V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 14L18.5 8H19.5L22 14C22 15.6569 20.6569 17 19 17C17.3431 17 16 15.6569 16 14ZM22 14H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M2 14L4.5 8H5.5L8 14C8 15.6569 6.65685 17 5 17C3.34315 17 2 15.6569 2 14ZM8 14H2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The chairman's verdict comes back in five clean parts, so you can read it like a map:</p>
+<ol class="steps">
+<li><strong class="st">🤝 Where the council agrees.</strong> The high-confidence signals, the parts everyone landed on independently.</li>
+<li><strong class="st">⚔️ Where the council clashes.</strong> The genuine disagreements, with both sides laid out so you can see the real tension.</li>
+<li><strong class="st">🔦 Blind spots the council caught.</strong> The things that only surfaced once the advisors reviewed each other.</li>
+<li><strong class="st">✅ The recommendation.</strong> One clear answer. Not "it depends."</li>
+<li><strong class="st">👣 The one thing to do first.</strong> A single concrete next step, so you walk away with momentum instead of a to-do list.</li>
+</ol>
+<hr class="rule">
+<span class="kicker">the setup</span>
+<h2>How to install it (takes 30 seconds) <span class="gi" style="--gl:#B9794D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C11.1818 22 10.4002 21.6698 8.83693 21.0095C4.94564 19.3657 3 18.5438 3 17.1613C3 16.7742 3 10.0645 3 7M12 22C12.8182 22 13.5998 21.6698 15.1631 21.0095C19.0544 19.3657 21 18.5438 21 17.1613V7M12 22L12 11.3548" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.32592 9.69138L5.40472 8.27785C3.80157 7.5021 3 7.11423 3 6.5C3 5.88577 3.80157 5.4979 5.40472 4.72215L8.32592 3.30862C10.1288 2.43621 11.0303 2 12 2C12.9697 2 13.8712 2.4362 15.6741 3.30862L18.5953 4.72215C20.1984 5.4979 21 5.88577 21 6.5C21 7.11423 20.1984 7.5021 18.5953 8.27785L15.6741 9.69138C13.8712 10.5638 12.9697 11 12 11C11.0303 11 10.1288 10.5638 8.32592 9.69138Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 12L8 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 4L7 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>It is completely free, and it is beginner friendly. You do not need to know any code. Skills work on every Claude plan, Free through Enterprise. Pick whichever path feels easier.</p>
+<p>👉 Prefer to grab the file and upload it yourself? <strong><a href="files/llm-council-skill.zip">Download llm-council-skill.zip</a></strong>, then in the Claude app go to Customize, then Skills, then Add, then Upload a skill, and drag the file in.</p>
+<p>The easy path: open a new chat in Claude and paste this exactly.</p>
+<div class="promptwrap">
+<span class="promptlabel">📦 the easy install</span>
+<pre><code>Please install this Claude skill for me. The SKILL.md file lives in this GitHub repo: https://github.com/aiwithremy/claude-skills-llm-council</code></pre>
+</div>
+<p>Claude reads the repo and sets it up for you. Done.</p>
+<p>The upload path: go to the repo, download the file called SKILL.md, then tell Claude:</p>
+<div class="promptwrap">
+<span class="promptlabel">📤 the upload install</span>
+<pre><code>I just downloaded a file called SKILL.md for the LLM Council skill, can you install it for me?</code></pre>
+</div>
+<p>In the Claude web or desktop app you can also go to Customize, then Skills, hit Add (next to Browse), choose Upload a skill, and drag the file in. The repo lives here if you want to look first: <a href="https://github.com/aiwithremy/claude-skills-llm-council" target="_blank">https://github.com/aiwithremy/claude-skills-llm-council</a></p>
+<p>Once it is installed, you summon it with any of these trigger phrases. Just type one and add your question.</p>
+<div class="promptwrap">
+<span class="promptlabel">🗝️ the trigger phrases</span>
+<pre><code>ask the council
+council this: [your question]
+run the council on [your question]
+pressure-test this
+stress-test this
+war room this
+debate this</code></pre>
+</div>
+<hr class="rule">
+<span class="kicker">the craft</span>
+<h2>How to get the most out of the council <span class="gi" style="--gl:#4C326D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.99805 7.99928C1.99805 9.34126 10.0943 13 11.9857 13C13.8772 13 21.9734 9.34126 21.9734 7.99928C21.9734 6.6573 13.8772 2.99854 11.9857 2.99854C10.0943 2.99854 1.99805 6.6573 1.99805 7.99928Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.99219 11L7.24348 16.8002C7.32919 17.1975 7.52703 17.5687 7.85696 17.8054C10.0787 19.3998 13.8908 19.3998 16.1126 17.8054C16.4426 17.5687 16.6404 17.1975 16.7261 16.8002L17.9774 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20.4774 9.49951V16.5006M20.4774 16.5006C19.6864 17.9471 19.3366 18.7221 18.9813 20.0011C18.9042 20.4562 18.9654 20.6855 19.2786 20.8891C19.4059 20.9718 19.5588 21.0012 19.7104 21.0012H21.229C21.3904 21.0012 21.5533 20.9675 21.6863 20.8757C21.9774 20.6747 22.0523 20.4541 21.9734 20.0011C21.662 18.8135 21.2653 18.0016 20.4774 16.5006Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the part most people skip, and it is the difference between generic advice and a real war room.</p>
+<ol>
+<li>📄 <strong>Feed it real context, not a one-line question.</strong> The Council reads your workspace, so the more it knows, the sharper every advisor gets. Drop in your real numbers, your constraints, what you have already tried, and what is actually at stake. "Should I raise my rates?" gets you generic advice. "I charge $1,100 per reel, my last sponsor pushed back on price, here is the email" gets you a war room.</li>
+<li>🍴 <strong>Frame a real decision, not a yes or no.</strong> The Council is built for forks in the road: this option versus that one, raise or hold, hire or automate, pivot or push. If your question has one factually correct answer, you do not need 5 advisors, you need a quick lookup. Save the Council for the calls where being wrong is expensive.</li>
+<li>⏰ <strong>Run it BEFORE the move, not after.</strong> The whole point is to catch the fatal flaw while you can still change course. Council the pricing email before you send it, the positioning before you build the landing page, the hire before you post the job. After you have committed, it is just expensive hindsight.</li>
+<li>🗺️ <strong>Read the verdict like a map, not a grade.</strong> Where the council agrees is your high-confidence signal: that part of the plan is probably solid, so stop second-guessing it and move. Where the council clashes is the gift: that is the exact spot where smart people genuinely disagree, which means that is where you should slow down and dig.</li>
+<li>✂️ <strong>Paste your actual draft for copy review, do not describe it.</strong> If you want the Council to pressure-test a caption, a landing page, a sales email, or a sponsorship pitch, give it the real words. Describing your copy hides the exact thing the Outsider is built to catch: where your writing is confusing or flat to someone who is not already in your head.</li>
+<li>😬 <strong>Go in wanting the answers you do not want to hear.</strong> If you only run the Council to get a yes, you wasted it. The real value is the Contrarian finding the hole you have been avoiding and the First Principles Thinker telling you that you are solving the wrong problem entirely. Walk in ready to be wrong, that is where the money is.</li>
+<li>👣 <strong>Act on "the one thing to do first," not the whole list.</strong> The chairman ends with a single concrete next step on purpose. Most decisions die in a 12-item to-do list. Do the one thing, then come back and council your next fork.</li>
+<li>🔁 <strong>Council the council.</strong> You are allowed to push back. If the recommendation feels off, reply with "pressure-test that recommendation" and you get a second pass that argues against the first. You can also zoom in on a single advisor: "say more about what the Contrarian flagged" pulls the thread on the one angle that worried you.</li>
+<li>🎬 <strong>Use it on content ideas too, not just business decisions.</strong> Before you batch-film a whole series or commit to a new angle, council the concept: "war room whether this hook actually lands or just sounds clever." The Outsider will tell you if it only makes sense to people already in the niche.</li>
+</ol>
+<hr class="rule">
+<span class="kicker">copy these</span>
+<h2>Every way you can use the council <span class="gi" style="--gl:#4E9932" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 7H8.5M12.499 11H8.49902" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20 22H6C4.89543 22 4 21.1046 4 20M4 20C4 18.8954 4.89543 18 6 18H20V6C20 4.11438 20 3.17157 19.4142 2.58579C18.8284 2 17.8856 2 16 2H10C7.17157 2 5.75736 2 4.87868 2.87868C4 3.75736 4 5.17157 4 8V20Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19.5 18C19.5 18 18.5 18.7628 18.5 20C18.5 21.2372 19.5 22 19.5 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is your copy-and-paste library. Find the situation closest to yours, grab the prompt, swap in your real numbers, and run it. The more honest detail you add, the better the verdict.</p>
+<h3>Marketing, content and growth <span class="gi" style="--gl:#BF7832" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 14V6H6C5.07003 6 4.60504 6 4.22354 6.10222C3.18827 6.37962 2.37962 7.18827 2.10222 8.22354C2 8.60504 2 9.07003 2 10C2 10.93 2 11.395 2.10222 11.7765C2.37962 12.8117 3.18827 13.6204 4.22354 13.8978C4.60504 14 5.07003 14 6 14H9Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9 14L9.96466 18.8233C9.98816 18.9408 10 19.0604 10 19.1802V19.3411C10 20.2573 9.25728 21 8.34109 21C7.55885 21 6.8829 20.4536 6.719 19.6887L5.5 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10 6H9V14H10C11.2982 14 12.5614 14.4211 13.6 15.2L15.747 16.8103C15.9112 16.9334 16.111 17 16.3162 17C16.7246 17 17.0909 16.7404 17.2088 16.3495C17.5537 15.2067 18 13.2728 18 10C18 6.72718 17.5537 4.79327 17.2088 3.65054C17.0909 3.25961 16.7246 3 16.3162 3C16.111 3 15.9112 3.06658 15.747 3.18974L13.6 4.8C12.5614 5.57893 11.2982 6 10 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21 9.99996H22M20.5 6.00109L21.5 5.40637M20.5 14L21.5 14.6481" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h3>
+<p><strong>Picking your one lead platform when you are spread thin.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">📣 pick one platform</span>
+<pre><code>council this: I'm a solo creator posting AI content. Right now I split my time across Instagram reels, LinkedIn carousels, and Threads, and I'm doing all three badly because I'm exhausted. My goal this year is to build an audience I can eventually sell a $47/mo community to. Should I go all in on one platform for the next 90 days, or keep a lighter presence on all three? If one, which one, given the community-sale goal?</code></pre>
+</div>
+<p><strong>Repositioning when your hook audience is not your buyer audience.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🎯 reposition the hook</span>
+<pre><code>council this: My most viral reels are fear-based hooks that pull huge reach but mostly attract scared employees who never buy anything. The people who actually message me about working together are small business owners who want AI to run their ads. Do I lean harder into the fear hooks for reach and accept low conversion, pivot my whole positioning toward business owners and lose the easy reach, or try to run both and risk a confused brand?</code></pre>
+</div>
+<p><strong>Whether to take a sponsorship that does not fit your niche.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🍱 the off-niche sponsorship</span>
+<pre><code>council this: A meal-kit brand offered me $1,400 for two reels. I make AI and marketing content, so meal kits are off-topic. The money is real, but my last three posts have been tightly on-niche and my engagement is finally climbing. Do I take the deal and risk diluting the audience I just tightened, negotiate for an AI angle they probably won't accept, or turn it down? This is only my second paid offer ever.</code></pre>
+</div>
+<p><strong>Pricing a sponsored reel package without a benchmark.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">💵 price a reel package</span>
+<pre><code>council this: A SaaS brand wants a 3-reel package plus 30 days of usage rights to run my videos as their own ads. My only prior paid deal was $1,900 for two reels with no ad usage. They opened by asking for "your package rate." I'm tempted to quote $3,500 but I'm scared of pricing myself out of my first package deal. What number do I send, how do I structure the usage rights, and how do I justify it in the email?</code></pre>
+</div>
+<p><strong>Killing or doubling down on a content series.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">📉 kill or double down</span>
+<pre><code>council this: I'm 8 episodes into a numbered series. Episodes 1 to 3 did great, then 4 through 8 flattened to half the views. My rule was to re-evaluate at 10 episodes. Do I push to 10 as planned and then decide, kill it now and free up the slots for fresh ideas, or refresh the format and treat the next two as a test?</code></pre>
+</div>
+<p><strong>Choosing your call-to-action mix across reels.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🔁 the CTA mix</span>
+<pre><code>council this: Most of my reels end with a hard CTA: "comment KEYWORD and I'll DM you the resource." My reach has dipped and I'm wondering if the constant keyword-bait comments are training the algorithm to see my engagement as low-quality. Do I keep the hard CTA because lead capture is the point, cut back to half and let the rest be pure value to protect reach, or test a soft "follow for more" close on my highest-reach posts only?</code></pre>
+</div>
+<h3>Pricing, offers and monetization <span class="gi" style="--gl:#BE780E" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.9427 16.8354C20.2864 12.8866 18.2432 9.94613 16.467 8.219C15.9501 7.71642 15.6917 7.46513 15.1208 7.23257C14.5499 7 14.0592 7 13.0778 7H10.9222C9.94081 7 9.4501 7 8.87922 7.23257C8.30834 7.46513 8.04991 7.71642 7.53304 8.219C5.75682 9.94613 3.71361 12.8866 3.05727 16.8354C2.56893 19.7734 5.27927 22 8.30832 22H15.6917C18.7207 22 21.4311 19.7734 20.9427 16.8354Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7.25662 4.44287C7.05031 4.14258 6.75128 3.73499 7.36899 3.64205C8.00392 3.54651 8.66321 3.98114 9.30855 3.97221C9.89237 3.96413 10.1898 3.70519 10.5089 3.33548C10.8449 2.94617 11.3652 2 12 2C12.6348 2 13.1551 2.94617 13.4911 3.33548C13.8102 3.70519 14.1076 3.96413 14.6914 3.97221C15.3368 3.98114 15.9961 3.54651 16.631 3.64205C17.2487 3.73499 16.9497 4.14258 16.7434 4.44287L15.8105 5.80064C15.4115 6.38146 15.212 6.67187 14.7944 6.83594C14.3769 7 13.8373 7 12.7582 7H11.2418C10.1627 7 9.6231 7 9.20556 6.83594C8.78802 6.67187 8.5885 6.38146 8.18945 5.80064L7.25662 4.44287Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M13.6267 12.9186C13.4105 12.1205 12.3101 11.4003 10.9892 11.9391C9.66829 12.4778 9.45847 14.2113 11.4565 14.3955C12.3595 14.4787 12.9483 14.2989 13.4873 14.8076C14.0264 15.3162 14.1265 16.7308 12.7485 17.112C11.3705 17.4932 10.006 16.8976 9.85742 16.0517M11.8417 10.9927V11.7531M11.8417 17.2293V17.9927" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h3>
+<p><strong>A tripwire price point that is killing conversions.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🏷️ the tripwire price</span>
+<pre><code>council this: I sell an AI prompt pack as a low-ticket tripwire at $27 and conversion from my email list is about 2%. Some people in my niche price these at $9 to $17 and claim higher take rates. Do I drop to $17 to get more buyers into my world so I can upsell my $497 offer later, or hold $27 because the higher price filters for serious buyers? Am I even thinking about this the right way?</code></pre>
+</div>
+<p><strong>Productize a service into a flat-price offer.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">📦 productize the service</span>
+<pre><code>council this: I keep getting DMs asking me to set up their AI content system, and I quote it custom every time, usually $400 to $900. The scoping conversations are exhausting. I'm considering one fixed productized offer at a flat $397, same deliverables every time. The risk is some setups are more work than others and I'll lose money on the hard ones. Should I flatten to one price, do tiers, or keep quoting custom?</code></pre>
+</div>
+<p><strong>Launch model versus evergreen.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🚪 launch vs evergreen</span>
+<pre><code>council this: I'm deciding how to sell my paid community. Option A is a launch model: doors open for one week a few times a year with urgency. Option B is evergreen: doors always open, sell continuously with no urgency. I post daily so I have steady reach, but I hate the dead months a launch model creates, and I worry evergreen signups will trickle and never spike. Which fits a daily-posting creator with my reach?</code></pre>
+</div>
+<p><strong>Free tier versus paid-only entry.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🆓 free tier vs paid-only</span>
+<pre><code>council this: I'm launching a community for marketers learning AI. Option A: open a free tier for social proof and nurture, then upsell paid later. Option B: skip free and go paid-only at a low launch price so the member count is all real buyers. Free risks a ghost-town of non-buyers; paid-only risks a tiny visible count at launch that kills momentum. Which structure should I open with?</code></pre>
+</div>
+<p><strong>Anchor a high-ticket offer you have never sold.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">⚓ anchor the high ticket</span>
+<pre><code>council this: I want to add a 1:1 AI strategy call as my highest-priced offer, capped at 4 a month. I've never sold a call at any price. Part of me wants to anchor at $750 to position it as premium, part of me wants to start at $297 to get the first bookings and build testimonials. The calls also become content and case-study fuel, which matters more to me right now than the cash. Where should I set the price, and is launching this even the right move before I have proof?</code></pre>
+</div>
+<h3>Positioning, branding and copy review <span class="gi" style="--gl:#BF7362" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C12.8417 22 14 22.1163 14 21C14 20.391 13.6832 19.9212 13.3686 19.4544C12.9082 18.7715 12.4523 18.0953 13 17C13.6667 15.6667 14.7778 15.6667 16.4815 15.6667C17.3334 15.6667 18.3334 15.6667 19.5 15.5C21.601 15.1999 22 13.9084 22 12Z" stroke="currentColor" stroke-width="1.5"/><circle cx="9.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M7.125 15H7M7.25 15C7.25 15.1381 7.13807 15.25 7 15.25C6.86193 15.25 6.75 15.1381 6.75 15C6.75 14.8619 6.86193 14.75 7 14.75C7.13807 14.75 7.25 14.8619 7.25 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h3>
+<p><strong>Choosing a positioning angle when you keep flip-flopping.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🧭 the positioning angle</span>
+<pre><code>council this: I run a small Meta ads service for local gyms. Option A: "I get fitness studios fully booked with paid ads" (outcome promise, scary to back up because results vary). Option B: "I test 20 ad variations a week so your best ad is always live" (process promise, defensible but less sexy). My fear is the process angle sounds boring to gym owners who only care about more members. Which angle do I lead with on my site and in DMs?</code></pre>
+</div>
+<p><strong>Reviewing a landing page hero before you run traffic.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🖥️ the landing page hero</span>
+<pre><code>council this, here is the hero section of my landing page and I want you to find what's weak before I run traffic. Headline: "Stop drowning in busywork. Let AI run the boring parts of your business." Subhead: "I build custom automations that save founders 10+ hours a week." Button: "Book a free audit." Context: cold traffic from my reels, audience is non-technical solopreneurs, the page gets visits but almost nobody clicks the button. What's killing the conversion?</code></pre>
+</div>
+<p><strong>Stress-testing an Instagram bio that is not converting.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">📱 the bio teardown</span>
+<pre><code>council this, here's my Instagram bio and I think it's why visitors aren't following or clicking my link. Bio: "AI + Marketing | Helping you work smarter not harder | Free AI toolkit below." Context: I get 5 to 15k views on reels but my follow rate from profile visits is under 2% and almost nobody taps the link. Is the bio the problem, and if so what's the weak part: the positioning, the "work smarter not harder" cliche, or the offer?</code></pre>
+</div>
+<p><strong>Choosing the hook for a sales email subject line.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">✉️ the subject line</span>
+<pre><code>council this: I'm sending the launch email for a $497 two-week AI sprint to 600 people who downloaded my free toolkit. Three subject lines, I can send one. A: "Your first AI automation, built with you in 2 weeks." B: "Most people will never get AI to actually work for them. Here's the shortcut." C: "Open if you're tired of saving AI posts and never building anything." They barely know me. Which one, and what's the risk with C, which I'm leaning toward?</code></pre>
+</div>
+<h3>Career, money and big personal decisions <span class="gi" style="--gl:#B57D13" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 10L5 22M14 10L19 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 4L12 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><circle cx="12" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 13C4.99073 16.0242 8.27968 18 12 18C15.7203 18 19.0093 16.0242 21 13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 17V19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h3>
+<p><strong>Quit the day job to go full-time on the side hustle.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🚪 quit the day job</span>
+<pre><code>council this: I have a 9 to 5 paying $95k that I'm bored in, and a side business making $2,800/month growing about 15% month over month. I have about 4 months of expenses saved. Part of me wants to quit now to go all in, part says wait until it matches my salary. Should I quit now, set a revenue milestone to quit at, or negotiate going part-time first?</code></pre>
+</div>
+<p><strong>Hire your first person versus stay solo.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🤝 first hire vs solo</span>
+<pre><code>council this: My business makes about $9k/month solo and I'm maxed on hours, turning down work. I could hire a part-time contractor at roughly $1,800/month to take admin and delivery off me, but it would eat most of my profit for a few months and I've never managed anyone. Do I hire now and bet on growth, raise my prices first to thin the workload, or push through solo for another quarter?</code></pre>
+</div>
+<p><strong>Where to put your limited time and energy.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">⏳ where the hours go</span>
+<pre><code>council this: I have about 15 free hours a week outside my job and I keep splitting them three ways: building my own business, studying for a certification that could get me promoted, and freelancing for quick cash. I'm making slow progress on all three and feeling burnt out. If I concentrated those 15 hours on the one path with the best 12-month payoff, which should it be, assuming I want long-term independence?</code></pre>
+</div>
+<p><strong>Walk away from a draining client or keep the money.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🔥 fire the draining client</span>
+<pre><code>council this: One client is about 45% of my freelance income but they're disrespectful, scope-creep constantly, and dealing with them is wrecking my motivation. Replacing that income would take a few months of pipeline-building I haven't done. Do I fire them now and eat the gap, set firm boundaries and a rate increase and see if they leave, or keep them while I quietly build replacement income first?</code></pre>
+</div>
+<h3>Founders, product, hiring and operations <span class="gi" style="--gl:#987CBE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3175 7.14139L20.8239 6.28479C20.4506 5.63696 20.264 5.31305 19.9464 5.18388C19.6288 5.05472 19.2696 5.15664 18.5513 5.36048L17.3311 5.70418C16.8725 5.80994 16.3913 5.74994 15.9726 5.53479L15.6357 5.34042C15.2766 5.11043 15.0004 4.77133 14.8475 4.37274L14.5136 3.37536C14.294 2.71534 14.1842 2.38533 13.9228 2.19657C13.6615 2.00781 13.3143 2.00781 12.6199 2.00781H11.5051C10.8108 2.00781 10.4636 2.00781 10.2022 2.19657C9.94085 2.38533 9.83106 2.71534 9.61149 3.37536L9.27753 4.37274C9.12465 4.77133 8.84845 5.11043 8.48937 5.34042L8.15249 5.53479C7.73374 5.74994 7.25259 5.80994 6.79398 5.70418L5.57375 5.36048C4.85541 5.15664 4.49625 5.05472 4.17867 5.18388C3.86109 5.31305 3.67445 5.63696 3.30115 6.28479L2.80757 7.14139C2.45766 7.74864 2.2827 8.05227 2.31666 8.37549C2.35061 8.69871 2.58483 8.95918 3.05326 9.48012L4.0843 10.6328C4.3363 10.9518 4.51521 11.5078 4.51521 12.0077C4.51521 12.5078 4.33636 13.0636 4.08433 13.3827L3.05326 14.5354C2.58483 15.0564 2.35062 15.3168 2.31666 15.6401C2.2827 15.9633 2.45766 16.2669 2.80757 16.8741L3.30114 17.7307C3.67443 18.3785 3.86109 18.7025 4.17867 18.8316C4.49625 18.9608 4.85542 18.8589 5.57377 18.655L6.79394 18.3113C7.25263 18.2055 7.73387 18.2656 8.15267 18.4808L8.4895 18.6752C8.84851 18.9052 9.12464 19.2442 9.2775 19.6428L9.61149 20.6403C9.83106 21.3003 9.94085 21.6303 10.2022 21.8191C10.4636 22.0078 10.8108 22.0078 11.5051 22.0078H12.6199C13.3143 22.0078 13.6615 22.0078 13.9228 21.8191C14.1842 21.6303 14.294 21.3003 14.5136 20.6403L14.8476 19.6428C15.0004 19.2442 15.2765 18.9052 15.6356 18.6752L15.9724 18.4808C16.3912 18.2656 16.8724 18.2055 17.3311 18.3113L18.5513 18.655C19.2696 18.8589 19.6288 18.9608 19.9464 18.8316C20.264 18.7025 20.4506 18.3785 20.8239 17.7307L21.3175 16.8741C21.6674 16.2669 21.8423 15.9633 21.8084 15.6401C21.7744 15.3168 21.5402 15.0564 21.0718 14.5354L20.0407 13.3827C19.7887 13.0636 19.6098 12.5078 19.6098 12.0077C19.6098 11.5078 19.7888 10.9518 20.0407 10.6328L21.0718 9.48012C21.5402 8.95918 21.7744 8.69871 21.8084 8.37549C21.8423 8.05227 21.6674 7.74864 21.3175 7.14139Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.5195 12C15.5195 13.933 13.9525 15.5 12.0195 15.5C10.0865 15.5 8.51953 13.933 8.51953 12C8.51953 10.067 10.0865 8.5 12.0195 8.5C13.9525 8.5 15.5195 10.067 15.5195 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h3>
+<p><strong>Hire versus automate the bottleneck.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">⚙️ hire vs automate</span>
+<pre><code>council this: My biggest bottleneck is the structural cut of my videos, which eats hours every week. Option A: hire an assistant at around $300 to $500 a month to take it off me. Option B: keep doing it myself because the cut is a taste call and I worry handing it off will make my reels feel generic. What's the right move, and if it's hiring, how do I hand off a taste-heavy task without losing my voice?</code></pre>
+</div>
+<p><strong>When to kill a stalled side project.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🪦 kill the stalled project</span>
+<pre><code>council this: I built two small automation tools months ago that are now stale and sending out-of-date content. I keep saying I'll fix them when I have capacity, but that capacity never comes because filming and editing always win. Do I fully kill them, do a one-time rebuild, or leave them dormant and revisit next quarter? My real constraint is that content production is my number one lever right now.</code></pre>
+</div>
+<p><strong>Picking the production tool stack.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🧰 pick the tool stack</span>
+<pre><code>council this: I'm standardizing my always-on automation layer and I keep going back and forth. My builds are mostly marketing workflows: scheduled content jobs, scraping AI news, batch generation, lead routing. The candidates are n8n (more control, steeper setup), Make.com (easier visual builder, recurring cost), or building most of it in code plus cron. I'll also teach this stack to a community of marketers new to AI, so beginner-friendliness matters too. Which do I commit to as the primary, and why?</code></pre>
+</div>
+<p><strong>Sequencing the launch roadmap.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🗓️ sequence the roadmap</span>
+<pre><code>council this: I'm solo and capacity-constrained, and three big builds are competing for the same hours over the next two months: (1) launch weekly long-form YouTube, (2) pre-load my paid community curriculum so I don't open empty, and (3) start outreach to land my first case-study clients. All three matter for a September launch, but I can't do all three well at once. What do I sequence first, second, third, and what do I consciously delay?</code></pre>
+</div>
+<p><strong>Sponsorship admin: VA, talent manager, or stay solo.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🎬 sponsorship admin</span>
+<pre><code>council this: I'm at 3 to 4 brand deals a month and the admin (contracts, invoices, negotiation back-and-forth) is eating my creative time. Option A: keep doing it myself and stay slow. Option B: hire a managed VA at a fixed monthly rate to handle admin only, while I keep all negotiation judgment. Option C: sign with a talent manager who takes 15 to 20% of deal revenue but owns the whole pipeline. Which structure do I commit to at my current deal volume?</code></pre>
+</div>
+<hr class="rule">
+<span class="kicker">skip it when</span>
+<h2>When NOT to use it <span class="gi" style="--gl:#C84B68" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6.00081 17.9992M17.9992 18L6 6.00085" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The Council is powerful, but it is not for everything. Skip it when:</p>
+<ol class="steps">
+<li><strong class="st">❓ Your question has one factually correct answer.</strong> That needs a quick lookup, not a debate.</li>
+<li><strong class="st">✍️ You just want something created.</strong> "Write me three hook options" is a creation task. Ask Claude normally and keep moving.</li>
+<li><strong class="st">📋 You want a summary.</strong> Recapping a doc or a thread does not need 5 advisors.</li>
+<li><strong class="st">😌 You are not actually torn and nothing expensive rides on it.</strong> If the stakes are low and you already know your answer, go. The Council is for the hard, costly, genuinely uncertain calls.</li>
+</ol>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

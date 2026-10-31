@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to let Claude run your ad campaigns through the API · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Claude holds a scoped API key and does the account work itself. I have used Google Ads and TikTok Ads as the worked examples.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/run-ad-campaigns-through-the-api-with-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="How to let Claude run your ad campaigns through the API">
+<meta property="og:description" content="Claude holds a scoped API key and does the account work itself. I have used Google Ads and TikTok Ads as the worked examples.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/run-ad-campaigns-through-the-api-with-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to let Claude run your ad campaigns through the API">
+<meta name="twitter:description" content="Claude holds a scoped API key and does the account work itself. I have used Google Ads and TikTok Ads as the worked examples.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"How to let Claude run your ad campaigns through the API", u:"guides/run-ad-campaigns-through-the-api-with-claude.html", topic:"marketing", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Marketing</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>How to let Claude run your ad campaigns through the API</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Claude holds a scoped API key and does the account work itself. I have used Google Ads and TikTok Ads as the worked examples.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn"><strong>Read this bit before anything else.</strong> This is the one Claude build where a mistake costs money instead of time. So the whole guide is arranged around three rules, and they are not optional: <b>read only first</b>, <b>nothing goes live without you approving it</b>, and <b>the budget is capped in two separate places</b>. Every step below is built so that a wrong API call fails harmlessly instead of quietly spending your money.</div>
+
+<span class="kicker">the actual jump</span>
+<h2>Copywriter versus operator <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The difference is not how clever the prompt is. It is whether Claude can reach the platform. When Claude has an API connection, it can read your real numbers instead of the numbers you paste in, and it can write changes back as structured requests instead of asking you to click through a dashboard. That is the whole unlock, and it is also exactly why you scope it tightly.</p>
+<div class="rolegrid">
+<div class="rolecard"><h3>Claude the copywriter</h3><p>You describe the campaign, Claude writes headlines and angles, you copy them into Ads Manager and set everything up by hand. Good output, but you are still the one doing every click, and Claude is guessing at performance because it cannot see your account.</p></div>
+<div class="rolecard"><h3>Claude the operator</h3><p>Claude queries the account directly, so it argues from your real cost per conversion. It drafts the campaign as an actual API request, dry runs it, shows you the exact fields, and creates it paused for your approval. You review and enable. It reports back weekly.</p></div>
+</div>
+
+<hr class="rule">
+<span class="kicker">before you start</span>
+<h2>What you need, and what it actually costs <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>An existing ad account</b> Google Ads or TikTok Ads, already set up with billing. The API drives the account you already have, it does not create one for you.</div>
+<div class="minicard"><b>API access, by application</b> There is no paid tier to buy. Google grants a developer token through an application, and TikTok grants access through its developer portal. Both take a few days.</div>
+<div class="minicard"><b>Claude, any paid plan</b> Claude Pro is USD $20 a month billed monthly, or $17 a month on annual billing, per <a href="https://www.claude.com/pricing" target="_blank">claude.com/pricing</a>. Claude Code is included with Pro and Max.</div>
+<div class="minicard"><b>Python and a terminal</b> Only for the Google Ads route. The TikTok route can run entirely through a hosted connection with no code at all, which I cover below.</div>
+</div>
+<div class="tip"><b>The honest cost line.</b> The API itself is not what you pay for. Your real spend is the ad budget, and that number is entirely under your control if you set the caps in step 5. Google publishes daily operation limits per access level rather than a price: 15,000 operations a day at Basic access, 2,880 at Explorer access, and unlimited at Standard access (<a href="https://developers.google.com/google-ads/api/docs/access-levels" target="_blank">access levels</a>). For one person running their own campaigns, Basic is far more than you will use.</div>
+
+<hr class="rule">
+<span class="kicker">step 1</span>
+<h2>Connect read only first, on purpose <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Do not start with the ability to spend. Start with the ability to see. Google's own Ads team publishes a Model Context Protocol server that is read only by design: it exposes three tools, <code>list_accessible_customers</code>, <code>search</code> and <code>get_resource_metadata</code>, and none of them can change a bid, pause a campaign or create anything (<a href="https://github.com/googleads/google-ads-mcp" target="_blank">googleads/google-ads-mcp</a>). That is the safest possible way to find out whether this workflow is worth it for you.</p>
+<ol class="steps">
+<li><strong class="st">👩‍💻 Install Claude Code.</strong> Follow the <a href="https://code.claude.com/docs/en/overview" target="_blank">Claude Code docs</a> to install it, then run <code>claude</code> in a folder you have made for this project. Everything below happens inside that one folder, which matters later when you write the rules file.</li>
+<li><strong class="st">🔑 Have your credentials ready.</strong> The Google server needs three values: your Google Cloud project ID, your Google Ads developer token, and the path to a credentials JSON file. Step 2 is how you get all three. If you do not have them yet, read on and come back.</li>
+<li><strong class="st">🔌 Add the server.</strong> Run the add command below in your project folder. It registers the server, passes your three values as environment variables, and runs it through <code>pipx</code> so nothing is installed globally.</li>
+<li><strong class="st">✅ Check it connected.</strong> Run <code>claude mcp list</code>. A healthy server shows <code>Connected</code>. If it shows <code>Failed to connect</code>, the cause is almost always a wrong credentials path or a developer token that has not been approved yet. The <a href="https://code.claude.com/docs/en/mcp" target="_blank">MCP reference</a> covers the rest.</li>
+</ol>
+<pre><code>claude mcp add --transport stdio google-ads \
+  --env GOOGLE_PROJECT_ID=your-project-id \
+  --env GOOGLE_ADS_DEVELOPER_TOKEN=your-developer-token \
+  --env GOOGLE_APPLICATION_CREDENTIALS=/full/path/to/credentials.json \
+  -- pipx run --spec git+https://github.com/googleads/google-ads-mcp.git google-ads-mcp</code></pre>
+<p>For TikTok there is an official hosted equivalent, and it needs no credentials file at all. TikTok's Agentic Hub documentation gives two endpoints and notes that the full one is the one to use with Claude, since it loads the whole toolset at connection time (<a href="https://ads.tiktok.com/help/article/about-tiktok-for-business-agentic-hub-and-mcp-server?lang=en" target="_blank">TikTok for Business MCP Server</a>).</p>
+<pre><code>claude mcp add --transport http tiktok-ads https://business-api.tiktok.com/open_mcp/tt-ads-mcp-flat</code></pre>
+<div class="tip calm">The TikTok server is a remote connection, so the first time you use it Claude Code will ask you to authorise in a browser. Type <code>/mcp</code> inside Claude Code to see the status and finish sign in. Because this one is hosted, it exposes write tools too, which is exactly why the approval gate in step 5 matters more here than on the Google side.</div>
+<p>Once a server is connected, this is the first prompt I run. It is a pure reading exercise, and it tells you immediately whether Claude actually understands your account.</p>
+<div class="promptwrap">
+<span class="promptlabel">🔎 read my account before touching it</span>
+<pre><code>You are connected to my ad account through an MCP server. For this conversation, treat yourself as read only: query freely, but do not call any tool that creates, updates or deletes anything, even if I ask you to.
+
+Start by listing every account I have access to and telling me which one looks like the main spending account. Then for that account, pull the last 30 days of spend, impressions, clicks, conversions and cost per conversion, broken out by campaign, and show it as a table sorted by spend.
+
+Now interpret it for me. Which campaigns are carrying this account, which ones are quietly burning budget, and which ones have too little data to judge yet? Be explicit about the sample size behind each verdict, and say when a number is too thin to act on.
+
+Finish with the three changes you would make if you had write access, ranked by how much money each one moves. For each change, name the exact campaign, the exact field you would set, and the evidence you would want to see before you would be comfortable making it.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">step 2</span>
+<h2>Get real API access <span class="gi" style="--gl:#B37F03" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14.5C18.8137 14.5 21.5 11.8137 21.5 8.5C21.5 5.18629 18.8137 2.5 15.5 2.5C12.1863 2.5 9.5 5.18629 9.5 8.5C9.5 9.38041 9.68962 10.2165 10.0303 10.9697L2.5 18.5V21.5H5.5V19.5H7.5V17.5H9.5L13.0303 13.9697C13.7835 14.3104 14.6196 14.5 15.5 14.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17.5 6.5L16.5 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the part everyone underestimates. Neither platform hands out API access instantly, so start the application before you need it. Here is each one from zero.</p>
+
+<h3>Google Ads</h3>
+<ol class="steps">
+<li><strong class="st">🏢 Use a manager account.</strong> Developer tokens are issued against a Google Ads manager account at the top of your account hierarchy, not a normal ad account. If you do not have one, create one first. Google's <a href="https://developers.google.com/google-ads/api/docs/get-started/dev-token" target="_blank">developer token guide</a> walks through it.</li>
+<li><strong class="st">📝 Apply through the API Center.</strong> In your manager account, open the <a href="https://ads.google.com/aw/apicenter" target="_blank">API Center</a>, accept the terms, and fill out the access form. Google wants a live company website URL and a monitored contact email, and it does read them, so a half finished site is a common rejection reason.</li>
+<li><strong class="st">⏳ Understand the access level you are given.</strong> New tokens start restricted. Test Account access lets you call test accounts only. Explorer access allows 2,880 operations a day against production. Basic access allows 15,000 a day against both. Standard is unlimited and reserved for large tools. All four are defined on the <a href="https://developers.google.com/google-ads/api/docs/access-levels" target="_blank">access levels page</a>.</li>
+<li><strong class="st">☁️ Create OAuth credentials.</strong> In the <a href="https://console.cloud.google.com/" target="_blank">Google Cloud console</a>, create a project, enable the Google Ads API, and create an OAuth client. Google's <a href="https://developers.google.com/google-ads/api/docs/get-started/oauth-cloud-project" target="_blank">OAuth setup page</a> is the exact sequence, and Claude can read it with you if any screen looks unfamiliar.</li>
+<li><strong class="st">📦 Install the client library.</strong> Run <code>python -m pip install google-ads</code>, per the <a href="https://developers.google.com/google-ads/api/docs/client-libs/python" target="_blank">Python client library docs</a>. This is what your scripts will use for anything the read only MCP server cannot do.</li>
+<li><strong class="st">🗂️ Write the config file.</strong> The library reads a file called <code>google-ads.yaml</code> holding your developer token, client ID, client secret and refresh token, with <code>developer_token</code> the one field marked required (<a href="https://developers.google.com/google-ads/api/docs/client-libs/python/configuration" target="_blank">configuration guide</a>). Keep it outside your repo and add it to <code>.gitignore</code> the same day you create it.</li>
+</ol>
+
+<h3>TikTok Ads</h3>
+<ol class="steps">
+<li><strong class="st">🧾 Register a developer app.</strong> Go to the <a href="https://business-api.tiktok.com/portal" target="_blank">TikTok API for Business portal</a>, create a developer account, and register an app. You get an app ID and a secret, which you exchange for an access token tied to a specific advertiser ID.</li>
+<li><strong class="st">🧪 Ask for a sandbox ad account.</strong> Before touching your real advertiser ID, create a sandbox ad account, which lets you call the full API with no real spend attached (<a href="https://business-api.tiktok.com/portal/docs/sandbox-accounts/v1.3" target="_blank">sandbox accounts</a>). Do all of your first campaign creation here.</li>
+<li><strong class="st">📮 Learn the one endpoint that matters.</strong> Campaigns are created with a POST to <code>/open_api/v1.3/campaign/create/</code>, passing your access token and a body containing <code>advertiser_id</code>, <code>campaign_name</code>, <code>objective_type</code>, <code>budget_mode</code> and <code>budget</code>. TikTok's own <a href="https://github.com/tiktok/tiktok-business-api-sdk/blob/main/js_sdk/docs/CampaignCreationApi.md" target="_blank">SDK reference</a> shows the exact call shape, and the <a href="https://business-api.tiktok.com/portal/docs/create-a-campaign-guide/v1.3" target="_blank">create a campaign guide</a> covers the field values.</li>
+<li><strong class="st">🐍 Or skip the code.</strong> If you connected the hosted MCP server in step 1, you do not need the SDK at all: TikTok's documentation states no developer credential or custom coding is required for that route. Use the SDK when you want scripts you can version and re-run, use the MCP server when you want conversation.</li>
+</ol>
+<div class="tip"><b>Do not skip the token hygiene.</b> An ads API token is a key to your money. Store it in a <code>.env</code> file or your OS keychain, never in a script, never in a screenshot, never in a chat message. Set the shortest expiry the platform offers and rotate it the moment a device or contractor changes.</div>
+
+<hr class="rule">
+<span class="kicker">step 3</span>
+<h2>Practise where money cannot move <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Both platforms give you a free environment where the API behaves normally but nothing serves and nothing is charged. Building your first three or four campaigns here is what turns this from a scary idea into a boring routine.</p>
+<ol class="steps">
+<li><strong class="st">🧪 Google: make a test manager account.</strong> Test accounts appear in the Google Ads UI as cancelled accounts, they render no ads, and they produce no impressions, conversions or cost. Better still, they do not require an approved developer token, so you can start building the day you apply rather than waiting. Full behaviour on the <a href="https://developers.google.com/google-ads/api/docs/best-practices/test-accounts" target="_blank">test accounts page</a>.</li>
+<li><strong class="st">⚠️ Know the two test-account limits.</strong> Because nothing serves, you cannot test anything that depends on real delivery data, including bid simulations and conversion uploads. A test hierarchy also caps at 50 accounts and is deleted after a year of inactivity, so treat it as a workbench, not an archive.</li>
+<li><strong class="st">🧪 TikTok: use the sandbox advertiser.</strong> Point your access token at the sandbox advertiser ID rather than your live one and run the whole create flow end to end. When it works twice in a row without you fixing anything, move to the real advertiser ID.</li>
+<li><strong class="st">📓 Keep the transcript.</strong> Ask Claude to write every successful request body into a file as you go. Those saved bodies become your templates, and they are far more useful than remembering which field name TikTok used for budget mode.</li>
+</ol>
+<div class="tip calm">This step is the reason the build is safe rather than reckless. By the time real money is reachable, you have already made every beginner mistake somewhere it could not cost you anything. 🌱</div>
+
+<hr class="rule">
+<span class="kicker">step 4</span>
+<h2>Give Claude a spec, not a vibe <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>An operator with a vague brief is worse than no operator. Before any API call exists, get the whole campaign written down as a file you both work from, with the numbers that decide success stated up front. This one file is what every later prompt refers back to.</p>
+<div class="promptwrap">
+<span class="promptlabel">📋 write the campaign spec</span>
+<pre><code>Before you touch the API, I want a full campaign spec written to a file called campaign-spec.md in this folder, so we are both working from the same document.
+
+The campaign runs on [Google Ads or TikTok Ads] for [describe the offer and the landing page URL], selling to [describe the audience] in [countries]. The hard total budget is [$X] across [N] days, with a daily cap of [$Y], and those two numbers are ceilings, not targets.
+
+The single metric that decides whether this worked is [cost per lead, ROAS, or cost per purchase] with a target of [number]. If it goes above [ceiling number] for two consecutive days, the campaign gets paused. Write that rule into the file in plain language.
+
+Now write out the full structure: campaign name, objective, budget mode and amount, bidding strategy, targeting, ad group structure, and the exact ad copy variants with character counts checked against the platform limits. Flag every single field where you had to guess or invent a value, in a section called "assumptions to correct", so I can fix them before anything gets created.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">step 5</span>
+<h2>Dry run, then launch paused <span class="gi" style="--gl:#3E294F" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 6.5C13.5 7.32843 12.8284 8 12 8C11.1716 8 10.5 7.32843 10.5 6.5C10.5 5.67157 11.1716 5 12 5C12.8284 5 13.5 5.67157 13.5 6.5Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 12.5C13.5 13.3284 12.8284 14 12 14C11.1716 14 10.5 13.3284 10.5 12.5C10.5 11.6716 11.1716 11 12 11C12.8284 11 13.5 11.6716 13.5 12.5Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17C10.1308 17 9.19615 17 8.5 16.5981C8.04394 16.3348 7.66523 15.9561 7.40192 15.5C7 14.8038 7 13.8692 7 12L7 7C7 5.13077 7 4.19615 7.40192 3.5C7.66523 3.04394 8.04394 2.66523 8.5 2.40192C9.19615 2 10.1308 2 12 2C13.8692 2 14.8038 2 15.5 2.40192C15.9561 2.66523 16.3348 3.04394 16.5981 3.5C17 4.19615 17 5.13077 17 7V12C17 13.8692 17 14.8038 16.5981 15.5C16.3348 15.9561 15.9561 16.3348 15.5 16.5981C14.8038 17 13.8692 17 12 17Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 8L5.95617 7.12348C4.64147 6.0195 3.98413 5.46751 4.00029 4.96618C4.00686 4.76236 4.07264 4.56553 4.18881 4.40207C4.47455 4 5.31637 4 7 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 8L18.0438 7.12348C19.3585 6.0195 20.0159 5.46751 19.9997 4.96618C19.9931 4.76236 19.9274 4.56553 19.8112 4.40207C19.5254 4 18.6836 4 17 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 15L18.0438 14.1235C19.3585 13.0195 20.0159 12.4675 19.9997 11.9662C19.9931 11.7624 19.9274 11.5655 19.8112 11.4021C19.5254 11 18.6836 11 17 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 15L5.95617 14.1235C4.64147 13.0195 3.98413 12.4675 4.00029 11.9662C4.00686 11.7624 4.07264 11.5655 4.18881 11.4021C4.47455 11 5.31637 11 7 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the part that makes the whole thing safe, and both platforms support it properly. On Google Ads you set an optional <code>validate_only</code> boolean to <code>true</code> on a mutate request, and the API validates it exactly as if it were going to run, then skips execution and returns an empty response when there are no errors (<a href="https://developers.google.com/google-ads/api/docs/concepts/api-structure" target="_blank">API structure</a>). You get every error you would have got, and none of the consequences.</p>
+<div class="promptwrap">
+<span class="promptlabel">🚦 build it as a dry run first</span>
+<pre><code>Using campaign-spec.md as the only source of truth, write a Python script called launch_campaign.py that creates this campaign through the platform's official client library.
+
+The script must default to a dry run. On Google Ads that means setting validate_only to true on every mutate request, creating the campaign budget resource first, then creating the campaign that references it with status set to PAUSED. Nothing real happens unless I pass a --live flag on the command line, and even with --live the campaign is still created paused.
+
+When it runs, print a plain English summary of exactly what would be created: campaign name, objective, budget mode, budget amount, daily cap, targeting and every ad variant. Then print the raw request body too, so I can read the actual fields rather than your description of them. Stop there and wait.
+
+Do not hardcode any credential. Read them from the config file or environment variables, never print a token or a secret to the terminal or a log, and add the config file to .gitignore if it is not already there.</code></pre>
+</div>
+<p>Google's own campaign documentation gives the same advice as a recommendation: set the campaign to PAUSED when creating it so the ads do not immediately serve, and set it to ENABLED once targeting is in place and the ads are ready (<a href="https://developers.google.com/google-ads/api/docs/campaigns/create-campaigns" target="_blank">create campaigns</a>). Enabling is the one action you keep for yourself.</p>
+<div class="tip warn"><b>TikTok has a trap here.</b> The <code>operation_status</code> field looks like it lets you create a campaign disabled, but it is an allowlist-only feature. If you pass it without being allowlisted, TikTok ignores the field and returns no error at all, so a campaign you believed was paused is live (<a href="https://github.com/ldsink/python-tiktok-business-api-sdk/blob/main/docs/CampaignCreateBody.md" target="_blank">campaign field reference</a>). Tell Claude to always read the campaign back after creating it, and to pause it through the <code>/campaign/status/update/</code> endpoint rather than trusting the create call.</div>
+
+<hr class="rule">
+<span class="kicker">the safety net</span>
+<h2>The four spend guardrails <span class="gi" style="--gl:#C47612" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5V17.5M13 14.5C13 15.0523 12.5523 15.5 12 15.5C11.4477 15.5 11 15.0523 11 14.5C11 13.9477 11.4477 13.5 12 13.5C12.5523 13.5 13 13.9477 13 14.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16.5 9V6.5C16.5 4.01472 14.4853 2 12 2C9.51471 2 7.49999 4.01472 7.49999 6.5V9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M4.2678 18.8447C4.49268 20.515 5.87612 21.8235 7.55965 21.9009C8.97627 21.966 10.4153 22 12 22C13.5847 22 15.0237 21.966 16.4403 21.9009C18.1239 21.8235 19.5073 20.515 19.7322 18.8447C19.8789 17.7547 20 16.6376 20 15.5C20 14.3624 19.8789 13.2453 19.7322 12.1553C19.5073 10.485 18.1239 9.17649 16.4403 9.09909C15.0237 9.03397 13.5847 9 12 9C10.4153 9 8.97627 9.03397 7.55965 9.09909C5.87612 9.17649 4.49268 10.485 4.2678 12.1553C4.12104 13.2453 3.99999 14.3624 3.99999 15.5C3.99999 16.6376 4.12104 17.7547 4.2678 18.8447Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Cap the money twice</b> Once on the platform, as a campaign daily budget, and once in your spec file as the number Claude is forbidden to exceed. One cap is a preference. Two caps that have to agree is a control.</div>
+<div class="minicard"><b>Scope the token</b> Generate the token against one advertiser or one customer ID, not your whole business account, and give it read scopes only until you genuinely need write. Shortest expiry the platform allows, rotated on any change.</div>
+<div class="minicard"><b>Paused on create, always</b> Every campaign is born paused, whether the platform recommends it or the endpoint has to be called separately. Enabling is a human action, and it should stay slightly annoying to do.</div>
+<div class="minicard"><b>Approve every write</b> Claude Code asks before running shell commands by default. Keep it that way, never run it with permissions skipped for this project, and add an explicit rule for the launch script so the prompt is impossible to miss.</div>
+</div>
+<p>You can write that last one into the project instead of relying on memory. Claude Code reads permission rules from <code>.claude/settings.json</code> in the project folder, and a deny rule always wins over an allow rule (<a href="https://code.claude.com/docs/en/permissions" target="_blank">configure permissions</a>). Something like this is enough:</p>
+<pre><code>{
+  "permissions": {
+    "ask": [
+      "Bash(python launch_campaign.py *)"
+    ],
+    "deny": [
+      "Bash(python launch_campaign.py * --live *)"
+    ]
+  }
+}</code></pre>
+<p>With that in place, the dry run always prompts you, and the live run is blocked outright until you consciously remove the deny rule. Then pin the behaviour rules alongside it in a <code>CLAUDE.md</code>, which Claude Code loads automatically at the start of every session in that folder (<a href="https://code.claude.com/docs/en/memory" target="_blank">memory docs</a>).</p>
+<div class="promptwrap">
+<span class="promptlabel">✍️ write the rules file</span>
+<pre><code>Write me a CLAUDE.md for this folder that hardcodes the rules we work by, because this project spends real money and I do not want to restate this every session.
+
+The rules are: never make a create, update or delete API call without showing me the exact request body first and waiting for my explicit yes. Always dry run before a live run. Always create campaigns paused, and never enable one yourself under any circumstances. Never set a budget above the ceiling written in campaign-spec.md, and if the spec and my instruction disagree, stop and ask rather than picking one.
+
+Add a security section: never print, echo, log or commit an access token, a refresh token or the config file, and never paste a credential into a summary.
+
+Finish with a short table listing every script in this folder and marking each one as read only or can-spend-money, so the distinction is impossible to miss at a glance. Keep the whole file under one page, because a rules file nobody reads is a rules file nobody follows.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">the payoff</span>
+<h2>The weekly operator loop <span class="gi" style="--gl:#987CBE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3175 7.14139L20.8239 6.28479C20.4506 5.63696 20.264 5.31305 19.9464 5.18388C19.6288 5.05472 19.2696 5.15664 18.5513 5.36048L17.3311 5.70418C16.8725 5.80994 16.3913 5.74994 15.9726 5.53479L15.6357 5.34042C15.2766 5.11043 15.0004 4.77133 14.8475 4.37274L14.5136 3.37536C14.294 2.71534 14.1842 2.38533 13.9228 2.19657C13.6615 2.00781 13.3143 2.00781 12.6199 2.00781H11.5051C10.8108 2.00781 10.4636 2.00781 10.2022 2.19657C9.94085 2.38533 9.83106 2.71534 9.61149 3.37536L9.27753 4.37274C9.12465 4.77133 8.84845 5.11043 8.48937 5.34042L8.15249 5.53479C7.73374 5.74994 7.25259 5.80994 6.79398 5.70418L5.57375 5.36048C4.85541 5.15664 4.49625 5.05472 4.17867 5.18388C3.86109 5.31305 3.67445 5.63696 3.30115 6.28479L2.80757 7.14139C2.45766 7.74864 2.2827 8.05227 2.31666 8.37549C2.35061 8.69871 2.58483 8.95918 3.05326 9.48012L4.0843 10.6328C4.3363 10.9518 4.51521 11.5078 4.51521 12.0077C4.51521 12.5078 4.33636 13.0636 4.08433 13.3827L3.05326 14.5354C2.58483 15.0564 2.35062 15.3168 2.31666 15.6401C2.2827 15.9633 2.45766 16.2669 2.80757 16.8741L3.30114 17.7307C3.67443 18.3785 3.86109 18.7025 4.17867 18.8316C4.49625 18.9608 4.85542 18.8589 5.57377 18.655L6.79394 18.3113C7.25263 18.2055 7.73387 18.2656 8.15267 18.4808L8.4895 18.6752C8.84851 18.9052 9.12464 19.2442 9.2775 19.6428L9.61149 20.6403C9.83106 21.3003 9.94085 21.6303 10.2022 21.8191C10.4636 22.0078 10.8108 22.0078 11.5051 22.0078H12.6199C13.3143 22.0078 13.6615 22.0078 13.9228 21.8191C14.1842 21.6303 14.294 21.3003 14.5136 20.6403L14.8476 19.6428C15.0004 19.2442 15.2765 18.9052 15.6356 18.6752L15.9724 18.4808C16.3912 18.2656 16.8724 18.2055 17.3311 18.3113L18.5513 18.655C19.2696 18.8589 19.6288 18.9608 19.9464 18.8316C20.264 18.7025 20.4506 18.3785 20.8239 17.7307L21.3175 16.8741C21.6674 16.2669 21.8423 15.9633 21.8084 15.6401C21.7744 15.3168 21.5402 15.0564 21.0718 14.5354L20.0407 13.3827C19.7887 13.0636 19.6098 12.5078 19.6098 12.0077C19.6098 11.5078 19.7888 10.9518 20.0407 10.6328L21.0718 9.48012C21.5402 8.95918 21.7744 8.69871 21.8084 8.37549C21.8423 8.05227 21.6674 7.74864 21.3175 7.14139Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.5195 12C15.5195 13.933 13.9525 15.5 12.0195 15.5C10.0865 15.5 8.51953 13.933 8.51953 12C8.51953 10.067 10.0865 8.5 12.0195 8.5C13.9525 8.5 15.5195 10.067 15.5195 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>Once the campaign is live, the value is not the launch, it is the review you would otherwise keep skipping. This is the rhythm I would run: one prompt on a Monday, ten minutes of reading, and you approve or reject a written change list.</p>
+<ol class="steps">
+<li><strong class="st">📊 Claude reads the week.</strong> It pulls the numbers itself through the read only connection, so nothing depends on you exporting a CSV at the right moment.</li>
+<li><strong class="st">📝 It proposes, it does not act.</strong> Changes go into a file with the exact fields and values, which means you are approving something specific rather than a vague suggestion.</li>
+<li><strong class="st">✅ You approve line by line.</strong> Delete the lines you disagree with, then tell Claude to apply what is left as a dry run first, exactly like the launch.</li>
+<li><strong class="st">🔁 The spec gets updated.</strong> Whatever you learned goes back into campaign-spec.md, so next week's review argues from the corrected numbers rather than the original guesses.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">📊 the Monday review</span>
+<pre><code>Pull the last 7 days of performance for every active campaign in this account and compare it with the 7 days before. Give me the numbers, not adjectives, and show them as a table.
+
+For each campaign, report spend, the target metric named in campaign-spec.md, and whether it crossed the pause ceiling we wrote in that file. Say clearly which campaigns have enough data to judge and which ones do not, and do not make a recommendation on a campaign with a sample too small to support one.
+
+Then write a change list into a file called changes-this-week.md: what to pause, what to raise, what to lower, and what to leave alone. For every proposed change, give the exact campaign, the exact API field and the exact new value, plus one line on the evidence behind it.
+
+Do not execute any of it. I will read the file, delete the lines I disagree with, and tell you which ones to run. When I do, dry run them first and show me the validated request bodies before anything real happens.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">good to know</span>
+<h2>Four things that will bite you <span class="gi" style="--gl:#DE5E74" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.51734 17.1132C6.91177 17.6905 8.10883 18.9228 9.74168 19.2333M9.86428 22C8.83582 21.8306 2 19.6057 2 12.0926C2 5.06329 8.0019 2 12.0008 2C15.9996 2 22 5.06329 22 12.0926C22 19.6057 15.1642 21.8306 14.1357 22C14.1357 22 13.9267 18.5826 14.0487 17.9969C14.1706 17.4113 13.7552 16.4688 13.7552 16.4688C14.7262 16.1055 16.2043 15.5847 16.7001 14.1874C17.0848 13.1032 17.3268 11.5288 16.2508 10.0489C16.2508 10.0489 16.5318 7.65809 15.9996 7.56548C15.4675 7.47287 13.8998 8.51192 13.8998 8.51192C13.4432 8.38248 12.4243 8.13476 12.0018 8.17939C11.5792 8.13476 10.5568 8.38248 10.1002 8.51192C10.1002 8.51192 8.53249 7.47287 8.00036 7.56548C7.46823 7.65809 7.74917 10.0489 7.74917 10.0489C6.67316 11.5288 6.91516 13.1032 7.2999 14.1874C7.79575 15.5847 9.27384 16.1055 10.2448 16.4688C10.2448 16.4688 9.82944 17.4113 9.95135 17.9969C10.0733 18.5826 9.86428 22 9.86428 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Access takes days, not minutes</b> Google reviews developer token applications and it is not instant. Apply on day one, then build against test accounts while you wait, since those work without an approved token.</div>
+<div class="minicard"><b>Read only really is read only</b> Google's official MCP server cannot pause a campaign or change a bid, by design. If you expected it to act, that is the client library route in step 2, not a missing setting.</div>
+<div class="minicard"><b>Operations are counted, not requests</b> Google's daily limits count the sum of gets and mutates on a rolling 24 hour window, so a chatty analysis loop burns quota faster than you expect. Details on the <a href="https://developers.google.com/google-ads/api/docs/best-practices/quotas" target="_blank">quotas page</a>.</div>
+<div class="minicard"><b>Currency and timezone are account settings</b> Budgets are interpreted in the account's currency and its timezone, not yours. Confirm both before your first live run, or a $50 daily cap can be a very different number than you pictured.</div>
+</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://github.com/googleads/google-ads-mcp" target="_blank">Google Ads MCP server, official repo (read only, three tools)</a><br>
+  <a href="https://developers.google.com/google-ads/api/docs/get-started/dev-token" target="_blank">Google Ads API, obtain a developer token</a><br>
+  <a href="https://developers.google.com/google-ads/api/docs/access-levels" target="_blank">Google Ads API, access levels and daily operation limits</a><br>
+  <a href="https://developers.google.com/google-ads/api/docs/best-practices/test-accounts" target="_blank">Google Ads API, test accounts</a><br>
+  <a href="https://developers.google.com/google-ads/api/docs/concepts/api-structure" target="_blank">Google Ads API, validate_only dry runs</a><br>
+  <a href="https://developers.google.com/google-ads/api/docs/campaigns/create-campaigns" target="_blank">Google Ads API, create campaigns (the PAUSED recommendation)</a><br>
+  <a href="https://ads.tiktok.com/help/article/about-tiktok-for-business-agentic-hub-and-mcp-server?lang=en" target="_blank">TikTok for Business, Agentic Hub and MCP server</a><br>
+  <a href="https://business-api.tiktok.com/portal/docs/create-a-campaign-guide/v1.3" target="_blank">TikTok API for Business, create a campaign</a><br>
+  <a href="https://business-api.tiktok.com/portal/docs/sandbox-accounts/v1.3" target="_blank">TikTok API for Business, sandbox accounts</a><br>
+  <a href="https://github.com/tiktok/tiktok-business-api-sdk" target="_blank">TikTok Business API SDK, official repo</a><br>
+  <a href="https://code.claude.com/docs/en/mcp" target="_blank">Claude Code, connect tools via MCP</a><br>
+  <a href="https://code.claude.com/docs/en/permissions" target="_blank">Claude Code, configure permissions</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

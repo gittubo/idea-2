@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trip Palette: the app that packs for your destination · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Trip Palette turns any destination into the weather, a color palette lifted from the landscape, and a complete packing list. Use it, download the code...">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/trip-palette-packing-app-with-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Trip Palette: the app that packs for your destination">
+<meta property="og:description" content="Trip Palette turns any destination into the weather, a color palette lifted from the landscape, and a complete packing list. Use it, download the code...">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/trip-palette-packing-app-with-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trip Palette: the app that packs for your destination">
+<meta name="twitter:description" content="Trip Palette turns any destination into the weather, a color palette lifted from the landscape, and a complete packing list. Use it, download the code...">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Trip Palette: the app that packs for your destination","description":"This isn't a tutorial, it's the actual app from the reel. Trip Palette turns any destination into the weather, a color palette lifted from the landscape, and...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/trip-palette-packing-app-with-claude"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Trip Palette: the app that packs for your destination", u:"guides/trip-palette-packing-app-with-claude.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building &amp; apps</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Trip Palette: the app that packs for your destination</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Trip Palette turns any destination into the weather, a color palette lifted from the landscape, and a complete packing list. Use it, download the code, make it yours.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">try it first</span>
+<h2>Use the app right now <span class="gi" style="--gl:#468CD1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>👉 <strong><a href="https://cindyzhu.com.au/trip-palette/" target="_blank">cindyzhu.com.au/trip-palette</a></strong></p>
+<p>Type in a destination, your dates, and what you'll be doing. You get back:</p>
+<ul>
+<li>🌦 The weather for your exact dates, and "typical weather for these dates" when your trip is months away (forecasts only see 16 days ahead, most versions of this app quietly break there, mine doesn't)</li>
+<li>🎨 Destination photos with a four-color palette pulled straight from the landscape</li>
+<li>👗 A packing list with real quantities, matched to the weather, the palette, and your activities</li>
+</ul>
+<p>No sign-up, no keys, nothing to install. It runs on free, no-key APIs (Open-Meteo weather + geocoding, Wikimedia photos).</p>
+<hr class="rule">
+<span class="kicker">take the code</span>
+<h2>Download the full code <span class="gi" style="--gl:#8676B9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 22V19C8 17.1144 8 16.1716 8.58579 15.5858C9.17157 15 10.1144 15 12 15C13.8856 15 14.8284 15 15.4142 15.5858C16 16.1716 16 17.1144 16 19V22" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M10 7H14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 11.8584C3 7.28199 3 4.99376 4.38674 3.54394C4.43797 3.49038 4.49038 3.43797 4.54394 3.38674C5.99376 2 8.28199 2 12.8584 2C13.943 2 14.4655 2.00376 14.9628 2.18936C15.4417 2.3681 15.8429 2.70239 16.6452 3.37099L18.8411 5.20092C19.9027 6.08561 20.4335 6.52795 20.7168 7.13266C21 7.73737 21 8.42833 21 9.81025V13C21 16.7497 21 18.6246 20.0451 19.9389C19.7367 20.3634 19.3634 20.7367 18.9389 21.0451C17.6246 22 15.7497 22 12 22C8.25027 22 6.3754 22 5.06107 21.0451C4.6366 20.7367 4.26331 20.3634 3.95491 19.9389C3 18.6246 3 16.7497 3 13V11.8584Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>👉 <strong><a href="files/trip-palette-source.zip">trip-palette-source.zip</a></strong></p>
+<p>The complete React project Claude built, with a README that walks you through everything. Inside:</p>
+<ul>
+<li>⚛️ The whole app: the weather logic (including the months-ahead fix), the in-browser palette extraction, and the packing engine</li>
+<li>📝 A README with run steps, deploy steps, and upgrade ideas</li>
+<li>🆓 Zero API keys required, every data source is free</li>
+</ul>
+<hr class="rule">
+<span class="kicker">run it</span>
+<h2>Run it on your machine <span class="gi" style="--gl:#9281AD" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<ol class="steps">
+<li>💻 Unzip it, then open the folder in Claude Code or the Code tab in Claude Desktop (open Claude Desktop, click Code, choose Local, Select folder)</li>
+<li>▶️ Run <code>npm install</code> then <code>npm run dev</code> (no Node.js? just ask Claude: "check if Node is installed and install it if not")</li>
+<li>🌍 Want your own copy online? Run <code>npx vercel</code> with a free <a href="https://vercel.com" target="_blank">vercel.com</a> account, Claude walks you through the login when the CLI asks</li>
+</ol>
+<hr class="rule">
+<span class="kicker">make it yours</span>
+<h2>Make it yours <span class="gi" style="--gl:#BA7A10" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the fun part, and the real lesson from the reel. Open the folder in Claude and ask for upgrades:</p>
+<p>📷 <strong>Closet mode (my favourite).</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">📷 closet mode</span>
+<pre><code>Add a "my closet" step: I'll drop photos of clothes I own into a folder. Read them, tag each item by type and color, and rewrite the packing list to reference my actual clothes (like "your rust linen shirt works with swatch 2"), plus a short "gaps worth shopping" list.</code></pre>
+</div>
+<p>🎫 <strong>Shareable palette card.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🎫 the palette card</span>
+<pre><code>Add a share button that renders a boarding-pass style image: destination, dates, the four swatches with hex codes, and the top five packing items, sized for an Instagram story.</code></pre>
+</div>
+<p>🧳 <strong>Carry-on mode.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🧳 carry-on mode</span>
+<pre><code>Add a carry-on toggle that trims the list to carry-on limits and checks that every top pairs with every bottom inside the palette.</code></pre>
+</div>
+<p>And when you restyle it, don't say "make it pretty". Find ONE design you genuinely love (editorial travel journals, vintage luggage tags, boarding passes), screenshot it, and tell Claude exactly what to take from it. Then iterate with a screenshot of every version:</p>
+<div class="promptwrap">
+<span class="promptlabel">🔁 the iterate loop</span>
+<pre><code>Here's a screenshot of the current version.
+
+KEEP: [what's working]
+FIX: [what feels off, be visual and specific: spacing, size, color, alignment]
+CUT: [anything unnecessary]
+
+Only touch what I listed, then show me the updated version.</code></pre>
+</div>
+<p>Anthropic's own <a href="https://code.claude.com/docs/en/best-practices" target="_blank">Claude Code best practices</a> recommend exactly this screenshot-driven loop, and Nielsen Norman Group <a href="https://www.nngroup.com/articles/vague-prototyping/" target="_blank">found</a> that visual references beat vague words like "clean" or "modern" every time. That loop is the difference between a build that looks designed and one that looks generated.</p>
+<hr class="rule">
+<span class="kicker">the reasoning</span>
+<h2>Why the app is smart, not just pretty <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li>🎯 <strong>Complement, don't camouflage.</strong> The color notes suggest two neutrals plus one accent from the opposite side of the color wheel, because photographers pick outfit colors that pop against the landscape, not blend into it: see <a href="https://www.marlamanesphotography.com/what-to-wear-for-your-adventure-session-outfit-guide/" target="_blank">Marla Manes' outfit guide</a> and <a href="https://thecuriousjournal.com/what-colours-to-wear-in-travel-photos/" target="_blank">these pairings</a>. Literal matching makes you disappear into the background.</li>
+<li>🧺 <strong>Real quantity math.</strong> The list uses the <a href="https://genevavanderzeil.com/2024/06/my-5-4-3-2-1-packing-guide/" target="_blank">5-4-3-2-1 method</a> (created by Geneva Vanderzeil), roughly <a href="https://packitup.com/whats-your-ratio/" target="_blank">three tops per bottom</a> (Anne McAlpin's ratio), and <a href="https://www.ricksteves.com/travel-tips/packing-light/ricks-packing-list" target="_blank">Rick Steves' cap</a> of one week of clothes plus laundry.</li>
+<li>🌦 <strong>Weather that maps to layers.</strong> Temperature bands follow the <a href="https://www.rei.com/learn/expert-advice/layering-basics.html" target="_blank">three-layer system</a> (base for moisture, mid for warmth, shell for rain and wind). The 40% rain rule is the app's own honest house rule.</li>
+<li>🦟 <strong>Real activity rules.</strong> On safari the app says earth tones and no blue or black, because <a href="https://www.acsh.org/news/2016/11/28/do-dark-colors-really-attract-tsetse-flies-10471" target="_blank">tsetse flies are measurably drawn to those colors</a>. Real constraints, not vibes.</li>
+</ul>
+<hr class="rule">
+<span class="kicker">build your own</span>
+<h2>Want to build yours from scratch? <span class="gi" style="--gl:#B27D1F" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6H6C4.59987 6 3.8998 6 3.36502 6.27248C2.89462 6.51217 2.51217 6.89462 2.27248 7.36502C2 7.8998 2 8.59987 2 10C2 11.4001 2 12.1002 2.27248 12.635C2.51217 13.1054 2.89462 13.4878 3.36502 13.7275C3.8998 14 4.59987 14 6 14H18C19.4001 14 20.1002 14 20.635 13.7275C21.1054 13.4878 21.4878 13.1054 21.7275 12.635C22 12.1002 22 11.4001 22 10C22 8.59987 22 7.8998 21.7275 7.36502C21.4878 6.89462 21.1054 6.51217 20.635 6.27248C20.1002 6 19.4001 6 18 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14 6L21 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 6L16 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 7L10 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 3V6M6 14V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 3V6M18 14V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The build order that works (each step is one prompt to Claude): sample-data version first, deploy the skeleton early, design pass on stable data, then make weather + location real, then photos + palette, then a human test. Start with this and build up:</p>
+<div class="promptwrap">
+<span class="promptlabel">🏗 the first build</span>
+<pre><code>Build a working first version of a React website called Trip Palette.
+
+Goal: turn a trip into a packing plan.
+
+Inputs: a destination, start and end dates, and optional activities (like hiking, safari, city walking).
+Outputs: a weather summary for the dates, a four-color palette drawn from the destination's landscape, and a packing list with quantities.
+
+First, check that Node.js 20+ is installed and install it if not. Then use realistic sample data for everything so the complete flow works end to end.
+
+Keep it focused: no accounts, no checkout, no dashboard, nothing I didn't ask for. Run it locally and show me.</code></pre>
+</div>
+<div class="tip warn">Two traps to know: forecasts stop at ~16 days (fix: pull the same dates last year from Open-Meteo's free archive API and label it "typical weather"), and in-browser palette extraction needs every image loaded with crossOrigin set to "anonymous" BEFORE src, or the swatches silently fail. Both fixes are already in the downloadable code, steal them from there.</div>
+<div class="tip calm">If Claude ever loops on a fix: "stop, explain the problem in one paragraph before touching any code." And paste every error straight back, it solves almost everything.</div>
+<hr class="rule">
+<h2>The links <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>🧳 The app: <a href="https://cindyzhu.com.au/trip-palette/" target="_blank">cindyzhu.com.au/trip-palette</a><br>
+💾 The code: <a href="files/trip-palette-source.zip">trip-palette-source.zip</a><br>
+🤖 Claude: <a href="https://claude.com" target="_blank">claude.com</a> (Desktop Code tab or Claude Code, from the Pro plan)<br>
+🌦 Open-Meteo: <a href="https://open-meteo.com" target="_blank">open-meteo.com</a> (weather + geocoding, free, no key)<br>
+🚀 Vercel: <a href="https://vercel.com" target="_blank">vercel.com</a> (free hosting for your own copy)</p>
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

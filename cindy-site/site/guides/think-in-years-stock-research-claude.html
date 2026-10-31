@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beat trading bots by thinking in years, with Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<meta name="description" content="AI trading agents win on speed. You win on time horizon. The Claude setup that turns any company you hold into a written 5-year thesis, the risks that would break it, and a quarterly check-in.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/think-in-years-stock-research-claude">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beat trading bots by thinking in years, with Claude">
+<meta property="og:description" content="AI trading agents win on speed. You win on time horizon. The Claude setup that turns any company you hold into a written 5-year thesis, the risks that would break it, and a quarterly check-in.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/think-in-years-stock-research-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body><!-- GUIDES_CARD {t:"Beat trading bots by thinking in years, with Claude", u:"guides/think-in-years-stock-research-claude.html", topic:"money", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Money</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Beat trading bots by thinking in years, with Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You give Claude a company or ETF you hold or are looking at, and it runs a long-horizon research pass on the real filings.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">why this matters</span>
+<h2>What the agents are good at, and what they're not <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Older trading software followed rules a person wrote in advance. Newer systems pull in far more: funds have used satellite photos of retail car parks to read sales before earnings, and a UC Berkeley study of 4.8 million parking lot images found that edge was worth 4% to 5% in the three days around earnings announcements (<a href="https://newsroom.haas.berkeley.edu/how-hedge-funds-use-satellite-images-to-beat-wall-street-and-main-street/" target="_blank" rel="noopener">Berkeley Haas</a>). Notice the window: three days.</p>
+<p>The risk regulators worry about is sameness. The Bank of England warned that more advanced AI trading "could lead to firms taking increasingly correlated positions and acting in a similar way during a stress, thereby amplifying shocks" (<a href="https://www.bankofengland.co.uk/financial-stability-in-focus/2025/april-2025" target="_blank" rel="noopener">Bank of England, April 2025</a>). IOSCO's May 2026 supervisory toolkit lists "Flash crashes from AI-driven trading" and "Herding behavior" among its systemic risks (<a href="https://www.iosco.org/library/pubdocs/pdf/IOSCOPD823.pdf" target="_blank" rel="noopener">IOSCO report, page 26</a>).</p>
+<div class="rolegrid">
+<div class="rolecard"><b>Where the machines win 🤖</b> Speed, reaction to news in milliseconds, and squeezing a few days of edge out of data you'll never have.</div>
+<div class="rolecard"><b>Where you win 🌱</b> Patience. You can hold through a crash they helped cause, and judge a business on what it looks like in five years, not five seconds.</div>
+</div>
+<div class="tip calm">Speed is expensive even for professionals. S&amp;P's SPIVA scorecard found 85.98% of US large-cap funds underperformed the S&amp;P 500 over 10 years, as of 30 June 2025 (<a href="https://d1e00ek4ebabms.cloudfront.net/production/uploaded-files/spiva-us-mid-year-2025-bc7a7f61-4b27-48b0-b20a-856cc87521d0.pdf" target="_blank" rel="noopener">SPIVA U.S. Mid-Year 2025</a>).</div>
+
+<hr class="rule">
+<span class="kicker">the setup</span>
+<h2>Set Claude up once, in 10 minutes <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">📁 Make a Project for your watchlist.</strong> In Claude, create a Project called something like "Long-term holdings". Projects work on every plan, and free accounts can make up to five. Each thesis you write lives here so Claude remembers it next quarter. <a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank" rel="noopener">What Projects are</a>.</li>
+<li><strong class="st">🌐 Turn on web search.</strong> In a chat, click the <b>+</b> button and switch on <b>Web search</b>. It's available on all Claude plans, and it's what lets Claude pull current filings and news with sources. <a href="https://support.claude.com/en/articles/10684626-enabling-and-using-web-search" target="_blank" rel="noopener">How to enable web search</a>.</li>
+<li><strong class="st">🔬 Use Research if you're on a paid plan.</strong> Research runs a longer, multi-source investigation and needs web search switched on. It's on Pro, Max, Team and Enterprise. On Free, the prompts below still work with plain web search. <a href="https://support.claude.com/en/articles/11088861-using-research-on-claude" target="_blank" rel="noopener">Using Research</a>.</li>
+<li><strong class="st">📄 Add the primary documents.</strong> Download the latest annual report and the most recent quarterly results and drop them into the Project's knowledge. US companies: <a href="https://www.sec.gov/edgar/search/" target="_blank" rel="noopener">SEC EDGAR search</a>. Australian companies: <a href="https://www.asx.com.au/markets/trade-our-cash-market/announcements" target="_blank" rel="noopener">ASX announcements</a>. The company's investor relations page usually has the earnings webcast or transcript, where provided.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">prompt one</span>
+<h2>Write the 5-year thesis <span class="gi" style="--gl:#9B7FA4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 2V5M7.5 2V5M12 2V5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 3.5H11C7.70017 3.5 6.05025 3.5 5.02513 4.52513C4 5.55025 4 7.20017 4 10.5V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V10.5C20 7.20017 20 5.55025 18.9749 4.52512C17.9497 3.5 16.2998 3.5 13 3.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 15H12M8 11H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="promptwrap">
+<span class="promptlabel">🧠 My 5-year thesis</span>
+<pre><code>I hold (or am considering) [company name and ticker, or ETF]. Using the annual report and quarterly results in this project, plus web search for anything more recent, write a 5-year research thesis for it. Cite the document or link for every factual claim, and say clearly when something is your inference rather than a stated fact.
+
+Structure it as: what the business actually sells and who pays for it, how it makes money and whether that is getting better or worse over the last 3 years, the 2 or 3 things that must be true for this business to be meaningfully bigger in 5 years, and what the current price already seems to assume.
+
+Finish with one paragraph I could reread in a year that says, in plain language, why I own this. Do not tell me to buy or sell, and do not predict a share price.</code></pre>
+</div>
+
+<span class="kicker">prompt two</span>
+<h2>Find what would break it <span class="gi" style="--gl:#B97C11" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9248 21H10.0752C5.44476 21 3.12955 21 2.27636 19.4939C1.42317 17.9879 2.60736 15.9914 4.97574 11.9985L6.90057 8.75333C9.17559 4.91778 10.3131 3 12 3C13.6869 3 14.8244 4.91777 17.0994 8.75332L19.0243 11.9985C21.3926 15.9914 22.5768 17.9879 21.7236 19.4939C20.8704 21 18.5552 21 13.9248 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 9V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="promptwrap">
+<span class="promptlabel">🔎 Pre-mortem my thesis</span>
+<pre><code>Assume it is 5 years from now and the thesis we just wrote turned out to be wrong. Work backwards and give me the 5 most likely reasons it failed, ranked by how likely they are, using evidence from the filings and recent news rather than generic risks.
+
+For each reason, give me one specific, measurable warning sign I could check each quarter (for example "gross margin falls below X% two quarters in a row" or "the largest customer drops below Y% of revenue"), and where in the company's reports I would find that number.
+
+Then tell me which one of these risks the market seems to be ignoring right now, and which one is probably already priced in, and explain why in two sentences each.</code></pre>
+</div>
+<div class="tip">💡 Save both answers as a single note in the Project, titled with the company and today's date. That note is what the check-in compares against.</div>
+
+<span class="kicker">prompt three</span>
+<h2>The quarterly check-in <span class="gi" style="--gl:#448BDC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.3884 3L17.3913 3.97574C17.8393 4.41165 18.0633 4.62961 17.9844 4.81481C17.9056 5 17.5888 5 16.9552 5H9.19422C5.22096 5 2 8.13401 2 12C2 13.4872 2.47668 14.8662 3.2895 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7.61156 21L6.60875 20.0243C6.16074 19.5883 5.93673 19.3704 6.01557 19.1852C6.09441 19 6.4112 19 7.04478 19H14.8058C18.779 19 22 15.866 22 12C22 10.5128 21.5233 9.13383 20.7105 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the whole long-horizon habit. When new results come out, add them to the Project and run this. It takes five minutes and stops you reacting to headlines.</p>
+<div class="promptwrap">
+<span class="promptlabel">📅 Did anything actually change?</span>
+<pre><code>New quarterly results for [company] are now in this project. Compare them against my saved thesis and the warning signs from my pre-mortem.
+
+For each warning sign, tell me the current number, the previous number, and whether it is fine, worth watching, or triggered, with a citation to where you found it. Then tell me whether anything in these results changes one of the 2 or 3 things that must be true for the thesis, and separate real business changes from short-term noise like one-off costs or share price moves.
+
+End with one of three verdicts: thesis intact, thesis weakened (say exactly what would need to happen next quarter to break it), or thesis broken. Do not recommend buying or selling.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">good to know</span>
+<h2>Keep it honest <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>🧾 Check the citations</b> Open the two numbers your thesis depends on most and confirm them in the actual filing.</div>
+<div class="minicard"><b>🗓️ Ignore the daily price</b> The check-in runs on results, not on a red day. That's the point.</div>
+<div class="minicard"><b>🧠 Your call, not Claude's</b> Claude organises the evidence. The decision, and the risk, stays with you.</div>
+<div class="minicard"><b>💌 Get real advice for big moves</b> For anything that matters to your finances, talk to a licensed financial adviser.</div>
+</div>
+<div class="tip warn">This guide is general information and research practice, not financial advice. AI can misread a filing or pull an outdated number, and past performance doesn't predict future results.</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://www.iosco.org/library/pubdocs/pdf/IOSCOPD823.pdf" target="_blank" rel="noopener">IOSCO: Supervisory Toolkit for AI Use in Capital Markets, May 2026</a><br>
+  <a href="https://www.bankofengland.co.uk/financial-stability-in-focus/2025/april-2025" target="_blank" rel="noopener">Bank of England: AI in the financial system, April 2025</a><br>
+  <a href="https://newsroom.haas.berkeley.edu/how-hedge-funds-use-satellite-images-to-beat-wall-street-and-main-street/" target="_blank" rel="noopener">Berkeley Haas: how hedge funds use satellite images</a><br>
+  <a href="https://d1e00ek4ebabms.cloudfront.net/production/uploaded-files/spiva-us-mid-year-2025-bc7a7f61-4b27-48b0-b20a-856cc87521d0.pdf" target="_blank" rel="noopener">SPIVA U.S. Mid-Year 2025 scorecard</a><br>
+  <a href="https://finance.yahoo.com/technology/ai/articles/ai-powered-flash-crash-coming-153242404.html" target="_blank" rel="noopener">Yahoo Finance: an AI-powered flash crash is coming</a>
+</p>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

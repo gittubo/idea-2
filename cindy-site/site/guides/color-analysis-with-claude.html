@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get a full color analysis with Claude, from one photo · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Get a full color analysis with Claude, from one photo. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/color-analysis-with-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Get a full color analysis with Claude, from one photo">
+<meta property="og:description" content="Get a full color analysis with Claude, from one photo. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/color-analysis-with-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Get a full color analysis with Claude, from one photo">
+<meta name="twitter:description" content="Get a full color analysis with Claude, from one photo. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Get a full color analysis with Claude, from one photo", u:"guides/color-analysis-with-claude.html", topic:"design", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Design &amp; style</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Get a full color analysis with Claude, from one photo</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented COLORS, so here is the whole sequence: the exact undertone prompt, the yes-list and no-list prompt, the ten-shade capsule palette with real hex codes.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>A studio colour analysis is a genuinely good service and a genuinely expensive one. TIME reported that a three-hour session at House of Colour in Brooklyn runs about 545 US dollars, while studios in Seoul, where the trend exploded, sit closer to 80 to 160 dollars (<a href="https://time.com/6299099/personal-color-analysis-korea-tourism/" target="_blank">TIME, 2023</a>). What you are paying for is a trained eye, controlled lighting, and fabric drapes held against your face.</p>
+<p>You cannot fully replicate the drapes at home. What you can do is get the reasoning: your undertone, the colours that fight it, a palette with hex codes, and the logic behind all of it, from one photo and a chat.</p>
+
+<div class="tip warn">👩‍💻 <strong>The honest version of what this is.</strong> Claude reads your photo, so the answer is only as good as the photo. Phone cameras auto-correct white balance, indoor bulbs push everything warm, and filters wreck this completely. Treat the result as a strong starting hypothesis you then test in daylight, not a lab measurement. Claude also does not generate images of you, so this gives you words, hex codes and a swatch card rather than a rendered magazine report.</div>
+
+<hr class="rule">
+<span class="kicker">do this first</span>
+<h2>Take the photo properly <span class="gi" style="--gl:#898691" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6974 3.5H11.303C10.5884 3.5 10.2311 3.5 9.91067 3.612C9.71499 3.68039 9.53113 3.77879 9.36568 3.90367C9.09474 4.10816 8.89655 4.40544 8.50018 5L8.50017 5.00001C8.29717 5.30453 7.99794 5.75337 7.87867 5.87871C7.58314 6.18927 7.19563 6.39666 6.77329 6.47029C6.60284 6.5 6.41985 6.5 6.05387 6.5C5.07379 6.5 4.58376 6.5 4.18307 6.61342C3.18074 6.89716 2.39734 7.68055 2.1136 8.68289C2.00018 9.08357 2.00018 9.57361 2.00018 10.5537V14.5C2.00018 17.3284 2.00018 18.7426 2.87886 19.6213C3.75754 20.5 5.17176 20.5 8.00018 20.5H16.0002C18.8286 20.5 20.2428 20.5 21.1215 19.6213C22.0002 18.7426 22.0002 17.3284 22.0002 14.5V10.5537C22.0002 9.57361 22.0002 9.08357 21.8868 8.68289C21.603 7.68055 20.8196 6.89716 19.8173 6.61342C19.4166 6.5 18.9266 6.5 17.9465 6.5C17.5805 6.5 17.3975 6.5 17.2271 6.47029C16.8047 6.39666 16.4172 6.18927 16.1217 5.87871C16.0024 5.75336 15.7032 5.30451 15.5002 5C15.1038 4.40544 14.9056 4.10816 14.6347 3.90367C14.4692 3.77879 14.2854 3.68039 14.0897 3.612C13.7693 3.5 13.412 3.5 12.6974 3.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16.0002 13C16.0002 15.2091 14.2093 17 12.0002 17C9.79104 17 8.00018 15.2091 8.00018 13C8.00018 10.7909 9.79104 9 12.0002 9C14.2093 9 16.0002 10.7909 16.0002 13Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19.1252 9.5H19.0002M19.2502 9.5C19.2502 9.63807 19.1383 9.75 19.0002 9.75C18.8621 9.75 18.7502 9.63807 18.7502 9.5C18.7502 9.36193 18.8621 9.25 19.0002 9.25C19.1383 9.25 19.2502 9.36193 19.2502 9.5Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>This step decides everything. Five minutes here beats any prompt tweaking later.</p>
+<ol class="steps">
+<li><strong class="st">🌤️ Daylight, indirect.</strong> Stand facing a window on an overcast day, or in open shade outdoors. Direct sun blows out your skin and warm indoor bulbs make everyone look golden, which is the single most common reason these readings come back wrong.</li>
+<li><strong class="st">🚫 No filter, no beauty mode.</strong> Turn off smoothing and any auto-enhance in your camera app. Most phone front cameras apply something by default, so check. Minimal makeup, and none on the lips if you can manage it.</li>
+<li><strong class="st">👕 Wear plain white or off-white.</strong> A strong coloured top bounces colour onto your jaw and contaminates the read. Push your hair back off your face so your natural hair colour, your eyes, and your skin are all visible.</li>
+<li><strong class="st">🎨 Add a reference, if you want the good version.</strong> Hold a plain sheet of white printer paper next to your face in the shot. It gives Claude a known neutral to judge your skin against, which is the closest thing to white-balancing the photo yourself.</li>
+<li><strong class="st">📤 Upload it big.</strong> In the chat, use the attach button and pick the photo. Anthropic's own guidance is to use images around 1000 by 1000 pixels or larger and avoid small low-resolution ones (<a href="https://support.claude.com/en/articles/8241126-upload-files-to-claude" target="_blank">uploading files to Claude</a>).</li>
+</ol>
+<div class="tip calm">💡 Take three photos, not one: window light, open shade outdoors, and one more from a different day. Upload all three in the same message and ask Claude to reconcile them. Agreement across three lighting conditions is far more trustworthy than one lucky shot.</div>
+
+<hr class="rule">
+<span class="kicker">prompt one</span>
+<h2>The undertone read <span class="gi" style="--gl:#BF7362" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C12.8417 22 14 22.1163 14 21C14 20.391 13.6832 19.9212 13.3686 19.4544C12.9082 18.7715 12.4523 18.0953 13 17C13.6667 15.6667 14.7778 15.6667 16.4815 15.6667C17.3334 15.6667 18.3334 15.6667 19.5 15.5C21.601 15.1999 22 13.9084 22 12Z" stroke="currentColor" stroke-width="1.5"/><circle cx="9.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M7.125 15H7M7.25 15C7.25 15.1381 7.13807 15.25 7 15.25C6.86193 15.25 6.75 15.1381 6.75 15C6.75 14.8619 6.86193 14.75 7 14.75C7.13807 14.75 7.25 14.8619 7.25 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Attach your photo, paste this, send. This is the prompt from the reel.</p>
+<div class="promptwrap">
+<span class="promptlabel">🎨 read my undertone</span>
+<pre><code>I have attached a natural-light photo of myself with no filter. Act as an experienced personal colour analyst and read my colouring from it.
+
+Work through it out loud in this order before you conclude anything. First describe what you can actually see: the apparent depth of my skin (light, medium, deep), the apparent depth and tone of my hair, and my eye colour including any secondary tones in the iris. Second, assess my undertone as warm, cool, neutral-warm, neutral-cool or true neutral, and tell me which specific visual cues led you there, for example how my skin sits against the whites of my eyes or against anything white in the frame. Third, assess my contrast level, meaning the difference between my hair, skin and eyes, as low, medium or high, since that matters as much as undertone and almost nobody mentions it. Fourth, give me your best single seasonal category using the twelve-season system, and name your second-best alternative.
+
+Be honest about confidence: tell me how sure you are out of 10, name anything in the photo that made this harder such as lighting cast or shadows, and tell me what a better photo would need. Do not flatter me and do not soften a conclusion to be nice.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">prompt two</span>
+<h2>The yes-list and the no-list, with hex codes <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Send this next in the same chat so it keeps everything it just worked out.</p>
+<div class="promptwrap">
+<span class="promptlabel">💡 what flatters me, what does not</span>
+<pre><code>Based on that reading, give me two lists with real hex codes so I can match shades exactly rather than guessing from a colour name.
+
+The first list is 15 colours that flatter me, grouped into three sections: my neutrals (the colours I should build a wardrobe base from), my power colours (what I wear near my face when it matters), and my accents (small doses, bags, scarves, lips). For every single colour give me the common name, the hex code, and one short line saying why it works with my undertone and contrast.
+
+The second list is 8 colours that work against me. For each one, name it, give the hex code, and say precisely what it does to my face, for example dulls my skin, brings out redness, or flattens my features by matching my contrast level too closely. Then add one line I will actually remember: if I already own a lot of one of those colours, tell me how to keep wearing it, whether that is away from my face, as a lower half, or with a flattering colour layered at the neckline.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">prompt three</span>
+<h2>The ten-shade capsule palette, as a swatch card you keep <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A list of hex codes in a chat is easy to lose. Claude can build you a small page showing the actual colours, which you screenshot and keep in your camera roll for shopping. This works because Claude can produce artifacts, small live pages inside the chat (<a href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank">what artifacts are</a>).</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 build my palette card</span>
+<pre><code>Now narrow everything down to a ten-shade capsule palette: the smallest set of colours that would let me get dressed every day and have everything work together.
+
+Choose them with a working wardrobe in mind, so roughly four neutrals I can build outfits on, three mid-tones that pair with everything, two power colours for near my face, and one accent. For each shade give the name, the hex code, what garment it should be (for example "the coat", "the everyday knit", "the going-out top"), and what it pairs with from the other nine.
+
+Then build me a single-page artifact that displays these ten shades as large labelled swatches on a plain background, with the name and the hex code under each one, and the garment role in smaller text below that. Make it look calm and readable on a phone screen, because I am going to screenshot it and open it while I am shopping.</code></pre>
+</div>
+<div class="tip">💡 <strong>Then test it in real life.</strong> Take the screenshot to a shop, hold a garment right up under your jaw in daylight near the door, and look at your face rather than the fabric. If your under-eyes look softer and your skin looks even, that shade is yours. If your face looks tired and the garment looks great on its own, it is not.</div>
+
+<hr class="rule">
+<span class="kicker">prompt four</span>
+<h2>The shopping list that uses real search terms <span class="gi" style="--gl:#308DD8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 20.25C10.5 20.6642 10.1642 21 9.75 21C9.33579 21 9 20.6642 9 20.25C9 19.8358 9.33579 19.5 9.75 19.5C10.1642 19.5 10.5 19.8358 10.5 20.25Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 20.25C19 20.6642 18.6642 21 18.25 21C17.8358 21 17.5 20.6642 17.5 20.25C17.5 19.8358 17.8358 19.5 18.25 19.5C18.6642 19.5 19 19.8358 19 20.25Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M2 3H2.20664C3.53124 3 4.19354 3 4.6255 3.40221C5.05746 3.80441 5.10464 4.46503 5.19902 5.78626L5.45035 9.30496C5.5924 11.2936 5.66342 12.2879 5.96476 13.0961C6.62531 14.8677 8.08229 16.2244 9.89648 16.757C10.7241 17 11.7267 17 13.7317 17C15.8373 17 16.89 17 17.7417 16.7416C19.6593 16.1599 21.1599 14.6593 21.7416 12.7417C22 11.89 22 10.8433 22 8.75C22 8.05222 22 7.70333 21.9139 7.41943C21.72 6.78023 21.2198 6.28002 20.5806 6.08612C20.2967 6 19.9478 6 19.25 6H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 10V13M11 10V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Hex codes are useless in a search bar. Shops name colours their own way, and this prompt translates your palette into the words retailers actually use.</p>
+<div class="promptwrap">
+<span class="promptlabel">🛍️ turn my palette into search terms</span>
+<pre><code>Turn my ten-shade palette into a shopping list I can use in a search bar, because retailers never label anything by hex code.
+
+For each of the ten shades, give me three to five real colour names that shops commonly use for that exact family, for example the difference between "camel", "tan", "biscuit" and "toffee", and flag which of those names tend to run warmer or cooler so I know which listing to trust. Then tell me the three shades I should buy first if I only have budget for three items, and say why those three, given what I already need to wear.
+
+Finish with a short checklist of what to watch for when buying online: what to do about photos taken under studio lighting, which fabrics shift a colour's warmth (for example how the same shade reads on linen versus satin), and how to sanity check a listing colour against my palette before I add it to a cart.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">prompt five</span>
+<h2>The part most people skip: learn the why <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Every prompt above hands you an answer. This one hands you the skill, which is what the studios are really selling. Once you can explain why a colour works on you, you never need a palette card in front of a rack again.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 teach me the logic</span>
+<pre><code>Now teach me the reasoning behind everything you just told me, so I can judge any colour myself without asking you again.
+
+Explain the three variables that actually decide whether a colour suits someone: undertone, value (how light or dark the colour is), and chroma or saturation (how muted or clear it is). For each variable, explain what mine is, what happens visually when a garment matches it, and what happens when it clashes, in plain language rather than industry jargon. Then give me a three-question test I can run in my head in a shop, in order, that gets me to a yes or no on any garment in under ten seconds.
+
+Then quiz me. Name six specific colours one at a time, wait for my answer each time, and tell me whether I got it right and what I missed in my reasoning. Include at least two that are close calls rather than obvious, because those are the ones I keep getting wrong.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">bonus</span>
+<h2>Two extras worth running <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>👕 The wardrobe audit</b> Photograph your open wardrobe in daylight and upload it with your palette. Ask Claude to sort what you own into keep, wear away from the face, and let go, with a reason for each. It turns the palette into decisions instead of theory.</div>
+<div class="minicard"><b>💌 The gaps list</b> Ask for the five specific items missing between what you own and the ten-shade capsule, in priority order, with a realistic price range for each. This is what stops a colour analysis turning into a shopping spree.</div>
+</div>
+
+<div class="tip calm">🌱 <strong>Where this genuinely stops.</strong> Seasonal colour analysis is a styling framework, not science, and reasonable analysts disagree about the same face. Claude reads pixels, not the light bouncing off fabric under your chin, so the drape test in a studio will always be more accurate. If the result feels wrong when you hold the colours up in daylight, trust your eyes, tell Claude what you saw, and ask it to revise. That conversation is free, and it is exactly how a good analyst works too.</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://time.com/6299099/personal-color-analysis-korea-tourism/" target="_blank">TIME on the personal colour analysis boom, including session prices</a><br>
+  <a href="https://support.claude.com/en/articles/8241126-upload-files-to-claude" target="_blank">Uploading files and photos to Claude (Claude Help Center)</a><br>
+  <a href="https://platform.claude.com/docs/en/docs/build-with-claude/vision" target="_blank">How Claude reads images (Anthropic docs)</a><br>
+  <a href="https://www.anthropic.com/legal/aup" target="_blank">Anthropic usage policy, for what Claude will and will not do with photos of people</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

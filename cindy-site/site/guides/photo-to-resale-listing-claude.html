@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo to resale listing with Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="How to turn one photo into a ready-to-post resale listing, with Claude researching the price and writing the copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/photo-to-resale-listing-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Photo to resale listing with Claude">
+<meta property="og:description" content="How to turn one photo into a ready-to-post resale listing, with Claude researching the price and writing the copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/photo-to-resale-listing-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Photo to resale listing with Claude">
+<meta name="twitter:description" content="How to turn one photo into a ready-to-post resale listing, with Claude researching the price and writing the copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Turn a photo into a resale listing with Claude", u:"guides/photo-to-resale-listing-claude.html", topic:"money", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Life &amp; self</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Photo to resale listing with Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 How to turn one photo into a ready-to-post resale listing, with Claude researching the price and writing the copy.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">brain and hands</span>
+<h2>What this actually does <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Most "AI sells your stuff" clips skip the part that matters. The magic is not the robot clicking, it is the listing being written well: a keyword-loaded title so people find it, a price based on what things ACTUALLY sold for (not hopeful list prices), and a description that answers buyer questions before they ask.</p>
+<p>So the flow splits into two jobs:</p>
+<div class="cardgrid">
+  <div class="minicard"><b>🧠 Claude is the brain</b> It identifies the exact product from your photo, researches real sold prices, and writes the full listing (title, price band, description, shipping line).</div>
+  <div class="minicard"><b>✋ A browser agent is the hands</b> You hand Claude's finished spec to an agent that can click, and it fills the eBay listing form and drops your photo in as the cover image.</div>
+</div>
+<p>This matters because the pricing and copy are where a listing wins or dies, and that is language work, which is what Claude is strongest at.</p>
+
+<hr class="rule">
+<span class="kicker">copy this</span>
+<h2>Step 1: get the listing spec from Claude <span class="gi" style="--gl:#9B7FA4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 2V5M7.5 2V5M12 2V5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 3.5H11C7.70017 3.5 6.05025 3.5 5.02513 4.52513C4 5.55025 4 7.20017 4 10.5V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V10.5C20 7.20017 20 5.55025 18.9749 4.52512C17.9497 3.5 16.2998 3.5 13 3.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 15H12M8 11H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Open a fresh chat at <a href="https://claude.ai" target="_blank">claude.ai</a>, drag in one clear photo of your item, and paste this. It does the research and writing in one go.</p>
+<div class="promptwrap">
+<span class="promptlabel">📝 the listing spec</span>
+<pre>Here is a photo of something I want to sell fast on eBay. Please:
+1. Identify the exact product (brand, model, and generation if you can tell).
+2. Search for what this item has RECENTLY SOLD for, not current list prices. On eBay this is the "Sold items" filter, so use recent completed sales as your anchor.
+3. Give me a fair price band (a quick-sale price and a patient price) and say which condition tier you are pricing for.
+4. Write a keyword-loaded eBay title (max 80 characters) using the words buyers actually search.
+5. Write a clean description: what it is, condition, what's included, any flaws, and why it's a good buy.
+Context: condition is used but excellent, I ship anywhere in the US for $10, and I want it gone within 7 days. Ask me anything you need before finalizing.</pre>
+</div>
+<p>A few things that make the output sharper:</p>
+<ul>
+<li>📸 <strong>Use a real photo of YOUR item</strong>, not a stock image. Claude reads condition, wear, and included accessories straight from the picture.</li>
+<li>🔎 <strong>Tell it the exact model if you know it.</strong> "Sony WH-1000XM4" prices far better than "black headphones".</li>
+<li>🧵 <strong>Answer its follow-up questions.</strong> The more it knows about flaws and extras, the more honest and clickable the description.</li>
+</ul>
+
+<hr class="rule">
+<span class="kicker">check the price</span>
+<h2>Step 2: sanity-check the price yourself <span class="gi" style="--gl:#119B5B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5L10.5 15L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>AI pricing is a starting point, not gospel. Take 60 seconds to confirm it against the real thing, because a listing priced wrong just sits there.</p>
+<p>On eBay, search your item, then in the left sidebar tick <strong>"Sold items"</strong> under "Show only". Prices in green are actual completed sales from roughly the last 90 days, which is the number that matters. You can also jump straight there by adding <code>&LH_Sold=1&LH_Complete=1</code> to an eBay search URL. For sales older than 90 days, eBay's <a href="https://www.ebay.com/help/selling/selling-tools/terapeak-research?id=4853" target="_blank">Terapeak</a> research tool goes back up to two years.</p>
+<p>Source on the sold-listings method: <a href="https://www.ebay.com/sch/ebayadvsearch" target="_blank">eBay Advanced Search</a>.</p>
+
+<hr class="rule">
+<span class="kicker">the clicking</span>
+<h2>Step 3: hand the spec to a browser agent <span class="gi" style="--gl:#987CBD" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20 22C20 17.5817 16.4183 14 12 14C7.58172 14 4 17.5817 4 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.375 8.25H9.25M9.5 8.25C9.5 8.38807 9.38807 8.5 9.25 8.5C9.11193 8.5 9 8.38807 9 8.25C9 8.11193 9.11193 8 9.25 8C9.38807 8 9.5 8.11193 9.5 8.25Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.875 8.25H14.75M15 8.25C15 8.38807 14.8881 8.5 14.75 8.5C14.6119 8.5 14.5 8.38807 14.5 8.25C14.5 8.11193 14.6119 8 14.75 8C14.8881 8 15 8.11193 15 8.25Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15.1538 4H8.84615C7.59095 4 6.96334 4 6.47397 4.22025C5.91693 4.47095 5.47095 4.91693 5.22025 5.47397C5 5.96334 5 6.59095 5 7.84615C5 9.85448 5 10.8586 5.3524 11.6417C5.75353 12.5329 6.46709 13.2465 7.35835 13.6476C8.14135 14 9.14552 14 11.1538 14H12.8462C14.8545 14 15.8586 14 16.6417 13.6476C17.5329 13.2465 18.2465 12.5329 18.6476 11.6417C19 10.8586 19 9.85448 19 7.84615C19 6.59095 19 5.96334 18.7797 5.47397C18.529 4.91693 18.0831 4.47095 17.526 4.22025C17.0367 4 16.4091 4 15.1538 4Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Now Claude has written the listing, you need something that can actually click into eBay and fill the form. You have two solid options, and both are real and available now.</p>
+<ul>
+<li>🌐 <strong>Claude in Chrome.</strong> Anthropic's browser extension that lets Claude see the page, click buttons, navigate, and fill out forms for you. It is available on all paid Claude plans (Pro, Team, Max, Enterprise). It asks for your approval before it publishes, purchases, or shares personal data, so you stay in control of the final "list it" click. Details: <a href="https://claude.com/blog/claude-for-chrome" target="_blank">Claude for Chrome</a>.</li>
+<li>💬 <strong>ChatGPT Work (formerly agent mode).</strong> Opens its own browser, researches, and can fill an eBay listing form when you prompt it. Good to know its limits: it only acts when you prompt it, it does not watch your store or react when something sells, and there is no official background eBay integration. Reference: <a href="https://www.usecarly.com/blog/chatgpt-ebay-integration/" target="_blank">ChatGPT + eBay, 2026</a>.</li>
+</ul>
+<p>Whichever you pick, paste in Claude's finished title, price, description and shipping line, point it at eBay's "sell an item" page, and let it fill the fields. Then upload your photo as the cover image. You review the draft and hit list.</p>
+<div class="tip warn"><strong>One heads-up:</strong> both agents can misclick or mis-map a field, so always read the draft listing before you publish. Treat the agent as a fast intern, not a hands-off autopilot.</div>
+
+<hr class="rule">
+<span class="kicker">go further</span>
+<h2>3 bonus prompts to run next <span class="gi" style="--gl:#AB8209" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 11V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 9C3 8.25231 3 7.87846 3.20096 7.6C3.33261 7.41758 3.52197 7.26609 3.75 7.16077C4.09808 7 4.56538 7 5.5 7H18.5C19.4346 7 19.9019 7 20.25 7.16077C20.478 7.26609 20.6674 7.41758 20.799 7.6C21 7.87846 21 8.25231 21 9C21 9.74769 21 10.1215 20.799 10.4C20.6674 10.5824 20.478 10.7339 20.25 10.8392C19.9019 11 19.4346 11 18.5 11H5.5C4.56538 11 4.09808 11 3.75 10.8392C3.52197 10.7339 3.33261 10.5824 3.20096 10.4C3 10.1215 3 9.74769 3 9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 3.78571C6 2.79949 6.79949 2 7.78571 2H8.14286C10.2731 2 12 3.7269 12 5.85714V7H9.21429C7.43908 7 6 5.56091 6 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 3.78571C18 2.79949 17.2005 2 16.2143 2H15.8571C13.7269 2 12 3.7269 12 5.85714V7H14.7857C16.5609 7 18 5.56091 18 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 11L12 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Once the first listing works, these push the same idea further.</p>
+<div class="promptwrap">
+<span class="promptlabel">1 · batch the whole shelf</span>
+<pre>I'm going to sell 8 things at once. I'll paste one photo at a time. For each, give me the product ID, a sold-price-based price band, an 80-character title, and a short description, in a clean table row I can copy. Keep the same shipping and condition rules across all of them.</pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">2 · the Marketplace version</span>
+<pre>Take this same item and write a second version of the listing for Facebook Marketplace instead of eBay: more casual tone, local pickup option, no shipping line, and a price set for a quick local sale. Tell me which platform is likely to sell it faster and why.</pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">3 · the lowball replies</span>
+<pre>Write me 3 polite, firm replies I can reuse when buyers lowball me on this listing: one that holds my price, one that offers a small $5 discount to close today, and one that declines and stays friendly.</pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">pick your level</span>
+<h2>How to get the most out of it <span class="gi" style="--gl:#4C326D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.99805 7.99928C1.99805 9.34126 10.0943 13 11.9857 13C13.8772 13 21.9734 9.34126 21.9734 7.99928C21.9734 6.6573 13.8772 2.99854 11.9857 2.99854C10.0943 2.99854 1.99805 6.6573 1.99805 7.99928Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.99219 11L7.24348 16.8002C7.32919 17.1975 7.52703 17.5687 7.85696 17.8054C10.0787 19.3998 13.8908 19.3998 16.1126 17.8054C16.4426 17.5687 16.6404 17.1975 16.7261 16.8002L17.9774 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20.4774 9.49951V16.5006M20.4774 16.5006C19.6864 17.9471 19.3366 18.7221 18.9813 20.0011C18.9042 20.4562 18.9654 20.6855 19.2786 20.8891C19.4059 20.9718 19.5588 21.0012 19.7104 21.0012H21.229C21.3904 21.0012 21.5533 20.9675 21.6863 20.8757C21.9774 20.6747 22.0523 20.4541 21.9734 20.0011C21.662 18.8135 21.2653 18.0016 20.4774 16.5006Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+  <div class="minicard"><b>🌱 If you're new to this</b> start with ONE item you already know roughly what it's worth, so you can feel whether Claude's price is sensible. Getting the loop right on one thing beats batching ten and trusting blindly.</div>
+  <div class="minicard"><b>⚡ If you're a power user</b> build a reusable pricing prompt with your standard shipping, condition wording and platform, save it, and run every item through the same spec. Then let Claude in Chrome fill the forms while you photograph the next batch. That is a real 20-minutes-per-listing to 5-minutes swing.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the honest bit</span>
+<h2>When to skip the agent <span class="gi" style="--gl:#B57D13" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 10L5 22M14 10L19 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 4L12 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><circle cx="12" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 13C4.99073 16.0242 8.27968 18 12 18C15.7203 18 19.0093 16.0242 21 13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 17V19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li>🏷️ <strong>High-value or fragile items</strong> (over a few hundred dollars, collectibles, anything with authentication) deserve a human writing the final listing. Let Claude draft it, but you post it.</li>
+<li>🔐 <strong>Anything touching payment or account details:</strong> the agents deliberately pause or block on sensitive financial steps, so don't fight them there. Do the account and payout setup yourself once, then let the agent handle the repetitive listing fills.</li>
+<li>🖼️ <strong>Bad photos in, bad listing out.</strong> If Claude can't tell what the item is from the picture, fix the photo before you fix the prompt.</li>
+</ul>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

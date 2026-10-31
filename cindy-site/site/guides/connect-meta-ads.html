@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect Meta ads to Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Here&#x27;s how to connect your Meta Ads account to Claude (via MCP or CLI).">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/connect-meta-ads">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Connect Meta ads to Claude">
+<meta property="og:description" content="Here&#x27;s how to connect your Meta Ads account to Claude (via MCP or CLI).">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/connect-meta-ads">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Connect Meta ads to Claude">
+<meta name="twitter:description" content="Here&#x27;s how to connect your Meta Ads account to Claude (via MCP or CLI).">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Connect Meta ads to Claude","description":"Here's how to connect your Meta Ads account to Claude (via MCP or CLI) so you can pull reports and manage campaigns without clicking around in Ads Manager.","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/connect-meta-ads"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Connect Meta ads to Claude", u:"guides/connect-meta-ads.html", topic:"marketing", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Marketing &amp; ads</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Connect Meta ads to Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Here's how to connect your Meta Ads account to Claude (via MCP or CLI).</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the basics</span>
+<h2>Using either MCP or CLI</h2>
+<p>Meta now has an official way to connect your ad account to AI tools like Claude using Ads AI Connectors.</p>
+<p>That means you can pull performance, manage campaigns, adjust budgets, and work with catalogs without manually clicking around inside Ads Manager.</p>
+<p>There are <strong>two ways</strong> to do it:</p>
+<div class="rolegrid">
+  <div class="rolecard">
+    <h3>MCP route</h3>
+    <p>Best if you want Claude to talk to Meta Ads in a more direct, tool-based way.</p>
+  </div>
+  <div class="rolecard">
+    <h3>CLI route</h3>
+    <p>Best if you want a more controlled setup using the official Ads CLI and Claude Code in your terminal.</p>
+  </div>
+</div>
+
+<hr class="rule">
+<span class="kicker">what you get</span>
+<h2>What this can do</h2>
+<p>Once set up, you can use Claude to:</p>
+<ul>
+<li>Pull ad performance reports and insights.</li>
+<li>Create and manage campaigns, ad sets, and ads.</li>
+<li>Update budgets and other campaign settings.</li>
+<li>Manage catalogs and other Meta ad assets.</li>
+</ul>
+
+<hr class="rule">
+<span class="kicker">before you start</span>
+<h2>What you need first</h2>
+<p>Before you start, make sure you have:</p>
+<ul>
+<li>A Meta Business Manager account with access to the ad account you want to use.</li>
+<li>A Meta developer app, usually a Business app, if you're setting up API access manually.</li>
+<li>A system user in Business Manager for secure access token generation.</li>
+<li>Access to Claude / Claude Code, depending on which route you choose.</li>
+</ul>
+
+<hr class="rule">
+<span class="kicker">route one</span>
+<h2>Route 1: MCP</h2>
+<h3>When to use MCP</h3>
+<p>Use the MCP route if you want the cleanest AI experience: Claude sends structured requests to a Meta Ads tool layer, and that layer handles the actual API work.</p>
+<p>This is the best option if you want the least amount of manual terminal work once the connector is set up.</p>
+<h3>How it works</h3>
+<ul>
+<li>Meta's Ads AI Connectors use Meta-authenticated access.</li>
+<li>The connector talks to Meta's Ads MCP server behind the scenes.</li>
+<li>Claude can then query or act on your ad account through that tool connection.</li>
+</ul>
+<h3>Setup steps</h3>
+<ol class="steps">
+<li><strong class="st">Create or confirm your Meta Business setup.</strong> Make sure the ad account is inside a Business Manager you control.</li>
+<li><strong class="st">Create a system user.</strong> Go to <strong>Business Settings → Users → System Users</strong> and create a new system user for this integration.</li>
+<li><strong class="st">Assign assets.</strong> Give that system user access to the ad account you want Claude to use.</li>
+<li><strong class="st">Generate a system user access token.</strong> Generate a token for the system user and select the permissions needed for ads access.</li>
+<li><strong class="st">Connect your AI tool.</strong> Use the token to authenticate the Meta Ads connector inside your AI setup.</li>
+<li><strong class="st">Test it.</strong> Start with read-only prompts like:
+<ul>
+<li>"Show me performance for the last 7 days."</li>
+<li>"List active campaigns."</li>
+<li>"Break down spend by campaign."</li>
+</ul>
+</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">route two</span>
+<h2>Route 2: CLI</h2>
+<h3>When to use CLI</h3>
+<p>Use the CLI route if you want more control, easier debugging, or a setup that works nicely with Claude Code in your terminal.</p>
+<p>This is also the better route if you want to inspect commands before anything gets applied to a live account.</p>
+<h3>How it works</h3>
+<ul>
+<li>You install Meta's official Ads CLI.</li>
+<li>You authenticate it using a system user access token.</li>
+<li>Claude helps you write or run the commands from terminal.</li>
+</ul>
+<h3>Setup steps</h3>
+<ol class="steps">
+<li><strong class="st">Set up Meta Business access.</strong> Make sure your ad account is available in Business Manager and you have admin or sufficient access.</li>
+<li><strong class="st">Create a system user.</strong> Go to <strong>Business Settings → Users → System Users</strong> and create a dedicated system user for the CLI.</li>
+<li><strong class="st">Assign the ad account.</strong> Give that system user access to the specific ad account you want to manage.</li>
+<li><strong class="st">Generate your token.</strong> Create a system user access token with the correct ad permissions.</li>
+<li><strong class="st">Install Ads CLI.</strong> Follow Meta's official Ads CLI setup docs and install the CLI on your machine.</li>
+<li><strong class="st">Authenticate.</strong> Add the token to the CLI using the method in the setup guide.</li>
+<li><strong class="st">Run a test command.</strong> Start with a simple read command like:
+<ul>
+<li>list ad accounts</li>
+<li>list campaigns</li>
+<li>fetch insights for the last 7 days</li>
+</ul>
+</li>
+<li><strong class="st">Use Claude as your operator.</strong> Once the CLI works, ask Claude to help you draft commands like:
+<ul>
+<li>"Pull a performance summary for all active campaigns."</li>
+<li>"Generate a budget shift plan based on last 7 days of results."</li>
+<li>"Draft the commands to pause low-performing ad sets."</li>
+</ul>
+</li>
+</ol>
+
+<hr class="rule">
+<h2>MCP vs CLI</h2>
+<div class="tablewrap"><table>
+<tr>
+<th>Option</th>
+<th>Best for</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+<tr>
+<td>MCP</td>
+<td>Fully AI-driven workflow</td>
+<td>Most natural Claude experience, less manual work</td>
+<td>More abstract, harder to debug</td>
+</tr>
+<tr>
+<td>CLI</td>
+<td>Power users and operators</td>
+<td>Clear control, easy to audit, easier to troubleshoot</td>
+<td>More terminal work</td>
+</tr>
+</table></div>
+
+<hr class="rule">
+<span class="kicker">the sticky part</span>
+<h2>Token setup</h2>
+<p>This is the part most people get stuck on.</p>
+<p>Meta's docs point you toward a <strong>system user access token</strong>, which is the right choice for automation and server-to-server use.</p>
+<p>This is better than using your personal login because it's easier to scope, revoke, and keep separate from your everyday Meta account.</p>
+<h3>Token checklist</h3>
+<div class="cardgrid">
+  <div class="minicard">Use a system user, not your personal Facebook login.</div>
+  <div class="minicard">Assign only the ad account you need.</div>
+  <div class="minicard">Give only the permissions required for what you want Claude to do.</div>
+  <div class="minicard">Store the token securely and do not paste it into public places.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">keep it safe</span>
+<h2>Recommended safe workflow</h2>
+<p>For anything that can spend money, use this flow:</p>
+<ol class="steps">
+<li><strong class="st">Claude suggests</strong> the action.</li>
+<li><strong class="st">You review</strong> the change.</li>
+<li><strong class="st">You approve</strong> the command or API action.</li>
+<li><strong class="st">The tool applies it.</strong></li>
+</ol>
+<div class="tip warn">This is especially important for budget changes, campaign launches, and pauses.</div>
+
+<hr class="rule">
+<span class="kicker">what to watch</span>
+<h2>Common issues</h2>
+<div class="tip"><strong>"I can't see my ad account"</strong> Usually means the system user is not assigned to the ad account correctly.</div>
+<div class="tip"><strong>"Token doesn't work"</strong> Usually means the token was generated for the wrong app, the wrong user, or the wrong permissions.</div>
+<div class="tip"><strong>"Claude can read but not write"</strong> You likely have read-only permissions instead of management permissions.</div>
+<div class="tip"><strong>"Setup looks different from the guide"</strong> Meta changes the UI often, but the core structure stays the same: Business Manager, system user, token, permissions, then connector or CLI.</div>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

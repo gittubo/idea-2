@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to run your job hunt with Claude (the Apify setup) · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="How to run your job hunt with Claude (the Apify setup). A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/run-your-job-hunt-with-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="How to run your job hunt with Claude (the Apify setup)">
+<meta property="og:description" content="How to run your job hunt with Claude (the Apify setup). A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/run-your-job-hunt-with-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to run your job hunt with Claude (the Apify setup)">
+<meta name="twitter:description" content="How to run your job hunt with Claude (the Apify setup). A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to run your job hunt with Claude (the Apify setup)","description":"You commented HIRED, so here's the full setup: Claude plus Apify runs the boring 80% of a job hunt (finding matching roles, researching each company...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/run-your-job-hunt-with-claude"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"How to run your job hunt with Claude (the Apify setup)", u:"guides/run-your-job-hunt-with-claude.html", topic:"career", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Career &amp; job</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>How to run your job hunt with Claude (the Apify setup)</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented HIRED, so here's the full setup: Claude plus Apify runs the boring 80% of a job hunt, and you do the 20% that matters, review and hit send.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the strategy</span>
+<h2>Why this beats the "apply to 500 jobs" version <span class="gi" style="--gl:#CD5174" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M14 2.20004C13.3538 2.06886 12.6849 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.3151 21.9311 10.6462 21.8 10" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0303 11.9625L16.5832 7.4096M19.7404 4.34462L19.1872 2.35748C19.0853 2.03011 18.6914 1.89965 18.4259 2.11662C16.9898 3.29018 15.4254 4.87091 16.703 7.36419C19.2771 8.56455 20.7466 6.94584 21.8733 5.5853C22.0975 5.3146 21.9623 4.90767 21.6247 4.81005L19.7404 4.34462Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The viral version of this is a bot that blasts hundreds of generic applications while you sleep. Skip it: it gets your accounts flagged, and the data says it loses anyway. Personalized cold emails reply at around <strong>17 to 18%</strong>, versus <strong>7 to 9%</strong> for generic ones, roughly double, based on <a href="https://woodpecker.co/blog/cold-email-statistics/" target="_blank">Woodpecker's analysis of over 20 million emails</a>. So the winning move is fewer, better, researched emails. Claude just makes "researched" take minutes instead of hours.</p>
+<hr class="rule">
+<span class="kicker">one-time setup</span>
+<h2>Step 1, connect Apify to Claude <span class="gi" style="--gl:#4C395C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 2V6M8.5 6V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.00446 7.61331C5.93719 6.74273 6.63957 6 7.53014 6H16.4699C17.3604 6 18.0628 6.74273 17.9955 7.61331L17.8117 9.99197C17.6796 11.7019 17.1011 13.3498 16.132 14.7773L15.5312 15.6622C14.9638 16.4979 14.0077 17 12.9838 17H11.0162C9.99228 17 9.03617 16.4979 8.46881 15.6622L7.86803 14.7773C6.89885 13.3498 6.32041 11.7019 6.18827 9.99197L6.00446 7.61331Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 9H13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Apify is a scraping platform, and it plugs into Claude as a connector. One-time setup, no code:</p>
+<ol class="steps">
+<li><strong class="st">🧩 In Claude, go to Customize</strong>, then <strong>Connectors</strong>, then <strong>Add custom connector</strong></li>
+<li><strong class="st">✍️ Name it Apify</strong> and paste this URL: <code>https://mcp.apify.com</code></li>
+<li>🔓 Save. Claude opens your browser to sign into Apify and approve (OAuth). That's it, no token to copy</li>
+</ol>
+<div class="tip warn">Honest note: Apify's free plan includes a small monthly usage credit, and the scrapers below cost pennies per run (fractions of a cent per job), so a realistic hunt is cheap, but it's not free forever once the credit is used. Budget a couple of dollars, not hundreds.</div>
+<hr class="rule">
+<span class="kicker">find the roles</span>
+<h2>Step 2, find the roles (a real scraper) <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Tell Claude your target and have it run a jobs scraper on Apify. The two most proven LinkedIn ones:</p>
+<ul>
+<li>🥇 <a href="https://apify.com/curious_coder/linkedin-jobs-scraper" target="_blank">curious_coder / linkedin-jobs-scraper</a> (115k users, the most-used) </li>
+<li>🥈 <a href="https://apify.com/cheap_scraper/linkedin-job-scraper" target="_blank">cheap_scraper / linkedin-job-scraper</a> (easiest for beginners, you can search by keyword instead of building a LinkedIn URL)</li>
+</ul>
+<div class="tip warn">⚖️ <strong>The honest legal bit:</strong> scraping <em>public</em> job postings sits on defensible ground (the <a href="https://en.wikipedia.org/wiki/HiQ_Labs_v._LinkedIn" target="_blank">hiQ v. LinkedIn</a> case found scraping public data likely doesn't break the main US anti-hacking law), but it can still breach LinkedIn's terms of service, and hiQ still lost a $500k judgment for using fake logins. So: public postings only, keep the volume low, never log in with fake accounts. If that makes you uneasy, point the exact same workflow at <a href="https://apify.com/borderline/indeed-scraper" target="_blank">Indeed</a> or a company's own careers page instead. The Claude side is identical.</div>
+<hr class="rule">
+<span class="kicker">the honest truth</span>
+<h2>Step 3, the honest truth about "finding the hiring manager" <span class="gi" style="--gl:#5F4A88" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is where most versions of this hack lie. A jobs scraper returns <strong>job postings</strong>, not a hiring manager's verified inbox. Getting a named person and a likely email is a <strong>separate second step</strong>, using an enrichment tool like an <a href="https://apify.com/store?search=linkedin%20email" target="_blank">Apify people/email finder</a>, or Hunter.io or Apollo.io (both have free tiers). And those emails are usually a <strong>best guess</strong> (pattern-matched like firstname@company.com), often not verified, so some bounce.</p>
+<div class="tip calm">The safest and most effective move: many postings and careers pages name the real recruiter or manager. Prefer the real named contact over a guessed one, apply through the official channel, and send one thoughtful note. Claude will tell you honestly when it only has a guess.</div>
+<hr class="rule">
+<span class="kicker">you stay in charge</span>
+<h2>Step 4, let Claude draft (you send) <span class="gi" style="--gl:#A68307" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.4249 4.60509L17.4149 3.6151C18.2351 2.79497 19.5648 2.79497 20.3849 3.6151C21.205 4.43524 21.205 5.76493 20.3849 6.58507L19.3949 7.57506M16.4249 4.60509L9.76558 11.2644C9.25807 11.772 8.89804 12.4078 8.72397 13.1041L8 16L10.8959 15.276C11.5922 15.102 12.228 14.7419 12.7356 14.2344L19.3949 7.57506M16.4249 4.60509L19.3949 7.57506" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18.9999 13.5C18.9999 16.7875 18.9999 18.4312 18.092 19.5376C17.9258 19.7401 17.7401 19.9258 17.5375 20.092C16.4312 21 14.7874 21 11.4999 21H11C7.22876 21 5.34316 21 4.17159 19.8284C3.00003 18.6569 3 16.7712 3 13V12.5C3 9.21252 3 7.56879 3.90794 6.46244C4.07417 6.2599 4.2599 6.07417 4.46244 5.90794C5.56879 5 7.21252 5 10.5 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Claude researches each company and writes a personal first draft per role. You review, tweak, and press send yourself. No auto-send, ever, that's the line between a real outreach system and a spam cannon.</p>
+<hr class="rule">
+<span class="kicker">copy this</span>
+<h2>The mega prompt (run it end to end) <span class="gi" style="--gl:#DC5D78" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.21875 11.618L3.31189 11.2378C2.71644 11.1606 2.31883 10.5841 2.58348 10.0458C3.42523 8.33365 5.6195 6.35437 9.73988 6.68079M6.21875 11.618C7.27445 9.85426 8.57175 8.00435 9.73988 6.68079M6.21875 11.618L11.882 17.2812M9.73988 6.68079C13.4105 2.58986 17.1745 1.728 19.5937 2.06685C20.5508 2.2009 21.2991 2.94917 21.4332 3.90626C21.772 6.32551 20.9101 10.0895 16.8192 13.7601M11.882 17.2812L12.2622 20.1881C12.3394 20.7836 12.9159 21.1812 13.4542 20.9165C15.1664 20.0748 17.1456 17.8805 16.8192 13.7601M11.882 17.2812C13.6457 16.2255 15.4956 14.9282 16.8192 13.7601" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17.5 8C17.5 6.89543 16.6046 6 15.5 6C14.3954 6 13.5 6.89543 13.5 8C13.5 9.10457 14.3954 10 15.5 10C16.6046 10 17.5 9.10457 17.5 8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M4 22L8 18M4 17L5.5 15.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Once Apify is connected, paste this. Fill in the brackets:</p>
+<div class="promptwrap">
+<span class="promptlabel">🚀 the full job-hunt run</span>
+<pre><code>You have access to my Apify connector. Help me run a focused, human-in-the-loop job hunt. Do NOT send anything, you research and draft, I review and send.
+
+MY TARGET
+- Role: [e.g. Senior Paid Media Manager]
+- Location / remote: [e.g. Melbourne, or remote]
+- Seniority: [e.g. mid-senior]
+- Must-haves: [e.g. B2C, ad spend over $50k/mo]
+- Deal-breakers: [e.g. agencies, on-site 5 days]
+- About me (for tailoring): [3-4 lines: my edge, top results with numbers, what I want]
+
+STEP 1, FIND ROLES
+Run a LinkedIn jobs scraper on Apify (start with curious_coder/linkedin-jobs-scraper, or cheap_scraper/linkedin-job-scraper if keyword input is easier). Public postings only. Pull 30 to 50 matching roles. If LinkedIn input is fiddly, use an Indeed scraper instead. Tell me which Actor you used and roughly what it cost.
+
+STEP 2, ORGANIZE
+Return a clean table: Company, Role, Location, Posted date, Why it fits me (one line), Link. Rank by fit and flag the top 10.
+
+STEP 3, RESEARCH (top 10 only)
+Briefly research each company (what they do, recent news, likely challenge in my area). Note any named hiring contact only IF it appears in the posting or on their public careers page. Never fabricate a name or email, if you don't have a real one, say "apply via posting" and leave contact blank.
+
+STEP 4, DRAFT (one email per role, for my review)
+Write a short, genuinely personal email per top-10 role: 120 to 150 words, warm and specific, no corporate filler, no em dashes. Reference something real about that company, connect it to one concrete result of mine (with a number), and end on a soft question, not a hard pitch. Leave [NAME] as a placeholder if no real contact was found.
+
+Show me everything as drafts. I will personalize further and send each one myself. Never auto-send.</code></pre>
+</div>
+<hr class="rule">
+<span class="kicker">go further</span>
+<h2>3 prompts to run next <span class="gi" style="--gl:#AB8209" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 11V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 9C3 8.25231 3 7.87846 3.20096 7.6C3.33261 7.41758 3.52197 7.26609 3.75 7.16077C4.09808 7 4.56538 7 5.5 7H18.5C19.4346 7 19.9019 7 20.25 7.16077C20.478 7.26609 20.6674 7.41758 20.799 7.6C21 7.87846 21 8.25231 21 9C21 9.74769 21 10.1215 20.799 10.4C20.6674 10.5824 20.478 10.7339 20.25 10.8392C19.9019 11 19.4346 11 18.5 11H5.5C4.56538 11 4.09808 11 3.75 10.8392C3.52197 10.7339 3.33261 10.5824 3.20096 10.4C3 10.1215 3 9.74769 3 9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 3.78571C6 2.79949 6.79949 2 7.78571 2H8.14286C10.2731 2 12 3.7269 12 5.85714V7H9.21429C7.43908 7 6 5.56091 6 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 3.78571C18 2.79949 17.2005 2 16.2143 2H15.8571C13.7269 2 12 3.7269 12 5.85714V7H14.7857C16.5609 7 18 5.56091 18 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 11L12 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>🔍 <strong>Find a real contact (only when you want it).</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">1 · find a real contact</span>
+<pre><code>For these 5 companies where I have no named contact, use an Apify email-finder to find the likely hiring manager or lead and their best-guess business email. Label each clearly as VERIFIED or UNVERIFIED PATTERN-GUESS. For unverified ones, tell me so I can decide whether to use it, apply through the posting, or find the contact manually. Do not send anything.</code></pre>
+</div>
+<p>✏️ <strong>Sharpen one draft.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">2 · sharpen one draft</span>
+<pre><code>Take this draft and make it more specific to [Company]. Cut anything generic, add one line referencing [their recent thing], tie it to my result: [metric]. Under 140 words, no buzzwords, no em dashes. Give me two versions, one warm, one direct.</code></pre>
+</div>
+<p>📋 <strong>Build a tracker.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">3 · build a tracker</span>
+<pre><code>Turn my top 10 into a tracker table: Company, Role, Contact, Email status (verified/guess/none), Draft ready?, Sent? (I'll fill), Follow-up date (+5 business days).</code></pre>
+</div>
+<hr class="rule">
+<span class="kicker">the honest bit</span>
+<h2>The honest bit <span class="gi" style="--gl:#119B5B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5L10.5 15L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip">This automates the research and the first draft, the boring 80%. The 20% that gets you hired stays human: your judgment on which roles are worth it, your real voice in the email, and you pressing send. Keep it low-volume, relevant, and personal, that's both the respectful version and, per the data, the version that actually gets replies.</div>
+<hr class="rule">
+<h2>The links <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>🤖 Claude: <a href="https://claude.com" target="_blank">claude.com</a> (add the connector under Customize, then Connectors)<br>
+🕷️ Apify: <a href="https://apify.com" target="_blank">apify.com</a> (the connector URL is <code>https://mcp.apify.com</code>)<br>
+📊 The reply-rate data: <a href="https://woodpecker.co/blog/cold-email-statistics/" target="_blank">Woodpecker cold email statistics</a></p>
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

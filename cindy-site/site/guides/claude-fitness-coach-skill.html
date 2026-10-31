@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a fitness coach skill in Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- GUIDES_CARD {t:"Build a fitness coach skill in Claude", u:"guides/claude-fitness-coach-skill.html", topic:"productivity", tool:"claude"} -->
+<!-- seo:auto -->
+<meta name="description" content="Build a fitness coach skill in Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-fitness-coach-skill">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build a fitness coach skill in Claude">
+<meta property="og:description" content="Build a fitness coach skill in Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-fitness-coach-skill">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build a fitness coach skill in Claude">
+<meta name="twitter:description" content="Build a fitness coach skill in Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Productivity &amp; thinking</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Build a fitness coach skill in Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented COACH, so here is the full build: connecting your real health data, the complete skill file you can copy (no code).</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn">💡 <strong>Read this before anything else.</strong> Claude is not a medical device and cannot give you medical guidance. This is a planning and consistency tool, not a diagnosis or a physio. If you are pregnant, returning from injury, managing a heart, joint or metabolic condition, or brand new to lifting, get a qualified professional to sign off on the plan before you follow it. Every prompt below is written so Claude stays inside that lane.</div>
+
+<span class="kicker">the honest gate</span>
+<h2>What is actually available, and where <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Claude can read your health data directly, but the feature has real limits worth knowing before you start. It is in beta, available on <strong>Pro and Max plans</strong>, and currently <strong>United States only</strong>. Claude can read the data, and it cannot write to or modify anything in Apple Health or Health Connect (<a href="https://support.claude.com/en/articles/11869619-use-claude-with-ios-apps" target="_blank">Claude with iOS apps</a>, <a href="https://support.claude.com/en/articles/11869629-use-claude-with-android-apps" target="_blank">Claude with Android apps</a>).</p>
+<div class="cardgrid">
+<div class="minicard"><b>Route A, the live connection</b> Pro or Max, in the US. Claude reads steps, workouts, vitals, sleep, body measurements and nutrition straight from Apple Health or Health Connect when you ask a health question on your phone.</div>
+<div class="minicard"><b>Route B, the export</b> Everyone else, any plan. You export your numbers to a file and hand Claude the file. Slightly more manual, identical coaching, and it works on any country and any device.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">step one</span>
+<h2>Get your real numbers in front of Claude <span class="gi" style="--gl:#9281A4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L7 13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 17L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17 17L17 11" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+
+<h3>Route A: connect Apple Health or Health Connect</h3>
+<ol class="steps">
+<li><strong class="st">📱 Ask a health question first.</strong> Open the Claude app on your phone and ask something that needs your data, for example "how did I sleep this week compared to last week". Claude requests health access contextually, so the permission screen appears at the moment it is needed.</li>
+<li><strong class="st">✅ Choose what you share.</strong> On the permissions screen, tick only the data types you want it to use. Sleep, steps, workouts, resting heart rate and heart rate variability are the useful ones for training. You do not have to share everything.</li>
+<li><strong class="st">⚙️ Know where to change your mind.</strong> On iPhone, manage it at Settings, then Health, then Data Access &amp; Devices, then Claude. On Android, Settings, then Apps, then Health Connect, then App permissions, then Claude. Android 14 or later is required.</li>
+</ol>
+
+<h3>Route B: export your data instead</h3>
+<ol class="steps">
+<li><strong class="st">📤 Use an export app that writes clean files.</strong> <a href="https://apps.apple.com/us/app/health-auto-export-json-csv/id1115567069" target="_blank">Health Auto Export (JSON+CSV)</a> pulls metrics out of Apple Health as CSV or JSON. It has a free tier, with the paid tiers adding background sync and automatic delivery to iCloud Drive, Google Drive or Dropbox. Export the last 8 weeks of steps, sleep, workouts and resting heart rate.</li>
+<li><strong class="st">📎 Hand Claude the file.</strong> Either upload the CSV straight into a chat, or drop it in a Drive folder and connect Google Drive under <strong>Customize</strong>, then <strong>Connectors</strong>, so it can read the latest export without you re-uploading each week.</li>
+<li><strong class="st">✍️ No export app? Keep a five-line log.</strong> A note with date, hours slept, steps, what you trained and a 1 to 10 energy score is genuinely enough for the coach to adapt. Paste the week in and it works. The data does not need to be fancy, it needs to be real.</li>
+</ol>
+<div class="tip calm">🌱 <strong>Eight weeks beats yesterday.</strong> Whichever route you take, give it history the first time. A plan built off one day of data is a guess, and a plan built off two months of data can see your actual pattern, including the day of the week you always skip.</div>
+
+<hr class="rule">
+<span class="kicker">step two</span>
+<h2>Write the coach skill (this is the part that makes it stick) <span class="gi" style="--gl:#9380A9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7L16 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 11L12 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 21.5V21C13 18.1716 13 16.7574 13.8787 15.8787C14.7574 15 16.1716 15 19 15H19.5M20 13.3431V10C20 6.22876 20 4.34315 18.8284 3.17157C17.6569 2 15.7712 2 12 2C8.22877 2 6.34315 2 5.17157 3.17157C4 4.34314 4 6.22876 4 10L4 14.5442C4 17.7892 4 19.4117 4.88607 20.5107C5.06508 20.7327 5.26731 20.9349 5.48933 21.1139C6.58831 22 8.21082 22 11.4558 22C12.1614 22 12.5141 22 12.8372 21.886C12.9044 21.8623 12.9702 21.835 13.0345 21.8043C13.3436 21.6564 13.593 21.407 14.0919 20.9081L18.8284 16.1716C19.4065 15.5935 19.6955 15.3045 19.8478 14.9369C20 14.5694 20 14.1606 20 13.3431Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A skill is a small folder with a <code>SKILL.md</code> inside: a name, a description that tells Claude when to use it, and your instructions. You write the rules once and it follows them every single day, instead of you re-explaining your training philosophy every morning. Custom skills work on Free, Pro, Max, Team and Enterprise plans (<a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills" target="_blank">how to create custom skills</a>).</p>
+<p>Copy this whole file, change the bracketed parts to your own situation, and save it as <code>SKILL.md</code>.</p>
+<div class="promptwrap">
+<span class="promptlabel">📄 SKILL.md, the no-excuses coach</span>
+<pre><code>---
+name: fitness-coach
+description: Plans and adapts my training week from my real health data. Use when I ask for today's session, next week's plan, or a check-in on my training.
+---
+# Fitness coach
+
+## Who I am
+- Goal: [for example, get stronger and keep 4 sessions a week without burning out]
+- Training age: [beginner / a year or two / experienced]
+- Available: [for example, 4 days, 45 minutes, gym on weekdays, home on weekends]
+- Equipment: [for example, full gym; or dumbbells, bands and a mat]
+- Known limits: [for example, cranky right knee, avoid deep lunges]
+
+## How to plan
+1. Read my last 7 to 14 days of data before planning anything: sleep, steps, workouts, resting heart rate.
+2. Build a week with hard days, easy days and one full rest day. Never schedule two heavy lower-body days back to back.
+3. Progress by one variable at a time: either weight, reps or sets, never all three in the same week.
+4. Write every session as: warm-up, main work with sets, reps and target effort, finisher, and an estimated total time.
+5. Keep sessions inside the time I actually have. A 45-minute plan that fits beats a 90-minute plan I skip.
+
+## How to adapt (the daily rule)
+- Under 6 hours of sleep, or resting heart rate more than 7 bpm above my 14-day average: replace the hard session with a walk or easy mobility, and say why in one line.
+- Three or more sessions completed in the last 7 days and sleep is normal: add load, one variable only.
+- Two or more sessions missed in a row: do not pile on make-up work. Restart with the easiest session in the plan.
+- Sore, ill or travelling: offer a 15-minute version rather than cancelling the day.
+
+## Tone
+- Direct, warm, no shame, no lectures about discipline.
+- One line of reasoning, then the session. I do not want an essay.
+- Never diagnose anything, never give medical or nutrition advice beyond general habits, and tell me to see a professional if I describe pain, dizziness or anything that sounds like an injury.
+
+## Weekly review (Sundays)
+1. Compare planned sessions with what actually happened.
+2. Name the single biggest blocker from the week and change the plan to remove it.
+3. Output next week as a day-by-day list with dates, ready to go onto my calendar.</code></pre>
+</div>
+<ol class="steps">
+<li><strong class="st">📦 Package it.</strong> Put the <code>SKILL.md</code> inside a folder named <code>fitness-coach</code>, then zip that folder. The zip needs the folder as its root, not the loose file. Keep the name lowercase and hyphenated, and do not put "claude" or "anthropic" in it, or the upload gets rejected.</li>
+<li><strong class="st">➕ Upload it.</strong> In Claude, open <strong>Customize</strong>, then <strong>Skills</strong>, click <strong>Add</strong>, and upload a skill. Enable it once it appears in the list.</li>
+<li><strong class="st">🧪 Test the trigger.</strong> Start a fresh chat and say "what am I doing today". If it does not reach for the skill on its own, make the description line more specific about when to use it. That description is the trigger, not the file name.</li>
+<li><strong class="st">🛠️ Prefer not to write it yourself?</strong> Paste the prompt below and Claude drafts the skill for you, including the description.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">🛠️ have Claude build the skill for you</span>
+<pre><code>I want a reusable Claude skill that acts as my fitness coach, planning my training week from my real health data and adapting it daily.
+
+First, interview me: ask about my goal, my training experience, how many days and minutes I actually have, my equipment, my injuries or limits, and the tone I want from a coach. Wait for my answers. Then write the complete SKILL.md, with a lowercase-hyphenated name, a description under 200 characters that says exactly when you should use it, and instructions covering how to plan a week, how to adapt to poor sleep or a raised resting heart rate, how to handle missed sessions, and a Sunday review that outputs next week day by day. Include a rule that you never diagnose anything and always point me to a professional if I describe pain or symptoms. Finish by telling me how to save it as a zipped folder I can upload.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">step three</span>
+<h2>Build the first week from your actual numbers <span class="gi" style="--gl:#8E82A7" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 2V6M8 2V6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 4H11C7.22876 4 5.34315 4 4.17157 5.17157C3 6.34315 3 8.22876 3 12V14C3 17.7712 3 19.6569 4.17157 20.8284C5.34315 22 7.22876 22 11 22H13C16.7712 22 18.6569 22 19.8284 20.8284C21 19.6569 21 17.7712 21 14V12C21 8.22876 21 6.34315 19.8284 5.17157C18.6569 4 16.7712 4 13 4Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 10H21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.1258 14H12.0008M12.1258 18H12.0008M7.625 14H7.5M7.625 18H7.5M16.625 14H16.5M12.2508 14C12.2508 14.1381 12.1389 14.25 12.0008 14.25C11.8628 14.25 11.7508 14.1381 11.7508 14C11.7508 13.8619 11.8628 13.75 12.0008 13.75C12.1389 13.75 12.2508 13.8619 12.2508 14ZM12.2508 18C12.2508 18.1381 12.1389 18.25 12.0008 18.25C11.8628 18.25 11.7508 18.1381 11.7508 18C11.7508 17.8619 11.8628 17.75 12.0008 17.75C12.1389 17.75 12.2508 17.8619 12.2508 18ZM7.75 14C7.75 14.1381 7.63807 14.25 7.5 14.25C7.36193 14.25 7.25 14.1381 7.25 14C7.25 13.8619 7.36193 13.75 7.5 13.75C7.63807 13.75 7.75 13.8619 7.75 14ZM7.75 18C7.75 18.1381 7.63807 18.25 7.5 18.25C7.36193 18.25 7.25 18.1381 7.25 18C7.25 17.8619 7.36193 17.75 7.5 17.75C7.63807 17.75 7.75 17.8619 7.75 18ZM16.75 14C16.75 14.1381 16.6381 14.25 16.5 14.25C16.3619 14.25 16.25 14.1381 16.25 14C16.25 13.8619 16.3619 13.75 16.5 13.75C16.6381 13.75 16.75 13.8619 16.75 14Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>With the skill installed and your data connected or attached, this is the prompt that produces the plan.</p>
+<div class="promptwrap">
+<span class="promptlabel">🗓️ build my training week</span>
+<pre><code>Use my fitness coach skill and build next week's training plan from my real data, not from a template.
+
+Start by telling me what you can actually see in my last two weeks: average sleep, step count, how many sessions I completed, my resting heart rate trend, and any pattern in which days I train and which days I miss. Then build the week day by day with dates, each session written as warm-up, main work with sets, reps and target effort, finisher and total time, staying inside the days and minutes in my skill file. Where my data is thin or missing, say so plainly and tell me what to log this week so next week's plan is better. Finish with the one habit change that would matter more than any exercise in the plan above.</code></pre>
+</div>
+<div class="tip">📌 <strong>Push back on the first plan.</strong> If it looks like a generic program, tell it exactly what is off ("I have never squatted, do not start me at 4 sets", "Thursdays are impossible"). Every correction you make here is worth adding to the skill file so you never make it twice.</div>
+
+<hr class="rule">
+<span class="kicker">step four</span>
+<h2>The daily check that makes it a coach <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The plan is not the product. The adaptation is. This is the prompt you run each morning, and it is also the one you will later schedule.</p>
+<div class="promptwrap">
+<span class="promptlabel">☀️ this morning's session</span>
+<pre><code>Use my fitness coach skill and give me today's session, adjusted for how yesterday actually went.
+
+Check yesterday's sleep, steps and any workout, plus my resting heart rate against my 14-day average, then apply the adaptation rules in my skill file. Give me one line of reasoning, then the session itself, then a 15-minute fallback version for if the day falls apart. If the data says I should back off, back me off without negotiating, and if I have been consistent, add load on one variable only and tell me which one changed. Do not comment on my weight, and if anything I have written sounds like pain or illness rather than fatigue, stop and tell me to check with a professional.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">step five</span>
+<h2>Put it on a schedule and onto your calendar <span class="gi" style="--gl:#DD5E79" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M12 8V12L14 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is what turns a good intention into a system that runs without you remembering it.</p>
+<ol class="steps">
+<li><strong class="st">🔌 Connect your calendar.</strong> Open <strong>Customize</strong>, then <strong>Connectors</strong>, and connect Google Calendar. Through the Google Workspace connector Claude can view, create, update and delete events, and by default it asks for your approval before each action (<a href="https://support.claude.com/en/articles/10166901-use-google-workspace-connectors" target="_blank">Google Workspace connectors</a>).</li>
+<li><strong class="st">⏰ Schedule the Sunday planner.</strong> On a paid plan, open <strong>Scheduled</strong> in the Cowork sidebar, choose <strong>New task</strong>, then <strong>Set up manually</strong>, and set it to weekly. Paste the Sunday prompt below as the instructions. Scheduled tasks run remotely, so your computer does not need to be on (<a href="https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork" target="_blank">scheduled tasks in Cowork</a>).</li>
+<li><strong class="st">📱 Keep the daily check on your phone.</strong> The live health connection reads from the phone you granted permission on, so the morning check is a 20-second chat in the Claude app rather than a cloud task. If you want the daily run automated too, use Route B and have your export land in a connected Drive folder the scheduled task can read.</li>
+<li><strong class="st">✅ Approve the first calendar write.</strong> The first time it creates events, read them before approving. Check the days, times and durations match your real life, then let it run.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">📅 the Sunday planner (paste as your scheduled task)</span>
+<pre><code>Run my weekly training review and plan the week ahead using my fitness coach skill.
+
+Compare what I planned last week with what I actually completed, name the single biggest blocker in one sentence, and change next week's plan to remove it rather than repeating the same schedule. Then build the new week day by day with dates and times that fit around the events already on my calendar, and create one calendar event per session with the full session in the description so I can read it from my phone at the gym. Do not double-book me, do not schedule a hard session the morning after a late event, and finish by telling me what changed from last week and why.</code></pre>
+</div>
+<div class="tip warn">💡 <strong>One thing to watch.</strong> A scheduled task that writes to your calendar every week can quietly pile up duplicate events if the plan changes mid-week. Ask it to update or replace last week's events rather than adding new ones, and check the calendar after the first two runs before you trust it.</div>
+
+<hr class="rule">
+<span class="kicker">make it better</span>
+<h2>Four upgrades once it is running <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Log the subjective stuff</b> Add a one-line note each day for energy, stress and soreness. Watches measure load, not life, and the coach adapts far better when it can see both.</div>
+<div class="minicard"><b>Give it a deload rule</b> Add "every fourth week, cut volume by about 40 percent" to the skill file. Programs fail from accumulating fatigue far more often than from being too easy.</div>
+<div class="minicard"><b>Ask for the why once a week</b> Have it explain the reasoning behind one session each week. You end up understanding your own training instead of following instructions.</div>
+<div class="minicard"><b>Keep a plain-text history</b> Save each week's plan and what you actually did in one file it can read. That file becomes the memory that makes month three noticeably smarter than week one.</div>
+</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://support.claude.com/en/articles/11869619-use-claude-with-ios-apps" target="_blank">Use Claude with iOS apps (Apple Health, plans and limits)</a><br>
+  <a href="https://support.claude.com/en/articles/11869629-use-claude-with-android-apps" target="_blank">Use Claude with Android apps (Health Connect)</a><br>
+  <a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills" target="_blank">How to create custom skills</a><br>
+  <a href="https://support.claude.com/en/articles/10166901-use-google-workspace-connectors" target="_blank">Use Google Workspace connectors</a><br>
+  <a href="https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork" target="_blank">Schedule recurring tasks in Claude Cowork</a>
+</p>
+
+<hr class="rule">
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

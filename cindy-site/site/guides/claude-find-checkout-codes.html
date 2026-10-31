@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Make Claude find and test checkout codes in Chrome · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+  <!-- GUIDES_CARD {t:"Find checkout codes with Claude", u:"guides/claude-find-checkout-codes.html", topic:"money", tool:"claude"} -->
+<!-- seo:auto -->
+<meta name="description" content="How to hand the promo code hunt to Claude in Chrome, so it finds working codes for you at checkout.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-find-checkout-codes">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Make Claude find and test checkout codes in Chrome">
+<meta property="og:description" content="How to hand the promo code hunt to Claude in Chrome, so it finds working codes for you at checkout.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-find-checkout-codes">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Make Claude find and test checkout codes in Chrome">
+<meta name="twitter:description" content="How to hand the promo code hunt to Claude in Chrome, so it finds working codes for you at checkout.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Life &amp; self</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Make Claude find and test checkout codes in Chrome</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 How to hand the promo code hunt to Claude in Chrome, so it finds working codes for you at checkout.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the setup</span>
+<h2>What this actually does <span class="gi" style="--gl:#8A878F" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 20.25C10.5 20.6642 10.1642 21 9.75 21C9.33579 21 9 20.6642 9 20.25C9 19.8358 9.33579 19.5 9.75 19.5C10.1642 19.5 10.5 19.8358 10.5 20.25Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 20.25C19 20.6642 18.6642 21 18.25 21C17.8358 21 17.5 20.6642 17.5 20.25C17.5 19.8358 17.8358 19.5 18.25 19.5C18.6642 19.5 19 19.8358 19 20.25Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M2 3H2.20664C3.53124 3 4.19354 3 4.6255 3.40221C5.05746 3.80441 5.10464 4.46503 5.19902 5.78626L5.45035 9.30496C5.5924 11.2936 5.66342 12.2879 5.96476 13.0961C6.62531 14.8677 8.08229 16.2244 9.89648 16.757C10.7241 17 11.7267 17 13.7317 17C15.8373 17 16.89 17 17.7417 16.7416C19.6593 16.1599 21.1599 14.6593 21.7416 12.7417C22 11.89 22 10.8433 22 8.75C22 8.05222 22 7.70333 21.9139 7.41943C21.72 6.78023 21.2198 6.28002 20.5806 6.08612C20.2967 6 19.9478 6 19.25 6H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 10V13M11 10V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Claude in Chrome is Anthropic's browser extension. It can "see what you're looking at, click buttons, and fill forms" on the real tab you're on, so it can genuinely open a store, add an item to the cart, and type codes into the promo field like you would. Source: <a href="https://claude.com/blog/claude-for-chrome" target="_blank">Claude for Chrome announcement</a>.</p>
+<p>The reason this is safe for a shopping task is the part most people miss. Claude in Chrome is completely blocked from "making purchases or financial transactions" and from "handling sensitive credit card or ID data." Source: <a href="https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide" target="_blank">Claude in Chrome permissions guide</a>. So it can find and TEST codes for you, but it physically cannot complete the payment. You always press pay yourself.</p>
+
+<hr class="rule">
+<span class="kicker">before you start</span>
+<h2>Before you start <span class="gi" style="--gl:#119B5B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5L10.5 15L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>🔌 Get the extension.</b> Install "Claude for Chrome" from the Chrome Web Store, sign in with your Claude account, and pin it. It's available on all paid Claude plans (Pro, Max, Team, Enterprise). Source: <a href="https://support.claude.com/en/articles/12012173-get-started-with-claude-in-chrome" target="_blank">Get started with Claude in Chrome</a>.</div>
+<div class="minicard"><b>🖼️ Have your item ready.</b> A screenshot of the product, or the product page open in a tab. A screenshot works great because Claude can read the item and brand straight off the image.</div>
+<div class="minicard"><b>🏬 Pick the right kind of store.</b> This works best on stores with a visible "promo code" or "discount code" box at checkout. If a store has no code field, there's nothing to test.</div>
+<div class="minicard"><b>🔒 Keep checkout control.</b> Let Claude test the promo field, then review the total and press the final purchase button yourself. Never hand payment details or an unsupervised checkout to the browser agent.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">copy this</span>
+<h2>The exact prompt to paste <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Open the Claude side panel on the shopping tab, drop in your item screenshot, and paste this:</p>
+<div class="promptwrap">
+<span class="promptlabel">🛒 the code-hunting prompt</span>
+<pre>Here's the item I want to buy (screenshot attached). Please:
+1. Open the store and add this exact item to my cart.
+2. Search the web for current, real discount codes for this store and item (site-wide codes, first-order codes, seasonal sales). List the ones you find.
+3. At checkout, enter each code into the promo/discount box one at a time and tell me which ones the site actually accepts, and the new total for each.
+4. Apply the best working code and screenshot the cart showing the discount line and the lower total.
+5. Stop before payment. Do not enter any card details or place the order. I'll do the final pay step myself.
+Ask me before doing anything on a new site.</pre>
+</div>
+<p>Then click to give Claude control of the tab and let it work. It reads the product, searches for live codes, types them into the promo box one by one, and watches which one the site accepts. When one sticks, it screenshots the lower total so you can see the discount landed before you pay.</p>
+
+<hr class="rule">
+<span class="kicker">keep it safe</span>
+<h2>The two permission settings that keep it in its lane <span class="gi" style="--gl:#C47612" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5V17.5M13 14.5C13 15.0523 12.5523 15.5 12 15.5C11.4477 15.5 11 15.0523 11 14.5C11 13.9477 11.4477 13.5 12 13.5C12.5523 13.5 13 13.9477 13 14.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16.5 9V6.5C16.5 4.01472 14.4853 2 12 2C9.51471 2 7.49999 4.01472 7.49999 6.5V9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M4.2678 18.8447C4.49268 20.515 5.87612 21.8235 7.55965 21.9009C8.97627 21.966 10.4153 22 12 22C13.5847 22 15.0237 21.966 16.4403 21.9009C18.1239 21.8235 19.5073 20.515 19.7322 18.8447C19.8789 17.7547 20 16.6376 20 15.5C20 14.3624 19.8789 13.2453 19.7322 12.1553C19.5073 10.485 18.1239 9.17649 16.4403 9.09909C15.0237 9.03397 13.5847 9 12 9C10.4153 9 8.97627 9.03397 7.55965 9.09909C5.87612 9.17649 4.49268 10.485 4.2678 12.1553C4.12104 13.2453 3.99999 14.3624 3.99999 15.5C3.99999 16.6376 4.12104 17.7547 4.2678 18.8447Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the part worth getting right, so Claude never clicks anything you didn't approve.</p>
+<ol class="steps">
+<li>🚦 <strong>Pick "Ask before acting" mode.</strong> Claude in Chrome has two modes: "Ask before acting" (it pauses for your approval before each action) and "Act without asking" (it runs on its own, only pausing for unsafe-looking actions). For shopping, use "Ask before acting" so you approve each step. Source: <a href="https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide" target="_blank">permissions guide</a>.</li>
+<li>🌐 <strong>Grant access per site, not everywhere.</strong> When Claude asks to act on a store, choose "Allow this action" for a one-off, or "Always allow actions on this site" if you shop there often. You can review and revoke any site any time: click the Claude extension icon, then the three dots, then Settings, then Permissions. Source: <a href="https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide" target="_blank">permissions guide</a>.</li>
+</ol>
+<div class="tip calm">Good to know: Claude will always ask before high-risk steps like downloading a file or entering sensitive information, and it's hard-blocked from making purchases, entering card or ID data, and creating accounts. Those guardrails are on whether you remember them or not.</div>
+
+<hr class="rule">
+<span class="kicker">go further</span>
+<h2>3 bonus prompts to run next <span class="gi" style="--gl:#AB8209" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 11V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 9C3 8.25231 3 7.87846 3.20096 7.6C3.33261 7.41758 3.52197 7.26609 3.75 7.16077C4.09808 7 4.56538 7 5.5 7H18.5C19.4346 7 19.9019 7 20.25 7.16077C20.478 7.26609 20.6674 7.41758 20.799 7.6C21 7.87846 21 8.25231 21 9C21 9.74769 21 10.1215 20.799 10.4C20.6674 10.5824 20.478 10.7339 20.25 10.8392C19.9019 11 19.4346 11 18.5 11H5.5C4.56538 11 4.09808 11 3.75 10.8392C3.52197 10.7339 3.33261 10.5824 3.20096 10.4C3 10.1215 3 9.74769 3 9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 3.78571C6 2.79949 6.79949 2 7.78571 2H8.14286C10.2731 2 12 3.7269 12 5.85714V7H9.21429C7.43908 7 6 5.56091 6 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 3.78571C18 2.79949 17.2005 2 16.2143 2H15.8571C13.7269 2 12 3.7269 12 5.85714V7H14.7857C16.5609 7 18 5.56091 18 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 11L12 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li>🧾 <strong>Stack and compare.</strong> "Find every currently working code for this store, then tell me which single code (or allowed combo) gives me the lowest final total including shipping. Show your math."</li>
+<li>🚚 <strong>Free-shipping hunt.</strong> "I don't need a percentage off, I need free shipping. Find and test any current free-shipping codes or thresholds for this store, and tell me the cheapest way to hit free shipping on my cart."</li>
+<li>📩 <strong>First-order unlock.</strong> "Check if this store gives a first-order or newsletter-signup discount. If it does, tell me exactly how to trigger it and what the code or discount would be, so I can decide whether to sign up before I check out."</li>
+</ul>
+
+<hr class="rule">
+<span class="kicker">the craft</span>
+<h2>How to get the most out of it <span class="gi" style="--gl:#4C326D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.99805 7.99928C1.99805 9.34126 10.0943 13 11.9857 13C13.8772 13 21.9734 9.34126 21.9734 7.99928C21.9734 6.6573 13.8772 2.99854 11.9857 2.99854C10.0943 2.99854 1.99805 6.6573 1.99805 7.99928Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.99219 11L7.24348 16.8002C7.32919 17.1975 7.52703 17.5687 7.85696 17.8054C10.0787 19.3998 13.8908 19.3998 16.1126 17.8054C16.4426 17.5687 16.6404 17.1975 16.7261 16.8002L17.9774 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20.4774 9.49951V16.5006M20.4774 16.5006C19.6864 17.9471 19.3366 18.7221 18.9813 20.0011C18.9042 20.4562 18.9654 20.6855 19.2786 20.8891C19.4059 20.9718 19.5588 21.0012 19.7104 21.0012H21.229C21.3904 21.0012 21.5533 20.9675 21.6863 20.8757C21.9774 20.6747 22.0523 20.4541 21.9734 20.0011C21.662 18.8135 21.2653 18.0016 20.4774 16.5006Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li>🌱 <strong>If you're new:</strong> run it on one simple store first with "Ask before acting" on, and approve each step so you can watch what Claude is doing. You'll see it's just clicking and typing what you'd do yourself, minus the tab-hopping.</li>
+<li>⚡ <strong>If you're a power user:</strong> keep a saved note of the prompt and reuse it across stores. Ask Claude to always report the codes it tried and why each failed (expired, minimum spend, wrong region), so over time you learn which stores actually reward code-hunting and which never do.</li>
+</ul>
+
+<hr class="rule">
+<span class="kicker">what to watch</span>
+<h2>The honest bit <span class="gi" style="--gl:#B0800E" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li>🕵️ <strong>Codes have to actually exist.</strong> Claude can only test real, public codes. If a store has no live public code, no tool can conjure one, so some carts just won't get a discount.</li>
+<li>⏳ <strong>It's not always instant.</strong> Searching and testing several codes can take a few minutes on a slow store, not the movie-fast version you see in a sped-up reel.</li>
+<li><strong>🛡️ Anthropic advises against financial workflows.</strong> Claude in Chrome is enhanced with safety classifiers but still carries some risk (prompt injection from sketchy pages is the main one), and Anthropic explicitly recommends against using it to manage financial accounts. Testing a promo code on a normal store is fine, but keep it to reputable stores and always do the pay step yourself. Source: <a href="https://support.claude.com/en/articles/12902428-use-claude-in-chrome-safely" target="_blank">Use Claude in Chrome safely</a>.</li>
+</ul>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

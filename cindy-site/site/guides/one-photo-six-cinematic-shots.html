@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One photo, six cinematic shots: Claude as your production assistant · Cindy Zhu</title>
+<!-- GUIDES_CARD {t:"One photo, six cinematic shots: Claude as your production assistant", u:"guides/one-photo-six-cinematic-shots.html", topic:"design", tool:"claude"} -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="You upload one product photo, Claude analyses it like a DP would, and writes you six ready-to-paste camera prompts that turn that single still into six...">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/one-photo-six-cinematic-shots">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="One photo, six cinematic shots: Claude as your production assistant">
+<meta property="og:description" content="You upload one product photo, Claude analyses it like a DP would, and writes you six ready-to-paste camera prompts that turn that single still into six...">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/one-photo-six-cinematic-shots">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="One photo, six cinematic shots: Claude as your production assistant">
+<meta name="twitter:description" content="You upload one product photo, Claude analyses it like a DP would, and writes you six ready-to-paste camera prompts that turn that single still into six...">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Design &amp; visuals</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>One photo, six cinematic shots: Claude as your production assistant</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You upload one product photo, Claude analyses it like a DP would, and writes you six ready-to-paste camera prompts that turn that single still into six different moving shots.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn">💡 <strong>The honest division of labour, up front.</strong> Claude does not make the video. Anthropic's own documentation is blunt about this: Claude "is an image understanding model only. It can interpret and analyze images, but it cannot generate, produce, edit, manipulate, or create images" (<a href="https://platform.claude.com/docs/en/build-with-claude/vision" target="_blank">Claude vision docs</a>). What Claude is genuinely excellent at is the part that actually decides whether a shot looks cinematic: reading the light, the angle and the material in your photo, then writing camera direction a video model can follow. Claude directs. A video model films.</p></div>
+
+<span class="kicker">the shape of it</span>
+<h2>How the whole thing runs <span class="gi" style="--gl:#8776B8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11C2 7.70017 2 6.05025 3.02513 5.02513C4.05025 4 5.70017 4 9 4H10C13.2998 4 14.9497 4 15.9749 5.02513C17 6.05025 17 7.70017 17 11V13C17 16.2998 17 17.9497 15.9749 18.9749C14.9497 20 13.2998 20 10 20H9C5.70017 20 4.05025 20 3.02513 18.9749C2 17.9497 2 16.2998 2 13V11Z" stroke="currentColor" stroke-width="1.5"/><path d="M17 8.90585L17.1259 8.80196C19.2417 7.05623 20.2996 6.18336 21.1498 6.60482C22 7.02628 22 8.42355 22 11.2181V12.7819C22 15.5765 22 16.9737 21.1498 17.3952C20.2996 17.8166 19.2417 16.9438 17.1259 15.198L17 15.0941" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><circle cx="11.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">📸 Upload one photo to Claude.</strong> Drag it straight into the chat window. Claude reads JPEG, PNG, GIF and WebP, up to 10 MB and 8000x8000 pixels, and you can put up to 20 images in a single message if you want it to compare options.</li>
+<li><strong class="st">🧠 Run the production assistant prompt.</strong> This is the one below. It makes Claude analyse the image properly first (light direction, surface, hero angle, negative space) instead of jumping straight to a generic list of camera moves.</li>
+<li><strong class="st">🎥 Get six ready-to-paste shot prompts.</strong> Each one is a complete image-to-video prompt written for a specific camera move, plus a note on what that shot is for, so you know which is your hook and which is your closer.</li>
+<li><strong class="st">🌱 Render them, then save the list as a template.</strong> You paste each prompt into an image-to-video tool alongside the same photo. Then you ask Claude to strip the list back into a reusable template, which is the step that turns twenty minutes of work into a permanent asset.</li>
+</ol>
+<div class="tip calm">Why the analysis step is not optional: a video model has to invent everything your photo does not show, and it invents better when the prompt already commits to where the light is coming from and what the surface is made of. Skipping straight to "dolly in on the bottle" is how you get the plastic-looking result people blame the model for.</div>
+
+<hr class="rule">
+<span class="kicker">copy this</span>
+<h2>The production assistant prompt <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the exact one. Upload your photo first, then paste this as your message. Everything in brackets is yours to fill in.</p>
+<div class="promptwrap">
+<span class="promptlabel">🎬 the production assistant</span>
+<pre><code>You are my production assistant and director of photography. I have one still photo and no ability to reshoot it. Your job is to turn it into a six-shot cinematic sequence that a text-to-video model can render from this single image.
+
+Start by analysing the photo properly and telling me what you see, in this order: the subject and its material (glass, matte plastic, brushed metal, fabric, skin), the direction and quality of the light and where the shadows fall, the camera angle and rough focal length the photo appears to have been taken at, the background and how much depth is actually visible, the colour palette in plain words, and the negative space you could move the camera into. Then name the single strongest feature of this product or subject, the thing a shot should be built around.
+
+Now design six shots that work as a sequence, not six variations of the same move. Give each shot a purpose: one attention-grabbing opener, two that reveal detail or texture, one that shows scale or context, one that creates desire or mood, and one closing hero shot. Use real camera language and vary the movement across the six: choose from push in, dolly out, orbit or arc, trucking move, pedestal up or down, tilt reveal, rack focus, and slow handheld drift. For each shot tell me what it is for in one line, then give me the shot prompt itself as a copy-paste block.
+
+Write every shot prompt so it stands alone with no reference to the other shots, in this structure: the camera movement stated first and precisely, then the subject and what it is made of, then the lighting matching the photo, then the environment, then the mood and pacing, then the technical finish (for example "shallow depth of field, 24fps, subtle film grain, photoreal"). Keep each one under 80 words, describe only what the camera does and what exists in frame, and never include cuts, dialogue, music or text overlays, because the model renders a single continuous take.
+
+Finally, flag honestly which of the six are most likely to fail on this specific image and why, based on what you can actually see, for example fine text on packaging, reflective surfaces, hands, or a background too shallow to orbit into.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">what you get back</span>
+<h2>What a finished shot prompt looks like <span class="gi" style="--gl:#5A3B76" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 8L13 8" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M2 11C2 7.70017 2 6.05025 3.02513 5.02513C4.05025 4 5.70017 4 9 4H10C13.2998 4 14.9497 4 15.9749 5.02513C17 6.05025 17 7.70017 17 11V13C17 16.2998 17 17.9497 15.9749 18.9749C14.9497 20 13.2998 20 10 20H9C5.70017 20 4.05025 20 3.02513 18.9749C2 17.9497 2 16.2998 2 13V11Z" stroke="currentColor" stroke-width="1.5"/><path d="M17 8.90585L17.1259 8.80196C19.2417 7.05623 20.2996 6.18336 21.1498 6.60482C22 7.02628 22 8.42355 22 11.2181V12.7819C22 15.5765 22 16.9737 21.1498 17.3952C20.2996 17.8166 19.2417 16.9438 17.1259 15.198L17 15.0941" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>So you know whether Claude got it right, here is the shape of one good output. Notice that the movement is first and specific, the material is named, and the lighting matches the source photo rather than inventing a new studio.</p>
+<div class="promptwrap">
+<span class="promptlabel">🎥 example shot: the slow orbit</span>
+<pre><code>Camera slowly orbits 90 degrees around the subject from left to right at a fixed height, ending square to the front label. A frosted glass bottle with a matte ceramic cap rests on a pale travertine surface. Warm directional light from the upper left rakes across the glass, throwing a long soft shadow to the right, with a faint warm bounce filling the shadow side. Background is a clean out-of-focus cream wall. Calm, unhurried, premium. Shallow depth of field, 24fps, subtle film grain, photoreal.</code></pre>
+</div>
+<div class="tip">If a shot comes back vague ("cinematic shot of the product, beautiful lighting"), it is because the analysis step got skipped. Reply with: "rewrite shot 3 using only what you observed in the photo analysis: name the material, the light direction and the surface." That one line fixes it almost every time.</div>
+
+<hr class="rule">
+<span class="kicker">the vocabulary</span>
+<h2>The camera moves worth knowing <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>You do not need film school, but you do need the right eight words, because these are the terms video models were trained on. Vague wording like "make it move nicely" gets you drift. These definitions follow standard film usage (<a href="https://www.studiobinder.com/camera-shots/camera-movements/" target="_blank">StudioBinder's camera movements guide</a>).</p>
+<div class="cardgrid">
+<div class="minicard"><b>Push in</b> The camera moves physically closer to the subject. Reads as growing emphasis or realisation. The most reliable single move for an opener.</div>
+<div class="minicard"><b>Dolly out</b> The camera pulls back to reveal context. Great as a closer, and it is forgiving, because the model has to invent detail rather than resolve it.</div>
+<div class="minicard"><b>Orbit or arc</b> The camera travels in a curve around the subject. The most impressive move from a still, and the most likely to warp, so use it on simple shapes.</div>
+<div class="minicard"><b>Trucking</b> The camera moves laterally, left or right, staying parallel to the subject rather than turning. Clean, calm, and good for showing a row or a set.</div>
+<div class="minicard"><b>Pedestal</b> The whole camera rises or lowers without tilting, so the height changes but the angle stays level. Quietly expensive-looking on products.</div>
+<div class="minicard"><b>Tilt</b> The camera stays put and pivots vertically. A tilt up a tall object is the cheapest reveal there is, and it rarely breaks.</div>
+<div class="minicard"><b>Rack focus</b> Focus shifts from one plane to another while the camera holds still. Needs genuine depth in the source photo, so check before you ask for it.</div>
+<div class="minicard"><b>Handheld drift</b> A slow, slightly imperfect float. Adds life and realism, and it hides model artefacts better than any locked-off move.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">render them</span>
+<h2>Where to actually run the prompts <span class="gi" style="--gl:#5F4E8D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M2.5 7H21.5" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M2.5 17H21.5" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 17L12 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 7L8 3M16 7L16 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 21L8 17M16 21L16 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Claude writes the prompts; you paste them into an image-to-video tool along with the same photo. Here is the honest state of the options, because "free AI video" is the single most out-of-date claim on the internet right now.</p>
+<ul>
+<li>🌱 <strong>Dreamina</strong> (<a href="https://dreamina.capcut.com/ai-video" target="_blank">dreamina.capcut.com</a>) gives 225 free credits a day, which reset every 24 hours. Exports may carry a watermark depending on your export settings, resolution and model. It is the most generous free daily allowance of the three.</li>
+<li>🌱 <strong>PixVerse</strong> (<a href="https://pixverse.ai/" target="_blank">pixverse.ai</a>) gives recurring free credits: check your in-app balance rather than trusting a number from a blog post, because the amount varies and is not published.</li>
+<li>🌱 <strong>Vidu</strong> (<a href="https://www.vidu.com/pricing" target="_blank">vidu.com</a>) gives a monthly free allowance, caps free output at 720p and adds a visible watermark. It is the strongest of the three at keeping one subject consistent across several clips.</li>
+<li>💡 <strong>Kling</strong> (<a href="https://app.klingai.com/global/membership/membership-plan" target="_blank">klingai.com</a>) is excellent at camera control and is <strong>paid only</strong>. It no longer has standing free daily credits, so treat any tutorial that says otherwise as out of date.</li>
+</ul>
+<div class="tip warn">⚠️ <strong>Read this before you use a single clip for a client.</strong> All three free tiers above are for personal, non-commercial use under their own terms. Free output is for testing and for your own feed, not for paid work or a client deliverable. If the video is going anywhere commercial, use a paid plan and check that plan's licence yourself. Free daily caps also mean a full six-shot sequence can take more than one sitting, or one sitting spread across all three tools.</div>
+
+<hr class="rule">
+<span class="kicker">the reusable part</span>
+<h2>Turn the list into a template you keep <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the beat most people miss, and it is where the actual leverage is. The specific prompts are tied to this photo, but the <em>structure</em> of the six shots is not. Run this straight after and you never start from scratch again.</p>
+<div class="promptwrap">
+<span class="promptlabel">🌱 the reusable template</span>
+<pre><code>Now strip the six shots back into a reusable template I can apply to any future product photo.
+
+Keep the six shot purposes and the six camera movements exactly as they are, since that sequence works. Replace everything that was specific to this particular photo with clearly marked placeholders: [SUBJECT AND MATERIAL], [LIGHT DIRECTION AND QUALITY], [SURFACE], [BACKGROUND], [MOOD]. Leave the technical finish line intact at the end of each prompt, because that part does not change between products.
+
+Then write me a short filling-in guide: for each placeholder, tell me what to look for in a new photo and give me two or three example values, so I can fill it in accurately without re-running the whole analysis. Finish with a one-line instruction I can paste into a future chat alongside a new photo to have you fill the template in for me automatically.
+
+Output the whole thing as a downloadable markdown file so I can keep it outside this conversation.</code></pre>
+</div>
+<div class="tip calm">Save that file into a Claude Project called something like "product shots". Every future chat inside that project already knows your template and your brand's look, so a new photo becomes a two-minute job. Projects are on every plan, with up to five on a free account (<a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">Claude help centre</a>), and Claude can build the markdown file for you on any plan too (<a href="https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude" target="_blank">file creation</a>).</div>
+
+<hr class="rule">
+<span class="kicker">be realistic</span>
+<h2>Where this genuinely falls over <span class="gi" style="--gl:#B97C11" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9248 21H10.0752C5.44476 21 3.12955 21 2.27636 19.4939C1.42317 17.9879 2.60736 15.9914 4.97574 11.9985L6.90057 8.75333C9.17559 4.91778 10.3131 3 12 3C13.6869 3 14.8244 4.91777 17.0994 8.75332L19.0243 11.9985C21.3926 15.9914 22.5768 17.9879 21.7236 19.4939C20.8704 21 18.5552 21 13.9248 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 9V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Every honest version of this workflow includes this section, because the failures are predictable and mostly avoidable once you know them. None of these are reasons not to try it. They are reasons to choose your photo well.</p>
+<div class="cardgrid">
+<div class="minicard"><b>Text on packaging</b> Labels, logos and small type warp or turn into nonsense the moment the camera moves. Choose shots where the label stays roughly front-on, or accept that close orbits will mangle it.</div>
+<div class="minicard"><b>Highly reflective surfaces</b> Chrome, mirrors and polished glass produce reflections that do not track correctly as the camera travels. Slow, small moves survive. Fast orbits do not.</div>
+<div class="minicard"><b>Hands and faces</b> If a hand holds your product, expect trouble on any move longer than a couple of seconds. Crop the hand out of the source photo if you can.</div>
+<div class="minicard"><b>Flat backgrounds</b> An orbit or rack focus needs somewhere to go. A product shot against a plain seamless wall has no depth to reveal, so the model invents it, usually badly.</div>
+<div class="minicard"><b>Claude's own limits</b> The docs note Claude's spatial reasoning and counting are approximate, and it will not identify people in images. Treat its read of the photo as a strong first draft to sanity-check, not gospel.</div>
+<div class="minicard"><b>The sequence still needs you</b> Six clips are not an edit. Ordering them, choosing durations and cutting on the movement is the part that makes it feel like a film, and that judgement is yours.</div>
+</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://platform.claude.com/docs/en/build-with-claude/vision" target="_blank">Claude vision docs, image formats, limits, and what Claude cannot do</a><br>
+  <a href="https://www.studiobinder.com/camera-shots/camera-movements/" target="_blank">StudioBinder, camera movements in film</a><br>
+  <a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">Claude Projects, plan availability</a><br>
+  <a href="https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude" target="_blank">Create and edit files with Claude</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

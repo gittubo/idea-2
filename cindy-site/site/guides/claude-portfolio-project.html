@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a portfolio project recruiters can click · Cindy Zhu</title>
+<!-- GUIDES_CARD {t:"Build a portfolio project recruiters can click", u:"guides/claude-portfolio-project.html", topic:"career", tool:"claude"} -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Build a portfolio project recruiters can click. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-portfolio-project">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build a portfolio project recruiters can click">
+<meta property="og:description" content="Build a portfolio project recruiters can click. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-portfolio-project">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build a portfolio project recruiters can click">
+<meta name="twitter:description" content="Build a portfolio project recruiters can click. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Career growth</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Build a portfolio project recruiters can click</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented "PORTFOLIO", so here is the full build: how to get Claude to pick a project that matches the role you actually want.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip calm">💡 <strong>What you need before you start.</strong> A Claude account (free is fine), a free <a href="https://huggingface.co/join" target="_blank">Hugging Face account</a>, and Python 3.10 or higher on your machine (<a href="https://www.gradio.app/guides/quickstart" target="_blank">Gradio requires 3.10+</a>). No paid tools, no cloud bill, no front-end knowledge. If you have never installed Python, that is the one setup step, and Claude will walk you through it if you ask.</div>
+
+<span class="kicker">why this works</span>
+<h2>The gap you are closing <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A resume is a list of claims. Every applicant has one, and most of them say roughly the same things. A working link is a claim someone can check in fifteen seconds, which is why it survives a skim that your bullet points do not. It also answers the only question a hiring manager quietly has about a career switcher: can this person finish something and put it in front of a stranger. One small, finished, clickable thing answers that. Three unfinished repos do not.</p>
+
+<hr class="rule">
+<span class="kicker">step one</span>
+<h2>Let Claude pick the project <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Do not pick it yourself. Most people default to whatever project they saw in a tutorial, which is how five hundred applicants end up with the same movie recommender. Give Claude the actual job description and make it reverse-engineer something that maps to it.</p>
+
+<div class="promptwrap">
+<span class="promptlabel">🎯 pick my portfolio project</span>
+<pre><code>I am trying to move into this role: [paste the full job description, or the role title plus the 5 responsibilities you see repeated across postings]. My background so far is [your current job and the two or three skills you genuinely have].
+
+Suggest 5 small portfolio projects I could build in a weekend that would prove I can do the specific things this role asks for. For each one, tell me: the one-sentence pitch, exactly which requirement from the job description it demonstrates, what data or inputs it needs, roughly how many hours it is, and the single most impressive thing about it that a hiring manager would notice in the first ten seconds.
+
+Rule out anything that needs paid APIs, a dataset I would have to buy, or more than a weekend. Then recommend one of the five and explain in three lines why it is the strongest signal for this particular role.</code></pre>
+</div>
+
+<div class="tip">💡 Push back on the first answer. If a suggestion feels like a tutorial you have seen before, say "that one is generic, give me three alternatives that would be unusual to see in an application for this role". The unusual-but-relevant project is the one people remember.</div>
+
+<hr class="rule">
+<span class="kicker">what to build</span>
+<h2>Six projects that actually land <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Use these as calibration for what "small and finished" looks like. Each one is a weekend, not a semester.</p>
+<div class="cardgrid">
+<div class="minicard"><b>Document Q and A tool</b> Upload a PDF, ask questions, get answers with the source passage shown. Demonstrates retrieval, prompt design and honest citation.</div>
+<div class="minicard"><b>Job description analyser</b> Paste a posting, get the real skill requirements extracted, ranked and grouped. Recruiters immediately understand what they are looking at.</div>
+<div class="minicard"><b>Support ticket triager</b> Paste a customer message, get category, urgency and a suggested reply. Maps directly to operations and customer-facing AI roles.</div>
+<div class="minicard"><b>Ad copy variant generator</b> One product description in, ten on-brand variants out with a rationale each. The marketing version of the same skill set.</div>
+<div class="minicard"><b>CSV insight explainer</b> Upload a spreadsheet, get a plain-English summary plus a chart. Shows you can turn data into a decision, not just a table.</div>
+<div class="minicard"><b>Meeting notes to actions</b> Paste a transcript, get owners, tasks and deadlines in a clean table. Boring on paper, genuinely useful, and everyone recognises the pain.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">step two</span>
+<h2>Build it as a real web app with Gradio <span class="gi" style="--gl:#9A7BBC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Gradio is a Python library that turns a normal function into a working web interface, so you get a real app without writing any front-end code. That is the whole reason it is the right choice here: your project ends up as something a person can use in a browser rather than a notebook nobody will open. It is open source and free (<a href="https://github.com/gradio-app/gradio" target="_blank">gradio-app/gradio</a>).</p>
+
+<p>This is the entire shape of a Gradio app, so you know what you are aiming at before Claude writes yours:</p>
+
+<pre><code>import gradio as gr
+
+def greet(name, intensity):
+    return "Hello, " + name + "!" * int(intensity)
+
+demo = gr.Interface(
+    fn=greet,
+    inputs=["text", "slider"],
+    outputs=["text"]
+)
+
+demo.launch()</code></pre>
+<p>That example is adapted from the <a href="https://www.gradio.app/guides/quickstart" target="_blank">Gradio quickstart</a>.</p>
+
+<p>A function, a description of its inputs and outputs, and one line to launch it. Now hand Claude the job:</p>
+
+<div class="promptwrap">
+<span class="promptlabel">🛠️ build my Gradio app</span>
+<pre><code>Build me the project we chose as a single Gradio app in one file called app.py. I am a beginner, so write the complete file, not fragments, and add a short comment above each section explaining what it does in plain English.
+
+Requirements: it must run with only free and open-source dependencies, it must handle bad or empty input without crashing, and the interface needs a clear title, a one-line description of what the app does, and two example inputs pre-loaded so a visitor can try it in one click without thinking. Keep the whole thing under about 120 lines.
+
+After the code, give me three things: the exact requirements.txt contents, the terminal commands to install and run it locally, and a list of the three most likely errors I will hit on my first run with the fix for each.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">step three</span>
+<h2>Run it on your own machine first <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">📁 Make a folder.</strong> Create an empty folder for the project and save Claude's <code>app.py</code> and <code>requirements.txt</code> inside it. Two files is genuinely all this needs.</li>
+<li><strong class="st">⬇️ Install Gradio.</strong> Open a terminal in that folder and run <code>pip install --upgrade gradio</code>. If your project needs anything else, it is already listed in your requirements.txt, so <code>pip install -r requirements.txt</code> covers the lot.</li>
+<li><strong class="st">▶️ Run it.</strong> Run <code>python app.py</code>. Gradio starts a local server and your app opens at <code>http://localhost:7860</code> in your browser. Seeing your own thing running locally is the moment this stops feeling theoretical.</li>
+<li><strong class="st">🧪 Try to break it.</strong> Submit nothing. Submit nonsense. Submit something enormous. Then paste any error straight back to Claude with "here is the error, fix it and give me the full corrected file". Repeat until it holds up.</li>
+<li><strong class="st">🔗 Optional, share it for a week.</strong> Changing the last line to <code>demo.launch(share=True)</code> gives you a temporary public link (something like <code>https://07ff8706ab.gradio.live</code>) that runs off your own machine. Useful for showing a friend today. Not your portfolio link: <a href="https://www.gradio.app/guides/sharing-your-app" target="_blank">share links expire after one week</a> and die when you close your laptop.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">step four</span>
+<h2>Host it free on Hugging Face Spaces <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Spaces is free hosting for exactly this kind of app, and it gives you a permanent public URL that works whether or not your laptop is on. The free hardware tier is <strong>CPU Basic, 2 vCPU and 16 GB of memory, at no cost</strong> (<a href="https://huggingface.co/pricing" target="_blank">Hugging Face pricing</a>), which is comfortably enough for a portfolio demo.</p>
+
+<ol class="steps">
+<li><strong class="st">➕ Create the Space.</strong> Go to <a href="https://huggingface.co/new-space" target="_blank">huggingface.co/new-space</a>. Give it a clear name (the name becomes part of your public URL, so <code>job-description-analyser</code> beats <code>test2</code>), choose <strong>Gradio</strong> as the SDK, leave the hardware on the free CPU Basic option, and set it to Public.</li>
+<li><strong class="st">📄 Add your two files.</strong> A Space is a Git repository, and you can either push to it or use the <strong>Files</strong> tab in the browser to add files directly. Upload <code>app.py</code> and <code>requirements.txt</code>. Spaces installs your dependencies for you (<a href="https://huggingface.co/docs/hub/spaces-sdks-gradio" target="_blank">Gradio Spaces docs</a>).</li>
+<li><strong class="st">🚀 Watch it build, then open the App tab.</strong> The Space builds automatically and switches to Running. Open the <strong>App</strong> tab and your project is live at a public URL. If the build fails, the logs tell you which package is missing, and pasting that log to Claude fixes it in one round.</li>
+<li><strong class="st">⚡ Or deploy from the terminal.</strong> If you would rather not click through the browser, running <code>gradio deploy</code> from your project folder pushes the app to Spaces for you (<a href="https://www.gradio.app/guides/sharing-your-app" target="_blank">Gradio hosting guide</a>).</li>
+<li><strong class="st">📱 Test it on your phone.</strong> Open the public link on mobile, on data rather than wifi. That is how a recruiter will open it, and a demo that only works on your desktop is not a demo.</li>
+</ol>
+
+<div class="tip warn">💡 <strong>Never put an API key in your code.</strong> If your project calls a paid or personal API, the key belongs in the Space's <strong>Settings</strong> under repository secrets, never inside <code>app.py</code>, because a public Space means public code. Better still, pick a project that needs no keys at all, which is why the six ideas above were chosen the way they were.</div>
+
+<hr class="rule">
+<span class="kicker">step five</span>
+<h2>Make the link do the talking <span class="gi" style="--gl:#A678B3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.50003L8.91302 9.42465C11.4387 10.8585 12.5613 10.8585 15.087 9.42465L22 5.50003" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M11.5 19.9959C11.0337 19.9898 9.56682 20.0077 9.09883 19.9959C5.95033 19.9166 4.37608 19.877 3.24496 18.7394C2.11383 17.6018 2.08114 16.0661 2.01577 12.9947C1.99475 12.0071 1.99474 11.0254 2.01576 10.0378C2.08114 6.96642 2.11382 5.43072 3.24495 4.29312C4.37608 3.15551 5.95033 3.11588 9.09882 3.03663C11.0393 2.98779 12.9607 2.98779 14.9012 3.03664C18.0497 3.1159 19.6239 3.15553 20.755 4.29313C21.8862 5.43073 21.9189 6.96643 21.9842 10.0378C21.9983 10.6973 22.0029 10.3542 21.9982 11.012" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15.015 14.3866C16.0876 13.7469 17.0238 14.0047 17.5863 14.4153C17.8169 14.5837 17.9322 14.6679 18 14.6679C18.0678 14.6679 18.1831 14.5837 18.4137 14.4153C18.9762 14.0047 19.9124 13.7469 20.985 14.3866C22.3928 15.2261 22.7113 17.9958 19.4642 20.3324C18.8457 20.7775 18.5365 21 18 21C17.4635 21 17.1543 20.7775 16.5358 20.3324C13.2887 17.9958 13.6072 15.2261 15.015 14.3866Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>A live link nobody clicks is the same as no link. These three pieces of writing are what turn it into an interview.</p>
+
+<div class="promptwrap">
+<span class="promptlabel">📝 write my project write-up</span>
+<pre><code>Here is my finished project: [paste your app description and the public link]. I am targeting this role: [role title and the key requirements].
+
+Write me three things. First, a README for the Space: what the tool does in one sentence, who it is for, how to use it in three steps, what I built it with, and one honest paragraph on its limitations. Second, a LinkedIn featured-section blurb under 60 words that leads with what the thing does for the reader, not with the tech stack. Third, a single resume line under 20 words with the link, written so a hiring manager understands the outcome without opening it.
+
+No buzzwords, no "leveraged" or "utilised", no em dashes. Plain sentences only, and never claim the project does more than it actually does.</code></pre>
+</div>
+
+<ol class="steps">
+<li><strong class="st">📌 Put it in LinkedIn's Featured section.</strong> Featured sits directly under your About section with a preview image, so it is the first clickable thing on your profile. Add the Space link there, not buried in an old post.</li>
+<li><strong class="st">📄 Put it in your resume header.</strong> One line, directly under your name and email, alongside your LinkedIn and GitHub. Not at the bottom under "Projects" where a six-second skim never reaches.</li>
+<li><strong class="st">✉️ Open with it when you apply.</strong> First line of the cover note or the application message: what the tool does and the link. Let them try it before they read anything else about you.</li>
+<li><strong class="st">🗣️ Prepare the two-minute version.</strong> Ask Claude: "interview me about this project like a hiring manager, five questions, one at a time, and tell me where my answer was vague." Being unable to explain your own build is the one way this backfires.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">the difference</span>
+<h2>What separates a memorable project from a forgettable one <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>It works on the first click</b> Pre-loaded examples so a visitor never faces an empty box. Most demos die because the stranger did not know what to type.</div>
+<div class="minicard"><b>It solves a named person's problem</b> "For recruiters screening 200 CVs" beats "an NLP demo". Specificity reads as understanding the job, not just the tech.</div>
+<div class="minicard"><b>It admits its limits</b> A short honest note about what the tool gets wrong signals judgement. Overclaiming is the fastest way to lose a technical interviewer.</div>
+<div class="minicard"><b>It is finished</b> A small complete thing beats an ambitious half-thing every time. Shipping is most of the job, and finishing is the part you are proving.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the honest bit</span>
+<h2>Scope check before you start <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is a weekend, not a career. It will not by itself get you hired into a senior role, and anyone promising that is selling something. What it does is change the shape of your application from a list of claims to a thing someone can try, which is what gets you the conversation. Build one, ship it, put the link everywhere, then build the second one only if the first one gets used. Two finished projects with real links beat ten repos nobody opens.</p>
+
+<hr class="rule">
+<h2>Sources <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li><a href="https://www.gradio.app/guides/quickstart" target="_blank">Gradio quickstart</a>, the minimal app, Python 3.10+ requirement, and localhost:7860</li>
+<li><a href="https://github.com/gradio-app/gradio" target="_blank">Gradio on GitHub</a>, the open-source project itself</li>
+<li><a href="https://www.gradio.app/guides/sharing-your-app" target="_blank">Sharing your Gradio app</a>, the one-week expiry on share links and the <code>gradio deploy</code> route</li>
+<li><a href="https://huggingface.co/docs/hub/spaces-sdks-gradio" target="_blank">Gradio Spaces documentation</a>, creating a Space and the app.py plus requirements.txt structure</li>
+<li><a href="https://huggingface.co/pricing" target="_blank">Hugging Face pricing</a>, the free CPU Basic tier at 2 vCPU and 16 GB</li>
+</ul>
+
+<div class="gcallout"><strong>Want to build systems like this properly, not one prompt at a time?</strong> Inside AI System Club I teach people to learn AI from scratch and build the systems underneath a content business. Doors open soon and founding pricing dies at close. 🌱 <a href='/ai-system' target='_blank'>Join the waitlist</a> (link in my bio too).</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

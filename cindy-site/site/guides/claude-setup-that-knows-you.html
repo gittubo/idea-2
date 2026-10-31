@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 10-minute Claude setup that actually knows you · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Five steps, about ten minutes, and every chat after this one starts already knowing who you are, how you write, and what to stop doing.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-setup-that-knows-you">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="The 10-minute Claude setup that actually knows you">
+<meta property="og:description" content="Five steps, about ten minutes, and every chat after this one starts already knowing who you are, how you write, and what to stop doing.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-setup-that-knows-you">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The 10-minute Claude setup that actually knows you">
+<meta name="twitter:description" content="Five steps, about ten minutes, and every chat after this one starts already knowing who you are, how you write, and what to stop doing.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"The 10-minute Claude setup that actually knows you", u:"guides/claude-setup-that-knows-you.html", topic:"start", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Getting started</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>The 10-minute Claude setup that actually knows you</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Five steps, about ten minutes, and every chat after this one starts already knowing who you are, how you write, and what to stop doing.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip calm">🌱 <strong>The plan gate, honestly.</strong> Projects work on every plan including free, where you can create up to five of them (<a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">Anthropic's Projects article</a>). Paid plans lift that limit and hold a lot more knowledge in each one. Profile instructions, the account-wide version in step three, are free too. So nothing here is behind a paywall.</div>
+
+<span class="kicker">why it feels generic</span>
+<h2>You are using a workspace tool like a search box <span class="gi" style="--gl:#2794B2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Most people open Claude, ask one question, get one answer, close it, and open a brand new chat tomorrow. That is search-engine behaviour, and it is why the answers read like search results. Claude is built to work with accumulated context: who you are, what you are working on, how you sound, what you never want it to do. None of that arrives on its own. You put it in once, in a place that persists, and it applies from then on.</p>
+<p>The other half of the problem is what Claude does that you never asked for: the disclaimers, the restating of your own question back to you, the tidy summary at the end of every answer. Those are default behaviours, and they are switchable. Step five is where most of the annoyance goes away.</p>
+<div class="cardgrid">
+<div class="minicard"><b>😑 Before</b> "Here's a draft, though of course every business is different and you should consider your own circumstances. To summarise what you asked..."</div>
+<div class="minicard"><b>🙂 After</b> The draft, in your voice, using your actual audience and offers, with no preamble and no summary underneath.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the setup</span>
+<h2>The five steps, in order <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">📁 Start a Project, not a chat.</strong> In the Claude sidebar, open Projects and create a new one. Name it after the thing it is for, like "my content" or "client work", not "general". A Project is a workspace that holds instructions and files, and every chat you start inside it inherits all of that. This is the container the other four steps live in, so do this one first even if you stop there for today.</li>
+<li><strong class="st">🎤 Tell Claude who you are, properly.</strong> Open a chat inside the Project and answer the interview prompt below. Do not write three bullet points. If typing a long answer feels like work, use dictation on the mobile app: tap the microphone icon on the right of the chat input and talk for two minutes (<a href="https://support.claude.com/en/articles/10065434-use-dictation-on-claude-mobile" target="_blank">Anthropic's dictation guide</a>). Talking gets you five times the detail typing does, and detail is the entire point of this step.</li>
+<li><strong class="st">📌 Turn that into instructions and save them.</strong> A great answer sitting in a chat is still trapped in that chat. Ask Claude to compress everything you just said into a tight brief, then paste it into the Project's instructions field so it loads at the start of every conversation in there. If you want it to apply everywhere instead of just this Project, put it in your profile instructions: click your initials in the lower left, open Settings, and use the "Instructions for Claude" field (<a href="https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features" target="_blank">personalization features</a>). Most people want both, a short account-wide version and a detailed per-Project one.</li>
+<li><strong class="st">✍️ Feed it five real samples of your writing.</strong> Upload them to the Project's knowledge, or paste them into a chat. Real ones: a long email you actually sent, a document, a post that did well, a couple of long messages to a friend. Mix formal and casual, because the gap between them is where your actual voice lives. Then run the voice prompt below so Claude extracts the pattern instead of vaguely imitating it.</li>
+<li><strong class="st">🚫 Add behaviour rules, the step most people miss.</strong> This is the one that changes the daily experience most. Tell Claude what not to do: no disclaimers, no restating your question, no filler summary at the end, no asking permission before doing the obvious next step. Paste the starter block below into your Project instructions underneath your context brief, and add a line every time something irritates you.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">copy these</span>
+<h2>The four blocks you paste <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Start with the interview. Answer it out loud if you can, and answer it like you are explaining yourself to a smart new hire rather than filling in a form:</p>
+<div class="promptwrap">
+<span class="promptlabel">🎤 the context interview</span>
+<pre><code>I'm setting you up so you actually know me and I never have to explain myself at the start of a chat again. Interview me before you write anything.
+
+Ask me a few questions at a time, and keep going until you have a real picture rather than a job title: who I am and what I actually do day to day, what I'm working towards over the next six to twelve months, who my audience or customers are and what they care about, the tools and platforms I work in, the kinds of tasks I'll bring you most often, and how I like to be talked to. When an answer is thin or generic, push back and ask me for the specific version instead of accepting it. Do not summarise or start writing until you have run out of useful questions.</code></pre>
+</div>
+
+<p>Then turn the interview into something permanent:</p>
+<div class="promptwrap">
+<span class="promptlabel">📌 write my project instructions</span>
+<pre><code>Now turn everything I've told you into a set of instructions I can paste into my project instructions field, so every future chat in here starts already knowing this.
+
+Write it in second person, addressed to you, in the format "here is who I'm working with and how to help them". Keep it under 400 words, because long instructions get skimmed rather than followed. Lead with the facts that change your answers most, and cut anything that sounds nice but would not alter a single response. Where I gave you a preference, write it as a rule you follow rather than a fact you know. End with a short list of things you should ask me about rather than assume.</code></pre>
+</div>
+
+<p>Next, the voice extraction. Attach or paste your five samples in the same message:</p>
+<div class="promptwrap">
+<span class="promptlabel">✍️ learn my actual voice</span>
+<pre><code>Here are five things I've genuinely written. Analyse how I write, then write in that voice from now on.
+
+Go past "casual and friendly". I want the mechanics: my average sentence length and how much I vary it, whether I use contractions, the punctuation I lean on and the punctuation I never touch, how I open and how I sign off, the specific words and phrases that recur, my paragraph length, and whether I explain first or state the point first. Then list the things I clearly avoid. Give me the analysis as a short style guide I can save, and prove it works by rewriting [paste a paragraph of generic writing] in my voice so I can check whether you actually got it or just flattered me.</code></pre>
+</div>
+
+<p>And the behaviour rules. This block is meant to be pasted straight into your Project instructions, underneath your context brief:</p>
+<div class="promptwrap">
+<span class="promptlabel">🚫 behaviour rules, ready to paste</span>
+<pre><code>How to respond to me:
+- No disclaimers, no "it depends on your situation", no hedging on things I did not ask you to hedge on.
+- Do not restate my question back to me. Start with the answer.
+- No summary paragraph at the end. When the answer is finished, stop.
+- No praise openers. Skip "great question" and start working.
+- When I ask for something, do the obvious next step too rather than asking permission for it.
+- If I'm wrong about something, say so directly in the first line, with the reason. Do not soften it into a suggestion.
+- If you are unsure or the information could be out of date, say which part and how confident you are, rather than writing confidently and hoping.
+- Match the length of your answer to the size of the question. A one-line question gets a one-line answer.
+- Write in my voice using the style guide in this project. Sentence case, no em dashes.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">check it worked</span>
+<h2>The two-minute test <span class="gi" style="--gl:#119B5B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5L10.5 15L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Setups fail quietly, so verify rather than assume. Open a brand new chat inside the Project and ask for something you would normally have to set up first, for example "draft the email I owe [person] about [thing]". Three things should be true:</p>
+<div class="cardgrid">
+<div class="minicard"><b>🧠 It knows the background</b> No questions about who you are or what you do. If it asks, your instructions are too vague or you saved them in the wrong place.</div>
+<div class="minicard"><b>🗣️ It sounds like you</b> Your sentence length, your openers, your habits. If it reads like a press release, your samples were too formal or too few.</div>
+<div class="minicard"><b>✂️ It starts with the answer</b> No preamble, no summary at the bottom. If the disclaimers survived, move those rules higher up in the instructions.</div>
+<div class="minicard"><b>📎 It uses your files</b> Ask it to reference something in your uploaded knowledge. If it cannot see the file, it went into a chat rather than the Project's knowledge.</div>
+</div>
+<div class="tip">💡 <strong>When a rule keeps getting ignored, it is usually buried.</strong> Instructions are read top to bottom and the ones near the end carry the least weight. Move your two most important rules to the very top, and cut something else to make room. A short list that gets followed beats a long list that gets skimmed.</div>
+
+<hr class="rule">
+<span class="kicker">keep it alive</span>
+<h2>The habit that keeps it good <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This setup decays if you never touch it again, because your work changes and the instructions do not. The maintenance is genuinely small, and it is one line at a time.</p>
+<ol class="steps">
+<li><strong class="st">➕ Add a rule the moment something annoys you.</strong> When Claude does the thing you keep correcting, open the Project instructions and write the rule right then, in one line. That is the whole loop. Ten of those over a month and it stops feeling like a tool you fight.</li>
+<li><strong class="st">🗂️ Split into a second Project when contexts collide.</strong> The moment you notice client context bleeding into personal work, or one Project's instructions contradicting what you need for another job, make a second Project. Each one has its own instructions and its own knowledge, which is exactly what keeps two very different kinds of work from muddying each other.</li>
+<li><strong class="st">🔄 Refresh the writing samples every few months.</strong> Voice drifts. When you notice your recent writing is sharper than what Claude imitates, swap in three newer samples and rerun the voice prompt. Two minutes, and it is the difference between sounding like you now and sounding like you last year.</li>
+</ol>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">Anthropic, what are Projects (plan availability and the five-project free limit)</a><br>
+  <a href="https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features" target="_blank">Understanding Claude's personalization features (profile instructions, project instructions, styles, skills)</a><br>
+  <a href="https://support.claude.com/en/articles/10065434-use-dictation-on-claude-mobile" target="_blank">Use dictation on Claude mobile</a><br>
+  <a href="https://support.claude.com/en/articles/11101966-use-voice-mode" target="_blank">Use voice mode</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

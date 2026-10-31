@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="description" content="Give Claude Code a short list of topics and it builds a network in your browser that you control with your hand.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a hand-controlled network with Claude · Cindy Zhu</title>
+<link rel="stylesheet" href="../styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<!-- seo:auto -->
+<link rel="canonical" href="https://cindyzhu.com.au/guides/hand-controlled-network-with-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build a hand-controlled network with Claude">
+<meta property="og:description" content="Give Claude Code a short list of topics and it builds a network in your browser that you control with your hand.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/hand-controlled-network-with-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build a hand-controlled network with Claude">
+<meta name="twitter:description" content="Give Claude Code a short list of topics and it builds a network in your browser that you control with your hand.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head><body>
+<!-- GUIDES_CARD {t:"Build a hand-controlled network with Claude", u:"guides/hand-controlled-network-with-claude.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap"><div class="guidewrap"><a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a><div class="guidehead"><h1>Build a hand-controlled network with Claude</h1></div><div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Give Claude Code a short list of topics and it builds a network in your browser that you control with your hand.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<hr class="rule">
+<h2>Try the interaction first</h2>
+<p>Open <a href="https://cindyzhu.com.au/brain/" target="_blank" rel="noopener">Cindy’s Hand Brain demo</a> in a normal desktop browser. Click Enter and allow the camera if you want to try hand control. The on-screen legend explains palm expansion, fist contraction, finger-count shapes and wrist rotation. Close the tab when you finish.</p>
+<p>The visual is a graph of topics, not a working brain, a memory engine or proof of a particular TouchDesigner implementation. The build below uses a browser canvas and MediaPipe hand landmarks. Its gesture mapping is our design choice, not a built-in Claude feature.</p>
+<div class="tip">Use non-sensitive topics. Camera frames are processed in the demo’s browser, while code and model assets are downloaded from external hosts. Topics you paste into Claude Code are sent to its configured model provider to generate your project. Local camera inference is not a claim that your build conversation stays on your computer.</div>
+<hr class="rule">
+<h2>Set up the build once</h2>
+<ol class="steps">
+<li><strong class="st">Open a fresh project folder</strong>Use Claude Code with a new, otherwise empty folder called hand-network. Follow the <a href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener">official quickstart</a> if you have not installed and signed in. Claude usage is subject to your subscription or API billing; this guide does not require a paid visual-effects library.</li>
+<li><strong class="st">Supply your topics</strong>Paste 12 to 20 topic names with at least two groups or a few explicit connections. For example: Content → scripts, filming, editing; Business → offers, clients, systems; scripts → offers. These are your chosen organizational links, not claims inferred by the model. Do not grant access to a private notes vault merely to make a demo.</li>
+<li><strong class="st">Give it the complete build prompt</strong>Use the prompt below in that folder. It asks Claude to produce and check the application, rather than return a plan you still have to implement.</li>
+</ol>
+<hr class="rule">
+<h2>The full build prompt</h2>
+<div class="promptwrap"><span class="promptlabel">Build my hand-controlled network</span><pre><code>Build a complete local browser demo in this empty project folder from the topic list I paste below. Return the implemented files, exact startup command and working localhost URL. Ask at most three questions only if a missing answer blocks the build; otherwise use the defaults below. Do not deploy the generated application or add topic storage, analytics or uploads to it. I understand that this build conversation is handled by the configured model provider.
+
+Make a dark canvas with a labelled network: one node per supplied topic, edges only for relationships supplied in my list, and a compact readable layout. Do not invent factual relationships. If my input has names but no groups or connections, ask one necessary question for grouping before building; offer a clearly labelled sample grouping for my approval. Start with fewer than 80 nodes. Use cool blue and green nodes with restrained pink highlights, smooth animation and upright readable labels.
+
+Use the current official MediaPipe Hand Landmarker Web implementation at https://developers.google.com/edge/mediapipe/solutions/vision/hand_landmarker/web_js. Pin the JavaScript package and WASM assets to the same tested version and load a compatible hand-landmarker model. Track one hand in VIDEO mode; process a frame only when the video time changes. Keep inference from freezing the interface by throttling or using a worker.
+
+Add an explicit Start camera button, explain camera permission before requesting it and add a Stop camera button that stops every media track. Process frames locally; do not transmit frames or topic data. List the domains from which libraries or models are downloaded.
+
+Mirror the camera and graph coordinates consistently. Smooth the palm position so the graph follows it without jumping. Map a normalized open-hand measure to expansion and a closed hand to contraction; calibrate against palm size rather than hard-coded pixels. Add distinct layouts for one, two and three raised fingers only after reliable open/closed tracking works. Rotate the graph gently from wrist orientation. These gestures are derived application logic, not classifications that the landmarker automatically supplies.
+
+Ship a mouse/touch fallback with drag-to-move and an expansion slider so the demo remains usable without a camera. Add a visible status for model loading, camera denied, no hand found and tracking active. Start the local server bound to 127.0.0.1, using a free port. Never expose the server on the network by default.
+
+Run available build checks, open the page if browser tools exist, inspect console errors and fix them. Exercise the mouse fallback automatically. For the hardware-only check, tell me the exact four actions: allow camera, open palm, close fist, stop camera. Do not claim those were tested without a real webcam. Include a short README with the startup and stop commands, dependency versions and the source of the hand model.
+
+My topics: [paste your list here]</code></pre></div>
+<hr class="rule">
+<h2>Open, use and record it</h2>
+<ol class="steps">
+<li><strong class="st">Use the localhost link</strong>Open the exact localhost URL Claude returns. Camera access needs a secure browser context; localhost or HTTPS is the reliable route. Avoid Instagram’s embedded browser.</li>
+<li><strong class="st">Check the fallback first</strong>Drag the graph and move the expansion slider. This establishes that the visual works before checking your webcam or lighting.</li>
+<li><strong class="st">Enable hand control</strong>Click Start camera. Keep one hand fully in frame, open the palm, close the fist and move sideways. If movement is reversed, ask Claude to fix the coordinate mirroring and retest.</li>
+<li><strong class="st">Save the result</strong>Screen-record a short continuous interaction. Keep the project folder and README so you can reopen the build later. Stop the camera and local server when finished.</li>
+</ol>
+<div class="tip">If the camera is denied, enable permission for this localhost page in your browser or keep using mouse mode. If tracking stutters, ask Claude to reduce nodes and inference frequency. Never invent a performance benchmark from how smooth one recording looks.</div>
+<hr class="rule">
+<h2>Sources and implementation boundary</h2>
+<p><a href="https://developers.google.com/edge/mediapipe/solutions/vision/hand_landmarker/web_js" target="_blank" rel="noopener">Google’s Hand Landmarker Web guide</a> documents landmark detection, model setup and video processing. The graph design, smoothing and open-palm controls above are a custom application built on those landmarks.</p>
+<p><a href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener">Claude Code quickstart</a> covers installing, signing in and working in a folder. <a href="https://cindyzhu.com.au/brain/" target="_blank" rel="noopener">Cindy’s existing demo</a> is the visual reference. This guide does not require TouchDesigner or claim that the original reel was built with it.</p>
+</div></div></div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer><script src="../guide-kit.js" defer></script><script src="/site.js" defer></script>
+</body></html>

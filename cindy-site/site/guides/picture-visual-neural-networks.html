@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Five visual resources to understand neural networks · Cindy Zhu</title><meta name="description" content="Visual resources that make neural networks click, so you can explain what a neuron&#x27;s calculation actually does."><link rel="canonical" href="https://cindyzhu.com.au/guides/picture-visual-neural-networks">
+<meta property="og:title" content="Five visual resources to understand neural networks"><meta property="og:description" content="Visual resources that make neural networks click, so you can explain what a neuron&#x27;s calculation actually does."><meta property="og:url" content="https://cindyzhu.com.au/guides/picture-visual-neural-networks"><meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles.css"><!-- seo:auto -->
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Five visual resources to understand neural networks">
+<meta name="twitter:description" content="Visual resources that make neural networks click, so you can explain what a neuron&#x27;s calculation actually does.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body><!-- GUIDES_CARD {t:"Five visual resources to understand neural networks", u:"guides/picture-visual-neural-networks.html", topic:"start", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap"><main class="guidewrap"><a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a><div class="guidehead"><div class="gtags"><span class="gtag topic">Start with AI</span><span class="gtag tool">Claude</span></div><h1>Five visual resources to understand neural networks</h1></div><div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Visual resources that make neural networks click, so you can explain what a neuron's calculation actually does.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>You can explore the first four without writing code. The final resource connects the pictures to Python. Start with the question you're most curious about, then use the experiments below to get a result you can describe in your own words.</p>
+<hr class="rule"/><span class="kicker">part 01</span><h2>Your first ten minutes</h2>
+<p>Open <a href="https://playground.tensorflow.org/" rel="noopener noreferrer" target="_blank">TensorFlow Playground</a> and find the small orange and blue data points. The background of its output chart represents the model's predictions across that space.</p>
+<p>Before changing anything, identify three things: the inputs, the network in the middle and the output chart. Press play, pause it, and describe what moved. You now have a concrete question to bring to the first lesson: how do the adjustable connections create that output?</p>
+<p>The learning pages and browser demos are public. You don't need a paid course subscription to read them. The larger demos can take time to load, and a capable desktop browser is more comfortable than a phone. The Python lesson requires its own setup; following it doesn't require paying for a hosted GPU.</p>
+<hr class="rule"/><span class="kicker">part 02</span><h2>1. 3Blue1Brown: connect a neuron to its calculation</h2>
+<p>Open <a href="https://www.3blue1brown.com/lessons/neural-networks/" rel="noopener noreferrer" target="_blank">But what is a Neural Network?</a> by Grant Sanderson. It uses digit recognition to introduce the network picture, weights and activations. Pause when the calculation for a neuron appears, and identify the input numbers before moving on.</p>
+<p>Try this original example alongside the lesson. Two inputs are <code>2</code> and <code>1</code>. Their weights are <code>0.5</code> and <code>-1</code>, and the bias is <code>0.2</code>. The weighted sum is:</p>
+<pre><code class="language-text">z = 0.5 × 2 + (-1) × 1 + 0.2 = 0.2
+</code></pre>
+<p>If you apply a sigmoid activation, <code>1 / (1 + exp(-z))</code>, the output is approximately <code>0.550</code>. Change the first input from <code>2</code> to <code>0</code> and the weighted sum becomes <code>-0.8</code>, giving a sigmoid output of approximately <code>0.310</code>.</p>
+<p>These are teaching numbers, not measurements from the digit model. The useful connection is that a line represents a weight and a neuron's output depends on a calculation. Different architectures and layers can use different activation functions.</p>
+<p><strong>Your checkpoint:</strong> explain what changed when the input changed. You should be able to separate the example's inputs from the weights the model learns.</p>
+<hr class="rule"/><span class="kicker">part 03</span><h2>2. TensorFlow Playground: see how a network learns a boundary</h2>
+<p>Return to <a href="https://playground.tensorflow.org/" rel="noopener noreferrer" target="_blank">TensorFlow Playground</a>. Select the circle dataset, keep <code>x1</code> and <code>x2</code> as inputs, and begin with one hidden layer containing one neuron. Use a nonlinear activation such as tanh. Keep the remaining settings fixed for your first comparison.</p>
+<p>Run it for a short period and inspect the decision boundary. Reset, increase the hidden layer to a few neurons, and run again. A single hidden unit with these raw inputs gives the model a limited way to separate an inner group from an outer group. More units can combine several transformations, although a particular run still depends on its settings and starting values.</p>
+<p>Look at both training loss and test loss. Training loss describes the examples used for learning; test loss describes held-out examples. A low training loss alone doesn't tell you that the model will handle new points well.</p>
+<p><strong>Your experiment:</strong> hold the dataset and other settings constant, change only the number of hidden neurons, and record what you actually see. Repeat if results differ. Don't treat one run as proof that a larger network always wins.</p>
+<p><strong>Your checkpoint:</strong> explain the output background and distinguish it from the labelled data points. The interface's colours encode values, rather than acting as decoration.</p>
+<hr class="rule"/><span class="kicker">part 04</span><h2>3. CNN Explainer: follow an image through its layers</h2>
+<p>Open <a href="https://poloclub.github.io/cnn-explainer/" rel="noopener noreferrer" target="_blank">CNN Explainer</a>. The <a href="https://github.com/poloclub/cnn-explainer" rel="noopener noreferrer" target="_blank">official project repository</a> explains the interactive visualisation if the demo is slow to load.</p>
+<p>Choose an available input image and follow the first convolution layer. Select an output in the visualisation to inspect how a small region of the input contributes to it. A convolution applies a learned filter across locations, producing a feature map. Later operations combine and transform those responses.</p>
+<p><strong>Your experiment:</strong> compare the original image with two feature maps from the same layer. Look for differences in where the maps respond strongly. Describe the visible pattern, but don't assume every map has one neat human label such as “eyes” or “edges”.</p>
+<p>Then follow the flow towards the model's output classes. Identify the step where a spatial collection of responses becomes the information used for classification.</p>
+<p><strong>Your checkpoint:</strong> explain the difference between the original image and a feature map. This resource teaches a convolutional image-classification model; it doesn't describe every modern vision architecture.</p>
+<hr class="rule"/><span class="kicker">part 05</span><h2>4. Transformer Explainer: see text become next-token probabilities</h2>
+<p>Open <a href="https://poloclub.github.io/transformer-explainer/" rel="noopener noreferrer" target="_blank">Transformer Explainer</a>. It uses a small GPT-2 model and shows tokenisation, attention and output probabilities. The model is useful for studying the mechanism, but it isn't Claude and it doesn't expose Claude's internal architecture.</p>
+<p>Enter a short unfinished sentence, such as “The easiest way to organise my notes is”. Inspect the tokens, which may be whole words or parts of words. Follow a token into an attention view, then find the next-token probability display.</p>
+<p><strong>Your experiment:</strong> keep the same input and sampling filters, then compare a lower and higher positive temperature. Temperature changes how sharply the model's scores become probabilities. Lower values concentrate probability more strongly on high-scoring options; higher values spread it out. You haven't retrained the model by moving this control.</p>
+<p>If top-k or top-p filtering is enabled, those controls also affect which candidates remain available. Keep them unchanged while comparing temperature so you know what caused the difference. Record the actual probabilities you see rather than assuming an example answer.</p>
+<p><strong>Your checkpoint:</strong> explain how a token differs from a word and why a temperature change can alter sampling without changing the learned weights. Attention values are a view into a computation, not a full human-readable explanation of the model's reasoning.</p>
+<hr class="rule"/><span class="kicker">part 06</span><h2>5. Karpathy's micrograd lesson: connect the picture to code</h2>
+<p>Open <a href="https://karpathy.ai/zero-to-hero.html" rel="noopener noreferrer" target="_blank">Neural Networks: Zero to Hero</a> and choose the first micrograd lesson. You can also inspect the <a href="https://github.com/karpathy/micrograd" rel="noopener noreferrer" target="_blank">micrograd repository</a>, including its computation-graph example. Basic Python and some calculus help here.</p>
+<p>Follow one short graph from inputs to output. Then trace the derivatives backwards. Micrograd is an educational automatic-differentiation engine: it keeps track of a calculation so it can compute gradients.</p>
+<p>Use this original expression as a warm-up: <code>y = (2x + 1)²</code> at <code>x = 1</code>. The forward value is <code>9</code>. The derivative at that point is <code>12</code>, because the outside square contributes <code>2 × 3</code> and the inner expression contributes <code>2</code>.</p>
+<p>A backward call calculates gradients through an existing graph. It doesn't, by itself, perform every part of training. The example still needs a loss, parameter updates and repeated runs.</p>
+<p><strong>Your checkpoint:</strong> explain why the forward value is <code>9</code> while the derivative is <code>12</code>. They answer different questions: what the output is, and how sensitive it is to x at this point.</p>
+<hr class="rule"/><span class="kicker">part 07</span><h2>Get an explanation of the thing you're looking at</h2>
+<p>Take your own screenshot from one of the demos, attach it to Claude, and use this prompt. Include the settings or numbers in text if the screenshot is difficult to read.</p>
+<div class="promptwrap"><span class="promptlabel">copy this prompt</span><pre><code class="language-prompt">Help me understand this neural-network visualisation.
+
+Resource: [3Blue1Brown / TensorFlow Playground / CNN Explainer / Transformer Explainer / micrograd]
+My screenshot or copied values: [attach or paste]
+What I changed: [one control or input, or say nothing yet]
+What confused me: [one sentence]
+
+Explain the visible input, the transformation being shown and the output. Define each technical term when first used. Refer only to values and controls you can actually read; ask for an unclear number instead of inventing it.
+
+Then create one small numerical example that demonstrates the same concept, show every calculation and check the arithmetic. Keep example numbers clearly separate from the screenshot's measured values.
+
+Give me one controlled experiment to try in this exact resource: what to hold fixed, what to change, what to observe and what the result could or could not establish. End with a short explanation I could use to teach the concept to a friend. Do not claim you interacted with the demo or ran its model unless you actually did.
+</code></pre></div>
+<hr class="rule"/><span class="kicker">part 08</span><h2>If the visual still feels confusing</h2>
+<p>Make the example smaller. One neuron is enough to understand a weighted sum. One convolution is enough to understand how a filter uses a local region. One unfinished sentence is enough to explore next-token probabilities.</p>
+<p>If a browser demo won't load, use its explanatory text or official repository while troubleshooting the browser. If an experiment gives an unexpected result, record the settings before changing anything else. That unexpected result is often the most useful part to investigate.</p>
+<div class="gcallout">Keep building from here. Find more practical walkthroughs in <a href='/guides'>my free guide library</a>.</div>
+</div></main></div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer><script src="../guide-kit.js" defer></script><script src="/site.js" defer></script>
+</body></html>

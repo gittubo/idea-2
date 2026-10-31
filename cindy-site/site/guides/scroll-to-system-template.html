@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scroll-to-system template · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="A Shortcut that asks why you opened the app and turns &quot;I&#x27;m just scrolling&quot; into one twenty-minute build instead.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/scroll-to-system-template">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Scroll-to-system template">
+<meta property="og:description" content="A Shortcut that asks why you opened the app and turns &quot;I&#x27;m just scrolling&quot; into one twenty-minute build instead.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/scroll-to-system-template">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Scroll-to-system template">
+<meta name="twitter:description" content="A Shortcut that asks why you opened the app and turns &quot;I&#x27;m just scrolling&quot; into one twenty-minute build instead.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Scroll-to-system template", u:"guides/scroll-to-system-template.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Scroll-to-system template</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 A Shortcut that asks why you opened the app and turns "I'm just scrolling" into one twenty-minute build instead.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<h2 id="what-you-are-building">What you are building</h2>
+<p>When Instagram, TikTok, or YouTube opens:</p>
+<ol type="1">
+<li>a menu appears</li>
+<li>you choose <strong>Post or reply</strong> or <strong>Build
+instead</strong></li>
+<li>Build instead finds the first unfinished item in a Reminders list
+called <code>BUILD</code></li>
+<li>it starts a twenty-minute timer</li>
+<li>it copies a focused Claude prompt and opens Claude</li>
+</ol>
+<p>The reliable path copies the prompt to your clipboard and opens
+Claude. Paste it into the app. If your installed Claude app exposes a
+compatible Shortcut action, you can replace the copy-and-open pair with
+that action.</p>
+<h2 id="1-create-the-build-list">1. Create the BUILD list</h2>
+<p>In Apple Reminders:</p>
+<ol type="1">
+<li>Create a list called <strong>BUILD</strong>.</li>
+<li>Add tasks that finish with one visible deliverable.</li>
+<li>Keep each task under twenty minutes.</li>
+</ol>
+<p>Good:</p>
+<ul>
+<li>Draft three hooks for the folder-system reel</li>
+<li>Turn one saved article into a one-page diagram</li>
+<li>Build the empty state for the app</li>
+<li>Write the decision log for the pricing change</li>
+</ul>
+<p>Too vague:</p>
+<ul>
+<li>Work on content</li>
+<li>Learn AI</li>
+<li>Build my business</li>
+</ul>
+<p>Ask Claude to create the first list:</p>
+<pre class="text"><code>Break this project into ten tasks that each take twenty minutes or less.
+
+Every task must:
+- begin with a verb
+- end with one visible deliverable
+- be possible without waiting for another person
+- name the file, screen, message, or artifact I will have when it is done
+
+Project: [PASTE]</code></pre></div>
+<h2 id="2-build-the-shortcut">2. Build the Shortcut</h2>
+<p>Open Shortcuts and create a new shortcut named <strong>Build
+instead</strong>.</p>
+<p>Add actions in this order:</p>
+<ol type="1">
+<li><strong>Find Reminders</strong>
+<ul>
+<li>List is <code>BUILD</code></li>
+<li>Is Completed is false</li>
+<li>Sort by creation date or priority</li>
+<li>Limit: 1</li>
+</ul></li>
+<li><strong>If</strong>
+<ul>
+<li>If no reminder is found, show alert:
+<code>BUILD list is empty. Add one twenty-minute deliverable.</code></li>
+</ul></li>
+<li><strong>Get Details of Reminders</strong>
+<ul>
+<li>Get Title</li>
+</ul></li>
+<li><strong>Text</strong>
+<ul>
+<li><code>Help me complete [Reminder Title] in 20 minutes. Keep me focused on one deliverable. Ask at most one question, then give me the next three actions.</code></li>
+</ul></li>
+<li><strong>Copy to Clipboard</strong></li>
+<li><strong>Start Timer</strong>
+<ul>
+<li>20 minutes</li>
+</ul></li>
+<li><strong>Open App</strong>
+<ul>
+<li>Claude</li>
+</ul></li>
+<li><strong>Show Notification</strong>
+<ul>
+<li><code>Prompt copied. Paste it into Claude and finish one thing.</code></li>
+</ul></li>
+</ol>
+<p>Apple documents Find Reminders and app-launch actions here: <a
+href="https://support.apple.com/en-au/guide/shortcuts/apd3c845e881/ios">https://support.apple.com/en-au/guide/shortcuts/apd3c845e881/ios</a></p>
+<h2 id="3-add-the-app-open-pop-up">3. Add the app-open pop-up</h2>
+<p>In Shortcuts:</p>
+<ol type="1">
+<li>Open <strong>Automation</strong>.</li>
+<li>Tap <strong>New Automation</strong>.</li>
+<li>Choose <strong>App</strong>.</li>
+<li>Select Instagram, TikTok, and YouTube.</li>
+<li>Choose <strong>Is Opened</strong>.</li>
+<li>Choose <strong>Run Immediately</strong>.</li>
+<li>Add <strong>Choose from Menu</strong> with:
+<ul>
+<li><code>Post or reply</code></li>
+<li><code>Build instead</code></li>
+</ul></li>
+<li>Under <strong>Post or reply</strong>, add <strong>Stop This
+Shortcut</strong>.</li>
+<li>Under <strong>Build instead</strong>, add <strong>Run Shortcut →
+Build instead</strong>.</li>
+</ol>
+<p>Apple’s official app-open trigger guide: <a
+href="https://support.apple.com/en-au/guide/shortcuts/apde31e9638b/ios">https://support.apple.com/en-au/guide/shortcuts/apde31e9638b/ios</a></p>
+<p>Test every app once. Apple may change labels by iOS version, but the
+trigger remains <strong>App → Is Opened</strong>.</p>
+<h2 id="4-add-a-real-blocker">4. Add a real blocker</h2>
+<p>The Shortcut creates a conscious choice. It does not prevent you from
+choosing the social app.</p>
+<p>Use one:</p>
+<ul>
+<li><strong>ScreenZen:</strong> free across iOS, Android, macOS, and
+Windows; good for schedules, limits, and lock mode. <a
+href="https://screenzen.co/">https://screenzen.co/</a></li>
+<li><strong>one sec:</strong> free for one target app; useful for a
+deliberate breathing or intention step. <a
+href="https://tutorials.one-sec.app/en/articles/3036418">https://tutorials.one-sec.app/en/articles/3036418</a></li>
+<li><strong>Opal:</strong> polished focus system with a limited free
+tier and paid plans. <a
+href="https://opalapp.com/pricing">https://opalapp.com/pricing</a></li>
+</ul>
+<p>Set the blocker around your real danger window, not all day by
+default.</p>
+<h2 id="5-use-the-one-input-one-artifact-rule">5. Use the one-input,
+one-artifact rule</h2>
+<p>Every learning session gets:</p>
+<ul>
+<li><strong>one input:</strong> one video, post, article, chapter, or
+idea</li>
+<li><strong>one artifact:</strong> one diagram, note, hook set,
+prototype, checklist, or decision</li>
+</ul>
+<p>Stop after the artifact exists. Saved content becomes useful only
+when it changes what you can do.</p>
+<h2 id="seven-day-tracker">Seven-day tracker</h2>
+<table class="guide-table">
+<thead>
+<tr>
+<th>Day</th>
+<th>App interrupted</th>
+<th>BUILD task</th>
+<th>Artifact finished</th>
+<th style="text-align: right;">Minutes</th>
+<th>What changed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td style="text-align: right;"></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td style="text-align: right;"></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td style="text-align: right;"></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td style="text-align: right;"></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td style="text-align: right;"></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td style="text-align: right;"></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+<td style="text-align: right;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="why-the-stopping-cue-matters">Why the stopping cue matters</h2>
+<p>Aza Raskin has described inventing infinite scroll to remove page
+friction, later saying he had been blind to the incentives around it and
+calling the result horrendous. Source transcript: <a
+href="https://www.ted.com/podcasts/rethinking-with-adam-grant/aza-raskin-on-why-technology-and-democracy-are-in-an-imagination-crisis-transcript">https://www.ted.com/podcasts/rethinking-with-adam-grant/aza-raskin-on-why-technology-and-democracy-are-in-an-imagination-crisis-transcript</a></p>
+<p>The intervention here is deliberately small: put one decision point
+back.</p>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find every photo of yourself online: the ChatGPT audit kit · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+  <!-- GUIDES_CARD {t:"Find every photo of yourself online", u:"guides/find-your-photos-online.html", topic:"power", tool:"chatgpt"} -->
+<!-- seo:auto -->
+<meta name="description" content="This is the full findability audit from my reel. It takes about fifteen minutes and costs nothing.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/find-your-photos-online">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Find every photo of yourself online: the ChatGPT audit kit">
+<meta property="og:description" content="This is the full findability audit from my reel. It takes about fifteen minutes and costs nothing.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/find-your-photos-online">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Find every photo of yourself online: the ChatGPT audit kit">
+<meta name="twitter:description" content="This is the full findability audit from my reel. It takes about fifteen minutes and costs nothing.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Life &amp; self</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Find every photo of yourself online: the ChatGPT audit kit</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This is the full findability audit from my reel. It takes about fifteen minutes and costs nothing.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn"><strong>One honest note before you start.</strong> ChatGPT does not crawl the web with your face. The reverse image engines do the matching (they are built for it), and ChatGPT does everything around them: the audit plan, the search matrix, the tracker, and the letters. ChatGPT also will not identify strangers in photos, because OpenAI's policy blocks facial recognition of private individuals (<a href="https://openai.com/policies/usage-policies/" target="_blank">usage policies</a>), so this workflow is for auditing yourself, which is exactly what we want it for. That is also why the viral one-click "agent finds your face" demo was a mockup: ChatGPT Work (what used to be called agent mode) is real and can browse, but it declines actual face recognition.</div>
+
+<span class="kicker">copy this</span>
+<h2>Step 1: the kickoff prompt <span class="gi" style="--gl:#DC5D78" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.21875 11.618L3.31189 11.2378C2.71644 11.1606 2.31883 10.5841 2.58348 10.0458C3.42523 8.33365 5.6195 6.35437 9.73988 6.68079M6.21875 11.618C7.27445 9.85426 8.57175 8.00435 9.73988 6.68079M6.21875 11.618L11.882 17.2812M9.73988 6.68079C13.4105 2.58986 17.1745 1.728 19.5937 2.06685C20.5508 2.2009 21.2991 2.94917 21.4332 3.90626C21.772 6.32551 20.9101 10.0895 16.8192 13.7601M11.882 17.2812L12.2622 20.1881C12.3394 20.7836 12.9159 21.1812 13.4542 20.9165C15.1664 20.0748 17.1456 17.8805 16.8192 13.7601M11.882 17.2812C13.6457 16.2255 15.4956 14.9282 16.8192 13.7601" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17.5 8C17.5 6.89543 16.6046 6 15.5 6C14.3954 6 13.5 6.89543 13.5 8C13.5 9.10457 14.3954 10 15.5 10C16.6046 10 17.5 9.10457 17.5 8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M4 22L8 18M4 17L5.5 15.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Drop a clear selfie into ChatGPT and paste this:</p>
+<div class="promptwrap">
+<span class="promptlabel">🚀 the kickoff prompt</span>
+<pre>This is a photo of me, and I am running a privacy audit on myself.
+
+1. Describe the visible features of this photo in neutral terms (hair, glasses, typical style, background clues) so I have a reference description for my own records.
+
+2. Interview me for a findability profile. Ask me for: my full name and how it is usually spelled, every username or handle I have ever used, my city, schools and workplaces, clubs, sports teams and events I have attended, and anywhere I know my photo has been published.
+
+3. Then build me a findability audit plan:
+   - A checklist of reverse image engines to run my selfie through, with links.
+   - A search matrix of text searches to run alongside them: name + city, name + school, name + employer, each old username on its own, and "[my name] photos" variants.
+   - The places people forget: event photo galleries, old team and club pages, alumni pages, conference speaker pages, data broker profiles.
+
+Format the plan as a checklist I can work through in 15 minutes.</pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">do the search</span>
+<h2>Step 2: run the engines yourself <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>These are drag and drop, and the whole pass takes a couple of minutes:</p>
+<ul>
+<li><strong>🔍 Google Lens:</strong> go to <a href="https://images.google.com" target="_blank">images.google.com</a>, click the camera icon, upload your selfie or drag it into the search box. It returns websites that contain the image or a similar one. Free. (How-to from Google: <a href="https://support.google.com/websearch/answer/1325808" target="_blank">support page</a>.)</li>
+<li><strong>🖼️ Bing Visual Search:</strong> go to <a href="https://www.bing.com/visualsearch" target="_blank">bing.com/visualsearch</a> and drag your photo onto the drop zone. Free. (Microsoft's page: <a href="https://explore.microsoft.com/bing/visual-search/" target="_blank">visual search</a>.)</li>
+<li><strong>🙂 FaceCheck ID:</strong> <a href="https://facecheck.id" target="_blank">facecheck.id</a> searches faces specifically across social profiles, blogs, video and news sites, and ranks every result with a match confidence score. The first pass is free, extra results cost credits. Their own warning applies: many unrelated people look alike, so treat low-confidence matches as maybes, not facts. Heads up: it also trawls mugshot and scam databases, and like any face engine you are handing it a selfie, so use a photo you are already comfortable having out there.</li>
+<li><strong>📷 TinEye:</strong> <a href="https://tineye.com" target="_blank">tineye.com</a> is a dedicated reverse image search engine. Drop the same selfie in there too, it often catches exact copies the others miss.</li>
+<li><strong>💸 What you are avoiding:</strong> PimEyes (<a href="https://pimeyes.com/en" target="_blank">pimeyes.com</a>) is the famous face search engine, but seeing the source links sits behind a paid plan, and its own homepage quotes the $29.99 a month figure. The free stack above covers a personal audit.</li>
+<li><strong>⚡ Optional accelerator:</strong> if you have a paid ChatGPT plan, ChatGPT Work (the Chat/Work switcher at the top of the composer, formerly agent mode) can drive the free public engines like Google Lens and Bing for you and gather the links, but it will decline actual face recognition and paid engines often block it, so you still run FaceCheck yourself. Not required.</li>
+</ul>
+<div class="tip">Also run the text searches from your ChatGPT search matrix. Old usernames are the sleeper hit here, they connect accounts you forgot you had.</div>
+
+<hr class="rule">
+<span class="kicker">organise it</span>
+<h2>Step 3: build the exposure tracker <span class="gi" style="--gl:#A9810B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7H16.75C18.8567 7 19.91 7 20.6667 7.50559C20.9943 7.72447 21.2755 8.00572 21.4944 8.33329C22 9.08996 22 10.1433 22 12.25C22 15.7612 22 17.5167 21.1573 18.7779C20.7926 19.3238 20.3238 19.7926 19.7779 20.1573C18.5167 21 16.7612 21 13.25 21H12C7.28595 21 4.92893 21 3.46447 19.5355C2 18.0711 2 15.714 2 11V7.94427C2 6.1278 2 5.21956 2.38032 4.53806C2.65142 4.05227 3.05227 3.65142 3.53806 3.38032C4.21956 3 5.1278 3 6.94427 3C8.10802 3 8.6899 3 9.19926 3.19101C10.3622 3.62712 10.8418 4.68358 11.3666 5.73313L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Paste every hit URL back into your ChatGPT chat with this:</p>
+<div class="promptwrap">
+<span class="promptlabel">🗂️ the exposure tracker</span>
+<pre>Here are all the URLs where my photo or my old usernames appear.
+
+Build me an exposure tracker table with these columns:
+site, link, what the photo or page is, sensitivity (low / medium / high), removal route (site contact, platform report form, search engine removal, data broker opt-out), and status.
+
+Rank it by sensitivity so I know what to handle first, and tell me which entries are probably false positives I should verify before acting.</pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">get it removed</span>
+<h2>Step 4: takedown requests that actually get replies <span class="gi" style="--gl:#A279B7" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6L8.91302 9.91697C11.4616 11.361 12.5384 11.361 15.087 9.91697L22 6" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M2.01577 13.4756C2.08114 16.5412 2.11383 18.0739 3.24496 19.2094C4.37608 20.3448 5.95033 20.3843 9.09883 20.4634C11.0393 20.5122 12.9607 20.5122 14.9012 20.4634C18.0497 20.3843 19.6239 20.3448 20.7551 19.2094C21.8862 18.0739 21.9189 16.5412 21.9842 13.4756C22.0053 12.4899 22.0053 11.5101 21.9842 10.5244C21.9189 7.45886 21.8862 5.92609 20.7551 4.79066C19.6239 3.65523 18.0497 3.61568 14.9012 3.53657C12.9607 3.48781 11.0393 3.48781 9.09882 3.53656C5.95033 3.61566 4.37608 3.65521 3.24495 4.79065C2.11382 5.92608 2.08114 7.45885 2.01576 10.5244C1.99474 11.5101 1.99475 12.4899 2.01577 13.4756Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>For anything you want gone, ask ChatGPT:</p>
+<div class="promptwrap">
+<span class="promptlabel">✉️ the takedown requests</span>
+<pre>For each high-sensitivity entry in my tracker, write me a removal request tailored to that specific site: reference the exact page URL, state that I am the person pictured and did not consent to publication, request removal, and cite the strongest applicable basis (the site's own content policy, GDPR Article 17 right to erasure if the site serves the EU, or the site's privacy contact process). Keep each one polite, firm, and under 150 words. Give me a subject line for each.</pre>
+</div>
+<p>Two removal routes worth knowing on top of site-by-site requests:</p>
+<ul>
+<li>🧹 <strong>Google's "Results about you" tool</strong> lets you request removal of personal info like your phone number, home address and email from search results, free, at <a href="https://myactivity.google.com" target="_blank">myactivity.google.com</a> (details: <a href="https://support.google.com/websearch/answer/12719076" target="_blank">support page</a>). It is rolling out to users 18+ in certain markets, so availability depends on your region.</li>
+<li>⚖️ <strong>GDPR Article 17</strong> is the "right to erasure": you can ask a data controller to erase your personal data without undue delay (the full article: <a href="https://gdpr-info.eu/art-17-gdpr/" target="_blank">Article 17</a>). Citing it in a request to any site that serves EU users adds real weight.</li>
+</ul>
+
+<div class="tip calm">🔁 <strong>Keep it fresh.</strong> Removing a photo from a site does not instantly remove it from search results, so recheck the engines a couple of weeks after a takedown and re-run this audit every few months. Your tracker makes the re-run a five minute job.</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

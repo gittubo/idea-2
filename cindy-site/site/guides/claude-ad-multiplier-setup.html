@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect your ad account and your creative studio inside Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Two connectors, about ten minutes, and by the end Claude can read your ad performance and generate new creative from the same conversation.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-ad-multiplier-setup">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Connect your ad account and your creative studio inside Claude">
+<meta property="og:description" content="Two connectors, about ten minutes, and by the end Claude can read your ad performance and generate new creative from the same conversation.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-ad-multiplier-setup">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Connect your ad account and your creative studio inside Claude">
+<meta name="twitter:description" content="Two connectors, about ten minutes, and by the end Claude can read your ad performance and generate new creative from the same conversation.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Connect your ad account and your creative studio inside Claude","description":"The two-connector setup from the reel: read your ad performance and generate new creative in the same conversation, plus what these connectors genuinely can and cannot see.","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/claude-ad-multiplier-setup"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Connect your ad account and your creative studio inside Claude", u:"guides/claude-ad-multiplier-setup.html", topic:"marketing", tool:"stack"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Marketing</span>
+        <span class="gtag tool">Higgsfield</span>
+      </div>
+      <h1>Connect your ad account and your creative studio inside Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Two connectors, about ten minutes, and by the end Claude can read your ad performance and generate new creative from the same conversation.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn"><strong>The thing to understand before you start.</strong> Your ad connector reads <em>your own</em> ad account: reporting, campaigns, catalogues, A/B tests, activity logs. It does not search other companies' ads. Competitor research is a separate, public thing called the Meta Ads Library, and it works differently. Plenty of content online blurs these two together and then people wonder why the workflow does not do what they were promised. The two sections below treat them separately, because they are separate.</div>
+
+<span class="kicker">setup</span>
+<h2>Connect the two servers <span class="gi" style="--gl:#4C395C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 2V6M8.5 6V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.00446 7.61331C5.93719 6.74273 6.63957 6 7.53014 6H16.4699C17.3604 6 18.0628 6.74273 17.9955 7.61331L17.8117 9.99197C17.6796 11.7019 17.1011 13.3498 16.132 14.7773L15.5312 15.6622C14.9638 16.4979 14.0077 17 12.9838 17H11.0162C9.99228 17 9.03617 16.4979 8.46881 15.6622L7.86803 14.7773C6.89885 13.3498 6.32041 11.7019 6.18827 9.99197L6.00446 7.61331Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 9H13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🧩 Open your connector settings.</strong> In Claude, go to <strong>Customize</strong>, then <strong>Connectors</strong>, then <strong>Add custom connector</strong>. This is the same place you add any MCP server, so if you have done this once before you already know the flow.</li>
+<li><strong class="st">📊 Add your ad account.</strong> Paste in Meta's hosted ads server: <code>https://mcp.facebook.com/ads</code>. It is remote-hosted by Meta and works with any MCP-compatible client, so there is nothing to install locally. You will be asked to authorise access to the ad account you want it to read.</li>
+<li><strong class="st">🎨 Add the creative studio.</strong> Add a second custom connector and paste in <code>https://mcp.higgsfield.ai/mcp</code>. This is the piece that actually generates the video and image output, and the quality of what comes out of it is the whole point of the workflow.</li>
+<li><strong class="st">✅ Test before you trust it.</strong> Ask Claude something small and verifiable first, like which campaigns are currently active. If it answers correctly, the connection is live. If it hedges or guesses, reconnect rather than carrying on and finding out later.</li>
+</ol>
+
+<div class="tip calm">🌱 On other platforms: TikTok announced an official ads MCP server at TikTok World in May 2026, so that is coming, but at the time of writing there is no publicly documented endpoint to paste in the way there is for the two above. Google has moved in the same direction. If you want more than one platform today, Meta plus a creative studio is the pair that actually works end to end.</div>
+
+<hr class="rule">
+<span class="kicker">workflow one</span>
+<h2>Find your own winner <span class="gi" style="--gl:#957FAC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 21H10C6.70017 21 5.05025 21 4.02513 19.9749C3 18.9497 3 17.2998 3 14V3" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M7.99707 16.999C11.5286 16.999 18.9122 15.5348 18.6979 6.43269M16.4886 8.04302L18.3721 6.14612C18.5656 5.95127 18.8798 5.94981 19.0751 6.14286L20.9971 8.04302" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The point of this step is to stop choosing creative by taste. Almost everyone running ads has a favourite that the data does not agree with, and the connector settles the argument in about ten seconds.</p>
+<div class="promptwrap">
+<span class="promptlabel">📊 the winner-finding prompt</span>
+<pre><code>Look at my ad account and tell me which creatives are actually carrying performance over the last 90 days, not which ones I have spent the most on.
+
+Rank them by the metric that matters for my objective, and for each of the top three tell me: what the creative actually is, how long it has been running, what its cost per result is against the account average, and whether it is still improving or has started to fatigue.
+
+Then tell me plainly which single creative you would build variations from, and why that one rather than the others. If two are close, say so instead of picking arbitrarily.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">workflow two</span>
+<h2>Find the winner in your niche <span class="gi" style="--gl:#2794B2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the competitor half, and it does not run through your ad connector. The <a href="https://www.facebook.com/ads/library" target="_blank">Meta Ads Library</a> is a public transparency tool. Anyone can browse it, no account and no login, and it shows you every ad a page is currently running.</p>
+<p>Here is the part worth understanding properly, because it changes how you read it. <strong>The library does not show spend or performance for ordinary commercial ads.</strong> Only political and social-issue advertising carries public spend and impression data. So you cannot look up a competitor's best ad directly.</p>
+<p>What the library does show you is <strong>how long an ad has been running</strong>, and that is the proxy. Advertisers switch off what is not working, quickly, because it costs them money every day it stays live. An ad that has been running for eight months is an ad that is paying for itself. That inference is the whole technique, and it is reliable enough to build from.</p>
+<div class="promptwrap">
+<span class="promptlabel">🔍 the niche research prompt</span>
+<pre><code>I am researching what already works in my niche before I make new creative. Here are the advertisers I want to look at: [paste 3 to 5 brand names or their Ads Library page links].
+
+For each one, go through what they are currently running and identify the ads that have been live the longest, because longevity is the closest public signal we have to performance. Meta does not publish spend for commercial ads, so do not guess at budget or results, just tell me what has persisted.
+
+Then break down the pattern across all of them: what the first three seconds do, what the offer is, how the ad is structured, and what they have in common that I should borrow. Tell me what is consistent across several advertisers rather than what one of them happens to do.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">multiply</span>
+<h2>Turn one winner into many <span class="gi" style="--gl:#8776B8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11C2 7.70017 2 6.05025 3.02513 5.02513C4.05025 4 5.70017 4 9 4H10C13.2998 4 14.9497 4 15.9749 5.02513C17 6.05025 17 7.70017 17 11V13C17 16.2998 17 17.9497 15.9749 18.9749C14.9497 20 13.2998 20 10 20H9C5.70017 20 4.05025 20 3.02513 18.9749C2 17.9497 2 16.2998 2 13V11Z" stroke="currentColor" stroke-width="1.5"/><path d="M17 8.90585L17.1259 8.80196C19.2417 7.05623 20.2996 6.18336 21.1498 6.60482C22 7.02628 22 8.42355 22 11.2181V12.7819C22 15.5765 22 16.9737 21.1498 17.3952C20.2996 17.8166 19.2417 16.9438 17.1259 15.198L17 15.0941" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><circle cx="11.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>Now the creative studio does the work. You are not asking it to invent something, you are asking it to rebuild a structure you already know performs, which is a far easier job to get right.</p>
+<div class="promptwrap">
+<span class="promptlabel">🎨 the multiply prompt</span>
+<pre><code>Take this winning ad structure: [paste the breakdown from the previous step, or describe the creative you want to build from].
+
+Generate a set of variations that keep what is actually doing the work, which is the hook timing, the pacing and the offer, while changing the surface: the setting, the talent, the product angle and the visual treatment. Keep every output at commercial quality, because a rough variation tells me nothing about whether the idea travels.
+
+Then give me each variation with a one-line note on what specifically I am testing with it, so I am running a real test rather than just making more videos. Finally, translate the strongest two into [list your target languages] keeping the same pacing, so I can run the same winner in other markets.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">know the edges</span>
+<h2>What this does and does not do <span class="gi" style="--gl:#B67D09" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="5" r="2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10 5H4M14 5H20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 21H7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 7V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 14L18.5 8H19.5L22 14C22 15.6569 20.6569 17 19 17C17.3431 17 16 15.6569 16 14ZM22 14H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M2 14L4.5 8H5.5L8 14C8 15.6569 6.65685 17 5 17C3.34315 17 2 15.6569 2 14ZM8 14H2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>It does: settle creative arguments</b> Reading your own account and ranking by outcome rather than preference is genuinely the fastest value here, and it takes seconds.</div>
+<div class="minicard"><b>It does: kill the blank page</b> Starting from a structure that has already survived months of live spend is a completely different job from inventing an ad from nothing.</div>
+<div class="minicard"><b>It does not: show competitor performance</b> The library shows what is running and for how long. Anyone claiming to show you a competitor's spend or results on normal commercial ads is inferring it, same as you are.</div>
+<div class="minicard"><b>It does not: replace judgment</b> Variations still need someone to decide which ones are worth putting money behind. The tool multiplies your taste; it does not supply it.</div>
+</div>
+<p>One practical note on cost. Generating a batch of commercial-quality variations consumes credits, so decide how many you actually need before you start rather than generating fifty and picking two. The point of finding the winner first is that you need fewer swings, not more.</p>
+
+<div class="tip calm">🔁 The loop, once it is set up: find what is already working, rebuild it at quality, test the variations, translate the survivors. You stop guessing what to make and start multiplying what has already proven itself.</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

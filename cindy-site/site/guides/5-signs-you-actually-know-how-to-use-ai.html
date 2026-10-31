@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 signs you actually know how to use AI · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<meta name="description" content="How to build each of the five habits, from plain-language prompting to picking the right subagent formation, with the prompts that set them up.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/5-signs-you-actually-know-how-to-use-ai">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5 signs you actually know how to use AI">
+<meta property="og:description" content="How to build each of the five habits, from plain-language prompting to picking the right subagent formation, with the prompts that set them up.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/5-signs-you-actually-know-how-to-use-ai">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body><!-- GUIDES_CARD {t:"5 signs you actually know how to use AI", u:"guides/5-signs-you-actually-know-how-to-use-ai.html", topic:"power", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Power user</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>5 signs you actually know how to use AI</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented AI, so here's how to build all five, not just score yourself on them.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<hr class="rule">
+<span class="kicker">sign one</span>
+<h2>You don't keep a document of 500 saved prompts <span class="gi" style="--gl:#9B7FA4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 2V5M7.5 2V5M12 2V5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 3.5H11C7.70017 3.5 6.05025 3.5 5.02513 4.52513C4 5.55025 4 7.20017 4 10.5V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V10.5C20 7.20017 20 5.55025 18.9749 4.52512C17.9497 3.5 16.2998 3.5 13 3.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 15H12M8 11H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Current models follow plain, specific instructions well. What changes the output isn't a magic phrase, it's context: what you're making, who it's for, what good looks like and what to avoid. People who get great results ask for what they want in normal language, then correct it in the next message.</p>
+<p>So instead of a library of prompts, keep one habit: make Claude ask you for the missing context before it starts.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 The only prompt pattern you need</span>
+<pre><code>I need [what you want, for example a follow-up email to a client who went quiet after a proposal].
+
+Before you write anything, ask me up to 5 questions about the context you're missing: who it's for, what a great result looks like, the tone, and anything I want you to avoid. Ask them all at once.
+
+Once I answer, write the first version, then tell me the one assumption you're least sure about so I can correct it.</code></pre>
+</div>
+<div class="tip">💡 Anthropic's own prompting guide starts with the same advice: be clear and direct, and give context and examples. <a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener">Read it here</a>.</div>
+
+<hr class="rule">
+<span class="kicker">sign two</span>
+<h2>You run it by hand before you automate it <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>AI can only automate a process that already works. If the steps are fuzzy in your head, an automation just produces wrong results faster and with more confidence. Doing it by hand once is how you find the steps you'd forgotten were steps.</p>
+<ol class="steps">
+<li><strong class="st">✋ Do the task yourself once, with Claude beside you.</strong> Work through it in a normal chat, one step at a time, and say out loud what you're checking at each point.</li>
+<li><strong class="st">📋 Turn that run into written steps.</strong> Paste the prompt below at the end of the chat so Claude writes up exactly what you did, including the judgment calls.</li>
+<li><strong class="st">🔁 Run the written steps two more times.</strong> Use them on real inputs. Wherever you had to step in and fix something, update the steps.</li>
+<li><strong class="st">⚡ Only now automate it.</strong> Once three runs come out right without you stepping in, it's ready to become a skill, a scheduled task or an agent.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">📋 Turn this chat into a process</span>
+<pre><code>Look back over everything we just did in this chat. Write it up as a step-by-step process someone else could follow to get the same result.
+
+For each step include: what goes in, what comes out, and any judgment call I made (for example "I skipped leads with no company name"). Mark any step where the right answer depended on my taste rather than a rule.
+
+Then list the steps that are safe to automate and the ones that should stay with a human, and explain why for each.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">sign three</span>
+<h2>You know when not to use it <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Some tasks take longer to check than to do. In a 2025 randomised trial by METR, experienced open-source developers took 19% longer to finish tasks when they used AI tools, even though they believed afterwards that AI had sped them up by about 20%. <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" target="_blank" rel="noopener">The study is here</a>. Feeling faster and being faster aren't the same thing.</p>
+<div class="rolegrid">
+<div class="rolecard"><b>Hand it to AI 🤖</b> First drafts, summaries of long documents, reformatting, research you'd have to read anyway, and anything where a quick skim tells you if it's right.</div>
+<div class="rolecard"><b>Do it yourself ✋</b> Short tasks you could finish in two minutes, work in an area you know deeply, and anything where one wrong detail is expensive and checking means redoing it.</div>
+</div>
+<div class="tip calm">A quick test: if checking the output would take longer than doing the task yourself, do it yourself.</div>
+
+<hr class="rule">
+<span class="kicker">sign four</span>
+<h2>Your setup is boring <span class="gi" style="--gl:#A9810B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7H16.75C18.8567 7 19.91 7 20.6667 7.50559C20.9943 7.72447 21.2755 8.00572 21.4944 8.33329C22 9.08996 22 10.1433 22 12.25C22 15.7612 22 17.5167 21.1573 18.7779C20.7926 19.3238 20.3238 19.7926 19.7779 20.1573C18.5167 21 16.7612 21 13.25 21H12C7.28595 21 4.92893 21 3.46447 19.5355C2 18.0711 2 15.714 2 11V7.94427C2 6.1278 2 5.21956 2.38032 4.53806C2.65142 4.05227 3.05227 3.65142 3.53806 3.38032C4.21956 3 5.1278 3 6.94427 3C8.10802 3 8.6899 3 9.19926 3.19101C10.3622 3.62712 10.8418 4.68358 11.3666 5.73313L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>The best setups are folders and text files. One folder per project, one instructions file saying who you are and what good looks like, and notes in plain text. Elaborate systems built over a weekend tend to get abandoned. A boring one gets used every day.</p>
+<ol class="steps">
+<li><strong class="st">📁 One folder or Project per area of work.</strong> In the Claude app, create a Project for each area and put your notes and reference files in it. In Claude Code, use a normal folder on your computer.</li>
+<li><strong class="st">📄 One instructions file.</strong> In a Project, that's the project instructions. In Claude Code, it's a file called <code>CLAUDE.md</code> in the folder, which Claude reads automatically at the start of every session. <a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">How CLAUDE.md works</a>.</li>
+<li><strong class="st">✏️ Update it when Claude gets something wrong twice.</strong> That's the whole maintenance plan. The file improves every week without you sitting down to "build a system".</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">📄 Write my instructions file</span>
+<pre><code>Interview me to write the instructions file for this project. Ask one question at a time, and stop at 8 questions.
+
+Cover: what this project is, who the work is for, what a great result looks like with one example, the tone I want, the mistakes you should never make, and the tools or files you should use.
+
+Then write it as a short plain-text file under 300 words, with simple headings, no fluff. Keep only rules that would change your output.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">sign five, the real one</span>
+<h2>You know your subagent formations <span class="gi" style="--gl:#689425" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.828 6.00096C12.9388 5.68791 12.999 5.35099 12.999 5C12.999 3.34315 11.6559 2 9.99904 2C8.34219 2 6.99904 3.34315 6.99904 5C6.99904 5.35099 7.05932 5.68791 7.17008 6.00096C4.88532 6.0093 3.66601 6.09039 2.87772 6.87868C2.08951 7.66689 2.00836 8.88603 2 11.1704C2.31251 11.06 2.64876 11 2.99904 11C4.6559 11 5.99904 12.3431 5.99904 14C5.99904 15.6569 4.6559 17 2.99904 17C2.64876 17 2.31251 16.94 2 16.8296C2.00836 19.114 2.08951 20.3331 2.87772 21.1213C3.66593 21.9095 4.88508 21.9907 7.16941 21.999C7.05908 21.6865 6.99904 21.3503 6.99904 21C6.99904 19.3431 8.34219 18 9.99904 18C11.6559 18 12.999 19.3431 12.999 21C12.999 21.3503 12.939 21.6865 12.8287 21.999C15.113 21.9907 16.3322 21.9095 17.1204 21.1213C17.9086 20.333 17.9897 19.1137 17.9981 16.829C18.3111 16.9397 18.648 17 18.999 17C20.6559 17 21.999 15.6569 21.999 14C21.999 12.3431 20.6559 11 18.999 11C18.648 11 18.3111 11.0603 17.9981 11.171C17.9897 8.88627 17.9086 7.66697 17.1204 6.87868C16.3321 6.09039 15.1128 6.0093 12.828 6.00096Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A subagent is a separate Claude with its own clean context, given one job and reporting back. Once you can run more than one, the skill is choosing how they work together. Anthropic's guide to <a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">building effective agents</a> names these patterns, and their <a href="https://www.anthropic.com/engineering/multi-agent-research-system" target="_blank" rel="noopener">multi-agent research system</a> (a lead agent directing subagents) beat a single Claude Opus 4 agent by 90.2% on their internal research evaluation.</p>
+<div class="cardgrid">
+<div class="minicard"><b>🎯 Orchestrator and workers</b> One lead agent splits a big job into independent parts, sends each to a worker, then combines the results. Right for research across many sources or changes across many files.</div>
+<div class="minicard"><b>🗳️ Consensus</b> Several agents do the same task separately and the majority answer wins. Right when one wrong answer is costly, like classifying, fact-checking or reviewing code for security issues.</div>
+<div class="minicard"><b>⚖️ Debate with a referee</b> Two agents argue opposite sides and a third decides. Right for judgment calls with real trade-offs. Research on <a href="https://arxiv.org/abs/2305.14325" target="_blank" rel="noopener">multi-agent debate</a> found it improved reasoning and factual accuracy.</div>
+<div class="minicard"><b>🌱 One agent</b> Still the default. If the task is small, sequential, or every step depends on the one before, extra agents add cost without adding quality.</div>
+</div>
+<div class="tip warn">Formations cost more. Anthropic reports multi-agent systems used about 15 times more tokens than a normal chat in their research system, so save them for work that's worth it.</div>
+
+<span class="kicker">set it up</span>
+<h2>Where to run them <span class="gi" style="--gl:#9A7BBC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">💻 Install Claude Code.</strong> Subagents run in Claude Code, which is included in the Pro and Max plans. <a href="https://claude.com/pricing" target="_blank" rel="noopener">Plans and pricing</a>.</li>
+<li><strong class="st">📂 Open it in your project folder.</strong> Run <code>claude</code> in the folder with your files and CLAUDE.md.</li>
+<li><strong class="st">🧩 Just ask for the formation.</strong> Claude Code can launch subagents on its own when you describe the formation in your prompt, like the ones below. To save a worker you reuse often, type <code>/agents</code> and create it there. <a href="https://code.claude.com/docs/en/sub-agents" target="_blank" rel="noopener">Subagents docs</a>.</li>
+</ol>
+
+<div class="promptwrap">
+<span class="promptlabel">🧭 Pick the formation for me</span>
+<pre><code>Here is the job: [describe the task and what the finished result should be].
+
+Before doing anything, tell me which formation fits best: a single agent, orchestrator and workers, consensus voting, or a debate with a referee. Explain in two sentences why, and name the formation you rejected and why.
+
+Then estimate roughly how much more work it is than a single agent, and wait for me to say go.</code></pre>
+</div>
+
+<div class="promptwrap">
+<span class="promptlabel">🎯 Orchestrator and workers</span>
+<pre><code>Act as the orchestrator for this job: [task].
+
+1. Split it into 3 to 5 parts that don't depend on each other, and show me the split first.
+2. Launch one subagent per part, in parallel. Give each a clear brief: its goal, what to return, what to ignore, and the format for its answer.
+3. When they report back, check each result against its brief, send back anything incomplete, then combine everything into one final result.
+
+List any contradictions between workers instead of quietly picking one.</code></pre>
+</div>
+
+<div class="promptwrap">
+<span class="promptlabel">🗳️ Consensus</span>
+<pre><code>I need a reliable answer to this: [question or item to classify or check].
+
+Launch 3 subagents in parallel. Give each the same instructions and the same material, but don't let them see each other's work. Each returns an answer, a confidence level from 1 to 5, and the evidence it used.
+
+Report the majority answer. If they don't all agree, show me where they split and the strongest evidence on each side, so I can make the final call.</code></pre>
+</div>
+
+<div class="promptwrap">
+<span class="promptlabel">⚖️ Debate with a referee</span>
+<pre><code>I'm deciding: [the decision, for example whether to rebuild our onboarding emails or fix the existing ones].
+
+Launch two subagents. One argues for option A, the other for option B. Each gets the same context: [paste the context]. Each writes its strongest case, then reads the other's case and writes a rebuttal.
+
+Then launch a third subagent as the referee. It reads both cases and both rebuttals, and decides which argument is stronger and why. It also names the one fact that would flip the decision.</code></pre>
+</div>
+
+<hr class="rule">
+<h2>So, how many have you got? <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Pick your lowest sign and fix only that one this week. One boring habit, used every day, beats five you set up and forget.</p>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">Building effective agents (Anthropic)</a><br>
+  <a href="https://www.anthropic.com/engineering/multi-agent-research-system" target="_blank" rel="noopener">How Anthropic built its multi-agent research system</a><br>
+  <a href="https://arxiv.org/abs/2305.14325" target="_blank" rel="noopener">Improving factuality and reasoning through multiagent debate</a><br>
+  <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" target="_blank" rel="noopener">METR study on AI and experienced developers</a><br>
+  <a href="https://code.claude.com/docs/en/sub-agents" target="_blank" rel="noopener">Claude Code subagents docs</a>
+</p>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

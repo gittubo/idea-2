@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a cozy web toy with Claude in one night · Cindy Zhu</title>
+<!-- GUIDES_CARD {t:"Build a cozy web toy with Claude in one night", u:"guides/cozy-web-toy.html", topic:"building", tool:"claude"} -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Build a cozy web toy with Claude in one night. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/cozy-web-toy">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build a cozy web toy with Claude in one night">
+<meta property="og:description" content="Build a cozy web toy with Claude in one night. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/cozy-web-toy">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build a cozy web toy with Claude in one night">
+<meta name="twitter:description" content="Build a cozy web toy with Claude in one night. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building things</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Build a cozy web toy with Claude in one night</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented "toy", so here is the entire build: the exact prompt that made my rainy window.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip calm">💡 <strong>A web toy is a small interactive thing that exists because you wanted it to.</strong> No users, no roadmap, no business case. A rainy window you click to change the weather. A jar you drop marbles into. A lamp that dims when you scroll. It is the creative equivalent of doodling, and it is the fastest way I know to stop being scared of building software.</div>
+
+<span class="kicker">start here</span>
+<h2>What you are actually using <span class="gi" style="--gl:#9A7BBC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>An artifact is a window Claude opens beside your chat that runs real, live code instead of showing you a wall of text. You describe a thing, the thing appears next to the conversation, you click it, and then you say what to change. Anthropic's help centre lists single-page HTML sites, SVG images and interactive components as standard artifact types, and confirms artifacts are supported on <strong>Free, Pro, Max, Team and Enterprise</strong> plans (<a href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank">what are artifacts</a>). You do not need a paid plan for tonight.</p>
+
+<div class="tip warn">💡 <strong>If the side window never appears.</strong> Artifacts rely on code execution and file creation being available on your account, which is the default for most people. If Claude keeps pasting code into the chat instead of opening a live panel, check that in your Claude settings before you try any of the prompts below. Reference: <a href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank">the artifacts help article</a>.</div>
+
+<hr class="rule">
+<span class="kicker">the build</span>
+<h2>The whole thing, start to finish <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🧠 Pick a feeling, not a feature.</strong> This is the part people get wrong. Do not start with "an app that tracks X". Start with "rainy Sunday afternoon" or "the last twenty minutes of a bonfire" or "a jar of fireflies on a porch". A feeling gives Claude colours, motion and sound to work from. A feature gives it a spreadsheet.</li>
+<li><strong class="st">💡 Open a fresh chat and paste the big prompt.</strong> Use the vibe prompt below. Fresh chat matters, because a conversation full of your work emails will drag the aesthetic back towards corporate blue.</li>
+<li><strong class="st">👩‍💻 Let it build, then actually play with it.</strong> The artifact panel opens on the right and the toy runs live. Click everything. Drag things. The bugs and the delights both show up in the first two minutes of playing, never in the code.</li>
+<li><strong class="st">🌱 Change one thing at a time, in plain English.</strong> "Make the rain heavier." "The window frame is too orange, warm it down." "Add a cat silhouette on the sill that blinks occasionally." One request per message gets you a clean result. Five requests at once gets you a rewrite that loses the bits you liked.</li>
+<li><strong class="st">🔊 Add sound last.</strong> Sound is the single biggest cosiness upgrade and the easiest thing to overdo, so add it once the visuals feel right. The sound prompt is further down.</li>
+<li><strong class="st">💌 Publish it and send it to one person.</strong> Hit Publish, copy the link, send it to a friend. Something changes when a made-up thing in your head becomes a URL someone else can open.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">copy this</span>
+<h2>The prompt that built my rainy window <span class="gi" style="--gl:#8282C5" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the actual shape I use. It is long on purpose: the specificity is what stops you getting a grey box with a button on it.</p>
+
+<div class="promptwrap">
+<span class="promptlabel">🌱 build my cozy web toy</span>
+<pre><code>Build me a cozy little web toy as a single self-contained artifact. It is a window seat on a rainy evening, seen from inside a warm room: a wooden window frame, rain running down the glass, soft lamplight from off screen, and a dark blue-grey world outside.
+
+Make it feel handmade rather than corporate. Muted palette, soft edges, gentle grain, nothing neon and no hard drop shadows. The rain should be animated continuously and never loop in an obviously repeating way. Clicking anywhere on the glass cycles the weather between rain, heavy rain, snow and clear night with stars, and the transition between them should fade over about two seconds rather than snapping.
+
+Draw everything in code with CSS, SVG or canvas so it is fully self-contained, do not link to any external images or fonts. Keep it to one file, make it fill the window and work on a phone screen too. Build it, then tell me in three short lines which parts I can ask you to change.</code></pre>
+</div>
+
+<div class="tip">💡 The three instructions doing the heavy lifting here: <strong>"handmade rather than corporate"</strong> (kills the default gradient-and-glassmorphism look), <strong>"draw everything in code"</strong> (nothing breaks because an external file did not load), and <strong>"tell me what I can change"</strong> (Claude hands you your own menu of next tweaks so you are not staring at a blank reply box).</div>
+
+<hr class="rule">
+<span class="kicker">keep going</span>
+<h2>The follow-up lines that make it yours <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Send these one at a time, in the same chat, after the toy exists. Each one is a real message you can paste as-is.</p>
+
+<div class="promptwrap">
+<span class="promptlabel">❄️ change the weather</span>
+<pre><code>Make it snow instead of rain, and change the mood to match: the light outside should go softer and paler, the snow should drift sideways slightly rather than falling straight down, and it should settle on the bottom edge of the window frame and slowly build up over a couple of minutes.
+
+Keep everything else exactly as it is, including the click-to-cycle behaviour and the lamp glow. Only change what I asked for.</code></pre>
+</div>
+
+<div class="promptwrap">
+<span class="promptlabel">🔊 add sound that is not annoying</span>
+<pre><code>Add ambient sound that matches the current weather: soft rain, heavier rain, muffled quiet for snow, and faint wind for the clear night.
+
+Generate the audio in code using the Web Audio API rather than linking to any external sound file, so the toy stays self-contained. It must start muted with a small speaker icon in a corner that I click to turn sound on, because audio that plays by itself is horrible. Fade the volume between weather states instead of cutting, and keep the whole thing quiet enough to leave running in the background while I work.</code></pre>
+</div>
+
+<div class="promptwrap">
+<span class="promptlabel">🐈 add one small piece of life</span>
+<pre><code>Add one small living detail to the scene: a cat silhouette curled on the windowsill that breathes slowly, blinks now and then, and occasionally stretches.
+
+It should be drawn in code, sit in the lower left of the frame, and never demand attention. The timing needs to be irregular rather than on a fixed loop, because anything perfectly regular stops feeling alive. Do not add any other elements or change the weather behaviour.</code></pre>
+</div>
+
+<div class="tip calm">🧠 If a change makes it worse, say "undo that last change and go back to how it was". Artifacts keep versions, so you are never stuck with a bad edit. Working in small reversible steps is the entire skill here.</div>
+
+<hr class="rule">
+<span class="kicker">pick your own</span>
+<h2>Six more toys worth a night <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Swap any of these into the big prompt in place of the rainy window. Same structure, same rules about drawing everything in code.</p>
+<div class="cardgrid">
+<div class="minicard"><b>A firefly jar</b> A dark jar on a shelf. Fireflies drift and pulse, clicking adds one, shaking the jar (dragging fast) makes them scatter and slowly resettle.</div>
+<div class="minicard"><b>A worry stone</b> One smooth pebble you can drag and rub. It warms in colour the more you touch it and cools back down when you leave it alone.</div>
+<div class="minicard"><b>A tiny tide pool</b> Water that ripples where you click, a few slow creatures, and a light that shifts from dawn to dusk over ten real minutes.</div>
+<div class="minicard"><b>A soup pot</b> A pot that simmers with steam. You drag ingredients in from the side, the colour and smell-lines change, and it never actually cooks anything.</div>
+<div class="minicard"><b>A record player</b> A spinning record with a needle you can lift and drop. It generates a soft ambient loop in code, and the speed changes if you nudge the platter.</div>
+<div class="minicard"><b>A night bus window</b> Street lights streaking past in the dark, reflections in the glass, and your own faint outline. Clicking changes the city outside.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">make it cosy, not generic</span>
+<h2>Four rules that stop it looking like default AI <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🎨 Name the palette, do not say "cozy".</strong> "Cozy" is a word every model has seen a million times and averages into beige. Say "warm lamplight amber, deep blue-grey outside, aged paper cream for the frame" and you get an actual mood.</li>
+<li><strong class="st">🕰️ Ask for irregular timing.</strong> Perfect loops read as machinery. Blinks, gusts, flickers and drifts should all be described as "irregular" or "occasionally", and the toy immediately feels alive instead of animated.</li>
+<li><strong class="st">✂️ Say what to leave alone.</strong> Every change request should end with "keep everything else exactly as it is". Without that line, models tend to helpfully rewrite the parts you already loved.</li>
+<li><strong class="st">🧊 Ban the defaults out loud.</strong> Add "no neon, no purple-to-blue gradients, no glassmorphism, no hard shadows, no emoji as graphics" to your first prompt. Naming the clichés is the fastest way past them.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">share it</span>
+<h2>Publish it and get a link <span class="gi" style="--gl:#A678B3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.50003L8.91302 9.42465C11.4387 10.8585 12.5613 10.8585 15.087 9.42465L22 5.50003" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M11.5 19.9959C11.0337 19.9898 9.56682 20.0077 9.09883 19.9959C5.95033 19.9166 4.37608 19.877 3.24496 18.7394C2.11383 17.6018 2.08114 16.0661 2.01577 12.9947C1.99475 12.0071 1.99474 11.0254 2.01576 10.0378C2.08114 6.96642 2.11382 5.43072 3.24495 4.29312C4.37608 3.15551 5.95033 3.11588 9.09882 3.03663C11.0393 2.98779 12.9607 2.98779 14.9012 3.03664C18.0497 3.1159 19.6239 3.15553 20.755 4.29313C21.8862 5.43073 21.9189 6.96643 21.9842 10.0378C21.9983 10.6973 22.0029 10.3542 21.9982 11.012" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15.015 14.3866C16.0876 13.7469 17.0238 14.0047 17.5863 14.4153C17.8169 14.5837 17.9322 14.6679 18 14.6679C18.0678 14.6679 18.1831 14.5837 18.4137 14.4153C18.9762 14.0047 19.9124 13.7469 20.985 14.3866C22.3928 15.2261 22.7113 17.9958 19.4642 20.3324C18.8457 20.7775 18.5365 21 18 21C17.4635 21 17.1543 20.7775 16.5358 20.3324C13.2887 17.9958 13.6072 15.2261 15.015 14.3866Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">📤 Hit Publish on the artifact.</strong> Open the artifact and click <strong>Publish</strong>, then copy the public link. Anyone can open and interact with a published artifact without signing up for anything (<a href="https://support.claude.com/en/articles/9547008-publish-and-share-artifacts" target="_blank">publish and share artifacts</a>).</li>
+<li><strong class="st">🌐 Embed it if you have a site.</strong> The same panel has a <strong>Get embed code</strong> option, so the toy can live on your own page rather than only as a link.</li>
+<li><strong class="st">⚠️ Know the one-way door.</strong> You can unpublish at any time to revoke the link, but per the same help article you cannot publish that exact artifact again afterwards. Unpublish only when you actually mean it.</li>
+<li><strong class="st">💌 Send it to one person tonight.</strong> Not a launch, not a post. One friend, one link, one "I made this". That is the whole point of the exercise.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">when it breaks</span>
+<h2>The four things that go wrong <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Blank white panel</b> Usually one broken piece of the drawing code. Say "the artifact is rendering blank, find the error and fix it, then tell me what it was" and it repairs itself in one pass.</div>
+<div class="minicard"><b>Missing images or fonts</b> Something is being loaded from outside. Say "make this fully self-contained, draw all visuals in code and use only system fonts" and the problem disappears for good.</div>
+<div class="minicard"><b>It got worse after a change</b> Ask it to revert to the previous version, then re-request the change more narrowly, one detail at a time instead of a paragraph of them.</div>
+<div class="minicard"><b>Runs hot on a phone</b> Too many animated particles. Say "reduce the particle count and cap the frame rate so it runs smoothly on a phone" and keep the look.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the honest bit</span>
+<h2>Why a pointless build is worth your evening <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Everything most of us build with AI is optimised for something: a funnel, a dashboard, an hour saved. That is useful and it is also why building can start to feel like admin. A toy has no metric attached, so the only question left is whether you like it, and that turns out to be the fastest way to learn how describing, testing and iterating actually feel. The skill you walk away with is the same one you would use on a real product. You just picked up while enjoying yourself.</p>
+
+<hr class="rule">
+<h2>Sources <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li><a href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank">What are artifacts and how do I use them</a>, plan availability and artifact types</li>
+<li><a href="https://support.claude.com/en/articles/9547008-publish-and-share-artifacts" target="_blank">Publish and share artifacts</a>, the Publish button, embed code and the unpublish caveat</li>
+<li><a href="https://claude.com/blog/build-artifacts" target="_blank">Anthropic on building with artifacts</a>, background on what artifacts are for</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API" target="_blank">MDN, the Web Audio API</a>, the browser feature generating your toy's sound in code</li>
+</ul>
+
+<div class="gcallout"><strong>Want to build systems like this properly, not one prompt at a time?</strong> Inside AI System Club I teach people to learn AI from scratch and build the systems underneath a content business. Doors open soon and founding pricing dies at close. 🌱 <a href='/ai-system' target='_blank'>Join the waitlist</a> (link in my bio too).</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

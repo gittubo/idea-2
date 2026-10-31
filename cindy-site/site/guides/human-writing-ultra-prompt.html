@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Human Writing Ultra Prompt · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="A prompt that makes Claude find what sounds robotic in your writing, then rewrite it to match how you really write.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/human-writing-ultra-prompt">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="The Human Writing Ultra Prompt">
+<meta property="og:description" content="A prompt that makes Claude find what sounds robotic in your writing, then rewrite it to match how you really write.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/human-writing-ultra-prompt">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Human Writing Ultra Prompt">
+<meta name="twitter:description" content="A prompt that makes Claude find what sounds robotic in your writing, then rewrite it to match how you really write.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"The Human Writing Ultra Prompt", u:"guides/human-writing-ultra-prompt.html", topic:"content", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Writing</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>The Human Writing Ultra Prompt</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 A prompt that makes Claude find what sounds robotic in your writing, then rewrite it to match how you really write.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<h2 id="download-the-optional-claude-skill">Download the optional Claude
+skill</h2>
+<p><strong>Download:</strong> <a
+href="https://cindyzhu.com.au/guides/files/human-writing-editor-skill.zip">https://cindyzhu.com.au/guides/files/human-writing-editor-skill.zip</a></p>
+<p>In Claude, go to <strong>Customize → Skills → Upload a
+Skill</strong>, then drag in the ZIP. Official setup guide: <a
+href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills">https://support.claude.com/en/articles/12512198-how-to-create-custom-skills</a></p>
+<p>The skill and prompt are editorial rubrics. They do not detect
+authorship and do not promise to bypass AI detectors.</p>
+<h2 id="before-you-run-it">Before you run it</h2>
+<p>Prepare:</p>
+<ul>
+<li>the draft</li>
+<li>the reader and outcome</li>
+<li>up to three samples of your real writing</li>
+<li>the real sources behind any statistics, quotations, or factual
+claims</li>
+</ul>
+<p>The samples matter because “warm,” “casual,” and “professional” are
+not a voice. Sentence rhythm, specificity, uncertainty, and how you use
+examples are.</p>
+<h2 id="the-human-writing-ultra-prompt">The Human Writing Ultra
+Prompt</h2>
+<pre class="text"><code>You are my diagnosis-first editor. Your job is to make this draft more truthful, specific, structurally natural, and consistent with my real writing. You are not an AI detector.
+
+CONTEXT
+Reader: [WHO THIS IS FOR]
+Desired outcome: [WHAT THE READER SHOULD THINK, FEEL, OR DO]
+Draft:
+[PASTE DRAFT]
+
+My real writing samples:
+SAMPLE 1
+[PASTE]
+
+SAMPLE 2
+[PASTE]
+
+SAMPLE 3
+[PASTE]
+
+Sources I am relying on:
+[PASTE LINKS OR NOTES]
+
+NON-NEGOTIABLE RULES
+- Do not assign an AI probability or claim to know who wrote the draft.
+- Do not invent a quotation, source, example, result, opinion, or personal experience.
+- If a personal detail is missing, write [ADD YOUR REAL EXAMPLE: a direct question for me].
+- If a factual claim is unsupported, write [VERIFY SOURCE: the exact claim].
+- Preserve verified facts, intended meaning, and any deliberate unusual phrasing.
+- Diagnose before rewriting. Rewrite only the lines or sections that fail.
+
+PASS 1: TRUTH AND SOURCING
+List every factual claim, quotation, statistic, link, citation, and named source. Mark each verified, unsupported, contradictory, or unclear. Check whether the cited source actually supports the exact wording.
+
+PASS 2: SURFACE HABITS
+Flag clusters of puffery, vague importance claims, promotional language, vague attribution, repetitive rules of three, negative parallelisms, superficial “-ing” tags, mechanical headings, chatbot residue, inflated alternatives to “is” or “has,” and unverifiable references.
+Do not make a banned-word list. For every flag, quote the passage and explain the underlying problem.
+
+PASS 3: STRUCTURAL SHAPE
+Map the job of every paragraph: claim, evidence, example, qualification, decision, or conclusion.
+Flag where:
+- every paragraph serves one perfectly tidy thesis
+- the point is explained again after it landed
+- one clean causal line has no real qualification
+- conflict or uncertainty resolves too neatly
+- specific awkward detail was polished out
+- the conclusion restates the opening
+Recommend idea-level moves: cut, reorder, combine, leave unresolved, add evidence, or ask me for a real example.
+
+PASS 4: MY VOICE
+Compare this draft with my samples. Derive three observable rules about:
+- sentence length and rhythm
+- level of specificity
+- contractions and asides
+- confidence and uncertainty
+- vocabulary
+- how examples and opinions enter
+If I supplied no samples, say that this pass is limited. Do not invent a personality.
+
+OUTPUT IN THIS ORDER
+1. Five highest-impact issues, ranked
+2. Human-only questions I must answer
+3. Targeted edits: original passage, reason, revision
+4. Revised draft with explicit placeholders where human input is missing
+5. Integrity check listing anything still unverified or unresolved</code></pre></div>
+<h2 id="why-the-four-passes-are-separate">Why the four passes are
+separate</h2>
+<ul>
+<li><strong>Truth pass:</strong> prevents a beautiful rewrite from
+laundering a false claim.</li>
+<li><strong>Surface pass:</strong> removes recurring habits without
+treating one word as evidence.</li>
+<li><strong>Structure pass:</strong> catches the tidy skeleton that
+synonym swaps leave behind.</li>
+<li><strong>Voice pass:</strong> grounds the edit in your actual samples
+rather than an invented persona.</li>
+</ul>
+<h2 id="pattern-reference-and-attribution">Pattern reference and
+attribution</h2>
+<p>The surface taxonomy adapts transferable concepts from
+<strong>Wikipedia:Signs of AI writing</strong>, revision 21 August
+2026:</p>
+<p><a
+href="https://en.wikipedia.org/w/index.php?title=Wikipedia:Signs_of_AI_writing&amp;oldid=1370524124">https://en.wikipedia.org/w/index.php?title=Wikipedia:Signs_of_AI_writing&amp;oldid=1370524124</a></p>
+<p>The page is an advice page, not policy and not a detector. It says
+some signs are Wikipedia-specific and no single tell proves AI use.
+Wikipedia text is licensed under CC BY-SA 4.0: <a
+href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a></p>
+<h2 id="final-rule">Final rule</h2>
+<p>If Claude cannot know a detail, the correct output is a question, not
+a more convincing invention.</p>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diffusion text models: what actually changes for your work · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Diffusion text models: what actually changes for your work. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/diffusion-text-models-what-changes">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Diffusion text models: what actually changes for your work">
+<meta property="og:description" content="Diffusion text models: what actually changes for your work. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/diffusion-text-models-what-changes">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Diffusion text models: what actually changes for your work">
+<meta name="twitter:description" content="Diffusion text models: what actually changes for your work. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Diffusion text models: what actually changes", u:"guides/diffusion-text-models-what-changes.html", topic:"power", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">AI power user</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Diffusion text models: what actually changes for your work</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented DIFFUSE, so here is the full breakdown: what a diffusion text model actually is, the real numbers with the papers to check them against.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>Every chatbot you have used writes the same way: one token at a time, left to right, each word conditioned on all the words before it. That constraint is why long answers crawl across your screen, and it is why you have quietly built your whole working style around watching AI type. A different architecture is now shipping at real scale, and it does not have that constraint.</p>
+
+<span class="kicker">the mechanism</span>
+<h2>What actually changed <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Diffusion is the technique behind AI image generators: start with noise, then refine it over several passes until a picture emerges. Applying the same idea to text means the model drafts the whole response at once in rough form, then improves many words in parallel across a handful of refinement passes, rather than committing to word one before it has any idea what word four hundred will be.</p>
+<p>Inception, the lab behind the Mercury models, describes the difference plainly: in an autoregressive model "a token cannot be generated until all the text that comes before it has been generated," while their approach produces the answer "in a coarse-to-fine way" with a network that can "globally improve the quality of the answer by modifying multiple tokens in parallel" (<a href="https://www.inceptionlabs.ai/introducing-mercury" target="_blank">Inception, Introducing Mercury</a>).</p>
+<div class="tip calm">The photo metaphor from the reel is accurate and worth keeping: a diffusion model does not paint left to right, it brings the whole frame into focus at once. The practical consequence is that generation time stops scaling neatly with answer length.</div>
+
+<hr class="rule">
+<span class="kicker">the receipts</span>
+<h2>The real numbers, with sources <span class="gi" style="--gl:#9281A4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L7 13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 17L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17 17L17 11" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the part that usually gets exaggerated in reels, so here are the published figures rather than the rounded-up versions. Every one of these links to the paper or the lab's own announcement.</p>
+<ol class="steps">
+<li><strong class="st">⚡ Mercury Coder: 1,109 and 737 tokens per second.</strong> Independently measured by Artificial Analysis on NVIDIA H100 GPUs for the Mini and Small models, which the paper describes as outperforming "speed-optimized frontier models by up to 10x on average while maintaining comparable quality" (<a href="https://arxiv.org/abs/2506.17298" target="_blank">Mercury technical report, arXiv</a>).</li>
+<li><strong class="st">🚀 Seed Diffusion Preview: 2,146 tokens per second.</strong> ByteDance's research model, measured on H20 GPUs, reported as competitive with comparable models on code benchmarks (<a href="https://arxiv.org/abs/2508.02193" target="_blank">Seed Diffusion, arXiv</a>).</li>
+<li><strong class="st">📦 DiffusionGemma: open weights, Apache 2.0.</strong> Released 10 June 2026, a 26B mixture-of-experts model that activates 3.8B parameters at inference, generating 256 tokens in parallel per forward pass, reported at "1000+ tokens per second on a single NVIDIA H100" and up to 4x faster generation than comparable models (<a href="https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/" target="_blank">announcement</a>). This is the first time weights for a model like this have been openly downloadable.</li>
+<li><strong class="st">🧪 The research line is older than the news cycle.</strong> LLaDA showed a diffusion model trained from scratch could compete with autoregressive models of the same size back in early 2025 (<a href="https://arxiv.org/abs/2502.09992" target="_blank">Large Language Diffusion Models, arXiv</a>). What changed in 2026 is that it left the lab.</li>
+</ol>
+<div class="tip"><strong>How to read a tokens-per-second number.</strong> It is throughput on specific hardware under lab conditions, not the speed you will feel in a chat window on your laptop. Network latency, batching and whatever the product wraps around the model all eat into it. Treat these as a direction of travel, not as a promise about your own experience.</div>
+
+<hr class="rule">
+<span class="kicker">the honest bit</span>
+<h2>Four things this is not <span class="gi" style="--gl:#B97C11" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9248 21H10.0752C5.44476 21 3.12955 21 2.27636 19.4939C1.42317 17.9879 2.60736 15.9914 4.97574 11.9985L6.90057 8.75333C9.17559 4.91778 10.3131 3 12 3C13.6869 3 14.8244 4.91777 17.0994 8.75332L19.0243 11.9985C21.3926 15.9914 22.5768 17.9879 21.7236 19.4939C20.8704 21 18.5552 21 13.9248 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 9V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The reason this matters is real. The reason most posts about it are wrong is that speed gets confused with intelligence.</p>
+<div class="cardgrid">
+<div class="minicard"><b>🧠 Not "AI got smarter"</b> These are speed and cost wins at comparable quality. On hard reasoning, the frontier autoregressive models are still the ones you want. Faster wrong answers are still wrong answers.</div>
+<div class="minicard"><b>👩‍💻 Claude is not a diffusion model</b> Nothing in this shift changes how Claude works today. If you see a post claiming your favourite assistant just switched architecture, that is invented.</div>
+<div class="minicard"><b>💡 Open weights is not the same as usable</b> The openly licensed model is downloadable, but as of mid-2026 that means provisioning your own GPU. Downloadable and available as a service are very different problems.</div>
+<div class="minicard"><b>🌱 It is not a replacement, it is a tier</b> The likeliest future is a mix: near-instant models for high-volume drafting, cleanup and agent chatter, slower deep models for the thinking. Which is exactly how you already use Haiku versus Opus.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">why it matters</span>
+<h2>What near-instant text actually unlocks <span class="gi" style="--gl:#987CBE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3175 7.14139L20.8239 6.28479C20.4506 5.63696 20.264 5.31305 19.9464 5.18388C19.6288 5.05472 19.2696 5.15664 18.5513 5.36048L17.3311 5.70418C16.8725 5.80994 16.3913 5.74994 15.9726 5.53479L15.6357 5.34042C15.2766 5.11043 15.0004 4.77133 14.8475 4.37274L14.5136 3.37536C14.294 2.71534 14.1842 2.38533 13.9228 2.19657C13.6615 2.00781 13.3143 2.00781 12.6199 2.00781H11.5051C10.8108 2.00781 10.4636 2.00781 10.2022 2.19657C9.94085 2.38533 9.83106 2.71534 9.61149 3.37536L9.27753 4.37274C9.12465 4.77133 8.84845 5.11043 8.48937 5.34042L8.15249 5.53479C7.73374 5.74994 7.25259 5.80994 6.79398 5.70418L5.57375 5.36048C4.85541 5.15664 4.49625 5.05472 4.17867 5.18388C3.86109 5.31305 3.67445 5.63696 3.30115 6.28479L2.80757 7.14139C2.45766 7.74864 2.2827 8.05227 2.31666 8.37549C2.35061 8.69871 2.58483 8.95918 3.05326 9.48012L4.0843 10.6328C4.3363 10.9518 4.51521 11.5078 4.51521 12.0077C4.51521 12.5078 4.33636 13.0636 4.08433 13.3827L3.05326 14.5354C2.58483 15.0564 2.35062 15.3168 2.31666 15.6401C2.2827 15.9633 2.45766 16.2669 2.80757 16.8741L3.30114 17.7307C3.67443 18.3785 3.86109 18.7025 4.17867 18.8316C4.49625 18.9608 4.85542 18.8589 5.57377 18.655L6.79394 18.3113C7.25263 18.2055 7.73387 18.2656 8.15267 18.4808L8.4895 18.6752C8.84851 18.9052 9.12464 19.2442 9.2775 19.6428L9.61149 20.6403C9.83106 21.3003 9.94085 21.6303 10.2022 21.8191C10.4636 22.0078 10.8108 22.0078 11.5051 22.0078H12.6199C13.3143 22.0078 13.6615 22.0078 13.9228 21.8191C14.1842 21.6303 14.294 21.3003 14.5136 20.6403L14.8476 19.6428C15.0004 19.2442 15.2765 18.9052 15.6356 18.6752L15.9724 18.4808C16.3912 18.2656 16.8724 18.2055 17.3311 18.3113L18.5513 18.655C19.2696 18.8589 19.6288 18.9608 19.9464 18.8316C20.264 18.7025 20.4506 18.3785 20.8239 17.7307L21.3175 16.8741C21.6674 16.2669 21.8423 15.9633 21.8084 15.6401C21.7744 15.3168 21.5402 15.0564 21.0718 14.5354L20.0407 13.3827C19.7887 13.0636 19.6098 12.5078 19.6098 12.0077C19.6098 11.5078 19.7888 10.9518 20.0407 10.6328L21.0718 9.48012C21.5402 8.95918 21.7744 8.69871 21.8084 8.37549C21.8423 8.05227 21.6674 7.74864 21.3175 7.14139Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.5195 12C15.5195 13.933 13.9525 15.5 12.0195 15.5C10.0865 15.5 8.51953 13.933 8.51953 12C8.51953 10.067 10.0865 8.5 12.0195 8.5C13.9525 8.5 15.5195 10.067 15.5195 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>Here is the part worth internalising. Right now, every AI workflow you build is silently designed around latency. You ask for one draft because three drafts would take three times as long. You do not ask the model to check its own work because you are not going to sit there for another ninety seconds. You accept the first output because the loop is slow enough to be annoying.</p>
+<p>Remove most of that cost and the sensible design changes. A drafting step, a critique step and a rewrite step stop being a luxury and become the default, because all three finish in about the time one used to take. Agents can afford to try an approach, notice it is wrong and back out, instead of committing to their first plan. You stop babysitting the output and start reviewing finished work.</p>
+<div class="tip warn"><strong>Which is why the leverage is not in the model.</strong> When drafts get near-free, the scarce thing becomes knowing what "good" looks like and having written that down somewhere a model can read. That is a skill and an artefact you build once, and it survives every model swap underneath it.</div>
+
+<hr class="rule">
+<span class="kicker">build this</span>
+<h2>The workflow layer to build now <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>Four things, in order of how much they pay off. All of them work in any Claude today and none of them care which architecture is running underneath.</p>
+<ol class="steps">
+<li><strong class="st">📄 Write down your standard.</strong> The single highest-leverage artefact is a plain document that says what good output looks like for the thing you make most: the format, the tone, the things that are always wrong, and two real examples of your own work. Keep it in a Claude Project so every chat starts from it.</li>
+<li><strong class="st">🔁 Add a critique pass.</strong> Stop accepting first drafts. Make "draft, then critique against my standard, then rewrite" the shape of every request. This is the habit that gets dramatically cheaper as models get faster, so building it now means you are already positioned when it becomes free.</li>
+<li><strong class="st">🧩 Turn the repeated ones into skills.</strong> Once a process works twice, package it as a skill so you never re-explain it. In the app that is <strong>Customize</strong>, then <strong>Skills</strong>, then <strong>Add</strong>, then <strong>Upload a skill</strong>. It works on every plan including Free (<a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" target="_blank">official overview</a>, <a href="https://support.claude.com/en/articles/12512198-creating-custom-skills" target="_blank">how to create one</a>).</li>
+<li><strong class="st">👥 Split the work across roles.</strong> A researcher, a drafter and a critic as separate agents beats one agent doing all three, because each one keeps its own clean context. In Claude Code these are subagents (<a href="https://code.claude.com/docs/en/sub-agents" target="_blank">docs</a>); in the app you can do a simpler version by giving each stage its own chat and pasting between them.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">copy these</span>
+<h2>Three prompts to set it up <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Run these in order, in one Claude Project, on any plan.</p>
+<div class="promptwrap">
+<span class="promptlabel">📄 write my quality standard</span>
+<pre><code>I want to write down what "good" looks like for the thing I produce most often, so that any AI model can be held to it instead of me judging every draft by feel. The work in question is [describe it, for example "weekly client update emails" or "60-second Instagram scripts"].
+
+Interview me first. Ask me about the audience and what they need from it, the structure I use, the tone, the length, the things that are always a mistake in this format, and how I personally can tell a good one from a mediocre one. Ask the questions a few at a time rather than all at once, and push back if my answer is vague, because "professional but friendly" is not a standard, it is a mood.
+
+Then write me a one-page standard I can paste into a Claude Project. It should have a short description of the job, five to eight specific and checkable rules, a list of failure modes to avoid, and a scoring rubric out of ten with what each band means. Make every rule something a model could actually verify in a draft, not an abstract quality.</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">🔁 the draft, critique, rewrite loop</span>
+<pre><code>From now on in this project, never hand me a first draft. Every time I ask you to produce something, run three passes before you show me anything.
+
+Pass one, write the draft. Pass two, switch roles and critique your own draft against the standard in this project as if you were a demanding editor who did not write it, scoring it against the rubric and listing every specific thing that falls short with the line it appears on. Do not be generous, and do not say it is strong overall if it is not. Pass three, rewrite the draft to fix everything the critique found.
+
+Show me only the final version, followed by a short note listing what the critique caught and how you fixed it, so I can see the reasoning without reading three drafts. If after the rewrite the piece still scores below eight on the rubric, tell me that plainly and say what you would need from me to get it over the line.</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">🧩 turn the loop into a reusable skill</span>
+<pre><code>Package everything we have set up in this project into a reusable Claude skill so I do not have to rebuild it in every new chat.
+
+Write me the SKILL.md. Give it a short lowercase-hyphenated name that does not contain "claude" or "anthropic", a one-line description that says both what it does and exactly when it should trigger, and instructions that carry over my quality standard, the three-pass draft-critique-rewrite loop, and the rubric. The description line matters most, so make it specific about the situation that should activate it rather than describing the output.
+
+Then tell me how to save it as a zipped folder, and give me three real test requests I can run afterwards to check it triggers on its own and that the output actually improves on what I get without it.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">the takeaway</span>
+<h2>The one line worth remembering <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Speed is not the story. The story is that as drafting collapses toward free, the value moves entirely to the layer above the model: your judgment, written down, and the loops you have built to enforce it. People who spent 2026 learning prompts for one specific chatbot will be re-learning again next year. People who spent it writing down their standard and building loops around it will just point the same system at whatever is fastest that month.</p>
+
+<hr class="rule">
+<h2>Sources <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://arxiv.org/abs/2506.17298" target="_blank">Mercury: Ultra-Fast Language Models Based on Diffusion (arXiv)</a><br>
+  <a href="https://www.inceptionlabs.ai/introducing-mercury" target="_blank">Inception, Introducing Mercury</a><br>
+  <a href="https://arxiv.org/abs/2508.02193" target="_blank">Seed Diffusion: A Large-Scale Diffusion Language Model with High-Speed Inference (arXiv)</a><br>
+  <a href="https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/" target="_blank">DiffusionGemma announcement, 10 June 2026</a><br>
+  <a href="https://arxiv.org/abs/2502.09992" target="_blank">Large Language Diffusion Models, the LLaDA paper (arXiv)</a><br>
+  <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" target="_blank">Agent Skills, official overview</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Run a team of AI agents in Claude: the exact setup prompt · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Run a team of AI agents in Claude: the exact setup prompt. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/agent-team-setup-prompt-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Run a team of AI agents in Claude: the exact setup prompt">
+<meta property="og:description" content="Run a team of AI agents in Claude: the exact setup prompt. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/agent-team-setup-prompt-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Run a team of AI agents in Claude: the exact setup prompt">
+<meta name="twitter:description" content="Run a team of AI agents in Claude: the exact setup prompt. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Run a team of AI agents in Claude: the exact setup prompt", u:"guides/agent-team-setup-prompt-claude.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building &amp; apps</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Run a team of AI agents in Claude: the exact setup prompt</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented SWARM, so here is the whole thing: the setup prompt I paste when a project is too big for one chat.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the idea</span>
+<h2>Why a team beats one very long chat <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>When you push a whole project through a single conversation, everything shares one context window. The research you did at the start gets squeezed out by the code you wrote in the middle, and by the end Claude is politely guessing at decisions it made an hour ago. A team fixes that by giving each worker its own head. In Claude's words, a subagent is a specialised assistant that "handles specific types of tasks in its own isolated context window" and returns only a summary, so the exploration never clogs up your main thread (<a href="https://code.claude.com/docs/en/sub-agents" target="_blank">Claude Code subagents docs</a>).</p>
+<p>So the win is not raw speed. It is that each agent holds exactly one job, with nothing else competing for its attention, and you get a clean summary instead of ten thousand words of scrollback.</p>
+
+<hr class="rule">
+<span class="kicker">the shape</span>
+<h2>The four roles I split a build into <span class="gi" style="--gl:#689425" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.828 6.00096C12.9388 5.68791 12.999 5.35099 12.999 5C12.999 3.34315 11.6559 2 9.99904 2C8.34219 2 6.99904 3.34315 6.99904 5C6.99904 5.35099 7.05932 5.68791 7.17008 6.00096C4.88532 6.0093 3.66601 6.09039 2.87772 6.87868C2.08951 7.66689 2.00836 8.88603 2 11.1704C2.31251 11.06 2.64876 11 2.99904 11C4.6559 11 5.99904 12.3431 5.99904 14C5.99904 15.6569 4.6559 17 2.99904 17C2.64876 17 2.31251 16.94 2 16.8296C2.00836 19.114 2.08951 20.3331 2.87772 21.1213C3.66593 21.9095 4.88508 21.9907 7.16941 21.999C7.05908 21.6865 6.99904 21.3503 6.99904 21C6.99904 19.3431 8.34219 18 9.99904 18C11.6559 18 12.999 19.3431 12.999 21C12.999 21.3503 12.939 21.6865 12.8287 21.999C15.113 21.9907 16.3322 21.9095 17.1204 21.1213C17.9086 20.333 17.9897 19.1137 17.9981 16.829C18.3111 16.9397 18.648 17 18.999 17C20.6559 17 21.999 15.6569 21.999 14C21.999 12.3431 20.6559 11 18.999 11C18.648 11 18.3111 11.0603 17.9981 11.171C17.9897 8.88627 17.9086 7.66697 17.1204 6.87868C16.3321 6.09039 15.1128 6.0093 12.828 6.00096Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Four is the number that keeps working for me. Enough separation that nobody is doing two jobs, few enough that they are not tripping over the same files. Anthropic's own guidance lands in the same place: start with three to five and scale only when the work genuinely runs in parallel (<a href="https://code.claude.com/docs/en/agent-teams" target="_blank">agent teams docs</a>).</p>
+<div class="cardgrid">
+<div class="minicard"><b>🔎 Researcher</b> Gathers the raw material: competitor pages, positioning, real proof points, the facts that anything else in the build depends on. It never writes final copy, it hands over notes.</div>
+<div class="minicard"><b>✍️ Copywriter</b> Owns every word a human will read. It gets the researcher's notes plus your brand voice, and it writes headlines, body, buttons, error states, the lot.</div>
+<div class="minicard"><b>🏗️ Builder</b> Owns structure: files, components, layout, responsive behaviour. It drops the copy in as given rather than rewriting it, which is exactly why the voice survives.</div>
+<div class="minicard"><b>🔍 QA reviewer</b> Comes last and tries to break it: dead links, mobile layout, accessibility, and any factual claim the copy made that the research does not support.</div>
+</div>
+<div class="tip">💡 The rule that makes this work: no two agents are allowed to write the same file. File collisions are the single most common way a parallel run turns into a mess, and Anthropic flags it as the thing to design around (<a href="https://code.claude.com/docs/en/agent-teams" target="_blank">avoid file conflicts</a>).</div>
+
+<hr class="rule">
+<span class="kicker">do this first</span>
+<h2>Set it up from zero <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">💳 Check the plan gate honestly.</strong> Subagents live in Claude Code, and Claude Code needs a Claude Pro, Max, Team or Enterprise subscription, or a Claude Console account with prepaid credits. There is no free tier for this one. Current prices: <a href="https://claude.com/pricing" target="_blank">claude.com/pricing</a>.</li>
+<li><strong class="st">💻 Install it, or skip the terminal entirely.</strong> On macOS, Linux or WSL run <code>curl -fsSL https://claude.ai/install.sh | bash</code>. On Windows PowerShell run <code>irm https://claude.ai/install.ps1 | iex</code>. If terminals are not your thing, Claude Code also runs in the browser at <code>claude.ai/code</code> and as a desktop app, and everything below works the same way there (<a href="https://code.claude.com/docs/en/overview" target="_blank">all the ways to run it</a>).</li>
+<li><strong class="st">📂 Open the project folder.</strong> In your terminal, <code>cd</code> into the folder you want the work to happen in, then type <code>claude</code> and log in when it prompts you. Everything the team builds lands in that folder, so make it a fresh one for a new project.</li>
+<li><strong class="st">📋 Paste the setup prompt.</strong> The full prompt is in the next section. Paste it as your first message, with your project description and brand voice filled in.</li>
+<li><strong class="st">👀 Watch the panel, do not walk away.</strong> The agents appear in a panel under your prompt input. Use the up and down arrows to select one and press Enter to read its transcript or send it a note mid-flight. Checking in every few minutes beats discovering an hour later that one of them went the wrong way.</li>
+<li><strong class="st">✅ Take delivery from the lead.</strong> Your main session is the lead. It merges the pieces and hands you one finished thing, plus the list of calls it made on your behalf. Read that list before you ship anything.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">copy this</span>
+<h2>The exact agent team setup prompt <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the one I paste. The plan-first paragraph matters more than it looks: making Claude name the roles and the file boundaries before it spawns anything is what stops two agents rewriting each other's work.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 the agent team setup prompt</span>
+<pre><code>I want you to run this project as a team of agents instead of doing all of it yourself in one context window. Here is the whole job: [describe the entire project in three to five sentences, for example "build a five page marketing site for a Melbourne pilates studio, warm and minimal, with a class timetable and a booking page, and write all the real copy, no lorem ipsum"].
+
+Before you spawn anything, write me a one page plan first. Name each agent, the single job it owns, the exact files or sections it is allowed to write to, and what it has to hand back when it is done. I want four of them: a researcher (competitors, positioning, proof points, anything factual the copy will rest on), a copywriter (every word a human reads, in the brand voice at the bottom of this message), a builder (file structure, components, responsive layout, and it uses the copy exactly as written rather than rewriting it), and a QA reviewer (dead links, mobile layout, accessibility, and any claim the copy makes that the research does not actually support). No two agents may write to the same file. Show me the plan and wait for my yes.
+
+Once I approve, spawn them and give each one everything it needs inside its own spawn prompt, because they do not see this conversation and they do not inherit your history. Run the researcher first, hand its notes to the copywriter and the builder, and run the QA reviewer last on the assembled result. While they work, keep the shared task list updated so I can see what is claimed, in progress and done.
+
+When they finish, you are the lead: merge the pieces into one working build, resolve any contradictions between them yourself rather than bouncing the question back to me, and then give me three things: the finished build, a short summary of what each agent actually did, and a list of every decision you made on my behalf that I should sanity check.
+
+Brand voice, audience and constraints: [paste yours here, or write "ask me five questions first" if you want Claude to interview you before it starts].</code></pre>
+</div>
+<div class="tip calm">🌱 If you would rather not hand over a whole project on the first go, swap the job description for something small and self contained, like "audit these three pages and tell me what to fix". Research and review tasks are the easiest place to see whether a team is actually earning its keep, which is exactly what Anthropic recommends for a first run.</div>
+
+<hr class="rule">
+<span class="kicker">make it permanent</span>
+<h2>Save the team so you never set it up again <span class="gi" style="--gl:#AE8002" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7H16.75C18.8567 7 19.91 7 20.6667 7.50559C20.9943 7.72447 21.2755 8.00572 21.4944 8.33329C22 9.08996 22 10.1433 22 12.25C22 15.7612 22 17.5167 21.1573 18.7779C20.7926 19.3238 20.3238 19.7926 19.7779 20.1573C18.5167 21 16.7612 21 13.25 21H12C7.28595 21 4.92893 21 3.46447 19.5355C2 18.0711 2 15.714 2 11V7.94427C2 6.1278 2 5.21956 2.38032 4.53806C2.65142 4.05227 3.05227 3.65142 3.53806 3.38032C4.21956 3 5.1278 3 6.94427 3C8.10802 3 8.6899 3 9.19926 3.19101C10.3622 3.62712 10.8418 4.68358 11.3666 5.73313L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Describing the same four roles every time gets old fast. A subagent definition is a small markdown file that holds a role permanently, and Claude picks it up on its own when a matching task shows up. Put them in <code>.claude/agents/</code> inside the project (shared with anyone who has the folder) or in <code>~/.claude/agents/</code> so they follow you into every project you ever open.</p>
+<p>You do not write these by hand. Ask Claude to write them:</p>
+<div class="promptwrap">
+<span class="promptlabel">📁 turn the team into permanent roles</span>
+<pre><code>Turn the four roles we just used into permanent subagent definitions so I never have to describe this team again. Create one markdown file per role in ~/.claude/agents/ named researcher.md, copywriter.md, builder.md and qa-reviewer.md.
+
+Each file needs YAML frontmatter with a lowercase hyphenated name, a description written so you will reach for it automatically (say what the agent does AND when it should be used, because that description is the trigger), the tools it actually needs, and a model. Give the researcher and the QA reviewer read-only tools so they cannot quietly edit my files.
+
+Under the frontmatter, write the system prompt for that role in the second person, covering what it owns, what it must never touch, the format it hands work back in, and its quality bar. Base all four on how we just worked, then show me the finished files and tell me how to check they loaded.</code></pre>
+</div>
+<p>Here is the shape of what comes back, so you know what you are looking at when it lands:</p>
+<pre><code>---
+name: copywriter
+description: Writes all user-facing copy in the brand voice. Use when a build needs headlines, body copy, buttons or error text written or rewritten.
+tools: Read, Grep, Glob, Write
+model: sonnet
+---
+You own every word a human will read on this build.
+
+Rules:
+1. Work from the researcher's notes. Never invent a statistic, a testimonial or a client name.
+2. Match the brand voice file exactly. Sentence case, no em dashes, no filler.
+3. Write into copy/ only. Never touch the component or layout files.
+4. Hand back a single file with every string, labelled by where it goes.</code></pre>
+<div class="tip">💡 To call one on purpose instead of waiting for Claude to pick it, just say so in plain language: <code>Use the qa-reviewer subagent to check the booking page</code>. Full field reference is in the <a href="https://code.claude.com/docs/en/sub-agents" target="_blank">subagents docs</a>.</div>
+
+<hr class="rule">
+<span class="kicker">the upgrade</span>
+<h2>When you want them to argue with each other <span class="gi" style="--gl:#D35676" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M14 2.20004C13.3538 2.06886 12.6849 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.3151 21.9311 10.6462 21.8 10" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0303 11.9625L16.5832 7.4096M19.7404 4.34462L19.1872 2.35748C19.0853 2.03011 18.6914 1.89965 18.4259 2.11662C16.9898 3.29018 15.4254 4.87091 16.703 7.36419C19.2771 8.56455 20.7466 6.94584 21.8733 5.5853C22.0975 5.3146 21.9623 4.90767 21.6247 4.81005L19.7404 4.34462Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Normal subagents report back to you and never talk to each other. There is an experimental mode called agent teams where they do: teammates share a task list, message each other directly, and challenge each other's findings. It is genuinely useful when the answer is contested, like a bug with three plausible causes. As the docs put it, with several investigators actively trying to disprove each other, "the theory that survives is much more likely to be the actual root cause" (<a href="https://code.claude.com/docs/en/agent-teams" target="_blank">agent teams</a>).</p>
+<p>It is off by default. Turn it on in your <code>settings.json</code>:</p>
+<pre><code>{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  }
+}</code></pre>
+<div class="tip warn">⚠️ Two honest catches. Agent teams use significantly more tokens than a single session, because every teammate is a whole separate Claude with its own context window, so save it for reviews and investigations that actually matter. And while it is switched on, a subagent that Claude names launches as a teammate, so teams can form even when you did not ask for one. Set the same variable to <code>"0"</code> to go back. Both are documented in the <a href="https://code.claude.com/docs/en/agent-teams" target="_blank">agent teams page</a>.</div>
+
+<hr class="rule">
+<span class="kicker">good to know</span>
+<h2>The limits nobody mentions <span class="gi" style="--gl:#B97C11" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9248 21H10.0752C5.44476 21 3.12955 21 2.27636 19.4939C1.42317 17.9879 2.60736 15.9914 4.97574 11.9985L6.90057 8.75333C9.17559 4.91778 10.3131 3 12 3C13.6869 3 14.8244 4.91777 17.0994 8.75332L19.0243 11.9985C21.3926 15.9914 22.5768 17.9879 21.7236 19.4939C20.8704 21 18.5552 21 13.9248 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 9V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>🔢 Twenty at once</b> Twenty subagents can run concurrently by default. Past that you get a "concurrent subagent limit reached" message. You can raise it with the <code>CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS</code> setting, but three to five is where the good results live.</div>
+<div class="minicard"><b>🧠 They start blank</b> A subagent does not inherit your conversation. It gets its spawn prompt, your project files and your CLAUDE.md, and nothing else, so anything you explained in chat has to be repeated in the spawn prompt.</div>
+<div class="minicard"><b>🪜 Three layers deep</b> Subagents can spawn their own subagents, up to three layers by default. It is rarely what you want. Deep nesting mostly buys you a long wait and a summary of a summary.</div>
+<div class="minicard"><b>💸 It is not free parallelism</b> More agents means more tokens, and token use scales roughly with the number of active teammates. Anthropic's own <a href="https://code.claude.com/docs/en/costs" target="_blank">cost guidance</a> says single sessions are more cost effective for routine work.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the honest bit</span>
+<h2>About that 300 agent headline <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The reel opened with Kimi K2.6, the open weight model from Moonshot AI that can coordinate up to 300 sub-agents across roughly 4,000 steps in one run (<a href="https://www.marktechpost.com/2026/04/20/moonshot-ai-releases-kimi-k2-6-with-long-horizon-coding-agent-swarm-scaling-to-300-sub-agents-and-4000-coordinated-steps/" target="_blank">reported here</a>). It is a real and impressive number. It is also not the thing standing between you and a finished project. Almost nobody has a task that genuinely splits 300 ways, and coordination overhead grows faster than the work does, which is why the advice on both sides is the same: a handful of well briefed agents beats a crowd. You do not need to switch tools for this workflow, you need to stop giving one chat five jobs.</p>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li>Subagents: context isolation, definition files, concurrency and nesting limits: <a href="https://code.claude.com/docs/en/sub-agents" target="_blank">code.claude.com/docs/en/sub-agents</a></li>
+<li>Agent teams: the experimental flag, the lead and teammate model, token cost note: <a href="https://code.claude.com/docs/en/agent-teams" target="_blank">code.claude.com/docs/en/agent-teams</a></li>
+<li>Install commands and plan requirements: <a href="https://code.claude.com/docs/en/quickstart" target="_blank">Claude Code quickstart</a> and <a href="https://claude.com/pricing" target="_blank">claude.com/pricing</a></li>
+<li>Kimi K2.6 and the 300 sub-agent swarm: <a href="https://www.marktechpost.com/2026/04/20/moonshot-ai-releases-kimi-k2-6-with-long-horizon-coding-agent-swarm-scaling-to-300-sub-agents-and-4000-coordinated-steps/" target="_blank">MarkTechPost</a></li>
+</ul>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

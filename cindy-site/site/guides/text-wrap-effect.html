@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to make the text wrap effect · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="These two Claude prompts let you make that text-wrap effect (and the Matrix binary rain version) yourself, no coding needed.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/text-wrap-effect">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="How to make the text wrap effect">
+<meta property="og:description" content="These two Claude prompts let you make that text-wrap effect (and the Matrix binary rain version) yourself, no coding needed.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/text-wrap-effect">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to make the text wrap effect">
+<meta name="twitter:description" content="These two Claude prompts let you make that text-wrap effect (and the Matrix binary rain version) yourself, no coding needed.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to make the text wrap effect","description":"These two Claude prompts let you make that text-wrap effect (and the Matrix binary rain version) yourself, no coding needed.","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/text-wrap-effect"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"How to make the text wrap effect", u:"guides/text-wrap-effect.html", topic:"content", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Content creation</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>How to make the text wrap effect</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 These two Claude prompts let you make that text-wrap effect (and the Matrix binary rain version) yourself, no coding needed.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the setup</span>
+<h2>The text wrap prompts</h2>
+<p>You've seen that effect where text flows around someone's photo in real time. These two prompts let you make it yourself in Claude, no coding needed.</p>
+<p>The concept comes from a GitHub repo called pretext by Cheng Lou (44k+ stars). It's a developer library with no interface for normal people. These prompts skip all of that.</p>
+<div class="tip"><strong>What you need:</strong> A Claude account with "create files" turned on, and a photo with the background removed (use remove.bg, it's free).</div>
+<p><strong>Prompt 1: Text Wrap.</strong> Horizontal lines of code flow around your silhouette. Drag your photo around, draw shapes that text avoids, switch colors for everything.</p>
+<p><strong>Prompt 2: Binary Rain.</strong> Animated 0s and 1s fall down around you like the Matrix. Your photo sits on top, rain flows around you.</p>
+<div class="tip calm"><strong>How to use:</strong> Paste either prompt into Claude, hit enter, upload your photo. If something's off, just say what to fix: "make the text closer," "change the color." The prompts get you 80% there. The iteration gets you the rest.</div>
+<hr class="rule">
+<span class="kicker">copy these</span>
+<h2>Prompt 1: Text Wrap effect (horizontal text with draw mode)</h2>
+<div class="promptwrap">
+<span class="promptlabel">📝 the text wrap build</span>
+<pre><code>Create a React component that wraps text around a photo's silhouette. The user uploads a transparent background PNG and text flows around the exact outline of their body in real time.
+
+Technical requirements:
+1. Use HTML canvas (2x resolution for sharp export) to render everything
+2. Scan the uploaded image's alpha channel to detect the silhouette. For each row of text, use getImageData to find the leftmost and rightmost opaque pixel (alpha &gt; 30). This creates the obstacle boundary per line
+3. Text must fill BOTH sides of the silhouette on every line. If there is space to the left AND right of the person's body, render text in both gaps independently. Do not just pick one side, calculate two separate spans per line and fill each with words
+4. The gap between text and silhouette should be 2px (very tight wrapping)
+5. User can drag the image around and text reflows in real time
+6. Export PNG button that downloads the current canvas
+
+Features to include:
+- A settings panel with: font size slider (9-24px), image scale slider, column count (1, 2, or 3)
+- Background color swatches: #0a0a0a, #000000, #0d1117, #111111, #1a1a2e, #FAF7F2
+- Text color swatches: #88d4a0, #8ac8d4, #d4c088, #c4a0d4, #c9d1d9, #00ff41, #2a2a2a, #e8e8e8
+- A toggle for text content: one mode shows realistic TypeScript/JavaScript code (an AI agent with streaming, embeddings, tool calling), the other mode shows prose text. Default to code
+- A draw mode toggle button. When active, the cursor becomes a crosshair and the user can freehand draw on the canvas. Their brush strokes become obstacles that text wraps around, just like the image silhouette. Combine the drawing layer with the image alpha map so text avoids both
+- A color picker for the brush with at least 8 colors as small circular swatches: #88d4a0, #ff6b6b, #ffb627, #8ac8d4, #c4a0d4, #ffffff, #ff69b4, #4a9eff
+- A brush size slider (5-60px)
+- A clear drawing button that wipes all drawn strokes
+- Drawing strokes should render visibly on the canvas at about 70% opacity so they show in the export
+
+Default styling: dark background (#0a0a0a), pastel green monospace text (#88d4a0), font size 13px, single column, Consolas/monospace font
+
+CRITICAL: The code text content must be stored as an array of regular quoted strings joined together, NOT as a template literal. Do NOT include any import or export statements in the text content, this will break the artifact renderer. Start the code content with something like "const db = createClient(..." instead.</code></pre>
+</div>
+<hr class="rule">
+<h2>Prompt 2: Binary Rain effect (animated 0s and 1s falling)</h2>
+<div class="promptwrap">
+<span class="promptlabel">🌧️ the binary rain build</span>
+<pre><code>Create a React component with an animated Matrix-style binary rain effect that falls around a photo's silhouette.
+
+Technical requirements:
+1. Use HTML canvas (2x resolution) with requestAnimationFrame for smooth animation
+2. Fill the entire canvas with a grid of "0" and "1" characters in monospace font
+3. The characters must visually SCROLL DOWNWARD like rain. Do this by calculating a scroll offset per column that increases over time: each character's value is determined by rand(column, row - scrollOffset) so as scrollOffset increases, the same characters physically move down the screen. Do NOT just randomly flip characters each frame, that looks like blinking, not rain
+4. Each column should scroll at a slightly different speed (randomized between 0.3-0.7 multiplier) so columns fall at different rates
+5. Create 2 "streams" per column, a bright leading head character with a dimming trail above it (where it already passed). The head should be near-white (#e0fff0), the trail dims in the main text color. Trail length 8-20 characters
+6. When user uploads a transparent PNG, scan the alpha channel at every character position to detect the silhouette. Characters that fall within 12px of any opaque pixel should not render, creating a clean buffer zone around the person
+7. The buffer zone check should sample 9 points in a ring (center + 8 cardinal/diagonal points at buffer distance) against the alpha data
+8. Characters closer to the image should be brighter (higher opacity), fading out toward the edges of the canvas
+9. User can drag the image and the rain flows around the new position
+10. Export PNG button captures the current frame
+
+Features:
+- Settings panel with font size slider (9-20px) and image scale slider
+- Background color swatches: #0a0a0a, #000000, #0d1117, #111111, #1a1a2e, #0a0e14
+- Text color swatches: #88d4a0, #8ac8d4, #d4c088, #c4a0d4, #c9d1d9, #00ff41
+- Buffer distance slider (5-30px) to control how far the rain stays from the silhouette
+
+Default styling: black background (#0a0a0a), pastel green (#88d4a0), font size 13px, Consolas/monospace
+
+The image should render ON TOP of the rain so the person appears in front of the falling characters. The animation should run at 60fps but the scroll speed should be slow and gentle, not frantic.</code></pre>
+</div>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt to add human approval checkpoints · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Here&#x27;s the prompt. It takes any workflow you already run and tells you where your judgment actually belongs.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/double-decker-ai-sandwich">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Prompt to add human approval checkpoints">
+<meta property="og:description" content="Here&#x27;s the prompt. It takes any workflow you already run and tells you where your judgment actually belongs.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/double-decker-ai-sandwich">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Prompt to add human approval checkpoints">
+<meta name="twitter:description" content="Here&#x27;s the prompt. It takes any workflow you already run and tells you where your judgment actually belongs.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Prompt to add human approval checkpoints","description":"The prompt that adds human approval checkpoints to any AI workflow, plus how to decide where your judgment belongs and which of those checks you can safely automate later.","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/double-decker-ai-sandwich"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Prompt to add human approval checkpoints", u:"guides/double-decker-ai-sandwich.html", topic:"power", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap"><div class="guidewrap"><a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a><div class="guidehead"><div class="gtags"><span class="gtag topic">AI systems</span><span class="gtag tool">Claude</span></div><h1>Prompt to add human approval checkpoints</h1></div><div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Here's the prompt. It takes any workflow you already run and tells you where your judgment actually belongs.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">one useful run</span>
+<h2>Paste this into Claude <span class="gi" style="--gl:#9A7BBC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Use it in the chat or project that already contains the task, so it has your real workflow to work from. If the material isn't there yet, paste or attach it right after the prompt.</p>
+<div class="promptwrap"><span class="promptlabel">copy this prompt</span><pre><code>Turn the workflow in this conversation into an AI approval loop. Place human judgment after any pass where truth, safety, taste, intent or an irreversible action can diverge. Use objective tests for facts, files, calculations and system state; reserve human review for consequential tradeoffs and taste.
+
+Return the workflow as: human sets outcome and standard → AI pass → check or approval → AI revision → final verification. For every checkpoint, state what evidence is required and what happens on failure. Then propose how repeated corrections become rules, examples, Skills or evals, and which single checkpoint could be removed first only after the workflow repeatedly passes.</code></pre></div>
+<div class="tip calm">🌱 <strong>What a good result looks like.</strong> Your actual workflow rewritten as a loop, each checkpoint labelled objective or human, with the evidence it needs and what happens when it fails. If it hands you a blank framework to fill in, say "do it for the workflow above, using my actual steps" and run it again.</div>
+
+<hr class="rule">
+<span class="kicker">reading the output</span>
+<h2>Objective check, or human call? <span class="gi" style="--gl:#119B5B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5L10.5 15L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the label that decides everything downstream, so it's worth being able to check its work:</p>
+<div class="rolegrid">
+  <div class="rolecard"><b>✅ Objective check</b> There's a correct answer and something other than you could confirm it. Does the link resolve, does the number match the source, does the code run, is the claim in the cited document. <b>These are the ones that graduate</b> into scripts, tests and evals.</div>
+  <div class="rolecard"><b>🧠 Human call</b> There's no correct answer, only a defensible one. What to lead with, is this tone right for this person, does this sound like me. <b>These never graduate.</b> Automating them is how work becomes average.</div>
+</div>
+<p>The objective ones are your automation backlog. The human ones are the job. If Claude labels a taste decision as objective, move it back.</p>
+
+<hr class="rule">
+<span class="kicker">automating them later</span>
+<h2>How a checkpoint graduates <span class="gi" style="--gl:#448BDC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.9998 15C17.9998 15 13.5809 9.00001 11.9998 9C10.4187 8.99999 5.99985 15 5.99985 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Every time you correct the same thing twice, that correction moves up a rung:</p>
+<ol class="steps">
+<li><strong class="st">1️⃣ A rule</strong> Write it into the prompt or your project instructions. "Never open with a question." Cheapest possible fix.</li>
+<li><strong class="st">2️⃣ An example</strong> When a rule keeps getting misread, show instead of tell. One good and one bad, labelled. Examples beat adjectives.</li>
+<li><strong class="st">3️⃣ A skill</strong> When the same multi-step correction recurs, save the whole procedure so it runs the same way without you restating it.</li>
+<li><strong class="st">4️⃣ An eval</strong> A repeatable test that proves the thing is right, so the check runs without you reading it. Objective checkpoints only.</li>
+<li><strong class="st">5️⃣ Remove the gate</strong> Only after the eval has passed repeatedly on real work, and one gate at a time so you can tell what broke.</li>
+</ol>
+<div class="tip warn">⚠️ <strong>Remove the gate that has never caught anything</strong>, not the one that annoys you most. The annoying one is usually annoying because it keeps finding things.</div>
+
+<hr class="rule">
+<span class="kicker">what it looks like</span>
+<h2>Four workflows, gated <span class="gi" style="--gl:#977CBE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Notice how few checkpoints there are, and how specific each one is:</p>
+<div class="cardgrid">
+  <div class="minicard"><b>✍️ A published post</b> Set the angle → AI drafts → <b>check intent and taste</b> → AI tightens → <b>verify every claim and link</b>. One taste gate, one truth gate.</div>
+  <div class="minicard"><b>📧 Outreach email</b> Set the ask → AI drafts → <b>check tone and the ask</b> → AI revises → <b>you send it yourself</b>. That last one is why draft-only is a rule, not a preference.</div>
+  <div class="minicard"><b>🔎 Research summary</b> Set the question → AI gathers → <b>check the sources are real and say what it claims</b> → AI synthesises → <b>check nothing was invented in the compression</b>. Both objective, so both automatable later.</div>
+  <div class="minicard"><b>💻 A code change</b> Set the behaviour → AI writes → <b>tests run</b> (already automated) → AI fixes → <b>you review the approach</b>. Judgment goes on design, the part tests can't see.</div>
+</div>
+
+<hr class="rule">
+<div class="tip warn">🚨 <strong>Some gates never come out.</strong> Health, legal, financial, security, privacy and anything irreversible keep a human, however well the workflow has performed. No prompt, skill or eval makes an agent injection-proof, and a long clean run is not evidence that it is.</div>
+<p><strong>Sources:</strong> <a href="https://onlinelearningconsortium.org/olc-insights/2026/01/the-ai-sandwich/" target="_blank">the AI sandwich framing</a> · <a href="https://www.hbs.edu/ris/Publication%20Files/dell-acqua-et-al-2026-navigating-the-jagged-technological-frontier_5c589c8c-fbb5-458f-b285-c944746cd717.pdf" target="_blank">the 758-consultant study</a> · <a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents" target="_blank">turning checks into evals</a> · <a href="https://airc.nist.gov/airmf-resources/airmf/5-sec-core/" target="_blank">NIST on human oversight</a></p>
+
+</div></div></div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

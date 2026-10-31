@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Make on-brand product photos with Claude Code + Nano Banana 2 · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="This is the full setup for making batches of on-brand product photos with Claude Code + Google&#x27;s Nano Banana 2 image model.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-code-nano-banana-brand-visuals">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Make on-brand product photos with Claude Code + Nano Banana 2">
+<meta property="og:description" content="This is the full setup for making batches of on-brand product photos with Claude Code + Google&#x27;s Nano Banana 2 image model.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-code-nano-banana-brand-visuals">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Make on-brand product photos with Claude Code + Nano Banana 2">
+<meta name="twitter:description" content="This is the full setup for making batches of on-brand product photos with Claude Code + Google&#x27;s Nano Banana 2 image model.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Make on-brand product photos with Claude Code + Nano Banana 2","description":"This is the full setup for making batches of on-brand product photos with Claude Code + Google's Nano Banana 2 image model, plus the ready-made files you can...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/claude-code-nano-banana-brand-visuals"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Make on-brand product photos with Claude Code + Nano Banana 2", u:"guides/claude-code-nano-banana-brand-visuals.html", topic:"design", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Brand visuals</span>
+        <span class="gtag tool">Claude Code + Nano Banana</span>
+      </div>
+      <h1>Make on-brand product photos with Claude Code + Nano Banana 2</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This is the full setup for making batches of on-brand product photos with Claude Code + Google's Nano Banana 2 image model.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>The honest version up front: this is low-setup, not no-setup, and not free. Images cost about 8 cents each on fal.ai, so 100 shots is roughly $8. And AI still drifts on exact product details (logo text, labels, packaging), so you feed it your real product photo as a reference and you review the batch and keep the best. Done that way, it genuinely replaces a lot of studio time.</p>
+
+<span class="kicker">the stack</span>
+<h2>What you're using <span class="gi" style="--gl:#B57E06" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li>🤖 <a href="https://code.claude.com/docs/en/vs-code" target="_blank">Claude Code</a>: Anthropic's agent. It writes the prompts and the little script that generates the images.</li>
+<li>🎨 <strong>Nano Banana 2</strong>: Google's current fast image model (Gemini 3.1 Flash Image). <a href="https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/" target="_blank">source</a></li>
+<li>⚡ <a href="https://fal.ai/models/fal-ai/nano-banana-2" target="_blank">fal.ai</a>: the pay-per-image API that runs Nano Banana 2 ($0.08/image standard).</li>
+</ul>
+
+<hr class="rule">
+<span class="kicker">the setup</span>
+<h2>Step 1: set up where Claude lives <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>Download a free editor: <a href="https://code.visualstudio.com" target="_blank">VS Code</a> or <a href="https://cursor.com" target="_blank">Cursor</a>. (Google's new Antigravity works too, since it's a VS Code cousin, but it's Google's own Gemini IDE, so treat it as optional.) Then install the Claude Code extension: open Extensions, search "Claude Code," install, and sign in with your paid Claude account. <a href="https://code.claude.com/docs/en/vs-code" target="_blank">Official steps.</a></p>
+
+<hr class="rule">
+<span class="kicker">one key</span>
+<h2>Step 2: get a fal.ai key <span class="gi" style="--gl:#B37F03" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14.5C18.8137 14.5 21.5 11.8137 21.5 8.5C21.5 5.18629 18.8137 2.5 15.5 2.5C12.1863 2.5 9.5 5.18629 9.5 8.5C9.5 9.38041 9.68962 10.2165 10.0303 10.9697L2.5 18.5V21.5H5.5V19.5H7.5V17.5H9.5L13.0303 13.9697C13.7835 14.3104 14.6196 14.5 15.5 14.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17.5 6.5L16.5 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Make a free <a href="https://fal.ai" target="_blank">fal.ai</a> account (you get some free credits), create an API key, and keep it handy. In your terminal you'll set it once:</p>
+<div class="promptwrap">
+<span class="promptlabel">🔑 Set it once in your terminal</span>
+<pre><code>export FAL_KEY="your-fal-key-here"</code></pre>
+</div>
+<p>Easiest path (no script at all): add fal's official MCP so Claude Code can generate images directly. <a href="https://fal.ai/docs/documentation/setting-up/mcp" target="_blank">fal MCP docs.</a></p>
+<div class="promptwrap">
+<span class="promptlabel">⚡ The no-script route</span>
+<pre><code>claude mcp add --transport http fal https://mcp.fal.ai/mcp</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">copy these</span>
+<h2>Step 3: the ready-made files <span class="gi" style="--gl:#AC8113" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 19V7.54902C2 6.10516 2 5.38322 2.24332 4.81647C2.5467 4.10985 3.10985 3.5467 3.81647 3.24332C4.38322 3 5.09805 3 6.54902 3H7.04311C7.64819 3 8.22075 3.27394 8.60041 3.74509L10.4175 6M10.4175 6H16C17.4001 6 18.1002 6 18.635 6.27248C19.1054 6.51217 19.4878 6.89462 19.7275 7.36502C20 7.8998 20 8.59987 20 10V11M10.4175 6H7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.15802 15.5144L3.45643 14.7717C4.19029 12.9449 4.55723 12.0316 5.3224 11.5158C6.08757 11 7.07557 11 9.05157 11H17.1119C19.8004 11 21.1446 11 21.7422 11.8787C22.3397 12.7575 21.8405 14.0002 20.842 16.4856L20.5436 17.2283C19.8097 19.0551 19.4428 19.9684 18.6776 20.4842C17.9124 21 16.9244 21 14.9484 21H6.88812C4.19961 21 2.85535 21 2.25782 20.1213C1.66029 19.2425 2.15953 17.9998 3.15802 15.5144Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Drop these four files into your project. Claude reads them and does the rest. Copy them as a starting point and tweak the words for your brand.</p>
+
+<p><strong>CLAUDE.md</strong> (the project brief):</p>
+<div class="promptwrap">
+<span class="promptlabel">📄 Tells Claude how to run the whole job</span>
+<pre><code># Brand visual generator
+
+You generate on-brand product photos for my brand.
+
+## How to work
+1. When I give you a brand URL, read the site and write a brand profile into style-analysis.md
+   (colours, mood, lighting, typography feel, product list).
+2. When I give you reference images + a product + a count, write image prompts that match
+   the brand profile and the references, then run generate-visuals.py to make them on fal.ai.
+3. Always feed my real product photo as a reference for product accuracy. Review before delivering.
+
+## Rules
+- Model: Nano Banana 2 on fal.ai (fal-ai/nano-banana-2).
+- Never invent product details. Match the reference photo.
+- Save outputs into /visuals with clear names.</code></pre>
+</div>
+
+<p><strong>style-analysis.md</strong> (Claude fills this from your site):</p>
+<div class="promptwrap">
+<span class="promptlabel">🎨 The blank Claude fills in from your site</span>
+<pre><code># Brand style profile
+Brand: [name]
+Colours: [hexes]
+Mood / vibe: [words]
+Lighting: [soft / hard / natural]
+Settings: [where products appear]
+Products: [list with a reference image path each]</code></pre>
+</div>
+
+<p><strong>SKILL.md</strong> (ties it together as a reusable skill):</p>
+<div class="promptwrap">
+<span class="promptlabel">🧩 Makes the whole thing reusable</span>
+<pre><code>---
+name: brand-visuals
+description: Generate on-brand product photos from a brand URL and reference images using Nano Banana 2 on fal.ai. Use when I ask for product visuals, shots, or brand images.
+---
+
+# Brand visuals
+Follow CLAUDE.md. Build the brand profile, write prompts that match the references,
+then call generate-visuals.py. Feed the real product photo as a reference. Review the batch.</code></pre>
+</div>
+
+<p><strong>generate-visuals.py</strong> (Claude writes and runs this; here's the shape):</p>
+<div class="promptwrap">
+<span class="promptlabel">📂 File 4, the generator</span>
+<pre><code># pip install fal-client  ,  then set FAL_KEY
+import fal_client
+
+# Claude fills PROMPTS from your brand profile + references
+PROMPTS = [
+    "teal wool beanie on a mossy rock, soft morning light, editorial",
+]
+
+for i, prompt in enumerate(PROMPTS):
+    out = fal_client.subscribe("fal-ai/nano-banana-2",
+                               arguments={"prompt": prompt, "num_images": 1})
+    print(i, out["images"][0]["url"])</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">make it yours</span>
+<h2>Step 4: hand over your brand link <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>In Claude Code, paste your website URL and say "read my site and build the brand profile." Claude browses the site, fills in <code>style-analysis.md</code>, and pulls your product images. This is what makes every visual feel like <em>your</em> brand, not a stock look.</p>
+
+<hr class="rule">
+<span class="kicker">then run it</span>
+<h2>Step 5: show it the look, then let it run <span class="gi" style="--gl:#BC7745" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7.5" cy="7.5" r="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M5 21C9.37246 15.775 14.2741 8.88406 21.4975 13.5424" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>Gather 3 to 5 strong reference images of the style you want (lighting, mood, setting) from <a href="https://www.pinterest.com" target="_blank">Pinterest</a> or <a href="https://www.cosmos.so" target="_blank">Cosmos</a> (both free). Drop them in, then just ask:</p>
+<div class="promptwrap">
+<span class="promptlabel">🖼️ What to actually type once it is set up</span>
+<pre><code>Give me 30 shots of the teal beanie on mossy rocks, soft morning light,
+using my product photo for accuracy.</code></pre>
+</div>
+<p>Claude writes the prompts and generates the images with Nano Banana 2. Then review the batch and keep the winners.</p>
+
+<hr class="rule">
+<h2>Two honest caveats <span class="gi" style="--gl:#B97C11" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9248 21H10.0752C5.44476 21 3.12955 21 2.27636 19.4939C1.42317 17.9879 2.60736 15.9914 4.97574 11.9985L6.90057 8.75333C9.17559 4.91778 10.3131 3 12 3C13.6869 3 14.8244 4.91777 17.0994 8.75332L19.0243 11.9985C21.3926 15.9914 22.5768 17.9879 21.7236 19.4939C20.8704 21 18.5552 21 13.9248 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 9V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip warn">💸 Cost scales: at $0.08/image, 100 shots is about $8, 500 is about $40 (2K/4K cost a bit more). Cheap per image, real money at volume.</div>
+<div class="tip warn">🔍 Review is not optional: AI drifts on logo text, labels, and packaging. Feed your real product photo as a reference and keep only the accurate ones.</div>
+
+<hr class="rule">
+<h2>Every link in one place <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li>🤖 Claude Code in VS Code / Cursor: <a href="https://code.claude.com/docs/en/vs-code" target="_blank">code.claude.com</a></li>
+<li>🎨 Nano Banana 2: <a href="https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/" target="_blank">Google blog</a> · on fal.ai: <a href="https://fal.ai/models/fal-ai/nano-banana-2" target="_blank">fal.ai/models</a></li>
+<li>⚡ fal MCP for Claude: <a href="https://fal.ai/docs/documentation/setting-up/mcp" target="_blank">fal.ai/docs</a></li>
+<li>📌 Moodboards: <a href="https://www.pinterest.com" target="_blank">Pinterest</a> · <a href="https://www.cosmos.so" target="_blank">Cosmos</a></li>
+</ul>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

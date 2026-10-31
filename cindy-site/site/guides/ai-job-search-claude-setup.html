@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Run your job search inside Claude Code · Cindy Zhu</title>
+<meta name="description" content="Run your job search inside Claude Code. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<link rel="canonical" href="https://cindyzhu.com.au/guides/ai-job-search-claude-setup">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Run your job search inside Claude Code">
+<meta property="og:description" content="Run your job search inside Claude Code. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/ai-job-search-claude-setup">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Run your job search inside Claude Code">
+<meta name="twitter:description" content="Run your job search inside Claude Code. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Run your whole job search inside Claude Code (the real setup)", u:"guides/ai-job-search-claude-setup.html", topic:"career", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Career &amp; job</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Run your whole job search inside Claude Code</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented HIRED, so here's the full setup for running your job search inside Claude Code.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn">⚠️ <strong>Two things to know before you start.</strong> First, the code is free but Claude Code isn't: the README says you need a Claude Pro, Max or Team plan, or Anthropic API credits. Second, this isn't a one-click plugin. You copy the repo to your computer, install a few tools, and run Claude Code inside that folder. Plan on an evening for the first setup. After that, each application takes a fraction of the time it takes by hand.</div>
+
+<hr class="rule">
+<span class="kicker">what it is</span>
+<h2>A job search pipeline that lives in one folder <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Every stage of a job search is a slash command you run inside Claude Code: set up your profile, find jobs, rank them, write the application, prep for the interview, then log what happened. Your profile, CVs and tracker are all files in the folder, so each run builds on the last.</p>
+<p>The author lays the loop out as <strong>/setup → /scrape → /rank → /apply → /interview → /outcome</strong>, then back into /setup so fit scoring learns from what actually got you interviews.</p>
+
+<div class="cardgrid">
+<div class="minicard"><strong>🔎 It judges fit before writing</strong><br><code>/apply</code> scores the posting against your profile first and asks whether to go ahead, so you don't spend an hour on a role you'd never get.</div>
+<div class="minicard"><strong>✍️ Two agents write each application</strong><br>One drafts the CV and cover letter. A second agent with fresh context researches the company, critiques the draft and sends it back for revision, which catches the generic language a single pass leaves in.</div>
+<div class="minicard"><strong>📄 You get real PDFs</strong><br>It compiles through LaTeX and checks the output until the CV is exactly 2 pages and the letter exactly 1. Then it reads the PDF text back to check an applicant tracking system can parse it.</div>
+<div class="minicard"><strong>🙅 It never makes things up</strong><br>Every claim in a draft is checked against your profile. The README says it "never fabricates skills or experience", and it won't stuff keywords you don't actually have.</div>
+</div>
+
+<h3>Every command, in plain English</h3>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Command</th><th>What you give it</th><th>What you get</th></tr></thead>
+<tbody>
+<tr><td><code>/setup</code></td><td>Your documents, a pasted CV, or answers to an interview</td><td>Your full candidate profile, written into the repo's profile files</td></tr>
+<tr><td><code>/scrape</code></td><td>Nothing, or a focus like "remote product roles"</td><td>New jobs from the enabled job boards, rated High, Medium or Low fit</td></tr>
+<tr><td><code>/rank</code></td><td>Optional <code>--top 5</code> or <code>--limit 10</code></td><td>A scored shortlist from everything /scrape found (quick triage, not a full evaluation)</td></tr>
+<tr><td><code>/apply</code></td><td>A job URL, or the full posting text pasted in</td><td>Fit evaluation, then a tailored CV and cover letter as PDFs, plus a row in your tracker</td></tr>
+<tr><td><code>/interview</code></td><td>A company you've applied to</td><td>Likely questions, your STAR examples mapped to them, tough questions and questions to ask, with an optional mock interview</td></tr>
+<tr><td><code>/outcome</code></td><td>A company, or <code>followup</code> or <code>stale</code></td><td>Updates the status. <code>followup</code> drafts a short follow-up email but never sends it</td></tr>
+<tr><td><code>/upskill</code></td><td>Nothing, or one posting URL</td><td>Your skill gaps across the jobs you're targeting, with a study plan</td></tr>
+<tr><td><code>/add-portal</code></td><td>A job board's URL</td><td>A new search tool for that board (public boards only, no login walls)</td></tr>
+</tbody>
+</table>
+</div>
+<p>There's also <code>/gmail-sync</code> (reads replies and proposes status changes for you to approve), <code>/html-report</code> (an offline dashboard), <code>/notion-sync</code> (pushes your pipeline to a Notion database), <code>/expand</code> (finds skills your profile is missing) and <code>/add-template</code> (use your own CV design).</p>
+
+<hr class="rule">
+<span class="kicker">before you start</span>
+<h2>Install these first <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">💻 Claude Code</strong> On Mac or Linux, run <code>curl -fsSL https://claude.ai/install.sh | bash</code>. On Windows PowerShell, run <code>irm https://claude.ai/install.ps1 | iex</code>. Then type <code>claude</code> and log in with your paid plan. Full instructions are in the <a href="https://code.claude.com/docs/en/setup" target="_blank">Claude Code setup docs</a>.</li>
+<li><strong class="st">🐍 Python 3.10 or newer</strong> The repo uses Python scripts to check your PDFs and track applications. Type <code>python3 --version</code> to check, or install it from <a href="https://www.python.org/downloads/" target="_blank">python.org</a>.</li>
+<li><strong class="st">⚡ Bun</strong> This runs the job board search tools. Run <code>curl -fsSL https://bun.sh/install | bash</code>, or see <a href="https://bun.sh" target="_blank">bun.sh</a> for Windows.</li>
+<li><strong class="st">📄 LaTeX, with lualatex and xelatex</strong> This turns your CV and cover letter into typeset PDFs. The big installs, <a href="https://www.tug.org/mactex/" target="_blank">MacTeX</a> or TeX Live, are several GB. The small one, <a href="https://yihui.org/tinytex/" target="_blank">TinyTeX</a>, needs one extra command afterwards, shown below.</li>
+<li><strong class="st">🧾 Optional: pypdf</strong> Run <code>pip install pypdf</code> for the text check that makes sure applicant tracking systems can read your PDF. If it's missing, the repo falls back to <a href="https://poppler.freedesktop.org" target="_blank">Poppler</a>.</li>
+</ol>
+<p>If you went with TinyTeX or BasicTeX, add the packages the templates need:</p>
+<pre><code>tlmgr install \
+  moderncv fontawesome5 fontawesome6 academicons import luatexbase pgf \
+  titlesec textpos xltxtra xunicode cite realscripts needspace</code></pre>
+
+<hr class="rule">
+<span class="kicker">the setup</span>
+<h2>From zero to your first run <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">📦 Copy the repo, and keep it private</strong> Your name, contact details and salary expectations end up in files inside this folder. The README warns that "a fork of this repo is always public", so don't use GitHub's fork button for your own job search. Clone it and keep it on your computer (commands below). If you want an online backup, push it to a new <strong>private</strong> repo, not a fork.</li>
+<li><strong class="st">🔧 Install the job board tools</strong> From inside the folder, run the install loop below for your system. The LinkedIn and freehire.me tools have no dependencies, so this step mostly matters if you later add other boards.</li>
+<li><strong class="st">📂 Fill the documents folder</strong> Drop your material into the <code>documents/</code> subfolders: <code>cv/</code>, <code>linkedin/</code> (on LinkedIn, go to your profile, then More, then Save to PDF), <code>diplomas/</code>, <code>references/</code>, <code>projects/</code> and <code>applications/</code> for past applications. Convert Word files to PDF first, because it can't read .docx. Your documents stay out of git.</li>
+<li><strong class="st">🌱 Start Claude Code inside the folder and run /setup</strong> Type <code>claude</code> from inside the repo folder. The commands only load when you start Claude Code there. Run <code>/setup</code> and pick <strong>Path A</strong>, the documents folder. It cross-checks your files, shows every change it wants to make and asks before writing. It's safe to re-run whenever you add material.</li>
+<li><strong class="st">🌏 Set your market</strong> Out of the box, <code>/scrape</code> searches LinkedIn and freehire.me. The four Danish job boards ship switched off, and /setup only turns them on if you're job hunting in Denmark. Tell /setup your city and target roles, or update them later with <code>/setup --section search</code>.</li>
+<li><strong class="st">🚀 Run your first search</strong> Run <code>/scrape</code>. If it finds more than a handful of jobs, run <code>/rank</code> for a shortlist, then <code>/apply</code> on the best one.</li>
+</ol>
+
+<p>Step 1, copying the repo to your computer:</p>
+<pre><code>git clone https://github.com/MadsLorentzen/ai-job-search.git
+cd ai-job-search</code></pre>
+<p>Step 2 on Mac or Linux:</p>
+<pre><code>for tool in jobbank-search jobdanmark-search jobindex-search jobnet-search linkedin-search freehire-search; do
+  (cd .agents/skills/$tool/cli &amp;&amp; bun install)
+done</code></pre>
+<p>Step 2 on Windows PowerShell:</p>
+<pre><code>$tools = @("jobbank-search", "jobdanmark-search", "jobindex-search", "jobnet-search", "linkedin-search", "freehire-search")
+foreach ($tool in $tools) {
+  Push-Location ".agents/skills/$tool/cli"
+  bun install
+  Pop-Location
+}</code></pre>
+
+<div class="tip">💡 <strong>Want Claude to do the setup with you?</strong> Open Claude Code in an empty folder and paste the prompt below. It clones the repo, checks what's already installed and walks you through the rest. It can't install LaTeX for you (that's a normal installer that may ask for your password), and afterwards you still reopen Claude Code inside the new folder before running /setup.</div>
+
+<div class="promptwrap">
+<span class="promptlabel">🛠️ set it up with me</span>
+<pre><code>I want to set up the open-source job search framework at https://github.com/MadsLorentzen/ai-job-search for my own job search. Clone it into this folder, then read its README.md and SETUP.md in full before doing anything else.
+
+Check which prerequisites I already have: Python 3.10 or newer, Bun, and a LaTeX distribution with both lualatex and xelatex. For anything missing, tell me the exact install step for my operating system and wait for me to confirm it's done. Don't run installers that need my password yourself.
+
+Then run the job board tool install loop from the README. I'm keeping this repo private on my own computer, so don't fork it or push it anywhere. When everything is ready, tell me the exact command to open Claude Code inside the repo folder so I can run /setup.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">using it well</span>
+<h2>How to get applications that actually get replies <span class="gi" style="--gl:#4C326D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.99805 7.99928C1.99805 9.34126 10.0943 13 11.9857 13C13.8772 13 21.9734 9.34126 21.9734 7.99928C21.9734 6.6573 13.8772 2.99854 11.9857 2.99854C10.0943 2.99854 1.99805 6.6573 1.99805 7.99928Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.99219 11L7.24348 16.8002C7.32919 17.1975 7.52703 17.5687 7.85696 17.8054C10.0787 19.3998 13.8908 19.3998 16.1126 17.8054C16.4426 17.5687 16.6404 17.1975 16.7261 16.8002L17.9774 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20.4774 9.49951V16.5006M20.4774 16.5006C19.6864 17.9471 19.3366 18.7221 18.9813 20.0011C18.9042 20.4562 18.9654 20.6855 19.2786 20.8891C19.4059 20.9718 19.5588 21.0012 19.7104 21.0012H21.229C21.3904 21.0012 21.5533 20.9675 21.6863 20.8757C21.9774 20.6747 22.0523 20.4541 21.9734 20.0011C21.662 18.8135 21.2653 18.0016 20.4774 16.5006Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🧠 Feed it a deep profile</strong> The README calls profile depth "the single biggest factor in output quality." Add reference letters and project write-ups, not just your CV, and describe what you actually did with each tool. A thin profile gets you a generic application.</li>
+<li><strong class="st">🔗 Paste the posting when a site blocks it</strong> Some job sites don't let Claude read the page. Run <code>/apply</code> with the full posting text pasted in, or save it as <code>documents/postings/Company - Job Title.txt</code> and tell Claude it's there.</li>
+<li><strong class="st">➕ Tell it new facts mid-run</strong> If you remember a metric or a project during <code>/apply</code> or <code>/interview</code>, say so and it adds it to your profile. Anything that isn't in your profile gets stripped from later drafts as unsupported.</li>
+<li><strong class="st">✅ Log every result with /outcome</strong> After you submit, run <code>/outcome</code> with the company name so the tracker moves from drafted to applied. It also needs a tracked application before <code>/interview</code> can prep you. Once about 3 applications have a result, re-run /setup and it adjusts your fit scoring based on what actually got interviews.</li>
+<li><strong class="st">🙋 Trust the "not a fit"</strong> The whole point is ten well-targeted applications instead of a hundred sprayed ones. When it tells you honestly you're not a fit, skipping that job is the time saved.</li>
+</ol>
+
+<p>Before your first <code>/apply</code>, check the rules the author wrote for his own search. For example, the repo's <code>CLAUDE.md</code> tells it to name "Claude Code" whenever a CV mentions AI tooling. Paste this into Claude Code inside the repo:</p>
+
+<div class="promptwrap">
+<span class="promptlabel">🔍 make the rules mine</span>
+<pre><code>Before I run /apply for the first time, read CLAUDE.md and every file in .claude/skills/job-application-assistant/. List every rule that looks specific to the original author's own job search rather than mine, such as tools it always mentions by name, language assumptions, the Danish job market, or formatting preferences.
+
+For each one, quote the exact line, name the file it's in, and explain in one sentence how it would change my CV or cover letter. Then ask me which ones to keep, change or remove, and only edit the files after I answer. Don't touch anything in my profile section while you do this.</code></pre>
+</div>
+
+<p>If you're not in Denmark, use this to point the search at your own market:</p>
+
+<div class="promptwrap">
+<span class="promptlabel">🌏 search my market</span>
+<pre><code>Set up job searching for my market. I'm looking for [target roles, for example "marketing manager or growth lead"] in [city and country, for example "Sydney, Australia"], and I'm open to [remote / hybrid / on-site].
+
+Check that the Danish job boards are disabled and that LinkedIn and freehire.me are enabled. Update the search queries file so /scrape searches my roles with my location, and show me the changes before saving them. Then run one LinkedIn search as a test and show me the first results. Keep the search volume low, because LinkedIn only allows personal use.
+
+Finally, tell me whether [name of a local job board, for example "Seek"] is a good candidate for /add-portal. Say whether it's public without a login and whether its robots.txt allows access, but don't build it until I say so.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">good to know</span>
+<h2>The honest bits <span class="gi" style="--gl:#B97C11" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9248 21H10.0752C5.44476 21 3.12955 21 2.27636 19.4939C1.42317 17.9879 2.60736 15.9914 4.97574 11.9985L6.90057 8.75333C9.17559 4.91778 10.3131 3 12 3C13.6869 3 14.8244 4.91777 17.0994 8.75332L19.0243 11.9985C21.3926 15.9914 22.5768 17.9879 21.7236 19.4939C20.8704 21 18.5552 21 13.9248 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 9V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><strong>🔒 Privacy</strong><br>Your files stay on your computer and your documents are kept out of git. Anything Claude reads is still processed through your Anthropic account, and /apply searches the web about each company.</div>
+<div class="minicard"><strong>🔋 It uses a lot of your plan</strong><br>Each /apply runs several agents, company research and PDF compile loops. The author says it trades extra tokens for fewer broken PDFs, so expect to hit Pro limits faster on heavy days.</div>
+<div class="minicard"><strong>🛡️ Review before you send</strong><br>Job postings can contain hidden instructions. The repo's security notes say its defences "are not a sandbox", so read what it wrote before anything goes out, and read a job board tool's code before you install it.</div>
+<div class="minicard"><strong>🔄 It changes fast</strong><br>It's a community project, not an Anthropic product. Update to a tagged <a href="https://github.com/MadsLorentzen/ai-job-search/releases" target="_blank">release</a> rather than the latest code, and run <code>python3 tools/check_upstream_updates.py</code> to preview what an update changes.</div>
+</div>
+
+<div class="tip calm">🧾 <strong>Rather not install LaTeX?</strong> Fit scoring and <code>/rank</code> work without it, but <code>/apply</code> has to compile PDFs to finish. The lighter route is <code>/add-template</code>, which lets you register your own CV template in another toolchain that compiles from the command line, like <a href="https://typst.app" target="_blank">Typst</a>. It test-compiles the template before using it.</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://github.com/MadsLorentzen/ai-job-search" target="_blank">ai-job-search on GitHub (README, stars, license)</a><br>
+  <a href="https://github.com/MadsLorentzen/ai-job-search/blob/master/SETUP.md" target="_blank">SETUP.md, the full install walkthrough</a><br>
+  <a href="https://github.com/MadsLorentzen/ai-job-search/blob/master/SECURITY.md" target="_blank">SECURITY.md, what it does and doesn't protect against</a><br>
+  <a href="https://github.com/MadsLorentzen/ai-job-search/blob/master/CHANGELOG.md" target="_blank">CHANGELOG.md, release history</a><br>
+  <a href="https://github.com/MadsLorentzen/ai-job-search/discussions/78" target="_blank">Community forks and adaptations</a><br>
+  <a href="https://code.claude.com/docs/en/setup" target="_blank">Claude Code setup docs (plan requirements)</a>
+</p>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

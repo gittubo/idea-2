@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The CLAUDE.md file that makes Claude behave · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- GUIDES_CARD {t:"The CLAUDE.md file that makes Claude behave", u:"guides/claude-md-behavior-rules-file.html", topic:"building", tool:"claude"} -->
+<!-- seo:auto -->
+<meta name="description" content="The CLAUDE.md file that makes Claude behave. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-md-behavior-rules-file">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="The CLAUDE.md file that makes Claude behave">
+<meta property="og:description" content="The CLAUDE.md file that makes Claude behave. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-md-behavior-rules-file">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The CLAUDE.md file that makes Claude behave">
+<meta name="twitter:description" content="The CLAUDE.md file that makes Claude behave. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Power-user</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>The CLAUDE.md file that makes Claude behave</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented CLAUDEMD, so here's the repo, the install, where the file has to live for Claude to read it, and my own starter rules.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">what it is</span>
+<h2>One file, four rules <span class="gi" style="--gl:#9380A9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7L16 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 11L12 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 21.5V21C13 18.1716 13 16.7574 13.8787 15.8787C14.7574 15 16.1716 15 19 15H19.5M20 13.3431V10C20 6.22876 20 4.34315 18.8284 3.17157C17.6569 2 15.7712 2 12 2C8.22877 2 6.34315 2 5.17157 3.17157C4 4.34314 4 6.22876 4 10L4 14.5442C4 17.7892 4 19.4117 4.88607 20.5107C5.06508 20.7327 5.26731 20.9349 5.48933 21.1139C6.58831 22 8.21082 22 11.4558 22C12.1614 22 12.5141 22 12.8372 21.886C12.9044 21.8623 12.9702 21.835 13.0345 21.8043C13.3436 21.6564 13.593 21.407 14.0919 20.9081L18.8284 16.1716C19.4065 15.5935 19.6955 15.3045 19.8478 14.9369C20 14.5694 20 14.1606 20 13.3431Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The repo is <a href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank">andrej-karpathy-skills</a>, and the whole thing is one markdown file called CLAUDE.md. It has passed 200,000 stars on the organisation mirror, with the original sitting at <a href="https://github.com/forrestchang/andrej-karpathy-skills" target="_blank">forrestchang/andrej-karpathy-skills</a>. It's MIT licensed and free.</p>
+<p>The rules come from a <a href="https://x.com/karpathy/status/2015883857489522876" target="_blank">post by Andrej Karpathy</a> (co-founder of OpenAI, formerly director of AI at Tesla) listing what still goes wrong when you hand real work to a coding agent. His words: "The models make wrong assumptions on your behalf and just run along with them without checking. They don't manage their confusion, don't seek clarifications, don't surface inconsistencies, don't present tradeoffs, don't push back when they should." Somebody turned that complaint into a file, and that file is what you're installing.</p>
+<div class="cardgrid">
+<div class="minicard"><b>1. Think before coding</b> Don't assume, don't hide confusion, surface tradeoffs. State assumptions out loud, present both readings when something is ambiguous, and stop and ask instead of guessing.</div>
+<div class="minicard"><b>2. Simplicity first</b> Minimum that solves the problem, nothing speculative. No unasked-for features, no abstractions for single-use code, no error handling for impossible scenarios.</div>
+<div class="minicard"><b>3. Surgical changes</b> Touch only what you must, clean up only your own mess. No drive-by improvements to code it wasn't asked about, and match the existing style even if it would do it differently.</div>
+<div class="minicard"><b>4. Goal-driven execution</b> Define success criteria, loop until verified. "Fix the bug" becomes "write a test that reproduces it, then make it pass", so it can check its own work instead of asking you.</div>
+</div>
+<div class="tip calm">💡 <strong>Rule 4 is the sleeper.</strong> Karpathy's line is that models "are exceptionally good at looping until they meet specific goals... Don't tell it what to do, give it success criteria and watch it go." Rule 4 is what turns your vague instruction into a criterion it can mark itself against, which is where most of the quality jump comes from.</div>
+
+<hr class="rule">
+<span class="kicker">pick one</span>
+<h2>Install it, two ways <span class="gi" style="--gl:#B9794D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C11.1818 22 10.4002 21.6698 8.83693 21.0095C4.94564 19.3657 3 18.5438 3 17.1613C3 16.7742 3 10.0645 3 7M12 22C12.8182 22 13.5998 21.6698 15.1631 21.0095C19.0544 19.3657 21 18.5438 21 17.1613V7M12 22L12 11.3548" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.32592 9.69138L5.40472 8.27785C3.80157 7.5021 3 7.11423 3 6.5C3 5.88577 3.80157 5.4979 5.40472 4.72215L8.32592 3.30862C10.1288 2.43621 11.0303 2 12 2C12.9697 2 13.8712 2.4362 15.6741 3.30862L18.5953 4.72215C20.1984 5.4979 21 5.88577 21 6.5C21 7.11423 20.1984 7.5021 18.5953 8.27785L15.6741 9.69138C13.8712 10.5638 12.9697 11 12 11C11.0303 11 10.1288 10.5638 8.32592 9.69138Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 12L8 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 4L7 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Both take under three minutes. Option A drops the file into one project. Option B installs it once and it follows you into every project.</p>
+<ol class="steps">
+<li><strong class="st">📁 Option A, per project.</strong> Open your terminal, move into your project folder, and run <code>curl -o CLAUDE.md https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md</code>. That's it, the file is in place.</li>
+<li><strong class="st">➕ Already have a CLAUDE.md?</strong> Append instead of overwriting, or you'll wipe what's already there: <code>curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md &gt;&gt; CLAUDE.md</code>. Open the file afterwards and check the two sections read sensibly together.</li>
+<li><strong class="st">🔌 Option B, everywhere at once.</strong> Inside Claude Code, run <code>/plugin marketplace add forrestchang/andrej-karpathy-skills</code>, then <code>/plugin install andrej-karpathy-skills@karpathy-skills</code>. Now the guidelines are available across all your projects without copying files around.</li>
+<li><strong class="st">✅ Confirm it actually loaded.</strong> Start a session and run <code>/context</code>, then look under <strong>Memory files</strong>. If your CLAUDE.md isn't listed there, Claude cannot see it and nothing you wrote in it is doing anything.</li>
+</ol>
+<div class="tip">📌 <strong>Not a coder, no terminal?</strong> Open the <a href="https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md" target="_blank">CLAUDE.md file on GitHub</a>, click the copy button, and paste it into a plain text file named exactly <code>CLAUDE.md</code> in your project folder. Same result, no commands.</div>
+
+<hr class="rule">
+<span class="kicker">the plumbing</span>
+<h2>Where the file has to live <span class="gi" style="--gl:#A9810B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7H16.75C18.8567 7 19.91 7 20.6667 7.50559C20.9943 7.72447 21.2755 8.00572 21.4944 8.33329C22 9.08996 22 10.1433 22 12.25C22 15.7612 22 17.5167 21.1573 18.7779C20.7926 19.3238 20.3238 19.7926 19.7779 20.1573C18.5167 21 16.7612 21 13.25 21H12C7.28595 21 4.92893 21 3.46447 19.5355C2 18.0711 2 15.714 2 11V7.94427C2 6.1278 2 5.21956 2.38032 4.53806C2.65142 4.05227 3.05227 3.65142 3.53806 3.38032C4.21956 3 5.1278 3 6.94427 3C8.10802 3 8.6899 3 9.19926 3.19101C10.3622 3.62712 10.8418 4.68358 11.3666 5.73313L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the part that quietly breaks for people: the name and the location both matter, and Claude Code will not go looking for a file you left somewhere reasonable-seeming. Anthropic's <a href="https://code.claude.com/docs/en/memory" target="_blank">memory documentation</a> lists the exact locations, and these are the two you actually need.</p>
+<ol class="steps">
+<li><strong class="st">📍 Project rules go in <code>./CLAUDE.md</code>.</strong> The root of the project folder, or <code>./.claude/CLAUDE.md</code> if you prefer it tucked away. This is the one you commit, so your whole team gets the same behaviour.</li>
+<li><strong class="st">🏠 Personal rules go in <code>~/.claude/CLAUDE.md</code>.</strong> Preferences that apply to every project on your machine. This is where your own voice and workflow rules belong, so they follow you everywhere.</li>
+<li><strong class="st">🙈 Private project notes go in <code>./CLAUDE.local.md</code>.</strong> Loads alongside the project file, and you add it to <code>.gitignore</code> so it never gets committed. Good for anything you don't want teammates reading.</li>
+<li><strong class="st">📚 They stack, they don't overwrite.</strong> Claude Code walks up the folder tree and concatenates everything it finds, user file first, project file after. So your personal rules and the project's rules both apply, with the more specific one read last.</li>
+</ol>
+<div class="tip warn">⚠️ <strong>CLAUDE.md is context, not a rulebook it's forced to obey.</strong> Anthropic is explicit that these files are read as context rather than enforced configuration, so vague or contradicting rules get followed unreliably. Write things a stranger could mark right or wrong ("use 2-space indentation", "run npm test before committing"), not moods ("write good code"). For something that must happen every time without exception, use a <a href="https://code.claude.com/docs/en/hooks-guide" target="_blank">hook</a> instead.</div>
+
+<hr class="rule">
+<span class="kicker">paste this under it</span>
+<h2>My starter rules <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The four rules in the repo are aimed at code. Most of what Claude does for me is not code, so these are the lines I keep in my own <code>~/.claude/CLAUDE.md</code>, written the same way: specific, checkable, and each one added because something annoyed me. Paste them under the repo's four and delete whatever doesn't match how you work.</p>
+<div class="promptwrap">
+<span class="promptlabel">📄 add to your CLAUDE.md</span>
+<pre><code>## How to work with me
+
+- Ask before assuming. If my request has two sensible readings, tell me both and ask which one, do not pick silently and build the wrong thing.
+- One question at a time. If you need three things from me, ask the one that blocks you most and wait.
+- Never say done until you have verified it. State how you checked, and if you could not check it, say "not verified" instead of implying you did.
+- If I am about to do something that will not work, say so plainly before doing it. I would rather be told than be agreed with.
+
+## Facts and sources
+
+- Every stat, quote or factual claim comes with a real link I can open, plus the sentence in the source that backs it.
+- If you cannot find a real source, write "I could not verify this" and leave the claim out. Do not fill the gap with something that sounds plausible.
+- Never invent a tool, a library, a feature, a menu path or a person's quote. If you are not sure a feature exists, check before you describe it.
+- Before you send, reread your own draft and delete or flag anything you cannot back up.
+
+## Writing
+
+- No em dashes anywhere. Use commas, full stops, brackets or colons instead.
+- Sentence case for headings, no title case.
+- Plain words over corporate ones. Do not use delve, leverage, robust, seamless, unlock, elevate or "it's not X, it's Y".
+- Match the length I asked for. If I asked for three lines, do not send six.
+
+## Working style
+
+- Show me the actual thing, not a description of the thing. Real output over a summary of what you would produce.
+- When you finish a task, end with what you changed and anything you were unsure about, in two lines maximum.
+- If a task takes more than three steps, tell me the plan first and wait for a yes.</code></pre>
+</div>
+<div class="tip calm">🌱 Keep the whole file under about 200 lines. Anthropic's own guidance is that longer files eat context and get followed less reliably, so a tight file genuinely outperforms a long one. When yours gets big, split it: personal rules stay in <code>~/.claude/CLAUDE.md</code>, project-specific detail moves to that project's file.</div>
+
+<hr class="rule">
+<span class="kicker">not using claude code</span>
+<h2>The any-Claude version <span class="gi" style="--gl:#A678B3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.50003L8.91302 9.42465C11.4387 10.8585 12.5613 10.8585 15.087 9.42465L22 5.50003" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M11.5 19.9959C11.0337 19.9898 9.56682 20.0077 9.09883 19.9959C5.95033 19.9166 4.37608 19.877 3.24496 18.7394C2.11383 17.6018 2.08114 16.0661 2.01577 12.9947C1.99475 12.0071 1.99474 11.0254 2.01576 10.0378C2.08114 6.96642 2.11382 5.43072 3.24495 4.29312C4.37608 3.15551 5.95033 3.11588 9.09882 3.03663C11.0393 2.98779 12.9607 2.98779 14.9012 3.03664C18.0497 3.1159 19.6239 3.15553 20.755 4.29313C21.8862 5.43073 21.9189 6.96643 21.9842 10.0378C21.9983 10.6973 22.0029 10.3542 21.9982 11.012" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15.015 14.3866C16.0876 13.7469 17.0238 14.0047 17.5863 14.4153C17.8169 14.5837 17.9322 14.6679 18 14.6679C18.0678 14.6679 18.1831 14.5837 18.4137 14.4153C18.9762 14.0047 19.9124 13.7469 20.985 14.3866C22.3928 15.2261 22.7113 17.9958 19.4642 20.3324C18.8457 20.7775 18.5365 21 18 21C17.4635 21 17.1543 20.7775 16.5358 20.3324C13.2887 17.9958 13.6072 15.2261 15.015 14.3866Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>CLAUDE.md is a Claude Code mechanism, so if you work in the Claude app the file itself does nothing for you. The equivalent is a <a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">project</a>: a container with its own custom instructions that get applied to every chat inside it. Same idea, different door.</p>
+<ol class="steps">
+<li><strong class="st">📁 Make a project.</strong> In the Claude app, open Projects in the sidebar and create one for the work you do most (your job, your business, your writing).</li>
+<li><strong class="st">📝 Paste the rules into its instructions.</strong> Open the project's custom instructions and paste the starter rules above, minus anything code-specific. Every chat you start inside that project now runs with them.</li>
+<li><strong class="st">🔁 Keep editing it, same habit.</strong> The whole value is in the maintenance loop, not the first paste. Every time Claude does something you have to correct, that correction becomes a line.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">the actual habit</span>
+<h2>One line every time it annoys you <span class="gi" style="--gl:#448BDC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.3884 3L17.3913 3.97574C17.8393 4.41165 18.0633 4.62961 17.9844 4.81481C17.9056 5 17.5888 5 16.9552 5H9.19422C5.22096 5 2 8.13401 2 12C2 13.4872 2.47668 14.8662 3.2895 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7.61156 21L6.60875 20.0243C6.16074 19.5883 5.93673 19.3704 6.01557 19.1852C6.09441 19 6.4112 19 7.04478 19H14.8058C18.779 19 22 15.866 22 12C22 10.5128 21.5233 9.13383 20.7105 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The repo file is a strong starting point, and it's still somebody else's file. What makes your Claude better than everyone else's is the twenty lines you add over the next few months, because those encode your work, your standards, and your specific pet peeves. The rule is boring and it works: the moment you type a correction you have typed before, that correction becomes a permanent line.</p>
+<p>You don't even have to write it well. Have Claude turn the annoyance into a proper rule:</p>
+<div class="promptwrap">
+<span class="promptlabel">✍️ turn an annoyance into a rule</span>
+<pre><code>You just did something I have had to correct before, so let's make it permanent. Here is what happened: [describe it, for example "you gave me a five paragraph answer when I asked for a one line answer"].
+
+Write me a single CLAUDE.md rule that prevents it, in the style of the rules already in my file: one line, specific, and written so it is obvious whether you followed it or not. Avoid vague words like clear, good or appropriate, because I cannot check those. Then tell me which file it belongs in (my personal one at ~/.claude/CLAUDE.md, or this project's CLAUDE.md) and why, and show me the exact line to paste.</code></pre>
+</div>
+<div class="tip">📌 <strong>Review it once a month.</strong> Contradicting rules are the main reason a big CLAUDE.md stops working: when two lines disagree, Claude picks one, and you cannot predict which. Delete the stale ones as ruthlessly as you add the new ones.</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank">The repo, andrej-karpathy-skills (MIT licensed, free)</a><br>
+  <a href="https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md" target="_blank">The CLAUDE.md file itself, read it before you install it</a><br>
+  <a href="https://x.com/karpathy/status/2015883857489522876" target="_blank">Andrej Karpathy's original post, the source of the four rules</a><br>
+  <a href="https://code.claude.com/docs/en/memory" target="_blank">Anthropic's memory docs, file locations, load order and size guidance</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

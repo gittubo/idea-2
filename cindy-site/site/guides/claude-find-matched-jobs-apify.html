@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Have Claude find you 20 matched jobs · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="You connect Claude to a live job scraper, hand it your resume, and it comes back with a ranked shortlist of roles that actually fit you.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-find-matched-jobs-apify">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Have Claude find you 20 matched jobs">
+<meta property="og:description" content="You connect Claude to a live job scraper, hand it your resume, and it comes back with a ranked shortlist of roles that actually fit you.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-find-matched-jobs-apify">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Have Claude find you 20 matched jobs">
+<meta name="twitter:description" content="You connect Claude to a live job scraper, hand it your resume, and it comes back with a ranked shortlist of roles that actually fit you.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Have Claude find you 20 matched jobs", u:"guides/claude-find-matched-jobs-apify.html", topic:"career", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">AI at work</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Have Claude find you 20 matched jobs</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You connect Claude to a live job scraper, hand it your resume, and it comes back with a ranked shortlist of roles that actually fit you.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn"><strong>Two honest things before you start.</strong> First, the "fit" or "interview chance" number Claude gives each job is an AI estimate from reading your resume against the listing, not a real prediction from any hiring system, so treat it as a smart sort order, not a guarantee. Second, salary only shows up when the listing itself published one, so you'll get pay where it exists, not on every role.</div>
+
+<span class="kicker">the tool</span>
+<h2>What's doing the work here <span class="gi" style="--gl:#9082A7" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 7.10593C17.9999 8.55778 16.5891 9.89558 14.4697 11.9901C13.1062 13.3376 10.8936 13.336 9.52937 11.9892C7.41145 9.8961 5.99988 8.55754 6 7.10568C6.00012 5.65383 6.3543 5.36258 9.60848 2.14658C9.92161 1.83445 10.4602 2.05389 10.4602 2.49338L10.4604 5.80524C10.4604 6.64587 11.1488 7.32849 11.9994 7.32842C12.85 7.32835 13.5396 6.64688 13.5398 5.80625L13.5405 2.49435C13.5406 2.05485 14.0793 1.83532 14.3924 2.14739C17.646 5.36287 18.0001 5.65408 18 7.10593Z" stroke="currentColor" stroke-width="1.5"/><path d="M15 12L15 19.1652C15 20.7308 13.6569 22 12 22C10.3431 22 9 20.7308 9 19.1652L9 12" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0063 18.9995L12 19.0059" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>Claude on its own can't see live job boards. <a href="https://apify.com/" target="_blank">Apify</a> is a library of ready-made scrapers (called Actors) that pull live listings from sites like Indeed and LinkedIn. You connect Apify to Claude once, and from then on Claude can call a job scraper, read the results against your resume, and rank them for you, all in one chat.</p>
+
+<span class="kicker">set it up</span>
+<h2>Connect Apify to Claude, free <span class="gi" style="--gl:#B37F03" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14.5C18.8137 14.5 21.5 11.8137 21.5 8.5C21.5 5.18629 18.8137 2.5 15.5 2.5C12.1863 2.5 9.5 5.18629 9.5 8.5C9.5 9.38041 9.68962 10.2165 10.0303 10.9697L2.5 18.5V21.5H5.5V19.5H7.5V17.5H9.5L13.0303 13.9697C13.7835 14.3104 14.6196 14.5 15.5 14.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17.5 6.5L16.5 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🆓 Make a free Apify account.</strong> Sign up at <a href="https://apify.com/" target="_blank">apify.com</a>. The free plan gives you $5 of usage every month with no credit card, which is plenty for this (the Indeed and LinkedIn scrapers cost a few dollars per thousand listings, and you only need twenty).</li>
+<li><strong class="st">🔑 Grab your API token.</strong> In the Apify Console, go to Settings, then API and Integrations, and copy your personal API token. This is the key that lets Claude talk to Apify.</li>
+<li><strong class="st">🔌 Add the connector in Claude.</strong> In Claude, open Settings, then Connectors, and add Apify. Search the connector directory for it, or add it as a custom connector using the URL <code>https://mcp.apify.com</code>. Sign in to Apify when it asks (or paste your API token), and switch it on.</li>
+</ol>
+<div class="tip"><strong>Plan note, so it doesn't catch you out.</strong> Adding a custom remote connector on claude.ai needs a paid Claude plan. If you're on the free plan, use the free Claude Desktop app or Claude Code instead, where the Apify connection works without a paid tier. The Apify side stays free either way.</div>
+
+<hr class="rule">
+<span class="kicker">pick a scraper</span>
+<h2>Two job scrapers that fit the free tier <span class="gi" style="--gl:#A9810B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7H16.75C18.8567 7 19.91 7 20.6667 7.50559C20.9943 7.72447 21.2755 8.00572 21.4944 8.33329C22 9.08996 22 10.1433 22 12.25C22 15.7612 22 17.5167 21.1573 18.7779C20.7926 19.3238 20.3238 19.7926 19.7779 20.1573C18.5167 21 16.7612 21 13.25 21H12C7.28595 21 4.92893 21 3.46447 19.5355C2 18.0711 2 15.714 2 11V7.94427C2 6.1278 2 5.21956 2.38032 4.53806C2.65142 4.05227 3.05227 3.65142 3.53806 3.38032C4.21956 3 5.1278 3 6.94427 3C8.10802 3 8.6899 3 9.19926 3.19101C10.3622 3.62712 10.8418 4.68358 11.3666 5.73313L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Tell Claude which board to pull from. These two are cheap enough to run inside your free $5 monthly credit.</p>
+<div class="cardgrid">
+<div class="minicard"><b><a href="https://apify.com/misceres/indeed-scraper" target="_blank">Indeed scraper</a></b> Actor <code>misceres/indeed-scraper</code>. Pulls live Indeed listings from about $3 per 1,000 jobs. Great default for most roles and countries.</div>
+<div class="minicard"><b><a href="https://apify.com/curious_coder/linkedin-jobs-scraper" target="_blank">LinkedIn Jobs scraper</a></b> Actor <code>curious_coder/linkedin-jobs-scraper</code>. Pulls LinkedIn job posts from about $1 per 1,000 results. Best for corporate and tech roles.</div>
+</div>
+<p>Twenty jobs is a tiny fraction of a thousand, so a full run here costs you cents, well inside the free credit.</p>
+
+<hr class="rule">
+<span class="kicker">run it</span>
+<h2>Upload your resume and run this <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Attach your resume to the chat (PDF or doc), then paste this. Claude will call the scraper, pull live roles, and rank them against you.</p>
+<div class="promptwrap">
+<span class="promptlabel">💼 find me 20 matched jobs</span>
+<pre><code>Attached is my resume. Using the Apify connector, run the Indeed scraper (misceres/indeed-scraper) to pull live job listings for [job title / field] in [location, or "remote"].
+
+Then read those listings against my resume and give me the 20 best matches as a table with: job title, company, location, salary (only where the listing states one), and a short reason it fits me. Add a rough fit score out of 10 based on my experience versus what the role asks for, and be clear that score is your estimate, not a real prediction. Sort the table best fit first. If fewer than 20 are a genuine match, give me only the real ones rather than padding the list.</code></pre>
+</div>
+<p>Want LinkedIn instead? Swap the actor name for <code>curious_coder/linkedin-jobs-scraper</code>. Want to widen the net? Ask Claude to run both and merge the results.</p>
+
+<span class="kicker">the honest read</span>
+<h2>What you actually get <span class="gi" style="--gl:#CD5174" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M14 2.20004C13.3538 2.06886 12.6849 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.3151 21.9311 10.6462 21.8 10" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0303 11.9625L16.5832 7.4096M19.7404 4.34462L19.1872 2.35748C19.0853 2.03011 18.6914 1.89965 18.4259 2.11662C16.9898 3.29018 15.4254 4.87091 16.703 7.36419C19.2771 8.56455 20.7466 6.94584 21.8733 5.5853C22.0975 5.3146 21.9623 4.90767 21.6247 4.81005L19.7404 4.34462Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>A real shortlist</b> Twenty live roles ranked to your actual experience, in seconds, instead of an afternoon of scrolling and second-guessing.</div>
+<div class="minicard"><b>Not a magic wand</b> The fit score is Claude's estimate and salary only shows where the listing has it. Use the ranking to decide where to apply first, then still read each role yourself.</div>
+</div>
+
+<div class="tip calm">Once it works, save the prompt and rerun it weekly with fresh listings. You can also ask Claude to tailor your resume or write the cover letter for the top three, so the same setup takes you from finding the job to applying for it.</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

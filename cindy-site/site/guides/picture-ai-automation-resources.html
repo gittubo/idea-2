@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 resources to learn AI automation in 2026 · Cindy Zhu</title><meta name="description" content="Free resources to learn AI automation, plus a prompt that turns one repeated task into a workflow you can build."><link rel="canonical" href="https://cindyzhu.com.au/guides/picture-ai-automation-resources">
+<meta property="og:title" content="5 resources to learn AI automation in 2026"><meta property="og:description" content="Free resources to learn AI automation, plus a prompt that turns one repeated task into a workflow you can build."><meta property="og:url" content="https://cindyzhu.com.au/guides/picture-ai-automation-resources"><meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles.css"><!-- seo:auto -->
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="5 resources to learn AI automation in 2026">
+<meta name="twitter:description" content="Free resources to learn AI automation, plus a prompt that turns one repeated task into a workflow you can build.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body><!-- GUIDES_CARD {t:"5 resources to learn AI automation in 2026", u:"guides/picture-ai-automation-resources.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap"><main class="guidewrap"><a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a><div class="guidehead"><div class="gtags"><span class="gtag topic">Build with AI</span><span class="gtag tool">Claude</span></div><h1>5 resources to learn AI automation in 2026</h1></div><div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Free resources to learn AI automation, plus a prompt that turns one repeated task into a workflow you can build.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>The fastest way to make an automation course useful is to give yourself one real process to improve while you learn. You’ll understand triggers, data and error messages much faster when they belong to a task you recognise.</p>
+<p>Here’s a practical route through the five resources in the carousel. You can choose Make or n8n as your main visual platform, then use the other resources to understand connections, reusable Claude instructions and system design. You don’t need subscriptions to every tool on the list.</p>
+<p>Our practice project is an enquiry workflow. A new enquiry arrives, required information gets checked, the complete record is saved and anything unclear goes to review. Later, AI can draft an internal summary. We’ll keep external replies under human approval while learning.</p>
+<hr class="rule"/><span class="kicker">part 01</span><h2>Before you start</h2>
+<p>Use a practice workspace with sample enquiries rather than customer information. Write down the minimum useful output: a saved record containing the enquiry ID, name, email, request and review status.</p>
+<p>Learning pages are generally available to read or watch, but running a workflow can require a platform account, hosting and paid model API usage. A Claude subscription and an API account are different access routes. Check the current pricing and limits for the specific environment you choose before enabling scheduled runs.</p>
+<hr class="rule"/><span class="kicker">part 02</span><h2>1. Make Academy: learn how data moves</h2>
+<p><a href="https://academy.make.com/" rel="noopener noreferrer" target="_blank">Open Make Academy</a>. Its free, self-paced learning is a good starting point if you want to understand automation on a visual canvas. Begin with the fundamentals rather than jumping straight into an elaborate AI-agent example.</p>
+<p>As you work through the lessons, connect each concept to your enquiry project. A trigger starts the process. A module performs a step. Mapped fields pass the incoming information into the next step. A filter decides whether that record should continue along a route.</p>
+<p>Your first exercise is deliberately small: take one sample input and save it to a test destination. Inspect the name and email in both places. Then add the required-field check.</p>
+<p>You’re ready for the next stage when you can point to where each saved value came from. If the output contains an empty field, inspect the incoming sample and the mapping before adding more steps. Course access is free; workflow execution has separate account limits.</p>
+<hr class="rule"/><span class="kicker">part 03</span><h2>2. n8n’s first-workflow guide: inspect each step</h2>
+<p><a href="https://docs.n8n.io/build-your-first-workflow" rel="noopener noreferrer" target="_blank">Open the official first-workflow guide</a>. It covers a concrete workflow with a trigger, credentials, expressions and a branch. Follow its published example first, then adapt the pattern to your enquiry project. The <a href="https://docs.n8n.io/learning-paths" rel="noopener noreferrer" target="_blank">learning paths</a> provide the next lessons.</p>
+<p>You need an n8n environment. Cloud offers a trial; self-hosting involves setup, maintenance and hosting resources. Choose the option you can actually support.</p>
+<p>In your practice version, keep the input visible and inspect the data after every node. Build the required-field branch before introducing AI. An empty email address is a straightforward condition, so it does not need a model to decide whether it is missing.</p>
+<p>Give every enquiry a stable ID. When you rerun a failed test, check that it updates or recognises the same record rather than creating duplicates. This is a design choice you must implement, not something a diagram automatically guarantees.</p>
+<hr class="rule"/><span class="kicker">part 04</span><h2>3. Nick Saraev’s skills course: package the repeated instructions</h2>
+<p><a href="https://www.youtube.com/watch?v=sduaTkhIm_w" rel="noopener noreferrer" target="_blank">Watch Claude Skills Full Course: Automate Your Work</a>, then use <a href="https://code.claude.com/docs/en/skills" rel="noopener noreferrer" target="_blank">Anthropic’s current skills documentation</a> when you implement your own version. The video is the learning resource; product documentation is the reference for current setup details.</p>
+<p>A skill stores reusable instructions and can include supporting files. For this project, its job could be turning a saved enquiry into a short internal brief. It does not itself create a form trigger or grant access to your customer database.</p>
+<p>First, make the summary work manually with three sample enquiries. Specify the fields it should return: request, missing information, suggested next action and source enquiry ID. Tell it to use “not provided” when information is absent.</p>
+<p>Once the result is useful, save those instructions in a project skill, such as <code>.claude/skills/enquiry-brief/SKILL.md</code>. Use the documented frontmatter and test it with a fresh example. Running Claude still requires suitable product access, and an API-based workflow has its own billing.</p>
+<hr class="rule"/><span class="kicker">part 05</span><h2>4. Postman: understand the request and response</h2>
+<p><a href="https://learning.postman.com/docs/getting-started/quick-start/" rel="noopener noreferrer" target="_blank">Open the Postman quick start</a>. Follow the public example exactly before connecting a private account. The aim is to recognise the request URL, method, parameters and returned data.</p>
+<p>Use the exact public request shown in the quick start. Inspect the response and find where the returned values appear. Then repeat the documented example with one permitted input changed so you can see the request and response move together. Keep this exercise on public test data.</p>
+<p>When you later connect a real app, look up its own documentation for authentication, required fields and error responses. A successful request to an echo service does not prove you have permission to use a different service.</p>
+<p>If you receive an error, capture the status code and message without exposing credentials. Check the URL, request method and required fields before asking AI to diagnose it. That evidence makes troubleshooting much more specific.</p>
+<hr class="rule"/><span class="kicker">part 06</span><h2>5. Building Effective Agents: choose the structure</h2>
+<p><a href="https://www.anthropic.com/engineering/building-effective-agents" rel="noopener noreferrer" target="_blank">Read Anthropic’s Building Effective Agents</a>. Use its diagrams to compare a fixed sequence, routing and a writer/reviewer loop. It is an architecture article, so use current product docs for installation instructions.</p>
+<p>Apply the simplest pattern to the enquiry example. Missing fields follow a fixed rule. The summary can be one model call. If a reviewer is useful, give it explicit checks and a limited revision loop. You do not need an autonomous agent to perform every part.</p>
+<p>Ask where the AI actually adds judgment. If you can express a decision as a dependable condition, implement that condition directly. Save model reasoning for the parts where interpreting language helps.</p>
+<hr class="rule"/><span class="kicker">part 07</span><h2>Turn the idea into a build plan</h2>
+<p>Paste this into Claude with your chosen platform and a few synthetic examples. It returns a specification you can implement alongside the lessons.</p>
+<div class="promptwrap"><span class="promptlabel">copy this prompt</span><pre><code class="language-prompt">Design a small enquiry-processing workflow for [Make or n8n].
+
+Input examples: [paste 3 fictional enquiries with stable IDs].
+Required fields: enquiry_id, name, email, request.
+Destination: [name a test table or practice destination].
+Goal: save complete enquiries, route missing fields for review, and produce an internal summary. Do not send customer replies.
+
+Return the exact trigger, each step, field mappings and branch conditions. Separate deterministic rules from the one optional AI summary step. Include a proposed output schema, duplicate-handling strategy, execution log fields and where errors go.
+
+Give me 5 test inputs: complete, missing email, missing request, repeated ID and unusually long request. State the expected result for each. Explain which steps need credentials or paid services. If the destination is unspecified, use a local test table in the plan and say it is a placeholder.
+
+Use current official documentation if browsing is available. Flag anything you cannot verify. Finish with the smallest working version I should build first.
+</code></pre></div>
+<hr class="rule"/><span class="kicker">part 08</span><h2>Check the workflow before letting it run</h2>
+<p>Run the five test cases manually. A missing field should reach review, a repeated ID should follow your duplicate rule, and a failed step should be visible in the execution record. Check that the AI summary has not invented facts absent from the enquiry.</p>
+<p>If all five tests pass, try a small supervised batch and measure how long review takes. If checking the output takes longer than doing the original job, simplify the output or improve the input rules. Your first win is one dependable handoff you understand well enough to repair.</p>
+<div class="gcallout">Keep building from here. Find more practical walkthroughs in <a href='/guides'>my free guide library</a>.</div>
+</div></main></div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer><script src="../guide-kit.js" defer></script><script src="/site.js" defer></script>
+</body></html>

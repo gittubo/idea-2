@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to fact-check a viral money claim with Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="How to fact-check a viral money claim with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/fact-check-viral-money-claims">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="How to fact-check a viral money claim with Claude">
+<meta property="og:description" content="How to fact-check a viral money claim with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/fact-check-viral-money-claims">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to fact-check a viral money claim with Claude">
+<meta name="twitter:description" content="How to fact-check a viral money claim with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"How to fact-check a viral money claim with Claude", u:"guides/fact-check-viral-money-claims.html", topic:"money", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Money</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>How to fact-check a viral money claim with Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented FACTS, so here is the whole thing: the exact prompt, the three follow-ups that do the real work.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn"><strong>Why "is it true?" is the wrong question.</strong> Viral money claims are almost never flatly false. The usual shape is a real research finding, plus a stronger version of that finding, plus an opinion about what it means, delivered in one breath so they all inherit the credibility of the first part. So the job is not true or false. The job is separating the layers.</div>
+
+<span class="kicker">setup</span>
+<h2>Set Claude up to cite, not guess <span class="gi" style="--gl:#987CBE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3175 7.14139L20.8239 6.28479C20.4506 5.63696 20.264 5.31305 19.9464 5.18388C19.6288 5.05472 19.2696 5.15664 18.5513 5.36048L17.3311 5.70418C16.8725 5.80994 16.3913 5.74994 15.9726 5.53479L15.6357 5.34042C15.2766 5.11043 15.0004 4.77133 14.8475 4.37274L14.5136 3.37536C14.294 2.71534 14.1842 2.38533 13.9228 2.19657C13.6615 2.00781 13.3143 2.00781 12.6199 2.00781H11.5051C10.8108 2.00781 10.4636 2.00781 10.2022 2.19657C9.94085 2.38533 9.83106 2.71534 9.61149 3.37536L9.27753 4.37274C9.12465 4.77133 8.84845 5.11043 8.48937 5.34042L8.15249 5.53479C7.73374 5.74994 7.25259 5.80994 6.79398 5.70418L5.57375 5.36048C4.85541 5.15664 4.49625 5.05472 4.17867 5.18388C3.86109 5.31305 3.67445 5.63696 3.30115 6.28479L2.80757 7.14139C2.45766 7.74864 2.2827 8.05227 2.31666 8.37549C2.35061 8.69871 2.58483 8.95918 3.05326 9.48012L4.0843 10.6328C4.3363 10.9518 4.51521 11.5078 4.51521 12.0077C4.51521 12.5078 4.33636 13.0636 4.08433 13.3827L3.05326 14.5354C2.58483 15.0564 2.35062 15.3168 2.31666 15.6401C2.2827 15.9633 2.45766 16.2669 2.80757 16.8741L3.30114 17.7307C3.67443 18.3785 3.86109 18.7025 4.17867 18.8316C4.49625 18.9608 4.85542 18.8589 5.57377 18.655L6.79394 18.3113C7.25263 18.2055 7.73387 18.2656 8.15267 18.4808L8.4895 18.6752C8.84851 18.9052 9.12464 19.2442 9.2775 19.6428L9.61149 20.6403C9.83106 21.3003 9.94085 21.6303 10.2022 21.8191C10.4636 22.0078 10.8108 22.0078 11.5051 22.0078H12.6199C13.3143 22.0078 13.6615 22.0078 13.9228 21.8191C14.1842 21.6303 14.294 21.3003 14.5136 20.6403L14.8476 19.6428C15.0004 19.2442 15.2765 18.9052 15.6356 18.6752L15.9724 18.4808C16.3912 18.2656 16.8724 18.2055 17.3311 18.3113L18.5513 18.655C19.2696 18.8589 19.6288 18.9608 19.9464 18.8316C20.264 18.7025 20.4506 18.3785 20.8239 17.7307L21.3175 16.8741C21.6674 16.2669 21.8423 15.9633 21.8084 15.6401C21.7744 15.3168 21.5402 15.0564 21.0718 14.5354L20.0407 13.3827C19.7887 13.0636 19.6098 12.5078 19.6098 12.0077C19.6098 11.5078 19.7888 10.9518 20.0407 10.6328L21.0718 9.48012C21.5402 8.95918 21.7744 8.69871 21.8084 8.37549C21.8423 8.05227 21.6674 7.74864 21.3175 7.14139Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.5195 12C15.5195 13.933 13.9525 15.5 12.0195 15.5C10.0865 15.5 8.51953 13.933 8.51953 12C8.51953 10.067 10.0865 8.5 12.0195 8.5C13.9525 8.5 15.5195 10.067 15.5195 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🔎 Turn on web search.</strong> Open a new chat at <a href="https://claude.ai" target="_blank">claude.ai</a>, click the settings slider in the message box, and switch <strong>Web search</strong> on (<a href="https://support.claude.com/en/articles/10684626-enabling-and-using-web-search" target="_blank">Anthropic's walkthrough</a>). Without it, Claude answers from memory and can produce a study title that sounds exactly right and does not exist. Web search is on every plan, free included (<a href="https://claude.com/blog/web-search" target="_blank">announcement</a>).</li>
+<li><strong class="st">🧠 Add Research if you are on a paid plan.</strong> Research runs many searches and comes back with a compiled, cited answer instead of one pass. Click the <strong>+</strong> at the bottom left of the chat box and choose <strong>Research</strong>. It is available on Pro, Max, Team and Enterprise (<a href="https://support.claude.com/en/articles/11088861-using-research-on-claude-ai" target="_blank">how Research works</a>). On free, web search alone still runs everything below.</li>
+<li><strong class="st">📄 Grab the transcript.</strong> Open the caption and the auto transcript on the post, or screenshot the video and let Claude read the frames. You need the claims as text, in the creator's exact wording, because the precise phrasing is what gets checked.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">copy this</span>
+<h2>The full fact-check prompt <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the one I actually run. Paste it into a fresh chat, then paste the transcript when Claude asks.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 the fact-check</span>
+<pre><code>You are my fact-checker for viral money and economics claims. I am going to paste the transcript of a video making claims about wealth, income, mobility or the economy. Use web search for everything, give me a clickable link for every source, and never cite a paper you have not actually located.
+
+Work in four labelled parts.
+
+PART 1, THE CLAIMS. List every distinct claim as a numbered line in the video's own wording. Next to each, mark whether it is an empirical claim that research could settle, a definition or a piece of jargon, or a value judgement about how the world should work. Give me the totals for each type.
+
+PART 2, THE SORT. Put every empirical claim into one of three buckets, and say which bucket and why. Bucket A, supported: real published research backs it, so name the paper, the authors, the year, and link it. Bucket B, contested or overstated: the underlying pattern exists but the video's version is stronger than the evidence, so explain the gap in one sentence. Bucket C, unsupported: nothing published backs it, or it is an opinion wearing the costume of a finding.
+
+PART 3, THE OTHER SIDE. Find the strongest published work that disagrees with the video's central claim and link it. Economics has genuine live disagreements, so if two credible camps exist, show me both and tell me which currently has more support. If the evidence really is one-sided, say that plainly instead of manufacturing balance.
+
+PART 4, THE HONEST VERSION. Rewrite the central claim as one sentence that stays true to the research, and one sentence naming what it does not establish. Then tell me in two lines whether any of this should change a decision I would actually make.
+
+Ask me for the transcript now.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">the good part</span>
+<h2>The 3 follow-ups that do the real work <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The first prompt gives you the map. These three are where a five-minute check turns into actually understanding the thing. Run them in the same chat.</p>
+<div class="promptwrap">
+<span class="promptlabel">1 · find the paper that disagrees</span>
+<pre><code>Take the single strongest claim in that video and search specifically for published work that reaches the opposite conclusion. Give me the title, the authors, the year, a link, and the one-line reason their result differs, whether that is a different dataset, a different definition, or a different method. If the disagreement comes down to how a category was defined, spell that definition difference out in plain language, because that is usually where these arguments actually live rather than in the headline finding.</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">2 · check every number at the primary source</span>
+<pre><code>Go back through every number in the transcript and check each one against a primary source, meaning a statistical agency, a central bank, a census, or the original paper, never a news write-up of one. For each number, tell me the figure the primary source actually reports, the year it refers to, the country it covers, and whether it is adjusted for inflation. Flag any number where the video's version and the primary source disagree, and give me the link so I can open the source myself.</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">3 · does the effect size matter for me</span>
+<pre><code>For every claim you put in the supported bucket, describe the effect size in ordinary terms instead of statistical language: how big is the difference, for whom, and over what period. Then tell me honestly whether an effect that size should change anything about how I plan, given that I am [describe your situation in one line]. I would much rather hear "real, but small enough that it should not drive your decisions" than a hedge that leaves me where I started.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">the sort</span>
+<h2>What the three buckets mean <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">✅ Supported.</strong> A named paper, real authors, a dataset, a year. You can open it. These are the parts of the claim you can repeat without qualifying, and they are usually narrower than the video made them sound.</li>
+<li><strong class="st">⚖️ Contested or overstated.</strong> The pattern is real but the strength, the direction, or the timeframe is argued over by credible researchers. This bucket is the biggest one in money content, and it is where "the pattern has intensified" lines almost always land.</li>
+<li><strong class="st">💭 Unsupported.</strong> Values, framing, and vibes. "The system is rigged" and "anyone can make it" are both in here. Not worthless, and not research either, so they should not borrow authority from the sentence before them.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">the classic traps</span>
+<h2>4 things money claims get wrong <span class="gi" style="--gl:#D85A76" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7L4 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11.7576 3.90865C8.45236 2.22497 5.85125 3.21144 4.55426 4.2192C4.32048 4.40085 4.20358 4.49167 4.10179 4.69967C4 4.90767 4 5.10138 4 5.4888V14.7319C4.9697 13.6342 7.87879 11.9328 11.7576 13.9086C15.224 15.6744 18.1741 14.9424 19.5697 14.1795C19.7633 14.0737 19.8601 14.0207 19.9301 13.9028C20 13.7849 20 13.6569 20 13.4009V5.87389C20 5.04538 20 4.63113 19.8027 4.48106C19.6053 4.33099 19.1436 4.459 18.2202 4.71504C16.64 5.15319 14.3423 5.22532 11.7576 3.90865Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Nominal vs real</b> A number that has not been inflation-adjusted makes any long comparison look dramatic. Ask which one it is, every time.</div>
+<div class="minicard"><b>Mean vs median</b> Averages get dragged upward by the very top. "Average net worth" and "typical person" are wildly different statements about wealth.</div>
+<div class="minicard"><b>Correlation dressed as cause</b> Two things moving together is the finding. Which one causes the other is almost always a separate, much harder question.</div>
+<div class="minicard"><b>Wrong country, wrong decade</b> Most of this research is US data from a specific window. Repeating it as a universal truth is where a lot of the exaggeration quietly enters.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">watch it work</span>
+<h2>The "the wealthy will not marry you" claim, checked <span class="gi" style="--gl:#669520" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16.2187 13.0044L15.9921 13.6151C15.5219 14.65 14.1115 15.7439 11.7609 14.3182C10.2471 13.4001 8.93663 12.6631 7.9997 13.16L7.21891 13.5412" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.5323 2V8.56602C14.5323 9.27829 14.5323 9.63442 14.6304 9.97222C14.7285 10.31 14.9197 10.612 15.3021 11.216L17.2861 14.35C19.4275 17.7326 20.4982 19.4238 19.7751 20.7119C19.0519 22 17.0317 22 12.9914 22H11.0086C6.96825 22 4.94807 22 4.22495 20.7119C3.50182 19.4238 4.57251 17.7326 6.71389 14.35L8.69792 11.216C9.08029 10.612 9.27148 10.31 9.36961 9.97222C9.46773 9.63442 9.46773 9.27829 9.46773 8.56602V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15.125 19H15M15.25 19C15.25 19.1381 15.1381 19.25 15 19.25C14.8619 19.25 14.75 19.1381 14.75 19C14.75 18.8619 14.8619 18.75 15 18.75C15.1381 18.75 15.25 18.8619 15.25 19Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.125 17H10M10.25 17C10.25 17.1381 10.1381 17.25 10 17.25C9.86193 17.25 9.75 17.1381 9.75 17C9.75 16.8619 9.86193 16.75 10 16.75C10.1381 16.75 10.25 16.8619 10.25 17Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The video argued that assortative mating means high earners marry high earners, that the pattern has intensified for decades, that who you marry matters nearly as much as what you do, and that saying anyone can make it ignores the system. Four sentences, three different kinds of statement. Here is how they sorted.</p>
+<p>✅ <strong>Bucket A, supported.</strong> Assortative mating is a real, heavily studied term. Greenwood, Guner, Kocharkov and Santos, "Marry your like: assortative mating and income inequality" (<em>American Economic Review</em>, 2014) estimate that if husbands and wives in 2005 had matched randomly rather than by education, the US Gini coefficient would have fallen from 0.43 to 0.34 (<a href="https://www.aeaweb.org/articles?id=10.1257/aer.104.5.348" target="_blank">AER page</a>, <a href="https://www.nber.org/papers/w19829" target="_blank">NBER version</a>). So the link between who marries whom and household inequality is genuinely in the literature.</p>
+<p>⚖️ <strong>Bucket B, contested.</strong> "The pattern has intensified over decades" is the part the video treated as settled, and it is the part economists argue about most. Gihleb and Lang published a paper called, literally, <a href="https://www.nber.org/papers/w22927" target="_blank">"Educational homogamy and assortative mating have not increased"</a> (NBER working paper 22927), using the Current Population Surveys and the Census and ACS. They argue both the economists' and the sociologists' versions of the increase are sensitive to how education categories are chosen, and that they find no evidence the correlation between spouses' potential earnings changed dramatically. Two credible papers, opposite headlines. That is not Claude being unhelpful, that is what the field actually looks like.</p>
+<p>📊 <strong>What is measured and not disputed.</strong> Pew Research found that in 29% of US opposite-sex marriages both spouses now earn about the same, up from 11% in 1972 (<a href="https://www.pewresearch.org/social-trends/2023/04/13/in-a-growing-share-of-u-s-marriages-husbands-and-wives-earn-about-the-same/" target="_blank">Pew, April 2023</a>). And "upward mobility feels harder" turns out to be measurable rather than a mood: Chetty and co-authors found absolute mobility fell from around 90% of children born in 1940 out-earning their parents to around 50% for those born in the 1980s (<a href="https://opportunityinsights.org/paper/the-fading-american-dream/" target="_blank">The fading American dream</a>).</p>
+<p>💭 <strong>Bucket C, opinion.</strong> "When people say anyone can make it, they are ignoring the system" is a value judgement. It might be one you agree with, and it is still not a finding, so it should not inherit the authority of the Gini number two sentences earlier.</p>
+<p>🌱 <strong>The honest one-liner:</strong> who people marry is linked to household income inequality in US data, whether that sorting has actually increased is genuinely disputed, and none of it establishes anything about what any one person can do with their own income.</p>
+
+<hr class="rule">
+<span class="kicker">make it a habit</span>
+<h2>Save it so it takes 30 seconds <span class="gi" style="--gl:#BA7A10" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">📁 Put it in a Project.</strong> Open <strong>Projects</strong> in the Claude sidebar, make one called "claim check", and paste the full fact-check prompt into the project instructions. Every chat inside it inherits the method, so from then on you paste a transcript and nothing else.</li>
+<li><strong class="st">⚡ Or package it as a skill.</strong> Ask Claude to write you a SKILL.md holding the four parts and the three follow-ups, then in the app go to <strong>Customize</strong>, then <strong>Skills</strong>, then <strong>Add</strong>, then <strong>Upload a skill</strong> (<a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills" target="_blank">Anthropic's steps</a>). Skills work on every plan, Free included. After that you type <code>/claim-check</code> and paste.</li>
+<li><strong class="st">🎯 Know when to skip it.</strong> This is for confident, specific, numbers-heavy claims that are about to change how you think or what you do. Clearly labelled opinions and obvious jokes do not need a literature review, and running it on everything is how a good habit turns into a chore you drop.</li>
+</ol>
+<div class="tip calm">The most useful thing this builds is not a verdict, it is a reflex: noticing the exact moment a sentence stops being research and starts being framing. After a few runs you catch that switch live, mid-scroll, without opening Claude at all.</div>
+
+<div class="tip">Claude is the fast first pass that tells you where to look. For anything you are about to repeat publicly, open the paper it cites and read the abstract yourself. The links are the deliverable, the summary is the shortcut to them.</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://www.aeaweb.org/articles?id=10.1257/aer.104.5.348" target="_blank">Greenwood, Guner, Kocharkov &amp; Santos, "Marry your like", AER 2014</a><br>
+  <a href="https://www.nber.org/papers/w22927" target="_blank">Gihleb &amp; Lang, "Educational homogamy and assortative mating have not increased", NBER</a><br>
+  <a href="https://www.pewresearch.org/social-trends/2023/04/13/in-a-growing-share-of-u-s-marriages-husbands-and-wives-earn-about-the-same/" target="_blank">Pew Research, equal-earning marriages, April 2023</a><br>
+  <a href="https://opportunityinsights.org/paper/the-fading-american-dream/" target="_blank">Chetty et al., "The fading American dream", Opportunity Insights</a><br>
+  <a href="https://claude.com/blog/web-search" target="_blank">Claude web search, available on all plans</a><br>
+  <a href="https://support.claude.com/en/articles/11088861-using-research-on-claude-ai" target="_blank">Using Research on Claude</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

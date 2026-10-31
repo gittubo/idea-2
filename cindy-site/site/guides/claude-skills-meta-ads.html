@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 Claude skills that replace your Meta ads agency · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Here are 5 Claude skills that do the work agencies charge $5-10K a month for.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-skills-meta-ads">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="5 Claude skills that replace your Meta ads agency">
+<meta property="og:description" content="Here are 5 Claude skills that do the work agencies charge $5-10K a month for.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-skills-meta-ads">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="5 Claude skills that replace your Meta ads agency">
+<meta name="twitter:description" content="Here are 5 Claude skills that do the work agencies charge $5-10K a month for.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"5 Claude skills that replace your Meta ads agency","description":"Here are 5 Claude skills that do the work agencies charge $5-10K a month for: competitor spying, bulk creative, and account health checks in minutes.","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/claude-skills-meta-ads"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"5 Claude skills that replace your Meta ads agency", u:"guides/claude-skills-meta-ads.html", topic:"marketing", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Marketing &amp; ads</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>5 Claude skills that replace your Meta ads agency</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Here are 5 Claude skills that do the work agencies charge $5-10K a month for.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the problem</span>
+<h2>The problem</h2>
+<p>Running Meta ads manually is a full-time job.</p>
+<p>Every week you're manually scrolling the Ad Library to see what competitors are running. You're briefing copywriters and waiting days for variations. You're spending money on creative before you know if the hook, copy, or CTA is any good.</p>
+<p>Agencies charge $5-10K/month to handle this. Claude does it in minutes.</p>
+<p>Here are the 5 skills that replace them.</p>
+
+<hr class="rule">
+<span class="kicker">see their ads</span>
+<h2>Skill 1: /spy</h2>
+<p><strong>What it does:</strong> Pulls every active ad from any Facebook page via the Meta Ad Library API. Diffs against last week's pull to surface only new creative. Returns a structured intelligence report with hooks, CTAs, offer types, creative angles, and how long each ad has been running.</p>
+<p><strong>What you find out:</strong></p>
+<ul>
+<li>Which hooks your competitors are testing right now</li>
+<li>Which ads have been running 30+ days (the winners)</li>
+<li>What new creative they launched this week</li>
+</ul>
+<p><strong>Install:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🕵️ install claude-ads</span>
+<pre><code>npx skills add https://github.com/AgriciDaniel/claude-ads</code></pre>
+</div>
+<div class="tip warn"><strong>Prerequisite:</strong> You'll need a Meta Ad Library API access token. Set it as <code>$META_ACCESS_TOKEN</code> in your environment.</div>
+
+<hr class="rule">
+<span class="kicker">find the gap</span>
+<h2>Skill 2: /competitive-ads-extractor</h2>
+<p><strong>What it does:</strong> Give it 3-5 competitor names or URLs. It pulls their active ads, ranks hooks by how often they appear, identifies offer structures and CTA patterns, then outputs a gap analysis showing emotional angles your competitors aren't using that you could own.</p>
+<p><strong>The output:</strong></p>
+<ul>
+<li>Top hooks ranked by frequency</li>
+<li>Offer structure patterns across competitors</li>
+<li>CTA analysis</li>
+<li>Gap analysis: angles nobody in your market is running</li>
+</ul>
+<p><strong>Install:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🔍 install the extractor</span>
+<pre><code>npx skills add https://github.com/ComposioHQ/awesome-claude-skills/tree/master/competitive-ads-extractor</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">make the volume</span>
+<h2>Skill 3: /bulk-creative</h2>
+<p><strong>What it does:</strong> Give it your product description and your CLAUDE.md brand context. Generates 20 distinct ad copy variations, short, medium, and long format, in about 10 minutes. What used to take a copywriter 4-8 hours.</p>
+<p><strong>How to get the most out of it:</strong></p>
+<div class="tip calm">Make sure your CLAUDE.md has your brand voice, your target audience, and your core offer before running this. The richer the context, the tighter the output.</div>
+<p><strong>Install:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">✍️ install claude-ads</span>
+<pre><code>npx skills add https://github.com/AgriciDaniel/claude-ads</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">account health</span>
+<h2>Skill 4: /ads meta</h2>
+<p><strong>What it does:</strong> Runs 186 checks across your Meta account. Detects creative fatigue, audience overlap, CPM anomalies, and frequency violations. Returns a unified health score from 0 to 100 with a prioritised action plan.</p>
+<p><strong>What it catches:</strong></p>
+<ul>
+<li>Creative fatigue before your ROAS drops</li>
+<li>Audience overlap eating your own budget</li>
+<li>Frequency violations and CPM anomalies</li>
+<li>Placement underperformance</li>
+</ul>
+<p><strong>Install:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🩺 install claude-ads</span>
+<pre><code>npx skills add https://github.com/AgriciDaniel/claude-ads</code></pre>
+</div>
+<div class="tip">Run <code>/ads meta</code> before making any budget changes. Think of it as your account health check.</div>
+
+<hr class="rule">
+<span class="kicker">grade it first</span>
+<h2>Skill 5: /ads-score</h2>
+<p><strong>What it does:</strong> Paste in any ad, yours or a competitor's. It scores it across 6 dimensions on a 1-10 scale and tells you exactly where it's weak and why, before you put money behind it.</p>
+<p><strong>The 6 dimensions:</strong></p>
+<ol class="steps">
+<li>Hook strength</li>
+<li>Copy effectiveness</li>
+<li>CTA clarity</li>
+<li>Emotional resonance</li>
+<li>Offer structure</li>
+<li>Visual-copy alignment</li>
+</ol>
+<p><strong>Install:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">📊 install claude-ads</span>
+<pre><code>npx skills add https://github.com/AgriciDaniel/claude-ads</code></pre>
+</div>
+<div class="tip">Run this on every ad before launch. If it scores below 7 on hook strength, rewrite the hook before spending a dollar.</div>
+
+<hr class="rule">
+<span class="kicker">the sequence</span>
+<h2>How to chain them</h2>
+<p>These 5 skills work best in sequence:</p>
+<ol class="steps">
+<li><strong class="st">Spy on Monday.</strong> Run <code>/spy</code> on Monday morning to see what competitors launched last week</li>
+<li><strong class="st">Find the gaps.</strong> Run <code>/competitive-ads-extractor</code> on your top 3-5 competitors to find the gaps</li>
+<li><strong class="st">Generate the variants.</strong> Use <code>/bulk-creative</code> to generate 20 variations targeting those gaps</li>
+<li><strong class="st">Score before launch.</strong> Run <code>/ads-score</code> on your top 5 variations before launch</li>
+<li><strong class="st">Health-check weekly.</strong> Run <code>/ads meta</code> weekly to catch fatigue and overlap before they hurt your numbers</li>
+</ol>
+<div class="tip calm">The whole workflow takes under an hour. Agencies charge a monthly retainer for this.</div>
+
+<hr class="rule">
+<span class="kicker">tick these off</span>
+<h2>Setup checklist</h2>
+<ul>
+<li>Install Claude Code: <code>npm install -g @anthropic-ai/claude-code</code></li>
+<li>Authenticate: run <code>claude</code> and sign in</li>
+<li>Create your CLAUDE.md with your brand voice and audience: <code>~/.claude/CLAUDE.md</code></li>
+<li>Set your Meta API token: <code>export META_ACCESS_TOKEN=your_token_here</code></li>
+<li>Install claude-ads skill pack: <code>npx skills add https://github.com/AgriciDaniel/claude-ads</code></li>
+<li>Install competitive-ads-extractor: <code>npx skills add https://github.com/ComposioHQ/awesome-claude-skills/tree/master/competitive-ads-extractor</code></li>
+<li>Test <code>/spy</code> with one competitor handle</li>
+<li>Run <code>/ads meta</code> on your account</li>
+</ul>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

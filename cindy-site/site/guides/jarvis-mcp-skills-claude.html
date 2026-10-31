@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build your own Jarvis with Claude (MCP + skills) · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Build your own Jarvis with Claude (MCP + skills). A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/jarvis-mcp-skills-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build your own Jarvis with Claude (MCP + skills)">
+<meta property="og:description" content="Build your own Jarvis with Claude (MCP + skills). A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/jarvis-mcp-skills-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build your own Jarvis with Claude (MCP + skills)">
+<meta name="twitter:description" content="Build your own Jarvis with Claude (MCP + skills). A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build your own Jarvis with Claude", u:"guides/jarvis-mcp-skills-claude.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building &amp; apps</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Build your own Jarvis with Claude (MCP + skills)</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented COMMAND, so here is the exact setup: the connectors to turn on and in what order, the starter prompts to copy.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the three pieces</span>
+<h2>What you're actually building <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Forget the movie version. A working "Jarvis" is three unglamorous, powerful pieces bolted together:</p>
+<ol class="steps">
+<li><strong class="st">🌱 Connectors (the eyes and hands).</strong> Claude reads and acts inside your real apps, so it answers from your actual day instead of guessing.</li>
+<li><strong class="st">💡 A voice layer (the part that feels like Jarvis).</strong> Voice mode is built into Claude on every plan, so the spoken command in the reel needs no setup at all.</li>
+<li><strong class="st">🧠 A skill (the saved playbook).</strong> A reusable command you write once and trigger by name, so the same routine runs the same way every time.</li>
+</ol>
+<p>The magic isn't a personality, it's the plumbing. Let's wire it, one piece at a time, testing each before you add the next.</p>
+
+<hr class="rule">
+<span class="kicker">the plumbing</span>
+<h2>Step 1: connect Claude to your tools with MCP <span class="gi" style="--gl:#4C395C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 2V6M8.5 6V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.00446 7.61331C5.93719 6.74273 6.63957 6 7.53014 6H16.4699C17.3604 6 18.0628 6.74273 17.9955 7.61331L17.8117 9.99197C17.6796 11.7019 17.1011 13.3498 16.132 14.7773L15.5312 15.6622C14.9638 16.4979 14.0077 17 12.9838 17H11.0162C9.99228 17 9.03617 16.4979 8.46881 15.6622L7.86803 14.7773C6.89885 13.3498 6.32041 11.7019 6.18827 9.99197L6.00446 7.61331Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 9H13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p><strong>What MCP is:</strong> the Model Context Protocol is an open standard that lets Claude build a secure, two-way connection to your data and apps, so it can both read from them and act inside them. Anthropic introduced it in November 2024 and it's now what powers Claude's connectors (<a href="https://www.anthropic.com/news/model-context-protocol" target="_blank">Anthropic's MCP announcement</a>).</p>
+<p><strong>The exact setup, in order:</strong></p>
+<ol class="steps">
+<li><strong class="st">🌱 Open the connectors directory.</strong> In Claude, go to <strong>Customize</strong>, then <strong>Connectors</strong> (the direct address is <code>claude.ai/customize/connectors</code>). You can also click the <strong>+</strong> in the chat box and toggle connectors from there once they are added.</li>
+<li><strong class="st">💡 Add Google Calendar first.</strong> Find it in the directory, click <strong>Connect</strong>, and sign in to authorise it. Calendar is the safest one to start with because reading your week cannot break anything.</li>
+<li><strong class="st">🧠 Test it before adding the next.</strong> Start a new chat and ask "what is on my calendar this week, and where am I overbooked". If it answers with your real events, that connector works. If it does not, reconnect it before adding anything else.</li>
+<li><strong class="st">👩‍💻 Add Gmail, then Notion, the same way.</strong> One at a time, with a read-only test after each. Adding three at once is how people end up unable to tell which one is misbehaving.</li>
+<li><strong class="st">🌱 On Team or Enterprise plans.</strong> An owner enables connectors at the organisation level first, then each person connects their own accounts.</li>
+</ol>
+<p><strong>What each one can actually do (worth knowing before you rely on it):</strong></p>
+<ul>
+<li>📧 <strong>Gmail:</strong> search and read your emails, manage labels and threads, and draft replies with full context. Heads-up: Claude drafts only, it cannot send. Every email still goes out manually from your Gmail (<a href="https://support.claude.com/en/articles/10166901-use-google-workspace-connectors" target="_blank">Google Workspace connectors help</a>).</li>
+<li>📆 <strong>Google Calendar:</strong> view events, create, update and delete them, find mutual availability, and respond to invites. This one has full read and write (<a href="https://support.claude.com/en/articles/10166901-use-google-workspace-connectors" target="_blank">same source</a>).</li>
+<li>🗂️ <strong>Notion:</strong> read and update your Notion pages and databases from inside the conversation, so your pipeline or task list becomes something Claude can actually pull from (<a href="https://www.notion.com/help/notion-mcp" target="_blank">Notion MCP help</a>).</li>
+</ul>
+<div class="tip warn"><strong>One real limitation to plan around:</strong> inside a normal chat, connectors run when you ask. There is no background trigger, so this Jarvis answers on demand rather than tapping you on the shoulder (<a href="https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities" target="_blank">connectors overview</a>). If you want it running on a schedule with your laptop shut, that is routines in Claude Code, covered at the end.</div>
+
+<hr class="rule">
+<span class="kicker">from my latest Jarvis reel</span>
+<h2>The updated build manual <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>I rebuilt my own Jarvis for the latest reel and the prompt got a lot better, so here it is in full. Three pieces: a short file that tells Claude who you are, the build manual you paste once, and the connector step that most people skip. Do these three and the rest of this guide gets easier, because Claude is reading your real calendar, inbox and notes instead of guessing.</p>
+<hr class="rule">
+<span class="kicker">make it yours</span>
+<h2>Tell Claude who you are <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This single file is the difference between your Jarvis and a generic bot. It's why yours knows a slipped deadline on project two matters more than a full inbox. In your project folder, ask Claude Code to create a CLAUDE.md, then make it specific. Make a priorities note while you're here, even five ranked bullets, because the brief ranks your day from it and can't invent one.</p>
+<div class="promptwrap">
+<span class="promptlabel">📝 your CLAUDE.md, fill in the brackets</span>
+<pre><code># Who I am
+I'm [name], I [what you do]. I care most about [your #1 goal right now].
+
+# What I'm working on this month
+- [project 1], [project 2], [project 3]
+
+# My priorities, ranked
+1. [top priority]  2. [next]  3. [next]
+
+# My tone
+[e.g. warm, direct, no corporate filler]
+
+# Hard rules
+- Always draft, never send. Never take irreversible actions without asking.
+- Only use the apps I've connected.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">layer two, the backend</span>
+<h2>Paste the build manual <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Don't read this one, just copy the whole block. It's the architecture behind my Jarvis, and it saves itself as a skill you can trigger by phrase.</p>
+<div class="promptwrap">
+<span class="promptlabel">📋 the build manual, paste into Claude Code</span>
+<pre><code>You are my personal assistant, my own Jarvis. First, read my CLAUDE.md so you know who I am, my projects, my priorities and my tone. From now on, act as a proactive chief of staff for me, not a generic chatbot.
+
+Keep this skill fully self-contained: list every source to pull and exactly how to format the brief, because when it runs on a schedule it has no memory of our chats.
+
+Build me a "morning brief" routine, and save it as a reusable skill I can trigger by phrase (like "run my morning brief", "brief me", or "what's on my plate"). When I trigger it, do this:
+
+1. CALENDAR: read today's events from my Google Calendar. Flag anything that needs prep, and any conflicts or gaps.
+2. INBOX: scan my Gmail from the last 24 hours. Group it into needs-a-reply / FYI / ignore. For the needs-a-reply group, draft short replies in my tone and leave them in Drafts. Never send.
+3. PRIORITIES + TASKS: read my priorities and task list (from my Notion or my priorities note), and pick the 3 things that actually matter most today, ranked, with a one-line why for each.
+4. ONE THING TO KNOW: surface a single important signal, a deadline, a number that moved, a follow-up I'm forgetting.
+
+Then write it as 6 to 8 short spoken lines, in my voice, warm and direct, no filler. END with the single most important question: "What should I handle first?"
+
+Write the brief in [your language]. Save it to brief.txt and to a Notion page. Then rewrite jarvis_data.js so the dashboard shows today's real numbers and a one-line activity log per source you read, and mark each connector online or offline based on whether the call actually succeeded. Then read the brief out loud through my Fish Audio voice.
+
+If a source is empty or a connector is down, say so plainly in the brief and mark it offline on the dashboard. Never fill a gap with a plausible guess.
+
+Rules, always: you draft, I approve. Never send email, post, delete, or take any irreversible action on your own. Only pull from the apps I've connected.</code></pre>
+</div>
+<p>So you're not pasting blind, this is the shape of what comes back:</p>
+<div class="cardgrid">
+  <div class="minicard"><b>📅 Calendar</b> Today's events, what needs prep, and where the gaps and clashes are.</div>
+  <div class="minicard"><b>📥 Inbox</b> Last 24 hours sorted into needs-a-reply, FYI and ignore, with drafts waiting.</div>
+  <div class="minicard"><b>🎯 Priorities</b> The three things that actually matter today, ranked, each with a one-line why.</div>
+  <div class="minicard"><b>💡 One thing to know</b> A single signal you would otherwise have missed.</div>
+</div>
+<p>The skill saves itself to <code>~/.claude/skills/&lt;name&gt;/SKILL.md</code>. Ask Claude Code for more the same way, and it reaches for them automatically when a request matches:</p>
+<div class="cardgrid">
+  <div class="minicard"><b>🌅 "run my morning brief"</b> The full routine above.</div>
+  <div class="minicard"><b>✍️ "draft my replies"</b> Triages the inbox and drafts responses in your tone.</div>
+  <div class="minicard"><b>💬 "answer customer queries"</b> Reads your FAQs, drafts support replies, escalates anything not covered.</div>
+  <div class="minicard"><b>📊 "how are my numbers"</b> Pulls your revenue or content stats into a quick read.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">this is the part people skip</span>
+<h2>Authorise your connectors <span class="gi" style="--gl:#4C395C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 2V6M8.5 6V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.00446 7.61331C5.93719 6.74273 6.63957 6 7.53014 6H16.4699C17.3604 6 18.0628 6.74273 17.9955 7.61331L17.8117 9.99197C17.6796 11.7019 17.1011 13.3498 16.132 14.7773L15.5312 15.6622C14.9638 16.4979 14.0077 17 12.9838 17H11.0162C9.99228 17 9.03617 16.4979 8.46881 15.6622L7.86803 14.7773C6.89885 13.3498 6.32041 11.7019 6.18827 9.99197L6.00446 7.61331Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 9H13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A connector is an authorised link between the brain and a service you already use. It's the difference between Claude <em>talking about</em> your calendar and Claude <em>reading</em> it. <strong>Nobody can do this step for you.</strong> The prompt above is portable; your authorisations are yours, and until you grant them your beautiful dashboard is a screensaver.</p>
+<ol class="steps">
+<li><strong class="st">🌐 Authorise on the web, once</strong> Go to <a href="https://claude.ai/customize/connectors">claude.ai/customize/connectors</a>. In the sidebar that's <strong>Customize</strong>, then <strong>Connectors</strong>. Connect one, approve it on that service's own consent screen.</li>
+<li><strong class="st">🔁 The terminal inherits it</strong> You do not set connectors up twice. If you signed into Claude Code with your claude.ai account, connectors you added on the web are automatically available in the terminal. Run <code>/mcp</code> to see them. Ones you've never used hide behind a "Show unused connectors" row.</li>
+<li><strong class="st">✅ Test one read before you trust it</strong> Ask for one read-only fact, then check it against the source with your own eyes. "How many rows in my tasks database are marked done?", then open the database and count. If it matches, move to the next connector.</li>
+<li><strong class="st">➕ Then add the next one</strong> One connector, one verified read, then the next. Slower, and the only route to ever reading the 8am brief without silently re-checking it.</li>
+</ol>
+<div class="tip warn">⚠️ <strong>Do not try to add Gmail or Calendar from the terminal.</strong> Some Anthropic-hosted connectors, Gmail, Google Calendar and Microsoft 365 among them, don't support local OAuth from Claude Code, because the upstream identity provider only accepts the redirect URL claude.ai registered. <code>claude mcp add</code> will fail with "is Anthropic-hosted and doesn't support local OAuth". Connect those on the web and let the CLI inherit them. <code>claude mcp add --transport http NAME https://the-mcp-url/mcp</code> then <code>claude mcp login NAME</code> is for third-party servers that publish their own MCP URL.</div>
+<div class="tip warn">🕵️ <strong>If a connector you definitely added is missing, check your auth first.</strong> Connectors are only fetched when your active login is a claude.ai subscription. They are silently not loaded when <code>ANTHROPIC_API_KEY</code>, <code>ANTHROPIC_AUTH_TOKEN</code> or <code>apiKeyHelper</code> is active, when a third-party provider like Bedrock is in play, or when <code>CLAUDE_CODE_OAUTH_TOKEN</code> holds a long-lived token. Run <code>/status</code> to see which auth is actually live. An <code>ANTHROPIC_API_KEY</code> left in your shell profile from an old experiment will hide every connector you own, with no error.</div>
+<p><strong>What each one can and cannot do.</strong> Worth knowing before you design a routine around it:</p>
+<div class="cardgrid">
+  <div class="minicard"><b>📅 Google Calendar</b> Reads events and shared calendars, creates and updates them, finds mutual availability. It cannot see calendars your own Google account can't see, and it has no memory between runs, it re-queries every time.</div>
+  <div class="minicard"><b>📥 Gmail</b> Searches and reads with natural language, drafts, and <b>sends, replies and forwards</b>. It <b>cannot read attachment contents</b>, only metadata. If your workflow needs the PDF someone sent you, this is not the tool.</div>
+  <div class="minicard"><b>📝 Notion</b> Searches the workspace, fetches pages, queries databases, creates and updates pages. It cannot see anything you haven't shared with the integration, and it rate-limits per workspace.</div>
+  <div class="minicard"><b>🔐 All of them</b> Claude inherits your permissions and can only see and do what you already can. A "the page isn't there" answer is nearly always a sharing problem, not a model problem.</div>
+</div>
+<div class="tip warn">🚨 <strong>The Gmail connector can send. Read that twice.</strong> Drafts-only is a discipline you impose, not a wall the tool provides. Approval prompts are the documented default, but a scheduled cloud routine has no approval prompt at all. So the drafts-only rule has to be written into the skill, written into the routine prompt, and the send capability left out of anything unattended. You'll also find older Anthropic doc pages claiming Claude "cannot send or modify emails". Those are stale, the live tool surface exposes send, reply and forward, and assuming the read-only version is a genuinely unsafe thing to build on.</div>
+<div class="tip">🔧 <strong>The failure that will cost you an evening.</strong> A connector says "needs auth". You reconnect it on the web, watch the green tick, come back to the terminal, and it <em>still</em> says needs auth. The connection is fine. Claude Code is reading a stale local cache at <code>~/.claude/mcp-needs-auth-cache.json</code>, keyed by connector display name, and a successful web re-login doesn't always clear the entry. Back the file up, remove that connector's key (or delete the file, it rebuilds), then <strong>fully quit and reopen</strong> Claude Code, Cmd+Q rather than closing the window. This is internal client state, not a documented API, so re-check the filename if it moves. The durable lesson is the symptom: when the web says connected and the client says needs auth, suspect a stale cache before you suspect your account.</div>
+
+<hr class="rule">
+<span class="kicker">the starter prompts</span>
+<h2>Step 2: the four prompts to run first <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>With the connectors on, keep the prompts plain and specific. The pattern that works: name which apps to look at, say how you want the answer grouped, and tell it what to do with what it finds.</p>
+
+<p><strong>1. The one from the reel.</strong> This is the "what's on my plate today, and reply to the top email" moment, written out properly:</p>
+<div class="promptwrap">
+<span class="promptlabel">🌱 what's on my plate today</span>
+<pre>Look at my Google Calendar, Gmail and Notion and tell me what my day actually looks like. Start with my calendar for today and tomorrow, including anything I need to prepare for rather than only turn up to.
+
+Then scan my unread and recent email and tell me who is waiting on a reply from me, sorted by how long they have been waiting. Group everything into "urgent today" and "can wait", and keep each item to one line so I can read it in ten seconds.
+
+For the single most important email that needs a response, draft a short reply in my voice for me to review. Do not send anything. If something in my Notion tasks is overdue and connected to any of the above, say so at the end.</pre>
+</div>
+
+<p><strong>2. The week ahead.</strong> Run this on a Sunday or Monday morning:</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 plan my week</span>
+<pre>Read my Google Calendar for the next seven days and give me an honest read on the shape of my week. Tell me which days are overbooked, where I have no unbroken focus time longer than 90 minutes, and which meetings look like they could have been a message.
+
+Cross-check it against my Notion tasks and tell me which deadlines are unrealistic given the meetings already booked, naming the specific clash rather than being vague about it.
+
+Finish with three concrete suggestions to fix the worst day, such as which meeting to move and where to move it to. Do not change anything in my calendar, only propose it.</pre>
+</div>
+
+<p><strong>3. Inbox triage with drafts.</strong> The one that saves the most time day to day:</p>
+<div class="promptwrap">
+<span class="promptlabel">👩‍💻 clear my inbox</span>
+<pre>Read my unread Gmail from the last three days and sort every thread into three buckets: reply now, reply later this week, and no reply needed. For each thread in the first bucket, tell me in one line what it is actually asking for, because subject lines lie.
+
+Then draft a reply for every thread in the reply now bucket. Keep them short, warm and direct, in my voice, and never invent a commitment, a price or a date I have not already given. Where you need a detail I have not provided, leave a clearly marked gap rather than guessing.
+
+Save them as drafts and give me a numbered list of what you drafted so I can review them in order.</pre>
+</div>
+
+<p><strong>4. The catch-up.</strong> For the Monday after a week away:</p>
+<div class="promptwrap">
+<span class="promptlabel">💡 what did I miss</span>
+<pre>I have been away since [date]. Pull together what I missed across Gmail, Google Calendar and Notion, and tell me what genuinely needs me rather than everything that happened.
+
+Give me: anything with a deadline that has passed or is within three days, anyone who has followed up more than once and is still waiting, meetings that were booked or moved while I was out, and any Notion page or task assigned to me since I left.
+
+Rank the whole list by consequence of ignoring it, highest first, and tell me the three things to do before lunch today.</pre>
+</div>
+<p>Those four already make it feel like an assistant. Next, make it something you can talk to.</p>
+
+<hr class="rule">
+<span class="kicker">the voice layer</span>
+<h2>Step 3: talk to it out loud <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the bit that makes people say Jarvis, and it needs no setup at all. Voice mode is built into Claude on every plan, Free through Enterprise, on iOS, Android, desktop and the web, though it is built to work best from your phone (<a href="https://support.claude.com/en/articles/11101966-use-voice-mode" target="_blank">Claude help centre, use voice mode</a>).</p>
+<ol class="steps">
+<li><strong class="st">💡 Start voice mode.</strong> On mobile, tap the voice mode icon next to the microphone in the text input field and pick a voice. On desktop or web, tap the sound wave icon in the lower right of the chat window.</li>
+<li><strong class="st">🧠 Pick your listening mode.</strong> Hands-free means Claude listens continuously and answers at natural pauses. Push-to-talk means you hold a button while speaking, which is the one to use in a cafe or anywhere noisy.</li>
+<li><strong class="st">🌱 Speak the prompt, do not type it.</strong> Say "what is on my plate today, and draft a reply to the most urgent email". With your connectors on, it pulls the real calendar and the real inbox and answers out loud.</li>
+<li><strong class="st">👩‍💻 Know what it costs you.</strong> Voice conversations draw on your normal usage limits like any other chat, so a daily spoken brief is fine, all-day chatter is not.</li>
+</ol>
+<div class="tip">💡 Want proper hands-free control from your laptop instead, without touching the screen? <a href="https://voicemode.dev/" target="_blank">Voice Mode</a> is a free, MIT-licensed open-source tool that adds spoken conversations to Claude Code and other MCP clients, and it can run entirely locally with Whisper and Kokoro. It is a heavier lift than tapping an icon, so start with built-in voice mode and add this later if you want the terminal version.</div>
+
+<hr class="rule">
+<span class="kicker">make it repeatable</span>
+<h2>Step 4: save it as a skill so it runs the same way every time <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A <strong>skill</strong> is a small reusable playbook you save once and trigger by name, instead of retyping the same instructions. It is one folder with a <code>SKILL.md</code> file that tells Claude what to do when you call it (<a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude" target="_blank">use skills in Claude</a>).</p>
+<p><strong>The trick most people miss:</strong> you don't have to write the skill by hand. Ask Claude to write it for you, then save what it gives you.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 write the skill for me</span>
+<pre>Write me a Claude skill called "morning brief" that turns my daily check-in into one command. When I trigger it, it should read my Google Calendar, Gmail and Notion and output four things in this order: what is overdue, who is waiting on a reply from me, my three priorities for today, and anything on the calendar I need to prepare for rather than only attend.
+
+Give it back to me as a complete SKILL.md file I can save, with a short lowercase-hyphenated name (do not put "claude" or "anthropic" in the name, or the upload gets rejected) and a description that says both what it does and when to use it, so it triggers on its own when I say "run my morning brief".
+
+In the instructions, tell yourself to never invent an item that is not in one of the three sources, to keep every line to one sentence, and to end with a single sentence naming what to do first. Then tell me how to save it as a zipped folder I can upload.</pre>
+</div>
+<p><strong>Then save it:</strong></p>
+<ol class="steps">
+<li><strong class="st">🌱 Save the file.</strong> Take the SKILL.md Claude wrote and put it in a folder, for example a folder called <code>morning-brief</code>.</li>
+<li><strong class="st">💡 Zip that folder.</strong> The upload takes a zip, not a loose file.</li>
+<li><strong class="st">👩‍💻 Upload it to Claude.</strong> Go to <strong>Customize</strong>, then <strong>Skills</strong>, click <strong>Add</strong>, choose <strong>Upload a skill</strong>, and pick your zip. Custom skills work on every plan, Free through Enterprise (<a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude" target="_blank">use skills in Claude</a>, and <a href="https://support.claude.com/en/articles/12512198-creating-custom-skills" target="_blank">creating custom skills</a>).</li>
+<li><strong class="st">🧠 Run it once and fix it.</strong> Trigger the skill, read what comes back, and tell Claude what to change. Two or three passes and the brief comes out exactly how you want it every morning.</li>
+</ol>
+<p><strong>Now trigger it:</strong> in any new chat say <strong>run my morning brief</strong>, and Claude pulls calendar, inbox and pipeline into one summary without you re-explaining a thing.</p>
+
+<hr class="rule">
+<span class="kicker">go further</span>
+<h2>3 bonus skills to build next <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Once the morning brief works, the same pattern (ask Claude to write the skill, save it, trigger by name) unlocks a lot more:</p>
+<div class="promptwrap">
+<span class="promptlabel">1 · deck from idea</span>
+<pre>Write me a Claude skill called "deck from idea". When I give it a topic, it should outline a short slide deck of five to seven slides, one clear point per slide, written in my voice and ready for me to drop straight into slides.
+
+The instructions should tell you to open with the single claim the deck is making, give every slide a headline that says something rather than naming a category, and put the supporting detail in speaker notes instead of on the slide. If I have not told you who the audience is, ask before writing.
+
+Return it as a complete SKILL.md with a name and a description that says when to use it.</pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">2 · inbox triage</span>
+<pre>Write me a Claude skill called "inbox triage" that uses my Gmail connector. When triggered, it should read my unread email and sort every thread into "reply now", "reply later" and "no reply needed", with a one-line summary of what each thread in the first group is actually asking for.
+
+It should then draft short replies for the "reply now" group in my voice, never inventing a commitment, price or date I have not already given, and leaving a clearly marked gap where it needs a detail from me. Drafts only, never send.
+
+Return it as a complete SKILL.md, including the rule that it always tells me how many threads it read so I know nothing was skipped.</pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">3 · week ahead</span>
+<pre>Write me a Claude skill called "week ahead" that uses my Google Calendar connector. When triggered, it should read the next seven days and tell me where I am overbooked, where I have no unbroken focus block longer than 90 minutes, and which meetings look like they could have been a message.
+
+The instructions should have it name the specific meeting in each case rather than describing the problem in general terms, and finish with three concrete fixes for the worst day, including where to move something to.
+
+It must never edit my calendar, only propose changes. Return it as a complete SKILL.md.</pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">if you want it automatic</span>
+<h2>Step 5 (optional): have it run before you wake up <span class="gi" style="--gl:#9A7BBC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Everything above answers when you ask. If you want the brief waiting for you instead, that is a routine: a saved prompt plus connectors that runs on Anthropic's cloud infrastructure, so it keeps working with your laptop closed. Routines are available on Pro, Max, Team and Enterprise plans with Claude Code on the web enabled, and you create them at <code>claude.ai/code/routines</code> or with <code>/schedule</code> in the CLI (<a href="https://code.claude.com/docs/en/routines" target="_blank">routines documentation</a>).</p>
+<div class="tip warn">💡 Two things worth knowing before you schedule anything. A routine runs autonomously with no approval prompts, and it can use every tool from any connector you include, writes included, so add only the connectors that brief actually needs and tell it explicitly to draft and never send. The minimum schedule interval is one hour, and a green run status only means the session started, not that it did what you wanted, so read the first week of runs properly.</div>
+
+<hr class="rule">
+<span class="kicker">pick your level</span>
+<h2>How to get the most out of it <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+  <div class="minicard"><b>🌱 If you're starting out</b> build only the morning brief first. One working skill you actually run every day beats five half-finished ones. Connect Calendar and Gmail to begin with, and add Notion once you trust it.</div>
+  <div class="minicard"><b>💡 If you're further along</b> chain skills together ("run my morning brief, then draft the replies it flagged"), and keep each skill narrow. A tight skill with a clear name and description triggers reliably, a bloated one that tries to do everything will not. Save your best prompts as skills the moment you have typed them twice.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the honest bit</span>
+<h2>An honest heads-up <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip">This is not a hands-off robot on day one. In a normal chat, connectors run when you open it and ask, and Gmail is draft-only by design, so you stay the one who hits send. That is a feature rather than a bug: your assistant surfaces and drafts, you keep the final call. Start with the one brief, live with it for a week, then add the next skill.</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

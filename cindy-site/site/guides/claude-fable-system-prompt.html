@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Fable 5&#x27;s system prompt: the real story + the patterns worth stealing · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="A plain-English walkthrough of the Claude Fable 5 system prompt and the patterns worth stealing for your own AI instructions.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-fable-system-prompt">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Claude Fable 5&#x27;s system prompt: the real story + the patterns worth stealing">
+<meta property="og:description" content="A plain-English walkthrough of the Claude Fable 5 system prompt and the patterns worth stealing for your own AI instructions.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-fable-system-prompt">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude Fable 5&#x27;s system prompt: the real story + the patterns worth stealing">
+<meta name="twitter:description" content="A plain-English walkthrough of the Claude Fable 5 system prompt and the patterns worth stealing for your own AI instructions.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Learn from Anthropic's system-prompt patterns", u:"guides/claude-fable-system-prompt.html", topic:"power", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Power-user</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Claude Fable 5&#x27;s system prompt: the real story + the patterns worth stealing</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 A plain-English walkthrough of the Claude Fable 5 system prompt and the patterns worth stealing for your own AI instructions.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<h2>The links <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+  <li>📂 <strong>The viral GitHub extraction</strong> (about 120,000 characters, roughly 1,600 lines): <a href="https://github.com/elder-plinius/CL4R1T4S/blob/main/ANTHROPIC/CLAUDE-FABLE-5.md" target="_blank">github.com/elder-plinius/CL4R1T4S</a></li>
+  <li>🪞 <strong>A second community mirror</strong> that also tracks other AI tools' prompts: <a href="https://github.com/asgeirtj/system_prompts_leaks" target="_blank">github.com/asgeirtj/system_prompts_leaks</a></li>
+  <li>📖 <strong>Anthropic's official published system prompts</strong> (yes, they publish them, Fable 5 entry dated June 9, 2026): <a href="https://platform.claude.com/docs/en/release-notes/system-prompts" target="_blank">platform.claude.com/docs/en/release-notes/system-prompts</a></li>
+  <li>🗞 <strong>The Fable 5 launch post</strong> (June 9, 2026): <a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">anthropic.com/news/claude-fable-5-mythos-5</a></li>
+  <li>🔁 <strong>The redeployment post</strong> (why it "came back" on July 1, 2026): <a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank">anthropic.com/news/redeploying-fable-5</a></li>
+</ul>
+
+<hr class="rule">
+<span class="kicker">the timeline</span>
+<h2>What actually happened <span class="gi" style="--gl:#5F4A88" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+  <li>🗓 <strong>June 9, 2026:</strong> Anthropic releases Claude Fable 5 and publishes its core system prompt on the docs page above.</li>
+  <li>🔍 <strong>June 9, 2026, hours after launch:</strong> a community extraction of the full claude.ai prompt (including the tool layer) lands on GitHub.</li>
+  <li>⏸ <strong>June 12, 2026:</strong> US export controls temporarily suspend Fable 5 access (source: the redeployment post above).</li>
+  <li>▶️ <strong>July 1, 2026:</strong> Fable 5 comes back with updated safety classifiers, which is the "just came back" you keep hearing.</li>
+</ul>
+<p>So "leaked" is the viral word, and I kept it because that is what everyone calls it. The accurate version: Anthropic publishes the core prompt itself, and the GitHub file is a community extraction that additionally captures tool instructions the published page only references. Anthropic has not confirmed the extraction is complete or unmodified, and it reflects claude.ai specifically (the API gives you no default system prompt, and Claude Code ships its own instructions).</p>
+
+<hr class="rule">
+<span class="kicker">copy these</span>
+<h2>The 3 patterns worth stealing <span class="gi" style="--gl:#CD5174" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M14 2.20004C13.3538 2.06886 12.6849 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.3151 21.9311 10.6462 21.8 10" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0303 11.9625L16.5832 7.4096M19.7404 4.34462L19.1872 2.35748C19.0853 2.03011 18.6914 1.89965 18.4259 2.11662C16.9898 3.29018 15.4254 4.87091 16.703 7.36419C19.2771 8.56455 20.7466 6.94584 21.8733 5.5853C22.0975 5.3146 21.9623 4.90767 21.6247 4.81005L19.7404 4.34462Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>These come straight from the file, and they work in any CLAUDE.md, project instructions, custom instructions box, or agent prompt.</p>
+
+<hr class="rule">
+<span class="kicker">pattern one</span>
+<h2>1. Named sections with one job</h2>
+<p>The prompt is not one wall of rules. Every rule lives inside a scoped section like <code>tone_and_formatting</code>, <code>search_instructions</code>, <code>refusal_handling</code>, or <code>user_wellbeing</code>.</p>
+<p>✂️ <strong>Steal it:</strong> split your instructions into sections like <code>## voice</code>, <code>## tools</code>, <code>## formatting</code>, <code>## never do</code>. One topic per section, no rule floating homeless at the bottom.</p>
+
+<hr class="rule">
+<span class="kicker">pattern two</span>
+<h2>2. Decision rules, not vibes</h2>
+<p>Claude is not told "search when useful". It gets explicit if-then logic: answer directly for stable knowledge, always search for anything that changes (roles, prices, news, new releases), and scale effort to the task (one search for a single fact, several for deep research, suggest the Research feature past that).</p>
+<p>⚙️ <strong>Steal it:</strong> for every tool or recurring choice in your setup, write the trigger and the action. "If the request mentions a brand deal, read the deals folder first. If a stat is older than 6 months, re-verify before using it."</p>
+
+<hr class="rule">
+<span class="kicker">pattern three</span>
+<h2>3. Worked examples, including what not to do</h2>
+<p>Rules come with demonstrations. There are dedicated example sections, and even a literal "What not to do" list followed by "What this should feel like", with a good phrasing shown next to a weak one.</p>
+<p>🧪 <strong>Steal it:</strong> under each instruction, paste one real example of output you loved and one you rejected, labelled. Models copy examples far more reliably than they follow adjectives like "professional" or "engaging".</p>
+<div class="tip">🎁 <strong>Bonus pattern I could not fit in the reel: severity tiers.</strong> The copyright section is written as a hard limit ("NON-NEGOTIABLE") while style preferences stay soft, so the model knows which rules can flex. Mark your own dealbreakers the same way.</div>
+
+<hr class="rule">
+<span class="kicker">run this</span>
+<h2>The exact rewrite prompt <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>Download the extraction as <code>claude-fable-5.md</code>, put it in a folder with your current instructions file, then run this in Claude (Claude Code or a Claude project both work):</p>
+<div class="promptwrap">
+<span class="promptlabel">🛠️ the rewrite prompt</span>
+<pre>Read my current instructions in [your-file.md] and the extracted Claude Fable 5 system prompt in claude-fable-5.md.
+
+Rewrite my instructions using Anthropic's structural patterns:
+1. Named sections with one job each.
+2. Explicit decision rules (trigger plus action) for every tool and recurring choice.
+3. At least one worked example per section, including one "what not to do".
+4. Severity levels, so hard limits are clearly separated from soft preferences.
+5. A short "critical reminders" block at the end repeating only the 3 rules that matter most.
+
+Keep all of my original intent. Where my current instructions are ambiguous, list the ambiguity and ask me instead of guessing.</pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">what to watch</span>
+<h2>About running it on open models <span class="gi" style="--gl:#987CBD" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20 22C20 17.5817 16.4183 14 12 14C7.58172 14 4 17.5817 4 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.375 8.25H9.25M9.5 8.25C9.5 8.38807 9.38807 8.5 9.25 8.5C9.11193 8.5 9 8.38807 9 8.25C9 8.11193 9.11193 8 9.25 8C9.38807 8 9.5 8.11193 9.5 8.25Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.875 8.25H14.75M15 8.25C15 8.38807 14.8881 8.5 14.75 8.5C14.6119 8.5 14.5 8.38807 14.5 8.25C14.5 8.11193 14.6119 8 14.75 8C14.8881 8 15 8.11193 15 8.25Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15.1538 4H8.84615C7.59095 4 6.96334 4 6.47397 4.22025C5.91693 4.47095 5.47095 4.91693 5.22025 5.47397C5 5.96334 5 6.59095 5 7.84615C5 9.85448 5 10.8586 5.3524 11.6417C5.75353 12.5329 6.46709 13.2465 7.35835 13.6476C8.14135 14 9.14552 14 11.1538 14H12.8462C14.8545 14 15.8586 14 16.6417 13.6476C17.5329 13.2465 18.2465 12.5329 18.6476 11.6417C19 10.8586 19 9.85448 19 7.84615C19 6.59095 19 5.96334 18.7797 5.47397C18.529 4.91693 18.0831 4.47095 17.526 4.22025C17.0367 4 16.4091 4 15.1538 4Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>You will see people loading this prompt into open-weight models to make them behave more like Claude. The models named in the viral posts are real and genuinely good: GLM-5.2 by Z.ai (open weights, June 2026, <a href="https://huggingface.co/zai-org/GLM-5.2" target="_blank">huggingface.co/zai-org/GLM-5.2</a>) and Kimi K2.7-Code by Moonshot AI (open weights, June 2026, <a href="https://huggingface.co/moonshotai/Kimi-K2.7-Code" target="_blank">huggingface.co/moonshotai/Kimi-K2.7-Code</a>).</p>
+<div class="tip warn">One honest note: a system prompt transfers instructions, not capability. Expect Claude-style structure and manners from this trick, not Claude-level intelligence. The patterns above are the part that upgrades every model you touch, including the ones you already pay for.</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a cozy personal internet space with Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="This walks you from a blank chat to a live site on your own link, with every prompt written out in full.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/cozy-personal-internet-space-website">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build a cozy personal internet space with Claude">
+<meta property="og:description" content="This walks you from a blank chat to a live site on your own link, with every prompt written out in full.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/cozy-personal-internet-space-website">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build a cozy personal internet space with Claude">
+<meta name="twitter:description" content="This walks you from a blank chat to a live site on your own link, with every prompt written out in full.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build a cozy personal internet space with Claude", u:"guides/cozy-personal-internet-space-website.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building with AI</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Build a cozy personal internet space with Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This walks you from a blank chat to a live site on your own link, with every prompt written out in full.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the idea</span>
+<h2>What a personal internet space actually is <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A normal portfolio is a stack of sections you scroll through: hero, about, work, contact. A personal internet space throws that structure out. You get one wide canvas with lots of quiet white space, and the things you care about are placed on it as discrete objects: a notebook, a polaroid, a playlist, a half-finished project. Navigation is exploration. You click an object and it opens. Nothing scrolls past you in a set order, so the visitor wanders instead of skimming, and wandering is what makes it stick in their memory.</p>
+<p>It reads like a designer-only thing. It is not. The whole thing is one HTML file, and Claude writes that file for you while you describe the room in normal sentences.</p>
+
+<div class="cardgrid">
+<div class="minicard"><b>🌱 Objects, not sections</b> Each thing on the canvas is one idea: a project, a book you reread, your desk, your playlist. If it needs a paragraph of setup, it is not an object yet.</div>
+<div class="minicard"><b>💡 Click, do not scroll</b> Clicking an object opens a small panel or card in place. The canvas stays put. That single rule is what makes it feel like a room instead of a page.</div>
+<div class="minicard"><b>🧠 Generous emptiness</b> The white space is doing the work. Six to ten objects on a big canvas feels considered. Twenty objects feels like a junk drawer.</div>
+<div class="minicard"><b>👩‍💻 One page, one file</b> No CMS, no builder, no template subscription. One HTML file you own, hosted free, that loads instantly.</div>
+</div>
+
+<div class="tip calm">🌱 <strong>Sites in this spirit, to look at before you build.</strong> <a href="https://bruno-simon.com" target="_blank">bruno-simon.com</a> (a portfolio you literally drive around), <a href="https://neal.fun" target="_blank">neal.fun</a> (a shelf of playful things rather than a menu), <a href="https://maggieappleton.com/garden" target="_blank">maggieappleton.com/garden</a> (a "digital garden" you wander rather than read in order), and <a href="https://joshwcomeau.com" target="_blank">joshwcomeau.com</a> (a personal site with warmth and playfulness baked into every element). Yours does not need 3D. It needs a point of view.</div>
+
+<hr class="rule">
+<span class="kicker">before you prompt</span>
+<h2>Step one: write your ten objects <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Do this in a notes app before you open Claude. It takes five minutes and it is the difference between a site that feels like you and a site that feels like a template. List ten things that would be in the room if someone visited you: not job titles, actual things.</p>
+<ol class="steps">
+<li><strong class="st">📓 Two things you make.</strong> Projects, writing, a side thing nobody paid you for. For each one write the outcome in a single line, for example "a Notion system that runs my whole content calendar".</li>
+<li><strong class="st">📚 Two things you consume.</strong> A book you have reread, a channel you never skip, an album on repeat. These are the objects strangers actually click first, because they are the human ones.</li>
+<li><strong class="st">🪴 Two things from your physical space.</strong> Your desk, your plant, your coffee order, the light in your room at 4pm. This is where the cosiness comes from.</li>
+<li><strong class="st">🧠 Two opinions.</strong> Things you believe about your work that not everyone agrees with. One line each. This is what makes a hiring manager remember you.</li>
+<li><strong class="st">💌 Two ways to reach you.</strong> Email, one social, and if you are job hunting, a plain link to your CV. Keep these as objects too, not a footer.</li>
+</ol>
+<div class="tip">💡 <strong>Write the one-line label for each object now.</strong> Claude builds much better rooms when you hand it "a chipped mug: my 4pm coffee, the only meeting I never move" instead of "coffee". The specific detail is the whole aesthetic.</div>
+
+<hr class="rule">
+<span class="kicker">prompt one</span>
+<h2>The build prompt <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Open a new chat at <a href="https://claude.com/download" target="_blank">claude.ai or the Claude app</a> and paste this with your ten objects filled in. Claude builds it as an Artifact, a live preview you can click around in right there in the chat (<a href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank">how artifacts work</a>). The free plan can do this, though you will hit usage limits sooner, so keep the room to one chat.</p>
+<div class="promptwrap">
+<span class="promptlabel">👩‍💻 build my personal internet space</span>
+<pre><code>Build me a single-page personal website in the style people call a "personal internet space": one large calm canvas with my favourite things placed on it as separate objects, explored by clicking rather than by scrolling.
+
+Make it one self-contained HTML file with the CSS and JavaScript inline, no frameworks, no build step, no external libraries except Google Fonts. The page must fit the viewport with no vertical scrolling on desktop. Place my objects at deliberate, uneven positions across the canvas with a lot of empty space between them, so it feels like a room rather than a grid. Each object is a small piece of text with an optional emoji or simple CSS shape, and hovering one lifts it very slightly and shows its label. Clicking an object opens a small card in place, over the canvas, with that object's detail and a close button, and only one card can be open at a time. Pressing Escape closes it.
+
+Design direction: a warm off-white background, one accent colour, generous spacing, and a serif font for headings with a clean sans for body text. Quiet and cosy, not corporate, and no drop shadows everywhere. Put my name in the top left in small text and nothing else that looks like a navigation bar.
+
+Here are my objects, each with the label and the detail that opens when clicked:
+1. [object] - [label] - [what the card says]
+2. [object] - [label] - [what the card says]
+3. [object] - [label] - [what the card says]
+4. [object] - [label] - [what the card says]
+5. [object] - [label] - [what the card says]
+6. [object] - [label] - [what the card says]
+7. [object] - [label] - [what the card says]
+8. [object] - [label] - [what the card says]
+9. [object] - [label] - [what the card says]
+10. [object] - [label] - [what the card says]
+
+Before you write any code, ask me up to four questions about anything you need to place these well.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">prompt two</span>
+<h2>The tweak loop, in normal sentences <span class="gi" style="--gl:#A68307" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.4249 4.60509L17.4149 3.6151C18.2351 2.79497 19.5648 2.79497 20.3849 3.6151C21.205 4.43524 21.205 5.76493 20.3849 6.58507L19.3949 7.57506M16.4249 4.60509L9.76558 11.2644C9.25807 11.772 8.89804 12.4078 8.72397 13.1041L8 16L10.8959 15.276C11.5922 15.102 12.228 14.7419 12.7356 14.2344L19.3949 7.57506M16.4249 4.60509L19.3949 7.57506" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18.9999 13.5C18.9999 16.7875 18.9999 18.4312 18.092 19.5376C17.9258 19.7401 17.7401 19.9258 17.5375 20.092C16.4312 21 14.7874 21 11.4999 21H11C7.22876 21 5.34316 21 4.17159 19.8284C3.00003 18.6569 3 16.7712 3 13V12.5C3 9.21252 3 7.56879 3.90794 6.46244C4.07417 6.2599 4.2599 6.07417 4.46244 5.90794C5.56879 5 7.21252 5 10.5 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The first version will be about 70 percent right. You do not need CSS vocabulary to fix the rest. Describe what you want the way you would to a friend, one change at a time, in the same chat. Real messages that work: "make the notebook bigger and move it away from the plant", "the background is too grey, warm it up", "the cards open too fast, slow that down", "everything is drifting to the left, spread it out". When you want a bigger pass, use this one.</p>
+<div class="promptwrap">
+<span class="promptlabel">✍️ make it feel like my room</span>
+<pre><code>The layout works, now I want the feeling right. Here is the mood I am going for: [describe it in your own words, for example "late afternoon light, secondhand bookshop, slightly imperfect"].
+
+Adjust the palette, the typography, the spacing, and the motion to match that mood, and change nothing about which objects exist or what their cards say. Give me three distinct versions of the same room rather than one compromise: version one leans warm and paper-like, version two leans cool and quiet, version three is your own interpretation of my mood description. For each version, tell me in two lines what you changed and why it matches the mood, so I can learn the vocabulary. Keep every version accessible: real text rather than images of text, a colour contrast that passes for body copy, and motion that respects prefers-reduced-motion.</code></pre>
+</div>
+<div class="tip">💡 <strong>Ask for versions, not fixes.</strong> "Make it warmer" gets you one small edit. "Give me three versions and tell me what you changed" gets you options plus the language to ask better next time. That prefers-reduced-motion line is a real accessibility setting, not decoration (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion" target="_blank">MDN</a>).</div>
+
+<hr class="rule">
+<span class="kicker">prompt three</span>
+<h2>The phone fix (do not skip this) <span class="gi" style="--gl:#5A3F7C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 2H10.5C8.14298 2 6.96447 2 6.23223 2.73223C5.5 3.46447 5.5 4.64298 5.5 7V17C5.5 19.357 5.5 20.5355 6.23223 21.2678C6.96447 22 8.14298 22 10.5 22H13.5C15.857 22 17.0355 22 17.7678 21.2678C18.5 20.5355 18.5 19.357 18.5 17V7C18.5 4.64298 18.5 3.46447 17.7678 2.73223C17.0355 2 15.857 2 13.5 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 19H12M12.25 19C12.25 19.1381 12.1381 19.25 12 19.25C11.8619 19.25 11.75 19.1381 11.75 19C11.75 18.8619 11.8619 18.75 12 18.75C12.1381 18.75 12.25 18.8619 12.25 19Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Here is the thing that breaks every canvas-style site: objects positioned by hand look beautiful on a laptop and become an unreadable pile on a phone. Most of your visitors are on a phone. Run this before you publish.</p>
+<div class="promptwrap">
+<span class="promptlabel">📱 make the room work on mobile</span>
+<pre><code>Now make this work properly on a phone without losing the feeling of a room.
+
+On screens narrower than 700px, stop trying to hold the hand-placed positions. Instead, let the objects flow into a soft staggered single column with uneven left and right offsets so it still reads as scattered rather than as a list, and allow vertical scrolling only at that size. Make every object at least 44px tall and wide so it is comfortably tappable, replace hover states with a clear pressed state since phones have no hover, and make the detail cards open as a panel that slides up from the bottom and can be dismissed by tapping outside it.
+
+Then check the whole page for anything that assumes a mouse or a wide screen, list what you found, and fix it. Tell me exactly which breakpoints you used so I can adjust them myself later.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">prompt four</span>
+<h2>The layer that gets you hired <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Memorable gets you remembered. Proof gets you hired. If this site is doing any career work, one of your objects should quietly hold evidence: what you built, what changed because of it, and what it took. This prompt adds that without turning your room back into a resume.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 add the proof layer</span>
+<pre><code>I want two or three of my objects to carry real proof of my work without the site turning into a CV.
+
+For each of these objects, restructure the card that opens so it holds four short parts: what the thing is in one sentence, the situation before it existed, what specifically changed after (with a real number if I give you one), and what I actually did. Keep every part to one or two lines and keep my voice, not corporate language. Here are the details: [paste the messy version of each project, including any numbers you have].
+
+Then add one small object I have not thought of: a plain "what I am looking for right now" note in one honest sentence, positioned somewhere calm on the canvas. Draft three options for that sentence based on what you have learned about me. Do not add any other new objects.</code></pre>
+</div>
+<div class="tip calm">🌱 If you do not have numbers, do not invent them. "Cut the weekly report from three hours to twenty minutes" is proof. So is "I made this because nobody had built it for our team". Specific beats impressive.</div>
+
+<hr class="rule">
+<span class="kicker">go live</span>
+<h2>Put it on a real link, free <span class="gi" style="--gl:#9A7BBC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>An artifact link is fine for showing a friend, but a personal space should live at your own address. This takes about ten minutes and costs nothing unless you buy a domain.</p>
+<ol class="steps">
+<li><strong class="st">📄 Get the file.</strong> In the artifact panel, use the copy or download option to save the code as <code>index.html</code>. It has to be named exactly that. If Claude split it into separate CSS and JS, ask it to put everything back into one file first.</li>
+<li><strong class="st">🖼️ Sort your images, if any.</strong> Photos straight off a phone are several megabytes and will make the room load slowly. Compress them first with <a href="https://squoosh.app" target="_blank">Squoosh</a> (free, runs in your browser, nothing uploaded), then put them in the same folder and tell Claude the filenames so it wires them in.</li>
+<li><strong class="st">🚀 Drag it onto Netlify Drop.</strong> Go to <a href="https://app.netlify.com/drop" target="_blank">app.netlify.com/drop</a> and drag the folder holding your <code>index.html</code> into the page. You get a live URL in seconds. The free tier covers a personal site comfortably (<a href="https://www.netlify.com/pricing/" target="_blank">Netlify pricing</a>).</li>
+<li><strong class="st">🌱 Or use GitHub Pages.</strong> If you would rather it live in a repo you control, make a public repository, add <code>index.html</code>, and turn Pages on in the repository settings. Free, and the URL is <code>yourname.github.io/reponame</code> (<a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site" target="_blank">GitHub's own walkthrough</a>).</li>
+<li><strong class="st">💌 Point your own domain at it (optional).</strong> A .com is usually 10 to 20 dollars a year from any registrar. Both Netlify and GitHub Pages let you attach a custom domain for free on top of that, in their domain settings, so the only cost is the name itself (<a href="https://docs.netlify.com" target="_blank">Netlify docs</a>).</li>
+<li><strong class="st">🔁 Keep the chat.</strong> Do not close the Claude conversation. When you want to change the room next month, come back to that chat, describe the change, and download the updated file. That chat is now your CMS.</li>
+</ol>
+
+<div class="tip warn">👩‍💻 <strong>Two honest limits.</strong> Claude writes the site but does not host it, so the publishing step above is genuinely required. And a one-file site has no dashboard: every future edit happens by asking Claude and re-uploading the file. That is a fair trade for owning the thing outright, but it is worth knowing before you start.</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank">What artifacts are and how to use them (Claude Help Center)</a><br>
+  <a href="https://claude.com/pricing" target="_blank">Claude plans and what the free tier includes</a><br>
+  <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site" target="_blank">Creating a GitHub Pages site (GitHub Docs)</a><br>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion" target="_blank">prefers-reduced-motion (MDN)</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a focus system with Claude (anti-scroll prompts) · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Build a focus system with Claude (anti-scroll prompts). A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/build-a-focus-system-with-claude-anti-scroll-prompts">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build a focus system with Claude (anti-scroll prompts)">
+<meta property="og:description" content="Build a focus system with Claude (anti-scroll prompts). A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/build-a-focus-system-with-claude-anti-scroll-prompts">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build a focus system with Claude (anti-scroll prompts)">
+<meta name="twitter:description" content="Build a focus system with Claude (anti-scroll prompts). A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Build a focus system with Claude (anti-scroll prompts)","description":"You commented FOCUS, so here are the prompts to build a focus system with Claude that actually stops the scroll, not just advises you. The trick: have Claude...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/build-a-focus-system-with-claude-anti-scroll-prompts"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build a focus system with Claude (anti-scroll prompts)", u:"guides/build-a-focus-system-with-claude-anti-scroll-prompts.html", topic:"productivity", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Productivity</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Build a focus system with Claude (anti-scroll prompts)</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented FOCUS, so here are the prompts to build a focus system.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the problem</span>
+<h2><span class="gi" style="--gl:#846DAE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Why willpower loses (and what beats it)</h2>
+<p>The feed runs on variable rewards, the same trick that makes slot machines work, with no natural stopping cue. It is literally engineered to beat willpower, so trying harder is a losing game. What actually works is friction: putting something physical between the impulse and the app. And here's the counterintuitive part the research keeps finding, a small speed bump you can bypass beats a hard wall you resent, because it turns an autopilot tap into a conscious choice. That is exactly the kind of thing Claude can build for you, no coding needed. Every prompt below tells Claude to keep it reversible, so this is friction by design, never a prison.</p>
+<hr class="rule">
+<span class="kicker">start here</span>
+<h2><span class="gi" style="--gl:#8A878E" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span> 1. Map your danger windows</h2>
+<p>Start here, because everything else gets built around your real pattern, not a generic one.</p>
+<div class="promptwrap">
+<span class="promptlabel">🕒 Find your real scroll windows</span>
+<pre><code>I want to build a focus system to stop myself doomscrolling, built around my actual patterns. Here is my screen-time data: [paste your weekly Screen Time or Digital Wellbeing summary, or just describe your typical day].
+
+Analyse it and give me back:
+- My 2 to 3 highest-risk windows (the exact hours I'm most likely to fall into a scroll)
+- The real trigger behind each one (boredom, anxiety, avoiding a hard task, or a transition like just-woke-up or the post-lunch slump)
+- The specific apps and sites that eat the most of my time
+- For each window, a pre-decided replacement: the specific thing I'll do instead, because an empty moment is when the scroll wins
+
+Put it in a short table and save it as focus-profile.txt, because the rest of my system will be built around these exact windows and sites.</code></pre>
+</div>
+<hr class="rule">
+<h2><span class="gi" style="--gl:#DC633E" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 13V11C3 7.22876 3 5.34315 4.17157 4.17157C5.34315 3 7.22876 3 11 3H13C16.7712 3 18.6569 3 19.8284 4.17157C21 5.34315 21 7.22876 21 11V13C21 16.7712 21 18.6569 19.8284 19.8284C18.6569 21 16.7712 21 13 21H11C7.22876 21 5.34315 21 4.17157 19.8284C3 18.6569 3 16.7712 3 13Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 9H3H7.5M12 9V15M12 9H21H16.5M12 15H3H7.5M12 15H21H16.5M7.5 3.5V9M7.5 9H16.5M16.5 3.5V9M7.5 15V20.5M7.5 15H16.5M16.5 15V20.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> 2. Build a real site blocker (Claude Code)</h2>
+<p>This uses the hosts file, the same method the trusted open-source StevenBlack project uses, so blocked sites simply never load in any browser.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧱 The blocker build brief</span>
+<pre><code>Build me a website blocker for my computer using the hosts file, so blocked sites won't load in any browser. I'm on [Mac / Windows / Linux], so give me the exact steps for my system. I'm not technical, so create the scripts for me and explain each part in plain terms.
+
+Must-haves:
+- Back up my current hosts file first, and give me a one-command restore, so this can never break anything
+- Block these sites AND their www and m (mobile) versions, since the hosts file only matches exact names: instagram.com, tiktok.com, x.com, youtube.com, reddit.com [edit the list]. Use 0.0.0.0 so the connection fails instantly
+- One command to turn blocking ON, one to turn it OFF, never make me hand-edit files
+- Flush my DNS cache automatically after each change using the correct command for my OS, so it takes effect right away
+- Only ever touch my block list, never system, login, or payment sites
+
+Then warn me about the one thing that quietly defeats this: browsers with "secure DNS" (DNS over HTTPS) turned on can skip the hosts file. Tell me exactly where to turn secure DNS off in Chrome, Edge and Firefox so the block actually holds.</code></pre>
+</div>
+<hr class="rule">
+<h2><span class="gi" style="--gl:#DD5E79" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M12 8V12L14 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> 3. Put it on a schedule (no willpower needed)</h2>
+<p>A blocker you have to remember to switch on is a blocker you'll forget. This makes it automatic.</p>
+<div class="promptwrap">
+<span class="promptlabel">⏰ Make it run without you</span>
+<pre><code>Now make that blocker run on a schedule so I never decide in the moment. Use the danger windows from my focus-profile: block during [9am to 5pm on weekdays] and lift automatically outside them. Use the right scheduler for my system and set it up step by step: launchd on Mac, Task Scheduler on Windows, cron on Linux. Do not use cron on a Mac, it won't fire reliably after the machine sleeps.
+
+Two rules:
+- Give me a panic unlock that works but costs effort: to lift the block early, I have to type out a full sentence I choose, like a promise to myself. Possible, but never a mindless tap
+- Never lock me out of anything but my listed sites. Add an automatic daily expiry so the block always ends on its own, and show me how to remove the whole schedule in one command if I ever want to</code></pre>
+</div>
+<hr class="rule">
+<h2><span class="gi" style="--gl:#2092C4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span> 4. A focus timer that pings you (and logs your streak)</h2>
+<div class="promptwrap">
+<span class="promptlabel">⏲️ Pomodoro with a streak log</span>
+<pre><code>Build me a background focus timer for [Mac / Windows / Linux].
+
+- 25 minutes focus, 5 minute break, a longer 15 minute break every 4th round (classic Pomodoro), all editable at the top of the file
+- A real desktop notification when each focus block ends and the moment a break runs over. Use osascript or terminal-notifier on Mac, BurntToast in PowerShell on Windows, notify-send on Linux
+- Log every finished focus block to a file with the date, so I can see my streak and how many real deep-work hours I did this week, and print today's count when I start
+- One short command to start a session
+- Bonus: while a focus block is running, automatically turn my site blocker ON, and switch it off on breaks
+
+Explain how to run it in plain terms.</code></pre>
+</div>
+<hr class="rule">
+<span class="kicker">don't skip this one</span>
+<h2><span class="gi" style="--gl:#5A3F7C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 2H10.5C8.14298 2 6.96447 2 6.23223 2.73223C5.5 3.46447 5.5 4.64298 5.5 7V17C5.5 19.357 5.5 20.5355 6.23223 21.2678C6.96447 22 8.14298 22 10.5 22H13.5C15.857 22 17.0355 22 17.7678 21.2678C18.5 20.5355 18.5 19.357 18.5 17V7C18.5 4.64298 18.5 3.46447 17.7678 2.73223C17.0355 2 15.857 2 13.5 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 19H12M12.25 19C12.25 19.1381 12.1381 19.25 12 19.25C11.8619 19.25 11.75 19.1381 11.75 19C11.75 18.8619 11.8619 18.75 12 18.75C12.1381 18.75 12.25 18.8619 12.25 19Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> 5. Lock it on your phone too</h2>
+<p>Your laptop being clean doesn't help if the phone is right there. This covers both iPhone and Android, honestly.</p>
+<div class="promptwrap">
+<span class="promptlabel">📱 A five-minute phone lockdown</span>
+<pre><code>Help me lock the scroll on my phone too. I have [an iPhone / an Android]. Give me a five-minute checklist with the exact menus, and be honest about what the phone will and won't let me fully automate.
+
+For iPhone, set up:
+- An app limit on Instagram and TikTok [my apps] in Settings, Screen Time, App Limits, with "Block at End of Limit" on, plus Downtime on a schedule, and a Screen Time passcode so future-me can't just tap "ignore limit"
+- A scheduled Focus mode that hides those apps' home screen page and silences them in my danger windows
+- The grayscale trick on a schedule using the Shortcuts app (Automation, Time of Day, Set Color Filters on and off), because a black-and-white screen genuinely kills the pull
+
+Be honest: Shortcuts can automate Focus and grayscale, but it can't reliably toggle app limits, so keep those in Screen Time's own schedule.
+
+For Android, use Digital Wellbeing: Focus mode with a schedule for the distracting apps, app timers, and Bedtime mode (which has built-in grayscale). Tell me if my phone has the newer Modes feature and how to use it.</code></pre>
+</div>
+<hr class="rule">
+<h2><span class="gi" style="--gl:#8E82A7" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 2V6M8 2V6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 4H11C7.22876 4 5.34315 4 4.17157 5.17157C3 6.34315 3 8.22876 3 12V14C3 17.7712 3 19.6569 4.17157 20.8284C5.34315 22 7.22876 22 11 22H13C16.7712 22 18.6569 22 19.8284 20.8284C21 19.6569 21 17.7712 21 14V12C21 8.22876 21 6.34315 19.8284 5.17157C18.6569 4 16.7712 4 13 4Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 10H21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.1258 14H12.0008M12.1258 18H12.0008M7.625 14H7.5M7.625 18H7.5M16.625 14H16.5M12.2508 14C12.2508 14.1381 12.1389 14.25 12.0008 14.25C11.8628 14.25 11.7508 14.1381 11.7508 14C11.7508 13.8619 11.8628 13.75 12.0008 13.75C12.1389 13.75 12.2508 13.8619 12.2508 14ZM12.2508 18C12.2508 18.1381 12.1389 18.25 12.0008 18.25C11.8628 18.25 11.7508 18.1381 11.7508 18C11.7508 17.8619 11.8628 17.75 12.0008 17.75C12.1389 17.75 12.2508 17.8619 12.2508 18ZM7.75 14C7.75 14.1381 7.63807 14.25 7.5 14.25C7.36193 14.25 7.25 14.1381 7.25 14C7.25 13.8619 7.36193 13.75 7.5 13.75C7.63807 13.75 7.75 13.8619 7.75 14ZM7.75 18C7.75 18.1381 7.63807 18.25 7.5 18.25C7.36193 18.25 7.25 18.1381 7.25 18C7.25 17.8619 7.36193 17.75 7.5 17.75C7.63807 17.75 7.75 17.8619 7.75 18ZM16.75 14C16.75 14.1381 16.6381 14.25 16.5 14.25C16.3619 14.25 16.25 14.1381 16.25 14C16.25 13.8619 16.3619 13.75 16.5 13.75C16.6381 13.75 16.75 13.8619 16.75 14Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> 6. Protect your best hours</h2>
+<p>Blocking the bad stuff is half the job. This fills the good hours with the right work, and hands you a calendar you can actually import.</p>
+<div class="promptwrap">
+<span class="promptlabel">🗓️ Your day as an importable calendar</span>
+<pre><code>Build me a daily focus schedule around my energy and give it to me as a calendar I can import. Ask me for my rough energy pattern and my top 3 tasks first, then build:
+
+- My day in 90-minute deep-work blocks at my peak hours, hardest and most important task first (eat the frog), with real breaks between
+- Shallow work, email and admin batched into my low-energy afternoon dip
+- My danger windows from the focus-profile filled with the specific replacement activity I chose, so the scroll never gets an empty slot
+- All of it as an .ics file I can import into Google Calendar or Apple Calendar in one click, with the deep-work blocks marked as busy</code></pre>
+</div>
+<hr class="rule">
+<span class="kicker">all six at once</span>
+<h2><span class="gi" style="--gl:#DC5D78" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.21875 11.618L3.31189 11.2378C2.71644 11.1606 2.31883 10.5841 2.58348 10.0458C3.42523 8.33365 5.6195 6.35437 9.73988 6.68079M6.21875 11.618C7.27445 9.85426 8.57175 8.00435 9.73988 6.68079M6.21875 11.618L11.882 17.2812M9.73988 6.68079C13.4105 2.58986 17.1745 1.728 19.5937 2.06685C20.5508 2.2009 21.2991 2.94917 21.4332 3.90626C21.772 6.32551 20.9101 10.0895 16.8192 13.7601M11.882 17.2812L12.2622 20.1881C12.3394 20.7836 12.9159 21.1812 13.4542 20.9165C15.1664 20.0748 17.1456 17.8805 16.8192 13.7601M11.882 17.2812C13.6457 16.2255 15.4956 14.9282 16.8192 13.7601" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17.5 8C17.5 6.89543 16.6046 6 15.5 6C14.3954 6 13.5 6.89543 13.5 8C13.5 9.10457 14.3954 10 15.5 10C16.6046 10 17.5 9.10457 17.5 8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M4 22L8 18M4 17L5.5 15.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> The mega prompt: build the whole system in one go</h2>
+<p>Once you've seen how the pieces fit, this single prompt has Claude build all six as one connected project, driven by one config file you control. This is the one to use if you just want the whole thing set up.</p>
+<div class="promptwrap">
+<span class="promptlabel">🚀 The whole system in one paste</span>
+<pre><code>Build me a complete anti-doomscroll focus system as one project, and set it up on my [Mac / Windows]. I'm not technical, so create every file, explain each step in plain terms, check each part works before moving on, and never lock me out of anything except the sites I choose.
+
+Start by asking me three things: my worst scroll times, the sites and apps I lose time to, and my top tasks plus my energy pattern. Then build, in a single folder called focus-system:
+
+1. A config file at the centre (my danger windows, my block list, my work hours) that everything else reads from, so I only ever edit my choices in one place.
+2. A hosts-file site blocker: back up my hosts file first, block my sites plus their www and m versions with 0.0.0.0, one-command on and off, automatic DNS flush, and tell me how to turn off secure DNS in my browser so it holds.
+3. A scheduler for my OS (launchd, Task Scheduler, or cron) that blocks during my danger windows and lifts after, with a type-a-sentence panic unlock and an automatic daily expiry.
+4. A background Pomodoro timer with real notifications and a session log, that auto-enables the blocker during focus blocks.
+5. An .ics calendar that lays my day into 90-minute deep-work blocks around my energy, hardest task first, with my danger windows filled by my chosen replacement activity.
+6. A short phone checklist for my [iPhone / Android]: scheduled Focus mode, app limits, and scheduled grayscale.
+
+Finish with a one-page README showing how to start it, how to pause it, and how to completely uninstall the whole system in one command. This is meant to be friction, not a prison, so keep everything reversible.</code></pre>
+</div>
+<hr class="rule">
+<span class="kicker">why it works</span>
+<h2><span class="gi" style="--gl:#669520" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16.2187 13.0044L15.9921 13.6151C15.5219 14.65 14.1115 15.7439 11.7609 14.3182C10.2471 13.4001 8.93663 12.6631 7.9997 13.16L7.21891 13.5412" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.5323 2V8.56602C14.5323 9.27829 14.5323 9.63442 14.6304 9.97222C14.7285 10.31 14.9197 10.612 15.3021 11.216L17.2861 14.35C19.4275 17.7326 20.4982 19.4238 19.7751 20.7119C19.0519 22 17.0317 22 12.9914 22H11.0086C6.96825 22 4.94807 22 4.22495 20.7119C3.50182 19.4238 4.57251 17.7326 6.71389 14.35L8.69792 11.216C9.08029 10.612 9.27148 10.31 9.36961 9.97222C9.46773 9.63442 9.46773 9.27829 9.46773 8.56602V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15.125 19H15M15.25 19C15.25 19.1381 15.1381 19.25 15 19.25C14.8619 19.25 14.75 19.1381 14.75 19C14.75 18.8619 14.8619 18.75 15 18.75C15.1381 18.75 15.25 18.8619 15.25 19Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.125 17H10M10.25 17C10.25 17.1381 10.1381 17.25 10 17.25C9.86193 17.25 9.75 17.1381 9.75 17C9.75 16.8619 9.86193 16.75 10 16.75C10.1381 16.75 10.25 16.8619 10.25 17Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> The tactics baked in (why these work)</h2>
+<p>Every prompt above quietly encodes something research actually backs, so you're building a real system, not a gimmick:</p>
+<ul>
+<li>⚫ <strong>Grayscale genuinely reduces use.</strong> A randomized study of 161 students found black-and-white screens cut phone use by around 40 minutes a day. Colour is the dopamine hook, so killing it makes the feed boring. <a href="https://www.tandfonline.com/doi/abs/10.1080/03623319.2020.1737461" target="_blank">Study</a></li>
+<li>🐢 <strong>A speed bump beats a wall.</strong> University of Michigan research found gentle friction was about 16% more effective at cutting screen time than forcibly locking people out, because a bypassable pause turns autopilot into a choice. <a href="https://news.engin.umich.edu/2024/05/managing-screen-time-by-making-phones-slightly-more-annoying-to-use/" target="_blank">Research</a></li>
+<li>🚪 <strong>Distance beats willpower.</strong> The "Brain Drain" study found your phone drains focus just by sitting on the desk, even face-down and off. Put it in another room during deep-work blocks. <a href="https://www.journals.uchicago.edu/doi/full/10.1086/691462" target="_blank">Study</a></li>
+<li>🔁 <strong>Replace, don't just remove.</strong> Habit research shows you can't delete a habit, only swap the routine while keeping the reward. That's why step one makes you pre-choose what you do instead.</li>
+<li>🙈 <strong>Hide the app, not just the time.</strong> Visibility is the strongest cue. An app buried off your home screen (or deleted and reached only by browser) gets opened far less, because the cue to open it is gone.</li>
+</ul>
+<hr class="rule">
+<span class="kicker">the receipts</span>
+<h2><span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Proof</h2>
+<div class="gcallout">Aza Raskin, inventor of infinite scroll, called it "behavioral cocaine" to the BBC in 2018: <a href="https://www.bbc.com/news/technology-44640959" target="_blank">https://www.bbc.com/news/technology-44640959</a></div>
+<div class="gcallout">68% of young people (aged 13 to 25) reported difficulty focusing, a 2025 Nanyang Technological University (NTU Singapore) study of 583 youth across Singapore and Australia, via News-Medical: <a href="https://www.news-medical.net/news/20250718/Social-media-use-linked-to-declining-focus-and-emotional-strain-in-youth.aspx" target="_blank">read it here</a></div>
+<div class="gcallout">The hosts-file blocking method is real and open-source (StevenBlack/hosts, actively maintained): <a href="https://github.com/StevenBlack/hosts" target="_blank">github.com/StevenBlack/hosts</a></div>
+<hr class="rule">
+<span class="kicker">use it well</span>
+<h2><span class="gi" style="--gl:#4C326D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.99805 7.99928C1.99805 9.34126 10.0943 13 11.9857 13C13.8772 13 21.9734 9.34126 21.9734 7.99928C21.9734 6.6573 13.8772 2.99854 11.9857 2.99854C10.0943 2.99854 1.99805 6.6573 1.99805 7.99928Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.99219 11L7.24348 16.8002C7.32919 17.1975 7.52703 17.5687 7.85696 17.8054C10.0787 19.3998 13.8908 19.3998 16.1126 17.8054C16.4426 17.5687 16.6404 17.1975 16.7261 16.8002L17.9774 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20.4774 9.49951V16.5006M20.4774 16.5006C19.6864 17.9471 19.3366 18.7221 18.9813 20.0011C18.9042 20.4562 18.9654 20.6855 19.2786 20.8891C19.4059 20.9718 19.5588 21.0012 19.7104 21.0012H21.229C21.3904 21.0012 21.5533 20.9675 21.6863 20.8757C21.9774 20.6747 22.0523 20.4541 21.9734 20.0011C21.662 18.8135 21.2653 18.0016 20.4774 16.5006Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> How to get the most out of it</h2>
+<p>If you only do two things, do the blocker plus the schedule (steps 2 and 3), because together they remove the choice entirely, and that's most of the win. Add the phone lock and grayscale next, since your phone is where most of the scroll actually happens. The timer and the calendar are what turn "I stopped scrolling" into "I got real work done." And whenever you build it, keep the honesty in mind: this is friction, not a cage. Everything here is reversible on purpose, the blocker is bypassable if you truly need a site, and that's exactly why it works. You're not trying to out-discipline a slot machine at 3am, you're making the scroll a little harder than the thing you actually want to do.</p>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

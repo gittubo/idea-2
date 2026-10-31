@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7 Claude skills for creative teams (full setup guide) · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="This is the full walkthrough of the 7 Claude skills running my whole content engine.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-creative-teams">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="7 Claude skills for creative teams (full setup guide)">
+<meta property="og:description" content="This is the full walkthrough of the 7 Claude skills running my whole content engine.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-creative-teams">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="7 Claude skills for creative teams (full setup guide)">
+<meta name="twitter:description" content="This is the full walkthrough of the 7 Claude skills running my whole content engine.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"7 Claude skills for creative teams (full setup guide)","description":"This is the full walkthrough of the 7 Claude skills running my whole content engine: every install command, every API key, every skill file. No vague...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/claude-creative-teams"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"7 Claude skills for creative teams (full setup guide)", u:"guides/claude-creative-teams.html", topic:"design", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Design &amp; visuals</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>7 Claude skills for creative teams (full setup guide)</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This is the full walkthrough of the 7 Claude skills running my whole content engine.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>If you caught the reel, this is the full build. By the end you'll have Claude installed, all 7 skills ready to call, and a real production system covering research, writing, voice consistency, video, audio, ad intelligence, and persistent memory.</p>
+
+<span class="kicker">at a glance</span>
+<h2>The 7 skills, quickly</h2>
+<p>Skim this first, then install the 2 or 3 that solve a real problem in your week. You don't need all seven.</p>
+<div class="tablewrap">
+<table>
+<tr><th>Skill</th><th>What it does</th><th>Cost</th></tr>
+<tr><td>Voice DNA</td><td>Captures how you actually write, so everything else sounds like you</td><td>Free</td></tr>
+<tr><td>Content engine</td><td>One piece into 8 platform-ready formats, in your voice</td><td>Free</td></tr>
+<tr><td>Deep research</td><td>A cited brief plus 5 ready-to-film angles on any topic</td><td>Free tier (Tavily)</td></tr>
+<tr><td>Competitor ads</td><td>Pulls and diffs your rivals' Meta and LinkedIn ads weekly</td><td>Apify from $29/mo</td></tr>
+<tr><td>Remotion video</td><td>Renders a finished MP4 from a script</td><td>Free (solo or up to 3)</td></tr>
+<tr><td>ElevenLabs podcast</td><td>Turns long-form into a two-host episode</td><td>~$22/mo</td></tr>
+<tr><td>Supermemory</td><td>Keeps context alive across every session</td><td>Free tier / $19 pro</td></tr>
+</table>
+</div>
+
+<hr class="rule">
+<span class="kicker">start here</span>
+<h2>Step 1: pick your Claude</h2>
+<p>There are three ways to use Claude. All three support skills. The skill content itself is identical everywhere, only the way you add it differs.</p>
+<div class="tablewrap">
+<table>
+<tr><th>Surface</th><th>What it is</th><th>Use when</th></tr>
+<tr><td>Claude.ai</td><td>Browser app at <a href="https://claude.ai" target="_blank">claude.ai</a></td><td>Easiest to start, no download. Works for skills that don't need to touch files on your computer.</td></tr>
+<tr><td>Claude Desktop</td><td>Mac/Windows app</td><td>Recommended for most people. Reads and writes files on your computer, so most skills work.</td></tr>
+<tr><td>Claude Code</td><td>Terminal version (CLI)</td><td>The most powerful. Runs video renders and audio stitching directly from chat.</td></tr>
+</table>
+</div>
+<div class="tip calm">Quick rule: if you've never opened a terminal and don't want to start, use Claude Desktop for most of this guide. The two skills that render video or stitch audio (Remotion and ElevenLabs) need Claude Code.</div>
+
+<h3>Install Claude Desktop (recommended)</h3>
+<ol class="steps">
+<li>Go to <a href="https://claude.ai/download" target="_blank">claude.ai/download</a></li>
+<li>Run the installer</li>
+<li>Open the app, log in with your Claude account</li>
+</ol>
+<p>Done.</p>
+
+<h3>Install Claude Code (only if you want full power)</h3>
+<p><strong>On Mac:</strong> Press Cmd+Space, type "Terminal," hit Enter. Install Node.js from <a href="https://nodejs.org" target="_blank">nodejs.org</a> if you don't have it. Then in Terminal:</p>
+<div class="promptwrap">
+<span class="promptlabel">⚡ install claude code</span>
+<pre><code>npm install -g @anthropic-ai/claude-code
+claude</code></pre>
+</div>
+<p><strong>On Windows:</strong> Open PowerShell. Install Node.js from <a href="https://nodejs.org" target="_blank">nodejs.org</a> with "Add to PATH" checked. Then run the same two commands above. Verify with <code>claude --version</code>.</p>
+
+<hr class="rule">
+<span class="kicker">the mechanics</span>
+<h2>Step 2: how skills work</h2>
+<p>A skill is a folder with one markdown file inside (SKILL.md). The format is identical across all three Claudes, so you build the SKILL.md once and use it anywhere.</p>
+<p>Each one starts with YAML frontmatter (the little settings block at the top, between the two <code>---</code> lines):</p>
+<div class="promptwrap">
+<span class="promptlabel">🧩 the skill frontmatter</span>
+<pre><code>---
+name: voice-dna
+description: Analyze writing samples and extract a reusable voice profile. Use when the user wants to capture their writing voice.
+allowed-tools: Read, Write
+---
+
+(skill instructions go here)</code></pre>
+</div>
+<p>The <code>description</code> is the most important field. Claude reads it to decide when the skill is relevant, so include the trigger words you'll actually type.</p>
+
+<h3>How to add a skill</h3>
+<p><strong>Claude.ai (browser):</strong> Click your profile (bottom left), go to Customize, then Skills. Hit Add (next to Browse), choose Write skill instructions, paste the SKILL.md content. Save.</p>
+<p><strong>Claude Desktop:</strong> Same path: Customize, Skills, Add, Write skill instructions. Paste, save, restart the app.</p>
+<p><strong>Claude Code (terminal):</strong> Run <code>mkdir -p ~/.claude/skills/&lt;name&gt;</code>, create a file called SKILL.md inside that folder, paste the content. Auto-loads in your next session.</p>
+<div class="tip warn">If you don't see Skills under Customize, the feature may not be rolled out to your account yet. Use Claude Code in the meantime.</div>
+<div class="tip calm">Two words you'll see below: a <strong>skill</strong> is an instruction file Claude follows; an <strong>MCP</strong> (also called a connector) is how Claude plugs into an outside tool like Apify or Supermemory. A few skills here need an MCP connected to do their job.</div>
+
+<h3>Which skills work where</h3>
+<p>Most work in all three. Two of them shell out to render video or stitch audio, so they need Claude Code.</p>
+<div class="tablewrap">
+<table>
+<tr><th>Skill</th><th>Browser</th><th>Desktop</th><th>Code</th></tr>
+<tr><td>Voice DNA</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Content Engine</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Deep Research</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Competitor Ads</td><td>Yes (Connectors)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Supermemory</td><td>Yes (Connectors)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Remotion Video</td><td>No</td><td>No</td><td>Yes</td></tr>
+<tr><td>ElevenLabs</td><td>No</td><td>No</td><td>Yes</td></tr>
+</table>
+</div>
+
+<hr class="rule">
+<span class="kicker">the stack</span>
+<h2>The 7 skills, in order</h2>
+<p>Listed in the order they appeared in the reel. Skill 7, Supermemory, is honestly one of the most useful.</p>
+
+<h3 class="skillhead">1. Remotion video <span class="gi" style="--gl:#8776B8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11C2 7.70017 2 6.05025 3.02513 5.02513C4.05025 4 5.70017 4 9 4H10C13.2998 4 14.9497 4 15.9749 5.02513C17 6.05025 17 7.70017 17 11V13C17 16.2998 17 17.9497 15.9749 18.9749C14.9497 20 13.2998 20 10 20H9C5.70017 20 4.05025 20 3.02513 18.9749C2 17.9497 2 16.2998 2 13V11Z" stroke="currentColor" stroke-width="1.5"/><path d="M17 8.90585L17.1259 8.80196C19.2417 7.05623 20.2996 6.18336 21.1498 6.60482C22 7.02628 22 8.42355 22 11.2181V12.7819C22 15.5765 22 16.9737 21.1498 17.3952C20.2996 17.8166 19.2417 16.9438 17.1259 15.198L17 15.0941" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><circle cx="11.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></span></h3>
+<p><strong>What it does.</strong> Generates a finished MP4 from a script or brief. Text animations, transitions, brand colours. Best for data viz, text-heavy reels, templated formats.</p>
+<p><strong>Setup.</strong> Node.js (which you have from Step 1) and Claude Code. The skill bootstraps a Remotion project the first time you use it.</p>
+<p><strong>Cost.</strong> Free for solo use and teams up to 3 people; a paid company license kicks in at 4+ people. Needs about 500MB disk space.</p>
+<div class="tip warn"><strong>One honest note.</strong> Remotion is incredible but the editing it produces is still pretty basic. Treat it as a starting point, not the final cut. I always add my own personality on top: voiceover, captions in my style, sound effects, b-roll. AI handles the structure. You handle the soul.</div>
+<p><strong>Full SKILL.md</strong> (copy this whole block into one SKILL.md file):</p>
+<div class="promptwrap">
+<span class="promptlabel">🎬 remotion-video SKILL.md</span>
+<pre><code>---
+name: remotion-video
+description: Generate a programmatic video from a script or brief using Remotion. Renders MP4 in 9:16 or 16:9 with text animations and brand styling. Use when the user asks to make a video, create a reel, or render a video from a script.
+allowed-tools: Bash, Read, Write
+---
+
+# Remotion video
+
+You are a Remotion video engineer. Generate a programmatic video from the provided script or brief.
+
+## Step 1: ensure project exists
+
+If a remotion-project/ folder doesn't exist in the working directory, create one by running:
+
+	npx create-video@latest --yes --blank remotion-project
+	cd remotion-project &amp;&amp; npm install
+
+## Step 2: parse the brief
+
+Extract from the user's input:
+1. Main message or headline
+2. Key talking points or scenes
+3. Duration (default 60s for 9:16, 30s for 16:9)
+4. Aspect ratio (9:16 for reels, 16:9 for YouTube)
+5. Brand colours (default cream #FAF7F2, Claude orange #D97757)
+
+## Step 3: write src/Composition.tsx
+
+A React component using Remotion primitives (AbsoluteFill, Sequence, useVideoConfig, interpolate, useCurrentFrame). Divide the script into Sequences (one per scene). Animate text with interpolate. Apply brand colours.
+
+## Step 4: register in src/Root.tsx
+
+Use Composition with id "MyVideo", durationInFrames at fps * total seconds, width/height set for the chosen aspect ratio (1080x1920 for 9:16, 1920x1080 for 16:9).
+
+## Step 5: render
+
+Run:
+
+	npx remotion render src/index.ts MyVideo output.mp4
+
+Render takes 2 to 5 minutes on typical hardware.
+
+## Step 6: report
+
+Print the file path of the rendered MP4 to the user.</code></pre>
+</div>
+
+<h3 class="skillhead">2. Competitor ads extractor <span class="gi" style="--gl:#5F4A88" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h3>
+<p><strong>What it does.</strong> Pulls every active Meta and LinkedIn ad your competitors are running. Diffs week-over-week (new, scaling, killed) and extracts hook patterns and offer structures. Stop guessing what's working.</p>
+<p><strong>Setup.</strong></p>
+<ol class="steps">
+<li>Sign up at <a href="https://apify.com" target="_blank">apify.com</a>. Free tier works for testing; ongoing weekly use needs Starter at about $29/mo (check the live price when you sign up).</li>
+<li>Settings, Integrations, copy your Personal API token.</li>
+<li>Add the Apify MCP server to Claude. In browser/Desktop use Connectors; in Claude Code, paste the config below into <code>~/.claude.json</code> (or run <code>claude mcp add apify -- npx -y @apify/actors-mcp-server</code>).</li>
+<li>Restart Claude.</li>
+<li>Create a competitors list (the JSON below). In Code: save as <code>~/.claude/skills/competitor-ads-extractor/competitors.json</code>. In Desktop/browser: paste it inline when you run the skill the first time.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">🔌 the apify MCP config</span>
+<pre><code>{
+  "mcpServers": {
+    "apify": {
+      "command": "npx",
+      "args": ["-y", "@apify/actors-mcp-server"],
+      "env": { "APIFY_TOKEN": "your_token_here" }
+    }
+  }
+}</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">📋 your competitors list</span>
+<pre><code>[
+  { "name": "BrandA", "facebook_page_url": "https://facebook.com/branda", "linkedin_company_url": "https://linkedin.com/company/branda" },
+  { "name": "BrandB", "facebook_page_url": "https://facebook.com/brandb", "linkedin_company_url": "https://linkedin.com/company/brandb" }
+]</code></pre>
+</div>
+<p><strong>Cost.</strong> Apify free: $5/mo credit (one test run). Apify Starter: about $29/mo, covers 30-80 brand-scans monthly. Start free, upgrade once you're running this every week.</p>
+<p><strong>Full SKILL.md:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🕵️ competitor-ads SKILL.md</span>
+<pre><code>---
+name: competitor-ads-extractor
+description: Pulls Meta and LinkedIn ads for a list of competitor brands, diffs week-over-week, extracts hook patterns and offer structures. Use when the user asks about competitor ads, ad library, or weekly ad scan.
+allowed-tools: Bash, Read, Write
+---
+
+# Competitor ads extractor
+
+## Inputs
+
+Read the competitors list from competitors.json. If none exists, ask the user for 3 to 10 competitor brand URLs and create the file.
+
+## Run
+
+For each competitor:
+1. Call Apify Actor apify/facebook-ads-scraper with input { "urls": [facebook_page_url], "country": "AU", "activeStatus": "active" }
+2. Call Apify Actor isotonic/linkedin-ads-library-competitive-creative-scraper with { "companyUrls": [linkedin_company_url] }
+3. Save raw output to runs/YYYY-MM-DD/&lt;brand&gt;.json
+
+## Diff
+
+Compare today's run to the most recent previous run. For each brand surface:
+- New ads launched this week (in today, not in last)
+- Scaling ads (live in both, longer run-time, more variants)
+- Killed ads (in last, not in today)
+
+## Synthesise
+
+Group new and scaling ads across competitors. Output a markdown brief with:
+1. Hook patterns. First 5-10 words of every ad. Cluster by pattern (question, stat, callout, fear, curiosity).
+2. Offer structures. Headline + CTA + price point. Note free trials, lead magnets, tripwires.
+3. Visual formats. Static, carousel, video, UGC, talking head.
+4. What's working. Brands with 3+ scaling ads of the same hook style.
+5. Steal list. Top 5 hooks worth adapting.
+
+## Output
+
+Save brief to briefs/YYYY-MM-DD-brief.md. Print the steal list to chat.</code></pre>
+</div>
+
+<h3 class="skillhead">3. Deep research <span class="gi" style="--gl:#2794B2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h3>
+<p><strong>What it does.</strong> Takes a topic. Runs multiple web searches, reads top sources, returns one tight brief with executive summary, cited findings, gaps, and 5 ready-to-film content angles. Real URLs, no hallucinations.</p>
+<p><strong>Setup.</strong></p>
+<ol class="steps">
+<li>Sign up at <a href="https://tavily.com" target="_blank">tavily.com</a> (Google login works). Free tier: 1,000 credits/mo, roughly 100 deep-research runs.</li>
+<li>Copy your API key.</li>
+<li>Add it to your Claude env. In Code: <code>~/.claude/settings.json</code>. In Desktop: Customize, then Connectors, custom env vars.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">🔑 the tavily key</span>
+<pre><code>{
+  "env": {
+    "TAVILY_API_KEY": "tvly-xxxxxxxxxxxx"
+  }
+}</code></pre>
+</div>
+<p><strong>Cost.</strong> Free at solo creator volume. Paid Project tier: $30/mo for 4,000 credits if you ever hit the limit.</p>
+<p><strong>Full SKILL.md:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🔍 deep-research SKILL.md</span>
+<pre><code>---
+name: deep-research
+description: Researches a topic using Tavily web search, synthesises findings with citations, and generates 5 content angles. Use when the user asks for research, a brief, sources on a topic, or content angles.
+allowed-tools: Bash, Read, Write
+---
+
+# Deep research
+
+## Input
+
+Topic from user. If vague, ask one clarifying question (audience, depth, recency window).
+
+## Search
+
+Run 3 Tavily search calls with different angles via curl POST to https://api.tavily.com/search with header "Authorization: Bearer $TAVILY_API_KEY" and a JSON body containing query, search_depth "advanced", max_results 8, include_answer true.
+
+Query angles:
+1. Plain topic plus current year
+2. Topic plus "data," "stats," or "study"
+3. Topic plus "what nobody talks about" or "underrated"
+
+## Read deeper
+
+For the 3 to 5 highest-scoring URLs, run Tavily extract via POST to https://api.tavily.com/extract with the URLs.
+
+## Synthesise
+
+Output a markdown brief with:
+1. Executive summary. 3 to 5 sentences on the current state of play.
+2. Key findings. 5 to 8 bullets, each cited as [source](url).
+3. Counterpoints. Anything contradicting consensus.
+4. Gaps. What's missing or stale in public coverage.
+5. Five content angles. Each with a hook line, format (reel, carousel, long-form), and 1-line payoff.
+
+## Output
+
+Save to briefs/YYYY-MM-DD-&lt;slug&gt;.md. Print executive summary and 5 angles to chat.</code></pre>
+</div>
+
+<h3 class="skillhead">4. Voice DNA <span class="gi" style="--gl:#1A8FD5" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.6671 22C9.20107 21.466 9.73505 20.9321 9.24127 18M8.6671 15.3336C7.33381 10.0004 8.33378 9.00042 8.6671 8.6671C9.00042 8.33378 10.0004 7.33381 15.3336 8.6671M8.6671 15.3336C3.33394 14.0003 2.66664 14.6663 2 15.3329M8.6671 15.3336C14.0003 16.6668 14.9996 15.6662 15.3329 15.3329C15.6662 14.9996 16.6668 14.0003 15.3336 8.6671M22 8.6671C21.3334 9.33375 20.6667 10.0004 15.3336 8.6671M15.3329 2C14.799 2.53394 14.2654 3.06829 14.7592 6" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h3>
+<p><strong>What it does.</strong> Reads 10 to 20 samples of your writing (captions, posts, newsletters, transcripts) and extracts the specific signals that make your voice yours. Saves a reusable profile that every other content skill reads.</p>
+<div class="tip calm"><strong>Install this one first.</strong> Every other skill on this list works better with it.</div>
+<p><strong>Setup.</strong> No APIs, no keys. Runs entirely on Claude.</p>
+<p><strong>Cost.</strong> Free.</p>
+<p><strong>Full SKILL.md:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🧬 voice-dna SKILL.md</span>
+<pre><code>---
+name: voice-dna
+description: Analyze 10-20 samples of the user's writing and produce a structured voice profile other skills can read. Use when the user says /voice-dna or wants to capture their writing voice.
+allowed-tools: Read, Write
+---
+
+# Voice DNA
+
+You are extracting a reusable voice signature from a user's existing writing. The output is a reference document, not a vibe summary. Be analytical. Pull concrete examples and quote them verbatim.
+
+## Step 1: gather samples
+
+Ask the user how they want to provide samples:
+- Paste 10 to 20 pieces directly in chat
+- Or give a folder path. Read every .md and .txt file in it.
+
+If fewer than 10 samples, warn the profile will be thinner than ideal but proceed.
+
+## Step 2: analyze across all samples
+
+1. Sentence length. Average words per sentence. Range. Sentence-fragment frequency as %.
+2. Vocabulary level. Formality on a 1-10 scale with justification. Top 20 distinctive words and bigrams. Skip stopwords.
+3. Tonal markers. Place voice on three axes: formal-casual, warm-edgy, contrarian-agreeable. Quote evidence per axis.
+4. Pacing. Hook openers, mid-piece pivots, sign-offs. Quote 3-5 examples of each.
+5. Anti-patterns. Words and moves the user never uses. Cross-check common tics: em dashes, "in today's world," "let's dive in," "the truth is," exclamation points, hashtags.
+6. Signature moves. 5 to 10 repeatable patterns unique to this voice. Quote one occurrence each.
+7. Audience address. Frequency of "you" vs "we" vs "I." Direct vs indirect.
+8. Emotional range. Which emotions show up, which are absent. One quoted example per emotion present.
+
+## Step 3: write the profile
+
+Save to ~/.claude/voice-profile.md. Overwrite if it exists.
+
+Sections in order: Snapshot (one paragraph another skill can paste at the top of a system prompt), Sentence Mechanics, Vocabulary, Tonal Markers, Pacing, Signature Moves, Anti-patterns, Audience Address, Emotional Range, Reference Lines (5 fully-quoted lines that best capture the voice).
+
+## Step 4: confirm
+
+Print the file path and the snapshot section. Tell the user to rerun /voice-dna any time their voice evolves.</code></pre>
+</div>
+
+<h3 class="skillhead">5. ElevenLabs <span class="gi" style="--gl:#8B8591" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 6.5C7 4.01472 9.01472 2 11.5 2C13.9853 2 16 4.01472 16 6.5V11.5C16 13.9853 13.9853 16 11.5 16C9.01472 16 7 13.9853 7 11.5V6.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11.5 19H11.0828C7.57267 19 4.57706 16.4623 4 13M11.5 19H11.9172C15.4273 19 18.4229 16.4623 19 13M11.5 19V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h3>
+<p><strong>What it does.</strong> Paste a long-form piece. Claude writes a two-host conversation, calls ElevenLabs to voice each line, stitches the audio. You get an 8 to 12 minute podcast episode without recording. Needs Claude Code (it stitches audio with ffmpeg).</p>
+<p><strong>Setup.</strong></p>
+<ol class="steps">
+<li>Sign up at <a href="https://elevenlabs.io" target="_blank">elevenlabs.io</a>. Free tier (10k credits) is fine for one test episode.</li>
+<li>Recommended: Creator at $22/mo ($11 first month) gets 121k credits, roughly 4-5 episodes monthly, commercial licensing.</li>
+<li>Profile (bottom left), API Keys, Create. Copy it.</li>
+<li>Install ffmpeg (free audio stitcher). Mac: <code>brew install ffmpeg</code>. Windows: <code>choco install ffmpeg</code> in PowerShell as admin.</li>
+<li>Add your key to your Claude env (the block below).</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">🔑 the elevenlabs key</span>
+<pre><code>{
+  "env": {
+    "ELEVENLABS_API_KEY": "sk_your_key_here"
+  }
+}</code></pre>
+</div>
+<p><strong>Default voice pairs:</strong></p>
+<ul>
+<li>Warm + analytical: Rachel (<code>21m00Tcm4TlvDq8ikWAM</code>) and Adam (<code>pNInz6obpgDQGcFmaJgB</code>)</li>
+<li>Energetic + grounded: Bella (<code>EXAVITQu4vr4xnSDxMaL</code>) and Antoni (<code>ErXwobaYiN019PkySvjV</code>)</li>
+</ul>
+<div class="tip warn">These are ElevenLabs "default" voice IDs and they're being retired, accounts created after March 2026 may not have them, and all default voices expire at the end of 2026. If an ID doesn't resolve, grab a live one from your <a href="https://elevenlabs.io/app/voice-library" target="_blank">Voice Library</a> (or the <code>/v1/voices</code> endpoint) and paste it into the skill.</div>
+<p><strong>Cost.</strong> Creator $22/mo covers 4-5 full episodes with commercial rights. Free tier gets you one test episode.</p>
+<p><strong>Full SKILL.md:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🎙️ elevenlabs SKILL.md</span>
+<pre><code>---
+name: elevenlabs-podcast
+description: Turn any long-form text into a two-host podcast episode. Generates a conversational script, voices each line through ElevenLabs, and stitches the audio into a finished MP3. Use when the user wants to convert a blog post, newsletter, or article into podcast audio.
+allowed-tools: Bash, Read, Write
+---
+
+# ElevenLabs two-host podcast
+
+## Inputs
+
+User gives a file path or pasted text. If unclear, ask which.
+
+## Voice IDs (defaults)
+
+HOST_A: 21m00Tcm4TlvDq8ikWAM (Rachel, warm)
+HOST_B: pNInz6obpgDQGcFmaJgB (Adam, analytical)
+
+If a default voice ID is unavailable on your account, replace it with a live voice_id from GET https://api.elevenlabs.io/v1/voices.
+
+## Step 1: read the source
+
+Read the file or use the pasted text directly.
+
+## Step 2: generate the script
+
+Write a natural two-host conversation, ~1500 to 1800 words (8 to 12 min at 150 wpm).
+
+Structure:
+- Cold open. Host A hooks the topic in one sentence.
+- Intro. Both hosts greet, name the show, set up.
+- Body. 3 to 5 segments. Each = Host A introduces, Host B reacts/challenges/builds, 4 to 8 exchanges.
+- Mini-debate. At least one moment of respectful disagreement.
+- Wrap. Key takeaway from each host. Sign-off.
+
+Format every line on its own row, prefixed exactly [HOST A] or [HOST B]. No stage directions, no music cues, no host names inside dialogue.
+
+Save script to ./podcasts/script_&lt;timestamp&gt;.txt
+
+## Step 3: voice each line
+
+Create ./podcasts/audio_&lt;timestamp&gt;/ as a working folder.
+
+For each line: use the matching voice ID, strip the [HOST X] prefix, save as 0001.mp3, 0002.mp3, etc. (zero-padded for concat order).
+
+Call: POST to https://api.elevenlabs.io/v1/text-to-speech/&lt;voice_id&gt;?output_format=mp3_44100_128 with header "xi-api-key: $ELEVENLABS_API_KEY", body { "text": "...", "model_id": "eleven_multilingual_v2" }, save response as the indexed MP3.
+
+If a line fails, retry once, then skip and log.
+
+## Step 4: stitch with ffmpeg
+
+Build filelist.txt inside the audio folder, one line per clip:
+
+	file '0001.mp3'
+	file '0002.mp3'
+
+Then run:
+
+	ffmpeg -f concat -safe 0 -i filelist.txt -c copy ../episode_&lt;timestamp&gt;.mp3
+
+## Step 5: report
+
+Tell the user: final file path, episode length (use ffprobe), approximate character count used, path to script file in case they want to tweak.</code></pre>
+</div>
+
+<h3 class="skillhead">6. Content engine <span class="gi" style="--gl:#A68307" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.4249 4.60509L17.4149 3.6151C18.2351 2.79497 19.5648 2.79497 20.3849 3.6151C21.205 4.43524 21.205 5.76493 20.3849 6.58507L19.3949 7.57506M16.4249 4.60509L9.76558 11.2644C9.25807 11.772 8.89804 12.4078 8.72397 13.1041L8 16L10.8959 15.276C11.5922 15.102 12.228 14.7419 12.7356 14.2344L19.3949 7.57506M16.4249 4.60509L19.3949 7.57506" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18.9999 13.5C18.9999 16.7875 18.9999 18.4312 18.092 19.5376C17.9258 19.7401 17.7401 19.9258 17.5375 20.092C16.4312 21 14.7874 21 11.4999 21H11C7.22876 21 5.34316 21 4.17159 19.8284C3.00003 18.6569 3 16.7712 3 13V12.5C3 9.21252 3 7.56879 3.90794 6.46244C4.07417 6.2599 4.2599 6.07417 4.46244 5.90794C5.56879 5 7.21252 5 10.5 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h3>
+<p><strong>What it does.</strong> Takes one pillar piece (article, transcript, podcast). Produces 8 platform-ready formats in one pass: LinkedIn post, X thread, Instagram caption, email newsletter, short-form video script, blog intro, pull-quote carousel, cold outreach. Reads your Voice DNA profile so every format sounds like you.</p>
+<p><strong>Setup.</strong> Install Voice DNA first (skill #4). Content Engine reads <code>~/.claude/voice-profile.md</code> on every run. No APIs, no keys.</p>
+<p><strong>Cost.</strong> Free.</p>
+<p><strong>Full SKILL.md:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">✍️ content-engine SKILL.md</span>
+<pre><code>---
+name: content-engine
+description: Turn one pillar piece into 8 platform-ready formats (LinkedIn, X thread, IG caption, email, short-form script, blog intro, pull-quote carousel, cold outreach). Use when the user wants to repurpose a piece or spin one article into multi-platform content.
+allowed-tools: Read, Write
+---
+
+# Content engine
+
+Voice consistency comes from the profile. Hook variation comes from you.
+
+## Step 1: load voice
+
+Read ~/.claude/voice-profile.md if it exists. Apply the snapshot, signature moves, and anti-patterns to every output.
+
+If missing, surface this warning before proceeding: "No voice profile found. Run /voice-dna first for best results. Continuing with neutral defaults."
+
+## Step 2: get the pillar piece
+
+Ask the user to paste content or give a file path. Read the full piece before drafting.
+
+## Step 3: extract candidate hooks
+
+Pull 2 to 3 hook candidates from the pillar. Look for: most contrarian claim, most specific number or proof, most relatable pain point, most surprising reframe. List them at the top of working notes. Different hooks go to different formats so the 8 outputs don't all open the same way.
+
+## Step 4: draft 8 formats
+
+Hard rule: each format gets a different opening hook.
+
+1. LinkedIn post. ~1300 chars. Hook + body with line breaks every 1-2 sentences + CTA. No hashtags. No emojis unless voice profile uses them.
+2. X/Twitter thread. 5 to 7 posts, each under 280 chars. Post 1 = hook. Post 2 = setup. 3-6 = payoff. Final = takeaway or CTA. No "Thread:" or "1/" prefix unless voice uses them.
+3. Instagram caption. All lowercase except "I" and proper nouns. 2 to 3 emojis. Casual register. 4 to 8 short paragraphs. Hook opener, soft CTA close.
+4. Email newsletter. Subject under 50 chars, curiosity-led. Body 200 to 400 words. Hook paragraph, story or context, lesson, sign-off.
+5. Short-form video script. 45 to 75 seconds spoken (110 to 180 words). 4-beat structure: hook, context, reveal, CTA. Plain spoken text only.
+6. Blog intro. First 200 words that earn the click-through. Hook with promised payoff. Stakes by word 75. Tease framework by word 150. End on forward-pull line.
+7. Pull-quote carousel. 5 to 7 slides, max 20 words per slide. Slide 1 = hook quote. Final = takeaway or CTA. Quotes drawn from pillar, not invented.
+8. Cold outreach angle. 60-word DM or email opener. Specific to one persona implied by the pillar. Lead with relevance, end on a low-friction ask.
+
+## Step 5: save outputs
+
+Create ./content-engine-output/&lt;timestamp&gt;/ (timestamp YYYY-MM-DD-HHMM). Write each format to its own file: 01-linkedin.md, 02-twitter-thread.md, 03-instagram.md, 04-email.md, 05-short-form-script.md, 06-blog-intro.md, 07-carousel.md, 08-cold-outreach.md. Also write 00-hooks.md with the candidate hooks and which hook went where.
+
+## Step 6: print to chat
+
+Paste all 8 outputs in chat. Lead with candidate hooks, then the 8 formats. If voice-profile.md was missing, repeat the warning at the bottom.</code></pre>
+</div>
+
+<h3 class="skillhead">7. Supermemory <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h3>
+<p><strong>What it does.</strong> Saves everything you tell Claude across sessions and quietly reinjects the relevant bits next time. You stop re-explaining your business, your voice, last week's decisions every time. A long-term notebook Claude reads from before answering.</p>
+<p><strong>Setup.</strong></p>
+<ol class="steps">
+<li>Sign up at <a href="https://supermemory.ai" target="_blank">supermemory.ai</a>. Free tier includes about $5/mo of usage. Plenty to test.</li>
+<li><a href="https://console.supermemory.ai/keys" target="_blank">console.supermemory.ai/keys</a>, Create new key. Copy it (starts with <code>sm_...</code>).</li>
+<li>Add the MCP server. Browser/Desktop: Customize, then Connectors, then Add custom connector. In Claude Code, paste the block below into <code>~/.claude.json</code>.</li>
+<li>Restart Claude. You now have <code>memory</code>, <code>recall</code>, and <code>whoAmI</code> as tools Claude can call.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">🧠 the supermemory MCP config</span>
+<pre><code>{
+  "mcpServers": {
+    "supermemory": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "install-mcp",
+        "https://mcp.supermemory.ai/mcp",
+        "--header",
+        "Authorization: Bearer sm_your_key_here"
+      ]
+    }
+  }
+}</code></pre>
+</div>
+<p><strong>Pro upgrade ($19/mo).</strong> Supermemory has an official Claude Code plugin that auto-injects relevant memories at the start of every session (instead of Claude calling memory tools manually). Run in Claude Code:</p>
+<div class="promptwrap">
+<span class="promptlabel">🔌 the supermemory plugin</span>
+<pre><code>/plugin marketplace add supermemoryai/claude-supermemory
+/plugin install supermemory</code></pre>
+</div>
+<p>Then add <code>export SUPERMEMORY_CC_API_KEY="sm_your_key_here"</code> to your shell profile (~/.zshrc on Mac), and <code>source ~/.zshrc</code>.</p>
+<p><strong>Verify it works.</strong> In a fresh session: "Remember that my brand voice is warm and approachable, and my main offer is a $497 automation sprint." Close the session. Open a new one. Ask: "What's my brand voice and main offer?" If wired correctly, Claude pulls the facts back without you re-pasting.</p>
+<p><strong>Cost.</strong> Free tier covers light personal use. Pro $19/mo for daily use plus auto-inject. Skip Scale ($399/mo) unless you're running production agents.</p>
+<div class="tip">A note: Claude Code already has a built-in auto-memory system (markdown files in your project memory folder) that handles a lot of this for free. Supermemory adds cross-project search, semantic retrieval, and a queryable knowledge graph that the built-in system doesn't.</div>
+<p><strong>No SKILL.md needed.</strong> Supermemory works as an MCP server, not a skill. The setup above is the entire install.</p>
+
+<hr class="rule">
+<span class="kicker">the chain</span>
+<h2>Putting it all together</h2>
+<p>Say you're Maya, a marketing consultant trying to publish across 4 platforms a week. The chain you'd run:</p>
+<ol class="steps">
+<li>/voice-dna once at the start to lock in your voice profile</li>
+<li>/deep-research [topic] for the brief on what you're posting about that week</li>
+<li>/content-engine [brief] to spin out 8 platform formats, all in your voice</li>
+<li>/elevenlabs-podcast [article] to turn the long-form version into a podcast</li>
+<li>/remotion-video [script] to render a video version of the short-form script</li>
+<li>/competitor-ads-extractor weekly to see what's working in your niche</li>
+<li>Supermemory humming in the background, keeping context alive across every session</li>
+</ol>
+<p>Total monthly cost at solo creator volume: roughly $70 to $110 in API and tool fees (mostly ElevenLabs Creator + Apify Starter). Everything else is free or included in your Claude plan.</p>
+
+<hr class="rule">
+<span class="kicker">tick these off</span>
+<h2>Setup checklist</h2>
+<p>Tick in order. Skip what you don't need yet.</p>
+<ul>
+<li>Pick your Claude (Step 1)</li>
+<li>Read how skills work (Step 2)</li>
+<li>Install Voice DNA (skill #4) and run it on 10-20 of your pieces. Do this first, everything else builds on it.</li>
+<li>Install Content Engine (skill #6). Test on your best-performing piece.</li>
+<li>Install Deep Research (skill #3). Grab the Tavily free key. Run on a topic you're researching this week.</li>
+<li>Install Supermemory (skill #7), free MCP path. Verify with the remember test.</li>
+<li>Install Remotion Video (skill #1) in Claude Code when you have a script ready.</li>
+<li>Install ElevenLabs (skill #5) in Claude Code when you're ready to test a podcast.</li>
+<li>Install Competitor Ads Extractor (skill #2) when you're ready to track competitors weekly.</li>
+</ul>
+<p>If you only do one thing today, run Voice DNA. It's the multiplier on every other skill.</p>
+<p>Send this to one person who keeps saying they don't have time to make content.</p>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

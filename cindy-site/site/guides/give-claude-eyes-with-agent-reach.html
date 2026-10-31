@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Agent Reach is a free, open-source layer that picks, installs and health-checks the right tool for each platform.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Give Claude eyes on 13+ platforms with Agent Reach · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<link rel="canonical" href="https://cindyzhu.com.au/guides/give-claude-eyes-with-agent-reach">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Give Claude eyes on 13+ platforms with Agent Reach">
+<meta property="og:description" content="Agent Reach is a free, open-source layer that picks, installs and health-checks the right tool for each platform.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/give-claude-eyes-with-agent-reach">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Give Claude eyes on 13+ platforms with Agent Reach">
+<meta name="twitter:description" content="Agent Reach is a free, open-source layer that picks, installs and health-checks the right tool for each platform.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Give Claude eyes on 13+ platforms with Agent Reach", u:"guides/give-claude-eyes-with-agent-reach.html", topic:"power", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Power-user</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Give Claude eyes on 13+ platforms with Agent Reach</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Agent Reach is a free, open-source layer that picks, installs and health-checks the right tool for each platform.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip"><strong>🔎 Get the name right.</strong> The tool is <strong>Agent Reach</strong>, repo <a href="https://github.com/Panniantong/Agent-Reach" target="_blank">Panniantong/Agent-Reach</a>. A lot of reels call it "AgentReach" as one word, and if you search that on GitHub you land on a pile of unrelated 0-star repos with the same name. The real one is MIT licensed, written in Python, and currently sits above 70,000 stars.</div>
+
+<span class="kicker">start here</span>
+<h2>What it actually is <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Agent Reach is a capability layer, not another scraper. It does not read anything itself. For each platform it keeps an ordered list of backends (a first choice plus fallbacks), installs the working one, and runs a health check so your agent knows what it can currently reach. Your agent then calls those upstream tools directly.</p>
+<p>That distinction matters for a boring but important reason: access paths break constantly. The repo's own example is Bilibili 412-blocking <a href="https://github.com/yt-dlp/yt-dlp" target="_blank">yt-dlp</a> in June 2026, which moved that platform onto a different backend with no action from users. You are installing the router, not betting on one scraper staying alive.</p>
+<div class="cardgrid">
+<div class="minicard"><b>Free, genuinely</b> Every backend is an open-source tool with a free API path. The only line item is an optional proxy (about $1/month) and only if your network blocks these sites. Local machines need nothing.</div>
+<div class="minicard"><b>Local credentials</b> Where a platform needs a login, the cookie stays on your machine. Nothing is uploaded, and the whole codebase is open if you want to read it.</div>
+<div class="minicard"><b>Any agent</b> Anything that can run shell commands works: Claude Code, the Claude desktop app's terminal, Cursor, Windsurf. It is a CLI, not a Claude-only plugin.</div>
+<div class="minicard"><b>Self-diagnosing</b> One command, <code>agent-reach doctor</code>, prints which platforms are live, which need a step from you, and what that step is.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the honest version</span>
+<h2>What works instantly, and what does not <span class="gi" style="--gl:#B97C11" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9248 21H10.0752C5.44476 21 3.12955 21 2.27636 19.4939C1.42317 17.9879 2.60736 15.9914 4.97574 11.9985L6.90057 8.75333C9.17559 4.91778 10.3131 3 12 3C13.6869 3 14.8244 4.91777 17.0994 8.75332L19.0243 11.9985C21.3926 15.9914 22.5768 17.9879 21.7236 19.4939C20.8704 21 18.5552 21 13.9248 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 9V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the part the viral reels skip. "Install it once and just ask" is true for some platforms and not others, and knowing which is which saves you an hour of confusion.</p>
+<ol class="steps">
+<li><strong class="st">✅ Zero config, works the second it installs.</strong> Any web page (via <a href="https://github.com/jina-ai/reader" target="_blank">Jina Reader</a>, turning a URL into clean Markdown), YouTube subtitles and video search (yt-dlp), public GitHub repos and code search (the <a href="https://cli.github.com" target="_blank">gh CLI</a>), any RSS or Atom feed, and V2EX. Web search is wired up during install through <a href="https://exa.ai" target="_blank">Exa</a>, free and with no key of your own.</li>
+<li><strong class="st">🍪 One cookie export, then it works.</strong> Twitter/X needs an auth token exported from your browser before search, timelines and full tweet reading unlock. Your agent walks you through it if you ask it to.</li>
+<li><strong class="st">🔐 Needs a logged-in browser session.</strong> Reddit, Instagram and Facebook ride your existing desktop Chrome session through <a href="https://github.com/jackwener/opencli" target="_blank">OpenCLI</a>. Reddit specifically has <em>no</em> zero-config path any more, because the anonymous endpoints are blocked and the official API is gated. Desktop only.</li>
+<li><strong class="st">🔗 Partial out of the box.</strong> LinkedIn reads public pages through Jina Reader immediately. Full profiles, company pages and job search need the LinkedIn MCP backend configured.</li>
+</ol>
+<div class="tip warn"><strong>Read this before you connect accounts.</strong> Riding a logged-in session to read Reddit, Instagram or Facebook is a grey area under those platforms' terms of service, and doing it at volume is a good way to get an account limited. Use it for reading and research at human pace, keep it off your main account if that account is your business, and never point it at anything you would not be comfortable explaining.</div>
+
+<hr class="rule">
+<span class="kicker">install it</span>
+<h2>The setup, start to finish <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>You do not run an installer yourself. You hand your agent the install document and it does the work, which is the actual novelty here.</p>
+<ol class="steps">
+<li><strong class="st">👩‍💻 Check the two prerequisites.</strong> You need Python 3.10 or newer (<code>python3 --version</code> in a terminal tells you) and an agent that is allowed to run shell commands. Claude Code, Cursor and Windsurf all qualify out of the box.</li>
+<li><strong class="st">📋 Paste the install line to your agent.</strong> Open Claude Code in any folder and paste the block below. It fetches the install document and follows it: installs the Python package, checks your machine, and reports what is ready.</li>
+<li><strong class="st">🛡️ Approve system changes deliberately.</strong> By default the install only <em>checks</em> your machine and lists what is missing. It writes nothing system-level until you say yes. If your agent asks to re-run with <code>--system</code>, read what it wants to install before agreeing.</li>
+<li><strong class="st">🔎 Run the health check.</strong> Ask your agent to run <code>agent-reach doctor</code>. You get a list like "6/9 channels available" with a tick next to what works and a fix prescription next to what does not. This is your source of truth, not a blog post.</li>
+<li><strong class="st">➕ Unlock only what you need.</strong> Tell your agent "help me set up Twitter" or "help me set up Reddit" in plain language. It knows what each one requires and walks you through it. Skip the platforms you do not use.</li>
+<li><strong class="st">📦 Optional: install it as a skill.</strong> If your agent supports skills, run <code>npx skills add Panniantong/Agent-Reach@agent-reach</code>. The skill teaches your agent which command to reach for, so you never memorise CLI syntax.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">📋 paste this to install</span>
+<pre><code>Install Agent Reach: https://raw.githubusercontent.com/Panniantong/agent-reach/main/docs/install.md
+
+Read that document fully before you do anything, then follow it. Do the read-only environment check first and show me exactly which packages and system changes you would need before you make any of them, because I want to approve system-level installs myself rather than have them happen silently. When you are finished, run agent-reach doctor and show me the raw output so I can see which platforms are live and which still need a step from me.</code></pre>
+</div>
+<div class="tip calm"><strong>💡 If Python fights you.</strong> On a Mac with Homebrew Python you may hit an "externally-managed-environment" error. Tell your agent about it and ask it to install into a virtual environment instead, which the official install document covers. It is a known path, not a broken install.</div>
+
+<hr class="rule">
+<span class="kicker">copy these</span>
+<h2>4 research prompts worth the install <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Installing it is not the point. This is the point. Each of these is a real research job that Claude could not do before, and each one is written to make it show you evidence rather than a confident summary.</p>
+
+<div class="promptwrap">
+<span class="promptlabel">🧠 mine Reddit for real pain points</span>
+<pre><code>Use Agent Reach to search Reddit for what people actually complain about regarding [your topic, product category or niche], across the subreddits where that audience really posts rather than the obvious big one.
+
+Pull at least 30 posts or comments from the last six months, and quote the complaints verbatim in their own words rather than paraphrasing them into marketing language, because the exact phrasing is the thing I want. Group them into recurring themes, rank the themes by how often they come up and how emotional the language is, and note which ones already have a good answer in the thread versus which ones nobody solves. For every theme, give me the single best verbatim quote and a link to the thread it came from so I can verify it myself.</code></pre>
+</div>
+
+<div class="promptwrap">
+<span class="promptlabel">👩‍💻 study a competitor's best video properly</span>
+<pre><code>Use Agent Reach to pull the full transcript of this YouTube video: [URL]. Then pull the transcript of the two or three other videos on that channel with the highest view counts.
+
+Break each one down structurally rather than summarising it: what the first fifteen seconds do to earn attention, how the body is sequenced, where the pace changes, what specific claims or numbers are used as proof, and how it closes. Then tell me what is repeatable across all of them versus what only worked because of that specific topic. Finish with the three structural moves I could apply to my own content this week, and be blunt about which parts of their approach would not suit me.</code></pre>
+</div>
+
+<div class="promptwrap">
+<span class="promptlabel">🔎 scan the reaction before you post your take</span>
+<pre><code>Use Agent Reach to search Twitter/X for reactions to [topic, product launch or announcement] over the last two weeks, and read the replies to the highest-engagement posts, not only the posts themselves.
+
+Map the argument: what are the two or three genuinely distinct positions people hold, who is making each one, and what evidence does each side actually cite. Separate the takes that are informed from the ones that are just repeating a headline, and flag any factual claim that keeps getting repeated without a source. Then tell me which angle is already saturated and which one is underserved, and quote the specific posts you drew that from with links.</code></pre>
+</div>
+
+<div class="promptwrap">
+<span class="promptlabel">🌱 build a standing research feed</span>
+<pre><code>Use Agent Reach to set me up a weekly research loop on [your niche]. Find the five or six most useful RSS or Atom feeds and the two or three most active GitHub repositories in this space, and confirm each one actually returns content before you include it.
+
+Once you have them, read the last week of each and write me one brief: what genuinely changed, what is just noise, and what it means specifically for someone doing [your work]. Keep the same structure every week so I can compare briefs at a glance, and where you are inferring significance rather than reporting something stated outright, label it so I can tell the difference. Save the feed list somewhere reusable so the next run does not start from scratch.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">good to know</span>
+<h2>3 things before you rely on it <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip"><strong>It routes, it does not guarantee.</strong> Platforms break access paths on their own schedule. If something worked last week and does not today, run <code>agent-reach doctor</code> first, then update with the same one-line pattern (swap <code>install.md</code> for <code>update.md</code> in the URL). Most breakages are a re-route, not a dead end.</div>
+<div class="tip warn"><strong>Never point it at anything sensitive.</strong> You are giving an agent shell access and, for some platforms, your live browser session. Install it in a folder you do not mind it touching, read what it proposes before approving system changes, and treat any tool that asks for a login the way you would treat a browser extension asking for the same thing.</div>
+<div class="tip calm"><strong>💡 The realistic value.</strong> The killer use is not "scrape everything." It is that audience research stops being a tab-juggling chore. Asking one question and getting back thirty real quotes with links is a genuinely different working day, and that alone justifies the twenty-minute setup.</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://github.com/Panniantong/Agent-Reach" target="_blank">Agent Reach on GitHub (MIT, the source of every claim above)</a><br>
+  <a href="https://raw.githubusercontent.com/Panniantong/agent-reach/main/docs/install.md" target="_blank">The official install document your agent reads</a><br>
+  <a href="https://github.com/yt-dlp/yt-dlp" target="_blank">yt-dlp</a>, <a href="https://github.com/jina-ai/reader" target="_blank">Jina Reader</a>, <a href="https://cli.github.com" target="_blank">gh CLI</a> and <a href="https://github.com/jackwener/opencli" target="_blank">OpenCLI</a>, the backends doing the actual reading<br>
+  <a href="https://code.claude.com/docs/en/skills" target="_blank">Claude Code skills documentation</a>, if you install it the skill way
+</p>
+
+<hr class="rule">
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

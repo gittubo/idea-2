@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="This is the full setup for editing with ChatCut, the plugin that turns your desktop agent into a real editing timeline.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit your videos with AI: the good-take workflow · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<link rel="canonical" href="https://cindyzhu.com.au/guides/edit-your-videos-with-ai">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Edit your videos with AI: the good-take workflow">
+<meta property="og:description" content="This is the full setup for editing with ChatCut, the plugin that turns your desktop agent into a real editing timeline.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/edit-your-videos-with-ai">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Edit your videos with AI: the good-take workflow">
+<meta name="twitter:description" content="This is the full setup for editing with ChatCut, the plugin that turns your desktop agent into a real editing timeline.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Edit your videos with AI: the good-take workflow", u:"guides/edit-your-videos-with-ai.html", topic:"productivity", tool:"chatgpt"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Content creation</span>
+        <span class="gtag tool">ChatGPT</span>
+      </div>
+      <h1>Edit your videos with AI: the good-take workflow</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This is the full setup for editing with ChatCut, the plugin that turns your desktop agent into a real editing timeline.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn">⚠️ <strong>Read this before you install anything.</strong> This is a developer-style install: it runs in the <strong>desktop</strong> app, not ChatGPT on the web or your phone, and it needs Git available on your machine. If that sentence worries you, use <a href="https://chatcut.io" target="_blank">ChatCut's own web editor</a> instead. You get the same editor and the Skills feature, just without driving it from a chat. Worth knowing either way: both agent pieces are still pre-1.0, the desktop app has no auto-update, and the two open bugs on their public repo are both on the Windows path.</div>
+
+<hr class="rule">
+<hr class="rule">
+<span class="kicker">what you're actually getting</span>
+<h2>What ChatCut is, and what it can do <span class="gi" style="--gl:#8776B8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11C2 7.70017 2 6.05025 3.02513 5.02513C4.05025 4 5.70017 4 9 4H10C13.2998 4 14.9497 4 15.9749 5.02513C17 6.05025 17 7.70017 17 11V13C17 16.2998 17 17.9497 15.9749 18.9749C14.9497 20 13.2998 20 10 20H9C5.70017 20 4.05025 20 3.02513 18.9749C2 17.9497 2 16.2998 2 13V11Z" stroke="currentColor" stroke-width="1.5"/><path d="M17 8.90585L17.1259 8.80196C19.2417 7.05623 20.2996 6.18336 21.1498 6.60482C22 7.02628 22 8.42355 22 11.2181V12.7819C22 15.5765 22 16.9737 21.1498 17.3952C20.2996 17.8166 19.2417 16.9438 17.1259 15.198L17 15.0941" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><circle cx="11.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>It's a cloud video editor with a real multi-track timeline, and the plugin lets an AI agent drive it for you. The editing doesn't happen inside the chat: your agent sends instructions to ChatCut, and the timeline lives in your browser at app.chatcut.io. That matters because you can always open the project and finish by hand.</p>
+<p>The same plugin works in the ChatGPT desktop app, Claude Code, Cursor, Grok and Kimi, so you're not locked to one assistant.</p>
+<div class="cardgrid">
+<div class="minicard"><strong>✂️ Cut by editing text</strong><br>Delete words in the transcript and the matching video is removed and the gap closed. This is the Descript-style workflow, and it's the thing it does best.</div>
+<div class="minicard"><strong>💬 Captions</strong><br>Styled presets, per-word styling, and karaoke-style highlighting of the word being spoken. Translation into other languages too.</div>
+<div class="minicard"><strong>🎞️ B-roll and multicam</strong><br>Full-screen cutaways or rounded picture-in-picture, from your own library or stock. Multicam syncs angles by their audio.</div>
+<div class="minicard"><strong>✨ Motion graphics as code</strong><br>Unusually, it writes the graphic as code, so every piece stays editable afterwards instead of being a flat video.</div>
+<div class="minicard"><strong>🔊 Voice, music and cleanup</strong><br>Generated voiceover, music and sound effects, plus background noise removal that leaves the picture untouched.</div>
+<div class="minicard"><strong>📤 Export</strong><br>MP4 or WebM to 1080p in the browser, 4K through their desktop app, SRT subtitles, and an XML timeline for Premiere or DaVinci Resolve.</div>
+</div>
+<div class="tip warn">⚠️ <strong>Know the export limits before you build a workflow on it.</strong> The timeline export is one format only (the older FCP7 XML), and it drops captions, effects, transitions and motion graphics on the way out, so treat it as a rough handoff, not a faithful one. Subtitles come out as SRT or plain text, never VTT. Audio-only exports are MP3. The CapCut draft handoff is real but only works from their desktop app, not through the plugin.</div>
+<div class="tip">💡 <strong>Careful what you install.</strong> There are unrelated open-source projects called OpenChatCut that come up in searches. ChatCut itself is a paid cloud product, not an open-source app, and the plugin is the only open part.</div>
+
+<span class="kicker">step one</span>
+<h2>Install the plugin <span class="gi" style="--gl:#4C395C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 2V6M8.5 6V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.00446 7.61331C5.93719 6.74273 6.63957 6 7.53014 6H16.4699C17.3604 6 18.0628 6.74273 17.9955 7.61331L17.8117 9.99197C17.6796 11.7019 17.1011 13.3498 16.132 14.7773L15.5312 15.6622C14.9638 16.4979 14.0077 17 12.9838 17H11.0162C9.99228 17 9.03617 16.4979 8.46881 15.6622L7.86803 14.7773C6.89885 13.3498 6.32041 11.7019 6.18827 9.99197L6.00446 7.61331Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 9H13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Three routes, all documented by ChatCut. Pick one:</p>
+<ol class="steps">
+<li><strong class="st">⚡ The one-liner (fastest)</strong> Open the ChatGPT desktop app and paste this into any task. It installs itself in about a minute.
+<div class="promptwrap"><span class="promptlabel">paste into the desktop app</span><pre><code>/goal Read chatcut.io/chatgpt to install the ChatCut plugin and set up a new task for me.</code></pre></div></li>
+<li><strong class="st">🔎 From the plugin store</strong> Open the plugin store in the desktop app, search <strong>ChatCut</strong>, click <strong>Install</strong>.</li>
+<li><strong class="st">🛠 Manually</strong> Plugins in the sidebar → <strong>Create</strong> → <strong>Add marketplace</strong> → paste <code>https://github.com/ChatCut-Inc/agent-plugin.git</code> → open the <strong>Personal</strong> tab → find ChatCut → <strong>Install</strong>.</li>
+<li><strong class="st">🔑 Sign in when it asks</strong> It opens ChatCut's authorisation page in your browser. Sign in and allow. Never paste passwords or tokens into the chat itself.</li>
+</ol>
+<div class="tip warn">🚨 <strong>The one that catches everyone: the chat you install in can never edit.</strong> ChatCut's docs are blunt about it, the install conversation cannot reach the newly installed tools even after login succeeds. <strong>Start a brand-new conversation</strong>, then type <code>@chatcut</code> to wake it. If your first edit request does nothing, this is why.</div>
+<div class="tip warn">💥 <strong>Do not drag a video onto the embedded editor panel.</strong> ChatCut says it "can crash the desktop app," and it's a host-side bug they've reported to OpenAI. Add media through the chat column, or inside ChatCut via <strong>My Assets → Upload</strong>. Uploads through the plugin get normalised to 1920px and 30fps, four files at a time, so don't bulk-dump a folder.</div>
+
+<hr class="rule">
+<span class="kicker">before you start</span>
+<h2>What it costs <span class="gi" style="--gl:#1591BF" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 12C2 8.46252 2 6.69377 3.0528 5.5129C3.22119 5.32403 3.40678 5.14935 3.60746 4.99087C4.86213 4 6.74142 4 10.5 4H13.5C17.2586 4 19.1379 4 20.3925 4.99087C20.5932 5.14935 20.7788 5.32403 20.9472 5.5129C22 6.69377 22 8.46252 22 12C22 15.5375 22 17.3062 20.9472 18.4871C20.7788 18.676 20.5932 18.8506 20.3925 19.0091C19.1379 20 17.2586 20 13.5 20H10.5C6.74142 20 4.86213 20 3.60746 19.0091C3.40678 18.8506 3.22119 18.676 3.0528 18.4871C2 17.3062 2 15.5375 2 12Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10 16H11.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.5 16L18 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M2 9H22" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+  <div class="minicard"><b>🖥 The desktop app</b> Mac or Windows. ChatCut says every plan including Free works. Realistically, a long edit is a long agent session, so a paid tier is the comfortable floor.</div>
+  <div class="minicard"><b>🎬 A ChatCut account</b> Their docs describe a free tier with the core editor and a one-time credit balance; their pricing page lists no free tier and one of their comparison pages says there is none. If you get it, it carries a <b>60-minute cumulative export quota that never resets</b>. Not per month. Sixty, ever. The good news: they state plainly that there is <b>no watermark on exports, on free or any plan</b>.</div>
+  <div class="minicard"><b>💰 Credits buy generation, not editing</b> $25 to $160 a month for 100 to 800 credits. But cutting, transcription, captions and exporting cost <b>zero</b> credits. Credits go on generated video, music and voice.</div>
+  <div class="minicard"><b>📤 Export, and a one-way door</b> MP4 or WebM up to 1080p on the web, 4K only via their desktop app (local render, not a paid upgrade). You can send XML to Premiere or Resolve, but you can never import an existing edit back in.</div>
+</div>
+<div class="tip warn">💸 <strong>Check the credit maths yourself, because the headline numbers are 480p.</strong> Their pricing page offers 100 credits as roughly 263 seconds of generated video. That rate is the <strong>480p</strong> price. At 1080p their own billing table works out closer to <strong>45 seconds</strong> for the same 100 credits. The free starting balance of 20 credits is about <strong>9 seconds</strong> of 1080p generated video, once, ever, and it does not renew. None of that touches ordinary editing, which is free, so this only bites if you lean on generated B-roll. Also: talking to the agent costs credits too, and their docs say longer conversations cost more, so a tight brief is cheaper than a long negotiation.</div>
+
+<hr class="rule">
+<span class="kicker">do this while filming</span>
+<h2>Mark your good takes out loud <span class="gi" style="--gl:#8776B8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11C2 7.70017 2 6.05025 3.02513 5.02513C4.05025 4 5.70017 4 9 4H10C13.2998 4 14.9497 4 15.9749 5.02513C17 6.05025 17 7.70017 17 11V13C17 16.2998 17 17.9497 15.9749 18.9749C14.9497 20 13.2998 20 10 20H9C5.70017 20 4.05025 20 3.02513 18.9749C2 17.9497 2 16.2998 2 13V11Z" stroke="currentColor" stroke-width="1.5"/><path d="M17 8.90585L17.1259 8.80196C19.2417 7.05623 20.2996 6.18336 21.1498 6.60482C22 7.02628 22 8.42355 22 11.2181V12.7819C22 15.5765 22 16.9737 21.1498 17.3952C20.2996 17.8166 19.2417 16.9438 17.1259 15.198L17 15.0941" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><circle cx="11.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>You will do the same line five times. The agent can see all five and has no idea which one you liked. So tell it while you're still rolling.</p>
+<p>After a take you're happy with, say a marker out loud in your normal voice, then carry on. ChatCut's own blog describes beta users doing exactly this, saying <em>"ChatCut, mark this as director's favorite,"</em> then adding to the prompt: <em>"Never use the parts addressing 'ChatCut' in the final video, but use them as logging notes."</em> That second half matters, so include it.</p>
+<div class="tip calm">🎞️ <strong>This isn't a hack, it's an old film habit.</strong> It's the <strong>circle take</strong>: the script supervisor circles the director's preferred take on the script pages so the edit suite knows what to use. You're doing the same thing, just leaving the note in the audio instead of on paper.</div>
+<div class="tip">🌱 <strong>If you already write scripts, there's a second route.</strong> ChatCut aligns your footage to a written script and surfaces the strongest version of each line across every take. So you can paste your script in and pick from the attempts it shows you. Use the spoken marker, the script, or both. The marker wins when you improvise; the script wins when you don't.</div>
+
+<hr class="rule">
+<span class="kicker">the order matters</span>
+<h2>Cut the speech first, everything else second <span class="gi" style="--gl:#DE5E63" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.4368 9.55807L10.6 12M10.6 12L7 15M10.6 12L13.4949 14.3865M10.6 12L7 9M16 8.5C16 9.32843 15.3284 10 14.5 10C13.6716 10 13 9.32843 13 8.5C13 7.67157 13.6716 7 14.5 7C15.3284 7 16 7.67157 16 8.5ZM16 15.5C16 16.3284 15.3284 17 14.5 17C13.6716 17 13 16.3284 13 15.5C13 14.6716 13.6716 14 14.5 14C15.3284 14 16 14.6716 16 15.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the single most useful rule I found, and it's in ChatCut's own guidance: the speech timing set by your A-roll cut anchors everything downstream. If you ask for cuts, captions, graphics and music in one prompt, you cannot tell which decision went wrong when it comes back odd.</p>
+<p>So go in passes. Their own copy-paste prompts, in order:</p>
+<div class="promptwrap"><span class="promptlabel">1 · the first cut</span><pre><code>Use ChatCut to make a clean first cut of this talking-head video. Remove repeated takes, filler words, obvious restarts, and long empty pauses, but preserve the speaker's meaning and natural cadence. Keep the strongest opening line, add readable captions, and leave all media and edits on an editable timeline. Do not add generated footage or music yet.</code></pre></div>
+<div class="promptwrap"><span class="promptlabel">2 · tighten it</span><pre><code>Remove repeated takes, filler words, obvious restarts, and unnecessary pauses. Keep the meaning intact, preserve any pause that helps the point land, and make the delivery feel natural.</code></pre></div>
+<div class="promptwrap"><span class="promptlabel">3 · captions</span><pre><code>Add word-level captions and highlight the word currently being spoken. Keep the text readable on a phone, away from the speaker's face, and consistent throughout the video.</code></pre></div>
+<div class="promptwrap"><span class="promptlabel">4 · sound and movement, last</span><pre><code>Add subtle sound effects, transitions, and punch-in zooms only where they connect ideas or emphasize an important line. Keep the existing cut unchanged and avoid an effect on every sentence.</code></pre></div>
+<p>One more worth keeping, for turning a long recording into shorts:</p>
+<div class="promptwrap"><span class="promptlabel">5 · long-form into shorts</span><pre><code>Find three self-contained highlights in this recording. Turn each into a separate 9:16 short. Open with the strongest complete line, preserve enough context for each idea to stand alone, keep each timeline editable, and add phone-readable captions. Do not invent quotes or cut a sentence in a way that changes its meaning.</code></pre></div>
+
+<hr class="rule">
+<span class="kicker">making it look like you</span>
+<h2>Teach it your look <span class="gi" style="--gl:#BF7362" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C12.8417 22 14 22.1163 14 21C14 20.391 13.6832 19.9212 13.3686 19.4544C12.9082 18.7715 12.4523 18.0953 13 17C13.6667 15.6667 14.7778 15.6667 16.4815 15.6667C17.3334 15.6667 18.3334 15.6667 19.5 15.5C21.601 15.1999 22 13.9084 22 12Z" stroke="currentColor" stroke-width="1.5"/><circle cx="9.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M7.125 15H7M7.25 15C7.25 15.1381 7.13807 15.25 7 15.25C6.86193 15.25 6.75 15.1381 6.75 15C6.75 14.8619 6.86193 14.75 7 14.75C7.13807 14.75 7.25 14.8619 7.25 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>One thing worth clearing up, because it is widely assumed: <strong>you cannot hand it links to your old videos and have it learn your style.</strong> That isn't a feature. What exists is better documented and easier:</p>
+<ol class="steps">
+<li><strong class="st">🖼 Build a Design Style</strong> Open <strong>Design Style</strong> → <strong>Create Design Style</strong>. It takes colours, fonts, logos, <strong>reference images</strong> and written rules. Screenshot the frames from your own videos you want it to copy and upload those. No scraping tools, no ffmpeg, just screenshots.</li>
+<li><strong class="st">🔤 Pick fonts from its catalogue</strong> Not from your machine. ChatCut warns that system fonts like Arial or Helvetica fall back unpredictably between computers. Custom fonts attach to your Design Style.</li>
+<li><strong class="st">🔊 Use the built-in sound library first</strong> There's a sound effects library, and their own guidance is to use it before generating anything, because generating costs credits and the library doesn't.</li>
+<li><strong class="st">💾 Save it as a Skill</strong> Once a workflow works, open a project, click the <strong>book icon</strong> under the message field, and choose <strong>Save this editing process as a Skill</strong>. It comes back under <strong>My Skills</strong> in your other projects.</li>
+</ol>
+<div class="tip warn">⚠️ <strong>Design Styles mainly shape motion graphics, not your cutting rhythm.</strong> And Skills are documented inside ChatCut's own editor, not the chat plugin. So if the reusable-workflow part is what you're here for, drive it from ChatCut's editor rather than from a chat window.</div>
+
+<hr class="rule">
+<span class="kicker">the honest part</span>
+<h2>What it does well, and what still needs you <span class="gi" style="--gl:#9A7BBC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="rolegrid">
+  <div class="rolecard"><b>✅ Genuinely good</b> The mechanical cut. Pulling repeated takes, closing dead air, trimming false starts, captioning, placing effects where you said. In the one detailed public test, 51 minutes of raw footage became a 22-minute first cut, with about 25 to 30 minutes of agent runtime. This is the hours you were losing.</div>
+  <div class="rolecard"><b>🧠 Still yours</b> Which take had the energy. Whether a section should go entirely. Whether a pause is dead air or a beat. ChatCut's own blog says it plainly: "Speed gets you to a first draft, human judgment determines what actually goes live."</div>
+</div>
+<p><strong>Where it actually breaks.</strong> Independent coverage is genuinely thin, so this is the one substantive outside critique that exists, and it matches my own experience: the agent "can still struggle to interpret more subjective stylistic choices, pacing nuances, or complex narrative intents," and auto-picked B-roll "can feel repetitive and generic." ChatCut itself concedes that transcription "misreads proper nouns, brand names, technical terms, and fast or accented speech," which matters if you say tool names on camera.</p>
+<p>The failure worth bracing for, from an editor who hit it: <em>"I asked an editing agent to 'make this punchier,' got a tight cut back, and then realized it had removed the one sentence that made the whole point make sense."</em></p>
+<div class="tip">📊 <strong>What the "80%" figure actually covers.</strong> It's fair for <strong>the mechanical work</strong> on a solo talking head, which is the easiest case there is. It's not 80% of the edit. Adobe surveyed 16,000+ creators this year: 57% said AI outputs need moderate or extensive editing before they're shareable, and 85% said the final creative call should always stay with the creator. Plan on directing it, not delegating to it.</div>
+<div class="tip warn">🔁 <strong>Expect several rounds before it's predictable.</strong> These agents are non-deterministic, so the same prompt can behave differently twice. That's not you doing it wrong. Correct it in plain words, run again, and keep your correction notes, because by round three you've effectively written your style guide. Just remember the meter is running while you do it.</div>
+
+<hr class="rule">
+<hr class="rule">
+<span class="kicker">the fun part</span>
+<h2>Motion graphics and little animations <span class="gi" style="--gl:#BF7362" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C12.8417 22 14 22.1163 14 21C14 20.391 13.6832 19.9212 13.3686 19.4544C12.9082 18.7715 12.4523 18.0953 13 17C13.6667 15.6667 14.7778 15.6667 16.4815 15.6667C17.3334 15.6667 18.3334 15.6667 19.5 15.5C21.601 15.1999 22 13.9084 22 12Z" stroke="currentColor" stroke-width="1.5"/><circle cx="9.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M7.125 15H7M7.25 15C7.25 15.1381 7.13807 15.25 7 15.25C6.86193 15.25 6.75 15.1381 6.75 15C6.75 14.8619 6.86193 14.75 7 14.75C7.13807 14.75 7.25 14.8619 7.25 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the part most people miss. ChatCut writes motion graphics as code, which means the animated stat, title card or lower third it makes for you stays editable afterwards. You can ask for a change instead of starting again. Ask in one pass, after the cut is locked, so the graphic lands on timing that won't move.</p>
+
+<div class="promptwrap">
+<span class="promptlabel">✨ an animated stat card</span>
+<pre><code>Add a motion graphic to the timeline at [the moment I say the number], on top of the existing footage, and do not change the cut underneath it.
+
+It's a stat card that counts up to [87%] with the label [of viewers never make it past 3 seconds]. Vertical 1080 by 1920, about [3] seconds, positioned in the [upper third] so it never covers my face.
+
+Style: one accent colour [#D97757] on a [cream] card, everything else neutral, one clean sans-serif. The number counts up with an ease-out, the label fades in slightly after it, and the whole card leaves the way it came in. No bouncing, no spinning, nothing pulsing while it sits there.
+
+Show me a preview frame before you render it, and keep the graphic editable so I can change the number later.</code></pre>
+</div>
+
+<div class="tip">💡 <strong>Why "nothing pulsing" is in there.</strong> The quickest way to make an overlay look amateur is idle movement: things that wobble or breathe while they wait. Good motion moves with purpose, then stops. Ask for one accent colour too, because a graphic with five colours reads as decoration instead of information.</div>
+
+<h3>Your own little mascot animation <span class="gi" style="--gl:#D95E89" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h3>
+<p>A small looping character is a cheap way to make a video feel like yours, and you don't need a design tool. Ask your agent to draw it in code as pixel art, so every version afterwards is a number change rather than a re-roll. You need Python and one free library (<code>pip3 install Pillow</code>), and your agent can set that up for you.</p>
+
+<div class="promptwrap">
+<span class="promptlabel">🦀 a looping pixel mascot</span>
+<pre><code>Make me a small animated pixel mascot in Python using Pillow. Draw every frame in code from square blocks. Do not generate images with AI.
+
+Character: [a round orange cat with two dot eyes]. Action: [typing on a laptop, looking pleased with itself].
+
+Rules: build it from chunky pixel blocks so it reads as 8-bit, and write one function that draws the character with arguments for the parts that move, then call it once per frame so the character never changes size or colour between frames. Every frame is transparent, with no background. Pick one ground line and keep the feet on it, so it never floats. Around 16 to 24 frames for a simple loop. Export one looping GIF with a transparent background, saved as [name].gif.
+
+Then show me the first frame and tell me the frame count. I'll tell you what to change and you adjust the numbers and export again.</code></pre>
+</div>
+<p>Expect the first working version in about ten minutes, then a couple of minutes per tweak. Drop the GIF over your footage in ChatCut, or in whatever you edit in.</p>
+
+<hr class="rule">
+<span class="kicker">free and worth knowing</span>
+<h2>The free tools that do the boring parts <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>You don't need any of these to use ChatCut, but they're free, they run on your own machine, and an AI agent can drive all of them. This is the layer that costs you nothing and saves hours.</p>
+<ol class="steps">
+<li><strong class="st">✂️ auto-editor, the silence cut</strong> Cuts dead air and filler words from a recording, and can export a timeline straight to Premiere, Resolve or Final Cut instead of a finished video. Install with <code>brew install auto-editor</code>, then run <code>auto-editor video.mp4 --margin 0.2s</code>. Public domain, genuinely free.</li>
+<li><strong class="st">🎧 ffmpeg, for everything else</strong> Converting, cropping to 9:16, normalising loudness, burning in captions, exporting a transparent overlay. Nobody remembers the syntax, which is exactly why handing it to an agent works so well. Install with <code>brew install ffmpeg-full</code>.</li>
+<li><strong class="st">📝 Transcription on your own machine</strong> The full ffmpeg build can now transcribe audio to an SRT file by itself, and <code>brew install whisper-cpp</code> gives you a faster one built for Apple Silicon. Free, offline, and nothing gets uploaded.</li>
+<li><strong class="st">🪄 rembg, for cutouts</strong> Removes the background from an image in one command: <code>pip install "rembg[cli]"</code>, then <code>rembg i input.png output.png</code>. Handy for thumbnails and overlays.</li>
+</ol>
+<div class="tip warn">⚠️ <strong>The trap in every captions tutorial.</strong> Plain <code>brew install ffmpeg</code> ships without the caption filters, so the usual burn-in command fails with a confusing "no such filter" error. Install <code>brew install ffmpeg-full</code> instead. It doesn't replace your existing ffmpeg automatically, so either tell your agent to use the full path it prints after installing, or add it to your PATH with <code>export PATH="/opt/homebrew/opt/ffmpeg-full/bin:$PATH"</code>. To check which one you have, run <code>ffmpeg -filters | grep subtitles</code>: if nothing comes back, captions will fail.</div>
+<div class="tip">💡 <strong>Ask before you install.</strong> Paste this into your agent: "I want to cut the silence out of [file], burn in captions from an SRT, and export a 9:16 version. Tell me which of ffmpeg-full and auto-editor I need, install what's missing, then do it one step at a time and show me the result after each step."</div>
+
+<span class="kicker">when you outgrow it</span>
+<h2>The ceiling, and what's past it <span class="gi" style="--gl:#957FAC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 21H10C6.70017 21 5.05025 21 4.02513 19.9749C3 18.9497 3 17.2998 3 14V3" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M7.99707 16.999C11.5286 16.999 18.9122 15.5348 18.6979 6.43269M16.4886 8.04302L18.3721 6.14612C18.5656 5.95127 18.8798 5.94981 19.0751 6.14286L20.9971 8.04302" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>ChatCut's motion graphics are genuinely good for captions, simple animations and basic charts, and you can edit the generated pieces afterwards. What it can't do is bind a chart to a real dataset or give you frame-exact control.</p>
+<p>If you need that, the step up is building the graphic as <strong>code</strong>, where a chart reads from a real dataset and you control every frame. Two options worth knowing, and the licensing differs sharply. <strong>Remotion</strong> is <em>not</em> open source, it's source-available under a proprietary licence, but it's genuinely <strong>free for an individual, commercially, forever</strong>. That only changes at four or more people. <strong>HyperFrames</strong> is Apache-2.0 with no headcount threshold at all.</p>
+<p>The learning curve is smaller than it was. Both now have coding-agent paths, so you can prompt your way to a first render rather than writing React from scratch. What you get back is still code, so every refinement means reading or re-prompting it. Reach for this only for the recurring branded asset, the chart or title treatment you'll rebuild every month. It's an overlay on your edit, not a replacement for it.</p>
+
+<hr class="rule">
+<hr class="rule">
+<span class="kicker">the question everyone asks</span>
+<h2>Does it replace Descript? <span class="gi" style="--gl:#B97C16" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 9.5C9.5 8.11929 10.6193 7 12 7C13.3807 7 14.5 8.11929 14.5 9.5C14.5 10.3569 14.0689 11.1131 13.4117 11.5636C12.7283 12.0319 12 12.6716 12 13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>For the job most creators use Descript for, cutting a talking head down from the transcript, removing filler and dead air, and getting a tight first cut, yes, it genuinely does. And it adds things Descript doesn't have: an outside AI agent that can run the whole cut for you, motion graphics that stay editable as code, and generation of video, images and music inside the editor.</p>
+<div class="cardgrid">
+<div class="minicard"><strong>✅ Where ChatCut wins</strong><br>Agent-driven cutting end to end, editable code motion graphics, in-editor generation, and a handoff that opens as a CapCut draft (desktop app only).</div>
+<div class="minicard"><strong>⚠️ Where Descript still wins</strong><br>Sending your edit to other software, since Descript exports many timeline formats and ChatCut exports one. Its word-level voice replacement and studio audio and eye-contact fixes are also more mature, as is team review.</div>
+</div>
+<div class="tip warn">⚠️ <strong>The free tiers work in opposite ways, and this is the thing to check before you switch.</strong> ChatCut's free exports have no watermark, but the free export allowance is a lifetime total, not a monthly one, so it runs out and never refills. Descript's free tier renews monthly but adds a watermark. If you post several videos a week, budget for a paid plan on either.</div>
+
+<span class="kicker">read before uploading client work</span>
+<h2>Rights and your footage <span class="gi" style="--gl:#C37509" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5V17.5M13 14.5C13 15.0523 12.5523 15.5 12 15.5C11.4477 15.5 11 15.0523 11 14.5C11 13.9477 11.4477 13.5 12 13.5C12.5523 13.5 13 13.9477 13 14.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16.5 9V6.5C16.5 4.01472 14.4853 2 12 2C9.51471 2 7.49999 4.01472 7.49999 6.5V9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M4.2678 18.8447C4.49268 20.515 5.87612 21.8235 7.55965 21.9009C8.97627 21.966 10.4153 22 12 22C13.5847 22 15.0237 21.966 16.4403 21.9009C18.1239 21.8235 19.5073 20.515 19.7322 18.8447C19.8789 17.7547 20 16.6376 20 15.5C20 14.3624 19.8789 13.2453 19.7322 12.1553C19.5073 10.485 18.1239 9.17649 16.4403 9.09909C15.0237 9.03397 13.5847 9 12 9C10.4153 9 8.97627 9.03397 7.55965 9.09909C5.87612 9.17649 4.49268 10.485 4.2678 12.1553C4.12104 13.2453 3.99999 14.3624 3.99999 15.5C3.99999 16.6376 4.12104 17.7547 4.2678 18.8447Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+  <div class="minicard"><b>✅ Your exports are yours</b> Their terms explicitly don't restrict you creating, exporting and commercially publishing your own output. Sponsored and client work is fine.</div>
+  <div class="minicard"><b>✅ No training on your media</b> Their terms say plainly: "We do not use user media to train AI models." That's a real differentiator and worth crediting.</div>
+  <div class="minicard"><b>⚠️ Generated assets are a grey area</b> There's no clause covering who owns AI-generated music or B-roll, and their terms ask you to indemnify them for third-party claims. So if generated material infringes, that lands on you.</div>
+  <div class="minicard"><b>⚠️ NDA'd footage needs care</b> Your media isn't trained on, but it still passes through third-party model vendors, and there's no published subprocessor list. Get written client permission, or use their desktop app where footage stays local.</div>
+</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

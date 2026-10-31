@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find every photo of yourself online with Claude (audit + takedown kit) · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="By the end you will have a tracker of every place your face shows up online, plus ready-to-send takedown requests for the ones you want gone.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/find-your-photos-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Find every photo of yourself online with Claude (audit + takedown kit)">
+<meta property="og:description" content="By the end you will have a tracker of every place your face shows up online, plus ready-to-send takedown requests for the ones you want gone.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/find-your-photos-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Find every photo of yourself online with Claude (audit + takedown kit)">
+<meta name="twitter:description" content="By the end you will have a tracker of every place your face shows up online, plus ready-to-send takedown requests for the ones you want gone.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Find every photo of yourself online with Claude (audit + takedown kit)", u:"guides/find-your-photos-claude.html", topic:"design", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Life &amp; self</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Find every photo of yourself online with Claude (audit + takedown kit)</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 By the end you will have a tracker of every place your face shows up online, plus ready-to-send takedown requests for the ones you want gone.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn"><strong>One honest note first.</strong> Claude will not run the face search for you, and that is by design. Anthropic's <a href="https://www.anthropic.com/legal/aup" target="_blank">usage policy</a> prohibits facial recognition, and Claude in Chrome is explicitly blocked from <a href="https://support.claude.com/en/articles/12902428-use-claude-in-chrome-safely" target="_blank">gathering or scraping facial images</a>, so it will refuse. So you run the engines, which takes about five minutes, and Claude does everything around them: it organises every hit into a tracker and writes the takedown letters. That is still the slow part, and it is the part you would otherwise never finish.</div>
+
+<span class="kicker">start here</span>
+<h2>The 5-step audit <span class="gi" style="--gl:#2794B2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🙂 Pick one clear selfie.</strong> Face forward, good light, no sunglasses. This is the only input the engines need.</li>
+<li><strong class="st">🔎 Run it through the engines yourself.</strong> PimEyes, FaceCheck ID and Yandex Images. This is the manual bit, and it takes about five minutes.</li>
+<li><strong class="st">🔗 Copy every hit into Claude.</strong> Paste the links you found straight into a Claude chat, one per line, with the site name if you have it.</li>
+<li><strong class="st">🗂️ Build the exposure tracker.</strong> Every hit lands in one table: link, site, and how exposed you are, ranked worst first.</li>
+<li><strong class="st">✉️ Send the takedown letters.</strong> Claude writes a tailored removal request for each one, citing the law that applies to you.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">do this first</span>
+<h2>Step 1: run the engines yourself <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Upload the same selfie to each engine below and collect every result that is actually you: the page link, the site name, and what the photo or page is. Keep it in a scratch note, you are about to paste the whole lot into Claude in one go. Ignore the obvious false matches, and do not chase results that are clearly someone else.</p>
+
+<hr class="rule">
+<span class="kicker">copy these</span>
+<h2>The 3 prompts <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>First, hand Claude the hits you collected in step 1:</p>
+<div class="promptwrap">
+<span class="promptlabel">🔗 the handover prompt</span>
+<pre><code>I am running a privacy audit on myself. I have already run my photo through the face-search engines and these are every page where I appear:
+
+[paste your links here, one per line]
+
+For each one, open it and tell me: the site, what the page actually is, whether it looks like a real match or a false positive, and who the right contact is for a removal request (a privacy email, a report form, or a data-broker opt-out page). Ask me before you assume anything you cannot see on the page.</code></pre>
+</div>
+
+<p>Then, once the hits are in, organise them:</p>
+<div class="promptwrap">
+<span class="promptlabel">🗂️ the exposure tracker</span>
+<pre><code>Put every hit in a tracker with the link, site, and how exposed I am.
+
+Make it a table with columns: site, link, what it is, exposure level (low / medium / high), removal route (site contact, platform report form, search-engine removal, data-broker opt-out), and status. Rank it by exposure so I handle the worst first, and flag any that look like a false match I should double-check before I act.</code></pre>
+</div>
+
+<p>Finally, get it removed:</p>
+<div class="promptwrap">
+<span class="promptlabel">✉️ the takedown letters</span>
+<pre><code>Write a removal request for each high-exposure entry, citing their rules and my right to erasure.
+
+Tailor each one to that specific site: reference the exact URL, state that I am the person pictured and did not consent to publication, request removal, and cite the strongest basis that applies to me: GDPR Article 17 if the site serves the EU or UK, the California CCPA if I am in California, or the Australian Privacy Act if I am in Australia. Give each one a subject line and keep it under 150 words.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">the engines</span>
+<h2>Where the matching actually happens <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>You run these yourself, so it helps to know what each one is for. General search engines are weak on faces by design, so the face-specialised ones do the real work. Run all three if you can, they surface different things.</p>
+<div class="cardgrid">
+<div class="minicard"><b><a href="https://pimeyes.com/en" target="_blank">PimEyes</a></b> The most thorough. Free to see that a match exists, but the source links sit behind a paid plan, so start here only if you are willing to pay to see where.</div>
+<div class="minicard"><b><a href="https://facecheck.id" target="_blank">FaceCheck ID</a></b> Face-specialised across social profiles, blogs, news and video. Free preview of results, and it scores each match, so treat low scores as maybes.</div>
+<div class="minicard"><b><a href="https://yandex.com/images/" target="_blank">Yandex Images</a></b> The best genuinely free face-matcher, and it often surfaces hits the others miss. Weaker on Western social platforms since 2022.</div>
+<div class="minicard"><b>Skip Google Lens for this</b> It will find pages containing your exact image, but it will not identify a private person by face, and that is deliberate. Useful as a fourth pass, useless as your first.</div>
+</div>
+<p>More on why the face-specialised engines win: <a href="https://facecheck.id/Face-Search-Compare-Reverse-Image-Websites" target="_blank">FaceCheck's comparison</a>.</p>
+
+<hr class="rule">
+<span class="kicker">know your rights</span>
+<h2>The law you're citing <span class="gi" style="--gl:#B67D09" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="5" r="2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10 5H4M14 5H20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 21H7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 7V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 14L18.5 8H19.5L22 14C22 15.6569 20.6569 17 19 17C17.3431 17 16 15.6569 16 14ZM22 14H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M2 14L4.5 8H5.5L8 14C8 15.6569 6.65685 17 5 17C3.34315 17 2 15.6569 2 14ZM8 14H2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The takedown letters lean on real privacy law, and there is one for wherever you are, so Claude cites the strongest fit.</p>
+<div class="cardgrid">
+<div class="minicard"><b>GDPR Article 17</b> The EU and UK "right to erasure": you can ask a site to delete your personal data. Full text: <a href="https://gdpr-info.eu/art-17-gdpr/" target="_blank">Article 17</a>.</div>
+<div class="minicard"><b>California CCPA / CPRA</b> Gives California residents the right to request deletion of personal information a business holds.</div>
+<div class="minicard"><b>Australian Privacy Act</b> The Australian Privacy Principles let you ask an organisation to correct or stop holding your personal information.</div>
+<div class="minicard"><b>The site's own rules</b> Most platforms have a non-consensual imagery or privacy policy. Citing it alongside the law makes a removal request much harder to ignore.</div>
+</div>
+
+<div class="tip calm">🔁 Removing a photo from a site does not instantly clear it from search results, so recheck the engines a couple of weeks after a takedown, and re-run the whole audit every few months. Your tracker turns the re-run into a five-minute job.</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

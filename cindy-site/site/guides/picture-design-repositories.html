@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 GitHub repos for your next design project · Cindy Zhu</title><meta name="description" content="GitHub repos for your next design project, plus a prompt that builds a small resource-library page."><link rel="canonical" href="https://cindyzhu.com.au/guides/picture-design-repositories">
+<meta property="og:title" content="5 GitHub repos for your next design project"><meta property="og:description" content="GitHub repos for your next design project, plus a prompt that builds a small resource-library page."><meta property="og:url" content="https://cindyzhu.com.au/guides/picture-design-repositories"><meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles.css"><!-- seo:auto -->
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="5 GitHub repos for your next design project">
+<meta name="twitter:description" content="GitHub repos for your next design project, plus a prompt that builds a small resource-library page.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body><!-- GUIDES_CARD {t:"5 GitHub repos for your next design project", u:"guides/picture-design-repositories.html", topic:"design", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap"><main class="guidewrap"><a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a><div class="guidehead"><div class="gtags"><span class="gtag topic">Design</span><span class="gtag tool">Claude</span></div><h1>5 GitHub repos for your next design project</h1></div><div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 GitHub repos for your next design project, plus a prompt that builds a small resource-library page.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>A GitHub repository can contain very different things: a font family, a set of SVG icons or actual code for a website. Once you know which one you’re looking at, it becomes much easier to use the resource without downloading an entire project you don’t need.</p>
+<p>These five repositories cover fonts, icons, interface components, illustrations and patterned backgrounds. We’ll use them to plan a small resource-library page: a heading, three resource cards and an empty state for when a search returns nothing.</p>
+<p>You can browse every repository publicly. For a static design, you need a design tool that accepts the downloaded files. For the working website parts, you need a compatible development project and a way to preview it locally. Hosting, paid software and AI coding usage are separate costs.</p>
+<hr class="rule"/><span class="kicker">part 01</span><h2>First, choose your route</h2>
+<p>If you’re designing in Figma or Canva, start with fonts, SVG icons and illustration files. A React component or CSS class will not behave like an image when you paste it into a design canvas.</p>
+<p>If you’re building with Claude Code, open an existing project or create a small practice project first. Ask Claude to inspect its framework and package manager before installing anything. The goal is to add the smallest useful piece and inspect the result after each change.</p>
+<hr class="rule"/><span class="kicker">part 02</span><h2>1. Google Fonts: download the family you need</h2>
+<p><a href="https://github.com/google/fonts" rel="noopener noreferrer" target="_blank">Repository: google/fonts</a>. Start with the <a href="https://fonts.google.com/specimen/Poppins" rel="noopener noreferrer" target="_blank">Poppins specimen</a> to see the font in context, then open the <a href="https://github.com/google/fonts/tree/main/ofl/poppins" rel="noopener noreferrer" target="_blank">Poppins folder</a> for its files and OFL licence.</p>
+<p>For our resource page, use regular body text and semibold headings. You don’t need every italic and weight to try that combination. For a desktop design app that supports local fonts, install the downloaded font through your operating system and reopen the app if needed. In a browser design tool, use the built-in font family or follow that tool’s custom-font upload instructions and plan requirements. Installing a font on your computer does not automatically make it available in Canva or every browser app. In a web project, ask Claude to add only the required local files and connect them using the project’s font-loading method.</p>
+<p>Keep the licence with redistributed files. Poppins uses the SIL Open Font License; check the actual licence for any other family rather than assuming the entire repository uses one set of terms.</p>
+<p><strong>Check:</strong> look at a full paragraph, numerals and a long resource title. If the browser shows a fallback font, inspect the requested file path and weight mapping before changing the design.</p>
+<hr class="rule"/><span class="kicker">part 03</span><h2>2. Lucide: make the icon family consistent</h2>
+<p><a href="https://github.com/lucide-icons/lucide" rel="noopener noreferrer" target="_blank">Repository: lucide-icons/lucide</a>. Use the <a href="https://lucide.dev/icons/" rel="noopener noreferrer" target="_blank">icon browser</a> to find a search icon, an arrow and a download icon. The project provides SVGs and packages for supported frameworks.</p>
+<p>For a static design, download the selected SVGs and keep them at a consistent size and stroke width. For a web project, use the package that matches the framework, then import the specific icons you need. Avoid mixing several icon families because you happen to prefer one search icon elsewhere.</p>
+<p>In our example, use icons to clarify actions. A download icon belongs with a download link, and a search icon belongs with the search field. Keep visible labels where an icon alone could be ambiguous.</p>
+<p>The <a href="https://github.com/lucide-icons/lucide/blob/main/LICENSE" rel="noopener noreferrer" target="_blank">repository licence</a> includes ISC terms and notices for Feather-derived icons. Preserve the relevant notices when distributing source assets.</p>
+<p><strong>Check:</strong> all icons should feel like the same family, align with the adjacent text and stay understandable at their final size.</p>
+<hr class="rule"/><span class="kicker">part 04</span><h2>3. shadcn/ui: customise working components</h2>
+<p><a href="https://github.com/shadcn-ui/ui" rel="noopener noreferrer" target="_blank">Repository: shadcn-ui/ui</a>. These are website components whose source you add to your project and can change. They are useful for a working card, form or menu, rather than as a flat graphics pack.</p>
+<p>Open the <a href="https://ui.shadcn.com/docs/installation" rel="noopener noreferrer" target="_blank">installation documentation</a> and follow the path that matches your framework. Then inspect the <a href="https://ui.shadcn.com/docs/components/base/card" rel="noopener noreferrer" target="_blank">Card preview</a>. Build one resource card before making three: title, short description, category and a descriptive link.</p>
+<p>Ask Claude to use your existing project conventions and inspect dependencies before applying the setup. Don’t paste an installation command from a different framework and hope the page will sort itself out.</p>
+<p>Customise spacing, typography and colour to match the rest of your design. A component is a starting point, so you still need to test keyboard interaction and mobile layout in the finished page. The repository uses an <a href="https://github.com/shadcn-ui/ui/blob/main/LICENSE.md" rel="noopener noreferrer" target="_blank">MIT licence</a>.</p>
+<p><strong>Check:</strong> a long title should wrap cleanly, the card should not overflow a phone screen and the link should go to the actual resource.</p>
+<hr class="rule"/><span class="kicker">part 05</span><h2>4. IRA Design: compose an illustration with a purpose</h2>
+<p><a href="https://github.com/ira-design/ira-illustrations" rel="noopener noreferrer" target="_blank">Repository: ira-design/ira-illustrations</a>. The <a href="https://iradesign.io/" rel="noopener noreferrer" target="_blank">live site</a> provides a more visual starting point for characters, objects and backgrounds, including outline and gradient styles.</p>
+<p>For our resource library, use an illustration only in the empty state. Pick one outline scene and place a useful message beside it: “No matching resources. Try a shorter search.” The image helps the state feel considered, while the copy explains what to do.</p>
+<p>Use SVG when your design tool supports it and you want scalable artwork; use PNG when you need a simpler image import. Choose pieces from one style so the scene feels coherent. Check the <a href="https://github.com/ira-design/ira-illustrations/blob/master/LICENSE.md" rel="noopener noreferrer" target="_blank">MIT licence</a> and retain the required notice when distributing the assets.</p>
+<p><strong>Check:</strong> the illustration should support the message without pushing the recovery action below the screen. If recolouring an SVG breaks it, return to the original and make a smaller edit.</p>
+<hr class="rule"/><span class="kicker">part 06</span><h2>5. pattern.css: add a quiet background</h2>
+<p><a href="https://github.com/bansal/pattern.css" rel="noopener noreferrer" target="_blank">Repository: bansal/pattern.css</a>. This is a CSS library for repeating backgrounds such as dots, grids and stripes. It belongs in a webpage, not in your font or image folder.</p>
+<p>Read the README’s installation and pattern-class instructions. In the practice page, try a small dotted area behind the header, with the actual text on a solid surface. Use the documented class, such as <code>pattern-dots-sm</code>, after the stylesheet is loaded.</p>
+<p>If you want a static version for a slide, render your example in a browser and export an image from that design. The repository is not a ready-made PNG pack. Its README declares an MIT licence.</p>
+<p><strong>Check:</strong> if nothing appears, confirm the stylesheet is loaded and the element has visible dimensions. If the pattern makes the page busy, reduce its area or remove it. Texture is optional.</p>
+<hr class="rule"/><span class="kicker">part 07</span><h2>Use Claude to build the first version</h2>
+<p>Paste this in Claude Code inside your practice project. It creates a real first pass rather than another list of suggestions.</p>
+<div class="promptwrap"><span class="promptlabel">copy this prompt</span><pre><code class="language-prompt">Build a small resource-library page in this project. First inspect the framework, current dependencies and run instructions.
+
+Use Poppins regular/semibold, Lucide icons and a compatible shadcn/ui Card. Use the official repositories linked below as documentation. Add an IRA outline illustration only to the empty state. Try pattern.css only in a small header area if it fits cleanly.
+
+Resources to display: [paste 3 real names, URLs and descriptions].
+Design: cream background, dark readable text, restrained warm-orange emphasis, generous spacing.
+
+Implement a search field and three resource cards. Search should filter the supplied names and descriptions. Include an empty state with a clear recovery action. Preserve existing project conventions and licence notices. Do not invent resource URLs or install a second framework.
+
+Run the available build checks, preview at desktop and phone widths, and report exactly what you verified. List anything you could not test. Do not deploy.
+
+Official links: [paste the five repository links from this guide].
+</code></pre></div>
+<p>Start by downloading one font pair of weights and three icons, or by building the first card if you already have a web project. You’ll know the exercise worked when every asset has a clear job, the page can be used at phone size and you can explain where each piece came from. That makes the repository useful beyond the initial bookmark.</p>
+<div class="gcallout">Keep building from here. Find more practical walkthroughs in <a href='/guides'>my free guide library</a>.</div>
+</div></main></div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer><script src="../guide-kit.js" defer></script><script src="/site.js" defer></script>
+</body></html>

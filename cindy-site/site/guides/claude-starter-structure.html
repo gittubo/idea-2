@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My exact Claude starter structure (the 4 layers) · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="My exact Claude starter structure (the 4 layers). A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-starter-structure">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="My exact Claude starter structure (the 4 layers)">
+<meta property="og:description" content="My exact Claude starter structure (the 4 layers). A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-starter-structure">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="My exact Claude starter structure (the 4 layers)">
+<meta name="twitter:description" content="My exact Claude starter structure (the 4 layers). A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"My exact Claude starter structure (the 4 layers)", u:"guides/claude-starter-structure.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building things</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>My exact Claude starter structure (the 4 layers)</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented SETUPS, so here is the actual structure running behind my desk, written out so you can copy it today. Four layers, all of them plain text files.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>The aesthetic desk is the easy part. The thing that does the work is four files sitting in one folder, each doing a different job: one holds your context, one holds your playbooks, one holds your workflows in plain English, and one holds the tiny scripts that handle the boring parts.</p>
+<p>The reason to build all four instead of one is that they feed each other. Your context file makes every skill sharper. Your directives stop you re-explaining a workflow. Your executions take the repetitive bits off your plate entirely. Start with layer one today and add the rest as you feel the need.</p>
+
+<div class="tip calm">🌱 <strong>You are not writing code.</strong> Layers one to three are markdown files, which means plain text with a few hashes for headings. Layer four is the only one with actual scripts in it, and Claude writes those for you.</div>
+
+<hr class="rule">
+<span class="kicker">the shape of it</span>
+<h2>The four layers at a glance <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>1. CLAUDE.md, your context</b> Who you are, what you sell, how you sound, what you never say. Claude reads it at the start of every session, so no chat starts cold.</div>
+<div class="minicard"><b>2. Skills, your playbooks</b> One folder per repeatable job. Claude loads the right one when your request matches, so "draft a script" comes out your way every time.</div>
+<div class="minicard"><b>3. Directives, your workflows</b> A plain English description of a multi-step process, written once. You point Claude at the file instead of narrating the steps again.</div>
+<div class="minicard"><b>4. Executions, your tiny tools</b> Small single-purpose scripts Claude wrote and Claude runs: transcribing, renaming, sorting, exporting. The parts you should never touch by hand.</div>
+</div>
+
+<p>On disk it is this small. One folder for the business, four things inside it.</p>
+<pre><code>my-business/
+├── CLAUDE.md              ← layer 1: your context, always loaded
+├── .claude/
+│   └── skills/
+│       └── weekly-report/
+│           └── SKILL.md   ← layer 2: one playbook per job
+├── directives/
+│   └── weekly_report.md   ← layer 3: workflows in plain English
+└── executions/
+    └── pull_numbers.py    ← layer 4: tiny scripts Claude calls</code></pre>
+
+<div class="tip">💡 <strong>Why directives and executions are separate.</strong> A directive is intent (what should happen and why). An execution is implementation (the code that does one specific thing). Keeping them apart means you can rewrite a workflow without touching a working script, and reuse one script across five different workflows. Mixing intent and implementation in one file is what makes automations impossible to change later.</div>
+
+<hr class="rule">
+<span class="kicker">layer one</span>
+<h2>CLAUDE.md, the context file <span class="gi" style="--gl:#9380A9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7L16 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 11L12 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 21.5V21C13 18.1716 13 16.7574 13.8787 15.8787C14.7574 15 16.1716 15 19 15H19.5M20 13.3431V10C20 6.22876 20 4.34315 18.8284 3.17157C17.6569 2 15.7712 2 12 2C8.22877 2 6.34315 2 5.17157 3.17157C4 4.34314 4 6.22876 4 10L4 14.5442C4 17.7892 4 19.4117 4.88607 20.5107C5.06508 20.7327 5.26731 20.9349 5.48933 21.1139C6.58831 22 8.21082 22 11.4558 22C12.1614 22 12.5141 22 12.8372 21.886C12.9044 21.8623 12.9702 21.835 13.0345 21.8043C13.3436 21.6564 13.593 21.407 14.0919 20.9081L18.8284 16.1716C19.4065 15.5935 19.6955 15.3045 19.8478 14.9369C20 14.5694 20 14.1606 20 13.3431Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the layer everyone skips and it is the one carrying the other three. It is a plain document describing your work the way you would brief someone on their first day. Claude Code loads it automatically at the start of every session in that folder, which Anthropic's docs describe as "instructions you write to give Claude persistent context" (<a href="https://code.claude.com/docs/en/memory" target="_blank">Claude Code memory docs</a>).</p>
+<p>Here is the whole file. Everything in square brackets is yours to replace, and the headings are worth keeping as they are.</p>
+<div class="promptwrap">
+<span class="promptlabel">📄 CLAUDE.md, fill in the blanks</span>
+<pre><code># [Your name or business]
+
+## What this is
+[One or two sentences: what you do, who it is for, what you are building right now.]
+
+## How I work with you
+- Talk to me in plain language, infer what I mean, act, then summarise what you did.
+- Ask before anything that deletes files, sends a message, or spends money.
+- If you are unsure between two reasonable options, pick one and tell me why.
+
+## My voice and rules
+Voice in three words: [e.g. warm, direct, specific]
+Always: [e.g. name real tools, never a vague category]
+Never: [e.g. hype words, income claims, em dashes]
+Two lines that sound exactly like me:
+1. [paste a real line you wrote]
+2. [paste another real line]
+
+## The work I bring you most
+1. [e.g. turning rough notes into a client update]
+2. [e.g. drafting captions from a script]
+3. [e.g. cleaning and sorting exports]
+
+## Where things live
+- Drafts: [folder or tool]
+- Finished work: [folder or tool]
+- Source of truth for [numbers, clients, content]: [where]
+
+## Constraints
+Tools I already pay for: [list them]
+Budget ceiling: [number]
+Claims I cannot make: [e.g. no income or medical claims]</code></pre>
+</div>
+
+<p>If a blank template is the thing that stops you, do not write it yourself. Open any Claude chat and paste this instead, and it will interview you and hand the finished file back.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 make Claude write my context file</span>
+<pre><code>I want you to write the context file that every future chat with you will start from, and I would rather answer questions than stare at a blank template.
+
+Interview me one question at a time and do not move on until my answer is specific enough to act on. Start with what I do and who it is for, then my voice and the rules I never break, then the three tasks I bring you most often, then where my files and numbers actually live, then my budget and the claims I am not allowed to make. If I give you a vague answer like "small business owners" or "I sound professional", push back once and ask me for the specific version with a real example.
+
+When you have everything, write it up as one markdown document under the headings What this is, How I work with you, My voice and rules, The work I bring you most, Where things live, and Constraints, using my words rather than yours. Finish with a short list of anything you still do not know about my work, so I know exactly what to fill in later.</code></pre>
+</div>
+
+<ol class="steps">
+<li><strong class="st">📁 Make the folder.</strong> One folder for the business, anywhere you keep your work. Desktop is fine. This folder is the boundary of what Claude can see, which is the point.</li>
+<li><strong class="st">📄 Save the file as CLAUDE.md.</strong> At the root of that folder, named exactly <code>CLAUDE.md</code>. The name is not decorative, it is what makes Claude Code load it on its own.</li>
+<li><strong class="st">✅ Check it actually loaded.</strong> Start Claude Code in that folder and type <code>/context</code>. Look under Memory files for your CLAUDE.md. If it is missing, you are running from the wrong folder.</li>
+<li><strong class="st">🌱 Fix the file, not the output.</strong> Every time Claude gets something slightly wrong, add one line to CLAUDE.md instead of correcting it in the chat. That single habit is what makes the setup get better every week.</li>
+</ol>
+<div class="tip">💡 <strong>Keep it under about 200 lines.</strong> The moment a section turns into a step-by-step process, it has outgrown this file and belongs in a skill (layer two). Treat CLAUDE.md as a table of contents for how you work, not a manual.</div>
+
+<hr class="rule">
+<span class="kicker">layer two</span>
+<h2>Skills, your reusable playbooks <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>A skill is a folder with one file inside it (a <code>SKILL.md</code>) holding a name, a one-line description of when to use it, and your instructions. Claude reads that description and pulls in the full skill the moment your request matches, so you teach a process once and never re-explain it (<a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" target="_blank">Agent Skills, official overview</a>).</p>
+<p>Start with the task you re-explain the most. Paste this and Claude drafts the whole thing, including the description line that decides when it triggers.</p>
+<div class="promptwrap">
+<span class="promptlabel">🛠️ build my first skill</span>
+<pre><code>I want a reusable Claude skill for a task I repeat every week: [describe it, for example "turning my rough notes into our Monday client update"].
+
+Write me the SKILL.md for it. Include a short lowercase-hyphenated name (do not put "claude" or "anthropic" in the name, or the upload gets rejected), a one-line description saying exactly what it does AND when you should use it, because that description is what makes you trigger it on your own, then clear step-by-step instructions in my style, then the output format so the finished thing looks the same every time.
+
+Before you write it, ask me the three or four things you need to know about my format, my tone, and what I will hand you as input. When it is done, package it as a zipped folder I can upload, and tell me one sentence I could say in a chat that should trigger it.</code></pre>
+</div>
+
+<p>This is the shape of what comes back, so you know what you are getting.</p>
+<div class="promptwrap">
+<span class="promptlabel">📄 example SKILL.md</span>
+<pre><code>---
+name: weekly-client-update
+description: Writes our Monday client update. Use when I paste raw notes from the week and ask for the client update or the Monday email.
+---
+# Weekly client update
+
+## Inputs
+My raw notes for the week. If wins, blockers, or next steps are missing, ask me for them before writing.
+
+## Steps
+1. Pull the wins, blockers, and next steps out of my notes.
+2. Write it in our format: one-line summary, then those three sections.
+3. Put anything needing a decision from them in a separate short list at the bottom.
+
+## Rules
+- Plain and factual, no filler, no em dashes.
+- Never invent a number. If a figure is missing, list it under "needs confirmation".
+
+## Output
+Show me the finished update inline, under 300 words.</code></pre>
+</div>
+
+<ol class="steps">
+<li><strong class="st">📦 Take the folder Claude hands you.</strong> A skill is that folder with the SKILL.md inside it. Ask Claude to zip it if it has not already.</li>
+<li><strong class="st">➕ Add it in the Claude app.</strong> Open <strong>Customize</strong>, then <strong>Skills</strong>, then <strong>Add</strong>, then <strong>Upload a skill</strong>, and pick the zip. Skills are available on Free, Pro, Max, Team and Enterprise plans (<a href="https://support.claude.com/en/articles/12512198-creating-custom-skills" target="_blank">Anthropic's help centre</a>), so there is no paywall to clear here.</li>
+<li><strong class="st">👩‍💻 Or drop it into Claude Code.</strong> Put the folder in <code>.claude/skills/</code> inside your business folder for a skill only that project sees, or in <code>~/.claude/skills/</code> for one you want everywhere.</li>
+<li><strong class="st">🔁 Run it, then tune it.</strong> Use it on a real task, read what comes back, and tell Claude the one thing to change. Two or three passes and it does the job your way permanently.</li>
+</ol>
+<div class="tip calm">🌱 <strong>The description line does the heavy lifting.</strong> It is what makes Claude reach for the skill without you naming it. Weak: "writes updates." Strong: "use when I paste raw notes from the week and ask for the client update."</div>
+
+<hr class="rule">
+<span class="kicker">layer three</span>
+<h2>Directives, your workflows in plain English <span class="gi" style="--gl:#9B7FA4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 2V5M7.5 2V5M12 2V5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 3.5H11C7.70017 3.5 6.05025 3.5 5.02513 4.52513C4 5.55025 4 7.20017 4 10.5V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V10.5C20 7.20017 20 5.55025 18.9749 4.52512C17.9497 3.5 16.2998 3.5 13 3.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 15H12M8 11H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A directive is a markdown file describing one whole workflow in the order it actually happens, written the way you would explain it to a person. Mine live in a <code>directives/</code> folder, one file per workflow, and I point Claude at the file instead of narrating fourteen steps again.</p>
+<p>The difference from a skill is worth getting right. A skill is a job Claude runs on command and triggers itself. A directive is the operating manual for a process that involves you, your tools, and sometimes several skills in sequence. Skills are the verbs, directives are the recipes.</p>
+<div class="promptwrap">
+<span class="promptlabel">📝 directive template, fill in the blanks</span>
+<pre><code># [Workflow name, for example: turn a filmed video into a posted reel]
+
+## What this is for
+[One or two sentences: when I run this and what "done" looks like.]
+
+## Before you start
+- [What must already exist, e.g. the raw file is in /raw]
+- [What to ask me for if it is missing]
+
+## The steps
+1. [First step in plain English, with the real rule, e.g. "cut every take where I stumble, keep the last clean one"]
+2. [Second step, naming the tool or the script it calls]
+3. [Third step, with the decision I want made and how to make it]
+
+## Rules that must hold
+- [The non-negotiables, e.g. never publish without showing me the final version]
+- [The format, e.g. sentence case, no em dashes]
+
+## What you hand back
+[Exactly what I should see at the end: a file, a summary, a list of decisions I need to make.]</code></pre>
+</div>
+
+<p>The fastest way to write your first one is to describe the workflow out loud and let Claude structure it.</p>
+<div class="promptwrap">
+<span class="promptlabel">💡 turn my messy process into a directive</span>
+<pre><code>I am going to describe a workflow I do regularly, in the messy order it lives in my head, and I want you to turn it into a directive file I can reuse.
+
+Here is the workflow: [describe it, rambling is fine, include the tools you open and the decisions you make along the way].
+
+Ask me about every step where you are guessing, especially the decision points where I choose between two options, because those are the parts I re-explain every time. Then write it as one markdown file under the headings What this is for, Before you start, The steps, Rules that must hold, and What you hand back. Write the steps in plain English rather than code, name the real tool at each step, and flag any step that is repetitive enough that it should become a small script instead of instructions.</code></pre>
+</div>
+<div class="tip">💡 <strong>Write the directive before the automation, every time.</strong> If you cannot describe the workflow in plain English, it is not ready to automate, and the thing you build will encode the confusion. That last line of the prompt is doing real work: it tells you which steps have earned a script.</div>
+
+<hr class="rule">
+<span class="kicker">layer four</span>
+<h2>Executions, the tiny tools <span class="gi" style="--gl:#9A7BBC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>An execution is a small script that does exactly one thing and hands back a result. Transcribe a file. Rename a folder of exports. Pull this month's numbers into one table. Each one is single-purpose on purpose, so a directive can call three of them in a row and you can swap one without breaking the others.</p>
+<p>You do not write these. You describe the one boring job, Claude writes the script, and from then on the directive calls it by name.</p>
+<div class="promptwrap">
+<span class="promptlabel">👩‍💻 build me one tiny tool</span>
+<pre><code>I want a small single-purpose script for one repetitive job, and I want it simple enough that I can read it and understand what it does.
+
+The job: [describe it exactly, for example "take every .mp4 in a folder called raw, transcribe it, and save one .txt per video into a folder called transcripts"].
+
+Write it in Python, make it do this one thing only, and have it print a plain-English line for every file it touches so I can see what happened. Handle the obvious failure cases out loud rather than crashing: a missing folder, a file that is already done, a file it cannot read. Tell me exactly what to install first and the one command I type to run it, and explain in two sentences what the script does so I could describe it to someone else.
+
+Before you write anything, ask me where the files live and what I want the output named.</code></pre>
+</div>
+
+<ol class="steps">
+<li><strong class="st">📁 Make an executions folder.</strong> One folder, all your tiny tools in it, one file per job. Name them for what they do: <code>transcribe_videos.py</code>, not <code>script2.py</code>.</li>
+<li><strong class="st">▶️ Run it once by hand.</strong> Ask Claude for the exact command and run it on a copy of your files first. Watch the printed lines to confirm it did what you expected.</li>
+<li><strong class="st">🔗 Point the directive at it.</strong> Go back to your directive and replace that step with "run <code>executions/transcribe_videos.py</code>". Now the workflow file names the tool instead of describing the work.</li>
+<li><strong class="st">🌱 Only build one after the second time.</strong> The rule I use: if I have done a task twice by hand, it earns a script. Before that, the setup time is not paid back.</li>
+</ol>
+<div class="tip warn"><strong>The honest plan gate.</strong> Layer four needs Claude Code, and Claude Code needs a Pro, Max, Team, Enterprise or Console account. <a href="https://code.claude.com/docs/en/setup" target="_blank">The free Claude plan does not include it</a>, and Pro is currently the entry point (<a href="https://www.claude.com/pricing" target="_blank">current pricing</a>). Layers one to three all work on the free browser plan. If you are staying free, ask Claude to build the same tool as an artifact you can open in the browser instead (<a href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank">what artifacts are</a>), and paste your data in by hand.</div>
+
+<hr class="rule">
+<span class="kicker">where it lives</span>
+<h2>Two homes for the same structure <span class="gi" style="--gl:#987CBE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3175 7.14139L20.8239 6.28479C20.4506 5.63696 20.264 5.31305 19.9464 5.18388C19.6288 5.05472 19.2696 5.15664 18.5513 5.36048L17.3311 5.70418C16.8725 5.80994 16.3913 5.74994 15.9726 5.53479L15.6357 5.34042C15.2766 5.11043 15.0004 4.77133 14.8475 4.37274L14.5136 3.37536C14.294 2.71534 14.1842 2.38533 13.9228 2.19657C13.6615 2.00781 13.3143 2.00781 12.6199 2.00781H11.5051C10.8108 2.00781 10.4636 2.00781 10.2022 2.19657C9.94085 2.38533 9.83106 2.71534 9.61149 3.37536L9.27753 4.37274C9.12465 4.77133 8.84845 5.11043 8.48937 5.34042L8.15249 5.53479C7.73374 5.74994 7.25259 5.80994 6.79398 5.70418L5.57375 5.36048C4.85541 5.15664 4.49625 5.05472 4.17867 5.18388C3.86109 5.31305 3.67445 5.63696 3.30115 6.28479L2.80757 7.14139C2.45766 7.74864 2.2827 8.05227 2.31666 8.37549C2.35061 8.69871 2.58483 8.95918 3.05326 9.48012L4.0843 10.6328C4.3363 10.9518 4.51521 11.5078 4.51521 12.0077C4.51521 12.5078 4.33636 13.0636 4.08433 13.3827L3.05326 14.5354C2.58483 15.0564 2.35062 15.3168 2.31666 15.6401C2.2827 15.9633 2.45766 16.2669 2.80757 16.8741L3.30114 17.7307C3.67443 18.3785 3.86109 18.7025 4.17867 18.8316C4.49625 18.9608 4.85542 18.8589 5.57377 18.655L6.79394 18.3113C7.25263 18.2055 7.73387 18.2656 8.15267 18.4808L8.4895 18.6752C8.84851 18.9052 9.12464 19.2442 9.2775 19.6428L9.61149 20.6403C9.83106 21.3003 9.94085 21.6303 10.2022 21.8191C10.4636 22.0078 10.8108 22.0078 11.5051 22.0078H12.6199C13.3143 22.0078 13.6615 22.0078 13.9228 21.8191C14.1842 21.6303 14.294 21.3003 14.5136 20.6403L14.8476 19.6428C15.0004 19.2442 15.2765 18.9052 15.6356 18.6752L15.9724 18.4808C16.3912 18.2656 16.8724 18.2055 17.3311 18.3113L18.5513 18.655C19.2696 18.8589 19.6288 18.9608 19.9464 18.8316C20.264 18.7025 20.4506 18.3785 20.8239 17.7307L21.3175 16.8741C21.6674 16.2669 21.8423 15.9633 21.8084 15.6401C21.7744 15.3168 21.5402 15.0564 21.0718 14.5354L20.0407 13.3827C19.7887 13.0636 19.6098 12.5078 19.6098 12.0077C19.6098 11.5078 19.7888 10.9518 20.0407 10.6328L21.0718 9.48012C21.5402 8.95918 21.7744 8.69871 21.8084 8.37549C21.8423 8.05227 21.6674 7.74864 21.3175 7.14139Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.5195 12C15.5195 13.933 13.9525 15.5 12.0195 15.5C10.0865 15.5 8.51953 13.933 8.51953 12C8.51953 10.067 10.0865 8.5 12.0195 8.5C13.9525 8.5 15.5195 10.067 15.5195 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>Same four layers, two places to put them. Start wherever you already are and move when you feel the ceiling, which usually arrives the first time you want Claude to touch a real file instead of talking about it.</p>
+<div class="cardgrid">
+<div class="minicard"><b>The browser path</b> Make a Project on <a href="https://claude.ai" target="_blank">claude.ai</a>, paste your CLAUDE.md into the project instructions, upload your skills under Customize, and keep your directives as documents in the project. Projects appear on free accounts too, capped at five (<a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">Anthropic's help centre</a>).<span class="cost">Cost: $0 to start</span></div>
+<div class="minicard"><b>The Claude Code path</b> Install it, keep all four folders on your computer, and Claude reads and writes your real files. This is the only path where layer four genuinely runs. Install with <code>curl -fsSL https://claude.ai/install.sh | bash</code> on macOS, Linux or WSL, or <code>irm https://claude.ai/install.ps1 | iex</code> in Windows PowerShell.<span class="cost">Cost: from a Pro plan</span></div>
+</div>
+
+<hr class="rule">
+<span class="kicker">start today</span>
+<h2>The one honest hour <span class="gi" style="--gl:#AB813D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 3H20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.5 3V5.03039C5.5 6.27227 6.07682 7.4437 7.06116 8.20089L12 12L16.9388 8.20089C17.9232 7.44371 18.5 6.27227 18.5 5.03039V3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.5 21V18.9696C5.5 17.7277 6.07682 16.5563 7.06116 15.7991L12 12L16.9388 15.7991C17.9232 16.5563 18.5 17.7277 18.5 18.9696V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M4 21H20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This whole structure started with one hour of writing down how I already worked. Not designing a system, describing one. Here is that hour, in order.</p>
+<ol class="steps">
+<li><strong class="st">🧠 Minutes 0 to 20, the context file.</strong> Run the interview prompt from layer one and answer honestly. Save it as CLAUDE.md. Incomplete beats absent by a mile.</li>
+<li><strong class="st">🛠️ Minutes 20 to 40, one skill.</strong> Pick the single task you re-explain the most, run the skill prompt, install it, and test it on something real.</li>
+<li><strong class="st">📝 Minutes 40 to 55, one directive.</strong> Describe your most annoying multi-step workflow out loud into the directive prompt. Note which steps it flags as script-worthy.</li>
+<li><strong class="st">🌱 Minutes 55 to 60, pick your next one.</strong> Write down the one job you will turn into an execution the next time you catch yourself doing it by hand. That is layer four queued up, no pressure.</li>
+</ol>
+<div class="tip calm">🌱 You do not need all four layers to feel the difference. The context file on its own changes how good Claude feels immediately, because every chat stops starting from zero. Add the next layer when the current one starts feeling crowded.</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://code.claude.com/docs/en/memory" target="_blank">Claude Code memory docs: what CLAUDE.md is and how it loads</a><br>
+  <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" target="_blank">Agent Skills, official overview</a><br>
+  <a href="https://support.claude.com/en/articles/12512198-creating-custom-skills" target="_blank">Creating custom skills, and the plans they are on</a><br>
+  <a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">Claude Projects, including the free-plan cap</a><br>
+  <a href="https://code.claude.com/docs/en/setup" target="_blank">Claude Code setup, install commands and account requirements</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

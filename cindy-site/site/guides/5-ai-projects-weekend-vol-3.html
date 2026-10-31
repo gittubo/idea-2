@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 AI projects for career leverage · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Volume 3 is the career-leverage edition: five builds that make your resume genuinely hard to ignore.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/5-ai-projects-weekend-vol-3">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="5 AI projects for career leverage">
+<meta property="og:description" content="Volume 3 is the career-leverage edition: five builds that make your resume genuinely hard to ignore.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/5-ai-projects-weekend-vol-3">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="5 AI projects for career leverage">
+<meta name="twitter:description" content="Volume 3 is the career-leverage edition: five builds that make your resume genuinely hard to ignore.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"5 AI projects for career leverage", u:"guides/5-ai-projects-weekend-vol-3.html", topic:"career", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Career &amp; job</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>5 AI projects you can complete this weekend (vol. 3)</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Volume 3 is the career-leverage edition: five builds that make your resume genuinely hard to ignore.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<hr class="rule">
+<span class="kicker">project one</span>
+<h2>A job-application agent <span class="gi" style="--gl:#9B7FA4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 2V5M7.5 2V5M12 2V5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 3.5H11C7.70017 3.5 6.05025 3.5 5.02513 4.52513C4 5.55025 4 7.20017 4 10.5V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V10.5C20 7.20017 20 5.55025 18.9749 4.52512C17.9497 3.5 16.2998 3.5 13 3.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 15H12M8 11H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Intermediate, about 8 to 12 hours. A browser agent that reads your resume and autonomously fills those forty-minute multi-page application forms while you watch and approve. Build it once, reuse it for every application, and screen-record it doing your most hated chore.</p>
+<ol class="steps">
+<li><strong class="st">🧰 Set up Browser Use.</strong> It's open source and free; Claude can walk you through the install and connect an LLM key (a few dollars covers a weekend of runs).</li>
+<li><strong class="st">📄 Give it your facts.</strong> A single profile file: resume, work history, standard answers (visa status, notice period, salary range). The agent pulls from this, never invents.</li>
+<li><strong class="st">👀 Run supervised.</strong> Watch it fill each form, approve before submit, and keep a log of what was sent where. You stay the applicant; it does the typing.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">paste into Claude</span>
+<pre><code>I'm setting up Browser Use to fill job application forms from my
+resume while I watch. Walk me through it as a non-engineer:
+
+1. The exact install steps for my machine, and how to connect
+   the LLM key.
+2. Design my applicant profile file: every field job forms ask
+   for, so the agent never has to guess.
+3. Write the agent's instructions: fill from my profile only,
+   never invent answers, pause for my approval before every
+   submit, and log each application to a CSV.</code></pre>
+</div>
+<div class="tip">📌 <strong>Honesty rule.</strong> The agent fills forms from your real profile; it never writes fake experience. And you press submit, not the robot: that keeps you inside most sites' terms and inside your own integrity.</div>
+
+<hr class="rule">
+<span class="kicker">project two</span>
+<h2>A job-fit scout <span class="gi" style="--gl:#CD5174" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M14 2.20004C13.3538 2.06886 12.6849 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.3151 21.9311 10.6462 21.8 10" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0303 11.9625L16.5832 7.4096M19.7404 4.34462L19.1872 2.35748C19.0853 2.03011 18.6914 1.89965 18.4259 2.11662C16.9898 3.29018 15.4254 4.87091 16.703 7.36419C19.2771 8.56455 20.7466 6.94584 21.8733 5.5853C22.0975 5.3146 21.9623 4.90767 21.6247 4.81005L19.7404 4.34462Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Intermediate, about 6 to 9 hours. An n8n agent that pulls new listings every morning from job feeds, scores each against your profile with written reasons, and drafts tailored outreach for the top matches. Using an agent to run your own search is proof of skill and a portfolio piece at the same time.</p>
+<ol class="steps">
+<li><strong class="st">📡 Pull the listings.</strong> RSS feeds from job boards, or an Apify scraper on your target companies' career pages, into n8n on a morning schedule.</li>
+<li><strong class="st">⚖️ Score with reasons.</strong> Claude compares each listing to your profile and returns a fit score out of ten plus two lines on why, so you trust the ranking.</li>
+<li><strong class="st">✍️ Draft the outreach.</strong> For everything scoring eight or higher, Claude drafts a short, specific note referencing the actual role. Drafts only; you send.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">paste into Claude</span>
+<pre><code>Design my job-fit scout in n8n. Every morning: pull new listings
+from [feeds/boards], score each against my profile, draft outreach
+for the top matches into Gmail drafts.
+
+1. List the n8n nodes in order with key settings.
+2. Write the scoring prompt: fit score /10 against my profile
+   [paste resume summary], with two lines of reasoning, strict
+   on must-haves I actually lack.
+3. Write the outreach-draft prompt: 4 sentences, references the
+   specific role, zero generic enthusiasm.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">project three</span>
+<h2>A meeting-to-action pipeline <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Beginner friendly, about 4 to 6 hours. Every call recording becomes action items, decisions, and follow-ups, filed into Notion automatically before you're back at your desk. It kills the most hated task in every office and demos perfectly in thirty seconds.</p>
+<ol class="steps">
+<li><strong class="st">🎙️ Record with Fathom.</strong> Free tier records and transcribes your calls and produces the recap automatically.</li>
+<li><strong class="st">🔁 Pipe it through.</strong> Zapier or Make (free tier) catches each new recap and hands the transcript to Claude for extraction: actions with owners, decisions, follow-ups.</li>
+<li><strong class="st">🗂️ File it in Notion.</strong> Each meeting becomes a page in a database: attendees, decisions, action items with checkboxes. Nothing gets lost in a notebook again.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">paste into Claude</span>
+<pre><code>Design my meeting-to-action pipeline: Fathom records the call,
+Zapier catches the transcript, you extract, Notion stores it.
+
+1. List the Zapier steps in order with settings.
+2. Write the extraction prompt: action items with owner and due
+   date, decisions made, and open questions, strictly from the
+   transcript, no invented owners.
+3. Design the Notion database: properties, views, and a weekly
+   "what's still open" view I check every Friday.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">project four</span>
+<h2>An AI red-team squad <span class="gi" style="--gl:#D35676" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M14 2.20004C13.3538 2.06886 12.6849 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.3151 21.9311 10.6462 21.8 10" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0303 11.9625L16.5832 7.4096M19.7404 4.34462L19.1872 2.35748C19.0853 2.03011 18.6914 1.89965 18.4259 2.11662C16.9898 3.29018 15.4254 4.87091 16.703 7.36419C19.2771 8.56455 20.7466 6.94584 21.8733 5.5853C22.0975 5.3146 21.9623 4.90767 21.6247 4.81005L19.7404 4.34462Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Intermediate, about 6 to 8 hours. Five AI critics, each with a different lens (logic, evidence, finance, audience, risk), attack any pitch or strategy doc and return a severity-scored weakness report. Run it before every big meeting, and hand the pattern to your team like a tool.</p>
+<ol class="steps">
+<li><strong class="st">🧠 Define the critics.</strong> Five short persona briefs: what each one attacks, what evidence it demands, and how it scores severity from one to five.</li>
+<li><strong class="st">⚔️ Run them as subagents.</strong> In Claude Code, each critic runs as its own subagent over your doc, blind to the others, so you get five genuinely independent reads.</li>
+<li><strong class="st">📊 Merge the report.</strong> A final pass dedupes the findings, ranks by severity, and writes the one-page "fix these first" summary.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">paste into Claude Code</span>
+<pre><code>Build me a red-team system in this folder. I'll drop any strategy
+doc or pitch into input/ and run one command.
+
+1. Create 5 critic personas as separate prompt files: logic,
+   evidence, finance, audience, risk. Each attacks only its lens
+   and scores every finding 1-5 for severity.
+2. Write the runner: each critic reviews input/ as an independent
+   subagent, results merge into one deduped, severity-ranked
+   report in output/report.md.
+3. Run it on the sample doc I give you and show me the report.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">project five</span>
+<h2>Your own MCP server <span class="gi" style="--gl:#4C395C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 2V6M8.5 6V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.00446 7.61331C5.93719 6.74273 6.63957 6 7.53014 6H16.4699C17.3604 6 18.0628 6.74273 17.9955 7.61331L17.8117 9.99197C17.6796 11.7019 17.1011 13.3498 16.132 14.7773L15.5312 15.6622C14.9638 16.4979 14.0077 17 12.9838 17H11.0162C9.99228 17 9.03617 16.4979 8.46881 15.6622L7.86803 14.7773C6.89885 13.3498 6.32041 11.7019 6.18827 9.99197L6.00446 7.61331Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 9H13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The frontier one, about 6 to 10 hours. MCP is how Claude connects to outside tools and data, and you can build your own server that plugs YOUR data (a job tracker, a portfolio database, your notes) into Claude as live tools it can actually call. Almost nobody outside engineering can say they've built one, and Claude Code writes most of the code.</p>
+<ol class="steps">
+<li><strong class="st">🎯 Pick one data source.</strong> A spreadsheet you update, a folder of notes, a simple database. One source, two or three tools (read, search, add), nothing fancy.</li>
+<li><strong class="st">🏗️ Let Claude Code scaffold it.</strong> The official MCP SDKs are free; Claude Code sets up the project, writes the server, and explains every file as it goes.</li>
+<li><strong class="st">🔗 Connect and demo.</strong> Add your server to Claude's connectors, then ask Claude a question it can only answer by calling YOUR tool. Screen-record that moment; it's the demo.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">paste into Claude Code</span>
+<pre><code>I want to build my first MCP server this weekend, as a
+non-engineer, with you writing the code.
+
+My data source: [describe it, e.g. a Google Sheet where I track
+X / a folder of markdown notes].
+
+1. Propose the 3 tools my server should expose (read, search,
+   add) and what each returns.
+2. Scaffold the server with the official MCP SDK, explaining
+   each file in one line as you create it.
+3. Walk me through connecting it to Claude and give me 3 test
+   questions that prove the tools work end to end.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">before you start</span>
+<h2>How to actually finish by Sunday <span class="gi" style="--gl:#8F7FA0" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7L4 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11.7576 3.90865C8.45236 2.22497 5.85125 3.21144 4.55426 4.2192C4.32048 4.40085 4.20358 4.49167 4.10179 4.69967C4 4.90767 4 5.10138 4 5.4888V14.7319C4.9697 13.6342 7.87879 11.9328 11.7576 13.9086C15.224 15.6744 18.1741 14.9424 19.5697 14.1795C19.7633 14.0737 19.8601 14.0207 19.9301 13.9028C20 13.7849 20 13.6569 20 13.4009V5.87389C20 5.04538 20 4.63113 19.8027 4.48106C19.6053 4.33099 19.1436 4.459 18.2202 4.71504C16.64 5.15319 14.3423 5.22532 11.7576 3.90865Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Pick by the story</b> Each build ends in a different sentence on your resume. Choose the sentence you want to say in your next interview, then build that one.</div>
+<div class="minicard"><b>Screen-record everything</b> The 60-second demo clip is worth more than the code. Record the moment it works, every time.</div>
+<div class="minicard"><b>Let Claude drive</b> These builds assume Claude writes the code and configs while you decide. Paste errors straight back; that's the loop.</div>
+<div class="minicard"><b>Ship, then polish</b> Working and ugly on Saturday beats perfect and unfinished forever. Polish is Sunday's job.</div>
+</div>
+
+<div class="tip calm">🌱 <strong>Honest expectation.</strong> These are v1 builds, not products. But "I built an MCP server and a red-team system last weekend" is a sentence almost nobody in your interview pool can say, and that is the entire point.</div>
+
+<hr class="rule">
+<span class="kicker">all the links</span>
+<h2>Every tool in one place <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li><strong>Browser Use</strong> (browser agent, open source): <a href="https://browser-use.com/" target="_blank">browser-use.com</a></li>
+<li><strong>n8n</strong> (agent automation, free self-host): <a href="https://n8n.io/" target="_blank">n8n.io</a></li>
+<li><strong>Fathom</strong> (call recording + transcripts, free tier): <a href="https://fathom.video/" target="_blank">fathom.video</a></li>
+<li><strong>Claude Code</strong> (the build partner for projects 4 and 5): <a href="https://claude.com/claude-code" target="_blank">claude.com/claude-code</a></li>
+<li><strong>MCP docs</strong> (official SDKs and guides): <a href="https://modelcontextprotocol.io/" target="_blank">modelcontextprotocol.io</a></li>
+</ul>
+
+<div class="gcallout"><strong>Want to build these with support instead of alone?</strong> Inside AI System Club I teach people to learn AI from scratch and build real systems like these, step by step. Doors open soon and founding pricing dies at close. 🌱 <a href='/ai-system' target='_blank'>Join the waitlist</a> (link in my bio too).</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

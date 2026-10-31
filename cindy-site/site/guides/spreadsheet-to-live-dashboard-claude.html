@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turn a messy spreadsheet into a live dashboard with Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Turn a messy spreadsheet into a live dashboard with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/spreadsheet-to-live-dashboard-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Turn a messy spreadsheet into a live dashboard with Claude">
+<meta property="og:description" content="Turn a messy spreadsheet into a live dashboard with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/spreadsheet-to-live-dashboard-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Turn a messy spreadsheet into a live dashboard with Claude">
+<meta name="twitter:description" content="Turn a messy spreadsheet into a live dashboard with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Turn a messy spreadsheet into a live dashboard with Claude", u:"guides/spreadsheet-to-live-dashboard-claude.html", topic:"productivity", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Productivity &amp; thinking</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Turn a messy spreadsheet into a live dashboard with Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented DATA, so here is the exact prompt from the reel plus the whole cheat sheet: how to clean the file first so the charts are actually right.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">before you start</span>
+<h2>What you need (it is less than you think) <span class="gi" style="--gl:#DB5C78" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15V14H21V15C21 17.8284 21 19.2426 20.1213 20.1213C19.2426 21 17.8284 21 15 21H9C6.17157 21 4.75736 21 3.87868 20.1213C3 19.2426 3 17.8284 3 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 14L3.00001 12.9999C3.00003 11.5278 3.00004 10.7918 3.31675 10.1584C3.63347 9.52493 4.22231 9.08329 5.39999 8.20002C6.19297 7.60528 6.58946 7.30791 7.05132 7.15395C7.51317 7 8.00879 7 9.00002 7H15C15.9912 7 16.4868 7 16.9487 7.15395C17.4105 7.3079 17.807 7.60527 18.6 8.2C19.7777 9.08328 20.3666 9.52492 20.6833 10.1584C21 10.7918 21 11.5279 21 13V14H3Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 12V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 12V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.49997 7.00006V6.50006C8.49997 5.0956 8.49997 4.39337 8.83703 3.88892C8.98295 3.67054 9.17045 3.48304 9.38883 3.33712C9.89328 3.00006 10.5955 3.00006 12 3.00006C13.4044 3.00006 14.1067 3.00006 14.6111 3.33712C14.8295 3.48304 15.017 3.67054 15.1629 3.88892C15.5 4.39337 15.5 5.0956 15.5 6.50006V7.00006" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A Claude account and a file. That is the whole list. Claude builds the dashboard as an <b>artifact</b>, a live interactive panel that opens next to the chat and runs in your browser, and artifacts work on Free, Pro, Max, Team and Enterprise plans (<a href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank">what artifacts are</a>). No Looker Studio, no Power BI licence, no one on the data team owing you a favour.</p>
+<div class="cardgrid">
+<div class="minicard"><b>File types that work</b> CSV, XLSX, JSON, and plain text. Google Sheets users: File, then Download, then Comma Separated Values.</div>
+<div class="minicard"><b>Size limits</b> Up to 500MB per file and up to 20 files per chat, so a normal export is nowhere near the ceiling (<a href="https://support.claude.com/en/articles/8241126-upload-files-to-claude" target="_blank">file limits</a>).</div>
+<div class="minicard"><b>How to attach it</b> Drag the file into the chat box, or click the plus in the lower left and choose add files.</div>
+<div class="minicard"><b>If the panel does not appear</b> Open Settings, then Capabilities, and check that code execution and file creation is enabled. It is on by default on Free, Pro and Max.</div>
+</div>
+<div class="tip warn">Real data means real privacy calls. Strip customer names, emails, phone numbers and anything you would not paste into a shared doc before you upload. A dashboard of anonymised rows tells you exactly the same story.</div>
+
+<hr class="rule">
+<span class="kicker">step one</span>
+<h2>Clean the mess before you chart it <span class="gi" style="--gl:#AF5F5E" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 3L13 11.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.44573 11.0854C6.96539 12.0368 4.98269 11.8736 3 11.0885C3.50059 17.531 6.50414 20.0089 10.5089 21C10.5089 21 13.5261 18.8664 13.961 13.8074C14.0081 13.2595 14.0317 12.9856 13.9178 12.6769C13.8038 12.3682 13.5802 12.1468 13.1329 11.704C12.3973 10.9757 12.0295 10.6116 11.5929 10.5204C11.1564 10.4293 10.5862 10.648 9.44573 11.0854Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M4.5 16.4464C4.5 16.4464 7 16.9286 9.5 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.5 7.25C8.5 7.94036 7.94036 8.5 7.25 8.5C6.55964 8.5 6 7.94036 6 7.25C6 6.55964 6.55964 6 7.25 6C7.94036 6 8.5 6.55964 8.5 7.25Z" stroke="currentColor" stroke-width="1.5"/><path d="M11.125 4H11M11.25 4C11.25 4.13807 11.1381 4.25 11 4.25C10.8619 4.25 10.75 4.13807 10.75 4C10.75 3.86193 10.8619 3.75 11 3.75C11.1381 3.75 11.25 3.86193 11.25 4Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the step people skip, and it is the reason their first dashboard looks confident and is quietly wrong. Merged header rows, dates stored as text, a total row sitting in the middle of the data, three spellings of the same client name. Charts do not care, they will happily plot nonsense. Run this first and read what comes back.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧹 audit and clean my file</span>
+<pre><code>I have attached a raw export. Before we build anything, audit it and tell me what is wrong with it.
+
+Load the file and give me: the real column names and what each one appears to actually contain, the number of rows, and then every data problem you can find. Specifically look for dates stored as text or in mixed formats, numbers stored as text (currency symbols, commas, percent signs), duplicate rows, near-duplicate category names that are really the same thing spelled differently, blank cells and what they most likely mean, subtotal or total rows sitting inside the data, and any column that is a merged or repeated header rather than data.
+
+Then propose a cleaned version: tell me the exact fixes you would make and which ones need a decision from me rather than a guess. Do not build any charts yet.</code></pre>
+</div>
+<div class="tip calm">When Claude asks whether a blank cell means zero or means unknown, that question is worth more than the dashboard. Answer it properly, because it changes every average on the page.</div>
+
+<hr class="rule">
+<span class="kicker">step two</span>
+<h2>The exact dashboard prompt <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Once the file is clean, this is the one from the reel, written out properly. It names the sections, forces the numbers to be filterable rather than baked in, and tells Claude to say so when the data cannot answer something instead of inventing a chart.</p>
+<div class="promptwrap">
+<span class="promptlabel">📊 build my interactive dashboard</span>
+<pre><code>Using the cleaned data, build me an interactive dashboard as an artifact that I can filter and click around in.
+
+Context: this data is [what it is, for example monthly sales by rep and region], and the people looking at it care about [the one or two decisions it should inform].
+
+Build it with: a row of headline numbers at the top (total, average, change versus the previous period, and the single most useful ratio for this data), then three or four charts that each answer a different question, then a sortable table of the underlying rows so anyone can check your working. Add working filters for [date range, category, region, whatever the key columns are] and make every number and chart on the page respond to those filters rather than being hardcoded.
+
+Design it clean and readable: light background, one accent colour, clear axis labels with units, no chart junk. Under each chart write one plain sentence saying what it shows and what stands out.
+
+If the data cannot honestly answer something, say so in the chat instead of building a chart that implies it can.</code></pre>
+</div>
+<ol class="steps">
+<li><strong class="st">👩‍💻 Open a new chat and attach the file.</strong> Drag the CSV or XLSX straight into the message box. Give it its own chat so the context stays clean.</li>
+<li><strong class="st">🧹 Run the audit prompt first.</strong> Read the problems it found, answer any question it asks you, and tell it to apply the fixes.</li>
+<li><strong class="st">📊 Paste the dashboard prompt.</strong> Fill in the two square-bracket bits. The artifact panel opens on the right and builds in front of you.</li>
+<li><strong class="st">🖱️ Click everything.</strong> Change a filter, sort the table, check one headline number against your own spreadsheet by hand. If that one number is right, the rest usually is.</li>
+<li><strong class="st">🔁 Fix it in one sentence at a time.</strong> Use the cheat sheet below. Claude edits the artifact in place, so you are not starting over each time.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">the cheat sheet</span>
+<h2>The follow-up lines that fix anything <span class="gi" style="--gl:#9380A5" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 2V5M7.5 2V5M12 2V5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 3.5H11C7.70017 3.5 6.05025 3.5 5.02513 4.52513C4 5.55025 4 7.20017 4 10.5V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V10.5C20 7.20017 20 5.55025 18.9749 4.52512C17.9497 3.5 16.2998 3.5 13 3.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 15H12M8 11H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>You do not need a new prompt to change the dashboard. These are the sentences I actually type, one at a time, and each one edits the artifact where it stands.</p>
+<div class="cardgrid">
+<div class="minicard"><b>"Make the pie chart a bar chart"</b> Swaps the chart type in place. Bars beat pies almost every time once you have more than four categories.</div>
+<div class="minicard"><b>"Add a filter for [column]"</b> New dropdown or slider wired into every chart on the page, not just the one below it.</div>
+<div class="minicard"><b>"Show change versus last month, not just totals"</b> Turns a snapshot into something that tells you a direction.</div>
+<div class="minicard"><b>"Sort the table by [column] descending and show the top 20"</b> Stops a 4,000 row table from swallowing the page.</div>
+<div class="minicard"><b>"Label the axes with units and add a one-line takeaway under each chart"</b> The single fastest upgrade from student project to presentable.</div>
+<div class="minicard"><b>"Explain what this chart is telling me, and what it is NOT telling me"</b> The one that saves you in the meeting. It surfaces the caveats before someone else does.</div>
+</div>
+<div class="tip">Two more worth keeping in your back pocket: "make it work on a phone screen" and "make the colours colourblind-safe". Both take one line and both get noticed by whoever you send it to.</div>
+
+<hr class="rule">
+<span class="kicker">the other output</span>
+<h2>Want a real Excel file instead? <span class="gi" style="--gl:#AE8002" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7H16.75C18.8567 7 19.91 7 20.6667 7.50559C20.9943 7.72447 21.2755 8.00572 21.4944 8.33329C22 9.08996 22 10.1433 22 12.25C22 15.7612 22 17.5167 21.1573 18.7779C20.7926 19.3238 20.3238 19.7926 19.7779 20.1573C18.5167 21 16.7612 21 13.25 21H12C7.28595 21 4.92893 21 3.46447 19.5355C2 18.0711 2 15.714 2 11V7.94427C2 6.1278 2 5.21956 2.38032 4.53806C2.65142 4.05227 3.05227 3.65142 3.53806 3.38032C4.21956 3 5.1278 3 6.94427 3C8.10802 3 8.6899 3 9.19926 3.19101C10.3622 3.62712 10.8418 4.68358 11.3666 5.73313L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Sometimes the person you are sending this to does not want a link, they want a workbook they can poke at. Claude can build an actual XLSX with live formulas in the cells, not values pasted in as text, and file creation is available on every plan from Free through Enterprise (<a href="https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude" target="_blank">create and edit files with Claude</a>).</p>
+<div class="promptwrap">
+<span class="promptlabel">📁 build the Excel version</span>
+<pre><code>Now build the same analysis as a real .xlsx workbook I can download and hand to someone else.
+
+Structure it as: a Data tab holding the cleaned rows, a Calculations tab, and a Summary tab at the front with the headline numbers and charts. Every number on the Summary tab must be a live formula that references the Data tab, not a pasted value, so that when someone replaces the raw data next month the whole workbook updates. Use named ranges or a proper table so the formulas keep working if the number of rows changes.
+
+Format it to be readable: bold headers with a frozen top row, currency and percentage formatting where it belongs, and a short notes cell at the top of the Summary tab saying what the data is, what period it covers and any assumption you made while cleaning it.
+
+Tell me which formulas you used for the headline numbers so I can check them.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">keep it alive</span>
+<h2>Sharing it and refreshing it next month <span class="gi" style="--gl:#448BDC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.3884 3L17.3913 3.97574C17.8393 4.41165 18.0633 4.62961 17.9844 4.81481C17.9056 5 17.5888 5 16.9552 5H9.19422C5.22096 5 2 8.13401 2 12C2 13.4872 2.47668 14.8662 3.2895 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7.61156 21L6.60875 20.0243C6.16074 19.5883 5.93673 19.3704 6.01557 19.1852C6.09441 19 6.4112 19 7.04478 19H14.8058C18.779 19 22 15.866 22 12C22 10.5128 21.5233 9.13383 20.7105 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🔗 Publish the artifact to share it.</strong> Open the artifact and hit Publish to get a link anyone can open in a browser, no Claude account needed on their end (<a href="https://support.claude.com/en/articles/9547008-publish-and-share-artifacts" target="_blank">publish and share artifacts</a>). Check what is on the page before you send it, since a published link is public to anyone who has it.</li>
+<li><strong class="st">📅 Rebuild it monthly in one message.</strong> Next month, open the same chat, attach the new export and say: "same dashboard, new data, keep the layout and filters identical and tell me what changed versus last month." You get continuity plus a diff.</li>
+<li><strong class="st">📌 Make it repeatable properly.</strong> Once the layout has settled, ask Claude to write the whole thing up as a skill so you stop re-explaining the format. In the app that is Customize, then Skills, then Add, then Upload a skill, and it works on every plan including Free (<a href="https://support.claude.com/en/articles/12512198-creating-custom-skills" target="_blank">creating custom skills</a>).</li>
+<li><strong class="st">🧾 Keep the raw file.</strong> The artifact is built from the data you gave it, it does not stay connected to your source. Keep the export that made it so you can prove any number later.</li>
+</ol>
+<div class="tip warn">The honest limits. This is not a live database connection, it is a snapshot of the file you uploaded, so nothing updates on its own. Very large files get sampled or summarised rather than fully loaded, so if the row count Claude reports does not match your file, say so and ask it to process the whole thing. And always hand-check one headline number before anyone else sees the page.</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank">What are artifacts and how do I use them? (Claude Help Center)</a><br>
+  <a href="https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude" target="_blank">Create and edit files with Claude, including Excel with working formulas</a><br>
+  <a href="https://claude.com/blog/create-files" target="_blank">Anthropic: Claude can now create and edit files</a><br>
+  <a href="https://support.claude.com/en/articles/8241126-upload-files-to-claude" target="_blank">Upload files to Claude, supported types and size limits</a><br>
+  <a href="https://support.claude.com/en/articles/9547008-publish-and-share-artifacts" target="_blank">Publish and share artifacts (Claude Help Center)</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

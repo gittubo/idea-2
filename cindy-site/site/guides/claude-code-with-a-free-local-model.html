@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Run Claude Code on a free local model · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- GUIDES_CARD {t:"Run Claude Code on a free local model", u:"guides/claude-code-with-a-free-local-model.html", topic:"building", tool:"claude"} -->
+<!-- seo:auto -->
+<meta name="description" content="Run Claude Code on a free local model. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-code-with-a-free-local-model">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Run Claude Code on a free local model">
+<meta property="og:description" content="Run Claude Code on a free local model. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-code-with-a-free-local-model">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Run Claude Code on a free local model">
+<meta name="twitter:description" content="Run Claude Code on a free local model. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Run Claude Code on a free local model</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented LOCAL, so here is the real setup: Ollama, a coding model, one setting almost everyone gets wrong, and two environment variables.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn"><strong>Read this before you start, because the headline is doing some work.</strong> This does not give you Claude for free. What you get is Claude Code, the terminal tool, driving an open-weight model running on your own laptop. The tool is free, the model is free, and the model is not Claude. Anthropic's <a href="https://code.claude.com/docs/en/setup#authenticate" target="_blank">setup docs</a> say Claude Code needs a paid plan or a third-party API provider, and pointing it at Ollama is that third-party route, so no Claude subscription is involved. Expect noticeably weaker reasoning than Sonnet or Opus, especially on multi-file work. Set that expectation now and you will enjoy this a lot more.</div>
+
+<span class="kicker">the trade</span>
+<h2>What you get, and what you give up <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>You get: no bill</b> No API charges and no subscription for this route. Ollama is free, the models are open weights, and Claude Code is free to install. Practising the agentic loop for eight hours costs you electricity.</div>
+<div class="minicard"><b>You get: your files stay put</b> Prompts and code go to a model running on your own machine, not to a provider. For work you are not allowed to send anywhere, that is the whole point of the setup.</div>
+<div class="minicard"><b>You give up: capability</b> A 30B open model is a solid assistant and it is not close to a frontier model on long agentic tasks. Expect more wrong turns, weaker planning, and more supervision from you.</div>
+<div class="minicard"><b>You give up: speed</b> "No rate limits" means no provider is throttling you. Your laptop still is. On consumer hardware expect a slow, steady stream of tokens rather than the pace you are used to.</div>
+</div>
+<div class="tip calm">💡 The setup got much simpler in 2026. Ollama added a native Anthropic-compatible Messages endpoint in v0.14.0, so Claude Code talks to it directly. Older guides that tell you to install a translation proxy or a router are out of date, and you can ignore them.</div>
+
+<hr class="rule">
+<span class="kicker">reality check</span>
+<h2>Can your machine actually run this? <span class="gi" style="--gl:#0F94B3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the question the short videos skip, and it decides whether you have a good afternoon or a frustrating one. A model has to fit in memory, and on a Mac that is unified memory shared with everything else you have open. Sizes below are the real download sizes from Ollama's library, and you want headroom on top for the context window.</p>
+<div class="cardgrid">
+<div class="minicard"><b>16GB, tight</b> Run <code>qwen2.5-coder:7b</code> (4.7GB) or <code>gpt-oss:20b</code> (14GB, which Ollama lists as running on as little as 16GB). Fine for single-file edits and learning the tool. It will struggle with anything that spans a whole project.</div>
+<div class="minicard"><b>24GB, workable</b> <code>qwen2.5-coder:14b</code> (9.0GB) is comfortable here and leaves room for a bigger context window. This is the point where the agent loop starts feeling useful rather than like a demo.</div>
+<div class="minicard"><b>32GB or more, the sweet spot</b> <code>qwen3-coder:30b</code> (19GB) is the model to want. It is a 30B model with about 3.3B parameters active per token, so it punches above what its size suggests while staying loadable on a laptop.</div>
+<div class="minicard"><b>What is out of reach</b> <code>qwen3-coder:480b</code> is a 290GB download and Ollama states it needs at least 250GB of memory. That is server hardware. Nothing you can do with settings makes it fit on a laptop.</div>
+</div>
+<div class="tip warn">⚠️ Free disk space matters as much as memory. Models are downloaded and kept, so budget 20GB or more per coding model you try. If you pull three to compare, that is most of a 60GB dent in your drive.</div>
+
+<hr class="rule">
+<span class="kicker">step one</span>
+<h2>Install Ollama <span class="gi" style="--gl:#B9794D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C11.1818 22 10.4002 21.6698 8.83693 21.0095C4.94564 19.3657 3 18.5438 3 17.1613C3 16.7742 3 10.0645 3 7M12 22C12.8182 22 13.5998 21.6698 15.1631 21.0095C19.0544 19.3657 21 18.5438 21 17.1613V7M12 22L12 11.3548" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.32592 9.69138L5.40472 8.27785C3.80157 7.5021 3 7.11423 3 6.5C3 5.88577 3.80157 5.4979 5.40472 4.72215L8.32592 3.30862C10.1288 2.43621 11.0303 2 12 2C12.9697 2 13.8712 2.4362 15.6741 3.30862L18.5953 4.72215C20.1984 5.4979 21 5.88577 21 6.5C21 7.11423 20.1984 7.5021 18.5953 8.27785L15.6741 9.69138C13.8712 10.5638 12.9697 11 12 11C11.0303 11 10.1288 10.5638 8.32592 9.69138Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 12L8 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 4L7 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">⬇️ Download it.</strong> Go to <a href="https://ollama.com/download" target="_blank">ollama.com/download</a> and grab the installer for macOS or Windows. It installs like any normal app and puts a small icon in your menu bar or system tray.</li>
+<li><strong class="st">🐧 On Linux, one line instead.</strong> Run <code>curl -fsSL https://ollama.com/install.sh | sh</code> in your terminal. The <a href="https://docs.ollama.com/quickstart" target="_blank">quickstart</a> covers the variations.</li>
+<li><strong class="st">🔢 Check your version is 0.14.0 or newer.</strong> Run <code>ollama --version</code>. The Anthropic-compatible endpoint that makes this whole thing work arrived in v0.14.0, so on anything older Claude Code will not connect. Update from <a href="https://github.com/ollama/ollama/releases" target="_blank">the releases page</a> if you are behind.</li>
+<li><strong class="st">✅ Confirm it is listening.</strong> Ollama runs a local server on port 11434. Open <a href="http://localhost:11434" target="_blank">localhost:11434</a> in a browser and you should see the words "Ollama is running". If you do not, open the Ollama app so the server starts.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">step two</span>
+<h2>Pull a coding model <span class="gi" style="--gl:#418BDD" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.9504 12.1817C17.1981 12.814 16.5076 13.5726 15.1267 15.0899C13.6702 16.6902 12.9201 17.4904 12 17.5C11.0799 17.4904 10.3298 16.6902 8.87331 15.0899C7.49239 13.5726 6.80193 12.814 7.04964 12.1817C7.05868 12.1586 7.06851 12.1359 7.0791 12.1135C7.34928 11.542 8.24477 11.5029 10 11.5002V4.99998C10 4.53501 10 4.30253 10.0511 4.11179C10.1898 3.59414 10.5941 3.1898 11.1118 3.05111C11.3025 3 11.535 3 12 3C12.4649 3 12.6974 3 12.8882 3.05111C13.4058 3.1898 13.8102 3.59414 13.9489 4.11179C14 4.30253 14 4.53501 14 4.99998V11.5002C15.7552 11.5029 16.6507 11.542 16.9209 12.1135C16.9315 12.1359 16.9413 12.1586 16.9504 12.1817Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.00006 21H19.0001" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Pick one from the hardware table above and pull it. The download is large and one-time, so start it and go make a coffee.</p>
+<pre><code>ollama pull qwen3-coder:30b
+
+# smaller machines
+ollama pull qwen2.5-coder:14b
+ollama pull qwen2.5-coder:7b
+
+# Ollama's own general-purpose suggestion
+ollama pull gpt-oss:20b</code></pre>
+<ol class="steps">
+<li><strong class="st">📚 Check the model page before you commit.</strong> Every model has its own page in Ollama's library with the exact tags and sizes: <a href="https://ollama.com/library/qwen3-coder" target="_blank">qwen3-coder</a>, <a href="https://ollama.com/library/qwen2.5-coder" target="_blank">qwen2.5-coder</a>, <a href="https://ollama.com/library/gpt-oss" target="_blank">gpt-oss</a>. Tags matter, because <code>qwen3-coder</code> with no tag pulls the 30B build.</li>
+<li><strong class="st">💬 Test it on its own first.</strong> Run <code>ollama run qwen3-coder:30b</code> and ask it something. If it is unusably slow here, in a plain chat with no tools, it will be worse inside an agent loop. Better to find that out now than after three more setup steps.</li>
+<li><strong class="st">☁️ Know what the cloud tags are.</strong> Models with a <code>-cloud</code> suffix run on Ollama's servers, not your machine. They are useful and they are neither local nor part of the free setup described here, so leave them alone if the point is privacy or zero cost.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">step three, the one people miss</span>
+<h2>Raise the context window <span class="gi" style="--gl:#987CBE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3175 7.14139L20.8239 6.28479C20.4506 5.63696 20.264 5.31305 19.9464 5.18388C19.6288 5.05472 19.2696 5.15664 18.5513 5.36048L17.3311 5.70418C16.8725 5.80994 16.3913 5.74994 15.9726 5.53479L15.6357 5.34042C15.2766 5.11043 15.0004 4.77133 14.8475 4.37274L14.5136 3.37536C14.294 2.71534 14.1842 2.38533 13.9228 2.19657C13.6615 2.00781 13.3143 2.00781 12.6199 2.00781H11.5051C10.8108 2.00781 10.4636 2.00781 10.2022 2.19657C9.94085 2.38533 9.83106 2.71534 9.61149 3.37536L9.27753 4.37274C9.12465 4.77133 8.84845 5.11043 8.48937 5.34042L8.15249 5.53479C7.73374 5.74994 7.25259 5.80994 6.79398 5.70418L5.57375 5.36048C4.85541 5.15664 4.49625 5.05472 4.17867 5.18388C3.86109 5.31305 3.67445 5.63696 3.30115 6.28479L2.80757 7.14139C2.45766 7.74864 2.2827 8.05227 2.31666 8.37549C2.35061 8.69871 2.58483 8.95918 3.05326 9.48012L4.0843 10.6328C4.3363 10.9518 4.51521 11.5078 4.51521 12.0077C4.51521 12.5078 4.33636 13.0636 4.08433 13.3827L3.05326 14.5354C2.58483 15.0564 2.35062 15.3168 2.31666 15.6401C2.2827 15.9633 2.45766 16.2669 2.80757 16.8741L3.30114 17.7307C3.67443 18.3785 3.86109 18.7025 4.17867 18.8316C4.49625 18.9608 4.85542 18.8589 5.57377 18.655L6.79394 18.3113C7.25263 18.2055 7.73387 18.2656 8.15267 18.4808L8.4895 18.6752C8.84851 18.9052 9.12464 19.2442 9.2775 19.6428L9.61149 20.6403C9.83106 21.3003 9.94085 21.6303 10.2022 21.8191C10.4636 22.0078 10.8108 22.0078 11.5051 22.0078H12.6199C13.3143 22.0078 13.6615 22.0078 13.9228 21.8191C14.1842 21.6303 14.294 21.3003 14.5136 20.6403L14.8476 19.6428C15.0004 19.2442 15.2765 18.9052 15.6356 18.6752L15.9724 18.4808C16.3912 18.2656 16.8724 18.2055 17.3311 18.3113L18.5513 18.655C19.2696 18.8589 19.6288 18.9608 19.9464 18.8316C20.264 18.7025 20.4506 18.3785 20.8239 17.7307L21.3175 16.8741C21.6674 16.2669 21.8423 15.9633 21.8084 15.6401C21.7744 15.3168 21.5402 15.0564 21.0718 14.5354L20.0407 13.3827C19.7887 13.0636 19.6098 12.5078 19.6098 12.0077C19.6098 11.5078 19.7888 10.9518 20.0407 10.6328L21.0718 9.48012C21.5402 8.95918 21.7744 8.69871 21.8084 8.37549C21.8423 8.05227 21.6674 7.74864 21.3175 7.14139Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.5195 12C15.5195 13.933 13.9525 15.5 12.0195 15.5C10.0865 15.5 8.51953 13.933 8.51953 12C8.51953 10.067 10.0865 8.5 12.0195 8.5C13.9525 8.5 15.5195 10.067 15.5195 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>This is the step that separates a working setup from one where Claude Code behaves strangely, forgets the file it opened two messages ago, or loops. Ollama picks a default context length from your available GPU memory, and per its <a href="https://docs.ollama.com/context-length" target="_blank">context length docs</a> that default is 4k tokens on machines with under 24GiB. Claude Code loads a large system prompt plus your files plus a running conversation, so 4k is nowhere near enough.</p>
+<ol class="steps">
+<li><strong class="st">🎚️ In the Ollama app, move the slider.</strong> Open Ollama's settings and set the context length to at least 32k. Ollama's own recommendation for this setup is a model running with at least 32K tokens of context.</li>
+<li><strong class="st">⌨️ Or set it when you start the server.</strong> If you run Ollama from the terminal, use <code>OLLAMA_CONTEXT_LENGTH=32768 ollama serve</code>. Bump it to 65536 if your machine has the memory spare.</li>
+<li><strong class="st">🧮 Remember it costs memory.</strong> A bigger context window needs more memory on top of the model itself. If your machine starts swapping and everything crawls, drop back to a smaller model rather than a smaller context, because a small context breaks the tool outright.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">step four</span>
+<h2>Install Claude Code and point it at Ollama <span class="gi" style="--gl:#4C395C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 2V6M8.5 6V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.00446 7.61331C5.93719 6.74273 6.63957 6 7.53014 6H16.4699C17.3604 6 18.0628 6.74273 17.9955 7.61331L17.8117 9.99197C17.6796 11.7019 17.1011 13.3498 16.132 14.7773L15.5312 15.6622C14.9638 16.4979 14.0077 17 12.9838 17H11.0162C9.99228 17 9.03617 16.4979 8.46881 15.6622L7.86803 14.7773C6.89885 13.3498 6.32041 11.7019 6.18827 9.99197L6.00446 7.61331Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 9H13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">📦 Install Claude Code.</strong> On macOS, Linux or WSL run <code>curl -fsSL https://claude.ai/install.sh | bash</code>. On Windows PowerShell run <code>irm https://claude.ai/install.ps1 | iex</code>. Homebrew (<code>brew install --cask claude-code</code>) and WinGet also work, and all the options are in the <a href="https://code.claude.com/docs/en/setup" target="_blank">setup docs</a>.</li>
+<li><strong class="st">🔑 Set the two environment variables.</strong> These are what redirect Claude Code away from Anthropic's servers and at your local Ollama. The token is required by the tool but not checked by Ollama, so the literal word "ollama" is fine.</li>
+<li><strong class="st">🚀 Launch it with your model.</strong> Pass the model name with <code>--model</code>, using exactly the tag you pulled.</li>
+<li><strong class="st">⚡ Or use the shortcut.</strong> Ollama ships a helper that sets all of this for you: run <code>ollama launch claude</code> and it opens Claude Code already wired to your local server.</li>
+</ol>
+<pre><code>export ANTHROPIC_AUTH_TOKEN=ollama
+export ANTHROPIC_BASE_URL=http://localhost:11434
+
+claude --model qwen3-coder:30b</code></pre>
+<div class="tip">📌 <strong>Make it stick, or keep it temporary on purpose.</strong> Those two lines last only for that terminal window. That is often what you want, so a plain <code>claude</code> in a different window still uses your normal setup. If you would rather have it permanent, add the two export lines to <code>~/.zshrc</code> on a Mac. On Windows PowerShell use <code>$env:ANTHROPIC_AUTH_TOKEN="ollama"</code> and <code>$env:ANTHROPIC_BASE_URL="http://localhost:11434"</code>.</div>
+
+<hr class="rule">
+<span class="kicker">step five</span>
+<h2>The five-minute honesty test <span class="gi" style="--gl:#119B5B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5L10.5 15L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Before you decide this replaces anything, give the local model a real task and watch how it handles being wrong. Open Claude Code in a small practice folder and paste this in. It is deliberately a task with a trap in it, because a smooth answer to an easy question tells you nothing.</p>
+<div class="promptwrap">
+<span class="promptlabel">✅ test whether your local model is good enough</span>
+<pre><code>Before you write any code, tell me your plan in five lines or fewer, and tell me which part of it you are least confident about.
+
+Then build me a small command line tool in Python that reads every .txt file in a folder I give it, counts how often each word appears across all of them, and writes the top 20 words to a CSV. Handle the cases where the folder does not exist, where it contains no .txt files, and where a file is not valid UTF-8, and do not let any of those crash the program.
+
+When you are finished, create three test files yourself, run the tool against them, and paste the actual output back to me. If the output is wrong, fix it and run it again rather than telling me it should work.
+
+Finally, tell me honestly what you would do differently with more capability, and name anything in this task you found difficult.</code></pre>
+</div>
+<div class="tip calm">🌱 What you are watching for: does it make a plan, does it actually run the thing, and does it notice its own mistakes. A model that writes plausible code but never verifies it is fine for drafting and a poor fit for agentic work. That is the honest dividing line, and it tells you which jobs to send where.</div>
+
+<hr class="rule">
+<span class="kicker">the fine print</span>
+<h2>What does not work through the local endpoint <span class="gi" style="--gl:#B97C11" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9248 21H10.0752C5.44476 21 3.12955 21 2.27636 19.4939C1.42317 17.9879 2.60736 15.9914 4.97574 11.9985L6.90057 8.75333C9.17559 4.91778 10.3131 3 12 3C13.6869 3 14.8244 4.91777 17.0994 8.75332L19.0243 11.9985C21.3926 15.9914 22.5768 17.9879 21.7236 19.4939C20.8704 21 18.5552 21 13.9248 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 9V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Ollama's compatibility layer covers the Messages API, and it does not cover everything Anthropic's own API offers. These gaps are listed in Ollama's <a href="https://docs.ollama.com/api/anthropic-compatibility" target="_blank">Anthropic compatibility docs</a>, and they explain most of the odd behaviour people run into.</p>
+<ul>
+<li><strong>No prompt caching.</strong> Every request reprocesses the system prompt and the conversation from scratch, which is a big part of why long sessions feel slower and slower.</li>
+<li><strong>The <code>tool_choice</code> parameter is ignored.</strong> When Claude Code wants to force a specific tool call, the local endpoint does not honour it, so tool use is less reliable.</li>
+<li><strong>No token counting endpoint,</strong> and the token counts you do see are approximations from the model's own tokenizer rather than exact figures.</li>
+<li><strong>No PDF support, and no image URLs.</strong> Base64 images work, images referenced by URL do not.</li>
+<li><strong>Extended thinking is basic.</strong> A thinking budget is accepted but not enforced, so do not rely on it to control depth.</li>
+<li><strong>No batches API and no request metadata.</strong> Neither matters much for everyday use, and both matter if you were planning to script around it.</li>
+</ul>
+
+<hr class="rule">
+<span class="kicker">be precise about this</span>
+<h2>The privacy claim, stated accurately <span class="gi" style="--gl:#C37509" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5V17.5M13 14.5C13 15.0523 12.5523 15.5 12 15.5C11.4477 15.5 11 15.0523 11 14.5C11 13.9477 11.4477 13.5 12 13.5C12.5523 13.5 13 13.9477 13 14.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16.5 9V6.5C16.5 4.01472 14.4853 2 12 2C9.51471 2 7.49999 4.01472 7.49999 6.5V9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M4.2678 18.8447C4.49268 20.515 5.87612 21.8235 7.55965 21.9009C8.97627 21.966 10.4153 22 12 22C13.5847 22 15.0237 21.966 16.4403 21.9009C18.1239 21.8235 19.5073 20.515 19.7322 18.8447C19.8789 17.7547 20 16.6376 20 15.5C20 14.3624 19.8789 13.2453 19.7322 12.1553C19.5073 10.485 18.1239 9.17649 16.4403 9.09909C15.0237 9.03397 13.5847 9 12 9C10.4153 9 8.97627 9.03397 7.55965 9.09909C5.87612 9.17649 4.49268 10.485 4.2678 12.1553C4.12104 13.2453 3.99999 14.3624 3.99999 15.5C3.99999 16.6376 4.12104 17.7547 4.2678 18.8447Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Your prompts and your code go to a model process on your own machine, and no provider sees them. That is real and it is the strongest reason to run this setup. It is not the same as being fully offline, though. Claude Code checks for updates in the background and makes other network calls, which Anthropic documents in its <a href="https://code.claude.com/docs/en/network-config" target="_blank">network configuration</a> page. If you need something genuinely airtight, turn off auto-updates with the <code>DISABLE_AUTOUPDATER</code> setting listed in the <a href="https://code.claude.com/docs/en/env-vars" target="_blank">environment variables docs</a>, and confirm the behaviour on your own network before you trust it with anything sensitive.</p>
+
+<hr class="rule">
+<span class="kicker">the actual verdict</span>
+<h2>When local is worth it, when to switch back <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Worth it: learning the loop</b> Getting fluent with Claude Code takes hundreds of small experiments, and doing those on a local model costs nothing. Learn the tool here, then bring the habit to a frontier model.</div>
+<div class="minicard"><b>Worth it: files that cannot leave</b> Client data, personal records, anything covered by a policy you would rather not test. A local model is the only version of this that is genuinely defensible.</div>
+<div class="minicard"><b>Switch back: real builds</b> Anything spanning many files, anything where a subtle bug costs you a day, anything you are shipping. The capability gap shows up exactly where the stakes are.</div>
+<div class="minicard"><b>Switch back: when you are stuck</b> If you have gone three rounds and it is still circling, the model is the bottleneck, not your prompt. Switching costs one command, and staying stubborn costs an evening.</div>
+</div>
+<div class="tip">📌 Switching back is one line: open a fresh terminal window without those two exports set, and <code>claude</code> runs on your normal setup again. Nothing you did here is permanent or hard to undo.</div>
+
+<hr class="rule">
+<h2>Sources <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://docs.ollama.com/api/anthropic-compatibility" target="_blank">Ollama, Anthropic API compatibility: the env vars and the full list of gaps</a><br>
+  <a href="https://ollama.com/blog/claude" target="_blank">Ollama's announcement of Claude Code support and the recommended models</a><br>
+  <a href="https://docs.ollama.com/context-length" target="_blank">Ollama, context length defaults by available memory and how to change them</a><br>
+  <a href="https://ollama.com/library/qwen3-coder" target="_blank">Qwen3-Coder in the Ollama library: tags, sizes and memory requirements</a><br>
+  <a href="https://ollama.com/library/qwen2.5-coder" target="_blank">Qwen2.5-Coder in the Ollama library: every size from 0.5b to 32b</a><br>
+  <a href="https://ollama.com/library/gpt-oss" target="_blank">gpt-oss in the Ollama library, including the 16GB memory note</a><br>
+  <a href="https://code.claude.com/docs/en/setup" target="_blank">Anthropic, Claude Code setup: install commands, requirements and authentication</a><br>
+  <a href="https://code.claude.com/docs/en/network-config" target="_blank">Anthropic, network configuration: what Claude Code connects to</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

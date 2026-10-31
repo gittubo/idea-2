@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude connectors for Blender, Adobe and Fusion: the setup guide · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Claude connectors for Blender, Adobe and Fusion: the setup guide. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-connectors-blender-adobe-fusion">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Claude connectors for Blender, Adobe and Fusion: the setup guide">
+<meta property="og:description" content="Claude connectors for Blender, Adobe and Fusion: the setup guide. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-connectors-blender-adobe-fusion">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude connectors for Blender, Adobe and Fusion: the setup guide">
+<meta name="twitter:description" content="Claude connectors for Blender, Adobe and Fusion: the setup guide. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Claude connectors for Blender, Adobe and Fusion", u:"guides/claude-connectors-blender-adobe-fusion.html", topic:"design", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Design with AI</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Claude connectors for Blender, Adobe and Fusion</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented DESIGNER, so here is the full setup for all three connectors from the reel: Blender, Adobe, and Autodesk Fusion.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">start here</span>
+<h2>What a connector actually is <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A connector is a bridge between Claude and a piece of software. Under the hood it is an MCP server, which is a small program that publishes a list of things Claude is allowed to do inside that app, then carries out the ones Claude asks for. You are not copying answers out of a chat and doing them yourself. Claude reads the state of your open scene or file and makes the change in place.</p>
+<p>That distinction matters for how you work. With a chatbot you ask "how do I batch rename 200 objects", get a Python snippet, and go paste it somewhere. With a connector you say "rename every object in this collection to match its material and tell me which ones had no material", and it happens in your file while you watch.</p>
+
+<div class="tip">Before anything else: connectors live under <b>Customize &rarr; Connectors</b> in Claude. Press the <b>+</b> button and choose Browse to open the full directory, which you can also reach at <code>claude.ai/directory</code>. That one path covers all three of these. Reference: <a href="https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory" target="_blank">browse skills, connectors and plugins in one directory</a>.</div>
+
+<hr class="rule">
+<span class="kicker">the line-up</span>
+<h2>What shipped, in plain terms <span class="gi" style="--gl:#A9810B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7H16.75C18.8567 7 19.91 7 20.6667 7.50559C20.9943 7.72447 21.2755 8.00572 21.4944 8.33329C22 9.08996 22 10.1433 22 12.25C22 15.7612 22 17.5167 21.1573 18.7779C20.7926 19.3238 20.3238 19.7926 19.7779 20.1573C18.5167 21 16.7612 21 13.25 21H12C7.28595 21 4.92893 21 3.46447 19.5355C2 18.0711 2 15.714 2 11V7.94427C2 6.1278 2 5.21956 2.38032 4.53806C2.65142 4.05227 3.05227 3.65142 3.53806 3.38032C4.21956 3 5.1278 3 6.94427 3C8.10802 3 8.6899 3 9.19926 3.19101C10.3622 3.62712 10.8418 4.68358 11.3666 5.73313L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Blender</b> A natural-language interface to Blender's Python API. Claude can read your open scene, explain a node setup you inherited, batch-apply changes across objects, clean unused data, and write custom Python tools into Blender's interface.</div>
+<div class="minicard"><b>Adobe for creativity</b> Claude orchestrates 50+ tools across Creative Cloud, drawing on Photoshop, Illustrator, Firefly, Express, Premiere, Lightroom, InDesign and Stock. You describe an outcome, Claude decides which tools to call and in what order.</div>
+<div class="minicard"><b>Autodesk Fusion</b> Text to CAD for people with a Fusion subscription. Claude reads geometry in your active file, runs operations through the Fusion API, and writes parametric history, so the model stays editable the normal way afterwards.</div>
+<div class="minicard"><b>The other six</b> The same launch added Ableton, Affinity by Canva, SketchUp, Splice, and two Resolume connectors for live visuals. Same install path, same idea, so the walkthroughs below transfer.</div>
+</div>
+
+<div class="tip warn"><strong>Plan honesty, since this is where people get stuck.</strong> Blender needs Claude Desktop and Blender 4.2 or later, and it works on any Claude plan including Free, because Blender has to be running on the same machine (<a href="https://claude.com/resources/tutorials/using-the-blender-connector-in-claude" target="_blank">official tutorial</a>). Autodesk Fusion needs an active Fusion subscription on top of Claude. Adobe works on claude.ai and Claude Desktop, and signing in with an Adobe account unlocks higher usage limits and more tools (<a href="https://blog.adobe.com/en/publish/2026/04/28/adobe-for-creativity-connector" target="_blank">Adobe's announcement</a>).</div>
+
+<hr class="rule">
+<span class="kicker">connector one</span>
+<h2>Blender: set it up in 3 moves <span class="gi" style="--gl:#1994B7" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.64298 3.14559L6.93816 3.93362C4.31272 5.14719 3 5.75397 3 6.75C3 7.74603 4.31272 8.35281 6.93817 9.56638L8.64298 10.3544C10.2952 11.1181 11.1214 11.5 12 11.5C12.8786 11.5 13.7048 11.1181 15.357 10.3544L17.0618 9.56638C19.6873 8.35281 21 7.74603 21 6.75C21 5.75397 19.6873 5.14719 17.0618 3.93362L15.357 3.14559C13.7048 2.38186 12.8786 2 12 2C11.1214 2 10.2952 2.38186 8.64298 3.14559Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20.788 11.0972C20.9293 11.2959 21 11.5031 21 11.7309C21 12.7127 19.6873 13.3109 17.0618 14.5072L15.357 15.284C13.7048 16.0368 12.8786 16.4133 12 16.4133C11.1214 16.4133 10.2952 16.0368 8.64298 15.284L6.93817 14.5072C4.31272 13.3109 3 12.7127 3 11.7309C3 11.5031 3.07067 11.2959 3.212 11.0972" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20.3767 16.2661C20.7922 16.5971 21 16.927 21 17.3176C21 18.2995 19.6873 18.8976 17.0618 20.0939L15.357 20.8707C13.7048 21.6236 12.8786 22 12 22C11.1214 22 10.2952 21.6236 8.64298 20.8707L6.93817 20.0939C4.31272 18.8976 3 18.2995 3 17.3176C3 16.927 3.20778 16.5971 3.62334 16.2661" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🖥️ Use the desktop app.</strong> Download Claude Desktop for macOS or Windows and sign in. The Blender connector talks to Blender over a local connection, so the browser version cannot run it. You also need Blender 4.2 or later from <a href="https://www.blender.org/download/" target="_blank">blender.org/download</a>.</li>
+<li><strong class="st">➕ Add the connector in Claude.</strong> Open Claude Desktop, click Customize in the left sidebar, open the Connectors tab, find Blender, and select Add. This is the Claude half of the bridge and it takes about ten seconds.</li>
+<li><strong class="st">🧩 Install the Blender add-on.</strong> Open <a href="https://www.blender.org/lab/mcp-server/" target="_blank">blender.org/lab/mcp-server</a> in a browser next to an open Blender window and drag the "Drag and Drop into Blender" button onto Blender. You have to do it twice: the first drag adds the Blender Lab extension repository, the second installs the add-on. There is a download-and-install-from-disk option on the same page if drag and drop misbehaves.</li>
+<li><strong class="st">▶️ Start the server each session.</strong> Inside Blender go to Edit, then Preferences, then Add-ons, find the BlenderMCP panel and enable "start MCP server". Do this after you open your project. The add-on preferences also let you set the host, the port, and an auto-start option if you would rather not think about it again.</li>
+<li><strong class="st">💾 Remember that saving is still yours.</strong> Changes Claude makes apply to your live session and only hit disk when you save in Blender. Keep an incremental save habit while you are learning what it does.</li>
+</ol>
+
+<div class="tip warn"><strong>Read this before you point it at client work.</strong> Blender's own page for the MCP server says the server "will execute LLM generated code in Blender without any guards in place to protect your data from removal or being sent to a remote location," and recommends a virtual machine or a system without access to sensitive information (<a href="https://www.blender.org/lab/mcp-server/" target="_blank">source</a>). Practical version: run it on copies of files first, keep versioned saves, and do not connect it to a folder full of client masters while you are still learning it.</div>
+
+<p>Two prompts to run first. The first one is the honest test of whether a connector earns its place: hand it a mess you did not make.</p>
+<div class="promptwrap">
+<span class="promptlabel">🔎 audit and explain my scene</span>
+<pre><code>You have access to my open Blender scene through the Blender connector. Before you change anything, walk the scene and give me a written map of it: the collections, the object count in each, the naming conventions people have actually used, the materials and which objects share them, and the modifier stacks that look heavy or duplicated.
+
+Then flag the three things most likely to cause me problems later, for example unused data blocks, objects with no material, non-uniform scale that was never applied, or a node group that is doing something unnecessarily expensive. For each one, tell me what it is, why it matters when I render or export, and what the fix would be.
+
+Do not modify anything yet. End with a numbered list of the fixes you would make, ordered by how much time each saves me, so I can pick which ones to approve.</code></pre>
+</div>
+
+<div class="promptwrap">
+<span class="promptlabel">🛠️ batch the boring part</span>
+<pre><code>Using the Blender connector, apply this cleanup pass across the objects in the collection I name, and work in one pass rather than object by object.
+
+Rename every mesh object to the pattern type_name_variant in lowercase with underscores, using the material name where the object name is generic like Cube.001. Apply any non-uniform scale, clear parenting that points at deleted objects, and remove unused material slots. Leave anything ambiguous alone rather than guessing.
+
+When you are done, report back as a table: the old name, the new name, and every change you made to that object. If you skipped an object, say which one and why. Then tell me the single Python operator I could add to Blender's interface as a button so I can run this same pass myself next time without asking you.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">connector two</span>
+<h2>Adobe: describe the outcome, not the toolbar <span class="gi" style="--gl:#BF7362" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C12.8417 22 14 22.1163 14 21C14 20.391 13.6832 19.9212 13.3686 19.4544C12.9082 18.7715 12.4523 18.0953 13 17C13.6667 15.6667 14.7778 15.6667 16.4815 15.6667C17.3334 15.6667 18.3334 15.6667 19.5 15.5C21.601 15.1999 22 13.9084 22 12Z" stroke="currentColor" stroke-width="1.5"/><circle cx="9.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M7.125 15H7M7.25 15C7.25 15.1381 7.13807 15.25 7 15.25C6.86193 15.25 6.75 15.1381 6.75 15C6.75 14.8619 6.86193 14.75 7 14.75C7.13807 14.75 7.25 14.8619 7.25 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🔌 Connect it.</strong> In Claude (web or desktop) open Customize, go to Connectors, press +, browse the directory and connect "Adobe for creativity". This is the connector that fronts the 50+ Creative Cloud tools.</li>
+<li><strong class="st">🔑 Sign in with your Adobe account.</strong> You can start without one, but signing in unlocks higher usage limits, more tools, and work that saves across sessions, which is what you want the moment you are doing anything real.</li>
+<li><strong class="st">🗣️ Ask for the outcome.</strong> The whole point is that you do not choose the tool. You say what you need and Claude decides which Adobe tools to call, in what order, and with what settings. Naming an app in your prompt is fine as a hint, not as an instruction.</li>
+<li><strong class="st">✏️ Keep editing where you normally do.</strong> Output is not a dead end. You can push assets to Firefly Boards, open them in Express to keep iterating, or download them for the rest of your Adobe workflow.</li>
+</ol>
+
+<div class="tip">Set expectations honestly: this connector shines at the orchestration layer, so template-based social assets, retouching passes, resizing and repurposing, and asset variations. It is not a remote control for every advanced Photoshop or Premiere panel, so keep your heavy compositing and grading where it already lives.</div>
+
+<div class="promptwrap">
+<span class="promptlabel">📦 one asset, every size</span>
+<pre><code>Using the Adobe connector, take the image I am attaching and build me a full social pack from it, keeping one visual identity across every piece.
+
+I need: a 1080x1350 Instagram post, a 1080x1920 story with the safe areas respected so nothing important sits under the interface, a 1200x630 link preview, and a 1500x500 banner. Recompose each one properly rather than cropping the same file four times, so the subject stays where the eye should land and the negative space still works at that ratio.
+
+Match this direction: [describe your palette, your fonts, and the mood in one or two sentences]. Give me each file separately, tell me what you changed for each ratio and why, and flag anything that will look weak at small sizes so I can fix it before I post.</code></pre>
+</div>
+
+<div class="promptwrap">
+<span class="promptlabel">🎬 repurpose a video without re-editing it</span>
+<pre><code>Using the Adobe connector, take the video I am attaching and repurpose it for vertical without me re-editing the whole thing.
+
+Produce a 9:16 version that keeps the speaker framed properly through the cuts rather than a static centre crop, and a 1:1 version for feed. Keep the audio untouched. If reframing breaks a shot where something important sits at the edge, tell me the timestamp instead of quietly cropping it out.
+
+Then give me a short list of the moments most worth clipping as standalone posts, with timestamps and a one-line reason each, based on where the point actually lands rather than where the energy is loudest.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">connector three</span>
+<h2>Autodesk Fusion: text in, real geometry out <span class="gi" style="--gl:#8A8791" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 10.5L19.5 12.5M14 14L16 16M10.5 17.5L12.5 19.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M10.5355 4.67767C11.9002 3.31296 12.5826 2.6306 13.3438 2.3153C14.3587 1.8949 15.4991 1.8949 16.5141 2.3153C17.2753 2.6306 17.9576 3.31296 19.3223 4.67767C20.687 6.04238 21.3694 6.72474 21.6847 7.48594C22.1051 8.50088 22.1051 9.64126 21.6847 10.6562C21.3694 11.4174 20.687 12.0998 19.3223 13.4645L13.4645 19.3223C12.0998 20.687 11.4174 21.3694 10.6562 21.6847C9.64126 22.1051 8.50088 22.1051 7.48594 21.6847C6.72474 21.3694 6.04238 20.687 4.67767 19.3223C3.31296 17.9576 2.6306 17.2753 2.3153 16.5141C1.8949 15.4991 1.8949 14.3587 2.3153 13.3438C2.6306 12.5826 3.31296 11.9002 4.67767 10.5355L10.5355 4.67767Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the one with the most plumbing, because Fusion runs its own local server that Claude then talks to. It is a five-minute setup and you only do it once.</p>
+<ol class="steps">
+<li><strong class="st">✅ Check the gate.</strong> You need an active Fusion subscription. Anthropic's own wording is that the connector lets designers and engineers "with a Fusion subscription" create and modify 3D models through conversation, so there is no free path here.</li>
+<li><strong class="st">⚙️ Turn on the Fusion MCP server.</strong> In Fusion, open Preferences, then General, then API. In the Preferences for Scripting and Programming panel, tick the Fusion MCP Server checkbox and note the Fusion MCP Server Port. The default is 27182.</li>
+<li><strong class="st">➕ Install the connector in Claude Desktop.</strong> Click Customize in the left sidebar, open the Connectors tab, press + to open the connector directory, search for Fusion, then choose Install next to Autodesk Fusion.</li>
+<li><strong class="st">🔁 Match the port.</strong> Toggle the connector to Enabled, click Configure, and confirm the port matches the one from Fusion's API preferences. A mismatched port is the single most common reason the connection silently does nothing.</li>
+<li><strong class="st">📄 Work in an open document.</strong> Claude acts on your active file, reading geometry and writing parametric history, so open the design you want to work on before you start prompting.</li>
+</ol>
+
+<div class="tip calm">The parametric history part is the quiet win. Because Claude writes real feature history rather than dumping a finished mesh, the model is still editable the way it always was after Claude touches it. Your sketch dimensions and your timeline stay yours.</div>
+
+<div class="promptwrap">
+<span class="promptlabel">📐 build the boring parametric part</span>
+<pre><code>Using the Fusion connector on my open document, model this part with proper parametric history so I can edit it afterwards, and use user parameters for every dimension I am likely to change.
+
+The part is: [describe it in plain language, with overall size, the features, and the tolerances that matter]. Create named user parameters for the driving dimensions rather than typing numbers into sketches, so I can change one value and have the model update.
+
+As you go, tell me each feature you are adding and why in one line. When you finish, list every parameter you created with its value and what it controls, and flag any dimension you had to assume because I did not specify it.</code></pre>
+</div>
+
+<div class="promptwrap">
+<span class="promptlabel">🔧 review a model I inherited</span>
+<pre><code>Using the Fusion connector, review the model in my active document before changing anything, and tell me how it was actually built.
+
+Walk the timeline and explain the design intent feature by feature in plain language: what each sketch and operation is doing, which dimensions are driving the shape, and where the model is fragile, meaning a change that would break downstream features or leave the geometry in a broken state.
+
+Then give me a prioritised list of what you would fix to make it robust, for example under-constrained sketches, references hanging off faces instead of planes, or hard-coded numbers that should be parameters. Do not make the changes yet. I will pick which ones to approve.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">the actual skill</span>
+<h2>Access is not skill <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Every one of these connectors hands you capability. None of them hand you taste. iPhone cameras did not make everyone a photographer, they made the gap between people who understood light and people who did not much more obvious, because the excuse disappeared. Same thing here. When the software stops being the bottleneck, direction becomes the whole job.</p>
+<p>Directing well is learnable and it is mostly one habit: say what the outcome is and what "good" looks like, then let the tool choose the route. Weak brief, "make this look better". Strong brief, "the eye should land on the label first, the background should read as evening not afternoon, and the whole thing has to survive being scaled down to a thumbnail". That second version is the part no connector writes for you.</p>
+
+<ol class="steps">
+<li><strong class="st">🎯 Pick the one connector closest to your actual work.</strong> Not the most impressive one. The one attached to the software you already open on a Tuesday, because that is the only one you will use twice.</li>
+<li><strong class="st">🧪 Run one real project through it, start to finish.</strong> A real deliverable with a real deadline, not a toy scene. Toy projects teach you the demo. Real ones teach you where it breaks.</li>
+<li><strong class="st">📝 Write down every correction you had to make.</strong> Every time you thought "no, not like that", that is a house rule you have been carrying in your head. Keep the list open while you work.</li>
+<li><strong class="st">♻️ Turn that list into a skill.</strong> Once you have five or six corrections, ask Claude to write them into a skill so you never repeat them. Install it under Customize, then Skills, then Add, then Upload a skill. Skills are available on every plan from Free through Enterprise.</li>
+</ol>
+
+<div class="promptwrap">
+<span class="promptlabel">♻️ turn my corrections into a reusable skill</span>
+<pre><code>I want to package my design standards into a reusable Claude skill so I stop repeating the same corrections every time I use the connectors.
+
+Here are the corrections I found myself making this week: [paste your list]. Turn them into a SKILL.md with a short lowercase-hyphenated name, a one-line description saying exactly what it does and when it should trigger, and a set of clear rules written the way I would say them out loud.
+
+Before you write it, ask me the three or four questions you need answered to make the rules specific rather than generic, for example my naming conventions, my export settings, and what I always want checked before I call something finished. Then write the skill and tell me how to save it as a zipped folder I can upload.</code></pre>
+</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://www.anthropic.com/news/claude-for-creative-work" target="_blank">Claude for Creative Work, the official Anthropic announcement</a><br>
+  <a href="https://claude.com/resources/tutorials/using-the-blender-connector-in-claude" target="_blank">Using the Blender connector in Claude, official tutorial</a><br>
+  <a href="https://www.blender.org/lab/mcp-server/" target="_blank">Blender MCP Server, install page and security warning</a><br>
+  <a href="https://blog.adobe.com/en/publish/2026/04/28/adobe-for-creativity-connector" target="_blank">Adobe for creativity, Adobe's own announcement</a><br>
+  <a href="https://developer.adobe.com/adobe-for-creativity/" target="_blank">Adobe for creativity, developer overview</a><br>
+  <a href="https://aps.autodesk.com/blog/bringing-fusion-claude-creative-work" target="_blank">Bringing Fusion onto Claude for Creative Work, Autodesk Platform Services</a><br>
+  <a href="https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities" target="_blank">Use connectors to extend Claude's capabilities</a><br>
+  <a href="https://support.claude.com/en/articles/11725091-when-to-use-desktop-and-web-connectors" target="_blank">When to use desktop and web connectors</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

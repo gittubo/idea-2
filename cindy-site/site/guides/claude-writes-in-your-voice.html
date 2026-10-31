@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to make Claude write in your voice · Cindy Zhu</title>
+<!-- GUIDES_CARD {t:"How to make Claude write in your voice", u:"guides/claude-writes-in-your-voice.html", topic:"building", tool:"claude"} -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="How to make Claude write in your voice. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-writes-in-your-voice">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="How to make Claude write in your voice">
+<meta property="og:description" content="How to make Claude write in your voice. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-writes-in-your-voice">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to make Claude write in your voice">
+<meta name="twitter:description" content="How to make Claude write in your voice. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Productivity &amp; thinking</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>How to make Claude write in your voice</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented HUMAN, so here is the whole build. Three things you have actually written go in, a personal style guide comes out.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn">💡 <strong>What this is, and what it is not.</strong> This is not a way to disguise AI writing as yours, and it will not reliably fool a detector, because nothing does. It is a way to stop your own drafts coming back sounding like a press release written by a committee. If you are a student, the honest use is drafting and editing work that is genuinely yours. Handing in something you did not write is still handing in something you did not write, whatever voice it is wearing.</div>
+
+<hr class="rule">
+<div class="tip calm">💡 <strong>What this guide is and isn't.</strong> This is about drafting with Claude in a voice that is genuinely yours, then finishing the work yourself. It is not a way to pass off generated work as your own. Follow whatever your school or employer's AI policy says, and when in doubt, declare your use. The strongest position is always work you can explain and defend.</div>
+
+<span class="kicker">the honest bit</span>
+<h2>What detectors actually do <span class="gi" style="--gl:#2794B2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Two things are true at the same time here, and holding both is what keeps you sane.</p>
+<p><strong>They do get real human writing wrong, and unevenly.</strong> Stanford researchers ran seven detectors across essays written by non-native English students and found the tools <a href="https://hai.stanford.edu/news/ai-detectors-biased-against-non-native-english-writers" target="_blank">"classified more than half of TOEFL essays (61.22%) written by non-native English students as AI-generated"</a>, with 97% of those essays flagged by at least one detector. Vanderbilt turned Turnitin's AI detector off over exactly this, noting that even at the vendor's own claimed rate <a href="https://www.vanderbilt.edu/brightspace/2023/08/16/guidance-on-ai-detection-and-why-were-disabling-turnitins-ai-detector/" target="_blank">"around 750 student papers could have been incorrectly labeled as having some of it written by AI"</a>. OpenAI retired its own detector entirely, saying it was <a href="https://techcrunch.com/2023/07/25/openai-scuttles-ai-written-text-detector-over-low-rate-of-accuracy/" target="_blank">"no longer available due to its low rate of accuracy"</a>. So if your genuine work got flagged, that is a real thing that happens to real people, and it is not evidence about you.</p>
+<p><strong>And the arms race is not one you can win from the outside.</strong> Turnitin publishes its own numbers: a document-level false positive rate of <a href="https://www.turnitin.com/blog/understanding-the-false-positive-rate-for-sentences-of-our-ai-writing-detection-capability" target="_blank">"less than 1% for documents with 20% or more AI writing"</a> and a sentence-level rate of "around 4%". More to the point, in 2024 they shipped a feature aimed squarely at humanizer output, built to identify <a href="https://www.turnitin.com/blog/ai-paraphrasing-detection-strengthening-the-integrity-of-academic-writing" target="_blank">"instances where AI paraphrasing may have been used to modify AI-generated text in submitted content"</a>. That is the whole business model of those monthly subscription sites, and it is being actively targeted by a company with far more resources than they have.</p>
+<div class="tip">🧠 <strong>Why plain, uniform writing looks machine-made.</strong> Detectors have historically scored text on <em>perplexity</em>, which is roughly how predictable each word choice is, and <em>burstiness</em>, which is how much that predictability varies across a piece. <a href="https://gptzero.me/news/perplexity-and-burstiness-what-is-it/" target="_blank">GPTZero's own explainer</a> defines both, and also notes it moved to a deep-learning architecture in autumn 2023 with those two now among several indicators rather than the whole method. The practical lesson survives the technical change: evenly-paced, highly predictable, buzzword-heavy prose is what reads as machine-made, and your actual voice is none of those things.</div>
+
+<hr class="rule">
+<span class="kicker">step one</span>
+<h2>Pick three samples, and pick them well <span class="gi" style="--gl:#9380A9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7L16 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 11L12 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 21.5V21C13 18.1716 13 16.7574 13.8787 15.8787C14.7574 15 16.1716 15 19 15H19.5M20 13.3431V10C20 6.22876 20 4.34315 18.8284 3.17157C17.6569 2 15.7712 2 12 2C8.22877 2 6.34315 2 5.17157 3.17157C4 4.34314 4 6.22876 4 10L4 14.5442C4 17.7892 4 19.4117 4.88607 20.5107C5.06508 20.7327 5.26731 20.9349 5.48933 21.1139C6.58831 22 8.21082 22 11.4558 22C12.1614 22 12.5141 22 12.8372 21.886C12.9044 21.8623 12.9702 21.835 13.0345 21.8043C13.3436 21.6564 13.593 21.407 14.0919 20.9081L18.8284 16.1716C19.4065 15.5935 19.6955 15.3045 19.8478 14.9369C20 14.5694 20 14.1606 20 13.3431Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The whole system is only as good as what you feed it. Three pieces is the minimum that lets Claude tell a habit apart from a one-off, and the pieces matter more than the number.</p>
+<ol class="steps">
+<li><strong class="st">📝 One thing you wrote carefully.</strong> An essay, a report, a long post, a cover letter you were proud of. This shows your structured voice: how you build an argument and how formal you get when you are trying.</li>
+<li><strong class="st">💬 One thing you wrote fast.</strong> A long message to a friend or colleague, a Slack explanation, a comment you left somewhere. This is where your real rhythm lives, and it is the part that makes the output sound like a person.</li>
+<li><strong class="st">🎯 One thing in the register you want.</strong> If the goal is better emails, use your best email. If it is essays, use your best essay. The style guide will lean towards whatever you give it most of.</li>
+<li><strong class="st">🚫 Nothing you did not write.</strong> Sounds obvious, and it is the mistake people make. Feeding it something AI helped with teaches it to imitate the thing you are trying to escape.</li>
+</ol>
+<div class="tip calm">🌱 Three to five hundred words each is plenty. If you only have short pieces, use five or six of them instead of three. Volume of habit matters more than length of any single sample.</div>
+
+<hr class="rule">
+<span class="kicker">step two</span>
+<h2>Have Claude build your style guide <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the prompt that does the real work. It is long on purpose: a vague request gets you a vague guide that says you write "clearly and engagingly", which describes nobody.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 build my style guide</span>
+<pre><code>I am going to paste three things I wrote myself. I want you to reverse-engineer how I write and turn it into a style guide you can follow from now on.
+
+Analyse them properly rather than complimenting me. Measure my average sentence length and how much it varies, because that variation is the most distinctive thing about anyone's writing. Note how I open and close pieces, whether I use questions, how often I use contractions, my punctuation habits including whether I use semicolons or dashes at all, and how formal I get. Pull out the words and phrases I actually reach for repeatedly, and separately note the ones I clearly avoid. Tell me what I do when I am explaining something difficult, and what I do when I am making a point I care about.
+
+Then write the style guide as direct instructions to you, in the second person, roughly 300 to 500 words, with concrete rules rather than adjectives. "Keep sentences short" is useless. "Average 14 words, but break to 4 words when landing a point" is usable. Include a short do-not list of things that would immediately read as not me. Finish by quoting three lines from my samples that you think are the most characteristically me, and say why in one sentence each.
+
+Here are the samples:
+[paste sample 1]
+---
+[paste sample 2]
+---
+[paste sample 3]</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">step three</span>
+<h2>Pressure-test it before you trust it <span class="gi" style="--gl:#119B5B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5L10.5 15L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The first style guide is always slightly wrong. It over-indexes on whichever sample was longest, or it mistakes something you did once for something you always do. Ten minutes of correction here is what separates a guide that works from one you quietly stop using.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧪 test the guide</span>
+<pre><code>Now test that style guide. Using it, write me three short pieces on the same topic: a 150-word explanation of [something you know well], a short message declining an invitation, and an opening paragraph for something longer.
+
+Do not tell me they are in my voice. Instead, for each one, point out the two specific choices you made because of the style guide, and the one place you were unsure whether I would write it that way. Then, honestly, tell me which parts of the guide were too vague to act on.
+
+I am going to mark up the drafts and tell you what is wrong, and I want you to update the style guide from my corrections rather than only fixing the drafts. Ask me for anything you need to make a rule sharper, especially about tone in situations the samples did not cover, like disagreeing with someone or delivering bad news.</code></pre>
+</div>
+<div class="tip">💡 Read the three drafts out loud. Your ear catches what your eye forgives, and any sentence you would never say is a rule that needs fixing. Tell Claude the specific line and why, not "this feels off", because it cannot act on a feeling.</div>
+
+<hr class="rule">
+<span class="kicker">step four</span>
+<h2>Save it so it applies to everything <span class="gi" style="--gl:#A9810B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7H16.75C18.8567 7 19.91 7 20.6667 7.50559C20.9943 7.72447 21.2755 8.00572 21.4944 8.33329C22 9.08996 22 10.1433 22 12.25C22 15.7612 22 17.5167 21.1573 18.7779C20.7926 19.3238 20.3238 19.7926 19.7779 20.1573C18.5167 21 16.7612 21 13.25 21H12C7.28595 21 4.92893 21 3.46447 19.5355C2 18.0711 2 15.714 2 11V7.94427C2 6.1278 2 5.21956 2.38032 4.53806C2.65142 4.05227 3.05227 3.65142 3.53806 3.38032C4.21956 3 5.1278 3 6.94427 3C8.10802 3 8.6899 3 9.19926 3.19101C10.3622 3.62712 10.8418 4.68358 11.3666 5.73313L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>A style guide sitting in one chat is useless by Thursday. There are two places to put it so it applies automatically, and doing both is the setup that actually sticks.</p>
+<ol class="steps">
+<li><strong class="st">📁 Create a project.</strong> In Claude, create a new project and call it something you will recognise, like "My writing". Projects work on every plan, including Free, where you can have up to five, per Anthropic's <a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">projects documentation</a>.</li>
+<li><strong class="st">🧭 Paste the style guide into the project instructions.</strong> This is the field that gets applied to every conversation inside the project, so the rules are loaded before you type a word.</li>
+<li><strong class="st">📎 Upload your three samples to project knowledge as well.</strong> The instructions tell Claude the rules, the samples let it hear the music. Having both is noticeably better than either alone.</li>
+<li><strong class="st">✍️ Start every writing task inside that project.</strong> The habit is the hard part. If you draft in a normal chat out of muscle memory, you get chatbot voice back and wonder why the setup did not work.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">use it</span>
+<h2>The two prompts you will use forever <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Once the project exists, almost everything you do is one of these two moves: write something new in your voice, or fix something that does not sound like you yet.</p>
+<div class="promptwrap">
+<span class="promptlabel">✍️ draft in my voice</span>
+<pre><code>Draft [what you need: the email, the essay section, the post] using the style guide in this project's instructions. The context is [who it is for, what they already know, what you want them to do next].
+
+Before you write, tell me in two lines what angle you are taking and what you are deliberately leaving out, so I can redirect you before you commit a thousand words to the wrong idea. Then write it, and afterwards flag any sentence where you had to guess at something factual, because I would rather fill a gap than discover an invented detail later.
+
+Keep it in my register, do not raise the formality to be safe, and do not add a summarising final paragraph unless my samples show that I do that.</code></pre>
+</div>
+
+<p>And the one that quietly does the most work, on anything you or anyone else drafted:</p>
+<div class="promptwrap">
+<span class="promptlabel">🔎 voice diff</span>
+<pre><code>Here is a draft. Compare it line by line against my style guide and tell me where it does not sound like me: [paste the draft].
+
+Give me a table with three columns: the line as written, what is wrong with it in my voice specifically, and a rewrite. Only flag lines that genuinely break a rule in the guide, because if you flag everything I will stop reading. Pay particular attention to sentences that are all the same length, openings that state what the piece is about instead of starting it, phrases that could have been written by anyone, and any tidy three-part list that I did not ask for.
+
+At the end, give me an overall verdict in one honest sentence, and tell me the single change that would do the most to make this sound like me.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">the tells</span>
+<h2>Four habits that read as AI <span class="gi" style="--gl:#DE5E6A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6.00081 17.9992M17.9992 18L6 6.00085" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>These are worth knowing whether or not you use any of this, because once you can see them you cannot unsee them, and you will start catching them in your own drafts.</p>
+<div class="cardgrid">
+<div class="minicard"><b>Uniform sentence length</b> Human writing lurches. Twenty-two words, then four. Default AI writing settles into a steady seventeen-word hum, and that evenness is the loudest tell there is.</div>
+<div class="minicard"><b>"It's not X, it's Y"</b> Negative parallelism as a reflex, used to sound profound. Real people use it occasionally. Models use it constantly, often several times in one page.</div>
+<div class="minicard"><b>The unearned rule of three</b> Everything bundled into a tidy triplet whether or not there were three things. Once you count them, they are everywhere.</div>
+<div class="minicard"><b>Words nobody says</b> Delve, tapestry, testament, landscape, navigate, leverage as a verb. If you would not say it to a friend, it does not belong in your writing either.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the last mile</span>
+<h2>Finish it yourself <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the step people skip and it is the one that matters. A style guide gets you a draft that sounds structurally like you. What makes it actually yours is the material only you have.</p>
+<ol class="steps">
+<li><strong class="st">🧠 Add your own examples.</strong> The specific thing that happened to you, the number from your own work, the thing your manager said. No model can generate these, and they are what makes writing worth reading.</li>
+<li><strong class="st">✂️ Cut the paragraph that says nothing.</strong> There is almost always one that restates the previous paragraph in different words. Deleting it makes the whole piece sound more human immediately.</li>
+<li><strong class="st">🗣️ Read it out loud, then fix what you stumble on.</strong> Every stumble is a sentence that is not yours. This takes four minutes and does more than any prompt.</li>
+<li><strong class="st">💌 Put one opinion in it.</strong> Models hedge by default. A single clear position, stated plainly, is the fastest way to sound like a person with a point of view.</li>
+</ol>
+
+<div class="tip calm">🌱 <strong>Update the guide about once a month.</strong> Paste in the two or three things you wrote most recently and ask Claude what changed. Your voice moves, and a style guide from last year quietly starts making you sound like an older version of yourself.</div>
+
+<hr class="rule">
+<span class="kicker">sources</span>
+<h2>Where the claims come from <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li><strong>Claude projects</strong> (what they are, what each plan gets): <a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">Anthropic's projects documentation</a></li>
+<li><strong>Claude skills</strong> (if you want your voice as a portable, reusable file): <a href="https://support.claude.com/en/articles/12512176-what-are-skills" target="_blank">what are skills</a></li>
+<li><strong>Detectors and non-native English writers</strong>: <a href="https://hai.stanford.edu/news/ai-detectors-biased-against-non-native-english-writers" target="_blank">Stanford HAI</a>, and <a href="https://arxiv.org/abs/2304.02819" target="_blank">the underlying paper</a></li>
+<li><strong>A university switching the detector off</strong>: <a href="https://www.vanderbilt.edu/brightspace/2023/08/16/guidance-on-ai-detection-and-why-were-disabling-turnitins-ai-detector/" target="_blank">Vanderbilt's statement</a>, and <a href="https://themarkup.org/machine-learning/2023/08/14/ai-detection-tools-falsely-accuse-international-students-of-cheating" target="_blank">The Markup's reporting on wrongly accused students</a></li>
+<li><strong>Turnitin's own numbers</strong>: <a href="https://www.turnitin.com/blog/understanding-the-false-positive-rate-for-sentences-of-our-ai-writing-detection-capability" target="_blank">false positive rates</a> and <a href="https://www.turnitin.com/blog/ai-paraphrasing-detection-strengthening-the-integrity-of-academic-writing" target="_blank">AI paraphrasing detection</a></li>
+<li><strong>OpenAI retiring its own detector</strong>: <a href="https://techcrunch.com/2023/07/25/openai-scuttles-ai-written-text-detector-over-low-rate-of-accuracy/" target="_blank">TechCrunch</a></li>
+<li><strong>Perplexity and burstiness explained</strong>: <a href="https://gptzero.me/news/perplexity-and-burstiness-what-is-it/" target="_blank">GPTZero</a></li>
+</ul>
+
+<div class="gcallout"><strong>Want to build systems like this across your whole week?</strong> Inside AI System Club I teach people to set AI up properly once so it works the way they do, instead of starting from scratch in every chat. Doors open soon and founding pricing dies at close. 🌱 <a href='/ai-system' target='_blank'>Join the waitlist</a> (link in my bio too).</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

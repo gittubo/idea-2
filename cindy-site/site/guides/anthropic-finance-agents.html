@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthropic's 10 finance agents · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Anthropic&#x27;s 10 finance agents. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/anthropic-finance-agents">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Anthropic&#x27;s 10 finance agents">
+<meta property="og:description" content="Anthropic&#x27;s 10 finance agents. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/anthropic-finance-agents">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Anthropic&#x27;s 10 finance agents">
+<meta name="twitter:description" content="Anthropic&#x27;s 10 finance agents. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Anthropic's 10 finance agents: install path and the exact commands", u:"guides/anthropic-finance-agents.html", topic:"power", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Power-user</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Anthropic's 10 finance agents</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented AGENTS, so here are all ten, the install path, and the exact command each one takes.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip"><strong>The bit that trips people up.</strong> The names Anthropic uses in the announcement are not the names you install. "Pitch builder" installs as <code>pitch-agent</code>, "Meeting preparer" as <code>meeting-prep-agent</code>, and "General ledger reconciler" as <code>gl-reconciler</code>. If you go looking for the announcement names in the marketplace you will not find three of them. The table below maps both.</div>
+
+<hr class="rule">
+<h2>What actually shipped <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Ten ready-to-run <strong>agent templates</strong> for financial services. Each ships as a plugin for <strong>Claude Cowork</strong> and <strong>Claude Code</strong>, and as a cookbook for Claude Managed Agents if you want to run them programmatically. They are available <strong>on all paid plans</strong>, so this is not an enterprise-only release.</p>
+<p>They are not chatbots with a finance prompt. Each one is a small team: a reader, a builder or critic, and a writer that produces the deliverable. The <code>earnings-reviewer</code>, for example, runs a transcript-reader, then a model-updater, then a note-writer, and hands you back a research note plus an updated model.</p>
+
+<hr class="rule">
+<div class="kicker">all ten</div>
+<h2>The agents, and what each one takes <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p><strong>Research and client coverage</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">📈 5 research agents · install name · the command</span>
+<pre><code>Pitch builder → pitch-agent
+Comps, precedents and an LBO into a branded pitch deck, end to end.
+    Build pitch book: <target> / <acquirer>, thesis: <text>
+
+Market researcher → market-researcher
+A sector or theme into an overview, competitive landscape, peer comps and an ideas shortlist.
+    Primer: <sector or theme>, angle: <text>
+
+Earnings reviewer → earnings-reviewer
+An earnings call plus filings into a model update and a note draft.
+    Process earnings: <ticker> <period>
+
+Model builder → model-builder
+DCF, LBO, 3-statement and comps, built as a real file.
+    Build <dcf|lbo|3-stmt> for <ticker>, assumptions: {...}
+
+Meeting preparer → meeting-prep-agent
+A briefing pack before every client meeting.
+    Briefing pack for <client-id>, meeting <event-id></code></pre>
+</div>
+
+<p><strong>Finance and operations</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🧾 5 operations agents · install name · the command</span>
+<pre><code>Valuation reviewer → valuation-reviewer
+Ingests GP packages, runs the valuation template, stages LP reporting.
+    Review portco valuations for fund <X> as of <date>
+
+General ledger reconciler → gl-reconciler
+Finds breaks, traces root cause, routes for sign-off.
+    Reconcile GL vs subledger, trade date <D>, classes: <list>
+
+Month-end closer → month-end-closer
+Accruals, roll-forwards and variance commentary.
+    Close <entity> for period <YYYY-MM>
+
+Statement auditor → statement-auditor
+Audits LP statements before they go out.
+    Tie out statement batch <id> against <fund> NAV pack
+
+KYC screener → kyc-screener
+Parses onboarding docs, runs the rules engine, flags gaps.
+    Screen onboarding packet <id></code></pre>
+</div>
+
+<div class="tip tip-warn">⚠️ <strong>Only two of the ten take a bare ticker.</strong> <code>earnings-reviewer</code> and <code>model-builder</code> do. The rest want an entity, a fund, a client id, a packet id or a sector. If you hand a ticker to the month-end closer, nothing useful happens. Use the commands above verbatim and swap what is in the angle brackets.</div>
+
+<hr class="rule">
+<div class="kicker">install</div>
+<h2>Two ways in <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p><strong>In Claude Code</strong>, it is two commands. Add the marketplace once, then install whichever agents you actually want.</p>
+<div class="promptwrap">
+<span class="promptlabel">⌨️ Claude Code install</span>
+<pre><code>claude plugin marketplace add anthropics/financial-services
+
+claude plugin install pitch-agent@claude-for-financial-services
+claude plugin install earnings-reviewer@claude-for-financial-services
+claude plugin install model-builder@claude-for-financial-services</code></pre>
+</div>
+<p><strong>In Claude Cowork</strong>, it is a menu. Open <strong>Customize</strong> in the left sidebar, then <strong>Browse plugins</strong>, choose <strong>Personal</strong>, hit the <strong>+</strong> button and pick <strong>Add marketplace from GitHub</strong>. Point it at <code>anthropics/financial-services</code>.</p>
+<div class="tip">💡 <strong>If the menu names differ slightly.</strong> Anthropic's docs describe the path as Customize then Browse plugins; the repo README describes it as Settings then Plugins then Add plugin. The UI has moved once already, so follow the shape of it rather than the exact labels: you are adding a GitHub marketplace, then installing from it.</div>
+
+<hr class="rule">
+<h2>The honest bit <span class="gi" style="--gl:#119B5B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5L10.5 15L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><strong>This is not new this week</strong><br>Anthropic announced these on <strong>5 May 2026</strong>. They are excellent and most people still have not seen them, but if someone tells you this is a brand-new launch, it is four months old.</div>
+<div class="minicard"><strong>Paid plan, and Cowork is desktop</strong><br>All paid plans, so not enterprise-only. But Cowork lives in the Claude desktop app, so the "any device" version of this is Claude Code, the CLI.</div>
+<div class="minicard"><strong>The 20 vs 10 thing</strong><br>The marketplace holds 20 plugins, not 10. Ten are these agents. The rest are vertical toolkits (investment banking, equity research, private equity, wealth management, fund admin) plus partner plugins.</div>
+<div class="minicard"><strong>Connectors cost extra</strong><br>The data connectors and the Moody's app are only for joint customers, and the repo notes MCP access may need a subscription or API key from that provider. The ten agents themselves do not.</div>
+</div>
+
+<hr class="rule">
+<h2>The links <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>📰 The announcement, with all ten and the plan wording: <a href="https://www.anthropic.com/news/finance-agents" target="_blank">anthropic.com/news/finance-agents</a><br>
+📦 The marketplace repo: <a href="https://github.com/anthropics/financial-services" target="_blank">github.com/anthropics/financial-services</a><br>
+📋 The cookbook with every command above: <a href="https://github.com/anthropics/financial-services/tree/main/managed-agent-cookbooks" target="_blank">managed-agent-cookbooks</a></p>
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

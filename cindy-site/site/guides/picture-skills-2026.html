@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top skills to learn in 2026 · Cindy Zhu</title><meta name="description" content="The skills to learn in 2026, plus a prompt that turns one project idea into a first project to practise the skill you need most."><link rel="canonical" href="https://cindyzhu.com.au/guides/picture-skills-2026">
+<meta property="og:title" content="Top skills to learn in 2026"><meta property="og:description" content="The skills to learn in 2026, plus a prompt that turns one project idea into a first project to practise the skill you need most."><meta property="og:url" content="https://cindyzhu.com.au/guides/picture-skills-2026"><meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles.css"><!-- seo:auto -->
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Top skills to learn in 2026">
+<meta name="twitter:description" content="The skills to learn in 2026, plus a prompt that turns one project idea into a first project to practise the skill you need most.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body><!-- GUIDES_CARD {t:"Top skills to learn in 2026", u:"guides/picture-skills-2026.html", topic:"career", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap"><main class="guidewrap"><a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a><div class="guidehead"><div class="gtags"><span class="gtag topic">Career</span><span class="gtag tool">Claude</span></div><h1>Top skills to learn in 2026</h1></div><div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 The skills to learn in 2026, plus a prompt that turns one project idea into a first project to practise the skill you need most.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>The useful question is which skill will help you build something you currently can’t. This is a shortlist of six skills that work well together: directing AI, questioning data, using APIs, designing workflows, communicating visually and testing AI output.</p>
+<p>You do not need to learn all six before making anything. Pick the skill that removes your current bottleneck, then use a small project to practise it. This is an editorial learning route, not a salary ranking or a promise of a job.</p>
+<p>To make the route concrete, we’ll use one fictional project: a weekly enquiry report for a small business. It should show how many enquiries arrived, where they came from and which records need attention. The finished version is a clear one-page report with a traceable source for every number.</p>
+<hr class="rule"/><span class="kicker">part 01</span><h2>1. AI direction: turn a vague ask into a usable brief</h2>
+<p>Start with <a href="https://academy.claude.com/courses/ai-fluency-framework-foundations" rel="noopener noreferrer" target="_blank">AI Fluency: Framework &amp; Foundations</a>. It introduces ways to collaborate with AI and evaluate the work. Course access and your chosen AI product are separate; you can practise the ideas in a chat tool you already have.</p>
+<p>The skill is deciding what the AI needs to know to do a job well. For our report, “analyse my leads” is missing the date range, definitions, source and intended decision. A better brief explains that the reader needs to compare enquiry sources and spot incomplete records, using only the supplied data.</p>
+<p>Ask for a result with a defined shape: three findings, a small table and any data-quality problems. Include an example of a useful finding. “There are two records without a source” is grounded. “Your strategy is failing” needs far more evidence.</p>
+<p>Practise by giving the same data to a vague prompt and a precise prompt. Judge whether the second result is easier to verify and use, rather than whether it sounds more confident.</p>
+<hr class="rule"/><span class="kicker">part 02</span><h2>2. Data literacy: check where the number came from</h2>
+<p>Start with <a href="https://cs50.harvard.edu/sql/" rel="noopener noreferrer" target="_blank">Harvard’s CS50 Introduction to Databases with SQL</a>. Begin with querying, then study relationships between tables. The public course material is available to work through; certification options and their terms are separate from learning the material.</p>
+<p>SQL is useful because it makes your question explicit. Here is a complete toy example you can run in a SQLite practice database:</p>
+<pre><code class="language-sql">CREATE TABLE enquiries (
+  id INTEGER PRIMARY KEY,
+  source TEXT,
+  complete INTEGER
+);
+INSERT INTO enquiries VALUES
+  (1, 'Instagram', 1),
+  (2, 'Instagram', 0),
+  (3, 'Search', 1),
+  (4, 'Referral', 1);
+
+SELECT source, COUNT(*) AS enquiries,
+       SUM(complete) AS complete_enquiries
+FROM enquiries
+GROUP BY source
+ORDER BY enquiries DESC, source;
+</code></pre>
+<p>This invented dataset produces two Instagram enquiries, one complete; the other sources each have one complete enquiry. Those are counts, not revenue or lead quality. Keeping that distinction clear is part of data literacy.</p>
+<p>After running it, change one row and predict the result before rerunning. If your prediction differs, inspect the query until you understand why. You should be able to explain every number in your report.</p>
+<hr class="rule"/><span class="kicker">part 03</span><h2>3. API literacy: see the exchange between apps</h2>
+<p>Start with the <a href="https://learning.postman.com/docs/getting-started/quick-start/" rel="noopener noreferrer" target="_blank">Postman quick start</a>. An API is a way for software to exchange information. A request specifies what you want to do, and the response tells you what happened or returns data.</p>
+<p>Follow the public example, then identify the URL, method and response body. For the enquiry project, a future API connection might read records from a form system. Before building that, find the service’s official documentation and confirm which endpoint returns the records you need.</p>
+<p>Learn the difference between a successful response and the correct data. A request can succeed while returning an empty list or only one page of results. Check pagination, date filters and missing fields before treating an API response as a complete report.</p>
+<p>You can learn with public examples before connecting a paid service. Account permissions, rate limits and billing depend on the API you eventually use.</p>
+<hr class="rule"/><span class="kicker">part 04</span><h2>4. Workflow design: make the handoff reliable</h2>
+<p>Start with <a href="https://docs.n8n.io/build-your-first-workflow" rel="noopener noreferrer" target="_blank">n8n’s first-workflow guide</a>. Follow the example to understand the trigger, data passing and conditional branches. You’ll need an n8n environment; Cloud and self-hosted options have different costs and responsibilities.</p>
+<p>Map your enquiry report as a sequence: fetch records, check required fields, count the valid records, produce a draft and send it for review. Give invalid records their own path so they are visible rather than silently disappearing.</p>
+<p>For the first practice version, use a manual trigger and sample data. Then deliberately run the same input twice. Does it create duplicate records or duplicate reports? Decide how the workflow should recognise the same reporting period before scheduling it.</p>
+<p>A useful workflow includes a failure path. If the source is unavailable, the output should say the report could not be completed. It should not publish an empty report that looks like the business received zero enquiries.</p>
+<hr class="rule"/><span class="kicker">part 05</span><h2>5. Visual communication: make the decision easy to see</h2>
+<p>Start with <a href="https://www.figma.com/resource-library/design-basics/" rel="noopener noreferrer" target="_blank">Figma’s design-basics library</a>. Use its articles to study hierarchy, layout and typography, then practise in whichever design tool you already use. The learning library does not require you to purchase every feature of the Figma product.</p>
+<p>Take the report and give it one clear reading order: reporting period, total enquiries, source breakdown and exceptions requiring attention. Use spacing and type size to make that order visible.</p>
+<p>Label the toy data as an example. If you draw a bar chart, keep the scale honest and show the counts. Avoid decorating the page with charts that do not help answer the question.</p>
+<p>Your check is simple: show the page to someone for a few seconds and ask what it says. If they notice decoration but miss the reporting period or the incomplete records, adjust the hierarchy before adding more content.</p>
+<hr class="rule"/><span class="kicker">part 06</span><h2>6. AI evaluation: test the output against expectations</h2>
+<p>Start with <a href="https://github.com/anthropics/courses/tree/master/prompt_evaluations" rel="noopener noreferrer" target="_blank">Anthropic’s prompt-evaluation lessons</a>. You can read the notebooks for the concepts; running API exercises requires the relevant setup and may incur usage charges. Check older code examples against current SDK and model documentation.</p>
+<p>Build five test cases for your report: clean data, missing source, duplicate record, empty period and a record with a misleading note. Decide the correct behaviour before asking AI to produce the summary.</p>
+<p>For example, the empty period should report zero enquiries only if the data source was successfully checked. A connection failure should produce an error, not the same conclusion. That single distinction catches a much more useful failure than asking another AI whether the writing “looks good.”</p>
+<p>Keep the tests when you change the prompt so you can see whether a revision improved one case while breaking another.</p>
+<hr class="rule"/><span class="kicker">part 07</span><h2>Ask Claude to build your first practice project</h2>
+<div class="promptwrap"><span class="promptlabel">copy this prompt</span><pre><code class="language-prompt">Help me learn through a small weekly enquiry-report project.
+
+My current level: [describe what you can already do].
+Time available this week: [time].
+Tools I have: [list].
+Data: [paste fictional or appropriately de-identified sample rows].
+
+Choose the one skill among AI direction, SQL, APIs, workflow design, visual communication and evaluation that would remove my biggest immediate bottleneck. Explain your choice briefly.
+
+Then produce a usable first artifact: the precise report prompt, runnable SQL for a declared database, a public API practice request, a workflow specification, a one-page report layout, or five evaluation cases. Choose the artifact that matches the skill. Do the work using my sample data instead of giving me a blank worksheet.
+
+Explain how I run or use it, what result I should expect, and two ways to test it. Separate invented example data from actual results. Link the relevant official learning resource. Do not invent business performance or recommend buying a course before I have tried the exercise.
+</code></pre></div>
+<p>Start with the artifact you can finish this week. You’re making progress when you can run it, explain it and identify where it fails. Then the next skill has a clear purpose because it improves something you have already built.</p>
+<div class="gcallout">Keep building from here. Find more practical walkthroughs in <a href='/guides'>my free guide library</a>.</div>
+</div></main></div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer><script src="../guide-kit.js" defer></script><script src="/site.js" defer></script>
+</body></html>

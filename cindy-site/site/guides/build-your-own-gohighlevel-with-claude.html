@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build your own GoHighLevel with Claude + Emergent · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="You can build the part you actually use and own it: Claude scopes it and writes the spec, Emergent builds it into a live app.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/build-your-own-gohighlevel-with-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build your own GoHighLevel with Claude + Emergent">
+<meta property="og:description" content="You can build the part you actually use and own it: Claude scopes it and writes the spec, Emergent builds it into a live app.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/build-your-own-gohighlevel-with-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build your own GoHighLevel with Claude + Emergent">
+<meta name="twitter:description" content="You can build the part you actually use and own it: Claude scopes it and writes the spec, Emergent builds it into a live app.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Build your own GoHighLevel with Claude + Emergent","description":"You are probably paying $97 to $297 a month for GoHighLevel and using maybe a third of it. Instead of renting the whole thing, you can build the part you...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/build-your-own-gohighlevel-with-claude"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build your own GoHighLevel with Claude + Emergent", u:"guides/build-your-own-gohighlevel-with-claude.html", topic:"building", tool:"nocode"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building &amp; apps</span>
+        <span class="gtag tool">No-code build</span>
+      </div>
+      <h1>Build your own GoHighLevel with Claude + Emergent</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You can build the part you actually use and own it: Claude scopes it and writes the spec, Emergent builds it into a live app.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">gather these</span>
+<h2>What you need before you start <span class="gi" style="--gl:#B9794D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C11.1818 22 10.4002 21.6698 8.83693 21.0095C4.94564 19.3657 3 18.5438 3 17.1613C3 16.7742 3 10.0645 3 7M12 22C12.8182 22 13.5998 21.6698 15.1631 21.0095C19.0544 19.3657 21 18.5438 21 17.1613V7M12 22L12 11.3548" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.32592 9.69138L5.40472 8.27785C3.80157 7.5021 3 7.11423 3 6.5C3 5.88577 3.80157 5.4979 5.40472 4.72215L8.32592 3.30862C10.1288 2.43621 11.0303 2 12 2C12.9697 2 13.8712 2.4362 15.6741 3.30862L18.5953 4.72215C20.1984 5.4979 21 5.88577 21 6.5C21 7.11423 20.1984 7.5021 18.5953 8.27785L15.6741 9.69138C13.8712 10.5638 12.9697 11 12 11C11.0303 11 10.1288 10.5638 8.32592 9.69138Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 12L8 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 4L7 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="gcallout">
+<ul>
+<li><strong>A Claude account</strong> (claude.ai). The free plan handles the scoping chat.</li>
+<li><strong>An <a href="https://app.emergent.sh/?utm_shift=redirect&amp;via=cindie-zhu" target="_blank">Emergent</a> account.</strong> The free tier (10 credits) is enough to test-drive. To keep an app live you want Standard at about $20/mo (100 credits), because a deployed app holds 50 credits per month. Top-ups are cheap (about $8 to $10 per 50 credits) if you run out.</li>
+<li><strong>Your GoHighLevel login</strong>, to check which features you actually use and to export your data later.</li>
+<li><strong>Time:</strong> about 15 minutes scoping with Claude, under an hour for the first build (mostly waiting), a few short rounds of tweaks over the next days, then 2-4 weeks running both systems in parallel before you cancel anything.</li>
+<li><strong>Money:</strong> the new stack lands around $25-65/mo total (app plus a sending tool) vs $97-297 plus usage fees for GoHighLevel. Full math near the bottom.</li>
+</ul>
+</div>
+
+<hr class="rule">
+<span class="kicker">the split</span>
+<h2>How the two tools split the work <span class="gi" style="--gl:#689425" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.828 6.00096C12.9388 5.68791 12.999 5.35099 12.999 5C12.999 3.34315 11.6559 2 9.99904 2C8.34219 2 6.99904 3.34315 6.99904 5C6.99904 5.35099 7.05932 5.68791 7.17008 6.00096C4.88532 6.0093 3.66601 6.09039 2.87772 6.87868C2.08951 7.66689 2.00836 8.88603 2 11.1704C2.31251 11.06 2.64876 11 2.99904 11C4.6559 11 5.99904 12.3431 5.99904 14C5.99904 15.6569 4.6559 17 2.99904 17C2.64876 17 2.31251 16.94 2 16.8296C2.00836 19.114 2.08951 20.3331 2.87772 21.1213C3.66593 21.9095 4.88508 21.9907 7.16941 21.999C7.05908 21.6865 6.99904 21.3503 6.99904 21C6.99904 19.3431 8.34219 18 9.99904 18C11.6559 18 12.999 19.3431 12.999 21C12.999 21.3503 12.939 21.6865 12.8287 21.999C15.113 21.9907 16.3322 21.9095 17.1204 21.1213C17.9086 20.333 17.9897 19.1137 17.9981 16.829C18.3111 16.9397 18.648 17 18.999 17C20.6559 17 21.999 15.6569 21.999 14C21.999 12.3431 20.6559 11 18.999 11C18.648 11 18.3111 11.0603 17.9981 11.171C17.9897 8.88627 17.9086 7.66697 17.1204 6.87868C16.3321 6.09039 15.1128 6.0093 12.828 6.00096Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">Claude</strong> (claude.ai or the desktop app) is your spec engineer. It interviews you about your business, then writes a build-ready spec: the written blueprint of what to build.</li>
+<li><strong class="st"><a href="https://app.emergent.sh/?utm_shift=redirect&amp;via=cindie-zhu" target="_blank">Emergent</a></strong> is the builder. A team of AI agents (architect, designer, developer, integrations, tester) turns that spec into a working full-stack app and deploys it to a live URL. "Live app" means a working private website with its own link: you and your clients open it in a browser, nothing to install.</li>
+</ol>
+<p>Why this split works: <a href="https://app.emergent.sh/?utm_shift=redirect&amp;via=cindie-zhu" target="_blank">Emergent</a>'s architect agent parses your first prompt into data models, screens, and flows. A spec that arrives already organized that way builds dramatically better on the first pass, and that is exactly what the Claude prompt below produces.</p>
+
+<hr class="rule">
+<span class="kicker">copy this</span>
+<h2>Step 1: scope it with Claude (don't guess) <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Open a new Claude chat and paste the prompt below. Claude asks you 3-5 discovery questions first (your pipeline stages, booking rules, form fields, the numbers you actually check), then writes the spec. Answer from how you work today, not how you wish you worked, then copy the spec it returns.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 The spec engineer prompt</span>
+<pre><code>You are my spec engineer. I run a solo business on GoHighLevel and I am replacing its core with a custom app built in Emergent, an AI app builder that turns a written spec into a working full-stack web app. The core I need rebuilt: a contact CRM, a deal pipeline board, a public booking page, a public lead capture form, and a simple dashboard. Your job is to produce ONE build-ready spec I can paste into Emergent as my very first prompt, with zero edits.
+
+STEP 1, DISCOVERY. Before writing anything, ask me 3 to 5 discovery questions in a single message, then stop and wait for my answers. Only ask questions whose answers change the spec. Pick from angles like: what I sell and what a typical deal looks like (value, length), my exact pipeline stages today in order, my booking rules (call length, availability days and hours, how far out people can book, my timezone), exactly what my lead form must capture, and the 3 numbers I check to know the business is healthy. Do not ask about tech stack, hosting, or design taste. Do not write any spec yet.
+
+STEP 2, THE SPEC. After I answer, write the spec using exactly this structure, because the builder's architect agent parses data models, screens, and flows directly:
+
+- Write it in second person to the builder ("Build a web app that...") so it pastes clean.
+- Keep it 600 to 1,000 words. Specific enough to build, short enough that nothing gets ignored.
+- Section 1, What this app is: 2-3 sentences. One logged-in user (me), plus two public pages (booking page, lead form). No other accounts.
+- Section 2, Data model: every entity with every field, its type (text, email, phone, number, currency, date, datetime, dropdown with the exact options, multi-select, long text, boolean), required or optional, and the relationships between entities. Cover at minimum: Contact, Deal, Pipeline Stage, Booking, Form Submission, Note/Activity. Use my answers; do not invent fields I will not use.
+- Section 3, Screens: a numbered list. For each: screen name, who sees it (me logged in, or public), what is on it, and its one primary action. Expect roughly: dashboard, contact list, contact detail, pipeline board (kanban, drag and drop), bookings list, public booking page, public lead form, form submissions inbox.
+- Section 4, User flows, written step by step: (1) I add a contact and log a note on them. (2) I create a deal, attach it to a contact, and drag it across stages to Won. (3) A stranger opens the public booking page, picks an open slot, enters their details, sees a confirmation screen, and the slot becomes unavailable to everyone else; a Contact is auto-created if the email is new. (4) A stranger submits the lead form and appears in my app as a new Contact plus a new Deal in the first pipeline stage. (5) I open the dashboard and see: new leads this week, count and total value of open deals per stage, and upcoming bookings.
+- Section 5, Business rules and edge cases: no double bookings ever (two visitors can never take the same slot), duplicate email handling (warn and link to the existing contact, never silently duplicate), what happens to deals and bookings when a contact is deleted, timezone handling for the booking page, and validation on the public forms.
+- Section 6, Explicitly OUT OF SCOPE (put this heading in caps): the app must NOT send email or SMS of any kind, no notifications, no calendar sync, no payments, no automations or workflows, no funnels or website builder, no multi-user accounts, no white label. Bookings and form fills save to the database and show inside the app; I check the app instead of getting messages. State that the builder must not add any of these even as "nice to haves".
+- Section 7, Acceptance tests: 6 to 8 checkable statements that prove v1 works, phrased as "I can..." (for example "I can book a slot from an incognito window and it disappears for other visitors").
+- End the spec with: "Seed the app with a small set of realistic demo data so every screen renders with content on first load."
+
+HARD RULES for the spec: no vague words (some, various, robust, user-friendly), replace them with specifics. Every field gets a type. If my answers leave a gap, make the smallest sensible decision and tag it "ASSUMPTION:" inline so I can override it. Do not add features I did not ask for. After the spec, list all assumptions in one short block so I can correct them before I paste.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">the build</span>
+<h2>Step 2: build it in Emergent <span class="gi" style="--gl:#9281AD" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>What to expect: paste the spec, and a working preview usually appears in about 5 minutes, with a full first build of something this size done in 15-30. When you deploy, you get a live URL with SSL, and you can connect your own domain later for free with one DNS record.</p>
+<p>Try it here: <a href="https://app.emergent.sh/?utm_shift=redirect&amp;via=cindie-zhu" target="_blank">Emergent</a></p>
+<ol class="steps">
+<li>Start a new build and paste the entire spec from Claude as your very first message. Don't summarize it; the detail is the point.</li>
+<li>If the builder asks clarifying questions, answer them all in one message.</li>
+<li>Click through the preview before deploying. A deployed app holds 50 credits/mo, so ship when v1 actually works.</li>
+<li>Connect GitHub from day one. Your code syncs there, which is your safety net and your proof of ownership.</li>
+<li>One change per follow-up message, but bundle closely related tweaks ("settings page with profile editing and notification prefs") into one prompt to save credits.</li>
+<li>Be surgical, not vague. "The sidebar items don't highlight on the active route, add an orange left border when active" beats "the navigation is broken". Vague prompts are the number one credit burner.</li>
+<li>Fork before big experiments. A fork keeps your working version safe while you try something risky, and it resets the context on long builds.</li>
+<li>Roll back instead of arguing. If a bug survives two fix attempts, revert to the last good checkpoint. Rollbacks are free; fix-loops are not.</li>
+</ol>
+<div class="tip warn">One more habit: test the deployed app, not only the preview. They are separate environments, so re-enter any secrets in the deployment settings and click through the live URL yourself. Missing environment variables are the most common post-deploy failure.</div>
+
+<hr class="rule">
+<span class="kicker">3 to 5 rounds</span>
+<h2>Step 3: iterate, one change at a time <span class="gi" style="--gl:#448BDC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.3884 3L17.3913 3.97574C17.8393 4.41165 18.0633 4.62961 17.9844 4.81481C17.9056 5 17.5888 5 16.9552 5H9.19422C5.22096 5 2 8.13401 2 12C2 13.4872 2.47668 14.8662 3.2895 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7.61156 21L6.60875 20.0243C6.16074 19.5883 5.93673 19.3704 6.01557 19.1852C6.09441 19 6.4112 19 7.04478 19H14.8058C18.779 19 22 15.866 22 12C22 10.5128 21.5233 9.13383 20.7105 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>First builds come out roughly 80% right, and that is normal, not failure. Plan on 3-5 rounds. The order matters: structure first (stages, fields), then behavior (booking), then paint (style), then data, because a style pass before structural changes gets clobbered. Everything in [brackets] is a placeholder with a worked example, so swap in your own values.</p>
+<p><strong>1. Fix your pipeline stages</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">1 · Structure first</span>
+<pre><code>Change my pipeline stages to exactly these, in this order: [New lead, Contacted, Call booked, Proposal sent, Won, Lost]. Add, rename, or remove stages so this is the complete list. Map existing deals: [old stage → new stage]. Won and Lost are terminal: hide them from the default board view and add a toggle to show them. Keep drag and drop working between all stages. Do not change anything else about deals, contacts, bookings, or the dashboard. Done when the board shows exactly these columns in this order and every existing deal sits in a valid stage.</code></pre>
+</div>
+<p><strong>2. Add the fields you actually track</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">2 · Your real fields</span>
+<pre><code>Add these fields to the Contact record: [Instagram handle] (text, optional), [Lead source] (dropdown: Instagram, Referral, Booking page, Lead form, Other), [Tags] (multi-select, I can create new tags inline). Show all three on the contact detail page, add them to the add/edit contact form, and let me toggle [Lead source] and [Tags] as columns in the contact list. Contacts created by the booking page get Lead source = Booking page automatically; contacts from the form get Lead form. Existing contacts keep working with these fields empty. Do not touch the Deal or Booking models. Done when I can save a contact with all three filled and filter the contact list by Lead source.</code></pre>
+</div>
+<p><strong>3. Tune the booking flow</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">3 · Then behaviour</span>
+<pre><code>Adjust the public booking flow only. Appointments are [30] minutes with a [15]-minute buffer after each. Bookable [Monday to Friday, 10am to 4pm] in [Australia/Melbourne] time, from [24 hours] out to [21 days] ahead. Flow: visitor picks a date, sees only genuinely open slots, picks one, enters name (required), email (required), and one question, "[what do you want help with?]" (required, long text), then sees a confirmation screen with the date and time in their local timezone. A booked slot must disappear for all other visitors immediately, and two people can never confirm the same slot even if they load the page at the same time. Do not add email confirmations or reminders. Done when booking a slot in one browser makes it instantly unavailable in an incognito window.</code></pre>
+</div>
+<p><strong>4. Style pass (the example colors are mine, swap in yours)</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">4 · Paint last</span>
+<pre><code>Style-only pass. Do not change any logic, data, flows, or page structure. Apply this look everywhere: background [#FAF7F2 cream], primary buttons and active states [#D97757 orange], dark warm gray text, one font family throughout [Poppins], rounded corners, generous spacing. The two public pages (booking and lead form) should feel friendly and minimal with the form centered; internal pages stay clean and information-dense. Keep every existing element in its current position; change only colors, typography, and spacing. Done when every screen uses this palette and all acceptance tests still pass.</code></pre>
+</div>
+<p><strong>5. Seed realistic test data</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">5 · Fill every screen</span>
+<pre><code>Replace the demo data with a realistic test set: 12 contacts with varied names, emails, phones, and lead sources; 8 deals spread so every pipeline stage has at least one, values between [$500 and $5,000]; 3 upcoming bookings and 2 past ones; 4 form submissions, 2 of them from emails that already exist as contacts (so I can see duplicate handling). Add a "Reset demo data" button on a settings page that wipes and re-seeds, and a separate "Delete ALL data" button with a confirm step for when I go live. Done when the dashboard shows non-zero numbers everywhere and the board has a deal in every column.</code></pre>
+</div>
+<p><strong>6. Bug fix template (reuse for anything broken)</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">6 · Reuse for any bug</span>
+<pre><code>Bug report. On the [screen] page I did [exact action]. Expected: [X]. Got: [Y]. Fix only this bug, do not refactor or change any other feature while you are in there. Tell me the cause in one sentence, then confirm the fix. Done when [the expected behavior happens].</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">nine checks</span>
+<h2>Step 4: test it like a client <span class="gi" style="--gl:#119B5B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5L10.5 15L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Run all nine before you switch anything off.</p>
+<ol class="steps">
+<li><strong class="st">Contact basics:</strong> add a real contact with every field filled, refresh the page, and check it is still there. Edit it, then delete a throwaway one.</li>
+<li><strong class="st">Duplicate guard:</strong> add the same email twice. The app must warn you or link to the existing contact, never silently create a twin.</li>
+<li><strong class="st">Deal flow:</strong> create a deal, attach it to that contact, drag it through every stage to Won, refresh, and check it stays put and the stage totals update.</li>
+<li><strong class="st">Booking as a stranger:</strong> open the booking page in an incognito window on your phone, book a slot, and check you see the confirmation. Inside the app: the booking shows up and a contact was auto-created.</li>
+<li><strong class="st">Double-book attempt:</strong> try to grab the same slot from a second browser. It must be blocked.</li>
+<li><strong class="st">Lead form as a stranger:</strong> submit the form from your phone. Within seconds it should appear as a new contact plus a new deal in stage one.</li>
+<li><strong class="st">Dashboard:</strong> after steps 1-6, the numbers actually moved: leads this week, pipeline value per stage, upcoming bookings.</li>
+<li><strong class="st">Escape hatch:</strong> export contacts and deals to CSV from inside the app. If you cannot get your data out, you are not ready to switch. Non-negotiable.</li>
+<li><strong class="st">Parallel week:</strong> point one real lead source at the new app while GoHighLevel keeps running. Cancel only after 7 days with zero lost leads.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">what to keep renting</span>
+<h2>Step 5: the honest part (keep renting the sending) <span class="gi" style="--gl:#D05373" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6L8.91302 9.91697C11.4616 11.361 12.5384 11.361 15.087 9.91697L22 6" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M2.01577 13.4756C2.08114 16.5412 2.11383 18.0739 3.24496 19.2094C4.37608 20.3448 5.95033 20.3843 9.09883 20.4634C11.0393 20.5122 12.9607 20.5122 14.9012 20.4634C18.0497 20.3843 19.6239 20.3448 20.7551 19.2094C21.8862 18.0739 21.9189 16.5412 21.9842 13.4756C22.0053 12.4899 22.0053 11.5101 21.9842 10.5244C21.9189 7.45886 21.8862 5.92609 20.7551 4.79066C19.6239 3.65523 18.0497 3.61568 14.9012 3.53657C12.9607 3.48781 11.0393 3.48781 9.09882 3.53656C5.95033 3.61566 4.37608 3.65521 3.24495 4.79065C2.11382 5.92608 2.08114 7.45885 2.01576 10.5244C1.99474 11.5101 1.99475 12.4899 2.01577 13.4756Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Build the CRM, pipeline, booking, and forms you use every day. Keep renting the email and text sending, because deliverability (whether your emails land in inboxes or in spam) is not a coding problem. Three reasons:</p>
+<ul>
+<li><strong>Reputation takes months.</strong> Mailbox providers score senders on domain and IP history. A brand-new sender has none, warming a fresh IP takes weeks, and blasting cold from new infrastructure is one of the fastest ways to land in spam for good.</li>
+<li><strong>Sending tools come pre-warmed.</strong> Kit, MailerLite, and the rest arrive with seasoned shared IPs, complaint feedback loops, and bounce handling already running.</li>
+<li><strong>SMS is paperwork, not code.</strong> US carriers require A2P 10DLC registration and block unregistered traffic outright.</li>
+</ul>
+<p>All of that is rented history and paperwork, not software. Claude and <a href="https://app.emergent.sh/?utm_shift=redirect&amp;via=cindie-zhu" target="_blank">Emergent</a> can build you excellent software; nobody can build you a sender reputation.</p>
+<p>What to rent, with real prices:</p>
+<ul>
+<li><strong>Email: Kit</strong> (<a href="https://kit.com/pricing" target="_blank">pricing</a>). Free plan to start; Creator is about $33-39/mo at 1,000 subscribers. The creator-friendly pick.</li>
+<li><strong>Email: MailerLite</strong> (<a href="https://www.mailerlite.com/pricing" target="_blank">pricing</a>). From $10/mo for 500 subscribers with unlimited sends. The budget pick.</li>
+<li><strong>Email: Brevo</strong> (<a href="https://www.brevo.com/pricing/" target="_blank">pricing</a>). From about $9/mo, and it charges per email sent instead of per subscriber, which suits a big list you rarely email.</li>
+<li><strong>SMS: Twilio</strong> (<a href="https://www.twilio.com/en-us/sms/pricing/us" target="_blank">pricing</a>). A phone number is about $1.15/mo and a US text costs roughly one cent all-in, so a few hundred texts a month is single-digit dollars. Twilio walks you through the A2P 10DLC registration.</li>
+</ul>
+<div class="tip warn">One expectation to set: until you connect a sender, your booking page shows an on-screen confirmation only. Automatic confirmation emails come later, when you ask <a href="https://app.emergent.sh/?utm_shift=redirect&amp;via=cindie-zhu" target="_blank">Emergent</a> to wire in SendGrid or Gmail through its integrations (a separate account with its own small bill). Start with the CRM and booking; add sending after you have switched.</div>
+
+<hr class="rule">
+<span class="kicker">the migration</span>
+<h2>Moving your data out of GoHighLevel <span class="gi" style="--gl:#AA830D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The order of operations, so no lead ever falls through:</p>
+<ol class="steps">
+<li><strong class="st">Build and test the app</strong> (Steps 1-4) while GoHighLevel keeps running. Cancel nothing yet.</li>
+<li><strong class="st">Set up your email tool</strong> (Kit, MailerLite, or Brevo), verify your sending domain (they walk you through the SPF and DKIM records), and start on their shared, pre-warmed IPs.</li>
+<li><strong class="st">Export your contacts from GoHighLevel:</strong> Contacts, then Smart Lists, tick the header checkbox, Select All Contacts, then More, then Export. The file lands in the Bulk Actions dashboard and stays downloadable for 30 days. Three caveats: only the columns visible in your table export (add your custom-field columns first), notes over 255 characters get cut off, and past email/SMS logs do not export at all.</li>
+<li><strong class="st">Export your opportunities too.</strong> They come out as a CSV with pipeline name and stage per contact. Then import: contacts into your email tool with tags, and both files into your app.</li>
+<li><strong class="st">Recreate your booking calendar by hand.</strong> There is no export for it, but for one or two event types it is minutes of work.</li>
+<li><strong class="st">Swap the links.</strong> Point your bio link, website, and DM automations at the new booking page and lead form so new leads flow into the new stack.</li>
+<li><strong class="st">Run both in parallel for 2-4 weeks.</strong> That window also lets any in-flight GoHighLevel automations finish. Before you cancel: run one final export of contacts created since your first export, and check whether you are on annual billing so you do not pay for a year you will not use.</li>
+</ol>
+<p>If your app needs an importer for step 4, ask for one:</p>
+<div class="promptwrap">
+<span class="promptlabel">🚚 Ask for an importer</span>
+<pre><code>Add a CSV import on the contacts page: upload a file, map columns to my contact fields, preview the first 5 rows, skip duplicates by email, and report how many were created and skipped. Do the same for deals, using a pipeline stage column.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">the real numbers</span>
+<h2>The honest cost math <span class="gi" style="--gl:#BE780E" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.9427 16.8354C20.2864 12.8866 18.2432 9.94613 16.467 8.219C15.9501 7.71642 15.6917 7.46513 15.1208 7.23257C14.5499 7 14.0592 7 13.0778 7H10.9222C9.94081 7 9.4501 7 8.87922 7.23257C8.30834 7.46513 8.04991 7.71642 7.53304 8.219C5.75682 9.94613 3.71361 12.8866 3.05727 16.8354C2.56893 19.7734 5.27927 22 8.30832 22H15.6917C18.7207 22 21.4311 19.7734 20.9427 16.8354Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7.25662 4.44287C7.05031 4.14258 6.75128 3.73499 7.36899 3.64205C8.00392 3.54651 8.66321 3.98114 9.30855 3.97221C9.89237 3.96413 10.1898 3.70519 10.5089 3.33548C10.8449 2.94617 11.3652 2 12 2C12.6348 2 13.1551 2.94617 13.4911 3.33548C13.8102 3.70519 14.1076 3.96413 14.6914 3.97221C15.3368 3.98114 15.9961 3.54651 16.631 3.64205C17.2487 3.73499 16.9497 4.14258 16.7434 4.44287L15.8105 5.80064C15.4115 6.38146 15.212 6.67187 14.7944 6.83594C14.3769 7 13.8373 7 12.7582 7H11.2418C10.1627 7 9.6231 7 9.20556 6.83594C8.78802 6.67187 8.5885 6.38146 8.18945 5.80064L7.25662 4.44287Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M13.6267 12.9186C13.4105 12.1205 12.3101 11.4003 10.9892 11.9391C9.66829 12.4778 9.45847 14.2113 11.4565 14.3955C12.3595 14.4787 12.9483 14.2989 13.4873 14.8076C14.0264 15.3162 14.1265 16.7308 12.7485 17.112C11.3705 17.4932 10.006 16.8976 9.85742 16.0517M11.8417 10.9927V11.7531M11.8417 17.2293V17.9927" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Renting: GoHighLevel Unlimited is $297 x 12 = $3,564 a year, and usage charges for SMS, calls, and AI typically add $20-150/mo on top, so realistically $3,800-5,300 a year. Even Starter at $97/mo lands around $1,400-2,000 a year once usage is counted.</p>
+<p>Owning:</p>
+<div style="overflow-x:auto;">
+<table style="width:100%;border-collapse:collapse;margin:12px 0;">
+<tr>
+<th style="text-align:left;padding:8px 10px;border-bottom:2px solid #D97757;">Monthly</th>
+<th style="text-align:left;padding:8px 10px;border-bottom:2px solid #D97757;">GoHighLevel Unlimited</th>
+<th style="text-align:left;padding:8px 10px;border-bottom:2px solid #D97757;">Your owned stack</th>
+</tr>
+<tr>
+<td style="padding:8px 10px;border-bottom:1px solid #e8e0d5;">Platform</td>
+<td style="padding:8px 10px;border-bottom:1px solid #e8e0d5;">$297</td>
+<td style="padding:8px 10px;border-bottom:1px solid #e8e0d5;">~$20 (<a href="https://app.emergent.sh/?utm_shift=redirect&amp;via=cindie-zhu" target="_blank">Emergent</a> Standard, keeps one app live)</td>
+</tr>
+<tr>
+<td style="padding:8px 10px;border-bottom:1px solid #e8e0d5;">Email sending</td>
+<td style="padding:8px 10px;border-bottom:1px solid #e8e0d5;">bundled, usage billed separately</td>
+<td style="padding:8px 10px;border-bottom:1px solid #e8e0d5;">$0-39 (Kit, MailerLite, or Brevo)</td>
+</tr>
+<tr>
+<td style="padding:8px 10px;border-bottom:1px solid #e8e0d5;">SMS sending</td>
+<td style="padding:8px 10px;border-bottom:1px solid #e8e0d5;">usage billed separately</td>
+<td style="padding:8px 10px;border-bottom:1px solid #e8e0d5;">~$5 (Twilio, a few hundred texts)</td>
+</tr>
+<tr>
+<td style="padding:8px 10px;"><strong>Rough total</strong></td>
+<td style="padding:8px 10px;"><strong>$320-450</strong></td>
+<td style="padding:8px 10px;"><strong>$25-65</strong></td>
+</tr>
+</table>
+</div>
+<p>Bottom line: against Unlimited, the owned stack saves roughly $3,000-4,500 a year, every year. Against Starter it still saves about $600-1,700 a year. The honest counterweight: GoHighLevel bundles maintenance and uptime, and owning the app makes you the maintainer. In practice that is a small tinkering tax paid in iteration prompts, but it is not zero.</p>
+
+<hr class="rule">
+<span class="kicker">the questions you'll have</span>
+<h2>Quick answers <span class="gi" style="--gl:#8B8690" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 14.5H15.5M8.5 9.5H12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.1706 20.8905C18.3536 20.6125 21.6856 17.2332 21.9598 12.9909C22.0134 12.1607 22.0134 11.3009 21.9598 10.4707C21.6856 6.22838 18.3536 2.84913 14.1706 2.57107C12.7435 2.47621 11.2536 2.47641 9.8294 2.57107C5.64639 2.84913 2.31441 6.22838 2.04024 10.4707C1.98659 11.3009 1.98659 12.1607 2.04024 12.9909C2.1401 14.536 2.82343 15.9666 3.62791 17.1746C4.09501 18.0203 3.78674 19.0758 3.30021 19.9978C2.94941 20.6626 2.77401 20.995 2.91484 21.2351C3.05568 21.4752 3.37026 21.4829 3.99943 21.4982C5.24367 21.5285 6.08268 21.1757 6.74868 20.6846C7.1264 20.4061 7.31527 20.2668 7.44544 20.2508C7.5756 20.2348 7.83177 20.3403 8.34401 20.5513C8.8044 20.7409 9.33896 20.8579 9.8294 20.8905C11.2536 20.9852 12.7435 20.9854 14.1706 20.8905Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p><strong>Where does my client data actually live?</strong> In your app's own database on <a href="https://app.emergent.sh/?utm_shift=redirect&amp;via=cindie-zhu" target="_blank">Emergent</a>'s hosting, under your account. Before you enter real client data, confirm the login from the spec is in place, and keep the CSV export from the checklist so you always have an exit.</p>
+<p><strong>What does "own it" mean if it is hosted?</strong> You control the app, the data, and the code, which syncs to your GitHub in a standard stack (React, FastAPI, MongoDB). If you ever leave, the code and your CSV exports come with you. It does not mean free: about $20/mo keeps it live.</p>
+<p><strong>What if the first build comes out wrong?</strong> Normal. Expect roughly 80% right, then 3-5 iteration prompts. If it keeps drifting, fork or start a fresh build with a tighter spec instead of patching forever.</p>
+<p><strong>Will clients get a confirmation email when they book?</strong> Not until you connect a sender. The booking page shows an on-screen confirmation, and you can ask <a href="https://app.emergent.sh/?utm_shift=redirect&amp;via=cindie-zhu" target="_blank">Emergent</a> to wire in SendGrid or Gmail when you are ready.</p>
+<p><strong>Can I put it on my own domain?</strong> Yes, and it is free: one DNS A record, and SSL is automatic within minutes.</p>
+<p><strong>Do I need a paid Claude plan?</strong> The free plan can run the scoping chat. Pro (about $20 USD/mo) buys longer conversations and more usage if Claude is already part of your daily workflow.</p>
+<p><strong>How many <a href="https://app.emergent.sh/?utm_shift=redirect&amp;via=cindie-zhu" target="_blank">Emergent</a> credits will this take?</strong> Ballpark 60-150 credits for a build like this. Small tweaks cost 1-2, a new feature 5-10, and one deployed app holds 50/mo. Burn varies with how much fixing you do, so specific prompts and free rollbacks are your best economy.</p>
+<p><strong>When do I actually stop paying GoHighLevel?</strong> After the Step 4 checklist passes, your data is imported, and one real lead source has run through the new app for a week with zero lost leads. And check you are not locked into annual billing first.</p>
+
+<hr class="rule">
+<span class="kicker">the takeaway</span>
+<h2>The move <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Claude scopes it, <a href="https://app.emergent.sh/?utm_shift=redirect&amp;via=cindie-zhu" target="_blank">Emergent</a> builds it, and you own it instead of renting. Owning is not $0: the app runs on a credit plan (free to try, about $20/mo to keep live) and the sending stays rented. But that is a fraction of $297, not zero, and this time the asset is yours.</p>
+
+<hr class="rule">
+<h2>Links used in the reel <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li>GoHighLevel pricing (the $97 and $297 plans): <a href="https://www.gohighlevel.com/pricing" target="_blank">https://www.gohighlevel.com/pricing</a></li>
+<li>Try Emergent: <a href="https://app.emergent.sh/?utm_shift=redirect&amp;via=cindie-zhu" target="_blank">app.emergent.sh</a></li>
+<li>Kit pricing: <a href="https://kit.com/pricing" target="_blank">https://kit.com/pricing</a></li>
+<li>MailerLite pricing: <a href="https://www.mailerlite.com/pricing" target="_blank">https://www.mailerlite.com/pricing</a></li>
+<li>Brevo pricing: <a href="https://www.brevo.com/pricing/" target="_blank">https://www.brevo.com/pricing/</a></li>
+<li>Twilio SMS pricing: <a href="https://www.twilio.com/en-us/sms/pricing/us" target="_blank">https://www.twilio.com/en-us/sms/pricing/us</a></li>
+</ol>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

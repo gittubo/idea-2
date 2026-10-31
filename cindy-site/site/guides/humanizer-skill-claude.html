@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build your own humanizer skill in Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Instead of pasting your writing into some random &quot;humanizer&quot; tool every time, you teach Claude the tells once and save it as a reusable skill.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/humanizer-skill-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build your own humanizer skill in Claude">
+<meta property="og:description" content="Instead of pasting your writing into some random &quot;humanizer&quot; tool every time, you teach Claude the tells once and save it as a reusable skill.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/humanizer-skill-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build your own humanizer skill in Claude">
+<meta name="twitter:description" content="Instead of pasting your writing into some random &quot;humanizer&quot; tool every time, you teach Claude the tells once and save it as a reusable skill.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build your own humanizer skill in Claude", u:"guides/humanizer-skill-claude.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Productivity &amp; thinking</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Build your own humanizer skill in Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Instead of pasting your writing into some random "humanizer" tool every time, you teach Claude the tells once and save it as a reusable skill.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn"><strong>One honest thing first.</strong> This will not magically beat every AI detector, and it does not try to. Detectors are unreliable, so much so that OpenAI quietly shut down its own AI-text detector for a low rate of accuracy (<a href="https://techcrunch.com/2023/07/25/openai-scuttles-ai-written-text-detector-over-low-rate-of-accuracy/" target="_blank">TechCrunch</a>). What this skill actually does is make your writing sound like <em>you</em> again, not default-AI. That is the goal worth chasing.</div>
+
+<span class="kicker">start here</span>
+<h2>The 3-step build <span class="gi" style="--gl:#179B71" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.9999 15.9988C16.4999 16.999 14.6842 18.9772 14 22M15 19.3372C12.6321 14.0106 17.4087 12.2141 21.0443 12.0143C21.4831 11.9902 21.7025 11.9782 21.86 12.1336C22.0176 12.289 22.0085 12.5106 21.9903 12.9536C21.8394 16.638 20.3286 21.707 15 19.3372Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 20H6.02099C3.73502 20 2.59203 20 2.15185 19.2655C1.71168 18.531 2.2625 17.5428 3.36416 15.5666L4.79185 13.0054C5.53109 11.6793 5.90071 11.0162 6.47924 11.0003C7.05776 10.9844 7.46426 11.6261 8.27725 12.9095L8.97855 14.0166" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 8.03384L8.99165 6.15531C10.4526 3.38777 11.1831 2.004 12.2929 2.00001C13.4027 1.99601 14.1419 3.37449 15.6204 6.13145L15.8647 6.58709C16.7821 8.29766 17.2407 9.15294 16.8728 9.68491C16.5048 10.2169 15.6024 10.0032 13.7975 9.5758L13.715 9.55628" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🔎 Find the tells.</strong> Have Claude read the Wikipedia "Signs of AI writing" page and pull out the exact patterns that give AI away, so you are working from a real, sourced list, not vibes.</li>
+<li><strong class="st">🛠️ Turn it into a skill.</strong> Use skill-creator, Anthropic's official skill for making skills, to package those rules into a reusable <code>/human</code> skill.</li>
+<li><strong class="st">✨ Install and use it.</strong> Add the skill to Claude, then type <code>/human</code> before any writing task and it applies your voice rules every time.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">copy these</span>
+<h2>The 2 prompts <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>First, teach Claude the tells straight from the source:</p>
+<div class="promptwrap">
+<span class="promptlabel">🔎 find the AI tells</span>
+<pre><code>Open the Wikipedia page "Signs of AI writing" and list every pattern that gives AI away, then never do them.
+
+Go through the page properly and pull out the concrete tells: the punctuation habits, the sentence shapes, and the filler words and phrases. For each one, show me a quick before and after so I can see what the human version looks like. From now on, treat this list as rules you always follow when you write for me.</code></pre>
+</div>
+<p>Source Claude should be reading: <a href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing" target="_blank">Wikipedia, Signs of AI writing</a>.</p>
+
+<p>Then turn what it found into a permanent skill:</p>
+<div class="promptwrap">
+<span class="promptlabel">🛠️ build the /human skill</span>
+<pre><code>Turn everything we just found into a humanizer skill I can reuse.
+
+Use skill-creator to build a skill called "human". The SKILL.md should tell you to rewrite or draft text so it reads like a real person wrote it: no em dashes, no "it's not X, it's Y", no forced rule of three, no buzzwords like delve, tapestry or pivotal. It must keep my meaning and facts exactly and only change the voice, and when I give you a sample of my own writing it should match my tone to that.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">the giveaways</span>
+<h2>The 4 tells the skill kills <span class="gi" style="--gl:#DE5E6A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6.00081 17.9992M17.9992 18L6 6.00085" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>These are the big ones named on the Wikipedia list, and they are what the skill is trained to avoid.</p>
+<div class="cardgrid">
+<div class="minicard"><b>Em dashes</b> The number one giveaway, over-used to bolt clauses together. (I banned them from everything I write.)</div>
+<div class="minicard"><b>"It's not X, it's Y"</b> Negative parallelism as a reflex. Real people rarely frame every point this way.</div>
+<div class="minicard"><b>The rule of three</b> Everything bundled into a tidy triplet, over and over, until it reads like a template.</div>
+<div class="minicard"><b>Buzzwords</b> Delve, tapestry, pivotal, testament, landscape. Filler that sounds smart and says nothing.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">make it stick</span>
+<h2>Install it, then type /human <span class="gi" style="--gl:#BA7A10" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">📦 Save the skill.</strong> When skill-creator finishes, it hands you a skill folder with a SKILL.md inside. That folder is your humanizer.</li>
+<li><strong class="st">➕ Add it to Claude.</strong> On claude.ai, go to Customize, then Skills, and add the skill. In Claude Code, drop the folder into your skills directory. Full steps are in Anthropic's <a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills" target="_blank">create custom skills</a> guide.</li>
+<li><strong class="st">✍️ Use it.</strong> Type <code>/human</code> before you draft or paste something and Claude applies your voice rules automatically, no copy-pasting into a separate tool ever again.</li>
+</ol>
+<div class="tip calm">Make it truly yours: paste in two or three things you have actually written and ask Claude to fold your habits (sentence length, favourite words, how casual you are) into the SKILL.md. The more it knows your voice, the less it sounds like anyone else's.</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

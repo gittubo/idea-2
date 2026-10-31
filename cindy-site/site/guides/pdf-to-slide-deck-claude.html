@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to turn any PDF into a slide deck with Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="You upload the report, Claude reads the whole thing, and it hands you a real downloadable .pptx you open in PowerPoint, Keynote or Google Slides.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/pdf-to-slide-deck-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="How to turn any PDF into a slide deck with Claude">
+<meta property="og:description" content="You upload the report, Claude reads the whole thing, and it hands you a real downloadable .pptx you open in PowerPoint, Keynote or Google Slides.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/pdf-to-slide-deck-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to turn any PDF into a slide deck with Claude">
+<meta name="twitter:description" content="You upload the report, Claude reads the whole thing, and it hands you a real downloadable .pptx you open in PowerPoint, Keynote or Google Slides.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"How to turn any PDF into a slide deck with Claude", u:"guides/pdf-to-slide-deck-claude.html", topic:"productivity", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Productivity &amp; thinking</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>How to turn any PDF into a slide deck with Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You upload the report, Claude reads the whole thing, and it hands you a real downloadable .pptx you open in PowerPoint, Keynote or Google Slides.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the honest version</span>
+<h2>What Claude can and cannot do here <span class="gi" style="--gl:#9380A9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7L16 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 11L12 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 21.5V21C13 18.1716 13 16.7574 13.8787 15.8787C14.7574 15 16.1716 15 19 15H19.5M20 13.3431V10C20 6.22876 20 4.34315 18.8284 3.17157C17.6569 2 15.7712 2 12 2C8.22877 2 6.34315 2 5.17157 3.17157C4 4.34314 4 6.22876 4 10L4 14.5442C4 17.7892 4 19.4117 4.88607 20.5107C5.06508 20.7327 5.26731 20.9349 5.48933 21.1139C6.58831 22 8.21082 22 11.4558 22C12.1614 22 12.5141 22 12.8372 21.886C12.9044 21.8623 12.9702 21.835 13.0345 21.8043C13.3436 21.6564 13.593 21.407 14.0919 20.9081L18.8284 16.1716C19.4065 15.5935 19.6955 15.3045 19.8478 14.9369C20 14.5694 20 14.1606 20 13.3431Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Worth setting expectations before you upload anything, because this is where people get frustrated.</p>
+<div class="cardgrid">
+<div class="minicard"><b>It genuinely builds files</b> Claude creates .pptx, .xlsx, .docx and .pdf files you download. Confirmed in <a href="https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude" target="_blank">Anthropic's own docs</a>, on every plan including Free.</div>
+<div class="minicard"><b>It is a first draft, not a finished deck</b> Structure, content and hierarchy come out strong. Visual polish is yours. Budget 20 minutes of tidying, against the two hours you would have spent building it.</div>
+<div class="minicard"><b>Long PDFs are fine, with a catch</b> Up to 1,000 pages upload. Claude reads text and visuals up to 100 pages; past that it reads the text only, so charts in a 400-page report need calling out separately.</div>
+<div class="minicard"><b>Images do not carry across</b> Claude writes the slides, it does not lift the charts out of your PDF. Ask it to leave a placeholder note on any slide that needs the original figure pasted in.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">setup</span>
+<h2>Turn on file creation, once <span class="gi" style="--gl:#9082A7" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 7.10593C17.9999 8.55778 16.5891 9.89558 14.4697 11.9901C13.1062 13.3376 10.8936 13.336 9.52937 11.9892C7.41145 9.8961 5.99988 8.55754 6 7.10568C6.00012 5.65383 6.3543 5.36258 9.60848 2.14658C9.92161 1.83445 10.4602 2.05389 10.4602 2.49338L10.4604 5.80524C10.4604 6.64587 11.1488 7.32849 11.9994 7.32842C12.85 7.32835 13.5396 6.64688 13.5398 5.80625L13.5405 2.49435C13.5406 2.05485 14.0793 1.83532 14.3924 2.14739C17.646 5.36287 18.0001 5.65408 18 7.10593Z" stroke="currentColor" stroke-width="1.5"/><path d="M15 12L15 19.1652C15 20.7308 13.6569 22 12 22C10.3431 22 9 20.7308 9 19.1652L9 12" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0063 18.9995L12 19.0059" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>This takes about 30 seconds and you only ever do it one time. Without it Claude gives you slide text in the chat instead of a file you can download.</p>
+<ol class="steps">
+<li><strong class="st">🔓 Switch the setting on.</strong> In Claude on web or desktop, open Settings, then Capabilities, and switch on "Code execution and file creation". On mobile it is your name in the sidebar, then Settings, then Capabilities. On Team and Enterprise plans an owner turns it on for the whole organisation under Organization settings, then Capabilities. Anthropic's page on it is <a href="https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude" target="_blank">here</a>.</li>
+<li><strong class="st">💳 Check nothing else is needed.</strong> There is no upgrade gate on this one. File creation is available on Free, Pro, Max, Team and Enterprise. If you are on Free, expect to hit usage limits on a very long document sooner, so do the big reports in one focused sitting.</li>
+<li><strong class="st">📎 Have your PDF ready.</strong> Limits are 500MB per file, up to 20 files in one chat, and 1,000 pages per PDF, per <a href="https://support.claude.com/en/articles/8241126-what-kinds-of-documents-can-i-upload-to-claude-ai" target="_blank">the upload docs</a>. Messy scans, annual reports, research papers, meeting minutes, all fine.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">copy this</span>
+<h2>The exact prompt <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Upload the PDF first, wait for it to finish processing, then paste this. Fill in the four bracketed bits, they are the difference between a generic deck and one you can actually present.</p>
+<div class="promptwrap">
+<span class="promptlabel">📊 turn this PDF into a deck</span>
+<pre><code>Read this entire document and build me a slide deck from it as a downloadable .pptx file.
+
+My audience is [who is in the room, for example "our leadership team, who have not read the report and have 20 minutes"], and the one thing I need them to walk away with is [the single decision, action or belief you want]. Target [12] slides, plus a title slide and a closing slide. Anything that does not serve that one takeaway gets cut, even if the report spends pages on it.
+
+Structure it properly: a title slide, a one-slide executive summary that could stand alone if someone only read that, then the body organised by argument rather than by the document's own chapter order, then a closing slide with the specific next steps. Each body slide gets a headline that states the point as a full sentence, not a topic label, and a maximum of four supporting lines underneath. Where the document gives a number that matters, put the number on the slide and cite the page it came from.
+
+In the speaker notes for every slide, write what I should actually say out loud, in plain spoken English, about 60 to 90 seconds' worth. Where the document had a chart or table I cannot recreate, add a clearly marked placeholder line telling me which page to pull the original figure from. When you are done, tell me the three weakest slides and what would make them stronger.</code></pre>
+</div>
+<div class="tip calm">The two lines doing the heavy lifting are the audience and the single takeaway. A deck built for "our leadership team who have 20 minutes and need to approve the budget" comes out sharp and ruthless. A deck built with no audience named comes out as a polite summary of the PDF, which is the thing you were trying to avoid.</div>
+
+<hr class="rule">
+<span class="kicker">make it yours</span>
+<h2>Brand it in the same chat <span class="gi" style="--gl:#BF7362" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C12.8417 22 14 22.1163 14 21C14 20.391 13.6832 19.9212 13.3686 19.4544C12.9082 18.7715 12.4523 18.0953 13 17C13.6667 15.6667 14.7778 15.6667 16.4815 15.6667C17.3334 15.6667 18.3334 15.6667 19.5 15.5C21.601 15.1999 22 13.9084 22 12Z" stroke="currentColor" stroke-width="1.5"/><circle cx="9.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M7.125 15H7M7.25 15C7.25 15.1381 7.13807 15.25 7 15.25C6.86193 15.25 6.75 15.1381 6.75 15C6.75 14.8619 6.86193 14.75 7 14.75C7.13807 14.75 7.25 14.8619 7.25 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Once the first version exists, do not start over. Reply in the same chat and Claude rebuilds the file with your styling applied to every slide.</p>
+<div class="promptwrap">
+<span class="promptlabel">🎨 apply my brand</span>
+<pre><code>Rebuild that deck with my brand styling applied consistently to every slide.
+
+My colours are [#HEX for the background], [#HEX for headings], and [#HEX for the accent or highlight]. My heading font is [font name] and my body font is [font name], and if those exact fonts are not available, pick the closest standard equivalents and tell me which you used so I can swap them later.
+
+Apply it properly rather than only to the title slide: background colour on every slide, headings in the heading colour and font, body text in the body font at a size that stays readable when projected, and the accent colour used only for emphasis, never for whole paragraphs. Keep the margins generous and consistent, left-align the body text, and make sure nothing overflows the slide. Then give me the new .pptx to download.</code></pre>
+</div>
+<div class="tip">Do not have your hex codes to hand? Ask Claude to pull them for you first: paste in your logo or a screenshot of your website and ask it to name the three or four hex codes and suggest which is the background, which is the heading and which is the accent. Then feed those into the prompt above.</div>
+
+<hr class="rule">
+<span class="kicker">the fixes</span>
+<h2>Four follow-ups that fix most decks <span class="gi" style="--gl:#448BDC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.3884 3L17.3913 3.97574C17.8393 4.41165 18.0633 4.62961 17.9844 4.81481C17.9056 5 17.5888 5 16.9552 5H9.19422C5.22096 5 2 8.13401 2 12C2 13.4872 2.47668 14.8662 3.2895 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7.61156 21L6.60875 20.0243C6.16074 19.5883 5.93673 19.3704 6.01557 19.1852C6.09441 19 6.4112 19 7.04478 19H14.8058C18.779 19 22 15.866 22 12C22 10.5128 21.5233 9.13383 20.7105 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The first draft is a starting point. These four replies are the ones I use almost every time, in this order.</p>
+<ol class="steps">
+<li><strong class="st">✂️ Cut it down.</strong> "This is two slides too long for a 20 minute slot. Merge or cut the weakest two and tell me what you removed and why." Length discipline is the fastest quality win in any deck.</li>
+<li><strong class="st">🗣️ Fix the headlines.</strong> "Rewrite every slide headline as a full sentence that states the point, not a topic label. 'Q3 revenue' becomes 'Q3 revenue grew 18 percent, driven entirely by renewals.'" This single pass makes a deck read as an argument instead of a filing cabinet.</li>
+<li><strong class="st">🔢 Pressure-test the numbers.</strong> "For every figure on these slides, quote the exact sentence from the source PDF and the page number, so I can check nothing was rounded, mixed up or inferred." Do this before you present anything to anyone who matters.</li>
+<li><strong class="st">❓ Prep the hard questions.</strong> "Add an appendix of five slides answering the toughest questions this audience will ask, including the two the report itself does not answer well." The appendix is where you stop being caught out in the room.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">get the file</span>
+<h2>Download it and finish it off <span class="gi" style="--gl:#8676B9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 22V19C8 17.1144 8 16.1716 8.58579 15.5858C9.17157 15 10.1144 15 12 15C13.8856 15 14.8284 15 15.4142 15.5858C16 16.1716 16 17.1144 16 19V22" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M10 7H14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 11.8584C3 7.28199 3 4.99376 4.38674 3.54394C4.43797 3.49038 4.49038 3.43797 4.54394 3.38674C5.99376 2 8.28199 2 12.8584 2C13.943 2 14.4655 2.00376 14.9628 2.18936C15.4417 2.3681 15.8429 2.70239 16.6452 3.37099L18.8411 5.20092C19.9027 6.08561 20.4335 6.52795 20.7168 7.13266C21 7.73737 21 8.42833 21 9.81025V13C21 16.7497 21 18.6246 20.0451 19.9389C19.7367 20.3634 19.3634 20.7367 18.9389 21.0451C17.6246 22 15.7497 22 12 22C8.25027 22 6.3754 22 5.06107 21.0451C4.6366 20.7367 4.26331 20.3634 3.95491 19.9389C3 18.6246 3 16.7497 3 13V11.8584Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">⬇️ Download the .pptx.</strong> Claude posts the file in the chat when it finishes. Click to download, then open it in PowerPoint, Keynote or Google Slides. It is a normal editable file, nothing locked or proprietary.</li>
+<li><strong class="st">👀 Read it once, out loud.</strong> Read the speaker notes aloud against the slides. Anything you stumble on is a slide that needs rewriting, and you will catch it in five minutes instead of live in the meeting.</li>
+<li><strong class="st">🖼️ Paste in the real figures.</strong> Work through the placeholder lines and drop in the actual charts from the source PDF. Screenshot straight from the document so the data stays exactly as published.</li>
+<li><strong class="st">📐 Fix spacing last.</strong> Nudge text boxes, even out the margins and check it on the screen or projector you will actually present on. Cosmetic tidying is the fastest part and the last part.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">go further</span>
+<h2>Other things worth doing with the same file <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>You have already uploaded the document, so keep the chat open. These take seconds each.</p>
+<div class="cardgrid">
+<div class="minicard"><b>A one-page brief</b> "Turn the same content into a one-page summary as a .docx, written for someone who will never open the deck."</div>
+<div class="minicard"><b>The numbers, in a spreadsheet</b> "Pull every figure and date from the document into an .xlsx with columns for metric, value, period and source page."</div>
+<div class="minicard"><b>An email version</b> "Write the 200-word email I send with this deck, so the recipient knows what to look at and what I need from them."</div>
+<div class="minicard"><b>The devil's advocate pass</b> "Argue against the conclusions in this document. Where is the reasoning thin, and what would change my mind?"</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">one more thing</span>
+<h2>About the viral version of this <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This trick went around because of a demo using Kimi K2 Thinking, an open-weight model from Moonshot AI, turning a long PDF into slides. It is a genuinely interesting model and the <a href="https://moonshotai.github.io/Kimi-K2/thinking.html" target="_blank">release notes</a> are worth a read if you follow this space. The point of this guide is that you do not need to learn a new tool to get the outcome. If you already have Claude open, the file creation route above does the same job on the account you are already signed into.</p>
+
+<hr class="rule">
+<h2>The links <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude" target="_blank">Create and edit files with Claude (plans and setup)</a><br>
+  <a href="https://support.claude.com/en/articles/8241126-what-kinds-of-documents-can-i-upload-to-claude-ai" target="_blank">Upload limits: file size, file count and PDF page limits</a><br>
+  <a href="https://moonshotai.github.io/Kimi-K2/thinking.html" target="_blank">Kimi K2 Thinking, the model from the viral clip</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

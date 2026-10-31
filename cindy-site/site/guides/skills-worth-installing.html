@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Claude skills actually worth installing · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Everyone is posting &quot;50 Claude skills you need&quot; lists right now, so I actually went and checked them. This is the curated, verified shortlist of the ones...">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/skills-worth-installing">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="The Claude skills actually worth installing">
+<meta property="og:description" content="Everyone is posting &quot;50 Claude skills you need&quot; lists right now, so I actually went and checked them. This is the curated, verified shortlist of the ones...">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/skills-worth-installing">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Claude skills actually worth installing">
+<meta name="twitter:description" content="Everyone is posting &quot;50 Claude skills you need&quot; lists right now, so I actually went and checked them. This is the curated, verified shortlist of the ones...">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The Claude skills actually worth installing","description":"Everyone is posting \"50 Claude skills you need\" lists right now, so I actually went and checked them. A bunch were real, a few were straight up made up. This...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/skills-worth-installing"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"The Claude skills actually worth installing", u:"guides/skills-worth-installing.html", topic:"power", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Power-user</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>The Claude skills actually worth installing</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Everyone is posting "50 Claude skills you need" lists right now, so I actually went and checked them. This is the curated, verified shortlist of the ones genuinely worth installing.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>First things first, in case you are new to this: a skill is just a little instruction file (a <code>SKILL.md</code>) that teaches Claude one specific job really well. Think of it like a plugin or a saved playbook. Once you install one, Claude knows how to do that thing on command instead of you re-explaining it every time. They are free, and most of them are beginner friendly, no code required.</p>
+<div class="tip warn">Quick honesty note before we start: most of these are made by the community, not by Anthropic. That is a good thing (the best ones come from people solving real problems), but a community skill is real code that runs on your machine, so the rule is simple: only install ones you can read and trust. I will flag the two official Anthropic ones below as the safest place to start.</div>
+<span class="kicker">the setup</span>
+<h2>How to install any skill <span class="gi" style="--gl:#B9794D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C11.1818 22 10.4002 21.6698 8.83693 21.0095C4.94564 19.3657 3 18.5438 3 17.1613C3 16.7742 3 10.0645 3 7M12 22C12.8182 22 13.5998 21.6698 15.1631 21.0095C19.0544 19.3657 21 18.5438 21 17.1613V7M12 22L12 11.3548" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.32592 9.69138L5.40472 8.27785C3.80157 7.5021 3 7.11423 3 6.5C3 5.88577 3.80157 5.4979 5.40472 4.72215L8.32592 3.30862C10.1288 2.43621 11.0303 2 12 2C12.9697 2 13.8712 2.4362 15.6741 3.30862L18.5953 4.72215C20.1984 5.4979 21 5.88577 21 6.5C21 7.11423 20.1984 7.5021 18.5953 8.27785L15.6741 9.69138C13.8712 10.5638 12.9697 11 12 11C11.0303 11 10.1288 10.5638 8.32592 9.69138Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 12L8 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 4L7 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>There are two ways, and both take about 30 seconds. Pick whichever feels easier.</p>
+<p><strong>The easy path (paste the repo link):</strong> open a new chat in Claude, paste the line below, and swap in the GitHub link of the skill you want. Claude reads the repo and sets it up for you.</p>
+<div class="promptwrap">
+<span class="promptlabel">📦 the easy path</span>
+<pre><code>Please install this Claude skill for me. The SKILL.md file lives in this GitHub repo: [paste the GitHub link here]</code></pre>
+</div>
+<p><strong>The upload path (download the file):</strong> go to the skill's GitHub repo, download the file called <code>SKILL.md</code>, then in the Claude web or desktop app go to Customize, then Skills, hit Add (next to Browse), choose Upload a skill, and drag the file in. If you would rather just tell Claude, paste this:</p>
+<div class="promptwrap">
+<span class="promptlabel">📦 the upload path</span>
+<pre><code>I just downloaded a file called SKILL.md, can you install it for me?</code></pre>
+</div>
+<p>That is the whole process. Every skill below has its real GitHub link, so you can grab any of them the same way.</p>
+<hr class="rule">
+<span class="kicker">writing</span>
+<h2>For writing and content <span class="gi" style="--gl:#A68307" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.4249 4.60509L17.4149 3.6151C18.2351 2.79497 19.5648 2.79497 20.3849 3.6151C21.205 4.43524 21.205 5.76493 20.3849 6.58507L19.3949 7.57506M16.4249 4.60509L9.76558 11.2644C9.25807 11.772 8.89804 12.4078 8.72397 13.1041L8 16L10.8959 15.276C11.5922 15.102 12.228 14.7419 12.7356 14.2344L19.3949 7.57506M16.4249 4.60509L19.3949 7.57506" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18.9999 13.5C18.9999 16.7875 18.9999 18.4312 18.092 19.5376C17.9258 19.7401 17.7401 19.9258 17.5375 20.092C16.4312 21 14.7874 21 11.4999 21H11C7.22876 21 5.34316 21 4.17159 19.8284C3.00003 18.6569 3 16.7712 3 13V12.5C3 9.21252 3 7.56879 3.90794 6.46244C4.07417 6.2599 4.2599 6.07417 4.46244 5.90794C5.56879 5 7.21252 5 10.5 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">✨ Humanizer</strong> strips the robotic AI tells out of your writing so it sounds like a person. The most popular one on this whole list. Repo: <a href="https://github.com/blader/humanizer" target="_blank">blader/humanizer</a></li>
+<li><strong class="st">🖋️ Beautiful Prose</strong> gives you sharper, cleaner writing with strong verbs and no filler. It even bans em dashes, which makes it my kind of skill. Repo: <a href="https://github.com/shadowpr0/beautiful_prose" target="_blank">shadowpr0/beautiful_prose</a></li>
+</ol>
+<p>Install one, run it on your next caption or email, and you will feel the difference immediately.</p>
+<hr class="rule">
+<span class="kicker">design</span>
+<h2>For design and visuals <span class="gi" style="--gl:#BF7362" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C12.8417 22 14 22.1163 14 21C14 20.391 13.6832 19.9212 13.3686 19.4544C12.9082 18.7715 12.4523 18.0953 13 17C13.6667 15.6667 14.7778 15.6667 16.4815 15.6667C17.3334 15.6667 18.3334 15.6667 19.5 15.5C21.601 15.1999 22 13.9084 22 12Z" stroke="currentColor" stroke-width="1.5"/><circle cx="9.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M7.125 15H7M7.25 15C7.25 15.1381 7.13807 15.25 7 15.25C6.86193 15.25 6.75 15.1381 6.75 15C6.75 14.8619 6.86193 14.75 7 14.75C7.13807 14.75 7.25 14.8619 7.25 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🏷️ frontend-design</strong> forces Claude to make bold, modern UI choices instead of generic AI layouts. Made by Anthropic. Repo: <a href="https://github.com/anthropics/skills/tree/main/skills/frontend-design" target="_blank">anthropics/skills</a></li>
+<li><strong class="st">🏷️ Algorithmic Art</strong> generates real procedural artwork (flow fields, particles, seeded patterns). Also made by Anthropic. Repo: <a href="https://github.com/anthropics/skills/tree/main/skills/algorithmic-art" target="_blank">anthropics/skills</a></li>
+<li><strong class="st">🖼️ Canvas Design</strong> designs posters, graphics, and visuals with an actual design philosophy, not random shapes. Repo: <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank">ComposioHQ/awesome-claude-skills</a></li>
+</ol>
+<div class="tip calm">⭐ Start here if you are new: frontend-design and Algorithmic Art are built by Anthropic itself, which makes them the safest two skills on this entire list. Install one of these first to see how skills work before you reach for the community ones.</div>
+<hr class="rule">
+<span class="kicker">marketing</span>
+<h2>For marketing <span class="gi" style="--gl:#BF7832" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 14V6H6C5.07003 6 4.60504 6 4.22354 6.10222C3.18827 6.37962 2.37962 7.18827 2.10222 8.22354C2 8.60504 2 9.07003 2 10C2 10.93 2 11.395 2.10222 11.7765C2.37962 12.8117 3.18827 13.6204 4.22354 13.8978C4.60504 14 5.07003 14 6 14H9Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9 14L9.96466 18.8233C9.98816 18.9408 10 19.0604 10 19.1802V19.3411C10 20.2573 9.25728 21 8.34109 21C7.55885 21 6.8829 20.4536 6.719 19.6887L5.5 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10 6H9V14H10C11.2982 14 12.5614 14.4211 13.6 15.2L15.747 16.8103C15.9112 16.9334 16.111 17 16.3162 17C16.7246 17 17.0909 16.7404 17.2088 16.3495C17.5537 15.2067 18 13.2728 18 10C18 6.72718 17.5537 4.79327 17.2088 3.65054C17.0909 3.25961 16.7246 3 16.3162 3C16.111 3 15.9112 3.06658 15.747 3.18974L13.6 4.8C12.5614 5.57893 11.2982 6 10 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21 9.99996H22M20.5 6.00109L21.5 5.40637M20.5 14L21.5 14.6481" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">📦 Marketing skills</strong> is a whole pack (60+ skills) covering SEO, ad creative, paid ads, growth, and analytics in one place. This is the one I would grab first as a marketer. Repo: <a href="https://github.com/coreyhaines31/marketingskills" target="_blank">coreyhaines31/marketingskills</a></li>
+<li><strong class="st">🔍 Competitive Ads</strong> pulls competitor ads from the ad libraries and breaks down their messaging for you. Repo: <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank">ComposioHQ/awesome-claude-skills</a></li>
+<li><strong class="st">🐦 Twitter algorithm optimizer</strong> rewrites posts using the real open-source Twitter algorithm to push reach. Repo: <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank">ComposioHQ/awesome-claude-skills</a></li>
+</ol>
+<p>This is the bucket that pays for itself the fastest.</p>
+<hr class="rule">
+<span class="kicker">research</span>
+<h2>For research and repurposing <span class="gi" style="--gl:#9F79B8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 21.5H20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.5 9.5C12.5 10.3284 11.8284 11 11 11C10.1716 11 9.5 10.3284 9.5 9.5C9.5 8.67157 10.1716 8 11 8C11.8284 8 12.5 8.67157 12.5 9.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 18.5H12.5M9.5 9.5C7.01472 9.5 5 11.5147 5 14C5 16.4853 7.01472 18.5 9.5 18.5H10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13.5 21.5L12.2279 17.6838C12.0918 17.2754 11.7097 17 11.2792 17H11.2208C10.7903 17 10.4082 17.2754 10.2721 17.6838L9 21.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15.8023 15.5L18 14.2282M10.3859 8.13107L9.34041 6.31596C8.63965 5.09933 9.05551 3.54364 10.2693 2.84121C11.483 2.13879 13.035 2.55564 13.7358 3.77227L16.7809 9.05924C17.2553 9.88279 17.4925 10.2946 17.4925 10.7035C17.4925 10.9714 17.4221 11.2346 17.2885 11.4666C17.0845 11.8208 16.6737 12.0585 15.8521 12.534C15.0305 13.0095 14.6197 13.2472 14.2117 13.2472C13.9445 13.2472 13.6819 13.1767 13.4504 13.0427C13.0971 12.8383 12.8599 12.4265 12.3856 11.6029L11.8758 10.7179" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">📚 Deep Research</strong> is a multi-step research engine that checks its sources and scores how credible they are. This one actually fact-checks itself. Repo: <a href="https://github.com/199-biotechnologies/claude-deep-research-skill" target="_blank">199-biotechnologies/claude-deep-research-skill</a></li>
+<li><strong class="st">🎧 NotebookLM skill</strong> turns your articles, PDFs, and videos into podcasts, quizzes, slides, and study guides. Repo: <a href="https://github.com/claude-world/notebooklm-skill" target="_blank">claude-world/notebooklm-skill</a></li>
+<li><strong class="st">💬 Social media research</strong> tracks what people actually think by reading real Reddit and X discussions. Repo: <a href="https://github.com/skainguyen1412/social-media-research-skill" target="_blank">skainguyen1412/social-media-research-skill</a></li>
+</ol>
+<p>Feed these your messy inputs and get clean, usable outputs back.</p>
+<hr class="rule">
+<span class="kicker">power users</span>
+<h2>For builders and power users <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>A little more advanced, but worth it once you are comfortable.</p>
+<ol class="steps">
+<li><strong class="st">⚙️ Superpowers</strong> makes Claude plan, test, build, and review like a senior engineer instead of guessing its way through. Repo: <a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a></li>
+<li><strong class="st">🗜️ Repomix</strong> squeezes a whole codebase into a single file Claude can actually read in one go. Repo: <a href="https://github.com/yamadashy/repomix" target="_blank">yamadashy/repomix</a></li>
+<li><strong class="st">🧩 Skill Seekers</strong> turns any docs site or repo into a brand new Claude skill automatically. It is a skill that makes skills. Repo: <a href="https://github.com/yusufkaraaslan/Skill_Seekers" target="_blank">yusufkaraaslan/Skill_Seekers</a></li>
+</ol>
+<hr class="rule">
+<span class="kicker">the honest bit</span>
+<h2>One safety rule for everything here <span class="gi" style="--gl:#AD8014" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6H6C4.59987 6 3.8998 6 3.36502 6.27248C2.89462 6.51217 2.51217 6.89462 2.27248 7.36502C2 7.8998 2 8.59987 2 10C2 11.4001 2 12.1002 2.27248 12.635C2.51217 13.1054 2.89462 13.4878 3.36502 13.7275C3.8998 14 4.59987 14 6 14H18C19.4001 14 20.1002 14 20.635 13.7275C21.1054 13.4878 21.4878 13.1054 21.7275 12.635C22 12.1002 22 11.4001 22 10C22 8.59987 22 7.8998 21.7275 7.36502C21.4878 6.89462 21.1054 6.51217 20.635 6.27248C20.1002 6 19.4001 6 18 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14 6L21 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 6L16 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 7L10 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 3V6M6 14V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 3V6M18 14V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip warn">Community skills are other people's code running on your machine. Before you install any of the non-Anthropic ones, open the repo and skim the <code>SKILL.md</code> so you know what it does. If something looks off, skip it. Being the honest one about this is the whole point: install only what you can read and trust, and start with the two official Anthropic skills while you get the hang of it.</div>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

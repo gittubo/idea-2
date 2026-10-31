@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to run an ad creative engine with Claude · Cindy Zhu</title>
+<!-- GUIDES_CARD {t:"How to run an ad creative engine with Claude", u:"guides/ad-creative-engine-claude.html", topic:"marketing", tool:"claude"} -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="How to run an ad creative engine with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/ad-creative-engine-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="How to run an ad creative engine with Claude">
+<meta property="og:description" content="How to run an ad creative engine with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/ad-creative-engine-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to run an ad creative engine with Claude">
+<meta name="twitter:description" content="How to run an ad creative engine with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Marketing &amp; ads</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>How to run an ad creative engine with Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented AGENCY, so here is the whole setup: two connectors, six prompts, and the weekly rhythm that turns one product link into a batch of ad creative.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn">💡 <strong>Read this before you start, it will save you an argument with the internet.</strong> This is two separate jobs wearing one coat. Claude plus the image and video models <em>makes</em> the creative. Claude plus Meta's own ads connection is what <em>touches your ad account</em>. They are different connectors with different logins, and no single connector does both. Anyone telling you one chat generates a video and silently launches it live is skipping the part where you approve the spend, which is the part you should never skip anyway.</div>
+
+<hr class="rule">
+<span class="kicker">the shape of it</span>
+<h2>What you are actually building <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>An ad creative engine is not one clever prompt. It is a small assembly line with four stations, and the whole point is that you can run it again next week without rethinking it.</p>
+<div class="cardgrid">
+<div class="minicard"><b>1. The brief</b> Claude reads your product page and writes the angles, audiences and hooks before a single image exists. Skipping this is why most AI ad batches look pretty and convert badly.</div>
+<div class="minicard"><b>2. The generation</b> Product shots, UGC-style talking clips, and short video variants, generated in batches from the brief rather than one at a time.</div>
+<div class="minicard"><b>3. The selection</b> Claude ranks what came back against the brief, kills the weak ones, and writes primary text, headlines and descriptions for the survivors.</div>
+<div class="minicard"><b>4. The test</b> The winners go into your ad account in a clean, named structure so that next week you can tell which angle actually worked, not just which ad spent money.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">before you start</span>
+<h2>What you need, and what it costs <span class="gi" style="--gl:#159D4D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.4998 12.001C14.4998 13.3817 13.3805 14.501 11.9998 14.501C10.6191 14.501 9.49982 13.3817 9.49982 12.001C9.49982 10.6203 10.6191 9.50098 11.9998 9.50098C13.3805 9.50098 14.4998 10.6203 14.4998 12.001Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 5.00098C18.4794 5.00098 20.1903 5.38518 21.1329 5.6773C21.6756 5.84549 22 6.35987 22 6.92803V16.6833C22 17.7984 20.7719 18.6374 19.6762 18.4305C18.7361 18.253 17.5107 18.1104 16 18.1104C11.2491 18.1104 10.1096 19.9161 3.1448 18.3802C2.47265 18.232 2 17.6275 2 16.9392V6.92214C2 5.94628 2.92079 5.23464 3.87798 5.42458C10.1967 6.67844 11.4209 5.00098 16 5.00098Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M2 9.00098C3.95133 9.00098 5.70483 7.40605 5.92901 5.75514M18.5005 5.50098C18.5005 7.54062 20.2655 9.46997 22 9.46997M22 15.001C20.1009 15.001 18.2601 16.3112 18.102 18.0993M6.00049 18.4971C6.00049 16.2879 4.20963 14.4971 2.00049 14.4971" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">👩‍💻 A Claude account.</strong> Custom connectors work on Free, Pro, Max, Team and Enterprise, with one important catch: <strong>Free accounts are limited to a single custom connector</strong>. Since this build uses two (creative, then ads), a Free account will run the creative half only. That is stated in Anthropic's own <a href="https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp" target="_blank">custom connectors guide</a>. Plans and prices: <a href="https://claude.com/pricing" target="_blank">claude.com/pricing</a>.</li>
+<li><strong class="st">🎬 A paid Higgsfield account.</strong> This is the connector that gives Claude direct access to the image and video models, and it needs an active paid subscription, so treat this as the real cost of the build rather than a free trial you can stretch. It runs on credits: in their own words, "Higgsfield tools use the same credit system as the Higgsfield platform. Each generation costs credits based on the model and resolution" (<a href="https://higgsfield.ai/s/higgsfield-free-unlimited-vol-2-mcp-cindiezhu-uGWOCn" target="_blank">higgsfield.ai/mcp</a>). Two things to know before you batch: video costs many times what a still costs, and one-off credit top-ups expire after 90 days, so buying a big pack "for later" is how people quietly waste money.</li>
+<li><strong class="st">📊 A Meta Business account you control.</strong> Only needed for the fourth station. You want admin access to the ad account, because the connection is authorised at the business level, not from your personal profile.</li>
+<li><strong class="st">🔗 One product or landing page URL.</strong> The whole engine feeds off this. A live page with real copy, real photos and real reviews gives Claude far more to work with than a paragraph you type from memory.</li>
+</ol>
+
+<div class="tip calm">🌱 <strong>If you only do one half, do the creative half.</strong> Generating and ranking a batch of variants is where the time actually goes. Uploading to Meta takes minutes by hand, and doing it by hand for the first month is a genuinely good idea while you learn what your account structure should look like.</div>
+
+<hr class="rule">
+<span class="kicker">connector one</span>
+<h2>Connect Claude to the image and video models <span class="gi" style="--gl:#8776B8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11C2 7.70017 2 6.05025 3.02513 5.02513C4.05025 4 5.70017 4 9 4H10C13.2998 4 14.9497 4 15.9749 5.02513C17 6.05025 17 7.70017 17 11V13C17 16.2998 17 17.9497 15.9749 18.9749C14.9497 20 13.2998 20 10 20H9C5.70017 20 4.05025 20 3.02513 18.9749C2 17.9497 2 16.2998 2 13V11Z" stroke="currentColor" stroke-width="1.5"/><path d="M17 8.90585L17.1259 8.80196C19.2417 7.05623 20.2996 6.18336 21.1498 6.60482C22 7.02628 22 8.42355 22 11.2181V12.7819C22 15.5765 22 16.9737 21.1498 17.3952C20.2996 17.8166 19.2417 16.9438 17.1259 15.198L17 15.0941" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><circle cx="11.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>This is the connection that turns Claude from a writer into a studio. Once it is on, Claude can call the generation models directly and hand you finished files instead of describing what it would make.</p>
+<ol class="steps">
+<li><strong class="st">🔑 Make your account first.</strong> Sign up at <a href="https://higgsfield.ai/s/higgsfield-free-unlimited-vol-2-mcp-cindiezhu-uGWOCn" target="_blank">higgsfield.ai</a> and stay logged in in that browser tab. The connector authorises against this login, so having it live saves you a detour later.</li>
+<li><strong class="st">➕ Open Claude's connector settings.</strong> Go to <strong>Customize</strong>, then <strong>Connectors</strong>, then click the <strong>+</strong> and choose <strong>Add custom connector</strong>. Direct link: <a href="https://claude.ai/customize/connectors" target="_blank">claude.ai/customize/connectors</a>.</li>
+<li><strong class="st">📋 Paste the server URL.</strong> The address you paste is <code>https://mcp.higgsfield.ai/mcp</code>. Leave the advanced OAuth fields empty, they are for connectors you build yourself. The setup page is at <a href="https://higgsfield.ai/s/higgsfield-free-unlimited-vol-2-mcp-cindiezhu-uGWOCn" target="_blank">higgsfield.ai/mcp</a> if you want the vendor's own walkthrough open beside you.</li>
+<li><strong class="st">✅ Click Add, then connect and approve.</strong> Claude will send you through a sign-in and permission screen. Approve it, and the connector shows as connected in the same list.</li>
+<li><strong class="st">🧪 Test it in one line.</strong> Start a new chat and type: <em>"List the image and video models you can reach through my connected generation tools, and tell me the credit cost of each."</em> If it answers with real model names and numbers, you are live. If it says it has no such tool, reopen the chat, since connectors attach when a conversation starts.</li>
+</ol>
+
+<div class="tip">🧠 <strong>Pasting the URL into a browser looks broken, and that is fine.</strong> If you open <code>https://mcp.higgsfield.ai/mcp</code> in a tab you will get an authorisation error. That address is a machine-to-machine endpoint, not a website. Claude is the one that is meant to talk to it.</div>
+
+<hr class="rule">
+<span class="kicker">station one</span>
+<h2>The brief prompt, run this first <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Generating before briefing is the single most common way these batches go wrong. You get forty beautiful images of the same idea. Run this first, in a fresh chat, and everything downstream inherits the thinking.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 build the creative brief</span>
+<pre><code>Read this product page and write me a creative brief for a paid social test: [paste your URL].
+
+Start by telling me back, in plain language, what the product actually is, who is clearly being sold to, what the strongest proof on the page is (reviews, numbers, guarantees, named credentials), and what objection a first-time buyer would have. Then give me five distinct angles to test. An angle is a reason to care, not a slogan, so make them genuinely different from each other: for example a problem-first angle, a proof-first angle, a comparison angle, an identity angle, and an objection-handling angle.
+
+For each of the five angles give me: the one-sentence promise, the specific audience it is aimed at, three hook lines under twelve words, and the single visual idea that would carry it. Flag any claim you are inferring rather than reading directly off the page, because I am not putting an unverifiable claim into a live ad. Keep the language plain and specific, no marketing filler, and do not use em dashes.</code></pre>
+</div>
+<div class="tip calm">💡 Read the brief properly and argue with it. Delete the two weakest angles yourself. Three strong angles generated deeply beats five shallow ones, and the deletion takes ten seconds now versus a week of muddy test data later.</div>
+
+<hr class="rule">
+<span class="kicker">station two</span>
+<h2>The three generation prompts <span class="gi" style="--gl:#BF7362" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C12.8417 22 14 22.1163 14 21C14 20.391 13.6832 19.9212 13.3686 19.4544C12.9082 18.7715 12.4523 18.0953 13 17C13.6667 15.6667 14.7778 15.6667 16.4815 15.6667C17.3334 15.6667 18.3334 15.6667 19.5 15.5C21.601 15.1999 22 13.9084 22 12Z" stroke="currentColor" stroke-width="1.5"/><circle cx="9.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M7.125 15H7M7.25 15C7.25 15.1381 7.13807 15.25 7 15.25C6.86193 15.25 6.75 15.1381 6.75 15C6.75 14.8619 6.86193 14.75 7 14.75C7.13807 14.75 7.25 14.8619 7.25 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Run these in the same chat as the brief, one after the other, so Claude keeps the angles in context. Each one produces a batch, not a single asset.</p>
+
+<p>Product stills first, because they are the cheapest to generate and the fastest to judge:</p>
+<div class="promptwrap">
+<span class="promptlabel">📸 product shots batch</span>
+<pre><code>Using my connected generation tools, create product images for angles 1, 2 and 3 from the brief above. I want three images per angle, so nine in total.
+
+For each image, write the prompt yourself from the angle's visual idea, and make the three within an angle genuinely different setups rather than three crops of the same shot: vary the surface, the lighting direction, the props and whether a hand or person is in frame. Every image must be shot in portrait 4:5 or 9:16, keep the product itself accurate to the reference images on the page, and leave clear negative space in the upper third where a headline will sit later.
+
+Before you generate, show me the nine prompts as a numbered list and tell me the total credit cost so I can approve it. After they render, show me each image next to its angle number and prompt so I can tell which is which.</code></pre>
+</div>
+
+<p>Then the UGC-style clips, which are the ones that usually carry cold traffic:</p>
+<div class="promptwrap">
+<span class="promptlabel">🎥 UGC-style ad batch</span>
+<pre><code>Now build UGC-style video ads for the two strongest angles in the brief. Two variants per angle, so four clips, each between six and ten seconds.
+
+Write me the script for each one before you generate anything: a spoken hook in the first two seconds, one specific benefit with a concrete detail rather than an adjective, and a plain closing line. The person should sound like a real customer talking to a friend, not a voiceover artist, so keep sentences short and let them be slightly imperfect. Describe the setting as somewhere ordinary and well lit, in portrait 9:16.
+
+Show me the four scripts and the total credit cost for approval first. Once I approve, generate them, and flag any clip where the lip sync or the hands come out wrong so I do not have to hunt for it myself.</code></pre>
+</div>
+
+<p>And the wider video variants, which is where the volume comes from:</p>
+<div class="promptwrap">
+<span class="promptlabel">🎞️ video variant batch</span>
+<pre><code>Take the single strongest angle from the brief and build me six short video variants from it, each five to eight seconds, portrait 9:16.
+
+Hold the core promise identical across all six and change exactly one variable per variant so the test is readable: variant 1 changes the hook line, variant 2 changes the opening shot, variant 3 changes the pacing, variant 4 changes the setting, variant 5 leads with the proof instead of the problem, variant 6 opens on the product in use rather than on a person. Tell me in one line which variable each one is testing.
+
+List the six prompts and the credit cost before generating. When they are done, name the files so the angle and the tested variable are both in the filename, because I will be matching them to performance data later and I do not want to be guessing in three weeks.</code></pre>
+</div>
+
+<div class="tip warn">⚠️ <strong>Approve the credit cost every single time.</strong> Batching is what makes this powerful and it is also what makes it expensive. Asking for the cost before generation is not caution theatre, it is the difference between a fifteen dollar test and a very memorable afternoon.</div>
+
+<hr class="rule">
+<span class="kicker">station three</span>
+<h2>Rank the batch and write the copy <span class="gi" style="--gl:#A68307" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.4249 4.60509L17.4149 3.6151C18.2351 2.79497 19.5648 2.79497 20.3849 3.6151C21.205 4.43524 21.205 5.76493 20.3849 6.58507L19.3949 7.57506M16.4249 4.60509L9.76558 11.2644C9.25807 11.772 8.89804 12.4078 8.72397 13.1041L8 16L10.8959 15.276C11.5922 15.102 12.228 14.7419 12.7356 14.2344L19.3949 7.57506M16.4249 4.60509L19.3949 7.57506" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18.9999 13.5C18.9999 16.7875 18.9999 18.4312 18.092 19.5376C17.9258 19.7401 17.7401 19.9258 17.5375 20.092C16.4312 21 14.7874 21 11.4999 21H11C7.22876 21 5.34316 21 4.17159 19.8284C3.00003 18.6569 3 16.7712 3 13V12.5C3 9.21252 3 7.56879 3.90794 6.46244C4.07417 6.2599 4.2599 6.07417 4.46244 5.90794C5.56879 5 7.21252 5 10.5 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>You now have roughly twenty assets. This is where most people stall, because judging your own batch is genuinely hard. Hand the judging back to Claude with a rubric, then overrule it where your taste disagrees.</p>
+<div class="promptwrap">
+<span class="promptlabel">🏆 rank and write</span>
+<pre><code>Score every asset we just generated against the brief and give me a ranked shortlist.
+
+Score each one from one to five on four things and show the scores: does the first frame stop a scroll, is the promise legible within two seconds, is the product represented accurately, and does it match the angle it was built for. Anything scoring three or below on accuracy gets cut outright, whatever else it scored, because a flattering-but-wrong product shot is a refund waiting to happen.
+
+For the top eight survivors, write the ad copy: primary text at around ninety words, a headline under forty characters, and a description under thirty characters. Match each piece of copy to the angle its visual was built for rather than writing one generic set. Then give me a plain table with columns for filename, angle, tested variable, headline and primary text, so I can hand it straight to whoever is uploading.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">connector two</span>
+<h2>Connect Claude to your ad account <span class="gi" style="--gl:#9281A4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L7 13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 17L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17 17L17 11" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is a completely separate connection, and since July 2026 Meta hosts an official one. Their <a href="https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview" target="_blank">ads MCP server</a> gives a compatible AI agent permission-scoped access to your ad account, covering comprehensive reporting, ad creation and management, catalogs, signals and datasets, A/B tests and conversion lift studies, and activity logs. It was <a href="https://developers.facebook.com/blog/post/2026/07/16/meta-ads-mcp-server/" target="_blank">opened to any app in July 2026</a>.</p>
+<ol class="steps">
+<li><strong class="st">🏢 Check your access first.</strong> The ad account has to sit inside a Business account you administer. If someone else owns it, you need them to grant you access before any of this works, and that request can take days, so send it now.</li>
+<li><strong class="st">➕ Add it as your second custom connector.</strong> Same path as before: <strong>Customize</strong>, then <strong>Connectors</strong>, then <strong>+</strong>, then <strong>Add custom connector</strong>. The server address you paste is <code>https://mcp.facebook.com/ads</code>. This is also the exact point where a Free Claude plan runs out, since Free allows one custom connector total.</li>
+<li><strong class="st">🔐 Authorise one ad account, not all of them.</strong> When it asks which assets to grant, pick the single ad account you want Claude working in. Broad permissions are the thing you regret, and narrowing them later is more annoying than choosing well now.</li>
+<li><strong class="st">👀 Stay read-only for a week.</strong> Ask for reports before you ask for actions: "show me last 7 days by campaign", "which ad sets are below a 1% link click rate", "break spend down by creative". You learn how it talks about your account before it can change anything in it.</li>
+<li><strong class="st">🛠️ Prefer the token route? It still exists.</strong> If you would rather use a system user and an access token, or drive it from the command line, I wrote that walkthrough separately: <a href="https://cindyzhu.com.au/guides/connect-meta-ads" target="_blank">connect your Meta Ads account to Claude</a>.</li>
+</ol>
+
+<div class="tip warn">⚠️ <strong>The seam between the two halves is manual, and anyone telling you otherwise is selling something.</strong> The generation connector has no Meta tools on it at all. Not one. It ends at a rendered file. Meta's ads tools can build campaigns, ad sets and ads, but getting a freshly generated <em>video</em> into the account still means uploading it into Meta's media library yourself. Budget ten minutes per batch for that and stop waiting for the loop to close on its own.</div>
+
+<div class="tip warn">⚠️ <strong>Set budgets by hand for the first month.</strong> Let Claude build the structure, name things, and write the copy. Type the daily budget in yourself. An automation error in a document costs you a rewrite, and the same error in a campaign costs you actual money overnight while you sleep.</div>
+
+<p>Once the videos are uploaded and the connection is live, this is the staging prompt. Notice it stops before launching.</p>
+<div class="promptwrap">
+<span class="promptlabel">🚀 stage the test</span>
+<pre><code>Using my connected Meta Ads tools, stage a creative test in ad account [your ad account ID] using the shortlist and copy from the table above. I have already uploaded the video and image files into the account's media library, so reference the existing assets rather than trying to upload anything.
+
+Build one campaign, one ad set, and one ad per shortlisted creative. Name everything so the angle and the tested variable are readable from the name alone, using the pattern ANGLE_VARIABLE_DATE, because in three weeks the names are the only thing standing between me and a spreadsheet I cannot interpret. Put every ad in the same ad set so they compete on equal footing rather than fragmenting the budget.
+
+Create everything in PAUSED state and do not set a budget, do not set a schedule, and do not publish. When it is staged, give me a checklist of exactly what you created with the IDs, plus anything you could not complete, so I can review it in Ads Manager, set the budget myself, and turn it on.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">station four</span>
+<h2>The weekly rhythm that makes it an engine <span class="gi" style="--gl:#987CBE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3175 7.14139L20.8239 6.28479C20.4506 5.63696 20.264 5.31305 19.9464 5.18388C19.6288 5.05472 19.2696 5.15664 18.5513 5.36048L17.3311 5.70418C16.8725 5.80994 16.3913 5.74994 15.9726 5.53479L15.6357 5.34042C15.2766 5.11043 15.0004 4.77133 14.8475 4.37274L14.5136 3.37536C14.294 2.71534 14.1842 2.38533 13.9228 2.19657C13.6615 2.00781 13.3143 2.00781 12.6199 2.00781H11.5051C10.8108 2.00781 10.4636 2.00781 10.2022 2.19657C9.94085 2.38533 9.83106 2.71534 9.61149 3.37536L9.27753 4.37274C9.12465 4.77133 8.84845 5.11043 8.48937 5.34042L8.15249 5.53479C7.73374 5.74994 7.25259 5.80994 6.79398 5.70418L5.57375 5.36048C4.85541 5.15664 4.49625 5.05472 4.17867 5.18388C3.86109 5.31305 3.67445 5.63696 3.30115 6.28479L2.80757 7.14139C2.45766 7.74864 2.2827 8.05227 2.31666 8.37549C2.35061 8.69871 2.58483 8.95918 3.05326 9.48012L4.0843 10.6328C4.3363 10.9518 4.51521 11.5078 4.51521 12.0077C4.51521 12.5078 4.33636 13.0636 4.08433 13.3827L3.05326 14.5354C2.58483 15.0564 2.35062 15.3168 2.31666 15.6401C2.2827 15.9633 2.45766 16.2669 2.80757 16.8741L3.30114 17.7307C3.67443 18.3785 3.86109 18.7025 4.17867 18.8316C4.49625 18.9608 4.85542 18.8589 5.57377 18.655L6.79394 18.3113C7.25263 18.2055 7.73387 18.2656 8.15267 18.4808L8.4895 18.6752C8.84851 18.9052 9.12464 19.2442 9.2775 19.6428L9.61149 20.6403C9.83106 21.3003 9.94085 21.6303 10.2022 21.8191C10.4636 22.0078 10.8108 22.0078 11.5051 22.0078H12.6199C13.3143 22.0078 13.6615 22.0078 13.9228 21.8191C14.1842 21.6303 14.294 21.3003 14.5136 20.6403L14.8476 19.6428C15.0004 19.2442 15.2765 18.9052 15.6356 18.6752L15.9724 18.4808C16.3912 18.2656 16.8724 18.2055 17.3311 18.3113L18.5513 18.655C19.2696 18.8589 19.6288 18.9608 19.9464 18.8316C20.264 18.7025 20.4506 18.3785 20.8239 17.7307L21.3175 16.8741C21.6674 16.2669 21.8423 15.9633 21.8084 15.6401C21.7744 15.3168 21.5402 15.0564 21.0718 14.5354L20.0407 13.3827C19.7887 13.0636 19.6098 12.5078 19.6098 12.0077C19.6098 11.5078 19.7888 10.9518 20.0407 10.6328L21.0718 9.48012C21.5402 8.95918 21.7744 8.69871 21.8084 8.37549C21.8423 8.05227 21.6674 7.74864 21.3175 7.14139Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.5195 12C15.5195 13.933 13.9525 15.5 12.0195 15.5C10.0865 15.5 8.51953 13.933 8.51953 12C8.51953 10.067 10.0865 8.5 12.0195 8.5C13.9525 8.5 15.5195 10.067 15.5195 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>One good batch is a nice afternoon. The engine part is the repeat, and Meta's own published guidance points the same way. In <a href="https://www.facebook.com/business/news/demystifying-creative-diversification" target="_blank">their piece on creative diversification</a> they recommend it as "a foundational best practice", and they draw a sharp line worth internalising: "Creative iteration might produce two ads with identical visuals, but different text CTAs, while creative diversification would generate two distinctly different pieces of creative." Volume of near-identical variants is not the goal. Genuinely different creative is.</p>
+<ol class="steps">
+<li><strong class="st">🗓️ Monday, read last week.</strong> Ask Claude which angle won, not which ad won. The ad is an instance, the angle is the reusable insight, and only one of those two things tells you what to make next.</li>
+<li><strong class="st">🎨 Tuesday, generate.</strong> Re-run the generation prompts, but seed them with the winning angle and one fresh angle. Keeping one experiment in every batch is what stops you optimising yourself into a corner.</li>
+<li><strong class="st">✍️ Wednesday, rank and write.</strong> Same ranking prompt, same rubric. Consistency in the rubric is what makes week five comparable to week one.</li>
+<li><strong class="st">🚀 Thursday, stage and launch.</strong> Stage paused, review in Ads Manager, set your own budget, turn it on. Kill last week's clear losers in the same sitting so the account stays legible.</li>
+<li><strong class="st">🧾 Friday, write it down.</strong> One paragraph in a running document: what you tested, what won, what you believe now. This file becomes the thing you paste into Claude next month, and it compounds faster than any prompt.</li>
+</ol>
+
+<div class="tip calm">🌱 <strong>An honest note on the numbers people quote.</strong> "Thirty variants a week" is a description of your process, not a promise about your results. What volume reliably buys you is a faster read on which angle is right. It does not buy you a good offer, a working product page, or an audience that wants the thing. If those are broken, more variants just help you find that out sooner.</div>
+
+<hr class="rule">
+<span class="kicker">the traps</span>
+<h2>Four things that will bite you <span class="gi" style="--gl:#DE5E74" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.51734 17.1132C6.91177 17.6905 8.10883 18.9228 9.74168 19.2333M9.86428 22C8.83582 21.8306 2 19.6057 2 12.0926C2 5.06329 8.0019 2 12.0008 2C15.9996 2 22 5.06329 22 12.0926C22 19.6057 15.1642 21.8306 14.1357 22C14.1357 22 13.9267 18.5826 14.0487 17.9969C14.1706 17.4113 13.7552 16.4688 13.7552 16.4688C14.7262 16.1055 16.2043 15.5847 16.7001 14.1874C17.0848 13.1032 17.3268 11.5288 16.2508 10.0489C16.2508 10.0489 16.5318 7.65809 15.9996 7.56548C15.4675 7.47287 13.8998 8.51192 13.8998 8.51192C13.4432 8.38248 12.4243 8.13476 12.0018 8.17939C11.5792 8.13476 10.5568 8.38248 10.1002 8.51192C10.1002 8.51192 8.53249 7.47287 8.00036 7.56548C7.46823 7.65809 7.74917 10.0489 7.74917 10.0489C6.67316 11.5288 6.91516 13.1032 7.2999 14.1874C7.79575 15.5847 9.27384 16.1055 10.2448 16.4688C10.2448 16.4688 9.82944 17.4113 9.95135 17.9969C10.0733 18.5826 9.86428 22 9.86428 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Identical variants</b> If your six "variants" change three things each, no result is readable. One variable per variant, always, or you are just making pretty noise.</div>
+<div class="minicard"><b>Unnamed files</b> Generate forty assets with default filenames and you will never match them to performance. Naming is the boring habit that makes the whole loop worth running.</div>
+<div class="minicard"><b>Invented claims</b> Generated copy will happily promise things your product does not do. Check every number, guarantee and superlative against your own page before it goes live.</div>
+<div class="minicard"><b>Credit burn</b> Video is where budgets vanish. Approve costs before each batch, and generate stills to test angles before you spend video credits proving one.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">all the links</span>
+<h2>Everything you need, in one place <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li><strong>Generation connector</strong>: <a href="https://higgsfield.ai/s/higgsfield-free-unlimited-vol-2-mcp-cindiezhu-uGWOCn" target="_blank">higgsfield.ai</a>, and the server URL you paste into Claude is <code>https://mcp.higgsfield.ai/mcp</code></li>
+<li><strong>Where you add it in Claude</strong>: <a href="https://claude.ai/customize/connectors" target="_blank">Customize &rarr; Connectors</a>, using the <a href="https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp" target="_blank">official custom connector steps</a></li>
+<li><strong>Meta's official ads connector</strong>: paste <code>https://mcp.facebook.com/ads</code>, documented in the <a href="https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview" target="_blank">ads MCP server overview</a></li>
+<li><strong>The token and command-line route instead</strong>: <a href="https://cindyzhu.com.au/guides/connect-meta-ads" target="_blank">connect your Meta Ads account to Claude</a></li>
+<li><strong>What to do once it is connected</strong>: <a href="https://cindyzhu.com.au/guides/claude-meta-ads-playbook" target="_blank">the Claude and Meta ads playbook</a></li>
+<li><strong>Meta on creative diversification</strong>: <a href="https://www.facebook.com/business/news/demystifying-creative-diversification" target="_blank">demystifying creative diversification</a></li>
+<li><strong>Meta's own ads documentation</strong>: <a href="https://developers.facebook.com/docs/marketing-apis/" target="_blank">Meta Marketing API docs</a></li>
+</ul>
+
+<div class="gcallout"><strong>Want to build the whole system, not only the creative half?</strong> Inside AI System Club I teach people to build AI systems that actually run: content engines, ad engines, and the automations underneath them. Doors open soon and founding pricing dies at close. 🌱 <a href='/ai-system' target='_blank'>Join the waitlist</a> (link in my bio too).</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

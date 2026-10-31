@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 free resources to build your first AI agent · Cindy Zhu</title><meta name="description" content="Resources to build your first AI agent, with a simple route from learning to a working agent."><link rel="canonical" href="https://cindyzhu.com.au/guides/picture-first-ai-agent">
+<meta property="og:title" content="5 free resources to build your first AI agent"><meta property="og:description" content="Resources to build your first AI agent, with a simple route from learning to a working agent."><meta property="og:url" content="https://cindyzhu.com.au/guides/picture-first-ai-agent"><meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles.css"><!-- seo:auto -->
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="5 free resources to build your first AI agent">
+<meta name="twitter:description" content="Resources to build your first AI agent, with a simple route from learning to a working agent.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body><!-- GUIDES_CARD {t:"5 free resources to build your first AI agent", u:"guides/picture-first-ai-agent.html", topic:"building", tool:"stack"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap"><main class="guidewrap"><a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a><div class="guidehead"><div class="gtags"><span class="gtag topic">Build with AI</span><span class="gtag tool">Resource collection</span></div><h1>5 free resources to build your first AI agent</h1></div><div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Resources to build your first AI agent, with a simple route from learning to a working agent.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>Five resources do not need to become five unfinished courses. Pick one main route and use the others when you have a particular question. Your first build should have a job small enough that you can tell when it works.</p>
+<hr class="rule"/><span class="kicker">part 01</span><h2>What you are building</h2>
+<p>Our example is an assistant for a fictional community workshop. It can look up the venue, timetable and accessibility notes from three short documents, then answer a visitor's question with the relevant source. It cannot email anyone, change a booking or invent a policy.</p>
+<p>A fixed workflow follows steps you specify. An agent lets the model choose some next steps or tools within boundaries. If a fixed search-and-answer workflow solves the problem, that is a useful result too. Add agentic decisions only when the job benefits from them.</p>
+<p>You need basic Python for the coded routes below. Free learning materials do not mean unlimited free model calls, hosted notebooks or deployment. A Claude subscription also does not include a separate provider's API bill. Keep the first experiment local, use non-sensitive example documents and check the model provider's usage controls before running loops.</p>
+<hr class="rule"/><span class="kicker">part 02</span><h2>1. Hugging Face's Agents Course: your main learning route</h2>
+<p>Open the <a href="https://huggingface.co/learn/agents-course/unit0/introduction" rel="noopener noreferrer" target="_blank">Agents Course introduction</a>, read the prerequisites and begin with Unit 1. It introduces the agent loop before you move into frameworks. Follow one exercise far enough to see the sequence: request, tool selection, tool result and final answer.</p>
+<p>Pause after that exercise and explain each step in your own words. Which part was a model decision? Which part was ordinary code? What information did the tool return? If those answers are unclear, repeat the small example before adding your own tools.</p>
+<p>Use this course when you want a structured path. The material is free, but the environment and inference provider you choose can have quotas or costs. Do not buy hosting before you have a working local example.</p>
+<hr class="rule"/><span class="kicker">part 03</span><h2>2. Anthropic's Building Effective Agents: choose the right shape</h2>
+<p>Read <a href="https://www.anthropic.com/engineering/building-effective-agents" rel="noopener noreferrer" target="_blank">Building Effective Agents</a> when you are deciding how much autonomy the job needs. Its architectural patterns help you distinguish a predictable sequence from a system that chooses how to proceed.</p>
+<p>For our workshop assistant, start with a lookup tool that returns matching document excerpts. Let the assistant either ask a clarifying question, call the lookup tool or answer from the returned evidence. It does not need several specialist agents or a tool that can browse your entire computer.</p>
+<p>Draw that flow on one page. Include an exit for “the documents do not contain this.” That exit matters as much as the path to a confident answer.</p>
+<hr class="rule"/><span class="kicker">part 04</span><h2>3. The smolagents guided tour: build a small coded version</h2>
+<p>The <a href="https://huggingface.co/docs/smolagents/en/guided_tour" rel="noopener noreferrer" target="_blank">smolagents guided tour</a> shows how to configure a model, define tools and run an agent. It distinguishes code-generating agents from agents that request structured tool calls. Start with a small read-only tool and inspect its output.</p>
+<p>Create a project folder and a virtual environment using the Python version required by the current documentation. Install the documented package inside that environment. Choose the model-access route shown in the tour, configure its token or API key through the documented environment mechanism, and run the unmodified example once. Keep credentials out of your source files and screenshots.</p>
+<p>Only then replace the example tool with a lookup function over your three documents. Return the document name and exact matching paragraph, rather than a bare answer. Set a small step limit so a failed lookup cannot become an open-ended loop. This route is the most direct way to see a compact implementation without starting with a large application.</p>
+<hr class="rule"/><span class="kicker">part 05</span><h2>4. Microsoft's AI Agents for Beginners: compare design choices</h2>
+<p>Open <a href="https://github.com/microsoft/ai-agents-for-beginners" rel="noopener noreferrer" target="_blank">AI Agents for Beginners</a> and select the tool-use lesson, then the planning lesson. Follow the setup associated with that example; different notebooks can depend on different providers and frameworks.</p>
+<p>Use the comparison to improve one part of your existing build. For example, improve the lookup tool's description so the agent knows it covers workshop information only. Ask what arguments the function accepts and how it reports “no match.” The lesson is more valuable when you can connect it to a behaviour you have already observed.</p>
+<p>Do not migrate to a new framework merely because a second example looks more polished. Keep your test questions unchanged so you can compare the behaviour rather than the amount of code.</p>
+<hr class="rule"/><span class="kicker">part 06</span><h2>5. LangChain Academy: add state and review when you need them</h2>
+<p>The free <a href="https://academy.langchain.com/courses/intro-to-langgraph" rel="noopener noreferrer" target="_blank">Introduction to LangGraph course</a> is a next step when your build needs explicit state, memory or a human review point. It uses Python and may require accounts and model access for the exercises.</p>
+<p>Imagine extending the workshop assistant into a draft itinerary tool. It might collect requirements, research options, pause for a human choice and then produce a draft. That is where a graph of named steps becomes useful. Follow the relevant lessons before adding that complexity to your first lookup agent.</p>
+<hr class="rule"/><span class="kicker">part 07</span><h2>Turn your idea into a build you can test</h2>
+<p>Paste this into the coding assistant you use, alongside the current setup documentation and your three example documents.</p>
+<div class="promptwrap"><span class="promptlabel">copy this prompt</span><pre><code class="language-prompt">Help me build a small read-only assistant for these documents: [documents]. Its only job is to answer [kind of question] using evidence from those files. First inspect the current framework documentation I provide and identify the required Python version, packages, model access and any separate charges.
+
+Create the smallest local implementation with a lookup tool that returns a document name and exact supporting excerpt. The assistant must ask when the question is ambiguous and say when the supplied material does not contain an answer. Give it a small configurable step limit and no email, booking or file-deletion tools.
+
+Build five test cases: a direct fact, a question requiring two documents, an ambiguous question, a missing fact and a misleading instruction inside a document. Show how I run the app and the tests, explain each tool call, and provide a sample input and expected behaviour. Never put credentials in the code. If the environment cannot run the build, state the blocker and do not claim the tests passed.
+</code></pre></div>
+<hr class="rule"/><span class="kicker">part 08</span><h2>A worked test before you add more features</h2>
+<p>Put “Doors open at 9:30” in timetable.md and “The main entrance has three steps; step-free access is via the side door” in access.md. Ask: “Can I arrive at 9:30 using step-free access?” A useful answer identifies both facts and cites both files. These are invented practice facts, not information about a real venue.</p>
+<p>Then ask whether parking is free when no document mentions parking. Success means the assistant identifies the missing information. A confident invented policy is a failed test, even if the earlier answers looked good.</p>
+<p>If the tool cannot be called, check authentication and the schema before changing the prompt. If retrieval returns nothing, test the lookup function independently. If it loops, reduce the scope and inspect the recorded steps. Your first finish line is five inspected test runs and a short explanation of what the assistant can and cannot do.</p>
+<p>Start with Unit 1 and three tiny documents today. More practical walkthroughs are in <a href="https://cindyzhu.com.au/guides" rel="noopener noreferrer" target="_blank">all free guides</a>.</p>
+<div class="gcallout">Keep building from here. Find more practical walkthroughs in <a href='/guides'>my free guide library</a>.</div>
+</div></main></div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer><script src="../guide-kit.js" defer></script><script src="/site.js" defer></script>
+</body></html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="You&#x27;re going to build &quot;Stock Lens&quot;: type in any ticker (like NVDA), hit enter, and get one clean page that pulls live market data.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a stock dashboard with Emergent · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<link rel="canonical" href="https://cindyzhu.com.au/guides/build-a-stock-dashboard-with-emergent">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build a stock dashboard with Emergent">
+<meta property="og:description" content="You&#x27;re going to build &quot;Stock Lens&quot;: type in any ticker (like NVDA), hit enter, and get one clean page that pulls live market data.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/build-a-stock-dashboard-with-emergent">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build a stock dashboard with Emergent">
+<meta name="twitter:description" content="You&#x27;re going to build &quot;Stock Lens&quot;: type in any ticker (like NVDA), hit enter, and get one clean page that pulls live market data.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build a stock dashboard with Emergent", u:"guides/build-a-stock-dashboard-with-emergent.html", topic:"building", tool:"nocode"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building &amp; apps</span>
+        <span class="gtag tool">No-code build</span>
+      </div>
+      <h1>Build a stock dashboard with Emergent</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You're going to build "Stock Lens": type in any ticker (like NVDA), hit enter, and get one clean page that pulls live market data.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">what you get</span>
+<h2>What Stock Lens shows you <span class="gi" style="--gl:#9281A4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L7 13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 17L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17 17L17 11" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>One scrollable page per ticker, every number sitting next to a short plain-English line and a green, amber, or red flag, so you're never staring at a raw ratio wondering if it's good or bad.</p>
+<div class="cardgrid">
+  <div class="minicard"><b>🧭 A verdict at the top</b> Name, price, today's move, analyst consensus, percent upside to the median price target, and a composite Risk Score dial, all before you scroll.</div>
+  <div class="minicard"><b>📈 Scored on the things that matter</b> Valuation, growth (with a 5-year revenue and net-income chart), profitability, financial health, cash and dividends, all read for you, not just listed.</div>
+  <div class="minicard"><b>🎯 A 1 to 10 risk score</b> Five pillars rolled into one number (1 is low risk, 10 is high), with the two or three things actually driving it called out.</div>
+  <div class="minicard"><b>⭐ A private watchlist</b> Save the tickers you follow behind a light login, so your list is yours and survives a refresh.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the builder</span>
+<h2>What Emergent is <span class="gi" style="--gl:#DB5C78" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15V14H21V15C21 17.8284 21 19.2426 20.1213 20.1213C19.2426 21 17.8284 21 15 21H9C6.17157 21 4.75736 21 3.87868 20.1213C3 19.2426 3 17.8284 3 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 14L3.00001 12.9999C3.00003 11.5278 3.00004 10.7918 3.31675 10.1584C3.63347 9.52493 4.22231 9.08329 5.39999 8.20002C6.19297 7.60528 6.58946 7.30791 7.05132 7.15395C7.51317 7 8.00879 7 9.00002 7H15C15.9912 7 16.4868 7 16.9487 7.15395C17.4105 7.3079 17.807 7.60527 18.6 8.2C19.7777 9.08328 20.3666 9.52492 20.6833 10.1584C21 10.7918 21 11.5279 21 13V14H3Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 12V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 12V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.49997 7.00006V6.50006C8.49997 5.0956 8.49997 4.39337 8.83703 3.88892C8.98295 3.67054 9.17045 3.48304 9.38883 3.33712C9.89328 3.00006 10.5955 3.00006 12 3.00006C13.4044 3.00006 14.1067 3.00006 14.6111 3.33712C14.8295 3.48304 15.017 3.67054 15.1629 3.88892C15.5 4.39337 15.5 5.0956 15.5 6.50006V7.00006" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p><a href="https://app.emergent.sh/?utm_shift=redirect&amp;via=cindie-zhu" target="_blank">Emergent</a> is an AI app builder that turns plain English into a real full-stack app. You describe what you want, and it builds the <strong>React frontend</strong>, the <strong>Python (FastAPI) backend</strong>, and the <strong>database</strong> together, as one working thing rather than a pretty page with nothing behind it. As it writes, a built-in <strong>code-review agent</strong> checks its own work, so you catch fewer bugs by hand. You <strong>own and can export the code</strong> (sync it to GitHub), and when you're happy it <strong>deploys to a live public URL in one click</strong>, with SSL. You build with <strong>Fable 5</strong>, one of the frontier models Emergent lets you pick from. Pricing is credit-based: a free tier gives you 10 credits a month to build and preview, and the Standard plan is $20/mo for 100 credits (a deployed app uses about 50 a month), with extra credits as you need them.</p>
+
+<hr class="rule">
+<span class="kicker">the build</span>
+<h2>Build it in 6 steps <span class="gi" style="--gl:#9281AD" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🚀 Start a new project in Emergent</strong> Go to <a href="https://app.emergent.sh/?utm_shift=redirect&amp;via=cindie-zhu" target="_blank">Emergent</a> (app.emergent.sh) and open a fresh project. The free tier is plenty to build and preview.</li>
+<li><strong class="st">🔑 Grab a free market-data key</strong> Sign up at <a href="https://financialmodelingprep.com" target="_blank">Financial Modeling Prep</a> (financialmodelingprep.com). The free tier gives you around 250 calls a day and covers company fundamentals, ratios, analyst estimates, and the Altman-Z and Piotroski score endpoints this dashboard uses. Copy your API key. Optional fallback: <a href="https://www.alphavantage.co" target="_blank">Alpha Vantage</a> (alphavantage.co), also free but only about 25 calls a day.</li>
+<li><strong class="st">📋 Paste the build prompt</strong> Copy the big prompt in the next section and send it as your very first message. It's the full spec, so Emergent gets the whole dashboard right on the first pass instead of guessing.</li>
+<li><strong class="st">🔒 Add your key as a server-side secret</strong> When Emergent asks, add your key as a server-side environment variable (a secret) named <code>FMP_API_KEY</code>. Env secrets keep your key out of the frontend and out of your code, so it can't leak to anyone who opens your app. Never hard-code the key.</li>
+<li><strong class="st">🧱 Let it build, then tweak in plain English</strong> Emergent wires the backend to call the API, builds the dashboard UI, and runs its code-review agent over what it wrote. Preview it, then refine by describing changes: "add a 5-year revenue chart", "make the risk score dial bigger", "group the valuation metrics together". One change per message.</li>
+<li><strong class="st">🌐 Deploy and start your watchlist</strong> Click deploy to get a live public URL. Type in your first tickers, add the ones you follow to your watchlist, and share the link.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">copy this</span>
+<h2>The full build prompt <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>👇 Copy this whole block and paste it into <a href="https://app.emergent.sh/?utm_shift=redirect&amp;via=cindie-zhu" target="_blank">Emergent</a> as your first message. You don't need to read every line, it's the full build manual that makes the app come out right.</p>
+<div class="promptwrap">
+<span class="promptlabel">📋 the full build prompt, paste it whole</span>
+<pre><code>Build me a full-stack stock analysis dashboard web app called "Stock Lens." A user types a ticker (like NVDA) into a search bar, hits enter, and the app pulls live fundamental and market data and renders one organized dashboard page. Use Financial Modeling Prep as the data source (free tier, 250 calls a day). Store the FMP key as a server-side secret named FMP_API_KEY, never exposed to the frontend: all data fetching goes through my backend, which calls FMP and returns clean JSON. On a ticker submit, call and merge the FMP profile, quote, ratios-ttm, key-metrics-ttm, financial-growth, 5-year income and cash-flow, analyst-estimates, price-target-consensus, grades-consensus, and score (Altman Z plus Piotroski) endpoints. Cache each ticker about 12 hours to respect the rate limit, and handle bad tickers and rate-limit errors gracefully. Render one scrollable page with titled cards: a top verdict strip (name, logo, price, today's change, a composite Risk Score dial, analyst consensus, percent upside to median target), then Company Snapshot, Valuation, Growth (with a 5-year revenue and net-income bar chart), Profitability and Returns on Capital, Financial Health, Cash and Dividends, Analyst View (price-target low, median, high plus a Buy/Hold/Sell bar), a plain-English Moat and Quality read, Key Risks, and the Composite Risk Score section. Next to every metric show a short plain-English context line and a green, amber, or red indicator (for example "P/E 22, about the S&amp;P average", "Debt-to-equity 0.4, conservative"). Compute the composite Risk Score on the backend: score five pillars 0 to 100 (financial health 30 percent, profitability and quality 25 percent, valuation 20 percent, growth durability 15 percent, sentiment and volatility 10 percent) into a 0 to 100 quality score, then Risk Score = 10 minus floor of quality divided by 10, clamped 1 to 10 (1 means low risk, 10 means high), shown as a dial with bands and the two or three pillars driving it. Auto-generate the Moat and Key Risks text from the data with simple rules. Add a Watchlist backed by a database with lightweight email or magic-link auth so it is private and survives refresh. Design it clean, warm, and responsive, cream background with one accent color, loading skeletons, color-coded values. Deploy to a live public URL and tell me where to paste my FMP_API_KEY. If FMP is unavailable, fall back to Alpha Vantage (OVERVIEW, GLOBAL_QUOTE, INCOME_STATEMENT) with an ALPHA_VANTAGE_API_KEY server-side secret, same layout and Risk Score logic.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">what to watch</span>
+<h2>A few honest notes <span class="gi" style="--gl:#CF516C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21L8 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13.2585 18.8714C9.51516 18.0215 5.97844 14.4848 5.12853 10.7415C4.99399 10.1489 4.92672 9.85266 5.12161 9.37197C5.3165 8.89129 5.55457 8.74255 6.03071 8.44509C7.10705 7.77265 8.27254 7.55888 9.48209 7.66586C11.1793 7.81598 12.0279 7.89104 12.4512 7.67048C12.8746 7.44991 13.1622 6.93417 13.7376 5.90269L14.4664 4.59604C14.9465 3.73528 15.1866 3.3049 15.7513 3.10202C16.316 2.89913 16.6558 3.02199 17.3355 3.26771C18.9249 3.84236 20.1576 5.07505 20.7323 6.66449C20.978 7.34417 21.1009 7.68401 20.898 8.2487C20.6951 8.8134 20.2647 9.05346 19.4039 9.53358L18.0672 10.2792C17.0376 10.8534 16.5229 11.1406 16.3024 11.568C16.0819 11.9955 16.162 12.8256 16.3221 14.4859C16.4399 15.7068 16.2369 16.88 15.5555 17.9697C15.2577 18.4458 15.1088 18.6839 14.6283 18.8786C14.1477 19.0733 13.8513 19.006 13.2585 18.8714Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip">⏳ <strong>Free tiers are capped, that's why it caches.</strong> The FMP free plan is around 250 calls a day, so the prompt tells the app to cache each ticker for about 12 hours. Look up NVDA once and everyone who checks it that day reads the cached copy, so you rarely touch the limit. If you do hit it, the app shows a friendly "try again shortly" instead of breaking.</div>
+<div class="tip warn">🔒 <strong>Keep the key server-side, always.</strong> Your API key lives as a server-side secret (<code>FMP_API_KEY</code>), never in the frontend and never pasted into the code. All data fetching runs through your backend. If a build ever slips the key into frontend code, tell Emergent to move it to a server-side secret and re-check before you deploy.</div>
+<div class="tip calm">💡 <strong>This is a learning tool, not financial advice.</strong> Stock Lens is for understanding how to read a company, not a buy or sell call. Market data can be delayed on free tiers, and the scores are rules of thumb, not guarantees. Always do your own research before investing.</div>
+
+<hr class="rule">
+<h2>The links <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>🛠 Emergent: <a href="https://app.emergent.sh/?utm_shift=redirect&amp;via=cindie-zhu" target="_blank">app.emergent.sh</a><br>
+🔑 Financial Modeling Prep (free market data): <a href="https://financialmodelingprep.com" target="_blank">financialmodelingprep.com</a><br>
+🔁 Alpha Vantage (free fallback): <a href="https://www.alphavantage.co" target="_blank">alphavantage.co</a></p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect Claude to thousands of apps · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Connect Claude to thousands of apps. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-zapier-connector-setup">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Connect Claude to thousands of apps">
+<meta property="og:description" content="Connect Claude to thousands of apps. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-zapier-connector-setup">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Connect Claude to thousands of apps">
+<meta name="twitter:description" content="Connect Claude to thousands of apps. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Connect Claude to thousands of apps: my connector setup", u:"guides/claude-zapier-connector-setup.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building with AI</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Connect Claude to thousands of apps</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented BRIDGE, so here is my exact connector setup.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip calm">💡 <strong>The one idea underneath all of this.</strong> Claude speaks MCP, the Model Context Protocol, an open standard for letting an assistant use outside software instead of only talking about it (<a href="https://modelcontextprotocol.io/" target="_blank">the MCP spec</a>). A connector is one MCP server you have plugged in. Zapier runs an MCP server that sits in front of its whole app catalogue, so adding that one connector hands Claude a very large toolbox at once.</div>
+
+<span class="kicker">why this matters</span>
+<h2>An agent with no tools is a chatbot <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The reason most "build an agent in one prompt" tutorials do not survive contact with real work is that they assume the connections already exist. Writing the instruction is the easy half. Giving Claude a hand that can reach into your inbox, your email platform and your calendar is the half that takes an afternoon, once, and then never again.</p>
+<div class="cardgrid">
+<div class="minicard"><b>🧠 The prompt is the plan</b> It describes what should happen. On its own it produces a very nicely worded description of work that nobody did.</div>
+<div class="minicard"><b>🔌 The connector is the hand</b> It is what turns "schedule that post" from a suggestion into a thing that exists in your account five seconds later.</div>
+<div class="minicard"><b>🌱 One bridge beats ten</b> Instead of hunting for an MCP server per app, one Zapier connector fronts a catalogue you can add to whenever you need something new.</div>
+<div class="minicard"><b>💡 Setup is one-time</b> You wire it once and every future prompt inherits it. The cost is front-loaded, the payoff compounds quietly.</div>
+</div>
+
+<div class="tip">💡 <strong>The honest number.</strong> Zapier's own page currently says its MCP connects AI tools to "9,000+ apps" with "30,000+ actions across 9,000+ apps" (<a href="https://zapier.com/mcp" target="_blank">zapier.com/mcp</a>). You will see 8,000 quoted a lot online, including by me, because that is what the page said not long ago. Either way the point stands: this is the widest single bridge available to Claude right now.</div>
+
+<hr class="rule">
+<span class="kicker">before you build</span>
+<h2>The cost gate, read this first <span class="gi" style="--gl:#BE780E" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.9427 16.8354C20.2864 12.8866 18.2432 9.94613 16.467 8.219C15.9501 7.71642 15.6917 7.46513 15.1208 7.23257C14.5499 7 14.0592 7 13.0778 7H10.9222C9.94081 7 9.4501 7 8.87922 7.23257C8.30834 7.46513 8.04991 7.71642 7.53304 8.219C5.75682 9.94613 3.71361 12.8866 3.05727 16.8354C2.56893 19.7734 5.27927 22 8.30832 22H15.6917C18.7207 22 21.4311 19.7734 20.9427 16.8354Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7.25662 4.44287C7.05031 4.14258 6.75128 3.73499 7.36899 3.64205C8.00392 3.54651 8.66321 3.98114 9.30855 3.97221C9.89237 3.96413 10.1898 3.70519 10.5089 3.33548C10.8449 2.94617 11.3652 2 12 2C12.6348 2 13.1551 2.94617 13.4911 3.33548C13.8102 3.70519 14.1076 3.96413 14.6914 3.97221C15.3368 3.98114 15.9961 3.54651 16.631 3.64205C17.2487 3.73499 16.9497 4.14258 16.7434 4.44287L15.8105 5.80064C15.4115 6.38146 15.212 6.67187 14.7944 6.83594C14.3769 7 13.8373 7 12.7582 7H11.2418C10.1627 7 9.6231 7 9.20556 6.83594C8.78802 6.67187 8.5885 6.38146 8.18945 5.80064L7.25662 4.44287Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M13.6267 12.9186C13.4105 12.1205 12.3101 11.4003 10.9892 11.9391C9.66829 12.4778 9.45847 14.2113 11.4565 14.3955C12.3595 14.4787 12.9483 14.2989 13.4873 14.8076C14.0264 15.3162 14.1265 16.7308 12.7485 17.112C11.3705 17.4932 10.006 16.8976 9.85742 16.0517M11.8417 10.9927V11.7531M11.8417 17.2293V17.9927" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the part that catches people out three weeks in, so it goes before the setup rather than in a footnote at the bottom.</p>
+<ol class="steps">
+<li><strong class="st">💵 Zapier's free plan gives you 100 tasks a month.</strong> Not 100 conversations. Tasks (<a href="https://zapier.com/pricing" target="_blank">Zapier pricing</a>).</li>
+<li><strong class="st">➗ Each MCP tool call costs two tasks.</strong> Zapier states that "each successful tool call through your MCP server consumes two tasks from your Zapier plan. Failed tool calls do not consume tasks" (<a href="https://help.zapier.com/hc/en-us/articles/36265392843917-Use-Zapier-MCP-with-your-client" target="_blank">Zapier's MCP help doc</a>). So free realistically means around fifty actions a month.</li>
+<li><strong class="st">📈 One prompt can be several calls.</strong> "Read my newsletter stats, then draft a post, then schedule it" is three tool calls, which is six tasks, from one sentence. Budget by actions, not by prompts.</li>
+<li><strong class="st">🧾 Paid starts at $19.99 a month billed annually.</strong> That is the Professional tier at 750 tasks a month, which is roughly 375 tool calls. Free is genuinely fine for testing and for one or two small weekly routines. It is not enough to run your business on.</li>
+</ol>
+<div class="tip calm">🌱 <strong>On the Claude side there is no paywall to clear.</strong> Custom connectors work on every Claude plan including Free, though Free is capped at one custom connector in total, and on Team or Enterprise an owner has to add it at the organisation level before members can use it (<a href="https://support.claude.com/en/articles/11175166-about-custom-connectors-remote-mcp" target="_blank">Anthropic's connector docs</a>). If you are on Free, spend your one connector slot on this, because it is the one that fronts everything else.</div>
+
+<hr class="rule">
+<span class="kicker">the setup</span>
+<h2>Wire the bridge, about ten minutes <span class="gi" style="--gl:#4C395C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 2V6M8.5 6V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.00446 7.61331C5.93719 6.74273 6.63957 6 7.53014 6H16.4699C17.3604 6 18.0628 6.74273 17.9955 7.61331L17.8117 9.99197C17.6796 11.7019 17.1011 13.3498 16.132 14.7773L15.5312 15.6622C14.9638 16.4979 14.0077 17 12.9838 17H11.0162C9.99228 17 9.03617 16.4979 8.46881 15.6622L7.86803 14.7773C6.89885 13.3498 6.32041 11.7019 6.18827 9.99197L6.00446 7.61331Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 9H13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>No terminal, no config files, no developer account. Have a Zapier login and a Claude login open in two tabs and work through these in order.</p>
+<ol class="steps">
+<li><strong class="st">🗝️ Sign in to Zapier and connect the apps you care about.</strong> Go to <a href="https://zapier.com/mcp" target="_blank">zapier.com/mcp</a> and sign in. Any app you have already connected to Zapier in the past is carried over automatically, so if you have ever built a Zap, you are further along than you think.</li>
+<li><strong class="st">🆕 Create the server.</strong> Open <a href="https://mcp.zapier.com" target="_blank">mcp.zapier.com</a> and click <strong>+ New MCP Server</strong>. In the MCP Client dropdown choose <strong>Claude</strong>, give the server a name you will recognise later such as "Claude bridge", and click <strong>Create MCP Server</strong>.</li>
+<li><strong class="st">🧰 Add your actions, and only your actions.</strong> On the server's tools screen, add the specific actions you want Claude to be able to run, for example Gmail "create draft", LinkedIn "create share update", Google Calendar "create event". A new server does nothing until you add tools, which is a feature: Claude can only ever reach what you deliberately handed it.</li>
+<li><strong class="st">🔗 Open the Connect tab and copy your URL.</strong> Your server has its own private address on the <strong>Connect</strong> tab, along with client-specific instructions for Claude. Treat that URL like a password, because anyone holding it can drive the actions you just enabled.</li>
+<li><strong class="st">➕ Add it to Claude.</strong> In the Claude app go to <strong>Customize</strong>, then <strong>Connectors</strong>, then <strong>Add custom connector</strong>. Paste your Zapier server URL, name it, save, and complete the sign-in prompt if one appears. Zapier notes that on Claude you need to be the owner of your Claude organisation to add a new server.</li>
+<li><strong class="st">💻 Or do it in Claude Code.</strong> Same server, one line in your terminal: <code>claude mcp add --transport http zapier YOUR-SERVER-URL</code>. Then type <code>/mcp</code> to check it connected. The full command reference is in <a href="https://docs.claude.com/en/docs/claude-code/mcp" target="_blank">Anthropic's MCP docs</a>.</li>
+<li><strong class="st">🔛 Turn it on inside the conversation.</strong> Start a new chat, open the connectors menu in that chat, and switch the Zapier connector on. This is the step almost everyone forgets, then concludes the whole thing is broken.</li>
+<li><strong class="st">🧪 Test it before you trust it.</strong> Ask Claude to list every tool it can see through the Zapier connector. If the list matches the actions you added in step three, you are wired correctly. If it comes back empty, you either added no tools or the connector is off in this chat.</li>
+</ol>
+<div class="tip warn">💡 <strong>Start with drafts, not sends.</strong> For the first week, add only actions that create something you have to approve: create draft, create event, add row. Do not add "send email" on day one. You are building trust in a system that can act on your behalf, and the cheapest way to do that is to make every early mistake recoverable.</div>
+
+<hr class="rule">
+<span class="kicker">pick well</span>
+<h2>The six actions I would add first <span class="gi" style="--gl:#DB5C78" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15V14H21V15C21 17.8284 21 19.2426 20.1213 20.1213C19.2426 21 17.8284 21 15 21H9C6.17157 21 4.75736 21 3.87868 20.1213C3 19.2426 3 17.8284 3 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 14L3.00001 12.9999C3.00003 11.5278 3.00004 10.7918 3.31675 10.1584C3.63347 9.52493 4.22231 9.08329 5.39999 8.20002C6.19297 7.60528 6.58946 7.30791 7.05132 7.15395C7.51317 7 8.00879 7 9.00002 7H15C15.9912 7 16.4868 7 16.9487 7.15395C17.4105 7.3079 17.807 7.60527 18.6 8.2C19.7777 9.08328 20.3666 9.52492 20.6833 10.1584C21 10.7918 21 11.5279 21 13V14H3Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 12V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 12V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.49997 7.00006V6.50006C8.49997 5.0956 8.49997 4.39337 8.83703 3.88892C8.98295 3.67054 9.17045 3.48304 9.38883 3.33712C9.89328 3.00006 10.5955 3.00006 12 3.00006C13.4044 3.00006 14.1067 3.00006 14.6111 3.33712C14.8295 3.48304 15.017 3.67054 15.1629 3.88892C15.5 4.39337 15.5 5.0956 15.5 6.50006V7.00006" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Resist adding fifty tools. A shorter list makes Claude pick the right tool more reliably, and it keeps your task spend predictable.</p>
+<div class="cardgrid">
+<div class="minicard"><b>✉️ Gmail: create draft</b> The highest value, lowest risk action there is. Claude writes, you read and press send. Nothing leaves without you.</div>
+<div class="minicard"><b>📅 Google Calendar: create event</b> Turns "book that in for Thursday afternoon" into a real block with a real title, instead of a note you lose.</div>
+<div class="minicard"><b>💼 LinkedIn: create share update</b> Zapier's LinkedIn integration includes create share update and create company update (<a href="https://zapier.com/apps/linkedin/integrations" target="_blank">Zapier's LinkedIn integrations</a>).</div>
+<div class="minicard"><b>📊 Google Sheets: create row</b> Your cheapest database. Anything Claude finds, researches or decides can be logged where you can sort it later.</div>
+<div class="minicard"><b>💬 Slack: send channel message</b> Good for a scheduled digest to yourself. A private channel is a lovely place for Claude to leave you notes.</div>
+<div class="minicard"><b>⏳ Delay by Zapier</b> The scheduling piece. Pair it with a posting action when you want something to go out later rather than now (<a href="https://zapier.com/apps/delay/integrations" target="_blank">Delay by Zapier</a>).</div>
+</div>
+<div class="tip">💡 <strong>Where native beats the bridge.</strong> If Claude already has a first-party connector for a tool, use that instead and save your Zapier tasks. Check <strong>Customize</strong>, then <strong>Connectors</strong>, before you go build a bridge to something already sitting in the directory.</div>
+
+<hr class="rule">
+<span class="kicker">copy these</span>
+<h2>The 5 prompts I run through it <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Every one of these assumes the connector is on in the chat. Swap the bracketed parts for your own tools and numbers.</p>
+
+<p>Start here, always. This is the prompt that saves you an hour of confused debugging.</p>
+<div class="promptwrap">
+<span class="promptlabel">1 · map what you can actually do</span>
+<pre><code>List every tool you can currently see through my Zapier connector, grouped by the app they belong to, and for each one tell me in plain language what it does and whether it reads data or changes something.
+
+Then tell me honestly what I cannot do yet with this set. If there is an obvious gap for someone who publishes content weekly and runs an email list, name the specific Zapier action I should go and add to close it.
+
+Finally, flag any tool in the list that could do something irreversible if you used it carelessly, so I can decide whether to keep it enabled or remove it.</code></pre>
+</div>
+
+<p>The chain from the reel. Notice it stops for approval before anything is published.</p>
+<div class="promptwrap">
+<span class="promptlabel">2 · newsletter to LinkedIn, end to end</span>
+<pre><code>Look at my most recent newsletter through the connected tools, work out which section got the most engagement, and turn that section into a LinkedIn post.
+
+Judge the winning section on click data if you can reach it, and on open-and-position reasoning if you cannot, and say clearly which basis you used so I know how much to trust it. Then rewrite that section as a standalone LinkedIn post of 120 to 200 words that makes sense to someone who never saw the newsletter, opens on the specific idea rather than a throat-clearing line, and ends with a question people can answer from experience.
+
+Show me the draft first and wait. Do not create the post until I reply with the word POST, and when I do, create it through the LinkedIn action and tell me exactly what you sent.</code></pre>
+</div>
+
+<p>The one that quietly gives you back a morning a week.</p>
+<div class="promptwrap">
+<span class="promptlabel">3 · inbox triage into drafts</span>
+<pre><code>Go through the emails in my inbox from the last 24 hours and sort them into three groups: needs a real reply from me, can be answered with a short standard response, and needs no reply at all.
+
+For everything in the second group, create a Gmail draft in my voice: warm, direct, no filler openers, no "I hope this finds you well", and under 100 words unless the question genuinely needs more. Do not send any of them. Leave every one as a draft.
+
+Then give me a single short list of the first group, ordered by who is waiting longest, with one line each on what they actually want. If anything looks time sensitive or like it involves money, put it at the top and say why.</code></pre>
+</div>
+
+<p>Because a chain you cannot inspect is a chain you will stop trusting.</p>
+<div class="promptwrap">
+<span class="promptlabel">4 · the weekly log</span>
+<pre><code>Every time you complete a task for me through the Zapier connector this week, add a row to my Google Sheet called AI actions log with the date, the app, the exact action you took, a one-line description of why, and whether I approved it first.
+
+At the end of the week, read that sheet back and give me a summary: how many actions you took, which apps they were spread across, which ones I approved versus which ones ran automatically, and roughly how many Zapier tasks that consumed at two tasks per call.
+
+Then tell me which of those actions were genuinely useful and which were busywork I would be better off not automating. Be blunt about the second list.</code></pre>
+</div>
+
+<p>And the one that turns a good week into a repeatable one.</p>
+<div class="promptwrap">
+<span class="promptlabel">5 · the Monday setup block</span>
+<pre><code>It is Monday morning. Using the connected tools, put my week together in one pass.
+
+Read my calendar for the next seven days and tell me where my genuinely free blocks are, in my timezone, ignoring anything under 45 minutes because I cannot do deep work in a gap that size. Then take my three priorities for the week, which I will paste below, and create calendar events for each one in the blocks you found, naming them clearly enough that future me knows what the block is for.
+
+Before you create anything, show me the proposed schedule as a simple list and wait for me to say yes. If two priorities compete for the same block, say which one you would drop and why rather than squeezing both in.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">be realistic</span>
+<h2>What the bridge is not good at <span class="gi" style="--gl:#DE5E6A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6.00081 17.9992M17.9992 18L6 6.00085" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Knowing the edges is what keeps this useful rather than frustrating.</p>
+<div class="cardgrid">
+<div class="minicard"><b>⏱️ It is not a scheduler</b> Claude acts when you ask. For "post this on Thursday at 9am", pair a posting action with Delay by Zapier, or keep scheduling in the tool that already does it well.</div>
+<div class="minicard"><b>📉 Deep analytics stay shallow</b> Zapier actions are built for moving records around, not for rich reporting. For real numbers, use a native connector or export a file and let Claude read that.</div>
+<div class="minicard"><b>🧭 Too many tools confuses it</b> With sixty actions enabled, Claude picks the wrong one more often. Curate the list and keep it small on purpose.</div>
+<div class="minicard"><b>💸 Retries are not free</b> A prompt that quietly fails and retries burns tasks. Watch your Zapier task counter in the first fortnight so the bill never surprises you.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">make it stick</span>
+<h2>Turn your best chain into one command <span class="gi" style="--gl:#BA7A10" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Once a chain has worked three times, stop retyping it. A skill is a small folder with a SKILL.md file inside that teaches Claude a process once, then triggers itself whenever your request matches. Paste this to build one.</p>
+<div class="promptwrap">
+<span class="promptlabel">✨ build the repurpose skill</span>
+<pre><code>Build me a reusable Claude skill called newsletter-repurpose that runs my newsletter to LinkedIn chain through my connected Zapier tools, and use skill-creator to package it.
+
+The description should say: use this when I ask to repurpose my newsletter, turn my email into a post, or write this week's LinkedIn post. The steps are: find my most recent newsletter, identify the highest engagement section and state the evidence used, rewrite it as a 120 to 200 word standalone LinkedIn post in my voice, then show me the draft.
+
+Two hard rules in the SKILL.md. Never publish anything without an explicit approval word from me in the message, and always report which tool you used and what it did after every action so I have a trail. If a tool it needs is not connected, it should say so plainly and stop rather than inventing the result.</code></pre>
+</div>
+<ol class="steps">
+<li><strong class="st">📦 Take the folder it hands you.</strong> skill-creator finishes with a folder containing a SKILL.md. Ask it to zip that folder so it is ready to upload.</li>
+<li><strong class="st">➕ Install it.</strong> In the Claude app go to <strong>Customize</strong>, then <strong>Skills</strong>, then <strong>Add</strong>, then <strong>Upload a skill</strong>, and choose the zip. In Claude Code, drop the unzipped folder into <code>~/.claude/skills/</code>. Skills work on every plan, Free included (<a href="https://support.claude.com/en/articles/12512198-creating-custom-skills" target="_blank">Anthropic's skills guide</a>).</li>
+<li><strong class="st">🌱 Use it as a sentence.</strong> "Do this week's LinkedIn post" now runs the whole chain, connector and all, while you do something that actually needs you.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">when it goes wrong</span>
+<h2>The four things that break <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>"I don't have access to that app"</b> The connector is off in this chat, or you never added that specific action in Zapier. Check the chat toggle first, then your server's tool list.</div>
+<div class="minicard"><b>It sees zero tools</b> A brand new Zapier MCP server has no tools by default. Go back to mcp.zapier.com and add the actions you want before blaming Claude.</div>
+<div class="minicard"><b>Actions fail silently</b> Usually the underlying app connection in Zapier has expired. Reconnect the app in Zapier itself, not in Claude, then retry.</div>
+<div class="minicard"><b>Tasks vanish faster than expected</b> Every successful call is two tasks and one prompt can be several calls. Ask Claude to report each tool call it makes, then reconcile against your Zapier task counter.</div>
+</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://zapier.com/mcp" target="_blank">Zapier MCP: connect AI tools to 9,000+ apps</a><br>
+  <a href="https://help.zapier.com/hc/en-us/articles/36265392843917-Use-Zapier-MCP-with-your-client" target="_blank">Use Zapier MCP with your client (setup and task costs)</a><br>
+  <a href="https://zapier.com/pricing" target="_blank">Zapier pricing and task allowances</a><br>
+  <a href="https://support.claude.com/en/articles/11175166-about-custom-connectors-remote-mcp" target="_blank">About custom connectors (remote MCP)</a><br>
+  <a href="https://docs.claude.com/en/docs/claude-code/mcp" target="_blank">Claude Code MCP documentation</a><br>
+  <a href="https://modelcontextprotocol.io/" target="_blank">The Model Context Protocol specification</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cross-model project folder · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="A simple project folder that lets Claude, Codex and Gemini share the same context, so you never re-explain your project.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/cross-model-project-folder">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Cross-model project folder">
+<meta property="og:description" content="A simple project folder that lets Claude, Codex and Gemini share the same context, so you never re-explain your project.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/cross-model-project-folder">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cross-model project folder">
+<meta name="twitter:description" content="A simple project folder that lets Claude, Codex and Gemini share the same context, so you never re-explain your project.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Cross-model project folder", u:"guides/cross-model-project-folder.html", topic:"productivity", tool:"stack"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Business systems</span>
+        <span class="gtag tool">AI</span>
+      </div>
+      <h1>Cross-model project folder</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 A simple project folder that lets Claude, Codex and Gemini share the same context, so you never re-explain your project.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<h2 id="download-the-starter-folder">Download the starter folder</h2>
+<p><strong>Download:</strong> <a
+href="https://cindyzhu.com.au/guides/files/cross-model-project-starter.zip">https://cindyzhu.com.au/guides/files/cross-model-project-starter.zip</a></p>
+<p>Unzip it at the root of a new or existing project. Review every
+example before an AI uses it. Do not put credentials, private customer
+data, or unapproved claims into shared context.</p>
+<h2 id="the-folder-tree">The folder tree</h2>
+<pre class="text"><code>cross-model-project-starter/
+├── PROJECT_MAP.md
+├── AGENTS.md
+├── CLAUDE.md
+├── GEMINI.md
+├── Decisions/
+│   └── DECISION_TEMPLATE.md
+├── Processes/
+│   └── PROCESS_TEMPLATE.md
+├── References/
+│   └── REFERENCE_INDEX.md
+├── Inputs/
+│   └── README.txt
+└── Outputs/
+    └── README.txt</code></pre></div>
+<h2 id="what-each-part-does">What each part does</h2>
+<h3 id="project_mapmd">PROJECT_MAP.md</h3>
+<p>The front door for a person or model:</p>
+<ul>
+<li>what the project is</li>
+<li>what matters now</li>
+<li>current owner</li>
+<li>definition of done</li>
+<li>where each kind of truth lives</li>
+</ul>
+<p>Keep it short. A map points somewhere; it does not contain the whole
+company.</p>
+<h3 id="decisions">Decisions</h3>
+<p>Record choices you do not want reopened every session:</p>
+<ul>
+<li>what was chosen</li>
+<li>owner and date</li>
+<li>evidence and trade-offs</li>
+<li>consequences</li>
+<li>measurable condition for revisiting it</li>
+</ul>
+<p>Do not hide an unresolved proposal inside the decision log as if it
+were approved.</p>
+<h3 id="processes">Processes</h3>
+<p>Store repeatable instructions:</p>
+<ul>
+<li>outcome</li>
+<li>required inputs</li>
+<li>exact steps</li>
+<li>objective quality checks</li>
+<li>human approval point</li>
+<li>edge cases learned from real runs</li>
+</ul>
+<p>Update the process when reality disagrees.</p>
+<h3 id="references">References</h3>
+<p>Stable rules, approved examples, definitions, source links, brand
+rules, and facts. Give every reference an owner and last-reviewed
+date.</p>
+<h3 id="inputs-and-outputs">Inputs and Outputs</h3>
+<ul>
+<li><strong>Inputs:</strong> raw, unapproved material waiting for
+work</li>
+<li><strong>Outputs:</strong> approved final artifacts</li>
+</ul>
+<p>Do not let an agent treat an Input as approved truth. Keep the state
+visible in the folder name and file.</p>
+<h2 id="why-three-adapter-files-exist">Why three adapter files
+exist</h2>
+<p>There is no single magic filename every model reads identically.</p>
+<ul>
+<li><strong>Claude Code</strong> reads <code>CLAUDE.md</code>. Anthropic
+explicitly recommends a thin <code>CLAUDE.md</code> that imports
+<code>@AGENTS.md</code> when a repository already uses AGENTS.md.</li>
+<li><strong>Codex</strong> reads <code>AGENTS.md</code> and
+<code>AGENTS.override.md</code> from the project hierarchy, subject to
+its project-document budget.</li>
+<li><strong>Gemini CLI</strong> reads <code>GEMINI.md</code> by default
+and supports <code>@file.md</code> imports. Its
+<code>context.fileName</code> setting can also include AGENTS.md.</li>
+</ul>
+<p>The starter uses:</p>
+<pre class="text"><code>CLAUDE.md → @AGENTS.md
+GEMINI.md → @./AGENTS.md
+AGENTS.md → PROJECT_MAP.md + shared operating rules</code></pre></div>
+<p>Shared context lives once. Model-specific behaviour stays thin.</p>
+<h2 id="migrate-a-messy-project">Migrate a messy project</h2>
+<ol type="1">
+<li><strong>Inventory, do not reorganise yet.</strong> List the current
+files, chats, links, and recurring tasks.</li>
+<li><strong>Choose one source of truth per topic.</strong> Mark
+duplicates and stale copies.</li>
+<li><strong>Write PROJECT_MAP.md.</strong> Point to the chosen
+sources.</li>
+<li><strong>Move durable choices into Decisions.</strong></li>
+<li><strong>Turn one repeated task into a Process.</strong></li>
+<li><strong>Separate raw Inputs from approved Outputs.</strong></li>
+<li><strong>Add the three thin adapters.</strong></li>
+<li><strong>Run one real task with each model.</strong></li>
+<li><strong>Fix missing context at the source, not inside a new giant
+prompt.</strong></li>
+<li><strong>Archive duplicates only after the new map
+works.</strong></li>
+</ol>
+<h2 id="the-portability-test">The portability test</h2>
+<p>Give a blank-session model one task and the folder. It should be able
+to answer:</p>
+<ul>
+<li>What am I trying to produce?</li>
+<li>Which files are authoritative?</li>
+<li>What decisions are already closed?</li>
+<li>What needs human approval?</li>
+<li>What proves the task is done?</li>
+</ul>
+<p>If it cannot, improve the map or process. Do not duplicate the whole
+context into another adapter.</p>
+<h2 id="important-boundary">Important boundary</h2>
+<p>This folder gives supported agent tools discoverable Markdown. A
+generic chat model still needs the files uploaded or connected.
+Instructions are context, not hard access control. Use permissions and
+tool gates for actions that must be blocked.</p>
+<h2 id="official-references">Official references</h2>
+<ul>
+<li>Claude Code project memory and AGENTS.md import: <a
+href="https://code.claude.com/docs/en/memory">https://code.claude.com/docs/en/memory</a></li>
+<li>Codex instruction discovery: <a
+href="https://openai.com/index/unrolling-the-codex-agent-loop/">https://openai.com/index/unrolling-the-codex-agent-loop/</a></li>
+<li>Gemini CLI GEMINI.md hierarchy and imports: <a
+href="https://geminicli.com/docs/cli/gemini-md/">https://geminicli.com/docs/cli/gemini-md/</a></li>
+</ul>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

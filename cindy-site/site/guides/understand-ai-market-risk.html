@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turn AI trading headlines into an evidence-based risk brief · Cindy Zhu</title>
+<link rel="stylesheet" href="../styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<!-- seo:auto -->
+<meta name="description" content="A prompt that turns an AI trading headline into a one-page, source-linked brief that separates the facts from the predictions.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/understand-ai-market-risk">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Turn AI trading headlines into an evidence-based risk brief">
+<meta property="og:description" content="A prompt that turns an AI trading headline into a one-page, source-linked brief that separates the facts from the predictions.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/understand-ai-market-risk">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Turn AI trading headlines into an evidence-based risk brief">
+<meta name="twitter:description" content="A prompt that turns an AI trading headline into a one-page, source-linked brief that separates the facts from the predictions.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head><body>
+<!-- GUIDES_CARD {t:"Turn AI trading headlines into an evidence-based risk brief", u:"guides/understand-ai-market-risk.html", topic:"money", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap"><div class="guidewrap"><a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a><div class="guidehead"><h1>Turn AI trading headlines into an evidence-based risk brief</h1></div><div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 A prompt that turns an AI trading headline into a one-page, source-linked brief that separates the facts from the predictions.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<hr class="rule">
+<h2>Understand what the claim is actually about</h2>
+<p>Algorithmic trading is a broad category. A fixed-rule system, a machine-learning prediction model and an LLM agent making tool calls are not interchangeable. Before accepting a headline about agents taking over a market, identify the actual system, its authority and the evidence of deployment.</p>
+<p>The <a href="https://www.fsb.org/2024/11/the-financial-stability-implications-of-artificial-intelligence/" target="_blank" rel="noopener">Financial Stability Board’s AI report</a> identifies possible vulnerabilities including correlated market behaviour, concentrated providers, cyber risk and model/data governance. It describes risks to monitor, not a prediction that a particular crash must happen.</p>
+<p>The <a href="https://www.rba.gov.au/publications/fsr/2024/sep/focus-topic-financial-stability-implications-of-artificial-intelligence.html" target="_blank" rel="noopener">Reserve Bank of Australia’s financial-stability review</a> discusses how shared models and data may make decisions more correlated. A common input can lead to similar reactions; whether that destabilises a market depends on positions, liquidity and safeguards.</p>
+<div class="tip">Speed is not evidence of accuracy. Nor does a longer holding period guarantee better returns. Keep market commentary separate from your personal investment decisions.</div>
+<hr class="rule">
+<h2>Bring the evidence, not your brokerage login</h2>
+<ol class="steps">
+<li><strong class="st">Choose one claim</strong>Copy the article URL and the exact paragraph you want explained. Include its publication date, author and any report it cites.</li>
+<li><strong class="st">Add the source material</strong>Open <a href="https://claude.ai/" target="_blank" rel="noopener">Claude</a> and paste the excerpt or upload the report you are entitled to use. Web search is helpful where your account provides it; pasted source material also works without browsing.</li>
+<li><strong class="st">Run the complete prompt</strong>Paste the prompt below. It produces the finished brief, rewrites overconfident statements and names what the source does not establish. Do not connect trading accounts or provide passwords, balances or personal holdings.</li>
+</ol>
+<hr class="rule">
+<h2>The one-run evidence brief</h2>
+<div class="promptwrap"><span class="promptlabel">Explain this AI-market claim with its evidence</span><pre><code>Turn the public article or report I provide into a concise financial-education brief. Do not give me trades, price targets, portfolio allocations or personalized financial advice. Ask at most three missing questions if essential; otherwise use the supplied material and state the limits.
+
+First identify the exact claim and the system described: fixed-rule algorithm, statistical machine-learning model, LLM assistant, or tool-using agent. If the source does not establish which, say unknown rather than guessing. Distinguish an agent producing research from an agent authorized to execute orders.
+
+Return the finished brief with these sections:
+1. What is documented: up to four factual statements, each linked to the exact supplied source and dated. If browsing is available, open primary references before citing them. Never invent a citation or treat a search snippet as the full report. If access fails, label the supplied excerpt and the verification limit.
+2. How the risk could work: explain one concrete chain, such as shared input → similar decisions → concentrated orders → stress when liquidity is thin. Label hypothetical steps as a scenario, and include one condition that could interrupt the chain. Do not state that all agents think alike.
+3. What the headline overstates: separate observed evidence, simulations, forecasts and opinion. Rewrite the headline and its most exaggerated sentence into accurate, still-readable wording.
+4. What the source does not prove: identify unsupported claims about market share, guaranteed crashes, superiority over humans, or a profitable time horizon.
+5. A plain-language takeaway: under 80 words explaining the finding without telling me how to invest.
+
+Keep the complete brief under 600 words. Explain unfamiliar terms on first use. Include an evidence table with claim, source, date and evidence type. Finish with one or two primary links for further reading, not a list of homework.
+
+Article or excerpt: [paste here]</code></pre></div>
+<hr class="rule">
+<h2>What a useful result looks like</h2>
+<p>Example input: a headline saying that identical AI agents will cause the next flash crash. A sound brief would identify whether the article describes observed trading or a proposed scenario, explain the possible correlation mechanism and avoid turning a risk warning into an inevitable outcome.</p>
+<p>A finished correction might read: ‘Shared AI models could increase correlated decisions in some markets; the scale and consequences depend on adoption, liquidity and controls.’ That is an example of calibrated wording, not a new empirical finding.</p>
+<div class="tip">If the answer introduces a percentage, a named fund or a crash date that is absent from the evidence, rerun with: ‘Remove every claim you cannot tie to a source you actually opened or to my supplied excerpt. Return the corrected brief now.’</div>
+<hr class="rule">
+<h2>Use the brief safely</h2>
+<ol class="steps">
+<li><strong class="st">Open the key source</strong>Check that the linked report contains the claimed finding and that its date matches the brief. A working link is not enough if it does not support the statement.</li>
+<li><strong class="st">Keep uncertainty visible</strong>Do not strip away words such as may, scenario or simulation when sharing. Those terms describe what kind of evidence you have.</li>
+<li><strong class="st">Keep real decisions separate</strong>This resource is for understanding AI’s role in markets. For decisions involving your money, use current regulated disclosures and appropriately qualified advice; do not treat the prompt as a suitability assessment.</li>
+</ol>
+<hr class="rule">
+<h2>Primary sources</h2>
+<p><a href="https://www.fsb.org/2024/11/the-financial-stability-implications-of-artificial-intelligence/" target="_blank" rel="noopener">FSB: The financial stability implications of artificial intelligence</a> and <a href="https://www.rba.gov.au/publications/fsr/2024/sep/focus-topic-financial-stability-implications-of-artificial-intelligence.html" target="_blank" rel="noopener">RBA: Financial stability implications of artificial intelligence</a> provide the risk context. The briefing prompt is a practical reading workflow, not a regulator-approved investment method.</p>
+</div></div></div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer><script src="../guide-kit.js" defer></script><script src="/site.js" defer></script>
+</body></html>

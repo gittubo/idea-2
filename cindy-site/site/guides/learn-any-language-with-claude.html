@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a language tutor in Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Build a language tutor in Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/learn-any-language-with-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build a language tutor in Claude">
+<meta property="og:description" content="Build a language tutor in Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/learn-any-language-with-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build a language tutor in Claude">
+<meta name="twitter:description" content="Build a language tutor in Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build a language tutor in Claude", u:"guides/learn-any-language-with-claude.html", topic:"start", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Getting started</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Build a language tutor in Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented FLUENT, so here is the whole setup. It is one Claude Project, a set of instructions you paste in once, and three drills you run on repeat.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn"><strong>Two honest things first.</strong> Claude is a very patient conversation partner, not a certified teacher, and it can get idioms, regional usage and formality registers subtly wrong, especially in less widely written languages. Treat it as unlimited practice reps, then sanity-check anything you plan to actually say to a person. And if a streak app is what gets you to open your phone every day, keep it. This sits on top of that, it does not replace the habit.</div>
+
+<span class="kicker">start here</span>
+<h2>What you are actually building <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A Claude Project is a saved workspace with its own instructions and its own uploaded files. Every chat you start inside that project already knows the setup, so you never re-explain your language, your level, or how you want to be corrected. That is the whole trick: the instructions carry over, so session two is not a fresh start.</p>
+<p>Projects are available on every plan including Free, where you can create up to 5 of them. Details are in Anthropic's <a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">what are Projects</a> article, and the plan breakdown is on the <a href="https://www.anthropic.com/pricing" target="_blank">Claude pricing page</a>. One project is all this needs.</p>
+<div class="cardgrid">
+<div class="minicard"><b>📌 Project instructions</b> The rules Claude follows in every chat inside the project. Your language, your level, how hard to correct you.</div>
+<div class="minicard"><b>📁 Project knowledge</b> Files you upload once. This is where your progress log and your vocab list live so Claude can actually adapt.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the setup</span>
+<h2>Build it in five minutes <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">💻 Open Claude.</strong> Go to <a href="https://www.claude.com/product/overview" target="_blank">claude.ai</a> and sign in, or open the desktop or mobile app. Free plan is fine to start.</li>
+<li><strong class="st">➕ Create a new project.</strong> In the left sidebar, click Projects, then the button to create a new one. Name it something obvious like "Spanish tutor" so it is easy to find at 7am.</li>
+<li><strong class="st">📌 Paste the instructions.</strong> Open the project's instructions field and paste the block below, with your own language, level and goals filled in. This is the part that does the heavy lifting, so spend two minutes on it rather than twenty seconds.</li>
+<li><strong class="st">📝 Add a progress log.</strong> Make a plain text or Markdown file called <code>progress.md</code> with three headings: words I know, mistakes I keep making, things I want to be able to say. Upload it to project knowledge. It can start almost empty.</li>
+<li><strong class="st">🗣️ Run your first drill.</strong> Start a chat inside the project and paste drill one below. That is it, you are practising.</li>
+</ol>
+
+<span class="kicker">copy this</span>
+<h2>The project instructions <span class="gi" style="--gl:#CF516C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21L8 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13.2585 18.8714C9.51516 18.0215 5.97844 14.4848 5.12853 10.7415C4.99399 10.1489 4.92672 9.85266 5.12161 9.37197C5.3165 8.89129 5.55457 8.74255 6.03071 8.44509C7.10705 7.77265 8.27254 7.55888 9.48209 7.66586C11.1793 7.81598 12.0279 7.89104 12.4512 7.67048C12.8746 7.44991 13.1622 6.93417 13.7376 5.90269L14.4664 4.59604C14.9465 3.73528 15.1866 3.3049 15.7513 3.10202C16.316 2.89913 16.6558 3.02199 17.3355 3.26771C18.9249 3.84236 20.1576 5.07505 20.7323 6.66449C20.978 7.34417 21.1009 7.68401 20.898 8.2487C20.6951 8.8134 20.2647 9.05346 19.4039 9.53358L18.0672 10.2792C17.0376 10.8534 16.5229 11.1406 16.3024 11.568C16.0819 11.9955 16.162 12.8256 16.3221 14.4859C16.4399 15.7068 16.2369 16.88 15.5555 17.9697C15.2577 18.4458 15.1088 18.6839 14.6283 18.8786C14.1477 19.0733 13.8513 19.006 13.2585 18.8714Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the full block. Replace anything in square brackets, delete nothing else. The correction rules at the bottom are the difference between a chatbot that flatters you and something that actually teaches.</p>
+<div class="promptwrap">
+<span class="promptlabel">📌 paste into project instructions</span>
+<pre><code>You are my personal language tutor for [target language]. I am a [native language] speaker at roughly [beginner / A2 / intermediate / B1 / advanced] level, and my goal is to be able to [the specific conversations you want to have, for example "order food, make small talk with my partner's family, and handle a work call"].
+
+How to run every session. Speak to me mostly in [target language], at a level just slightly above what I can comfortably handle, and drop into [native language] only when I am clearly stuck or when I ask for a grammar explanation. Keep your turns short, two or three sentences, so I do most of the talking. Always end your turn with a question, so the conversation never stalls on me.
+
+How to correct me. Correct every mistake, but never break the flow to do it. Reply naturally first, then add a short block at the end of your message headed "corrections" with each mistake, what I wrote, the natural version, and a five-word reason. If I make the same mistake three times, stop and drill it with three quick practice sentences before we continue. Do not tell me something was great when it was not, and do not praise a sentence that a native speaker would find odd.
+
+Track my level. At the end of every session, write me a short summary block I can paste into my progress log: new words I used correctly, the mistakes I repeated, and one thing to work on next time. Read progress.md in the project knowledge before you start a session, so you can reuse vocabulary I already know and re-test the mistakes I keep making.
+
+Never invent slang or claim a phrase is common if you are not confident. If a phrase is regional, formal, dated or would sound strange from a foreigner, say so and give me the safer version instead.</code></pre>
+</div>
+<div class="tip calm">Not sure what level to write? Use the <a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages" target="_blank">CEFR bands</a> (A1 through C2). Or write it in plain words, like "I can read menus and understand slow speech but I freeze when someone asks me a question." Claude handles that description perfectly well.</div>
+
+<hr class="rule">
+<span class="kicker">drill one</span>
+<h2>Role play a real scene <span class="gi" style="--gl:#348CDF" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9C7.46589 8.38677 9.61061 8 12 8C14.3894 8 16.5341 8.38677 18 9" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M9 11.5C9.93974 11.176 10.9492 11 12 11C13.0508 11 14.0603 11.176 15 11.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M8 15C9.17669 15.636 10.5429 16 12 16C13.4571 16 14.8233 15.636 16 15" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M6 10C6 13.2571 4.1688 14.9419 3.05731 14.9985C3.02153 15.0003 2.98891 14.9808 2.97139 14.9496C2.15656 13.4966 2 11.7879 2 10C2 6.68629 2.89543 4 4 4C5.10457 4 6 6.68629 6 10Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 10C18 13.2571 19.8312 14.9419 20.9427 14.9985C20.9785 15.0003 21.0111 14.9808 21.0286 14.9496C21.8434 13.4966 22 11.7879 22 10C22 6.68629 21.1046 4 20 4C18.8954 4 18 6.68629 18 10Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21 15C19.2035 17.989 15.8458 20 12 20C8.15423 20 4.79648 17.989 3 15" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>The reason this beats reviewing flashcards is pressure. You have to produce a sentence in real time, get it slightly wrong, and get fixed. Pick a scene you will genuinely be in, not a textbook scenario.</p>
+<div class="promptwrap">
+<span class="promptlabel">🎭 role play with live corrections</span>
+<pre><code>Role play with me. You are [a barista in a busy cafe in Madrid / my partner's mother meeting me for the first time / a receptionist at a doctor's clinic], and I am the customer. Stay fully in character in [target language] and never break character to explain things mid-scene.
+
+Start the scene yourself with one natural opening line, the way a real person would, including the small talk. Keep your replies short and realistic, use contractions and filler words a real speaker would use, and if I say something odd, react the way a real person would react rather than smoothing it over for me.
+
+Run the scene for about ten exchanges, then stop and give me the corrections block: what I said, the natural version, and a short reason. Finish by rating how understandable I would have been to a real person on a scale of one to five, and give me two phrases I should have known for this scene that I did not use.
+
+If I go silent or clearly do not understand you, repeat yourself more slowly with simpler words before you switch to [native language].</code></pre>
+</div>
+<div class="tip">On the Claude mobile app you can run this out loud with <a href="https://support.claude.com/en/articles/11088861-how-do-i-use-voice-mode" target="_blank">voice mode</a> instead of typing, which is a very different exercise. Typing lets you compose a sentence carefully. Speaking forces you to produce it before you are ready, which is the skill that actually transfers.</div>
+
+<hr class="rule">
+<span class="kicker">drill two</span>
+<h2>The handwriting check <span class="gi" style="--gl:#A68307" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.4249 4.60509L17.4149 3.6151C18.2351 2.79497 19.5648 2.79497 20.3849 3.6151C21.205 4.43524 21.205 5.76493 20.3849 6.58507L19.3949 7.57506M16.4249 4.60509L9.76558 11.2644C9.25807 11.772 8.89804 12.4078 8.72397 13.1041L8 16L10.8959 15.276C11.5922 15.102 12.228 14.7419 12.7356 14.2344L19.3949 7.57506M16.4249 4.60509L19.3949 7.57506" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18.9999 13.5C18.9999 16.7875 18.9999 18.4312 18.092 19.5376C17.9258 19.7401 17.7401 19.9258 17.5375 20.092C16.4312 21 14.7874 21 11.4999 21H11C7.22876 21 5.34316 21 4.17159 19.8284C3.00003 18.6569 3 16.7712 3 13V12.5C3 9.21252 3 7.56879 3.90794 6.46244C4.07417 6.2599 4.2599 6.07417 4.46244 5.90794C5.56879 5 7.21252 5 10.5 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Writing by hand is slow, and that is the point. It surfaces the gaps that multiple choice hides. Claude can read a photo of your notebook page and go through it word by word.</p>
+<ol class="steps">
+<li><strong class="st">✍️ Write a short paragraph by hand.</strong> Five or six sentences about your actual day, in your target language, no dictionary and no translation app. Getting it wrong is the useful part.</li>
+<li><strong class="st">📷 Photograph the page.</strong> Flat surface, good light, whole page in frame. If your handwriting is small, take two photos rather than one blurry one.</li>
+<li><strong class="st">📎 Upload it into your project chat.</strong> Attach the photo, then paste the prompt below in the same message.</li>
+<li><strong class="st">📝 Update your log.</strong> Copy the repeated mistakes into <code>progress.md</code> and re-upload it, so next week's sessions target them.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">✍️ word-by-word handwriting breakdown</span>
+<pre><code>This is a photo of a paragraph I handwrote in [target language] without a dictionary. First, transcribe exactly what you can read, character for character, and flag anything you genuinely cannot make out rather than guessing at it.
+
+Then mark it up properly. Go sentence by sentence and for each one give me: what I wrote, the corrected version, and a short plain-language reason for the change. Separate real errors from things that are technically correct but would sound unnatural, because those are different problems and I want to know which is which.
+
+Then zoom out. Tell me the two or three patterns behind my mistakes, for example a tense I keep avoiding, a gender or particle I keep getting wrong, or word order that is following my native language. Rank them by how much they are holding me back.
+
+Finish with three practice sentences targeting my single worst pattern, in [native language], for me to translate back to you right now.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">drill three</span>
+<h2>A story built only from words you know <span class="gi" style="--gl:#8F83A5" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 7H8.5M12.499 11H8.49902" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20 22H6C4.89543 22 4 21.1046 4 20M4 20C4 18.8954 4.89543 18 6 18H20V6C20 4.11438 20 3.17157 19.4142 2.58579C18.8284 2 17.8856 2 16 2H10C7.17157 2 5.75736 2 4.87868 2.87868C4 3.75736 4 5.17157 4 8V20Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19.5 18C19.5 18 18.5 18.7628 18.5 20C18.5 21.2372 19.5 22 19.5 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This one is quietly the most effective of the three. Reading something you can almost entirely understand, with a small number of new words in context, is the reading equivalent of lifting slightly heavier than last week. Linguists call the underlying idea <a href="https://en.wikipedia.org/wiki/Comprehensible_input" target="_blank">comprehensible input</a>.</p>
+<div class="promptwrap">
+<span class="promptlabel">📖 a story at exactly your level</span>
+<pre><code>Write me a short story in [target language], around 250 words, using only vocabulary and grammar I have already shown you in this project plus a maximum of eight new words. Pick the eight new words deliberately, so they are words I will genuinely use given my goals, not obscure literary ones.
+
+Make it a real story with a small amount of tension and a proper ending, set in [a place or situation relevant to me]. Do not write a textbook dialogue, and do not label the difficulty level inside the story.
+
+Underneath the story, list the eight new words with a short definition in [native language] and the sentence from the story where each one appears. Then ask me five comprehension questions in [target language] that I have to answer in [target language], and wait for my answers before telling me anything.
+
+After I answer, correct my answers, and tell me honestly whether the story was too easy, about right, or too hard, based on how I did. Adjust the next one accordingly.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">make it stick</span>
+<h2>The 15-minute daily loop <span class="gi" style="--gl:#664D8A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.0809 13.152L8 7L13.4196 11.2796C14.1901 11.888 14.1941 13.0472 13.4277 13.6607C12.6614 14.2743 11.5189 14.0266 11.0809 13.152Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5 4.82C3.14864 6.63902 2 9.17385 2 11.9776C2 17.5129 6.47715 22.0001 12 22.0001C17.5228 22.0001 22 17.5129 22 11.9776C22 7.1242 18.5581 3.07656 13.9872 2.15288C13.1512 1.98394 12.7332 1.89947 12.3666 2.20022C12 2.50097 12 2.98714 12 3.95949V4.96175" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Three drills is plenty. The thing that decides whether this works is whether you run them, so here is the version that fits into an actual day.</p>
+<ol class="steps">
+<li><strong class="st">🎭 Minutes 1 to 8, role play.</strong> One scene, in the project, voice mode if you can. Do not prepare, that is cheating the exercise.</li>
+<li><strong class="st">📖 Minutes 8 to 13, read.</strong> One story, answer the five questions without scrolling back up.</li>
+<li><strong class="st">📝 Minutes 13 to 15, log it.</strong> Ask Claude for the session summary block, paste it into <code>progress.md</code>, re-upload. This is the step everyone skips and it is the one that makes week four smarter than week one.</li>
+<li><strong class="st">✍️ Once a week, handwrite.</strong> The handwriting check is a weekly exam, not a daily drill. Sunday morning with a coffee works well.</li>
+</ol>
+<div class="tip warn">Claude does not automatically read every past chat in a project. The instructions and the uploaded files are what carry over reliably, which is exactly why the progress log matters. Keep <code>progress.md</code> current and your tutor adapts. Skip it and every session resets to the same level.</div>
+
+<hr class="rule">
+<span class="kicker">good to know</span>
+<h2>What this does not replace <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Being straight with you: an AI tutor is unbeatable for reps, patience and never being embarrassed. It is weaker on live listening at natural speed, on accent, and on the cultural read of when a phrase is fine and when it is odd. These four fill those gaps, and three of them cost nothing.</p>
+<div class="cardgrid">
+<div class="minicard"><b>🃏 <a href="https://apps.ankiweb.net/" target="_blank">Anki</a></b> Free and open source spaced repetition, on desktop and Android (the iOS app is paid). Feed it the words from your progress log so they stay in your head between sessions.</div>
+<div class="minicard"><b>🗣️ <a href="https://tandem.net/" target="_blank">Tandem</a></b> Language exchange with real speakers, free tier available. You teach them your language, they teach you theirs. This is where you find out whether your phrasing actually lands.</div>
+<div class="minicard"><b>💬 <a href="https://www.hellotalk.com/" target="_blank">HelloTalk</a></b> Similar idea with a bigger feed and text-first chat, free tier available. Good for low-pressure daily writing with corrections from natives.</div>
+<div class="minicard"><b>🎧 Native media</b> Podcasts, shows and creators in your target language. Paste a transcript into your Claude project and ask it to pull out the phrases worth stealing, at your level.</div>
+</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

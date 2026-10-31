@@ -151,3 +151,13 @@ contact labels. It does not cover `/design-system`.
    removing it makes guides faster. It's another one-line find-and-replace.
 5. **Button label.** The header button keeps your "Join the waitlist" label. The mockup says
    "Join the Club". Say if you want it changed.
+
+## Guide library on the preview
+
+`site/guides/` holds all 551 of Cindy's guides, plus the images and downloads they use
+(`guides/img/`, `guides/assets/`, `guides/files/`). Every file was downloaded from
+cindyzhu.com.au unchanged, so the preview shows each real guide in the new look purely
+through `styles.css`. Her interactive demos (`/ripple-demo`, `/scrunch-demo`,
+`/bedtime-story-demo`, `/brain`, `/play/*`), `/canva-film`, `/privacy` and `/terms` are not
+copied. `netlify.toml` redirects them to her live site. Those redirects are not forced,
+so they never fire on her own site, where the real pages exist.

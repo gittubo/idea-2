@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!-- GUIDES_CARD {t:"Build a Jarvis that briefs you every morning (Claude + Fish Audio)", u:"guides/build-a-jarvis-that-briefs-you.html", topic:"building", tool:"claude"} -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a Jarvis that briefs you every morning · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="This is the Jarvis I actually wake up to: a dashboard that reads my whole day out loud in a British voice.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/build-a-jarvis-that-briefs-you">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build a Jarvis that briefs you every morning">
+<meta property="og:description" content="This is the Jarvis I actually wake up to: a dashboard that reads my whole day out loud in a British voice.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/build-a-jarvis-that-briefs-you">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build a Jarvis that briefs you every morning">
+<meta name="twitter:description" content="This is the Jarvis I actually wake up to: a dashboard that reads my whole day out loud in a British voice.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Build a Jarvis that briefs you every morning","description":"I actually built my own Jarvis, a command center that reads me my whole day out loud in a British butler voice every morning, so this is the real, honest...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/build-a-jarvis-that-briefs-you"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building &amp; apps</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Build a Jarvis that briefs you every morning</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This is the Jarvis I actually wake up to: a dashboard that reads my whole day out loud in a British voice.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p><a class="btn" href="files/jarvis-starter-kit.zip" download>↓ Download the starter kit</a></p>
+
+<div class="tip calm">🗺 <strong>The three layers.</strong> <strong>The visual:</strong> hand Claude Code a reference image and it builds the front end. <strong>The backend:</strong> paste the build manual, then authorise your own connectors so it reads your real calendar, inbox and notes. <strong>The voice:</strong> Fish Audio reads the brief out loud. Layer two is the one people skip, and it's the only reason a Jarvis is useful instead of just pretty.</div>
+
+<hr class="rule">
+<span class="kicker">layer one, the visual</span>
+<h2>Get the dashboard on your screen <span class="gi" style="--gl:#3A90BE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 21H16M14 21C13.1716 21 12.5 20.3284 12.5 19.5V17L12 17M14 21H10M10 21H8M10 21C10.8284 21 11.5 20.3284 11.5 19.5V17L12 17M12 17V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 3H8C5.17157 3 3.75736 3 2.87868 3.87868C2 4.75736 2 6.17157 2 9V11C2 13.8284 2 15.2426 2.87868 16.1213C3.75736 17 5.17157 17 8 17H16C18.8284 17 20.2426 17 21.1213 16.1213C22 15.2426 22 13.8284 22 11V9C22 6.17157 22 4.75736 21.1213 3.87868C20.2426 3 18.8284 3 16 3Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<figure class="guidefig">
+<img src="assets/jarvis-reference.jpg" alt="A dense blue heads-up-display desktop: a large glowing central ring assembly, CPU and RAM gauges, a world map, a calendar, a weather panel and rows of small readouts, the kind of Jarvis command-center look to hand Claude as a reference image.">
+<figcaption>This is the reference I handed Claude. Grab any HUD you like off Pinterest, the prompt works the same.</figcaption>
+</figure>
+<ol class="steps">
+<li><strong class="st">💻 Install Claude Code</strong> Run <code>curl -fsSL https://claude.ai/install.sh | bash</code>, then <code>claude</code>. That's the native installer the <a href="https://code.claude.com/docs/en/setup">setup docs</a> recommend. It is not on the Free plan.</li>
+<li><strong class="st">🖼 Give it the picture</strong> Drag your reference image onto the Claude Code terminal, paste it, or point at it with <code>@reference.jpg</code>.</li>
+<li><strong class="st">🔁 Run the build loop</strong> Paste the prompt below. It builds the interface, screenshots its own work, compares it to your reference, and closes the gaps.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">🖥 paste into Claude Code, with your reference image attached</span>
+<pre><code>Here's a reference image of the dashboard vibe I want (attached). Build it as ONE self-contained dashboard.html file (Canvas plus CSS, no external libraries). Near-black navy background, a glowing central core with orbital rings and rotating dashed HUD arcs, and a heads-up layout: top-left a JARVIS title, subtitle and today's date; top-right a live ticking clock and a connector status list (green dot online, amber blinking offline); a streaming activity log down the left that reveals one line at a time; a stats panel on the right with thin glowing bars; a calendar and a weather panel; big figures across the bottom; and a bottom bar with a glowing "BRIEF ME" button.
+
+Read ALL the numbers and text from a separate jarvis_data.js that sets window.JARVIS_DATA, so I only edit that file day to day. Save brief.mp3 alongside dashboard.html, add a hidden audio element for it, and make clicking BRIEF ME play it and pulse the core while it speaks.
+
+Make it look expensive and responsive. Then take a screenshot of what you built, compare it to my reference image, list the differences, and fix them. Repeat until it matches.</code></pre>
+</div>
+<div class="tip warn">⏳ <strong>Two honest things.</strong> The self-correction only works if Claude can see its own work, so give it a way to screenshot: Claude for Chrome, the Chrome DevTools MCP, Claude Code's built-in browser, or a headless browser from the terminal. Without one, you're the one checking each pass, and it takes two or three. And what you get here is a <em>shell</em> reading static values from <code>jarvis_data.js</code>. It's beautiful and it knows nothing. Layer two is what makes the numbers real.</div>
+
+<hr class="rule">
+<span class="kicker">make it yours</span>
+<h2>Tell Claude who you are <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This single file is the difference between your Jarvis and a generic bot. It's why yours knows a slipped deadline on project two matters more than a full inbox. In your project folder, ask Claude Code to create a CLAUDE.md, then make it specific. Make a priorities note while you're here, even five ranked bullets, because the brief ranks your day from it and can't invent one.</p>
+<div class="promptwrap">
+<span class="promptlabel">📝 your CLAUDE.md, fill in the brackets</span>
+<pre><code># Who I am
+I'm [name], I [what you do]. I care most about [your #1 goal right now].
+
+# What I'm working on this month
+- [project 1], [project 2], [project 3]
+
+# My priorities, ranked
+1. [top priority]  2. [next]  3. [next]
+
+# My tone
+[e.g. warm, direct, no corporate filler]
+
+# Hard rules
+- Always draft, never send. Never take irreversible actions without asking.
+- Only use the apps I've connected.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">layer two, the backend</span>
+<h2>Paste the build manual <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Don't read this one, just copy the whole block. It's the architecture behind my Jarvis, and it saves itself as a skill you can trigger by phrase.</p>
+<div class="promptwrap">
+<span class="promptlabel">📋 the build manual, paste into Claude Code</span>
+<pre><code>You are my personal assistant, my own Jarvis. First, read my CLAUDE.md so you know who I am, my projects, my priorities and my tone. From now on, act as a proactive chief of staff for me, not a generic chatbot.
+
+Keep this skill fully self-contained: list every source to pull and exactly how to format the brief, because when it runs on a schedule it has no memory of our chats.
+
+Build me a "morning brief" routine, and save it as a reusable skill I can trigger by phrase (like "run my morning brief", "brief me", or "what's on my plate"). When I trigger it, do this:
+
+1. CALENDAR: read today's events from my Google Calendar. Flag anything that needs prep, and any conflicts or gaps.
+2. INBOX: scan my Gmail from the last 24 hours. Group it into needs-a-reply / FYI / ignore. For the needs-a-reply group, draft short replies in my tone and leave them in Drafts. Never send.
+3. PRIORITIES + TASKS: read my priorities and task list (from my Notion or my priorities note), and pick the 3 things that actually matter most today, ranked, with a one-line why for each.
+4. ONE THING TO KNOW: surface a single important signal, a deadline, a number that moved, a follow-up I'm forgetting.
+
+Then write it as 6 to 8 short spoken lines, in my voice, warm and direct, no filler. END with the single most important question: "What should I handle first?"
+
+Write the brief in [your language]. Save it to brief.txt and to a Notion page. Then rewrite jarvis_data.js so the dashboard shows today's real numbers and a one-line activity log per source you read, and mark each connector online or offline based on whether the call actually succeeded. Then read the brief out loud through my Fish Audio voice.
+
+If a source is empty or a connector is down, say so plainly in the brief and mark it offline on the dashboard. Never fill a gap with a plausible guess.
+
+Rules, always: you draft, I approve. Never send email, post, delete, or take any irreversible action on your own. Only pull from the apps I've connected.</code></pre>
+</div>
+<p>So you're not pasting blind, this is the shape of what comes back:</p>
+<div class="cardgrid">
+  <div class="minicard"><b>📅 Calendar</b> Today's events, what needs prep, and where the gaps and clashes are.</div>
+  <div class="minicard"><b>📥 Inbox</b> Last 24 hours sorted into needs-a-reply, FYI and ignore, with drafts waiting.</div>
+  <div class="minicard"><b>🎯 Priorities</b> The three things that actually matter today, ranked, each with a one-line why.</div>
+  <div class="minicard"><b>💡 One thing to know</b> A single signal you would otherwise have missed.</div>
+</div>
+<p>The skill saves itself to <code>~/.claude/skills/&lt;name&gt;/SKILL.md</code>. Ask Claude Code for more the same way, and it reaches for them automatically when a request matches:</p>
+<div class="cardgrid">
+  <div class="minicard"><b>🌅 "run my morning brief"</b> The full routine above.</div>
+  <div class="minicard"><b>✍️ "draft my replies"</b> Triages the inbox and drafts responses in your tone.</div>
+  <div class="minicard"><b>💬 "answer customer queries"</b> Reads your FAQs, drafts support replies, escalates anything not covered.</div>
+  <div class="minicard"><b>📊 "how are my numbers"</b> Pulls your revenue or content stats into a quick read.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">this is the part people skip</span>
+<h2>Authorise your connectors <span class="gi" style="--gl:#4C395C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 2V6M8.5 6V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.00446 7.61331C5.93719 6.74273 6.63957 6 7.53014 6H16.4699C17.3604 6 18.0628 6.74273 17.9955 7.61331L17.8117 9.99197C17.6796 11.7019 17.1011 13.3498 16.132 14.7773L15.5312 15.6622C14.9638 16.4979 14.0077 17 12.9838 17H11.0162C9.99228 17 9.03617 16.4979 8.46881 15.6622L7.86803 14.7773C6.89885 13.3498 6.32041 11.7019 6.18827 9.99197L6.00446 7.61331Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 9H13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A connector is an authorised link between the brain and a service you already use. It's the difference between Claude <em>talking about</em> your calendar and Claude <em>reading</em> it. <strong>Nobody can do this step for you.</strong> The prompt above is portable; your authorisations are yours, and until you grant them your beautiful dashboard is a screensaver.</p>
+<ol class="steps">
+<li><strong class="st">🌐 Authorise on the web, once</strong> Go to <a href="https://claude.ai/customize/connectors">claude.ai/customize/connectors</a>. In the sidebar that's <strong>Customize</strong>, then <strong>Connectors</strong>. Connect one, approve it on that service's own consent screen.</li>
+<li><strong class="st">🔁 The terminal inherits it</strong> You do not set connectors up twice. If you signed into Claude Code with your claude.ai account, connectors you added on the web are automatically available in the terminal. Run <code>/mcp</code> to see them. Ones you've never used hide behind a "Show unused connectors" row.</li>
+<li><strong class="st">✅ Test one read before you trust it</strong> Ask for one read-only fact, then check it against the source with your own eyes. "How many rows in my tasks database are marked done?", then open the database and count. If it matches, move to the next connector.</li>
+<li><strong class="st">➕ Then add the next one</strong> One connector, one verified read, then the next. Slower, and the only route to ever reading the 8am brief without silently re-checking it.</li>
+</ol>
+<div class="tip warn">⚠️ <strong>Do not try to add Gmail or Calendar from the terminal.</strong> Some Anthropic-hosted connectors, Gmail, Google Calendar and Microsoft 365 among them, don't support local OAuth from Claude Code, because the upstream identity provider only accepts the redirect URL claude.ai registered. <code>claude mcp add</code> will fail with "is Anthropic-hosted and doesn't support local OAuth". Connect those on the web and let the CLI inherit them. <code>claude mcp add --transport http NAME https://the-mcp-url/mcp</code> then <code>claude mcp login NAME</code> is for third-party servers that publish their own MCP URL.</div>
+<div class="tip warn">🕵️ <strong>If a connector you definitely added is missing, check your auth first.</strong> Connectors are only fetched when your active login is a claude.ai subscription. They are silently not loaded when <code>ANTHROPIC_API_KEY</code>, <code>ANTHROPIC_AUTH_TOKEN</code> or <code>apiKeyHelper</code> is active, when a third-party provider like Bedrock is in play, or when <code>CLAUDE_CODE_OAUTH_TOKEN</code> holds a long-lived token. Run <code>/status</code> to see which auth is actually live. An <code>ANTHROPIC_API_KEY</code> left in your shell profile from an old experiment will hide every connector you own, with no error.</div>
+<p><strong>What each one can and cannot do.</strong> Worth knowing before you design a routine around it:</p>
+<div class="cardgrid">
+  <div class="minicard"><b>📅 Google Calendar</b> Reads events and shared calendars, creates and updates them, finds mutual availability. It cannot see calendars your own Google account can't see, and it has no memory between runs, it re-queries every time.</div>
+  <div class="minicard"><b>📥 Gmail</b> Searches and reads with natural language, drafts, and <b>sends, replies and forwards</b>. It <b>cannot read attachment contents</b>, only metadata. If your workflow needs the PDF someone sent you, this is not the tool.</div>
+  <div class="minicard"><b>📝 Notion</b> Searches the workspace, fetches pages, queries databases, creates and updates pages. It cannot see anything you haven't shared with the integration, and it rate-limits per workspace.</div>
+  <div class="minicard"><b>🔐 All of them</b> Claude inherits your permissions and can only see and do what you already can. A "the page isn't there" answer is nearly always a sharing problem, not a model problem.</div>
+</div>
+<div class="tip warn">🚨 <strong>The Gmail connector can send. Read that twice.</strong> Drafts-only is a discipline you impose, not a wall the tool provides. Approval prompts are the documented default, but a scheduled cloud routine has no approval prompt at all. So the drafts-only rule has to be written into the skill, written into the routine prompt, and the send capability left out of anything unattended. You'll also find older Anthropic doc pages claiming Claude "cannot send or modify emails". Those are stale, the live tool surface exposes send, reply and forward, and assuming the read-only version is a genuinely unsafe thing to build on.</div>
+<div class="tip">🔧 <strong>The failure that will cost you an evening.</strong> A connector says "needs auth". You reconnect it on the web, watch the green tick, come back to the terminal, and it <em>still</em> says needs auth. The connection is fine. Claude Code is reading a stale local cache at <code>~/.claude/mcp-needs-auth-cache.json</code>, keyed by connector display name, and a successful web re-login doesn't always clear the entry. Back the file up, remove that connector's key (or delete the file, it rebuilds), then <strong>fully quit and reopen</strong> Claude Code, Cmd+Q rather than closing the window. This is internal client state, not a documented API, so re-check the filename if it moves. The durable lesson is the symptom: when the web says connected and the client says needs auth, suspect a stale cache before you suspect your account.</div>
+
+<hr class="rule">
+<span class="kicker">layer three, the voice</span>
+<h2>Give it the British voice <span class="gi" style="--gl:#8B8591" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 6.5C7 4.01472 9.01472 2 11.5 2C13.9853 2 16 4.01472 16 6.5V11.5C16 13.9853 13.9853 16 11.5 16C9.01472 16 7 13.9853 7 11.5V6.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11.5 19H11.0828C7.57267 19 4.57706 16.4623 4 13M11.5 19H11.9172C15.4273 19 18.4229 16.4623 19 13M11.5 19V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is what makes it feel like Jarvis. Sign up at <a href="https://fish.audio/?fpr=cindy10">Fish Audio</a>, then:</p>
+<ol class="steps">
+<li><strong class="st">🇬🇧 Design the voice from a text prompt</strong> <a href="https://docs.fish.audio/features/voice-design">Voice Design</a> builds a voice from a description like "calm British butler, warm, measured", no recording needed. You can also clone your own from about 10 seconds of clean audio. Don't clone a real celebrity.</li>
+<li><strong class="st">🆔 Copy the reference ID</strong> Open your voice and take the 32-character ID from its URL, <code>fish.audio/m/&lt;id&gt;</code>. That's what tells the API which voice to speak in.</li>
+<li><strong class="st">🔑 Put your API key in a .env file</strong> Create a <code>.env</code> in your project with <code>FISH_API_KEY=your-key</code>, and add <code>.env</code> to your <code>.gitignore</code>. This keeps the key out of your code so it can't leak when you share the folder.</li>
+<li><strong class="st">🎭 Add emotion so it isn't flat</strong> Drop <a href="https://docs.fish.audio/api-reference/emotion-reference">bracket tags</a> into the text: <code>[calm] Your 3pm is confirmed. [excited] The launch numbers are in.</code></li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">🔧 paste into Claude Code, wire up the voice with a fallback chain</span>
+<pre><code>Write me a speak script that turns text into audio and plays it, with three tiers so it never goes silent:
+
+1. Fish Audio. POST https://api.fish.audio/v1/tts, model sent as an HTTP header (model: s2.1-pro-free), reference_id and text in the body, API key read from FISH_API_KEY in my .env file. Generate the speech in [your language].
+2. If that fails, fall back to edge-tts with the voice en-GB-RyanNeural at --rate=-4%.
+3. If that fails, fall back to the built-in system voice (say -v Daniel on macOS).
+
+Two things that matter: after the API call, check the response is ACTUALLY audio before playing it (check the bytes with `file`, not just the HTTP status), and check the exit code and that the output file exists before moving on, so a failure falls through to the next tier instead of silently producing nothing.
+
+Print which tier spoke, like "voice: fish-audio" or "voice: edge-tts fallback", so I can see when my main voice quietly stopped working.
+
+Save the audio as brief.mp3 in the same folder as dashboard.html so the BRIEF ME button finds it.</code></pre>
+</div>
+<div class="tip warn">🐍 <strong>The bug that eats an hour, and it's why the fallback chain is written that way.</strong> <code>python3</code> is not one program. Homebrew's <code>/opt/homebrew/bin/python3</code> usually comes first on your PATH and may not have <code>edge_tts</code> installed, while <code>/usr/bin/python3</code> does. So a script calling bare <code>python3 -m edge_tts</code> fails in the script and works when you type it in the terminal. If the call is wrapped without a return-code check, it fails <em>completely silently</em>: no audio, no error, no clue. Find the right interpreter with <code>for p in $(which -a python3); do echo -n "$p: "; $p -c "import edge_tts; print('ok')" 2>&1 | head -1; done</code>, then hardcode that absolute path, or make a dedicated virtualenv and remove the ambiguity permanently.</div>
+<div class="tip calm">💸 <strong>The honest cost picture.</strong> <code>s2.1-pro-free</code> is <a href="https://docs.fish.audio/developer-guide/models-pricing/pricing-and-rate-limits">$0.00 per million UTF-8 bytes</a> under Fish's fair-use policy, with no hard character cap. If that changes, the paid rate is $15 per million UTF-8 bytes, roughly 180,000 English words or 12 hours of speech, and there are no subscription fees or monthly minimums for API access. Four things worth knowing: a typo in the model header silently falls back to the paid <code>s2.1-pro</code>, so check that string; free-tier requests may be used to improve model quality; if your product is over $1M ARR Fish asks you to contact them first; and because billing is per UTF-8 byte, a Chinese character costs about three times an English one. It speaks 83 languages, so your Jarvis can brief you in any of them. Voice Design itself costs $0.01 per request and the web app gates it behind the Plus tier.</div>
+
+<hr class="rule">
+<span class="kicker">wiring the two together</span>
+<h2>Make the dashboard actually live <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Right now you have a front end reading a static file, and a skill that can write that file. Connecting them is one instruction, and then one decision about how you open the page.</p>
+<div class="promptwrap">
+<span class="promptlabel">🔗 paste into Claude Code, close the loop</span>
+<pre><code>Every time my morning brief skill runs, have it rewrite jarvis_data.js from what it actually read: today's date, the event count and next event, the unread and needs-a-reply counts, my top 3 priorities, and one activity-log line per source. Set each connector's status to online only if that call actually returned data, otherwise offline. Never write a number the run didn't actually retrieve. Then serve the folder at http://localhost:8787 with a tiny local server, and give me a one-line script that starts the server and opens the page.</code></pre>
+</div>
+<div class="tip">🌐 <strong>Open it at localhost, not by double-clicking the file, and here's the real reason.</strong> From a <code>file://</code> page, <code>fetch('/ask')</code> resolves to <code>file:///ask</code>, which isn't a route, it's a path on disk that doesn't exist. You can't fix it with an absolute URL either, because <code>file:</code> URLs get an <em>opaque origin</em>, and the browser sends <code>Origin: null</code> or refuses the request outright. No header on your server can fix that. Common myth worth ignoring: people say the mic fails because <code>file://</code> isn't a secure context. Not true, the spec explicitly treats <code>file:</code> as potentially trustworthy. The fetch is the blocker, not the mic. And <code>http://localhost</code> is treated as secure, so everything works there.</div>
+<div class="tip">🔇 <strong>Autoplay.</strong> Browsers block script-initiated <code>play()</code> without a user gesture, and a blocked call rejects rather than throwing. Your BRIEF ME button satisfies the gesture, which is why it works. Handle the rejection anyway, because a scheduled brief has no gesture behind it. Check the server is alive with <code>curl -s -o /dev/null -w "%{http_code}" http://localhost:8787/</code>, expect 200.</div>
+
+<hr class="rule">
+<span class="kicker">before you wake up</span>
+<h2>Run it every morning <span class="gi" style="--gl:#DD5E79" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M12 8V12L14 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The choice hinges on one question: does your brief need local files, or does it need to speak?</p>
+<div class="rolegrid">
+  <div class="rolecard"><b>🔕 Cloud routine (laptop closed)</b> Runs on Anthropic's cloud, no machine required. In Claude Code: <code>/schedule daily brief at 9am</code>, or set it at <a href="https://claude.ai/code/routines">claude.ai/code/routines</a>. It gets a fresh clone with <b>no access to your local files</b> and it <b>cannot play audio</b>, so the brief lands as text in Notion. Runs on Pro and up, with a daily cap per account.</div>
+  <div class="rolecard"><b>🔊 Local scheduled job (laptop on)</b> A launchd job on your Mac that runs the skill, makes the MP3 and plays it. Ask Claude Code: "Set up a launchd job that runs my Jarvis brief script every morning at 9am and plays the audio." Full access to local files, and it actually talks. Your Mac has to be awake.</div>
+</div>
+<div class="tip warn">⚠️ <strong>Three things bite people here.</strong> <strong>One:</strong> a cloud routine runs with no permission prompts at all and can write through any connector you include, so include only what it needs and keep the prompt self-contained, because it has no memory of your chats. Combined with Gmail's ability to send, that isn't optional. <strong>Two:</strong> add a freshness guard so it refuses to speak a stale file. If regeneration fails, you want silence or an error, not yesterday's brief read confidently as though it were today's. Only mark the day done <em>after</em> a successful regen, so a failed run retries tomorrow instead of locking itself out. <strong>Three:</strong> a local scheduled script <strong>cannot live in your iCloud folder</strong>, scheduled jobs can't reliably run from it. Put it in <code>~/Scripts/</code>. And read the first week of runs before you trust any of it.</div>
+
+<hr class="rule">
+<span class="kicker">the real secret</span>
+<h2>Change anything by just saying it <span class="gi" style="--gl:#9082A7" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 7.10593C17.9999 8.55778 16.5891 9.89558 14.4697 11.9901C13.1062 13.3376 10.8936 13.336 9.52937 11.9892C7.41145 9.8961 5.99988 8.55754 6 7.10568C6.00012 5.65383 6.3543 5.36258 9.60848 2.14658C9.92161 1.83445 10.4602 2.05389 10.4602 2.49338L10.4604 5.80524C10.4604 6.64587 11.1488 7.32849 11.9994 7.32842C12.85 7.32835 13.5396 6.64688 13.5398 5.80625L13.5405 2.49435C13.5406 2.05485 14.0793 1.83532 14.3924 2.14739C17.646 5.36287 18.0001 5.65408 18 7.10593Z" stroke="currentColor" stroke-width="1.5"/><path d="M15 12L15 19.1652C15 20.7308 13.6569 22 12 22C10.3431 22 9 20.7308 9 19.1652L9 12" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0063 18.9995L12 19.0059" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>Your Jarvis will not be right on day one, and that's the point rather than a problem. The whole thing is built in plain English, so you fix it by telling Claude Code what's wrong:</p>
+<div class="cardgrid">
+  <div class="minicard"><b>🗣 "The brief is too long"</b> Say it. It trims to 5 lines.</div>
+  <div class="minicard"><b>🗣 "Add my top sponsor's status"</b> It adds it to the routine.</div>
+  <div class="minicard"><b>🗣 "The voice sounds too formal"</b> It re-tunes the emotion tags or swaps the voice.</div>
+  <div class="minicard"><b>🗣 "Brief me at 7am, not 9"</b> It changes the schedule.</div>
+</div>
+<div class="tip warn">🔧 <strong>If something breaks, it's almost always one of these.</strong> Connector stuck on "needs auth" after you logged in: stale cache, see the connectors section. Connector missing entirely: check <code>/status</code> for a stray API key. Voice silent with no error: the python3 path problem, or a response that wasn't actually audio. Dashboard numbers frozen: the skill isn't rewriting <code>jarvis_data.js</code>, or you're looking at a cached page. No sound in the browser: autoplay needs a click.</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

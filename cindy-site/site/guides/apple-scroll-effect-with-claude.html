@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Apple's scroll effect with Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&amp;family=Poppins:wght@300;400;500;600&amp;family=Caveat:wght@500;700&amp;family=Patrick+Hand&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Build Apple&#x27;s scroll effect with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/apple-scroll-effect-with-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build Apple&#x27;s scroll effect with Claude">
+<meta property="og:description" content="Build Apple&#x27;s scroll effect with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/apple-scroll-effect-with-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build Apple&#x27;s scroll effect with Claude">
+<meta name="twitter:description" content="Build Apple&#x27;s scroll effect with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build Apple's scroll effect with Claude", u:"guides/apple-scroll-effect-with-claude.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Build real things</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Build Apple's scroll effect with Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented APPLE, so here is the complete build: a short product animation, turned into an Apple-style scroll effect with Claude.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">understand the effect</span>
+<h2>What you are actually building <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This effect is usually called a <strong>scroll-scrubbed image sequence</strong>. A tall page creates scroll distance. A canvas stays fixed on screen. As the visitor moves down the page, JavaScript converts scroll progress into a frame number and draws that frame onto the canvas.</p>
+<div class="cardgrid">
+  <div class="minicard"><b>Input</b> A clean vertical or landscape animation exported as numbered still frames.</div>
+  <div class="minicard"><b>Controller</b> The visitor's scroll progress from 0 to 100%.</div>
+  <div class="minicard"><b>Renderer</b> An HTML canvas that displays the matching frame.</div>
+  <div class="minicard"><b>Polish</b> Preloading, responsive sizing, reduced-motion support, and text overlays.</div>
+</div>
+<div class="tip warn"><strong>Do not use a giant GIF.</strong> GIFs are heavy, limited in colour, and do not give you precise frame control. A numbered WebP or JPG sequence is easier to scrub and optimize.</div>
+
+<hr class="rule">
+<span class="kicker">step one</span>
+<h2>Create the start and end frames <span class="gi" style="--gl:#BF7362" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C12.8417 22 14 22.1163 14 21C14 20.391 13.6832 19.9212 13.3686 19.4544C12.9082 18.7715 12.4523 18.0953 13 17C13.6667 15.6667 14.7778 15.6667 16.4815 15.6667C17.3334 15.6667 18.3334 15.6667 19.5 15.5C21.601 15.1999 22 13.9084 22 12Z" stroke="currentColor" stroke-width="1.5"/><circle cx="9.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M7.125 15H7M7.25 15C7.25 15.1381 7.13807 15.25 7 15.25C6.86193 15.25 6.75 15.1381 6.75 15C6.75 14.8619 6.86193 14.75 7 14.75C7.13807 14.75 7.25 14.8619 7.25 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Use Whisk, another image generator you already like, or your own product photography. Keep the camera, lighting, product proportions, and background consistent between both frames. Only describe the transformation you want to happen.</p>
+<div class="promptwrap">
+<span class="promptlabel">start-frame prompt</span>
+<pre><code>Create a premium product hero image for [PRODUCT].
+
+Composition: [DESCRIBE THE CAMERA ANGLE AND FRAMING].
+Background: [DESCRIBE THE SET].
+Lighting: soft studio lighting with controlled highlights.
+Keep the product centred, fully visible, and easy to isolate.
+No text, logos, interface elements, hands, or extra objects.
+Aspect ratio: [16:9 OR 9:16].</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">end-frame prompt</span>
+<pre><code>Use the attached start frame as the exact visual reference.
+
+Keep the same product, camera angle, lens, lighting, colours, background, and framing. Transform only this:
+[DESCRIBE THE END STATE].
+
+The product identity and proportions must remain unchanged. No text, logos, interface elements, hands, or extra objects.</code></pre>
+</div>
+<div class="tip calm">If the product changes shape between frames, generate again before animating. Claude can fix code, but it cannot repair identity drift baked into the images.</div>
+
+<hr class="rule">
+<span class="kicker">step two</span>
+<h2>Animate between the frames <span class="gi" style="--gl:#8776B8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11C2 7.70017 2 6.05025 3.02513 5.02513C4.05025 4 5.70017 4 9 4H10C13.2998 4 14.9497 4 15.9749 5.02513C17 6.05025 17 7.70017 17 11V13C17 16.2998 17 17.9497 15.9749 18.9749C14.9497 20 13.2998 20 10 20H9C5.70017 20 4.05025 20 3.02513 18.9749C2 17.9497 2 16.2998 2 13V11Z" stroke="currentColor" stroke-width="1.5"/><path d="M17 8.90585L17.1259 8.80196C19.2417 7.05623 20.2996 6.18336 21.1498 6.60482C22 7.02628 22 8.42355 22 11.2181V12.7819C22 15.5765 22 16.9737 21.1498 17.3952C20.2996 17.8166 19.2417 16.9438 17.1259 15.198L17 15.0941" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><circle cx="11.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>Upload both images to Google Flow and create a short image-to-video transition. The camera should stay locked unless camera movement is part of the concept. Slow, simple transformations create cleaner scroll sequences than frantic motion.</p>
+<div class="promptwrap">
+<span class="promptlabel">Flow animation prompt</span>
+<pre><code>Animate a smooth premium product transition from the first reference frame to the final reference frame.
+
+Keep the camera completely locked. Preserve the product identity, proportions, materials, lighting, background, and composition throughout. The only motion should be [DESCRIBE THE TRANSFORMATION].
+
+Use slow, physically believable movement with no sudden jumps, warping, duplicate objects, text, or camera shake. Finish exactly on the supplied end frame.</code></pre>
+</div>
+<p>A clip between three and six seconds is enough. Export at the same aspect ratio you want on the website and use the highest practical quality. The website will use the extracted frames, not the video file itself.</p>
+
+<hr class="rule">
+<span class="kicker">step three</span>
+<h2>Turn the animation into frames <span class="gi" style="--gl:#BC7745" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7.5" cy="7.5" r="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M5 21C9.37246 15.775 14.2741 8.88406 21.4975 13.5424" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+  <li><strong class="st">Upload the clip.</strong> Open EZGIF's video-to-JPG tool or extract frames locally with FFmpeg.</li>
+  <li><strong class="st">Choose a useful frame rate.</strong> Start around 15 to 24 frames per second. A five-second clip at 20 fps produces about 100 frames.</li>
+  <li><strong class="st">Export numbered files.</strong> Keep names sequential, such as <code>frame-0001.webp</code>, <code>frame-0002.webp</code>, and so on.</li>
+  <li><strong class="st">Compress them.</strong> WebP is usually the best starting point. Aim for visual quality without making the full sequence painfully large.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">optional FFmpeg command</span>
+<pre><code>mkdir -p public/frames
+ffmpeg -i product-animation.mp4 -vf "fps=20,scale=1600:-2" -c:v libwebp -quality 82 public/frames/frame-%04d.webp</code></pre>
+</div>
+<p>If the sequence is still heavy, reduce the dimensions, frame rate, or WebP quality in that order. Test on a real phone using mobile data, not only on fast desktop Wi-Fi.</p>
+
+<hr class="rule">
+<span class="kicker">step four</span>
+<h2>Give Claude Code the full build brief <span class="gi" style="--gl:#9A7BBC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Place the numbered frames in your website project, then give Claude Code the prompt below. Replace the bracketed values before running it.</p>
+<div class="promptwrap">
+<span class="promptlabel">complete Claude Code prompt</span>
+<pre><code>Build a responsive scroll-scrubbed image-sequence section for this website.
+
+Assets:
+- Frames live in [FRAME FOLDER].
+- File pattern is [EXAMPLE: frame-0001.webp].
+- There are [NUMBER] frames.
+
+Behaviour:
+1. Create enough vertical scroll distance for the animation to feel controlled, around 300vh as a starting point.
+2. Keep a full-viewport canvas sticky while the user scrolls through the section.
+3. Convert progress through the section into an integer frame index from 1 to [NUMBER].
+4. Draw the matching image to the canvas using a contain-style fit, preserving aspect ratio and centring it.
+5. Preload the first frame immediately, then preload the remaining frames without blocking the page.
+6. Use requestAnimationFrame so rapid scroll events do not trigger unnecessary redraws.
+7. Recalculate canvas size on resize and account for devicePixelRatio so the result stays crisp.
+8. Add a loading state that disappears when enough frames are ready.
+9. Respect prefers-reduced-motion by showing one static representative frame instead.
+10. Do not introduce a new framework. Follow the architecture and styling already used in this project.
+
+Add three optional text overlays that fade in and out at roughly 10%, 45%, and 80% scroll progress. Keep all copy and timing values in one easy-to-edit configuration object.
+
+After implementing it, run the existing checks, explain which files changed, and tell me exactly where to edit the frame count, folder path, section height, and overlay copy.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">make it feel premium</span>
+<h2>The five details that matter <span class="gi" style="--gl:#BA7A10" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+  <div class="minicard"><b>Load the first frame first</b> The visitor should see the product immediately instead of a blank canvas.</div>
+  <div class="minicard"><b>Use device pixel ratio</b> A canvas sized only with CSS can look soft on high-density screens.</div>
+  <div class="minicard"><b>Keep the camera stable</b> Motion inside the scene feels intentional. Camera drift feels like broken tracking.</div>
+  <div class="minicard"><b>Use simple overlay timing</b> One short thought per beat. Do not cover the product with a paragraph.</div>
+  <div class="minicard"><b>Provide reduced motion</b> Some visitors explicitly ask websites not to animate. Show them a strong still frame.</div>
+  <div class="minicard"><b>Test the real network</b> A beautiful 40 MB sequence is still a bad mobile experience.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">debugging</span>
+<h2>If it is not working, check these first <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+  <li><strong class="st">The canvas is blank.</strong> Open one frame URL directly and confirm the path, numbering, file extension, and capitalization are exact.</li>
+  <li><strong class="st">Frames jump or disappear.</strong> Confirm every number exists. A missing file in the middle creates a visible gap.</li>
+  <li><strong class="st">The image looks stretched.</strong> Ask Claude to calculate a contain fit from the canvas and image aspect ratios instead of forcing width and height independently.</li>
+  <li><strong class="st">Scrolling feels laggy.</strong> Reduce image dimensions, preload in batches, and ensure drawing happens inside <code>requestAnimationFrame</code>.</li>
+  <li><strong class="st">Mobile crops the product.</strong> Keep the canvas full-screen but use contain rather than cover, then adjust the source composition if it leaves too much empty space.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">Claude debugging prompt</span>
+<pre><code>Audit the scroll-sequence implementation you just built.
+
+Check for missing frame requests, incorrect zero-padding, canvas stretching, excessive redraws, memory pressure, layout shift, weak loading behaviour, and mobile cropping. Use the browser console and network panel where available. Fix confirmed issues only, then summarize the cause and the change.</code></pre>
+</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8 ways to cut your Claude token usage · Cindy Zhu</title><meta name="description" content="Ways to cut your Claude Code token usage by removing wasted context and repeated work."><link rel="canonical" href="https://cindyzhu.com.au/guides/picture-claude-token-usage">
+<meta property="og:title" content="8 ways to cut your Claude token usage"><meta property="og:description" content="Ways to cut your Claude Code token usage by removing wasted context and repeated work."><meta property="og:url" content="https://cindyzhu.com.au/guides/picture-claude-token-usage"><meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles.css"><!-- seo:auto -->
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="8 ways to cut your Claude token usage">
+<meta name="twitter:description" content="Ways to cut your Claude Code token usage by removing wasted context and repeated work.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body><!-- GUIDES_CARD {t:"8 ways to cut your Claude token usage", u:"guides/picture-claude-token-usage.html", topic:"power", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap"><main class="guidewrap"><a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a><div class="guidehead"><div class="gtags"><span class="gtag topic">Power user</span><span class="gtag tool">Claude</span></div><h1>8 ways to cut your Claude token usage</h1></div><div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Ways to cut your Claude Code token usage by removing wasted context and repeated work.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>If Claude keeps running out of room or your allowance disappears halfway through a project, the useful question is where the work is going. You can test that. Start with one small job you understand, rather than changing every setting at once.</p>
+<hr class="rule"/><span class="kicker">part 01</span><h2>Before you change anything</h2>
+<p>This walkthrough is for Claude Code. A token is a piece of text the model processes or generates. Context occupancy, cumulative token usage and your bill are different measurements. A smaller context window does not prove the whole job used fewer tokens.</p>
+<p>Run <code>/usage</code> and record the available session token categories before clearing anything. For subscription access, plan usage bars describe your allowance; a displayed API-equivalent dollar estimate is not your subscription invoice. API billing lives in the <a href="https://platform.claude.com/" rel="noopener noreferrer" target="_blank">Claude Console</a>. The <a href="https://code.claude.com/docs/en/costs" rel="noopener noreferrer" target="_blank">usage documentation</a> explains these distinctions. Reducing waste can help an allowance last longer, but it does not reduce a fixed subscription price. There is no universal 80% result.</p>
+<p>Keep your model, task and success check the same during your first comparison. If an app version does not expose the token records you need, write “not available” and compare rework and completion instead. Do not convert a usage bar into a made-up token count.</p>
+<hr class="rule"/><span class="kicker">part 02</span><h2>1. Give the task a boundary</h2>
+<p>Replace “improve my website” with a request that names the file, the change and the check. For example: “In the contact form component, add an error message for an empty email address. Keep the current layout. Check empty, malformed and valid inputs.”</p>
+<p>You are giving Claude enough information to choose a sensible starting point. You are not forbidding it from reading a dependency that matters. If you do not know the file, ask for a short search to locate it before making changes. The <a href="https://code.claude.com/docs/en/best-practices" rel="noopener noreferrer" target="_blank">best-practices guide</a> has further examples of giving Claude a verifiable outcome.</p>
+<hr class="rule"/><span class="kicker">part 03</span><h2>2. Match effort to the task</h2>
+<p>Open the model and effort controls. Where your selected model supports it, try <code>/effort medium</code> for a bounded edit. Low effort can be worth testing for a very straightforward transformation; a difficult debugging task may need more reasoning.</p>
+<p>Effort can save as your default for that model, so run <code>/effort auto</code> to reset it. A cheaper model is a separate pricing choice, and it does not establish that fewer tokens were used. See <a href="https://code.claude.com/docs/en/model-config" rel="noopener noreferrer" target="_blank">model configuration</a> for supported levels.</p>
+<hr class="rule"/><span class="kicker">part 04</span><h2>3. Start fresh when the job changes</h2>
+<p>Before switching from website work to a different project, save the finished changes and a short handover: decisions, important files and remaining work. Then use <code>/clear</code> for the unrelated job.</p>
+<p>For the same continuing project, use <code>/compact</code> with a focus, such as preserving the failing test and decisions already made. Read the resulting summary before relying on it. Compaction uses model work itself. Clearing does not refund previous usage or refresh an account allowance. Record your measurement first because session totals can reset with the session.</p>
+<hr class="rule"/><span class="kicker">part 05</span><h2>4. Separate core guidance from occasional procedures</h2>
+<p>Open your project's <code>CLAUDE.md</code>. Keep instructions that apply to most work here: how to run checks, important project conventions and genuinely recurring constraints. Move a long procedure used only for one kind of task into a skill.</p>
+<p>The <a href="https://code.claude.com/docs/en/memory" rel="noopener noreferrer" target="_blank">memory documentation</a> explains project guidance, and <a href="https://code.claude.com/docs/en/skills" rel="noopener noreferrer" target="_blank">skills documentation</a> explains loading reusable procedures when relevant. Skill descriptions still occupy some context. The benefit comes from avoiding the full procedure on jobs that do not need it, rather than making instructions free.</p>
+<hr class="rule"/><span class="kicker">part 06</span><h2>5. Keep the useful part of a long log</h2>
+<p>Ask Claude to save a verbose tool result to a file and report the failing test, relevant error and file location first. It can inspect surrounding lines if the short excerpt is insufficient.</p>
+<p>For example, ask for the first failure and its stack trace before rerunning a large test suite. Do not delete the full log; it is your evidence if the summary misses something. The aim is to avoid repeatedly dragging irrelevant output through the conversation. Lines and tokens are different units, so do not report a token reduction based on line count.</p>
+<hr class="rule"/><span class="kicker">part 07</span><h2>6. Inspect app connections before disabling them</h2>
+<p>Use <code>/context</code> to inspect what is taking space, then <code>/mcp</code> to review connected servers. Keep connections that support the task and disable unnecessary ones when they create actual overhead.</p>
+<p>Claude Code already supports deferred tool discovery, so the number of installed servers alone is not a good measure of their cost. The <a href="https://code.claude.com/docs/en/mcp" rel="noopener noreferrer" target="_blank">MCP guide</a> explains tool loading and connection management. After changing a connection, test the action you still need before continuing with a longer run.</p>
+<hr class="rule"/><span class="kicker">part 08</span><h2>7. Delegate a separate job, not the whole conversation</h2>
+<p>Begin with one agent. Add another when there is a bounded task it can do independently, such as inspecting a particular module while the main agent works elsewhere. Give it a short question and ask for a compact result.</p>
+<p>Separate context helps keep the main conversation readable, but the other agent still consumes usage. Include that work in your measurement. Review the <a href="https://code.claude.com/docs/en/sub-agents" rel="noopener noreferrer" target="_blank">subagent documentation</a> before changing their configuration. Stop completed teammates rather than leaving unnecessary activity running.</p>
+<hr class="rule"/><span class="kicker">part 09</span><h2>8. Correct the direction early</h2>
+<p>If Claude is editing the wrong component or building more than you asked for, press Escape and redirect it. Say what was wrong and restate the finish line. This is often more useful than waiting for a polished answer to the wrong task.</p>
+<p>Ask for a small check after the first meaningful change. For the contact form example, inspect the error state before adding further validation. You are trying to catch a wrong assumption while it is still cheap to fix.</p>
+<hr class="rule"/><span class="kicker">part 10</span><h2>Use this prompt on your next task</h2>
+<div class="promptwrap"><span class="promptlabel">copy this prompt</span><pre><code class="language-prompt">Help me complete this bounded task: [task]. The relevant files or starting location are [location], and a correct result must pass these checks: [checks]. First identify the smallest useful scope and ask about any missing decision that would change the work.
+
+Keep project-wide instructions concise, inspect only relevant files initially, and save verbose logs to a file while showing the failure and necessary context. Do not remove evidence or skip a check merely to save usage. If the work starts to require a broader change, explain why before expanding it.
+
+At the end, give me the completed result, checks performed, any rework, and the usage records actually available. Separate context occupancy from cumulative tokens and separate token counts from pricing estimates. Do not invent savings or infer token counts from line counts.
+</code></pre></div>
+<hr class="rule"/><span class="kicker">part 11</span><h2>Compare two runs honestly</h2>
+<p>Use a disposable copy or branch so each run starts from the same state. Record the model, effort, change tested, available input/output/cache categories, retries and whether the result passed. Repeat a promising comparison because one run can vary.</p>
+<p>Your finish line is a correct result with less unnecessary work. If tokens fall but the output needs more repair, restore the setting. If a count is unavailable, keep the observation qualitative. Start today by writing the file, change and success check for one task; that is useful even before you touch a setting.</p>
+<p>For another practical walkthrough, browse <a href="https://cindyzhu.com.au/guides" rel="noopener noreferrer" target="_blank">all free guides</a>.</p>
+<div class="gcallout">Keep building from here. Find more practical walkthroughs in <a href='/guides'>my free guide library</a>.</div>
+</div></main></div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer><script src="../guide-kit.js" defer></script><script src="/site.js" defer></script>
+</body></html>

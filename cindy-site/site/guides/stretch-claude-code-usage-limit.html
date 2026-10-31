@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stretch your Claude Code usage limit (the real 2026 settings) · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="If Claude Code keeps cutting you off halfway through a build, this is the full version of the reel: the exact settings that stretch the same limit way...">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/stretch-claude-code-usage-limit">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Stretch your Claude Code usage limit (the real 2026 settings)">
+<meta property="og:description" content="If Claude Code keeps cutting you off halfway through a build, this is the full version of the reel: the exact settings that stretch the same limit way...">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/stretch-claude-code-usage-limit">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stretch your Claude Code usage limit (the real 2026 settings)">
+<meta name="twitter:description" content="If Claude Code keeps cutting you off halfway through a build, this is the full version of the reel: the exact settings that stretch the same limit way...">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Stretch your Claude Code usage limit", u:"guides/stretch-claude-code-usage-limit.html", topic:"power", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Power-user</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Stretch your Claude Code usage limit (the real 2026 settings)</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 If Claude Code keeps cutting you off halfway through a build, this is the full version of the reel: the exact settings that stretch the same limit way further.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the cause</span>
+<h2>Why you hit the limit so fast <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Claude Code bills by tokens, and tokens scale with context: the more the model has to read, the more each message costs. Two things quietly inflate that context. Your chat history grows every turn, and Opus (the heaviest model) burns tokens far faster than Sonnet. So a long session on the wrong model is the fastest way to a "you've hit your limit" message. The fixes below attack both.</p>
+<p>Source: Anthropic, <a href="https://code.claude.com/docs/en/costs" target="_blank">Manage costs effectively</a>.</p>
+
+<hr class="rule">
+<span class="kicker">setting one</span>
+<h2>Setting 1: run the right model with /model opusplan <span class="gi" style="--gl:#987CBE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3175 7.14139L20.8239 6.28479C20.4506 5.63696 20.264 5.31305 19.9464 5.18388C19.6288 5.05472 19.2696 5.15664 18.5513 5.36048L17.3311 5.70418C16.8725 5.80994 16.3913 5.74994 15.9726 5.53479L15.6357 5.34042C15.2766 5.11043 15.0004 4.77133 14.8475 4.37274L14.5136 3.37536C14.294 2.71534 14.1842 2.38533 13.9228 2.19657C13.6615 2.00781 13.3143 2.00781 12.6199 2.00781H11.5051C10.8108 2.00781 10.4636 2.00781 10.2022 2.19657C9.94085 2.38533 9.83106 2.71534 9.61149 3.37536L9.27753 4.37274C9.12465 4.77133 8.84845 5.11043 8.48937 5.34042L8.15249 5.53479C7.73374 5.74994 7.25259 5.80994 6.79398 5.70418L5.57375 5.36048C4.85541 5.15664 4.49625 5.05472 4.17867 5.18388C3.86109 5.31305 3.67445 5.63696 3.30115 6.28479L2.80757 7.14139C2.45766 7.74864 2.2827 8.05227 2.31666 8.37549C2.35061 8.69871 2.58483 8.95918 3.05326 9.48012L4.0843 10.6328C4.3363 10.9518 4.51521 11.5078 4.51521 12.0077C4.51521 12.5078 4.33636 13.0636 4.08433 13.3827L3.05326 14.5354C2.58483 15.0564 2.35062 15.3168 2.31666 15.6401C2.2827 15.9633 2.45766 16.2669 2.80757 16.8741L3.30114 17.7307C3.67443 18.3785 3.86109 18.7025 4.17867 18.8316C4.49625 18.9608 4.85542 18.8589 5.57377 18.655L6.79394 18.3113C7.25263 18.2055 7.73387 18.2656 8.15267 18.4808L8.4895 18.6752C8.84851 18.9052 9.12464 19.2442 9.2775 19.6428L9.61149 20.6403C9.83106 21.3003 9.94085 21.6303 10.2022 21.8191C10.4636 22.0078 10.8108 22.0078 11.5051 22.0078H12.6199C13.3143 22.0078 13.6615 22.0078 13.9228 21.8191C14.1842 21.6303 14.294 21.3003 14.5136 20.6403L14.8476 19.6428C15.0004 19.2442 15.2765 18.9052 15.6356 18.6752L15.9724 18.4808C16.3912 18.2656 16.8724 18.2055 17.3311 18.3113L18.5513 18.655C19.2696 18.8589 19.6288 18.9608 19.9464 18.8316C20.264 18.7025 20.4506 18.3785 20.8239 17.7307L21.3175 16.8741C21.6674 16.2669 21.8423 15.9633 21.8084 15.6401C21.7744 15.3168 21.5402 15.0564 21.0718 14.5354L20.0407 13.3827C19.7887 13.0636 19.6098 12.5078 19.6098 12.0077C19.6098 11.5078 19.7888 10.9518 20.0407 10.6328L21.0718 9.48012C21.5402 8.95918 21.7744 8.69871 21.8084 8.37549C21.8423 8.05227 21.6674 7.74864 21.3175 7.14139Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.5195 12C15.5195 13.933 13.9525 15.5 12.0195 15.5C10.0865 15.5 8.51953 13.933 8.51953 12C8.51953 10.067 10.0865 8.5 12.0195 8.5C13.9525 8.5 15.5195 10.067 15.5195 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>In a session, type <code>/model</code> and pick <strong>opusplan</strong>. Anthropic's docs describe it as a special mode that "uses opus during plan mode, then switches to sonnet for execution." So Opus does the thinking (architecture, edge cases, the plan) and Sonnet does the typing (the actual line-by-line edits). You only pay Opus rates for the part that needs the deep reasoning.</p>
+<div class="promptwrap">
+<span class="promptlabel">⚙️ set the model</span>
+<pre>/model opusplan</pre>
+</div>
+<ul>
+<li>🧩 <strong>What it is:</strong> a hybrid model alias. As of July 2026, <code>opus</code> resolves to Opus 4.8 and <code>sonnet</code> resolves to Sonnet 5 on the Anthropic API.</li>
+<li>✅ <strong>When to use it:</strong> any workflow where you use plan mode regularly (refactors, features, anything you'd sketch before building).</li>
+<li>⚠️ <strong>Heads-up:</strong> it only shines if you actually plan first. If you skip planning and just fire one-off edits, you never get the Opus phase and it behaves like plain Sonnet. To force the plan step, press Shift+Tab to enter plan mode before you build.</li>
+</ul>
+<p>Source: Anthropic, <a href="https://code.claude.com/docs/en/model-config" target="_blank">Model configuration</a>.</p>
+
+<hr class="rule">
+<span class="kicker">setting two</span>
+<h2>Setting 2: keep context small with /compact and /clear <span class="gi" style="--gl:#AF5F5E" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 3L13 11.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.44573 11.0854C6.96539 12.0368 4.98269 11.8736 3 11.0885C3.50059 17.531 6.50414 20.0089 10.5089 21C10.5089 21 13.5261 18.8664 13.961 13.8074C14.0081 13.2595 14.0317 12.9856 13.9178 12.6769C13.8038 12.3682 13.5802 12.1468 13.1329 11.704C12.3973 10.9757 12.0295 10.6116 11.5929 10.5204C11.1564 10.4293 10.5862 10.648 9.44573 11.0854Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M4.5 16.4464C4.5 16.4464 7 16.9286 9.5 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.5 7.25C8.5 7.94036 7.94036 8.5 7.25 8.5C6.55964 8.5 6 7.94036 6 7.25C6 6.55964 6.55964 6 7.25 6C7.94036 6 8.5 6.55964 8.5 7.25Z" stroke="currentColor" stroke-width="1.5"/><path d="M11.125 4H11M11.25 4C11.25 4.13807 11.1381 4.25 11 4.25C10.8619 4.25 10.75 4.13807 10.75 4C10.75 3.86193 10.8619 3.75 11 3.75C11.1381 3.75 11.25 3.86193 11.25 4Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The single biggest token drain is a bloated conversation you never reset. Claude Code helps two ways.</p>
+<p><strong>Auto-compaction</strong> already runs on its own: when your session gets close to the model's context limit, Claude summarizes the older history to free up space. That "context left" or "compacting" warning is not a usage limit, it is this kicking in.</p>
+<p>You can also drive it manually, and this is where people leave value on the table:</p>
+<div class="promptwrap">
+<span class="promptlabel">🧹 trim the context</span>
+<pre>/compact Focus on the code changes and API usage
+/clear</pre>
+</div>
+<ul>
+<li>🗜️ <strong>/compact</strong> squeezes the current thread into a tight summary so you keep the important context and drop the noise. Add a focus instruction (like above) and Claude keeps exactly what you tell it to. You can even set a default in CLAUDE.md so every compact preserves the right things.</li>
+<li>🧼 <strong>/clear</strong> wipes context entirely when you switch to unrelated work. This is the one most people forget. Stale context from your last task is dead weight on every new message. Run <code>/rename</code> first if you want to <code>/resume</code> that session later.</li>
+</ul>
+<div class="tip calm"><strong>When to use which:</strong> <code>/compact</code> mid-task when one long build gets heavy, <code>/clear</code> between two different jobs.</div>
+<div class="tip warn"><strong>Heads-up:</strong> a small honest correction to the viral version of this tip. Claude Code uses prompt caching, so it is not literally re-reading and re-charging you for the entire chat from scratch on every message. The real cost is that a bigger context means more tokens processed each turn, so trimming it still directly lowers what you pay.</div>
+<p>Source: Anthropic, <a href="https://code.claude.com/docs/en/costs#reduce-token-usage" target="_blank">Reduce token usage</a>.</p>
+
+<hr class="rule">
+<span class="kicker">setting three</span>
+<h2>Setting 3: control thinking depth with /effort (and ultrathink) <span class="gi" style="--gl:#957FB0" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.99963 5.00055L9.99963 5.00031" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.9996 5.00031L19.9996 5.00031" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.9996 9.00031L15.9996 15.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M9.99963 2.00031L9.99963 8.00031" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M11.9996 16.0003L11.9996 22.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.9996 12.0001L19.9996 12.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M3.99963 12.0005L12.9996 12.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M11.9996 19.0003L19.9996 19.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M3.99963 19.0005L8.99963 19.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the tip that changed the most, so here is the current truth. Extended thinking is now <strong>on by default</strong> in Claude Code because it genuinely improves hard tasks, and thinking tokens are billed as output tokens. That means deep reasoning is no longer something you switch on, it is something you dial up or down.</p>
+<p>The real lever now is <strong>/effort</strong>. It sets how hard the model reasons for the whole session, from <code>low</code> to <code>max</code>.</p>
+<div class="promptwrap">
+<span class="promptlabel">🎚️ dial the effort</span>
+<pre>/effort low
+/effort high
+/model   (then use the left/right arrows to slide effort)</pre>
+</div>
+<ul>
+<li>📉 <strong>To save tokens:</strong> drop to <code>/effort low</code> or <code>medium</code> for short, simple, not-very-brainy tasks. On Opus 4.8 and Sonnet 5 the default is <code>high</code>, with <code>low</code>, <code>medium</code>, <code>high</code>, <code>xhigh</code> and <code>max</code> available.</li>
+<li>📈 <strong>For one hard task only:</strong> add the word <strong>ultrathink</strong> anywhere in that prompt. Per Anthropic's docs it "requests deeper reasoning on that turn without changing your session effort setting." So it is a one-turn boost, not a permanent mode.</li>
+<li>⚠️ <strong>Correction worth knowing:</strong> the old magic phrases like "think hard", "think harder" and "megathink" are no longer special keywords, they are now read as ordinary text. Only <code>ultrathink</code> is still recognized. If you learned the tiered think-words trick from an older video, that part is stale.</li>
+</ul>
+<div class="tip">The honest headline: you save the most by reasoning LESS on easy work (lower effort), and you spend deliberately on the rare hard problem. One good plan really is cheaper than five broken retries.</div>
+<p>Source: Anthropic, <a href="https://code.claude.com/docs/en/model-config#adjust-effort-level" target="_blank">Adjust effort level</a>.</p>
+
+<hr class="rule">
+<span class="kicker">go further</span>
+<h2>3 bonus moves to stretch it even further <span class="gi" style="--gl:#AB8209" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 11V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 9C3 8.25231 3 7.87846 3.20096 7.6C3.33261 7.41758 3.52197 7.26609 3.75 7.16077C4.09808 7 4.56538 7 5.5 7H18.5C19.4346 7 19.9019 7 20.25 7.16077C20.478 7.26609 20.6674 7.41758 20.799 7.6C21 7.87846 21 8.25231 21 9C21 9.74769 21 10.1215 20.799 10.4C20.6674 10.5824 20.478 10.7339 20.25 10.8392C19.9019 11 19.4346 11 18.5 11H5.5C4.56538 11 4.09808 11 3.75 10.8392C3.52197 10.7339 3.33261 10.5824 3.20096 10.4C3 10.1215 3 9.74769 3 9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 3.78571C6 2.79949 6.79949 2 7.78571 2H8.14286C10.2731 2 12 3.7269 12 5.85714V7H9.21429C7.43908 7 6 5.56091 6 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 3.78571C18 2.79949 17.2005 2 16.2143 2H15.8571C13.7269 2 12 3.7269 12 5.85714V7H14.7857C16.5609 7 18 5.56091 18 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 11L12 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li>🧰 <strong>Trim MCP overhead.</strong> Every connected MCP server can add tool definitions to your context. Run <code>/context</code> to see what is eating space and <code>/mcp</code> to disable servers you are not using right now. Prefer CLI tools (<code>gh</code>, <code>aws</code>, <code>gcloud</code>) where you can, they cost no per-tool listing. <a href="https://code.claude.com/docs/en/costs#reduce-token-usage" target="_blank">Source</a>.</li>
+<li>📎 <strong>Move heavy CLAUDE.md rules into skills.</strong> Your CLAUDE.md loads into context at the start of every session, so long instruction blocks are paid for even on unrelated work. Anthropic suggests keeping it under about 200 lines and moving specialized workflows into on-demand skills. <a href="https://code.claude.com/docs/en/costs#reduce-token-usage" target="_blank">Source</a>.</li>
+<li>🔍 <strong>Delegate the noisy stuff to subagents.</strong> Running tests, fetching docs, or grepping huge logs can flood your main context. Hand those to a subagent so only the summary comes back, and set simpler subagents to <code>model: haiku</code>. <a href="https://code.claude.com/docs/en/costs#reduce-token-usage" target="_blank">Source</a>.</li>
+</ul>
+
+<hr class="rule">
+<span class="kicker">pick your level</span>
+<h2>How to get the most out of it <span class="gi" style="--gl:#4C326D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.99805 7.99928C1.99805 9.34126 10.0943 13 11.9857 13C13.8772 13 21.9734 9.34126 21.9734 7.99928C21.9734 6.6573 13.8772 2.99854 11.9857 2.99854C10.0943 2.99854 1.99805 6.6573 1.99805 7.99928Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.99219 11L7.24348 16.8002C7.32919 17.1975 7.52703 17.5687 7.85696 17.8054C10.0787 19.3998 13.8908 19.3998 16.1126 17.8054C16.4426 17.5687 16.6404 17.1975 16.7261 16.8002L17.9774 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20.4774 9.49951V16.5006M20.4774 16.5006C19.6864 17.9471 19.3366 18.7221 18.9813 20.0011C18.9042 20.4562 18.9654 20.6855 19.2786 20.8891C19.4059 20.9718 19.5588 21.0012 19.7104 21.0012H21.229C21.3904 21.0012 21.5533 20.9675 21.6863 20.8757C21.9774 20.6747 22.0523 20.4541 21.9734 20.0011C21.662 18.8135 21.2653 18.0016 20.4774 16.5006Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+  <div class="minicard"><b>🌱 If you are newer</b> just do two things every day. Type <code>/clear</code> when you start something unrelated, and run <code>/model opusplan</code> so the expensive model only shows up for planning. Those two alone will noticeably stretch your limit.</div>
+  <div class="minicard"><b>🚀 If you are a power user</b> set your defaults so you never think about it. Put a compact-focus block in CLAUDE.md, set a lower <code>effortLevel</code> in your settings for routine repos, and reserve <code>ultrathink</code> for genuine architecture problems. Watch <code>/usage</code> (press <code>d</code> or <code>w</code> to toggle 24 hours vs 7 days) to see which skills, subagents and MCP servers are actually costing you.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the honest bit</span>
+<h2>When NOT to reach for these <span class="gi" style="--gl:#AD8014" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6H6C4.59987 6 3.8998 6 3.36502 6.27248C2.89462 6.51217 2.51217 6.89462 2.27248 7.36502C2 7.8998 2 8.59987 2 10C2 11.4001 2 12.1002 2.27248 12.635C2.51217 13.1054 2.89462 13.4878 3.36502 13.7275C3.8998 14 4.59987 14 6 14H18C19.4001 14 20.1002 14 20.635 13.7275C21.1054 13.4878 21.4878 13.1054 21.7275 12.635C22 12.1002 22 11.4001 22 10C22 8.59987 22 7.8998 21.7275 7.36502C21.4878 6.89462 21.1054 6.51217 20.635 6.27248C20.1002 6 19.4001 6 18 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14 6L21 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 6L16 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 7L10 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 3V6M6 14V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 3V6M18 14V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip warn">If you keep hitting the wall AFTER trimming context and matching the model to the task, the settings are not your problem, your workload is genuinely large. That is when a plan upgrade or usage credits are the honest answer, not another tweak. These settings stop you from wasting your limit, they do not create unlimited headroom. Also, do not force <code>low</code> effort on a hard task to save tokens: a cheap wrong answer you have to redo three times costs more than one deep pass.</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude hooks that make your agent fix its own mistakes · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Claude hooks that make your agent fix its own mistakes. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-self-correcting-loop">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Claude hooks that make your agent fix its own mistakes">
+<meta property="og:description" content="Claude hooks that make your agent fix its own mistakes. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-self-correcting-loop">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude hooks that make your agent fix its own mistakes">
+<meta name="twitter:description" content="Claude hooks that make your agent fix its own mistakes. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Claude hooks that make your agent fix its own mistakes","description":"This is the whole build from the carousel: four tiny files that make Claude Code log every run, review its own mistakes, and load the lessons back in at...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/claude-self-correcting-loop"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Claude hooks that make your agent fix its own mistakes", u:"guides/claude-self-correcting-loop.html", topic:"power", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Power-user</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Claude hooks that make your agent fix its own mistakes</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This is the whole build from the carousel: four tiny files that make Claude Code log every run, review its own mistakes, and load the lessons back in at boot.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the basics</span>
+<h2>First, what a hook is <span class="gi" style="--gl:#B18002" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>A hook is a tiny script that fires at a set moment: when Claude boots, after every tool call, when the reply finishes. You register it once in <code>.claude/settings.json</code>, and from then on it fires itself, every single time. No reminders, no relying on Claude to remember.</p>
+<p>This loop uses four of those moments (the names are case-sensitive, spell them exactly like this):</p>
+<div class="cardgrid">
+  <div class="minicard"><b>🚀 <code>SessionStart</code></b> fires when Claude boots</div>
+  <div class="minicard"><b>🔧 <code>PostToolUse</code></b> fires after every tool call that worked</div>
+  <div class="minicard"><b>💥 <code>PostToolUseFailure</code></b> fires after every tool call that failed</div>
+  <div class="minicard"><b>🛑 <code>Stop</code></b> fires when Claude finishes its reply</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the loop</span>
+<h2>How the loop works <span class="gi" style="--gl:#438BDB" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.3884 3L17.3913 3.97574C17.8393 4.41165 18.0633 4.62961 17.9844 4.81481C17.9056 5 17.5888 5 16.9552 5H9.19422C5.22096 5 2 8.13401 2 12C2 13.4872 2.47668 14.8662 3.2895 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7.61156 21L6.60875 20.0243C6.16074 19.5883 5.93673 19.3704 6.01557 19.1852C6.09441 19 6.4112 19 7.04478 19H14.8058C18.779 19 22 15.866 22 12C22 10.5128 21.5233 9.13383 20.7105 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Watch → log → review → improve:</p>
+<ol class="steps">
+<li><strong class="st">👀 Watch</strong> file 1 sits on Claude's shoulder and writes one line per tool call (which tool ran, ok or FAIL). File 2 fires when the run ends and saves how it wrapped up</li>
+<li><strong class="st">📝 Log</strong> everything lands in one dated file per day inside <code>.claude/hooks/logs/</code>, completely hands off</li>
+<li><strong class="st">🔍 Review</strong> every 5th run, file 3 holds the door before Claude stops and makes it read its own logs for four things: repeated failures, slow spots, bad outputs, and quality problems. The lessons get written into <code>.claude/hooks/lessons.md</code> as plain one-line rules</li>
+<li><strong class="st">🔁 Improve</strong> file 4 fires at boot and prints the rule book straight into context, so the next run starts already knowing what broke the last three</li>
+</ol>
+<div class="tip">The dev behind the original runs four separate reviewer agents at once, so one reviewer's blind spot gets caught by the next. I folded those same four angles into one review pass to keep this a one-sitting build.</div>
+<p>Here is everything you are about to create:</p>
+<div class="promptwrap">
+<span class="promptlabel">🗂 the file tree</span>
+<pre><code>your-project/
+└── .claude/
+    ├── settings.json          &lt;- the hooks block goes here
+    └── hooks/
+        ├── log_tool.py        &lt;- file 1, the tool watcher
+        ├── log_run.py         &lt;- file 2, the run watcher
+        ├── review_trigger.py  &lt;- file 3, the reviewer
+        ├── load_lessons.sh    &lt;- file 4, the reloader
+        ├── lessons.md         &lt;- the rule book (grows on its own)
+        └── logs/              &lt;- one log file per day</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">file one</span>
+<h2>File 1: log_tool.py <span class="gi" style="--gl:#9481A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.544 11.045C21.848 11.4713 22 11.6845 22 12C22 12.3155 21.848 12.5287 21.544 12.955C20.1779 14.8706 16.6892 19 12 19C7.31078 19 3.8221 14.8706 2.45604 12.955C2.15201 12.5287 2 12.3155 2 12C2 11.6845 2.15201 11.4713 2.45604 11.045C3.8221 9.12944 7.31078 5 12 5C16.6892 5 20.1779 9.12944 21.544 11.045Z" stroke="currentColor" stroke-width="1.5"/><path d="M15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>Fires after every tool call and appends one line: time, ok or FAIL, tool name, and a peek at the input. One file listens to both events, because Anthropic splits success and failure into <code>PostToolUse</code> and <code>PostToolUseFailure</code>.</p>
+<div class="promptwrap">
+<span class="promptlabel">👀 log_tool.py</span>
+<pre><code>#!/usr/bin/env python3
+# File 1, the tool watcher: writes one line per tool call, which tool ran and did it work
+import datetime, json, os, pathlib, sys
+
+data = json.load(sys.stdin)  # Claude hands every hook a JSON report on stdin
+logs = pathlib.Path(os.environ.get("CLAUDE_PROJECT_DIR", ".")) / ".claude" / "hooks" / "logs"
+logs.mkdir(parents=True, exist_ok=True)
+status = "ok" if data.get("hook_event_name") == "PostToolUse" else "FAIL"  # same script listens to both events
+detail = json.dumps(data.get("tool_input", {}), ensure_ascii=False)[:160]  # first 160 chars of what the tool was doing
+with open(logs / f"{datetime.date.today()}.log", "a") as f:
+    f.write(f"{datetime.datetime.now():%H:%M:%S} {status} {data.get('tool_name', '?')} {detail}\n")</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">file two</span>
+<h2>File 2: log_run.py <span class="gi" style="--gl:#9B7FA4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 2V5M7.5 2V5M12 2V5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 3.5H11C7.70017 3.5 6.05025 3.5 5.02513 4.52513C4 5.55025 4 7.20017 4 10.5V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V10.5C20 7.20017 20 5.55025 18.9749 4.52512C17.9497 3.5 16.2998 3.5 13 3.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 15H12M8 11H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Fires when the run ends and saves Claude's closing words, so each day's log reads like a story: what ran, what failed, how it ended.</p>
+<div class="promptwrap">
+<span class="promptlabel">📝 log_run.py</span>
+<pre><code>#!/usr/bin/env python3
+# File 2, the run watcher: when a run ends, saves how it wrapped up to the same log
+import datetime, json, os, pathlib, sys
+
+data = json.load(sys.stdin)  # the Stop report includes Claude's last message
+logs = pathlib.Path(os.environ.get("CLAUDE_PROJECT_DIR", ".")) / ".claude" / "hooks" / "logs"
+logs.mkdir(parents=True, exist_ok=True)
+ending = " ".join((data.get("last_assistant_message") or "").split())[:400]  # Claude's closing words, trimmed
+with open(logs / f"{datetime.date.today()}.log", "a") as f:
+    f.write(f"--- run ended {datetime.datetime.now():%H:%M:%S} --- {ending}\n\n")</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">file three</span>
+<h2>File 3: review_trigger.py <span class="gi" style="--gl:#2794B2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Counts finished runs. Runs 1 to 4 pass straight through. On run 5 it answers with <code>{"decision": "block"}</code>, which is the documented way a Stop hook says "not yet": Claude stays up, reads the reason, does the review, then stops. The counter ticks to 6 on the way out, so it can never loop forever.</p>
+<div class="promptwrap">
+<span class="promptlabel">🔍 review_trigger.py</span>
+<pre><code>#!/usr/bin/env python3
+# File 3, the reviewer: every 5th run, holds the door and sends Claude back to turn logs into rules
+import json, os, pathlib, sys
+
+base = pathlib.Path(os.environ.get("CLAUDE_PROJECT_DIR", ".")) / ".claude" / "hooks"
+base.mkdir(parents=True, exist_ok=True)
+counter = base / "run_count.txt"
+count = int(counter.read_text().strip() or 0) + 1 if counter.exists() else 1  # one tick per finished run
+counter.write_text(str(count))
+if count % 5:  # runs 1 to 4 pass straight through
+    sys.exit(0)
+print(json.dumps({"decision": "block", "reason":
+    "Review pass. Read today's file in .claude/hooks/logs/ and look for four things: "
+    "repeated failures, slow spots, bad outputs, and quality problems. Rewrite .claude/hooks/lessons.md "
+    "as plain one-line rules, most useful first, 20 rules max, keeping old rules that still apply. Then stop."}))</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">file four</span>
+<h2>File 4: load_lessons.sh <span class="gi" style="--gl:#448BDC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.3884 3L17.3913 3.97574C17.8393 4.41165 18.0633 4.62961 17.9844 4.81481C17.9056 5 17.5888 5 16.9552 5H9.19422C5.22096 5 2 8.13401 2 12C2 13.4872 2.47668 14.8662 3.2895 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7.61156 21L6.60875 20.0243C6.16074 19.5883 5.93673 19.3704 6.01557 19.1852C6.09441 19 6.4112 19 7.04478 19H14.8058C18.779 19 22 15.866 22 12C22 10.5128 21.5233 9.13383 20.7105 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Fires at boot. Whatever a <code>SessionStart</code> hook prints to stdout gets added to Claude's context (that is documented behavior, not a trick), so the rule book loads itself.</p>
+<div class="promptwrap">
+<span class="promptlabel">🔁 load_lessons.sh</span>
+<pre><code>#!/bin/bash
+# File 4, the reloader: at boot, print the rule book so it loads straight into Claude's context
+LESSONS="${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/lessons.md"
+[ -s "$LESSONS" ] &amp;&amp; echo "Lessons learned from past runs in this project, follow these:" &amp;&amp; cat "$LESSONS"
+exit 0</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">wire it up</span>
+<h2>The settings block <span class="gi" style="--gl:#987CBE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3175 7.14139L20.8239 6.28479C20.4506 5.63696 20.264 5.31305 19.9464 5.18388C19.6288 5.05472 19.2696 5.15664 18.5513 5.36048L17.3311 5.70418C16.8725 5.80994 16.3913 5.74994 15.9726 5.53479L15.6357 5.34042C15.2766 5.11043 15.0004 4.77133 14.8475 4.37274L14.5136 3.37536C14.294 2.71534 14.1842 2.38533 13.9228 2.19657C13.6615 2.00781 13.3143 2.00781 12.6199 2.00781H11.5051C10.8108 2.00781 10.4636 2.00781 10.2022 2.19657C9.94085 2.38533 9.83106 2.71534 9.61149 3.37536L9.27753 4.37274C9.12465 4.77133 8.84845 5.11043 8.48937 5.34042L8.15249 5.53479C7.73374 5.74994 7.25259 5.80994 6.79398 5.70418L5.57375 5.36048C4.85541 5.15664 4.49625 5.05472 4.17867 5.18388C3.86109 5.31305 3.67445 5.63696 3.30115 6.28479L2.80757 7.14139C2.45766 7.74864 2.2827 8.05227 2.31666 8.37549C2.35061 8.69871 2.58483 8.95918 3.05326 9.48012L4.0843 10.6328C4.3363 10.9518 4.51521 11.5078 4.51521 12.0077C4.51521 12.5078 4.33636 13.0636 4.08433 13.3827L3.05326 14.5354C2.58483 15.0564 2.35062 15.3168 2.31666 15.6401C2.2827 15.9633 2.45766 16.2669 2.80757 16.8741L3.30114 17.7307C3.67443 18.3785 3.86109 18.7025 4.17867 18.8316C4.49625 18.9608 4.85542 18.8589 5.57377 18.655L6.79394 18.3113C7.25263 18.2055 7.73387 18.2656 8.15267 18.4808L8.4895 18.6752C8.84851 18.9052 9.12464 19.2442 9.2775 19.6428L9.61149 20.6403C9.83106 21.3003 9.94085 21.6303 10.2022 21.8191C10.4636 22.0078 10.8108 22.0078 11.5051 22.0078H12.6199C13.3143 22.0078 13.6615 22.0078 13.9228 21.8191C14.1842 21.6303 14.294 21.3003 14.5136 20.6403L14.8476 19.6428C15.0004 19.2442 15.2765 18.9052 15.6356 18.6752L15.9724 18.4808C16.3912 18.2656 16.8724 18.2055 17.3311 18.3113L18.5513 18.655C19.2696 18.8589 19.6288 18.9608 19.9464 18.8316C20.264 18.7025 20.4506 18.3785 20.8239 17.7307L21.3175 16.8741C21.6674 16.2669 21.8423 15.9633 21.8084 15.6401C21.7744 15.3168 21.5402 15.0564 21.0718 14.5354L20.0407 13.3827C19.7887 13.0636 19.6098 12.5078 19.6098 12.0077C19.6098 11.5078 19.7888 10.9518 20.0407 10.6328L21.0718 9.48012C21.5402 8.95918 21.7744 8.69871 21.8084 8.37549C21.8423 8.05227 21.6674 7.74864 21.3175 7.14139Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.5195 12C15.5195 13.933 13.9525 15.5 12.0195 15.5C10.0865 15.5 8.51953 13.933 8.51953 12C8.51953 10.067 10.0865 8.5 12.0195 8.5C13.9525 8.5 15.5195 10.067 15.5195 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>This goes in <code>.claude/settings.json</code> in your project root. Create the file if it doesn't exist; if you already have one, merge the <code>"hooks"</code> key into it:</p>
+<div class="promptwrap">
+<span class="promptlabel">⚙️ the settings.json hooks block</span>
+<pre><code>{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear",
+        "hooks": [
+          { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/load_lessons.sh\"" }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          { "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/log_tool.py\"" }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "hooks": [
+          { "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/log_tool.py\"" }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/log_run.py\"" },
+          { "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/review_trigger.py\"" }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+</div>
+<p>Reading it back: <code>SessionStart</code> runs the reloader on boot, resume, and <code>/clear</code> (that pipe list is the matcher). Both tool events feed the same watcher. <code>Stop</code> takes no matcher (it fires on every finished run) and runs the run watcher and the reviewer side by side. Keeping this at project level means each project grows its own rule book.</p>
+
+<hr class="rule">
+<span class="kicker">the setup</span>
+<h2>The install <span class="gi" style="--gl:#9281AD" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<ol class="steps">
+<li>📁 In your project root, run <code>mkdir -p .claude/hooks/logs</code></li>
+<li>📄 Save the four files above into <code>.claude/hooks/</code> with those exact names</li>
+<li>⚙️ Add the hooks block to <code>.claude/settings.json</code></li>
+<li>✅ Inside Claude Code, run <code>/hooks</code> and check the four events are listed (edits to settings files are picked up automatically, the <code>/hooks</code> menu is just your receipt)</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">the shortcut</span>
+<h2>Too lazy to copy files? <span class="gi" style="--gl:#8B8690" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 14.5H15.5M8.5 9.5H12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.1706 20.8905C18.3536 20.6125 21.6856 17.2332 21.9598 12.9909C22.0134 12.1607 22.0134 11.3009 21.9598 10.4707C21.6856 6.22838 18.3536 2.84913 14.1706 2.57107C12.7435 2.47621 11.2536 2.47641 9.8294 2.57107C5.64639 2.84913 2.31441 6.22838 2.04024 10.4707C1.98659 11.3009 1.98659 12.1607 2.04024 12.9909C2.1401 14.536 2.82343 15.9666 3.62791 17.1746C4.09501 18.0203 3.78674 19.0758 3.30021 19.9978C2.94941 20.6626 2.77401 20.995 2.91484 21.2351C3.05568 21.4752 3.37026 21.4829 3.99943 21.4982C5.24367 21.5285 6.08268 21.1757 6.74868 20.6846C7.1264 20.4061 7.31527 20.2668 7.44544 20.2508C7.5756 20.2348 7.83177 20.3403 8.34401 20.5513C8.8044 20.7409 9.33896 20.8579 9.8294 20.8905C11.2536 20.9852 12.7435 20.9854 14.1706 20.8905Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Paste this into Claude Code inside your project and it builds the whole loop for you:</p>
+<div class="promptwrap">
+<span class="promptlabel">💬 build the whole loop for me</span>
+<pre><code>Build me a self-correcting loop with Claude Code hooks, following the official hooks reference at code.claude.com/docs/en/hooks. Create .claude/hooks/ with four files: (1) log_tool.py, registered on PostToolUse and PostToolUseFailure, appends one line per tool call (time, ok or FAIL, tool name, first 160 chars of tool_input) to .claude/hooks/logs/YYYY-MM-DD.log. (2) log_run.py, registered on Stop, appends the run's closing message to the same log. (3) review_trigger.py, registered on Stop, counts finished runs in .claude/hooks/run_count.txt and on every 5th run prints {"decision": "block", "reason": "..."} telling you to read the logs for repeated failures, slow spots, bad outputs and quality problems, then rewrite .claude/hooks/lessons.md as plain one-line rules, 20 max. (4) load_lessons.sh, registered on SessionStart, prints lessons.md to stdout so it loads into context. Register everything in .claude/settings.json with $CLAUDE_PROJECT_DIR paths, show me the final hooks block, then prove logging works with one test tool call.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">prove it works</span>
+<h2>Test that it caught something <span class="gi" style="--gl:#669520" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16.2187 13.0044L15.9921 13.6151C15.5219 14.65 14.1115 15.7439 11.7609 14.3182C10.2471 13.4001 8.93663 12.6631 7.9997 13.16L7.21891 13.5412" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.5323 2V8.56602C14.5323 9.27829 14.5323 9.63442 14.6304 9.97222C14.7285 10.31 14.9197 10.612 15.3021 11.216L17.2861 14.35C19.4275 17.7326 20.4982 19.4238 19.7751 20.7119C19.0519 22 17.0317 22 12.9914 22H11.0086C6.96825 22 4.94807 22 4.22495 20.7119C3.50182 19.4238 4.57251 17.7326 6.71389 14.35L8.69792 11.216C9.08029 10.612 9.27148 10.31 9.36961 9.97222C9.46773 9.63442 9.46773 9.27829 9.46773 8.56602V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15.125 19H15M15.25 19C15.25 19.1381 15.1381 19.25 15 19.25C14.8619 19.25 14.75 19.1381 14.75 19C14.75 18.8619 14.8619 18.75 15 18.75C15.1381 18.75 15.25 18.8619 15.25 19Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.125 17H10M10.25 17C10.25 17.1381 10.1381 17.25 10 17.25C9.86193 17.25 9.75 17.1381 9.75 17C9.75 16.8619 9.86193 16.75 10 16.75C10.1381 16.75 10.25 16.8619 10.25 17Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li>▶️ Ask Claude something small ("list the files in this folder"), then open <code>.claude/hooks/logs/</code> and check today's file has ok lines in it</li>
+<li>💥 Now make it fail on purpose: ask Claude to run <code>cat a_file_that_does_not_exist.txt</code>. A FAIL line appears in the log, that is <code>PostToolUseFailure</code> catching it</li>
+<li>🔍 Fast-forward the review instead of waiting five runs: run <code>echo 4 &gt; .claude/hooks/run_count.txt</code>, finish one more request, and watch Claude hold the door, read its own logs, and write <code>lessons.md</code> before it stops</li>
+<li>🔁 Start a fresh session and ask "what lessons are loaded from past runs?". It should recite the rule book, because file 4 printed it into context at boot</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">what to watch</span>
+<h2>Honest caveats <span class="gi" style="--gl:#AD8014" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6H6C4.59987 6 3.8998 6 3.36502 6.27248C2.89462 6.51217 2.51217 6.89462 2.27248 7.36502C2 7.8998 2 8.59987 2 10C2 11.4001 2 12.1002 2.27248 12.635C2.51217 13.1054 2.89462 13.4878 3.36502 13.7275C3.8998 14 4.59987 14 6 14H18C19.4001 14 20.1002 14 20.635 13.7275C21.1054 13.4878 21.4878 13.1054 21.7275 12.635C22 12.1002 22 11.4001 22 10C22 8.59987 22 7.8998 21.7275 7.36502C21.4878 6.89462 21.1054 6.51217 20.635 6.27248C20.1002 6 19.4001 6 18 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14 6L21 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 6L16 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 7L10 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 3V6M6 14V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 3V6M18 14V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li><strong>⚠️ Hooks run on YOUR machine</strong> with YOUR permissions, they are arbitrary shell commands. Never paste a hooks block you don't understand. Start read-only, exactly like this build: it reads the run report and appends to its own log folder, it never edits or deletes your files. Add write powers only after you trust the loop</li>
+<li>🕵️ Logs contain snippets of tool inputs (file names, commands). In a shared repo, add <code>.claude/hooks/logs/</code> and <code>run_count.txt</code> to <code>.gitignore</code>, and keep <code>lessons.md</code> committed only if you want the team sharing one rule book</li>
+<li>📏 Keep the rule book short. The reviewer caps it at 20 one-line rules so your boot context stays light</li>
+<li>🧑‍⚖️ The review is only as good as the model doing it. Skim <code>lessons.md</code> the first few times and delete anything wrong, it is just a text file</li>
+<li>🏅 The power move: when a rule proves itself, move it into <code>CLAUDE.md</code> (the file Claude reads every session) and it sticks for good</li>
+<li>🗓 Verified against the official hooks reference in July 2026. Event names are case-sensitive and evolve with releases, so if something stops firing, check the reference first, then <code>/hooks</code></li>
+</ul>
+
+<hr class="rule">
+<h2>The links <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li>📖 Hooks reference (every event name and JSON shape): <a href="https://code.claude.com/docs/en/hooks" target="_blank">code.claude.com/docs/en/hooks</a></li>
+<li>🚀 Hooks quickstart (set up your first hook): <a href="https://code.claude.com/docs/en/hooks-guide" target="_blank">code.claude.com/docs/en/hooks-guide</a></li>
+<li>🤖 Claude Code: <a href="https://claude.com" target="_blank">claude.com</a> (ships with the Pro plan)</li>
+<li>💡 The original idea: <a href="https://www.instagram.com/p/DW4A22ijJ15/" target="_blank">the post that inspired this build</a></li>
+</ul>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

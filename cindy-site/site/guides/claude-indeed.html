@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect Claude to Indeed and stop scrolling job boards · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Connect Claude to Indeed and stop scrolling job boards. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-indeed">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Connect Claude to Indeed and stop scrolling job boards">
+<meta property="og:description" content="Connect Claude to Indeed and stop scrolling job boards. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-indeed">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Connect Claude to Indeed and stop scrolling job boards">
+<meta name="twitter:description" content="Connect Claude to Indeed and stop scrolling job boards. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Connect Claude to Indeed and stop scrolling job boards", u:"guides/claude-indeed.html", topic:"career", tool:"nocode"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Career &amp; job</span>
+        <span class="gtag tool">No-code build</span>
+      </div>
+      <h1>Connect Claude to Indeed and stop scrolling job boards</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented MATCH, so here is the whole setup plus every prompt written out: connect Indeed to Claude, get live listings ranked against your actual experience.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the basics</span>
+<h2>What a connector actually is <span class="gi" style="--gl:#4C395C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 2V6M8.5 6V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.00446 7.61331C5.93719 6.74273 6.63957 6 7.53014 6H16.4699C17.3604 6 18.0628 6.74273 17.9955 7.61331L17.8117 9.99197C17.6796 11.7019 17.1011 13.3498 16.132 14.7773L15.5312 15.6622C14.9638 16.4979 14.0077 17 12.9838 17H11.0162C9.99228 17 9.03617 16.4979 8.46881 15.6622L7.86803 14.7773C6.89885 13.3498 6.32041 11.7019 6.18827 9.99197L6.00446 7.61331Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 9H13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>On its own, Claude cannot see live websites. A connector gives it permission to talk to one specific service on your behalf. Connect Indeed and Claude can pull real job listings, read the resume on your Indeed profile, and look up company data, all inside the chat you are already in.</p>
+<p>Indeed's connector gives Claude exactly four abilities, and it is worth knowing them because your prompts land better when you ask for something it can actually do (<a href="https://claude.com/connectors/indeed" target="_blank">connector listing</a>, <a href="https://docs.indeed.com/mcp/" target="_blank">Indeed's own docs</a>).</p>
+
+<div class="cardgrid">
+<div class="minicard"><b>🔎 Job search</b> Searches live listings by title, keywords, location and employment type. Returns titles, companies, locations, salaries where disclosed, and apply links.</div>
+<div class="minicard"><b>📄 Job detail</b> Pulls the full posting for a specific job: description, requirements, qualifications, benefits and company info.</div>
+<div class="minicard"><b>🧾 Get resume</b> Reads the experience on your own Indeed profile, so Claude can compare you against a listing without you pasting anything.</div>
+<div class="minicard"><b>🏢 Company data</b> Employer research from Indeed: satisfaction, compensation, culture, management and reviews.</div>
+</div>
+
+<div class="tip warn"><strong>There is no fifth ability, and that is on purpose.</strong> The connector is read-only. It searches and reads, it does not submit applications, and Claude will not press apply for you. You review and send every single application yourself. That is the version of this you want: an automated job hunt that fires off hundreds of applications is how people end up with their name on a role they cannot describe in the interview.</div>
+
+<hr class="rule">
+<span class="kicker">the setup</span>
+<h2>Setup, about 3 minutes <span class="gi" style="--gl:#D6692D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.22576 11.3294L12.224 2.34651C12.7713 1.64397 13.7972 2.08124 13.7972 3.01707V9.96994C13.7972 10.5305 14.1995 10.985 14.6958 10.985H18.0996C18.8729 10.985 19.2851 12.0149 18.7742 12.6706L11.776 21.6535C11.2287 22.356 10.2028 21.9188 10.2028 20.9829V14.0301C10.2028 13.4695 9.80048 13.015 9.3042 13.015H5.90035C5.12711 13.015 4.71494 11.9851 5.22576 11.3294Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">📄 Update your Indeed resume first.</strong> Make sure the resume on your <a href="https://www.indeed.com/" target="_blank">Indeed profile</a> is current. The "get resume" ability reads it from there, so an old profile means Claude is matching you against an old version of you.</li>
+<li><strong class="st">🔌 Open your connectors.</strong> In Claude, open <b>Customize</b>, then <b>Connectors</b>. You can also reach the same list from the search and tools menu next to the chat box, under add connectors.</li>
+<li><strong class="st">➕ Add Indeed.</strong> Find Indeed in the directory and click to add it. Sign in with your Indeed account when the authorisation window appears. If you do not have an account, create one first, since the resume ability needs a profile to read.</li>
+<li><strong class="st">🔁 Switch it on in the chat.</strong> Connectors are toggled per conversation. Before you start a new job-hunt chat, open the search and tools menu and make sure Indeed is on, or Claude will answer from memory instead of live listings.</li>
+<li><strong class="st">✅ Sanity check it.</strong> Ask "search Indeed for [your role] in [your city] and show me three listings with links". If you get real links you can click, you are connected. If you get vague descriptions with no links, the toggle is off.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">do this first</span>
+<h2>Build a Job Hunt project <span class="gi" style="--gl:#A9810B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7H16.75C18.8567 7 19.91 7 20.6667 7.50559C20.9943 7.72447 21.2755 8.00572 21.4944 8.33329C22 9.08996 22 10.1433 22 12.25C22 15.7612 22 17.5167 21.1573 18.7779C20.7926 19.3238 20.3238 19.7926 19.7779 20.1573C18.5167 21 16.7612 21 13.25 21H12C7.28595 21 4.92893 21 3.46447 19.5355C2 18.0711 2 15.714 2 11V7.94427C2 6.1278 2 5.21956 2.38032 4.53806C2.65142 4.05227 3.05227 3.65142 3.53806 3.38032C4.21956 3 5.1278 3 6.94427 3C8.10802 3 8.6899 3 9.19926 3.19101C10.3622 3.62712 10.8418 4.68358 11.3666 5.73313L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>A Claude Project keeps your context in one place so you are not re-explaining your career in every new chat. Click <b>Projects</b> in the left sidebar, then <b>New project</b>, and name it "Job hunt". Projects are available on the free plan, capped at five (<a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">Anthropic's Projects article</a>).</p>
+<p>Paste this into the project's instructions box. Anything in square brackets is a placeholder, so swap it for your own details before you save.</p>
+<div class="promptwrap">
+<span class="promptlabel">🗂️ the project instructions</span>
+<pre><code>You are helping me run my job search. Use the Indeed connector for anything involving live listings, and always link to the actual posting so I can check it myself.
+
+My situation: target role [role], target locations [cities or remote], salary floor [number and currency], seniority I am aiming for [level], companies I am interested in [list], the three things I am genuinely best at [list], and things I will not accept [commute, shift work, industries, whatever applies].
+
+Rules for this project. Never invent a listing, a salary or a company detail, and if the connector returns nothing, tell me it returned nothing instead of filling the gap from memory. Never write a resume bullet or a cover letter claim that is not already true in my experience, and if a listing wants something I do not have, say so plainly rather than dressing it up. I submit every application myself, so your job is to shortlist, compare and draft, never to apply.</code></pre>
+</div>
+<p>Every chat you start inside that project already knows all of this, so the prompts below stay short.</p>
+
+<hr class="rule">
+<span class="kicker">copy these</span>
+<h2>1. <span class="gi" style="--gl:#BE780E" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.9427 16.8354C20.2864 12.8866 18.2432 9.94613 16.467 8.219C15.9501 7.71642 15.6917 7.46513 15.1208 7.23257C14.5499 7 14.0592 7 13.0778 7H10.9222C9.94081 7 9.4501 7 8.87922 7.23257C8.30834 7.46513 8.04991 7.71642 7.53304 8.219C5.75682 9.94613 3.71361 12.8866 3.05727 16.8354C2.56893 19.7734 5.27927 22 8.30832 22H15.6917C18.7207 22 21.4311 19.7734 20.9427 16.8354Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7.25662 4.44287C7.05031 4.14258 6.75128 3.73499 7.36899 3.64205C8.00392 3.54651 8.66321 3.98114 9.30855 3.97221C9.89237 3.96413 10.1898 3.70519 10.5089 3.33548C10.8449 2.94617 11.3652 2 12 2C12.6348 2 13.1551 2.94617 13.4911 3.33548C13.8102 3.70519 14.1076 3.96413 14.6914 3.97221C15.3368 3.98114 15.9961 3.54651 16.631 3.64205C17.2487 3.73499 16.9497 4.14258 16.7434 4.44287L15.8105 5.80064C15.4115 6.38146 15.212 6.67187 14.7944 6.83594C14.3769 7 13.8373 7 12.7582 7H11.2418C10.1627 7 9.6231 7 9.20556 6.83594C8.78802 6.67187 8.5885 6.38146 8.18945 5.80064L7.25662 4.44287Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M13.6267 12.9186C13.4105 12.1205 12.3101 11.4003 10.9892 11.9391C9.66829 12.4778 9.45847 14.2113 11.4565 14.3955C12.3595 14.4787 12.9483 14.2989 13.4873 14.8076C14.0264 15.3162 14.1265 16.7308 12.7485 17.112C11.3705 17.4932 10.006 16.8976 9.85742 16.0517M11.8417 10.9927V11.7531M11.8417 17.2293V17.9927" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> The highest paying roles that actually match you</h2>
+<p>This is the one from the reel. The trick is asking for pay and fit together, because the top of the pay range is usually a role you are not a credible candidate for, and sorting by salary alone hands you a list of polite rejections.</p>
+<div class="promptwrap">
+<span class="promptlabel">💰 the match search</span>
+<pre><code>Pull my Indeed resume, then search Indeed for [role type] roles in [city or remote] posted in the last 14 days. Find the highest paying ones where I am a genuine match, meaning my last 18 months of experience already cover most of what the listing asks for.
+
+Return the top 5 ranked by pay, and for each one give me the title, company, disclosed salary (and flag clearly when a listing does not disclose pay rather than estimating it), the link to the posting, one line on why I am a credible candidate, and the single biggest gap between me and the requirements.
+
+Then, separately, list any roles you found that pay more but where I am a stretch candidate, and tell me what I would need to add to my experience to become credible for them. Do not pad the main list with roles I cannot honestly get.</code></pre>
+</div>
+
+<hr class="rule">
+<h2>2. <span class="gi" style="--gl:#A68307" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.4249 4.60509L17.4149 3.6151C18.2351 2.79497 19.5648 2.79497 20.3849 3.6151C21.205 4.43524 21.205 5.76493 20.3849 6.58507L19.3949 7.57506M16.4249 4.60509L9.76558 11.2644C9.25807 11.772 8.89804 12.4078 8.72397 13.1041L8 16L10.8959 15.276C11.5922 15.102 12.228 14.7419 12.7356 14.2344L19.3949 7.57506M16.4249 4.60509L19.3949 7.57506" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18.9999 13.5C18.9999 16.7875 18.9999 18.4312 18.092 19.5376C17.9258 19.7401 17.7401 19.9258 17.5375 20.092C16.4312 21 14.7874 21 11.4999 21H11C7.22876 21 5.34316 21 4.17159 19.8284C3.00003 18.6569 3 16.7712 3 13V12.5C3 9.21252 3 7.56879 3.90794 6.46244C4.07417 6.2599 4.2599 6.07417 4.46244 5.90794C5.56879 5 7.21252 5 10.5 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Tailor your resume for one specific role</h2>
+<p>The second half of the reel. Job descriptions repeat their real priorities, and matching that vocabulary matters both for the human skim and for whatever screening software sits in front of them. Rewording what you did is fair. Claiming what you did not do is not, and it falls apart in the interview.</p>
+<div class="promptwrap">
+<span class="promptlabel">✍️ the tailored resume</span>
+<pre><code>Here is the Indeed listing: [paste the link or job ID]. Pull the full job details, then pull my Indeed resume.
+
+Rewrite my experience bullets for this specific role. For each bullet, show the original and the tailored version side by side, and name which phrase from the job description you mirrored and why. Lead every bullet with the outcome and keep the numbers exactly as they are in my original, because inflating a metric is the fastest way to lose an offer at reference stage.
+
+Do not add any skill, tool or responsibility that is not already somewhere in my experience. Where the listing asks for something I genuinely do not have, leave it out of the resume and list it separately at the end as a real gap, with an honest one-line suggestion for how I could address it in the interview.</code></pre>
+</div>
+<div class="tip"><strong>Keep a master version.</strong> Tailor a copy for each application and never overwrite your original. Three weeks in, you will have eight tailored versions and no memory of which one you sent where, so put the company name in every filename. 💡</div>
+
+<hr class="rule">
+<h2>3. <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Skills gap audit before you apply</h2>
+<p>Run this before you decide whether a role is worth an hour of your evening. It tells you what is missing, which is usually a faster decision than reading the posting three times.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 the skills gap audit</span>
+<pre><code>Here is the Indeed job link or job ID: [paste]. Pull the full job details and compare them against my Indeed resume.
+
+List the top 5 skills or keywords in the listing that are missing from my resume, ranked by how often each one appears in the posting, since repetition is the clearest signal of what they actually care about. For each one, tell me whether it is a hard requirement or a nice to have based on how it is phrased.
+
+Then give me a verdict in one line: apply now, apply after I add [specific thing], or skip. Be willing to tell me to skip.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">know your number</span>
+<h2>4. <span class="gi" style="--gl:#9281A4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L7 13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 17L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17 17L17 11" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Salary research without anchoring low</h2>
+<p>Do not anchor to your current salary, and do not anchor to the median. Anchor to what the level above yours is advertised at, using listings that actually disclose pay.</p>
+<div class="promptwrap">
+<span class="promptlabel">📊 the salary research</span>
+<pre><code>Search Indeed for [role title, one level above mine] in [city or remote]. From the listings that include disclosed pay, give me the range and the median, and tell me exactly how many listings the median is based on so I know how much weight to put on it.
+
+Pull three specific listings as named data points with links, so I can open them myself. Where most listings hide pay, say that plainly rather than estimating a range from nowhere.
+
+Then suggest a negotiation target band based on those data points and nothing else, and give me the one sentence I would say to justify the top of that band using my own experience.</code></pre>
+</div>
+
+<hr class="rule">
+<h2>5. <span class="gi" style="--gl:#8A868F" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Reverse-engineer the hiring manager</h2>
+<p>The strongest applications land before a recruiter has formed an opinion. Find the person who owns the role and give them a reason to remember your name.</p>
+<div class="promptwrap">
+<span class="promptlabel">🔦 the hiring manager dig</span>
+<pre><code>Here is the Indeed listing: [paste]. Pull the company data from Indeed, then search the web for who currently holds this role or the manager likely hiring for it.
+
+Find their public profile and anything recent they have written, posted or said publicly. From that, tell me the three things they appear to care about right now that are not written in the job description, and be explicit about which of those three is an inference rather than something they stated.
+
+Then draft a four sentence message I could send them before I apply. It should reference one specific thing they said, connect it to one specific thing I have done, and ask a real question. No flattery, no "I would love to pick your brain".</code></pre>
+</div>
+
+<hr class="rule">
+<h2>6. <span class="gi" style="--gl:#50336D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 6.5C7 4.01472 9.01472 2 11.5 2C13.9853 2 16 4.01472 16 6.5V11.5C16 13.9853 13.9853 16 11.5 16C9.01472 16 7 13.9853 7 11.5V6.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11.5 19H11.0828C7.57267 19 4.57706 16.4623 4 13M11.5 19H11.9172C15.4273 19 18.4229 16.4623 19 13M11.5 19V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Predict the interview from real listings</h2>
+<p>You can anticipate most of the questions if you read enough postings for the same role. Claude can read twenty of them in under a minute.</p>
+<div class="promptwrap">
+<span class="promptlabel">🎤 the interview predictor</span>
+<pre><code>Pull the last 10 Indeed listings for [target role] in [city or remote]. Extract the skills, tools and phrasing that appear in three or more of them, since that overlap is what the market considers core to this role.
+
+From that pattern, predict the 7 most likely interview questions. For each, give me a STAR-format answer skeleton mapped to a specific bullet in my Indeed resume, and leave the specifics as blanks for me to fill in rather than writing my stories for me.
+
+Finish with the two questions I am least prepared for based on the gaps in my experience, and tell me honestly how I should handle each one.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">the honest bit</span>
+<h2>Two rules that decide whether this works <span class="gi" style="--gl:#AD8014" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6H6C4.59987 6 3.8998 6 3.36502 6.27248C2.89462 6.51217 2.51217 6.89462 2.27248 7.36502C2 7.8998 2 8.59987 2 10C2 11.4001 2 12.1002 2.27248 12.635C2.51217 13.1054 2.89462 13.4878 3.36502 13.7275C3.8998 14 4.59987 14 6 14H18C19.4001 14 20.1002 14 20.635 13.7275C21.1054 13.4878 21.4878 13.1054 21.7275 12.635C22 12.1002 22 11.4001 22 10C22 8.59987 22 7.8998 21.7275 7.36502C21.4878 6.89462 21.1054 6.51217 20.635 6.27248C20.1002 6 19.4001 6 18 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14 6L21 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 6L16 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 7L10 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 3V6M6 14V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 3V6M18 14V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>🎯 Filter, do not spray</b> Volume is the disease, not the cure. Three applications where you are the obvious fit beat thirty mediocre ones, and Claude is a filter before it is a factory.</div>
+<div class="minicard"><b>🔗 Open the links</b> Click through to every listing before you apply. Connectors return real data, but you are the one whose name goes on the application, so read the posting with your own eyes.</div>
+</div>
+<div class="tip calm">If this is your first time using a connector, the job hunt is a good one to start on. It is read-only, you can see every result, and nothing irreversible happens without you clicking it. 🌱</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://claude.com/connectors/indeed" target="_blank">Indeed connector listing, claude.com</a><br>
+  <a href="https://docs.indeed.com/mcp/" target="_blank">Indeed MCP docs, the four tools and the sign-in requirement</a><br>
+  <a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">What are Projects, Claude Help Center</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

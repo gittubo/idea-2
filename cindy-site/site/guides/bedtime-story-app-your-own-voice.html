@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a bedtime story app in your own voice with Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Build a bedtime story app in your own voice with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/bedtime-story-app-your-own-voice">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build a bedtime story app in your own voice with Claude">
+<meta property="og:description" content="Build a bedtime story app in your own voice with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/bedtime-story-app-your-own-voice">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build a bedtime story app in your own voice with Claude">
+<meta name="twitter:description" content="Build a bedtime story app in your own voice with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Build a bedtime story app in your own voice with Claude","description":"This is the full build from the reel: an app that reads bedtime stories out loud in a clone of your own voice, built with Claude and Fish Audio , no coding...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/bedtime-story-app-your-own-voice"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build a bedtime story app in your own voice with Claude", u:"guides/bedtime-story-app-your-own-voice.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building &amp; apps</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Build a bedtime story app in your own voice with Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This is the full build from the reel: an app that reads bedtime stories out loud in a clone of your own voice.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">try it now</span>
+<h2>Play with the finished app <span class="gi" style="--gl:#B47E1A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.5 14.0784C20.3003 14.7189 18.9301 15.0821 17.4751 15.0821C12.7491 15.0821 8.91792 11.2509 8.91792 6.52485C8.91792 5.06986 9.28105 3.69968 9.92163 2.5C5.66765 3.49698 2.5 7.31513 2.5 11.8731C2.5 17.1899 6.8101 21.5 12.1269 21.5C16.6849 21.5 20.503 18.3324 21.5 14.0784Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Before you build anything, here's a live demo so you can feel what you're making. Tap a story, hit play, and it reads aloud. It's the same calm night-time look and player you'll build.</p>
+<p style="text-align:center;margin:6px 0 4px">
+  <a href='/bedtime-story-demo' style='display:inline-block;background:var(--terra);color:#fff;font-family:var(--print);font-size:1.15rem;padding:12px 26px;border-radius:12px;text-decoration:none;' target='_blank'>✦ Open the live demo &rarr;</a>
+</p>
+<div class="tip">🔊 In the demo it reads with a stand-in browser voice so you hear it instantly. In the app <em>you</em> build, that voice becomes a clone of your own, that's the whole magic.</div>
+
+<hr class="rule">
+<span class="kicker">the opportunity</span>
+<h2>Can you actually make money with this? <span class="gi" style="--gl:#159D4D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.4998 12.001C14.4998 13.3817 13.3805 14.501 11.9998 14.501C10.6191 14.501 9.49982 13.3817 9.49982 12.001C9.49982 10.6203 10.6191 9.50098 11.9998 9.50098C13.3805 9.50098 14.4998 10.6203 14.4998 12.001Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 5.00098C18.4794 5.00098 20.1903 5.38518 21.1329 5.6773C21.6756 5.84549 22 6.35987 22 6.92803V16.6833C22 17.7984 20.7719 18.6374 19.6762 18.4305C18.7361 18.253 17.5107 18.1104 16 18.1104C11.2491 18.1104 10.1096 19.9161 3.1448 18.3802C2.47265 18.232 2 17.6275 2 16.9392V6.92214C2 5.94628 2.92079 5.23464 3.87798 5.42458C10.1967 6.67844 11.4209 5.00098 16 5.00098Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M2 9.00098C3.95133 9.00098 5.70483 7.40605 5.92901 5.75514M18.5005 5.50098C18.5005 7.54062 20.2655 9.46997 22 9.46997M22 15.001C20.1009 15.001 18.2601 16.3112 18.102 18.0993M6.00049 18.4971C6.00049 16.2879 4.20963 14.4971 2.00049 14.4971" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>In my video I said you can make up to $10,000 a month building bedtime story apps. That's the top end, and it's real: people are running actual businesses on exactly this idea. Three I dug up:</p>
+<ol class="moneyways">
+<li><strong>Oscar Stories, around $6,000 a month.</strong> A two-person team in Vienna built an app that makes personalised bedtime stories with the child as the hero. About 50,000 users and 700+ paying. <a href="https://www.starterstory.com/oscar-personal-bedtime-stories-for-kids-breakdown" target="_blank">Starter Story breakdown</a>.</li>
+<li><strong>HabitKit, a solo dev's app that grew to $15k a month.</strong> One person, one simple app, no team. Proof that a single builder can make an app that genuinely pays. <a href="https://www.indiehackers.com/post/tech/building-a-mobile-app-portfolio-to-15k-mo-5jpsSF0k2OZKIntPYgTT" target="_blank">His Indie Hackers post</a>.</li>
+<li><strong>Voice Dream Reader, replaced a full salary, then got acquired.</strong> A solo founder built a text-to-speech reading app, made enough to support his family within a year, ran it alone for a decade, and sold it. <a href="https://mixergy.com/interviews/winston-chen-voice-dream-reader-interview/" target="_blank">His interview</a>.</li>
+</ol>
+<hr class="rule">
+<span class="kicker">two tools</span>
+<h2>What you're building <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>An app where you pick or paste a story and it reads it back in your own voice, softly, like you're actually there. Two tools do the work:</p>
+<div class="cardgrid">
+<div class="minicard"><b>🛠️ Claude builds it</b> You describe what you want and it writes the whole thing: the app, the screens, and the Fish Audio connection. You never touch code you don't understand.</div>
+<div class="minicard"><b>🎙️ Fish Audio is your voice</b> You record yourself once, it clones your voice, and every story plays back in it, with the emotion you tag.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the build</span>
+<h2>Step 1: hand Claude the full brief <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>You don't need to code. Open Claude Code (that's the one that can actually create the files, install everything, and run the app on your computer, the desktop chat app can only write it out) and paste this whole thing in. It's detailed on purpose, that's what gets you an app that looks good instead of a bare wireframe:</p>
+<div class="promptwrap">
+<span class="promptlabel">🛠️ Paste this whole prompt into Claude</span>
+<pre><code>Build me a complete bedtime story app that reads stories aloud in a clone of my
+own voice. I am not a developer, so set everything up for me and walk me through
+running it step by step, explaining each part in plain language as you go.
+
+How it should look and work:
+- A calming home screen: deep indigo and purple background, soft stars, rounded
+  cards, warm gold accents. Show a "tonight's pick" featured story plus a small
+  library of story cards, each with cover art, a title and a duration.
+- Tapping a story opens a player screen with the cover, the title, a big
+  play/pause button, skip back and forward 15 seconds, and a progress bar.
+  Highlight the sentence being read as it plays.
+- Let me also paste in my own story text and play that.
+- Support inline emotion tags in the text like [whisper], [soft] and [excited],
+  and pass them through to the voice so the delivery actually changes.
+
+The voice (this is the whole point, so set it up with me):
+- The stories must play in MY cloned voice using Fish Audio, not a generic voice.
+- First, walk me through setting up Fish Audio: signing up at fish.audio, creating
+  an API key, and cloning my own voice from a short recording. Tell me exactly which
+  pages to click, then pause so I can paste my API key into the .env file and my
+  cloned voice reference_id into the app before we continue.
+- Then use the fishaudio Python SDK with the free model s2.1-pro-free for the text to speech,
+  reading in that cloned voice.
+- IMPORTANT: never put my API key in the web page. Build a tiny local backend
+  (Python, FastAPI or Flask) that holds the key, loaded from a .env file, and
+  have the page call that backend. Explain why, so I understand the app is safe.
+- Until Fish Audio is connected, fall back to the browser's built-in voice, but
+  show a clear "Connect Fish Audio to hear it in your own voice" note, so it's
+  obvious the real voice is the goal.
+
+Please:
+- Give me the full project and the exact terminal commands to install and run it,
+  copy and paste ready.
+- Include two or three short sample stories so it looks alive on the first run.
+- Make it genuinely nice to look at, calm and cosy, not a plain wireframe.
+- When it's built, run it and show me it working, then tell me the one or two
+  things I need to personalise: my Fish Audio key and my cloned voice ID.</code></pre>
+</div>
+<div class="tip">🐟 <strong>The voice is Fish Audio, and it's required.</strong> The magic isn't Claude reading in a robot voice, it's <em>your</em> voice. When you paste the prompt, Claude will send you to <a href="https://fish.audio/?fpr=cindy10" target="_blank">Fish Audio</a> to make a free account, grab an API key, and clone your voice (that's Step 2 below). Until you connect it, the app plays a stand-in browser voice, the same as the demo.</div>
+<div class="tip calm">🌱 Never run code before? That's fine. Let Claude install everything and, if a step confuses you, paste the error or say "explain that like I've never done this." Working through it with Claude is the whole point.</div>
+
+<hr class="rule">
+<span class="kicker">your voice</span>
+<h2>Step 2: clone your voice with Fish Audio <span class="gi" style="--gl:#8B8591" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 6.5C7 4.01472 9.01472 2 11.5 2C13.9853 2 16 4.01472 16 6.5V11.5C16 13.9853 13.9853 16 11.5 16C9.01472 16 7 13.9853 7 11.5V6.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11.5 19H11.0828C7.57267 19 4.57706 16.4623 4 13M11.5 19H11.9172C15.4273 19 18.4229 16.4623 19 13M11.5 19V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🔑 Make a free account and get your API key.</strong> Sign up at <a href="https://fish.audio/?fpr=cindy10" target="_blank">fish.audio</a>, open the API keys page, and create a key. Paste it into your <code>.env</code> file, never into the chat.</li>
+<li><strong class="st">🎤 Record a clean sample and clone it.</strong> In Fish Audio, choose Instant Voice Clone and upload a clean recording of you reading (30 seconds to a couple of minutes, quiet room, no music). It clones your voice in seconds.</li>
+<li><strong class="st">🆔 Copy your voice ID.</strong> Open your cloned voice and copy its reference ID. That's the one line you hand to Claude so the app reads in <em>your</em> voice.</li>
+</ol>
+<div class="tip calm">🌱 Fish Audio's free S2.1 Pro model (the model string is <code>s2.1-pro-free</code>) has a free developer window right now (they've extended it before, so check the current status on their site before a big batch). After that, paid plans start at $11 a month, so it stays cheap either way.</div>
+
+<hr class="rule">
+<span class="kicker">the warmth</span>
+<h2>Step 3: add the emotion <span class="gi" style="--gl:#B27F01" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.4107 19.9677C7.58942 17.858 2 13.0348 2 8.69444C2 5.82563 4.10526 3.5 7 3.5C8.5 3.5 10 4 12 6C14 4 15.5 3.5 17 3.5C19.8947 3.5 22 5.82563 22 8.69444C22 13.0348 16.4106 17.858 13.5893 19.9677C12.6399 20.6776 11.3601 20.6776 10.4107 19.9677Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A bedtime story should sound soft, not flat. You tag the feeling right in the text and Fish Audio reads it that way:</p>
+<div class="cardgrid">
+<div class="minicard"><b>🤫 [whisper]</b> for the sleepy ending</div>
+<div class="minicard"><b>🌙 [soft]</b> for the gentle middle</div>
+</div>
+<p>There's a set of core tags (like <code>[excited]</code>, <code>[sad]</code>, <code>[whisper]</code>) and S2.1 also reads free-form ones like <code>[soft]</code> or <code>[gentle]</code>, so you can write almost any feeling in brackets. That's what makes it sound like you're actually tucking them in.</p>
+
+<hr class="rule">
+<span class="kicker">under the hood</span>
+<h2>The heart of the code <span class="gi" style="--gl:#0F94B3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Claude writes and explains all of this for you, but here's the core so you can see how little it really is. Your key loads from the <code>.env</code> file, never hard-coded, and <code>model="s2.1-pro-free"</code> is what makes the emotion tags actually fire:</p>
+<div class="promptwrap">
+<span class="promptlabel">💻 What Claude wires up for you</span>
+<pre><code>import os
+from fishaudio import FishAudio
+
+# your key is read from the .env file, never written in the code
+client = FishAudio()  # picks up FISH_API_KEY from your environment
+
+story = "[soft] Once upon a time, in a cosy little house... [whisper] and they all slept soundly."
+
+audio = client.tts.convert(
+    text=story,
+    reference_id="YOUR_CLONED_VOICE_ID",  # your voice
+    model="s2.1-pro-free",                        # needed for the emotion tags to work
+)
+
+with open("bedtime.mp3", "wb") as f:
+    f.write(audio)</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">go further</span>
+<h2>3 bonus prompts to run next <span class="gi" style="--gl:#AB8209" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 11V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 9C3 8.25231 3 7.87846 3.20096 7.6C3.33261 7.41758 3.52197 7.26609 3.75 7.16077C4.09808 7 4.56538 7 5.5 7H18.5C19.4346 7 19.9019 7 20.25 7.16077C20.478 7.26609 20.6674 7.41758 20.799 7.6C21 7.87846 21 8.25231 21 9C21 9.74769 21 10.1215 20.799 10.4C20.6674 10.5824 20.478 10.7339 20.25 10.8392C19.9019 11 19.4346 11 18.5 11H5.5C4.56538 11 4.09808 11 3.75 10.8392C3.52197 10.7339 3.33261 10.5824 3.20096 10.4C3 10.1215 3 9.74769 3 9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 3.78571C6 2.79949 6.79949 2 7.78571 2H8.14286C10.2731 2 12 3.7269 12 5.85714V7H9.21429C7.43908 7 6 5.56091 6 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 3.78571C18 2.79949 17.2005 2 16.2143 2H15.8571C13.7269 2 12 3.7269 12 5.85714V7H14.7857C16.5609 7 18 5.56091 18 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 11L12 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Once it works, these turn a nice demo into something you'd actually ship. Same project, same chat.</p>
+<div class="gcallout">📚 <strong>A grown-up story library.</strong> Add a saved library so I can keep lots of stories, tag them by mood and length, and search them. Add a favourites row and a "recently played" shelf.</div>
+<div class="gcallout">✨ <strong>Generate a brand-new story.</strong> Let me type a child's name and a theme, and write a short, gentle, age-appropriate bedtime story on the spot, then read it in my cloned voice.</div>
+<div class="gcallout">🌛 <strong>A real bedtime routine.</strong> Add a sleep timer that fades the volume out at the end, a soft background soundscape option, and a "play tonight's story at 7:30pm" schedule.</div>
+
+<hr class="rule">
+<span class="kicker">the next level</span>
+<h2>Putting it on the App Store <span class="gi" style="--gl:#5A3F7C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 2H10.5C8.14298 2 6.96447 2 6.23223 2.73223C5.5 3.46447 5.5 4.64298 5.5 7V17C5.5 19.357 5.5 20.5355 6.23223 21.2678C6.96447 22 8.14298 22 10.5 22H13.5C15.857 22 17.0355 22 17.7678 21.2678C18.5 20.5355 18.5 19.357 18.5 17V7C18.5 4.64298 18.5 3.46447 17.7678 2.73223C17.0355 2 15.857 2 13.5 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 19H12M12.25 19C12.25 19.1381 12.1381 19.25 12 19.25C11.8619 19.25 11.75 19.1381 11.75 19C11.75 18.8619 11.8619 18.75 12 18.75C12.1381 18.75 12.25 18.8619 12.25 19Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>What you build here runs on your own computer, which is perfect for using it yourself and for filming. Turning it into a real App Store app that strangers can download is a different beast, and worth knowing before you promise anyone anything:</p>
+<ul>
+<li>📝 You need an <strong>Apple Developer account</strong> ($99 a year) and a Google Play account ($25 once) to publish.</li>
+<li>🔁 A web app has to be <strong>wrapped into a real mobile app</strong> (tools like Capacitor or Expo) and pass each store's review.</li>
+<li>☁️ Once other people use it, the Fish Audio calls run on <strong>your account</strong>, so you'll want usage limits, accounts, and a paid plan to cover the audio.</li>
+</ul>
+<div class="tip">💡 You don't need any of that to start. Build it for yourself first, use it every night, film it for content, and only take on the store once you actually want other people paying for it. Claude can walk you through that step too when you're ready.</div>
+
+<hr class="rule">
+<h2>The links <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>🎮 The live demo: <a href='/bedtime-story-demo' target='_blank'>try it here</a> (the finished look and feel)<br>
+🎙 Fish Audio: <a href="https://fish.audio/?fpr=cindy10" target="_blank">fish.audio</a> (free account, voice cloning, API keys)<br>
+🤖 Claude: <a href="https://claude.com" target="_blank">claude.com</a> (use Claude Code so it can build and run the whole thing for you)</p>
+
+<hr class="rule">
+<h2>The honest part <span class="gi" style="--gl:#B27F01" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.4107 19.9677C7.58942 17.858 2 13.0348 2 8.69444C2 5.82563 4.10526 3.5 7 3.5C8.5 3.5 10 4 12 6C14 4 15.5 3.5 17 3.5C19.8947 3.5 22 5.82563 22 8.69444C22 13.0348 16.4106 17.858 13.5893 19.9677C12.6399 20.6776 11.3601 20.6776 10.4107 19.9677Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip warn">This is meant to complement you, never replace you, it's for the nights you genuinely can't be there. And your voice is yours: keep your sample and your API key private in that <code>.env</code> file, and only ever clone a voice you have the right to use, which is your own.</div>
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

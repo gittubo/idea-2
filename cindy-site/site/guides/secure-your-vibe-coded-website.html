@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Close the 3 security holes in every vibe-coded website · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Three Claude Code prompts that close the most common security holes in a vibe-coded website, one prompt per hole.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/secure-your-vibe-coded-website">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Close the 3 security holes in every vibe-coded website">
+<meta property="og:description" content="Three Claude Code prompts that close the most common security holes in a vibe-coded website, one prompt per hole.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/secure-your-vibe-coded-website">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Close the 3 security holes in every vibe-coded website">
+<meta name="twitter:description" content="Three Claude Code prompts that close the most common security holes in a vibe-coded website, one prompt per hole.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Close the 3 security holes in every vibe-coded website", u:"guides/secure-your-vibe-coded-website.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building &amp; apps</span>
+        <span class="gtag tool">Claude Code</span>
+      </div>
+      <h1>Close the 3 security holes in every vibe-coded website</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Three Claude Code prompts that close the most common security holes in a vibe-coded website, one prompt per hole.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn"><strong>Run these in Claude Code, pointed at your repo.</strong> Not a normal chat. Claude Code is what lets it spin up sub-agents and actually read and edit your files. Open your project in Claude Code first, then paste the prompts one at a time and review each diff before you accept it.</div>
+
+<span class="kicker">the numbers</span>
+<h2>Why this is worth 10 minutes <span class="gi" style="--gl:#9281A4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L7 13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 17L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17 17L17 11" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is not a hypothetical. The research on AI-built apps is genuinely alarming.</p>
+<div class="cardgrid">
+<div class="minicard"><b>400+ leaked secrets</b> One scan of 1,400 vibe-coded apps found over 400 leaked secrets and 175 PII exposures. (<a href="https://escape.tech/state-of-security-of-vibe-coded-apps" target="_blank">Escape.tech</a>)</div>
+<div class="minicard"><b>~1 in 5 leaks a key</b> RedHunt Labs scanned ~130,000 AI-built sites and found roughly 1 in 5 leaked a key readable in client-side code. (<a href="https://redhuntlabs.com/blog/echoes-of-ai-exposure-thousands-of-secrets-leaking-through-vibe-coded-sites-wave-15-project-resonance/" target="_blank">RedHunt Labs</a>)</div>
+<div class="minicard"><b>$13 to $8,000</b> With no rate limiting, OWASP documents a bill jumping from $13 to $8k from unrestricted resource consumption. (<a href="https://owasp.org/API-Security/editions/2023/en/0xa4-unrestricted-resource-consumption/" target="_blank">OWASP API4:2023</a>)</div>
+<div class="minicard"><b>~45% ship a flaw</b> Veracode found ~45% of AI-generated code introduces a known security flaw. (<a href="https://www.veracode.com/blog/spring-2026-genai-code-security/" target="_blank">Veracode 2026</a>)</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">hole one</span>
+<h2>Exposed secrets <span class="gi" style="--gl:#B37F03" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14.5C18.8137 14.5 21.5 11.8137 21.5 8.5C21.5 5.18629 18.8137 2.5 15.5 2.5C12.1863 2.5 9.5 5.18629 9.5 8.5C9.5 9.38041 9.68962 10.2165 10.0303 10.9697L2.5 18.5V21.5H5.5V19.5H7.5V17.5H9.5L13.0303 13.9697C13.7835 14.3104 14.6196 14.5 15.5 14.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17.5 6.5L16.5 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Most vibe-coded apps accidentally ship API keys inside the front end (your OpenAI key, database URL, Stripe keys), which means anyone can open DevTools, copy them, and use your backend on your dime. This prompt finds them, moves the real ones server-side, and tells you which to rotate.</p>
+<div class="promptwrap">
+<span class="promptlabel">🔑 find and move leaked secrets</span>
+<pre><code>Spin up 3 sub-agents to audit this repo for exposed secrets and fix them.
+Sub-agent 1: scan everything that ships to the browser (src/, components/, pages/, public/, and any VITE_* or NEXT_PUBLIC_* variables) for hardcoded API keys, database URLs, Stripe keys, and auth tokens. Report every hit as file + line number.
+Sub-agent 2: scan the full git history (git log -p) and any committed .env files, because deleted keys stay live in old commits.
+Sub-agent 3: sort each finding into "true secret" (OpenAI/Stripe secret key, Supabase service_role, DB connection string, must move server-side) vs "publishable/anon key" (only safe if Row Level Security is on).
+Then give me one table (file, line, key type, risk). For each true secret: move it into a server-side .env file, add .env to .gitignore, and replace the client call with a backend API route / serverless function / Supabase Edge Function that reads the key from process.env so it never reaches the browser. Finish with a checklist of exactly which live keys I must ROTATE now, because deleting them from code does not revoke them. Never print the actual key values.</code></pre>
+</div>
+<div class="tip warn"><strong>Rotate, do not just delete.</strong> Deleting a key from your code does not revoke it. A key that was ever committed is compromised, so generate a new one and retire the old one in the provider's dashboard. (<a href="https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html" target="_blank">OWASP Secrets Management</a>; on the anon vs service_role rule, <a href="https://supabase.com/docs/guides/getting-started/api-keys" target="_blank">Supabase API keys</a>.)</div>
+
+<span class="kicker">hole two</span>
+<h2>No rate limiting <span class="gi" style="--gl:#3E294F" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 6.5C13.5 7.32843 12.8284 8 12 8C11.1716 8 10.5 7.32843 10.5 6.5C10.5 5.67157 11.1716 5 12 5C12.8284 5 13.5 5.67157 13.5 6.5Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 12.5C13.5 13.3284 12.8284 14 12 14C11.1716 14 10.5 13.3284 10.5 12.5C10.5 11.6716 11.1716 11 12 11C12.8284 11 13.5 11.6716 13.5 12.5Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17C10.1308 17 9.19615 17 8.5 16.5981C8.04394 16.3348 7.66523 15.9561 7.40192 15.5C7 14.8038 7 13.8692 7 12L7 7C7 5.13077 7 4.19615 7.40192 3.5C7.66523 3.04394 8.04394 2.66523 8.5 2.40192C9.19615 2 10.1308 2 12 2C13.8692 2 14.8038 2 15.5 2.40192C15.9561 2.66523 16.3348 3.04394 16.5981 3.5C17 4.19615 17 5.13077 17 7V12C17 13.8692 17 14.8038 16.5981 15.5C16.3348 15.9561 15.9561 16.3348 15.5 16.5981C14.8038 17 13.8692 17 12 17Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 8L5.95617 7.12348C4.64147 6.0195 3.98413 5.46751 4.00029 4.96618C4.00686 4.76236 4.07264 4.56553 4.18881 4.40207C4.47455 4 5.31637 4 7 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 8L18.0438 7.12348C19.3585 6.0195 20.0159 5.46751 19.9997 4.96618C19.9931 4.76236 19.9274 4.56553 19.8112 4.40207C19.5254 4 18.6836 4 17 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 15L18.0438 14.1235C19.3585 13.0195 20.0159 12.4675 19.9997 11.9662C19.9931 11.7624 19.9274 11.5655 19.8112 11.4021C19.5254 11 18.6836 11 17 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 15L5.95617 14.1235C4.64147 13.0195 3.98413 12.4675 4.00029 11.9662C4.00686 11.7624 4.07264 11.5655 4.18881 11.4021C4.47455 11 5.31637 11 7 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>With no limits, anyone can spam your backend with unlimited requests, crash your API, or quietly drain your account on the endpoints that cost money per call. This prompt finds those endpoints and adds real throttling.</p>
+<div class="promptwrap">
+<span class="promptlabel">🚦 add real rate limiting</span>
+<pre><code>Spin up 3 sub-agents to add rate limiting to this app.
+Sub-agent 1: list every API route / endpoint / serverless function, and flag the ones that cost money per call (they hit a paid API like OpenAI, an email/SMS provider, or my database) or have no auth. Those are the "denial of wallet" targets.
+Sub-agent 2: check what protection already exists (any per-IP or per-user throttle, any HTTP 429 handling) and report what is missing.
+Sub-agent 3: detect my stack and write the limiter. Use express-rate-limit if this is Express, or @upstash/ratelimit with a sliding window if this is Next.js / serverless / edge. Limit by IP AND by logged-in user, return HTTP 429 with a Retry-After header, and set a tighter limit on the expensive AI routes than on the cheap ones.
+Then apply it to every endpoint sub-agent 1 flagged, show me the diff, and give me one line per endpoint explaining the limit you chose.</code></pre>
+</div>
+<div class="tip calm">The tools here are all standard: <a href="https://www.npmjs.com/package/express-rate-limit" target="_blank">express-rate-limit</a>, <a href="https://upstash.com/docs/redis/sdks/ratelimit-ts/algorithms" target="_blank">@upstash/ratelimit</a>, and OWASP calls this class of risk "denial of wallet" (<a href="https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/" target="_blank">LLM10:2025</a>).</div>
+
+<span class="kicker">hole three</span>
+<h2>No input validation (the scary one) <span class="gi" style="--gl:#248EDA" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.7088 3.49534C16.8165 2.55382 14.5009 2 12 2C9.4991 2 7.1835 2.55382 5.29116 3.49534C4.36318 3.95706 3.89919 4.18792 3.4496 4.91378C3 5.63965 3 6.34248 3 7.74814V11.2371C3 16.9205 7.54236 20.0804 10.173 21.4338C10.9067 21.8113 11.2735 22 12 22C12.7265 22 13.0933 21.8113 13.8269 21.4338C16.4576 20.0804 21 16.9205 21 11.2371L21 7.74814C21 6.34249 21 5.63966 20.5504 4.91378C20.1008 4.18791 19.6368 3.95706 18.7088 3.49534Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>If your app blindly trusts user input, someone can inject bad data, break your database, or run malicious queries, and AI-generated apps skip this step most of the time. This prompt adds server-side validation and locks the database itself.</p>
+<div class="promptwrap">
+<span class="promptlabel">🛡️ add input validation + lock the database</span>
+<pre><code>Spin up 3 sub-agents to fix input validation across this app.
+Sub-agent 1: find every place user input enters (form handlers, API route bodies, URL/query params, webhooks) and list each with file + line.
+Sub-agent 2: check whether each one is validated on the SERVER before use (browser-only validation does not count, it is bypassable), and flag any raw SQL that concatenates user input instead of using parameterized queries.
+Sub-agent 3: if this is a Supabase/Postgres app, list every table and whether Row Level Security is on, because the public anon key can read any table with RLS off.
+Then: add a Zod schema for each input and reject bad data server-side with .safeParse(), convert concatenated SQL to parameterized queries (or the Supabase client / Prisma), and write the missing RLS policies so the database itself enforces who can read and write each row. Show me the before and after for every fix.</code></pre>
+</div>
+<div class="tip calm">The building blocks: <a href="https://zod.dev/basics" target="_blank">Zod</a> for schemas, <a href="https://supabase.com/docs/guides/database/postgres/row-level-security" target="_blank">Supabase Row Level Security</a>, and OWASP's rule that validation must happen server-side (<a href="https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html" target="_blank">Input Validation</a>, <a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html" target="_blank">SQL Injection Prevention</a>).</div>
+
+<hr class="rule">
+<span class="kicker">after you run them</span>
+<h2>Finish clean <span class="gi" style="--gl:#119B5B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5L10.5 15L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">👀 Review every diff.</strong> These prompts edit real files. Read what each one changed before you accept it, so you understand your own app.</li>
+<li><strong class="st">🔄 Rotate the flagged keys.</strong> Go into each provider (OpenAI, Stripe, Supabase, your DB) and issue new keys for anything that was ever exposed. This is the step people skip.</li>
+<li><strong class="st">🚀 Re-deploy and re-check.</strong> Ship the fixes, then open DevTools on the live site and confirm no secrets sit in the shipped bundle. Green means done.</li>
+</ol>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

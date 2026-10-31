@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>The Bunsik Burger · Korean street food, smashed</title>
+<link rel="icon" href="logo-original.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #F7B500;
+    --yellow-deep: #E8A400;
+    --ink: #0C0C0C;
+    --ink-soft: #161616;
+    --cream: #FAF3E3;
+    --red: #E4572E;
+    --display: "Black Han Sans", sans-serif;
+    --body: "Space Grotesk", sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ink);
+    color: var(--cream);
+    font-family: var(--body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  body::after {
+    content: ""; position: fixed; inset: 0; z-index: 200;
+    pointer-events: none; opacity: .05;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  /* ---------- nav ---------- */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; gap: 28px;
+    padding: 14px 28px;
+    background: rgba(12, 12, 12, .82);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(247, 181, 0, .18);
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand img { width: 46px; height: 46px; border-radius: 50%; }
+  .brand span {
+    font-family: var(--display); font-size: 19px; letter-spacing: .02em;
+    color: var(--yellow); line-height: 1;
+  }
+  .navlinks { display: flex; gap: 26px; margin-left: auto; }
+  .navlinks a {
+    font-size: 14px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+    color: rgba(250, 243, 227, .75); transition: color .2s;
+  }
+  .navlinks a:hover { color: var(--yellow); }
+  .btn {
+    display: inline-block;
+    font-family: var(--display); font-size: 15px; letter-spacing: .04em;
+    background: var(--yellow); color: var(--ink);
+    padding: 12px 26px; border-radius: 999px;
+    transition: transform .2s, background .2s;
+  }
+  .btn:hover { transform: translateY(-2px) rotate(-1deg); background: #ffc41f; }
+  nav .btn { padding: 10px 22px; }
+
+  /* ---------- scroll video hero ---------- */
+  .scrolly { height: 340vh; position: relative; }
+  .scrolly-stage { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+  .scrolly-stage video {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .scrolly-stage::after {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 120% 90% at 50% 50%, transparent 55%, rgba(12,12,12,.55) 100%);
+    pointer-events: none;
+  }
+  .hero-copy {
+    position: absolute; inset: 0; z-index: 5;
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+    text-align: center; padding: 15vh 24px 0;
+    pointer-events: none;
+  }
+  .hero-copy .kicker {
+    font-weight: 700; font-size: 13px; letter-spacing: .34em; text-transform: uppercase;
+    color: var(--yellow);
+    background: rgba(12,12,12,.55); padding: 8px 16px; border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .hero-copy h1 {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(28px, 6.15vw, 94px);
+    line-height: 1; letter-spacing: 0;
+    white-space: nowrap;
+    color: #fff;
+    text-shadow: 0 8px 50px rgba(0,0,0,.55);
+  }
+  .hero-copy h1 .yellow { color: var(--yellow); }
+  .hero-copy p {
+    position: absolute; bottom: 78px; left: 50%; transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: clamp(13px, 1.5vw, 18px); font-weight: 500;
+    color: rgba(250,243,227,.92);
+    background: rgba(12,12,12,.5); padding: 10px 18px; border-radius: 999px;
+  }
+  .hero-end {
+    position: absolute; inset: 0; z-index: 6;
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+    padding-bottom: 12vh; text-align: center;
+    opacity: 0; pointer-events: none;
+  }
+  .hero-end h2 {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(34px, 5vw, 72px); color: #fff;
+    text-shadow: 0 6px 30px rgba(0,0,0,.5);
+    margin-bottom: 22px;
+  }
+  .hero-end .btn { pointer-events: auto; font-size: 18px; padding: 16px 34px; }
+  .scroll-hint {
+    position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
+    z-index: 7; display: flex; align-items: center; gap: 10px;
+    font-size: 12px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase;
+    color: rgba(250,243,227,.8);
+  }
+  .scroll-hint .wheel {
+    width: 22px; height: 34px; border: 2px solid rgba(250,243,227,.8); border-radius: 12px;
+    position: relative;
+  }
+  .scroll-hint .wheel::after {
+    content: ""; position: absolute; left: 50%; top: 6px; transform: translateX(-50%);
+    width: 4px; height: 7px; border-radius: 3px; background: var(--yellow);
+    animation: wheel 1.6s infinite;
+  }
+  @keyframes wheel { 0% {top: 6px; opacity: 1;} 70% {top: 18px; opacity: 0;} 100% {top: 6px; opacity: 0;} }
+
+  /* ---------- marquee ---------- */
+  .marquee {
+    background: var(--yellow); color: var(--ink);
+    overflow: hidden; white-space: nowrap;
+    padding: 16px 0;
+    transform: rotate(-1.2deg) scale(1.02);
+    border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink);
+    position: relative; z-index: 10;
+  }
+  .marquee .track {
+    display: inline-block;
+    font-family: var(--display); font-size: 26px; letter-spacing: .03em;
+    animation: marquee 26s linear infinite;
+  }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ---------- sections ---------- */
+  section { position: relative; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+  .sec-head {
+    display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap;
+    margin-bottom: 42px;
+  }
+  .sec-head h2 {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(44px, 6vw, 84px); line-height: 1;
+  }
+  .sec-head .hangul {
+    font-family: var(--display); font-size: clamp(22px, 2.6vw, 34px);
+    opacity: .45;
+  }
+
+  /* greatest hits */
+  .hits { background: var(--cream); color: var(--ink); padding: 96px 0 110px; }
+  .hits .sec-head h2 .accent { color: var(--red); }
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .card {
+    background: var(--ink); color: var(--cream);
+    border-radius: 18px; padding: 26px 22px 24px;
+    position: relative; overflow: hidden;
+    min-height: 320px; display: flex; flex-direction: column;
+    transition: transform .25s ease;
+  }
+  .card:hover { transform: translateY(-8px) rotate(-1deg); }
+  .card:nth-child(2n) { background: var(--yellow); color: var(--ink); }
+  .card .num {
+    font-family: var(--display); font-size: 15px; letter-spacing: .1em;
+    opacity: .55;
+  }
+  .card h3 {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(24px, 2.2vw, 31px); line-height: 1.04; margin: 10px 0 12px;
+  }
+  .card p { font-size: 14px; line-height: 1.55; opacity: .8; flex: 1; }
+  .card .price {
+    font-family: var(--display); font-size: 26px; margin-top: 16px;
+  }
+  .card .hangul-mark {
+    position: absolute; right: -12px; bottom: -26px;
+    font-family: var(--display); font-size: 110px; opacity: .08; line-height: 1;
+    pointer-events: none;
+  }
+  .card .tag {
+    position: absolute; top: 20px; right: 18px;
+    font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    background: var(--red); color: #fff;
+    padding: 5px 10px; border-radius: 999px;
+    transform: rotate(3deg);
+  }
+  .card:nth-child(2n) .tag { background: var(--ink); color: var(--yellow); }
+
+  /* menu */
+  .menu { background: var(--ink); padding: 100px 0 110px; }
+  .menu .sec-head h2 { color: var(--yellow); }
+  .menu-cols { columns: 3; column-gap: 34px; }
+  .mcat { break-inside: avoid; margin-bottom: 40px; }
+  .mcat h3 {
+    font-family: var(--display); font-weight: 400; font-size: 24px;
+    color: var(--yellow);
+    border-bottom: 2px solid rgba(247,181,0,.35);
+    padding-bottom: 8px; margin-bottom: 14px;
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .mcat h3 small { font-size: 13px; opacity: .5; font-family: var(--body); font-weight: 600; }
+  .mi { margin-bottom: 13px; }
+  .mi .row {
+    display: flex; align-items: baseline; gap: 8px;
+    font-weight: 600; font-size: 15px;
+  }
+  .mi .row .dots {
+    flex: 1; border-bottom: 2px dotted rgba(250,243,227,.25);
+    transform: translateY(-3px);
+  }
+  .mi .row .p { font-family: var(--display); font-size: 16px; color: var(--yellow); white-space: nowrap; }
+  .mi .desc { font-size: 12.5px; line-height: 1.5; opacity: .55; margin-top: 3px; }
+  .spicy { color: var(--red); font-size: 12px; }
+
+  /* about */
+  .about { background: var(--yellow); color: var(--ink); padding: 90px 0; transform: rotate(0); }
+  .about .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; align-items: center; }
+  .about h2 {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(40px, 5vw, 66px); line-height: 1.02;
+  }
+  .about p { font-size: 16.5px; line-height: 1.7; font-weight: 500; margin-top: 18px; }
+  .about .badge-wall {
+    display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end;
+  }
+  .about .badge {
+    font-family: var(--display); font-size: 17px;
+    background: var(--ink); color: var(--yellow);
+    padding: 12px 20px; border-radius: 999px;
+    transform: rotate(-2deg);
+  }
+  .about .badge:nth-child(2n) { transform: rotate(2deg); background: #fff; color: var(--ink); }
+
+  /* visit */
+  .visit { background: var(--ink); padding: 110px 0 60px; text-align: center; }
+  .visit h2 {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(46px, 7vw, 100px); line-height: .98; color: #fff;
+  }
+  .visit h2 .yellow { color: var(--yellow); }
+  .visit p { margin: 22px auto 34px; max-width: 560px; font-size: 16px; line-height: 1.7; opacity: .75; }
+  .visit .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-ghost {
+    display: inline-block;
+    font-family: var(--display); font-size: 15px; letter-spacing: .04em;
+    border: 2px solid rgba(250,243,227,.4); color: var(--cream);
+    padding: 11px 26px; border-radius: 999px;
+    transition: border-color .2s, transform .2s;
+  }
+  .btn-ghost:hover { border-color: var(--yellow); transform: translateY(-2px); }
+  footer {
+    margin-top: 90px; padding: 26px 28px;
+    border-top: 1px solid rgba(247,181,0,.18);
+    display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+    font-size: 13px; opacity: .6;
+  }
+  .foot-word {
+    font-family: var(--display); color: var(--yellow); font-size: 15px;
+  }
+
+  /* reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    .navlinks { display: none; }
+    .cards { grid-template-columns: 1fr 1fr; }
+    .menu-cols { columns: 1; }
+    .about .wrap { grid-template-columns: 1fr; }
+    .about .badge-wall { justify-content: flex-start; }
+    .scrolly { height: 300vh; }
+  }
+  @media (max-width: 560px) {
+    .cards { grid-template-columns: 1fr; }
+    .brand span { display: none; }
+  }
+</style>
+<!-- seo:auto -->
+<meta name="description" content="Hand-made wagyu patty, American cheese, bacon, lettuce, caramelised onion, Korean BBQ sauce and homemade mayo on a brioche bun.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/demo/bunsik-hero">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="The Bunsik Burger · Korean street food, smashed">
+<meta property="og:description" content="Hand-made wagyu patty, American cheese, bacon, lettuce, caramelised onion, Korean BBQ sauce and homemade mayo on a brioche bun.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/demo/bunsik-hero">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Bunsik Burger · Korean street food, smashed">
+<meta name="twitter:description" content="Hand-made wagyu patty, American cheese, bacon, lettuce, caramelised onion, Korean BBQ sauce and homemade mayo on a brioche bun.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The Bunsik Burger · Korean street food, smashed","description":"Hand-made wagyu patty, American cheese, bacon, lettuce, caramelised onion, Korean BBQ sauce and homemade mayo on a brioche bun.","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/demo/bunsik-hero"},"inLanguage":"en"}</script>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="#top">
+    <img src="logo-original.png" alt="The Bunsik Burger logo">
+    <span>THE BUNSIK<br>BURGER</span>
+  </a>
+  <div class="navlinks">
+    <a href="#hits">Greatest hits</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#visit">Visit</a>
+  </div>
+  <a class="btn" href="#visit" style="margin-left:auto">Order now</a>
+</nav>
+
+<div class="scrolly" id="top">
+  <div class="scrolly-stage">
+    <video id="heroVideo" muted playsinline webkit-playsinline preload="auto" poster="poster.jpg">
+      <source src="hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-copy" id="heroCopy">
+      <div class="kicker">Korean street food &middot; 분식</div>
+      <h1>SEOUL, <span class="yellow">SMASHED</span> ON A BUN.</h1>
+      <p>Hand-made wagyu patties. Korean BBQ sauce. Zero restraint.</p>
+    </div>
+    <div class="hero-end" id="heroEnd">
+      <h2>Fresh out of the box.</h2>
+      <a class="btn" href="#hits">See the greatest hits</a>
+    </div>
+    <div class="scroll-hint" id="scrollHint"><span class="wheel"></span> scroll</div>
+  </div>
+</div>
+
+<div class="marquee">
+  <span class="track" id="marqueeTrack"></span>
+</div>
+
+<section class="hits" id="hits">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>THE GREATEST <span class="accent">HITS</span></h2>
+      <span class="hangul">분식 버거</span>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <span class="tag">Signature</span>
+        <span class="num">No. 01</span>
+        <h3>Surry Signature Beef</h3>
+        <p>Hand-made wagyu patty, American cheese, bacon, lettuce, caramelised onion, Korean BBQ sauce and homemade mayo on a brioche bun.</p>
+        <span class="price">$19.90</span>
+        <span class="hangul-mark">불</span>
+      </div>
+      <div class="card reveal">
+        <span class="tag">Double trouble</span>
+        <span class="num">No. 02</span>
+        <h3>Hills Double Patty</h3>
+        <p>Two wagyu patties, American and Swiss cheese, tomato, lettuce, pineapple, Korean BBQ sauce and homemade mayo. The heavyweight.</p>
+        <span class="price">$23.90</span>
+        <span class="hangul-mark">더</span>
+      </div>
+      <div class="card reveal">
+        <span class="tag">K.F.C.</span>
+        <span class="num">No. 03</span>
+        <h3>Korean Fried Chicken Burger</h3>
+        <p>Fried thigh fillet, house slaw, cucumber pickles, gochujang sauce and cream dressing. Crunch first, questions later.</p>
+        <span class="price">$18.90</span>
+        <span class="hangul-mark">닭</span>
+      </div>
+      <div class="card reveal">
+        <span class="tag">Cheese pull</span>
+        <span class="num">No. 04</span>
+        <h3>Mozzarella Cheese Hotdog</h3>
+        <p>Korean street-style corn dog with a full mozzarella pull, cheese dipping sauce and shredded parmesan.</p>
+        <span class="price">$11.90</span>
+        <span class="hangul-mark">핫</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>THE FULL LINEUP</h2>
+      <span class="hangul">전체 메뉴</span>
+    </div>
+    <div class="menu-cols">
+
+      <div class="mcat reveal">
+        <h3>Beef burgers <small>wagyu, hand-made</small></h3>
+        <div class="mi"><div class="row"><span>Surry Signature Beef</span><span class="dots"></span><span class="p">$19.90</span></div><div class="desc">Wagyu patty, American cheese, bacon, lettuce, caramelised onion, Korean BBQ sauce, homemade mayo</div></div>
+        <div class="mi"><div class="row"><span>Hills Double Patty</span><span class="dots"></span><span class="p">$23.90</span></div><div class="desc">Double wagyu, American and Swiss cheese, tomato, lettuce, pineapple, Korean BBQ sauce</div></div>
+        <div class="mi"><div class="row"><span>Bulgogi Beef</span><span class="dots"></span><span class="p">$19.90</span></div><div class="desc">Wagyu patty, American cheese, lettuce, tomato, caramelised onion, bulgogi sauce</div></div>
+        <div class="mi"><div class="row"><span>Truffle Beef</span><span class="dots"></span><span class="p">$19.90</span></div><div class="desc">Wagyu patty, Swiss cheese, tomato, lettuce, caramelised onion, homemade truffle mayo</div></div>
+        <div class="mi"><div class="row"><span>Bunsik Cheese</span><span class="dots"></span><span class="p">$14.90</span></div><div class="desc">Wagyu patty, American cheese, cheese dipping sauce, homemade mayo</div></div>
+        <div class="mi"><div class="row"><span>Cheese Patty Double</span><span class="dots"></span><span class="p">$18.90</span></div><div class="desc">Double wagyu, American and Swiss cheese, cheese dipping sauce</div></div>
+      </div>
+
+      <div class="mcat reveal">
+        <h3>Chicken burgers</h3>
+        <div class="mi"><div class="row"><span>K.F.C. Korean Fried Chicken</span><span class="dots"></span><span class="p">$18.90</span></div><div class="desc">Fried thigh fillet, house slaw, cucumber pickles, gochujang sauce, cream dressing</div></div>
+        <div class="mi"><div class="row"><span>Sweet N Spicy <span class="spicy">&#x1F336;</span></span><span class="dots"></span><span class="p">$18.90</span></div><div class="desc">Fried thigh fillet, house slaw, cucumber pickles, sweet and spicy sauce</div></div>
+        <div class="mi"><div class="row"><span>Soy Garlic</span><span class="dots"></span><span class="p">$18.90</span></div><div class="desc">Fried thigh fillet, house slaw, cucumber pickles, soy garlic sauce</div></div>
+        <div class="mi"><div class="row"><span>Hawaiian BBQ</span><span class="dots"></span><span class="p">$19.90</span></div><div class="desc">Grilled thigh fillet, lettuce, tomato, caramelised onion, BBQ sauce, pineapple</div></div>
+      </div>
+
+      <div class="mcat reveal">
+        <h3>Special burgers</h3>
+        <div class="mi"><div class="row"><span>K.F.P. Korean Fried Pork</span><span class="dots"></span><span class="p">$18.90</span></div><div class="desc">Fried pork loin, house slaw, cucumber pickles, donkatsu sauce</div></div>
+        <div class="mi"><div class="row"><span>Crispy Mushroom</span><span class="dots"></span><span class="p">$19.90</span></div><div class="desc">Fried assorted mushrooms, lettuce, tomato, gochujang sauce, truffle mayo</div></div>
+        <div class="mi"><div class="row"><span>Buttery Chili Prawn <span class="spicy">&#x1F336;</span></span><span class="dots"></span><span class="p">$19.90</span></div><div class="desc">Fried prawn patty, house slaw, cucumber pickles, homemade chili mayo</div></div>
+      </div>
+
+      <div class="mcat reveal">
+        <h3>Hotdogs <small>Korean street style</small></h3>
+        <div class="mi"><div class="row"><span>Mozzarella Cheese</span><span class="dots"></span><span class="p">$11.90</span></div><div class="desc">Cheese dipping sauce, shredded parmesan</div></div>
+        <div class="mi"><div class="row"><span>Half Hot Dog, Half Cheese</span><span class="dots"></span><span class="p">$11.90</span></div><div class="desc">Pork sausage and mozzarella</div></div>
+        <div class="mi"><div class="row"><span>Potato Hotdog</span><span class="dots"></span><span class="p">$11.90</span></div><div class="desc">Pork sausage, crispy potato coat</div></div>
+        <div class="mi"><div class="row"><span>Original Hotdog</span><span class="dots"></span><span class="p">$9.90</span></div><div class="desc">Pork sausage, crispy outside</div></div>
+        <div class="mi"><div class="row"><span>Super Sweet Corn Dog</span><span class="dots"></span><span class="p">$6.90</span></div><div class="desc">With cream mayo, tomato sauce and mustard</div></div>
+      </div>
+
+      <div class="mcat reveal">
+        <h3>Korean fried chicken <small>400g, boneless</small></h3>
+        <div class="mi"><div class="row"><span>Original</span><span class="dots"></span><span class="p">$26.90</span></div><div class="desc">With homemade mayo</div></div>
+        <div class="mi"><div class="row"><span>Sweet N Spicy (Red) <span class="spicy">&#x1F336;</span></span><span class="dots"></span><span class="p">$27.90</span></div></div>
+        <div class="mi"><div class="row"><span>Honey Soy (Black)</span><span class="dots"></span><span class="p">$27.90</span></div></div>
+        <div class="mi"><div class="row"><span>BBQ</span><span class="dots"></span><span class="p">$27.90</span></div></div>
+        <div class="mi"><div class="row"><span>Gochujang N Mayo</span><span class="dots"></span><span class="p">$27.90</span></div></div>
+        <div class="mi"><div class="row"><span>Volcano <span class="spicy">&#x1F336;&#x1F336;</span></span><span class="dots"></span><span class="p">$27.90</span></div><div class="desc">Super spicy</div></div>
+        <div class="mi"><div class="row"><span>Honey Cheese</span><span class="dots"></span><span class="p">$28.90</span></div><div class="desc">With cheese dipping sauce</div></div>
+        <div class="mi"><div class="row"><span>Cheddar Cheese</span><span class="dots"></span><span class="p">$28.90</span></div><div class="desc">With cream cheese sauce</div></div>
+        <div class="mi"><div class="row"><span>Truffle Cheese</span><span class="dots"></span><span class="p">$28.90</span></div><div class="desc">With truffle mayo</div></div>
+        <div class="mi"><div class="row"><span>Chicken Wings (6 pcs)</span><span class="dots"></span><span class="p">$14.90</span></div></div>
+        <div class="mi"><div class="row"><span>Platter for 2 to 3</span><span class="dots"></span><span class="p">$69.80</span></div><div class="desc">Original, sweet and spicy, and honey soy, with fries and three kimmari</div></div>
+      </div>
+
+      <div class="mcat reveal">
+        <h3>Bunsik street</h3>
+        <div class="mi"><div class="row"><span>Tteokbokki <span class="spicy">&#x1F336;</span></span><span class="dots"></span><span class="p">$15.00</span></div><div class="desc">Rice cake and fish cake in Korean spicy sauce</div></div>
+        <div class="mi"><div class="row"><span>Rabokki <span class="spicy">&#x1F336;</span></span><span class="dots"></span><span class="p">$19.00</span></div><div class="desc">Tteokbokki with ramen noodles</div></div>
+        <div class="mi"><div class="row"><span>Ramen</span><span class="dots"></span><span class="p">$15.00</span></div><div class="desc">Korean style noodle soup</div></div>
+        <div class="mi"><div class="row"><span>Fried Prawn Mandu (5 pcs)</span><span class="dots"></span><span class="p">$12.00</span></div><div class="desc">Prawn and vegetable dumplings</div></div>
+      </div>
+
+      <div class="mcat reveal">
+        <h3>Sides</h3>
+        <div class="mi"><div class="row"><span>Popcorn Chicken w/ Fries</span><span class="dots"></span><span class="p">$13.90</span></div></div>
+        <div class="mi"><div class="row"><span>Popcorn Prawn w/ Fries</span><span class="dots"></span><span class="p">$15.90</span></div></div>
+        <div class="mi"><div class="row"><span>Cheese Sticks (5 pcs)</span><span class="dots"></span><span class="p">$10.90</span></div></div>
+      </div>
+
+      <div class="mcat reveal">
+        <h3>Fries</h3>
+        <div class="mi"><div class="row"><span>Loaded Fries</span><span class="dots"></span><span class="p">$12.00</span></div><div class="desc">Large fries with your choice of sauce</div></div>
+        <div class="mi"><div class="row"><span>Original Small / Large</span><span class="dots"></span><span class="p">$8 / $11</span></div></div>
+        <div class="mi"><div class="row"><span>Cheese Fries</span><span class="dots"></span><span class="p">$11.00</span></div><div class="desc">With cheddar powder</div></div>
+        <div class="mi"><div class="row"><span>Honey Cheese Fries</span><span class="dots"></span><span class="p">$11.00</span></div></div>
+        <div class="mi"><div class="row"><span>Sweet Potato Fries</span><span class="dots"></span><span class="p">$10.00</span></div><div class="desc">Cheese or honey cheese +$1</div></div>
+      </div>
+
+      <div class="mcat reveal">
+        <h3>Korean fried pork</h3>
+        <div class="mi"><div class="row"><span>Sweet and Sour (Original)</span><span class="dots"></span><span class="p">$38.00</span></div><div class="desc">Deep fried pork, sharing size</div></div>
+        <div class="mi"><div class="row"><span>Sweet N Spicy <span class="spicy">&#x1F336;</span></span><span class="dots"></span><span class="p">$38.00</span></div></div>
+      </div>
+
+      <div class="mcat reveal">
+        <h3>Set meals</h3>
+        <div class="mi"><div class="row"><span>Surry Signature + small fries</span><span class="dots"></span><span class="p">$26.90</span></div></div>
+        <div class="mi"><div class="row"><span>Truffle Beef + small fries</span><span class="dots"></span><span class="p">$26.90</span></div></div>
+        <div class="mi"><div class="row"><span>Mozzarella Hotdog + cheese sticks + Coke</span><span class="dots"></span><span class="p">$27.30</span></div></div>
+        <div class="mi"><div class="row"><span>Buttery Chili Prawn + small fries</span><span class="dots"></span><span class="p">$27.90</span></div></div>
+        <div class="mi"><div class="row"><span>Soy Garlic + cheese sticks</span><span class="dots"></span><span class="p">$30.80</span></div></div>
+        <div class="mi"><div class="row"><span>Hills Double + small fries</span><span class="dots"></span><span class="p">$30.90</span></div></div>
+        <div class="mi"><div class="row"><span>Sweet N Spicy + cheese sticks + drink</span><span class="dots"></span><span class="p">$34.30</span></div></div>
+        <div class="mi"><div class="row"><span>Bunsik Cheese + wings + drink</span><span class="dots"></span><span class="p">$34.30</span></div></div>
+      </div>
+
+      <div class="mcat reveal">
+        <h3>Drinks</h3>
+        <div class="mi"><div class="row"><span>Milkshake</span><span class="dots"></span><span class="p">$8.50</span></div></div>
+        <div class="mi"><div class="row"><span>Red Bull / Gatorade</span><span class="dots"></span><span class="p">$5.50</span></div></div>
+        <div class="mi"><div class="row"><span>Soft drinks</span><span class="dots"></span><span class="p">$4.50</span></div><div class="desc">Coke, Coke Zero, Sprite, Fanta, Mountain Dew, Milkis, Cider, sparkling water</div></div>
+        <div class="mi"><div class="row"><span>Still water</span><span class="dots"></span><span class="p">$3.50</span></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>BUNSIK (분식) MEANS<br>KOREAN STREET FOOD.</h2>
+      <p>We took the food you eat standing up in a Seoul market, tteokbokki heat, gochujang, soy garlic, the mozzarella pull, and smashed it into hand-made wagyu burgers on brioche. Every sauce is made in-house. Every patty is pressed by hand. Nothing here is polite.</p>
+    </div>
+    <div class="badge-wall reveal">
+      <span class="badge">Hand-made wagyu</span>
+      <span class="badge">Homemade sauces</span>
+      <span class="badge">Brioche buns</span>
+      <span class="badge">Seoul heat</span>
+      <span class="badge">Cheese pulls</span>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap reveal">
+    <h2>HUNGRY?<br><span class="yellow">THOUGHT SO.</span></h2>
+    <p>Order for pickup or delivery through the EASI app, or come say hi and watch the cheese pull happen in person.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://www.easi.com.au/" target="_blank" rel="noopener">Order on EASI</a>
+      <a class="btn-ghost" href="https://www.instagram.com/the_bunsikburger/" target="_blank" rel="noopener">@the_bunsikburger</a>
+    </div>
+  </div>
+  <footer>
+    <span class="foot-word">THE BUNSIK BURGER</span>
+    <span>Korean street food, smashed on a bun.</span>
+    <span>&copy; 2026 The Bunsik Burger</span>
+  </footer>
+</section>
+
+<script>
+  /* ---------- marquee content ---------- */
+  const items = "WAGYU SMASH ★ KOREAN FRIED CHICKEN ★ 분식 ★ CHEESE PULL HOTDOGS ★ TTEOKBOKKI HEAT ★ SEOUL STREET FOOD ★ ";
+  document.getElementById('marqueeTrack').textContent = items + items;
+
+  /* ---------- scroll-driven video ---------- */
+  const video = document.getElementById('heroVideo');
+  const scrolly = document.querySelector('.scrolly');
+  const heroCopy = document.getElementById('heroCopy');
+  const heroEnd = document.getElementById('heroEnd');
+  const scrollHint = document.getElementById('scrollHint');
+
+  let target = 0, shown = 0;
+
+  function readScroll() {
+    const total = scrolly.offsetHeight - innerHeight;
+    const y = -scrolly.getBoundingClientRect().top;
+    target = Math.min(1, Math.max(0, y / total));
+  }
+  addEventListener('scroll', readScroll, { passive: true });
+  addEventListener('resize', readScroll);
+  readScroll();
+
+  function tick() {
+    requestAnimationFrame(tick);
+    shown += (target - shown) * 0.09;
+    if (video.duration && !video.seeking) {
+      const t = shown * (video.duration - 0.05);
+      if (Math.abs(t - video.currentTime) > 0.004) video.currentTime = t;
+    }
+    // headline retreats as the scrub begins
+    const c = Math.max(0, 1 - shown * 2.6);
+    heroCopy.style.opacity = c;
+    heroCopy.style.transform = `translateY(${shown * -70}px) scale(${1 - shown * .08})`;
+    // closing line rises near the end of the shot
+    heroEnd.style.opacity = Math.min(1, Math.max(0, (shown - 0.78) * 5));
+    scrollHint.style.opacity = Math.max(0, 1 - shown * 6);
+  }
+  requestAnimationFrame(tick);
+
+  /* ---------- reveal on scroll ---------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

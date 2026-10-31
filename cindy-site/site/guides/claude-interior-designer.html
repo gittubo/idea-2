@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turn Claude into your interior designer · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="This is the exact setup I use to turn Claude into my personal interior designer.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-interior-designer">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Turn Claude into your interior designer">
+<meta property="og:description" content="This is the exact setup I use to turn Claude into my personal interior designer.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-interior-designer">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Turn Claude into your interior designer">
+<meta name="twitter:description" content="This is the exact setup I use to turn Claude into my personal interior designer.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Turn Claude into your interior designer","description":"This is the exact setup I use to turn Claude into my personal interior designer and plan a room before I spend a dollar. I've just updated it: no API keys...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/claude-interior-designer"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Turn Claude into your interior designer", u:"guides/claude-interior-designer.html", topic:"life", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Life &amp; self</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Turn Claude into your interior designer</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This is the exact setup I use to turn Claude into my personal interior designer.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip calm">🔄 <strong>Updated for 2026.</strong> The old version had you install a skill in Claude Code and paste a Google API key. You don't need any of that anymore. Nano Banana (the image model) is now free and built right into the Gemini app, so the setup below is the easy way. The old power-user path still works and it's saved at the bottom if you want it.</div>
+
+<h2>The idea in one line</h2>
+<p><strong>Claude is the designer, Nano Banana is the paintbrush.</strong> Claude can't draw images itself, and that's fine, that's not where its value is. Claude looks at your room, diagnoses it, writes the exact redesign prompt, and later gives you the shopping list. Then a free image model called <strong>Nano Banana</strong> (inside the free Gemini app) renders the picture. You get a real designer's brain plus a free renderer, and the reel title is literally true.</p>
+
+<hr class="rule">
+<span class="kicker">the setup</span>
+<h2>Part 1: The setup (no API key, ~3 minutes)</h2>
+<ol class="steps">
+<li><strong class="st">📸 Photograph the room in good light.</strong> Open the curtains, turn on the lamps, stand in the doorway and take one clear, wide shot at eye level. A good photo is the whole game.</li>
+<li><strong class="st">🧠 Make Claude your interior designer.</strong> Open <a href="https://claude.ai" target="_blank">Claude</a>, upload the photo, and use the master prompt in Part 2. Claude reads the space (layout, light, proportions) and writes you a precise redesign prompt tailored to your actual room.</li>
+<li><strong class="st">🍌 Render it free with Nano Banana.</strong> Open the <a href="https://gemini.google.com" target="_blank">Gemini app</a> (free with any Google login, web or phone), upload the same room photo, and paste Claude's prompt. Nano Banana draws the redesign. No API key, no install.</li>
+<li><strong class="st">💬 Iterate in plain English.</strong> Right there in Gemini, keep going: "keep the layout, swap to warm oak, add plants, morning light." For a crisp 4K version or readable labels, switch on <strong>Nano Banana Pro</strong> (about 2 free renders a day).</li>
+<li><strong class="st">🛒 Bring it back to Claude for the shopping plan.</strong> Paste the render (or describe it) back into Claude and ask for named products, a budget, and what to keep versus replace. That's the part Claude is genuinely best at.</li>
+</ol>
+
+<div class="tip">💳 <strong>What it costs, honestly.</strong> The Gemini app is free with daily limits (Google changes the exact numbers often, so I won't quote a hard figure). Nano Banana Pro, the sharper 4K model, is capped at roughly 2 free images a day. You only need to pay if you want lots of 4K renders: Google AI Plus is about US$4.99/mo and AI Pro about US$19.99/mo. For redesigning a room, the free tier is plenty.</div>
+
+<div class="tip calm">🧰 <strong>Prefer a one-click app?</strong> If you'd rather have style presets and virtual staging instead of prompting, two dedicated room tools are worth knowing: <a href="https://app.decoraihome.com/" target="_blank">DecorAI</a> (free unlimited redesigns at standard resolution, pay only for HD) and <a href="https://www.spacely.ai/" target="_blank">Spacely AI</a> (free credits, and rare for a free tier, a commercial licence). RoomGPT is the famous one but it's mostly paywalled now. I still prefer the Claude plus Gemini route because it's free, conversational, and gives you the shopping plan too.</div>
+
+<hr class="rule">
+<span class="kicker">copy this</span>
+<h2>Part 2: The master prompt</h2>
+<p>Every redesign starts with this base formula. Give Claude your room photo and this prompt so it tailors the wording to your space, then paste what Claude writes into the Gemini app to render it. (In a hurry? You can paste this straight into the Gemini app with your photo too.) Customise the bits in <strong>[brackets]</strong>.</p>
+<div class="promptwrap">
+<span class="promptlabel">🏠 the master prompt</span>
+<pre><code>Redesign this [room type] in the style of [style name].
+
+Keep the room's existing windows, doors, and ceiling height, only change [furniture / paint / textiles / decor].
+
+Make the lighting [warm and cosy / bright and airy / moody and intimate].
+
+The vibe I'm going for: [one sentence about how you want to feel in the room].
+
+Show me the redesigned room from the same angle as the original photo.</code></pre>
+</div>
+<p><strong>Why this works:</strong> the best results come from a clear <em>anchor</em> (the existing room), a clear <em>change scope</em> (what's allowed to change), and a clear <em>feeling</em> (not just a style name).</p>
+<hr class="rule">
+<span class="kicker">pick a style</span>
+<h2>Part 3: The 12-style library</h2>
+<p>Just swap <code>[style name]</code> in the master prompt with any of these. Each one has the exact words I'd use to describe it, that level of specificity is what gets you redesigns that don't look generic.</p>
+<h3><span class="gi" style="--gl:#719315" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.64584 15.7108C7.23279 14.8966 7 13.9755 7 13C7 9.78484 9.5 7.5 13 7C17.0817 6.4169 18.8333 4.16667 20 3C23.5 16 17 19 13 19C11.9071 19 10.8825 18.7078 10 18.1973" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 21C3.5 18 5.45791 16.1355 10 15C13.2167 14.1958 15.4634 12.1791 17 10.0549" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span> Cosy &amp; warm</h3>
+<ol class="steps">
+<li><strong>Modern Japandi:</strong> neutral palette, light woods, soft linen, low-profile furniture, minimal but warm</li>
+<li><strong>Cosy Farmhouse:</strong> cream walls, woven textures, vintage finds, dried flowers, terracotta accents</li>
+<li><strong>Warm Minimalism:</strong> beige + ivory + soft brown, one statement piece, lots of negative space</li>
+<li><strong>Coastal Grandmother:</strong> slipcovered linen sofa, blue-and-white ceramics, woven baskets, soft natural light</li>
+</ol>
+<h3><span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Bold &amp; editorial</h3>
+<ol class="steps">
+<li><strong>Dark Academia:</strong> deep green or burgundy walls, brass fixtures, leather, books as decor, moody lighting</li>
+<li><strong>Modern Industrial:</strong> exposed materials look, matte black metal, concrete textures, leather sofa, Edison-style bulbs</li>
+<li><strong>Maximalist Eclectic:</strong> layered patterns, jewel tones, gallery wall, mixed-era furniture, plants everywhere</li>
+<li><strong>Mid-Century Modern:</strong> walnut wood, mustard + teal accents, tapered legs, geometric rug</li>
+</ol>
+<h3><span class="gi" style="--gl:#DC5E7C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Calm &amp; feminine</h3>
+<ol class="steps">
+<li><strong>Soft French Apartment:</strong> cream walls, antique mirror, ruffled linen, fresh florals, pale wood floors</li>
+<li><strong>Quiet Luxury:</strong> tonal palette (one colour family), high-quality textures, no logos, restrained styling</li>
+<li><strong>Garden Room:</strong> botanical wallpaper or murals, rattan, ferns and fiddle-leaf figs, vintage botanical prints</li>
+<li><strong>Korean Minimalist:</strong> pale oak, off-white walls, single ceramic vase, soft cotton bedding, low bed frame</li>
+</ol>
+<hr class="rule">
+<span class="kicker">spend nothing big</span>
+<h2>Part 4: The Budget-Friendly Refresh <span class="gi" style="--gl:#BA7A10" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p><strong>Use this when:</strong> you don't want to replace your furniture. You just want the room to <em>feel</em> different. This one is a job for Claude, because it does the reasoning: the priority order and the real costs. Paste it into <a href="https://claude.ai" target="_blank">Claude</a> with your room photo, then take the look it describes into the Gemini app to render.</p>
+<div class="promptwrap">
+<span class="promptlabel">💸 the budget refresh (run in Claude)</span>
+<pre><code>Redesign this room with a strict rule: keep all existing furniture exactly where it is, bed, sofa, desk, shelving, anything large.
+
+I'm only allowed to change:
+- Wall colour (one accent wall is fine)
+- Bedding / cushions / throws / curtains
+- Rugs
+- Lamps and lampshades
+- Wall art and small decor (vases, books, plants)
+
+The total budget is $300. Tell me the 5 highest-impact changes I should make first, in priority order, and roughly what each one would cost from IKEA, Kmart, Target, or Amazon.
+
+Style I'm going for: [pick one from the style library, e.g. "Warm Minimalism"]
+
+Then write me a single image prompt I can paste into the Gemini app (Nano Banana) to see the finished look, from the same angle as my photo.</code></pre>
+</div>
+<p><strong>Why this is the best prompt in the guide:</strong> Claude doesn't just describe a pretty room, it tells you <em>what to actually buy and in what order</em>, then hands you the exact prompt to render it. Most people skip the priority ordering. That's where the value is.</p>
+<div class="tip">💡 <strong>Pro tip:</strong> screenshot the render before you go shopping. Use it as your reference so you don't get distracted by every cute thing at Kmart.</div>
+<hr class="rule">
+<span class="kicker">landlord safe</span>
+<h2>Part 5: The Rental-Friendly Redesign <span class="gi" style="--gl:#B37F03" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14.5C18.8137 14.5 21.5 11.8137 21.5 8.5C21.5 5.18629 18.8137 2.5 15.5 2.5C12.1863 2.5 9.5 5.18629 9.5 8.5C9.5 9.38041 9.68962 10.2165 10.0303 10.9697L2.5 18.5V21.5H5.5V19.5H7.5V17.5H9.5L13.0303 13.9697C13.7835 14.3104 14.6196 14.5 15.5 14.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17.5 6.5L16.5 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p><strong>Use this when:</strong> you rent. You can't paint, drill, or damage anything. Bond on the line. Run this in <a href="https://claude.ai" target="_blank">Claude</a> too, since the value is the reversibility plan, then render the look in the Gemini app.</p>
+<div class="promptwrap">
+<span class="promptlabel">🔑 the rental redesign (run in Claude)</span>
+<pre><code>Redesign this rental room with strict landlord-friendly rules:
+- NO painting walls (peel-and-stick wallpaper, removable wall decals, or large fabric tapestries are okay)
+- NO drilling holes (use Command strips, leaning art, free-standing pieces only)
+- NO permanent fixtures (no hardwired lighting, no built-in shelves)
+- NO damage to floors (must use rugs over existing carpet/floor)
+
+Style I'm going for: [pick one from the style library, e.g. "Cosy Farmhouse"]
+
+Total budget: $400.
+
+Give me:
+1. A shopping list with 8-10 specific items, ranked by impact-per-dollar
+2. The exact removal method for each (so I get my bond back)
+3. Two cheaper substitutes for the most expensive item on the list
+4. A single image prompt I can paste into the Gemini app to see the finished room, same angle as my photo
+
+Make sure everything is reversible at move-out.</code></pre>
+</div>
+<p><strong>Why this works:</strong> most rental design content is generic ("just add plants!"). This gives you a <em>reversibility plan</em>, which is the actual hard part of decorating a rental.</p>
+<div class="tip">💡 <strong>Pro tip:</strong> in Gemini, ask a follow-up: <em>"Now show me the same room with the lights off and just the lamps on."</em> That's the most flattering view of any room and it tells you if the lighting plan actually works.</div>
+<hr class="rule">
+<span class="kicker">go further</span>
+<h2>Part 6: Power-user prompts (the next level)</h2>
+<p>Once you've got a redesign you like, layer these in (mostly as follow-ups in the Gemini app, since it holds the image in context).</p>
+<h3>A. The lighting test</h3>
+<div class="promptwrap">
+<span class="promptlabel">💡 the lighting test</span>
+<pre><code>Now show me this same redesigned room in three lighting conditions: morning sunlight, golden hour, and night-time with lamps on. Tell me which lighting suits this style best and why.</code></pre>
+</div>
+<h3>B. The colour palette extraction</h3>
+<div class="promptwrap">
+<span class="promptlabel">🎨 the palette extraction</span>
+<pre><code>Pull out the exact colour palette from this redesign as 6 hex codes. Group them as: walls / large furniture / textiles / accent / metal finish / plants. I want to actually buy paint and fabric to match.</code></pre>
+</div>
+<h3>C. The "make it more me" prompt</h3>
+<div class="promptwrap">
+<span class="promptlabel">🫶 make it more me</span>
+<pre><code>Here are 5 things I love: [e.g. matcha lattes, secondhand books, my cat, slow mornings, dried flowers].
+Here are 3 things I hate: [e.g. cold lighting, glossy surfaces, anything plastic].
+Redesign the room again with these in mind. The room should feel like it belongs to a person, not a showroom.</code></pre>
+</div>
+<h3>D. The seasonal swap</h3>
+<div class="promptwrap">
+<span class="promptlabel">🍂 the seasonal swap</span>
+<pre><code>Show me this same room in summer mode (lighter textiles, fewer layers, brighter accents) vs winter mode (more layers, warmer tones, heavier textures). I want to be able to swap between them seasonally.</code></pre>
+</div>
+<h3>E. The designer lens</h3>
+<div class="promptwrap">
+<span class="promptlabel">🎬 the designer lens</span>
+<pre><code>Redesign this room as if [Marie Kondo / a Scandinavian grandmother / a 1970s film director / your favourite designer] designed it. Tell me 3 specific choices they'd make differently from a generic version of this style.</code></pre>
+</div>
+<hr class="rule">
+<span class="kicker">the craft</span>
+<h2>Part 7: Pro tips that most people skip</h2>
+<ol class="steps">
+<li><strong>Take the photo in good light.</strong> Open all the curtains, turn on every lamp. The tool can only redesign what it can see clearly. Bad photo, vague redesign.</li>
+<li><strong>Stand in the doorway, phone at eye level.</strong> Wide, full-room shots beat tight crops. It needs to see the room's geometry.</li>
+<li><strong>Clear the clutter first.</strong> Move laundry and mess out of frame, or it designs around them.</li>
+<li><strong>Always ask for the same camera angle.</strong> Add <em>"show me from the same angle as my original photo"</em> or you can't compare before and after.</li>
+<li><strong>Iterate, don't restart.</strong> Take one redesign you like and say <em>"now make the sofa green instead of beige."</em> You'll get to "perfect" much faster than generating fresh rooms.</li>
+<li><strong>Ask for the <em>why</em>.</strong> End a prompt with <em>"explain in 3 bullets why this works for this room's natural light and proportions."</em> You learn design principles instead of just collecting pictures.</li>
+<li><strong>Save favourites with a name.</strong> Keep a note titled "Living room v3, warm minimal" with the prompt plus image. You'll thank yourself in 6 months.</li>
+</ol>
+<hr class="rule">
+<span class="kicker">what to watch</span>
+<h2>Part 8: Troubleshooting</h2>
+<p><strong>"My redesigns look fake or cartoony."</strong><br>
+Add: <em>"Photorealistic, natural lighting, real-world textures, magazine editorial quality. No CGI look."</em></p>
+<p><strong>"It moved my window or door and now I'm confused."</strong><br>
+Add: <em>"The walls, windows, and doors must stay in exactly the same position as the original photo."</em></p>
+<p><strong>"It keeps giving me the same beige minimalist room."</strong><br>
+You're being too vague. Pick one specific style from Part 3 and use the <em>exact</em> descriptive words listed for it.</p>
+<p><strong>"I want to redesign just one corner, not the whole room."</strong><br>
+Use: <em>"Redesign only the [reading nook / bed area / desk corner] in the bottom-left of this photo. Keep everything else identical."</em></p>
+<p><strong>"The look is great but the furniture is out of my budget."</strong><br>
+Take it to Claude: <em>"Only suggest furniture I can actually buy from IKEA, Target, Kmart, Amazon, or Facebook Marketplace. No designer-only brands."</em></p>
+<hr class="rule">
+<span class="kicker">optional</span>
+<h2>Power-user path: keep it all inside Claude</h2>
+<p>If you'd rather not switch between Claude and Gemini, you can still do everything in one place with the Banana skill. This is the old setup, now optional: in <a href="https://claude.ai" target="_blank">Claude</a>, switch to Code, install the Banana skill (search "banana skill claude" and paste the repo link, then type "install this skill"), and add a free <a href="https://aistudio.google.com" target="_blank">Google AI Studio</a> API key. Then you upload your room photo to <code>/banana</code> and run every prompt above right inside Claude. It's more technical, but it keeps rendering and reasoning in one window. Most people are happier with the free Gemini app route.</p>
+<hr class="rule">
+<h2>You did it. <span class="gi" style="--gl:#B57E06" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>You now have a real designer's brain and a free renderer, and the prompts to use them well. Plan the whole room before you spend a dollar.</p>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

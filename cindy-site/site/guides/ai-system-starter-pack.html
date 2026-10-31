@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI System Starter Pack · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="This is the exact base I use to build AI systems with Claude, turned into copy-paste files you can steal today.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/ai-system-starter-pack">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="The AI System Starter Pack">
+<meta property="og:description" content="This is the exact base I use to build AI systems with Claude, turned into copy-paste files you can steal today.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/ai-system-starter-pack">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The AI System Starter Pack">
+<meta name="twitter:description" content="This is the exact base I use to build AI systems with Claude, turned into copy-paste files you can steal today.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The AI System Starter Pack","description":"This is the exact base I use to build AI systems with Claude, turned into copy-paste files you can steal today. No coding. You only need two files to start...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/ai-system-starter-pack"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"The AI System Starter Pack: build your first AI system with Claude", u:"guides/ai-system-starter-pack.html", topic:"start", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Getting started</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>The AI System Starter Pack: build your first AI system with Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This is the exact base I use to build AI systems with Claude, turned into copy-paste files you can steal today.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">start here</span>
+<h2>What an AI system actually is</h2>
+<p>An AI system is not a pile of tools or a folder of saved prompts. It is a small set of files that make Claude work like your team: it knows who you are, it runs your repeatable jobs the same way every time, and it can plug into your real accounts.</p>
+<p>Anthropic gives you seven building blocks for this. You do not set them all up at once. You start with two, and you add the others only when a specific thing starts annoying you. Here is the whole map:</p>
+<div class="tablewrap"><table>
+<tr><th>Block</th><th>What it does</th><th>When you add it</th></tr>
+<tr><td><strong>CLAUDE.md</strong></td><td>Your always-on rules and facts. Claude reads it in full every session.</td><td>Day one (required)</td></tr>
+<tr><td><strong>A skill</strong></td><td>A repeatable job Claude runs on command.</td><td>Day one (required)</td></tr>
+<tr><td>Auto memory</td><td>Claude writes its own notes from your corrections so it stops repeating mistakes.</td><td>Automatic, you do nothing</td></tr>
+<tr><td>Subagents</td><td>A helper with its own separate context that does a heavy side job and hands back a clean summary.</td><td>When a big task floods your chat</td></tr>
+<tr><td>Rules</td><td>Extra rule files, so your CLAUDE.md stays short.</td><td>When CLAUDE.md passes ~200 lines</td></tr>
+<tr><td>Enforcement (settings)</td><td>Turns a rule into a hard block Claude cannot cross.</td><td>When a rule must hold every time</td></tr>
+<tr><td>Connectors (MCP)</td><td>Plugs Claude into your real accounts (Notion, Gmail, Drive).</td><td>When you keep copying from a tab Claude can't see</td></tr>
+</table></div>
+<div class="tip warn">💡 The trap most people fall into is trying to build all seven at once. Don't. Two files is a real, working system. The rest earns its place later.</div>
+
+<hr class="rule">
+<span class="kicker">the core</span>
+<h2>The 2-file core (this is the whole system to start)</h2>
+<p>A real AI system is two files:</p>
+<ol class="steps">
+<li><strong class="st">CLAUDE.md</strong>, your always-on rules and facts.</li>
+<li><strong class="st">One skill</strong>, a job Claude runs on command.</li>
+</ol>
+<p>Set up these two and you have a system. Everything else is optional. Here are both, ready to fill in.</p>
+
+<h3>File 1: CLAUDE.md</h3>
+<p>Put this at the root of your project as <code>CLAUDE.md</code> (or inside a folder as <code>.claude/CLAUDE.md</code>). Claude loads it in full at the start of every chat, so it is where your voice, rules, and "always do X, never do Y" live.</p>
+<div class="promptwrap">
+<span class="promptlabel">📄 Fill in the blanks with your own voice and rules</span>
+<pre><code># [Your project or brand]
+
+## What this is
+One or two sentences on what you're building and who it's for.
+
+## How I work
+- Talk to me in plain language. Infer what I mean, act, then summarize.
+- Keep outputs copy-paste ready. No em dashes.
+- Ask before anything that deletes files or spends money.
+
+## My voice and rules
+- Voice: [e.g. warm, direct, lowercase captions]
+- Always: [your non-negotiable, e.g. name real tools, never a vague category]
+- Never: [e.g. post anything without showing me the final version first]
+
+## Where things live
+- [e.g. drafts in /drafts, final assets in Notion, scripts in /scripts]
+
+## My tools and accounts
+- [e.g. Notion, Gmail, ManyChat, Kit]</code></pre>
+</div>
+<div class="tip">📌 Keep CLAUDE.md under about 200 lines. When a section turns into a step-by-step process, move it into a skill (file 2). Long CLAUDE.md files get followed less reliably, so treat it like a table of contents, not a manual.</div>
+
+<h3>File 2: your first skill</h3>
+<p>A skill is one repeatable job, saved so Claude runs it the same way every time. Make a folder <code>.claude/skills/your-skill/</code> and put a file called <code>SKILL.md</code> inside. The <strong>description</strong> line is what tells Claude when to use it. Type <code>/your-skill</code> or just ask, and it loads only when needed, so it costs almost nothing until you use it.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧩 The shape of one repeatable job, saved as SKILL.md</span>
+<pre><code>---
+description: Turns a rough idea into a finished [thing] in my style. Use when I say "draft a [thing]", paste a [source], or ask to [do the task]. Do not [the one thing it must never do].
+---
+
+## Inputs
+What I'll give you (a link, a topic, a rough note), and what to ask for if it's missing.
+
+## Steps
+1. [First concrete step]
+2. [Second step, with the real rule or constraint]
+3. [Output format: exactly what the finished thing looks like]
+
+## Rules
+- [Voice and format, e.g. sentence case, no em dashes]
+- [Quality bar, e.g. name at least 3 real tools, cite sources]
+
+## Output
+Show me the finished result inline. Save a file only if I say so.</code></pre>
+</div>
+<div class="tip">💡 Everything is optional in that frontmatter except the description, and even the skill name defaults to the folder name. A skill is just your plain-English playbook. If a step ever needs real code, the skill can call a small script that lives right next to it in a <code>scripts/</code> folder, so you never juggle "workflows" and "scripts" as separate things.</div>
+
+<hr class="rule">
+<span class="kicker">before you build</span>
+<h2>Before you start (about 5 minutes)</h2>
+<p>Never opened Claude Code? Do this first, it's the tool that runs everything below.</p>
+<ol class="steps">
+<li><strong class="st">Know what it is.</strong> Claude Code is a free app you run in your computer's Terminal, not a website. Mac: press Cmd + Space, type "Terminal." Windows: open PowerShell.</li>
+<li><strong class="st">Sign in.</strong> You use the same Claude account as claude.ai. A paid plan (Pro or Max) unlocks Claude Code.</li>
+<li><strong class="st">Install it.</strong> Follow the quick start at <a href="https://code.claude.com" target="_blank">code.claude.com</a>, you paste one command into Terminal and press enter. If it asks for Node.js first, grab it free from <a href="https://nodejs.org" target="_blank">nodejs.org</a>.</li>
+<li><strong class="st">Open a project.</strong> A "project" is just a folder where this system lives. Make an empty folder (say on your Desktop), then in Terminal type <code>cd Desktop/my-first-system</code> then <code>claude</code>. When you see the prompt, you're in.</li>
+</ol>
+<div class="tip calm">🌱 The best part: you barely type any code. From here you can just ask Claude in plain language to create the files and folders for you, so you never hand-build anything hidden.</div>
+
+<hr class="rule">
+<h2>Your first 30 minutes</h2>
+<ol class="steps">
+<li>In the Claude Code prompt, type <code>/init</code>. It reads your folder and drafts a starter CLAUDE.md. Treat it as a rough first pass.</li>
+<li>Tell Claude: "replace my CLAUDE.md with this template," then paste the CLAUDE.md template above and fill in the blanks with your real voice, rules, and tools.</li>
+<li>Pick the one task you re-explain to Claude the most (writing a caption, building a brief, tidying notes). Tell Claude: "make me a skill that does this," and paste the SKILL.md template above as the shape you want. Claude creates the files for you, hidden folders and all.</li>
+<li>Run it: type a slash and your skill's folder name (if the folder is <code>captions</code>, type <code>/captions</code>) and watch it do the job your way.</li>
+<li>The moment Claude gets something wrong, add one line to CLAUDE.md so it never repeats. That single habit is what turns a setup into a system that gets smarter every week.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">go further</span>
+<h2>Add these later (only when you feel the exact pain)</h2>
+<p>Do not build these on day one. Each one solves a specific problem, and the trigger tells you when it is time.</p>
+<h3>Auto memory</h3>
+<p>You do not build this. Claude writes its own notes from your corrections and preferences, and pulls them back automatically. It is on by default in recent Claude Code. You write CLAUDE.md, Claude writes this. Just know it exists so you understand the two-part memory.</p>
+<h3>Subagents (<code>.claude/agents/</code>)</h3>
+<p><strong>Trigger:</strong> a heavy side job (deep research, reviewing lots of files) is flooding your main chat with output you won't reread. A subagent runs it in its own separate memory and hands back a clean summary, so your main conversation stays tidy.</p>
+<h3>Rules (<code>.claude/rules/</code>)</h3>
+<p><strong>Trigger:</strong> your CLAUDE.md creeps past ~200 lines. Move a chunk (say, all your caption rules) into <code>.claude/rules/captions.md</code> so the main file stays lean.</p>
+<h3>Enforcement (<code>.claude/settings.json</code>)</h3>
+<p><strong>Trigger:</strong> you want a rule to hold every single time, not just be politely requested. A line in CLAUDE.md is guidance Claude can slip on. A deny rule here is a hard block it cannot cross. This is how you protect the scary stuff:</p>
+<div class="promptwrap">
+<span class="promptlabel">🔒 Drop this in settings.json to hard-block your secrets</span>
+<pre><code>{
+  "permissions": {
+    "deny": ["Read(./.env)", "Read(./.env.*)", "Read(./secrets/**)"]
+  }
+}</code></pre>
+</div>
+<p>Bash asks before running anything that isn't a known read-only command (things like <code>ls</code>, <code>cat</code>, and <code>grep</code> never prompt), so you only add rules here to hard-block something or to safely loosen it. Do not bother allow-listing read-only actions, they never prompt anyway.</p>
+<h3>Connectors (MCP)</h3>
+<p><strong>Trigger:</strong> you keep copying data out of a tab Claude can't see. Connectors plug Claude straight into your real accounts (Notion, Gmail, Drive, a database) so it reads and acts on the real thing. In Claude Code you add one with <code>claude mcp add</code> and check it with <code>/mcp</code>. Sign in through the secure connect flow, never paste a token into a file.</p>
+
+<hr class="rule">
+<h2>Where this goes next <span class="gi" style="--gl:#9481A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.544 11.045C21.848 11.4713 22 11.6845 22 12C22 12.3155 21.848 12.5287 21.544 12.955C20.1779 14.8706 16.6892 19 12 19C7.31078 19 3.8221 14.8706 2.45604 12.955C2.15201 12.5287 2 12.3155 2 12C2 11.6845 2.15201 11.4713 2.45604 11.045C3.8221 9.12944 7.31078 5 12 5C16.6892 5 20.1779 9.12944 21.544 11.045Z" stroke="currentColor" stroke-width="1.5"/><path d="M15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>This starter pack is the foundation: the two files that turn Claude from a chat window into a system. Inside <strong>AI System Club</strong> we build the rest of the map together, live: the skills that write and format your content, the subagents that run your research, your own Jarvis assistant, the automations that run your ads, and the connectors that plug Claude into your real Notion, Gmail, and Drive. You pick the lane you care about and build the actual thing, with everything unlocked for 30 days.</p>
+<p>It's launching soon. The waitlist gets in before it's public and locks the founding price for life, even after it goes up. If you want the full build, save your spot 👇</p>
+<p><a class='btn' href='/ai-system'>Join AI System Club waitlist</a></p>
+
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

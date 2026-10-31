@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a faceless AI channel · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Give Claude your niche and one useful idea. It returns a 30-video plan plus the first script and shot list.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/build-a-faceless-ai-channel">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build a faceless AI channel">
+<meta property="og:description" content="Give Claude your niche and one useful idea. It returns a 30-video plan plus the first script and shot list.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/build-a-faceless-ai-channel">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build a faceless AI channel">
+<meta name="twitter:description" content="Give Claude your niche and one useful idea. It returns a 30-video plan plus the first script and shot list.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Build a faceless AI channel","description":"Build a 30-video content plan, the first script and a reusable Fish Audio narration tool, then export a reviewed faceless video.","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/build-a-faceless-ai-channel"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build a faceless AI channel", u:"guides/build-a-faceless-ai-channel.html", topic:"marketing", tool:"stack"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Content creation</span>
+        <span class="gtag tool">Claude + Fish Audio</span>
+      </div>
+      <h1>Build a faceless AI channel</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Give Claude your niche and one useful idea. It returns a 30-video plan plus the first script and shot list.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn"><strong>What needs an account or budget?</strong> The planning prompt works in Claude chat, including Free within its limits. The automated build uses Claude Code, which needs a supported paid subscription or separately billed API access, plus Python 3. Fish's free developer API is separate from its website credits, and generated visuals or premium CapCut features can cost extra. You can start with your own screenshots and a recorded voice, then add the API when the first video works.</div>
+
+<span class="kicker">part one</span>
+<h2>Pick a useful niche you can keep serving</h2>
+<p>Choose an audience with a recurring problem you can explain accurately and demonstrate on screen. Topic matters, but there is no dependable pay ranking that tells a new channel what it will earn. On YouTube, <strong>RPM</strong> is a creator revenue metric after the platform's share, while <strong>CPM</strong> measures advertiser cost. They are not interchangeable, and neither is a forecast for Instagram brand deals. Read <a href="https://support.google.com/youtube/answer/9314357?hl=en" target="_blank">YouTube's metric definitions</a>.</p>
+<div class="cardgrid">
+  <div class="minicard"><b>AI and practical tech</b> Show a real workflow, its result and the limitation. Screen recordings give you useful original visuals without showing your face.</div>
+  <div class="minicard"><b>Money education</b> Explain a concept with sourced examples, not personalised recommendations or promised returns. This lane requires careful evidence and qualified review where appropriate.</div>
+  <div class="minicard"><b>Entertainment and stories</b> Build original characters and narratives. Do not assume someone else's character, clips, likeness or voice is yours to reuse.</div>
+  <div class="minicard"><b>A workable first choice</b> Pick the topic where you can show one useful result today. Use the prompt below to turn it into a coherent series and the first complete script.</div>
+</div>
+<div class="tip"><strong>Keep the business maths honest.</strong> Revenue depends on eligibility, audience, format, demand and costs. Use your own channel's analytics once available; until then, any revenue model is a scenario with labelled assumptions, not an expected salary.</div>
+
+<hr class="rule">
+<span class="kicker">part two</span>
+<h2>A month of ideas and the first finished script</h2>
+<p>Open a new Claude chat and paste this prompt. Replace the niche if you already have one; otherwise the default works. Add your own notes or public source links when the first video teaches a factual claim. The plan is a queue of ideas, not an instruction to publish 30 unreviewed AI videos.</p>
+<div class="promptwrap">
+<span class="promptlabel">The channel strategist</span>
+<pre><code>My niche is AI tools for small business owners unless I specify another. Turn the niche and any notes or sources I supply into a 30-video plan grouped into four or five clear pillars. For each video, return a title under 60 characters, a first-three-seconds hook, a five-beat outline, a candidate search phrase and the useful result the viewer gets. Never promise income, virality or a capability the video cannot demonstrate.
+
+Pick five sensible starting ideas by usefulness, available evidence and ease of making a credible demo. Do not invent search volume, competition scores or performance predictions. If I supply analytics, cite the exact metric and date; otherwise label prioritisation as editorial judgment.
+
+Then fully produce the best first idea: a 110–140-word narration, a second copy with at most three sparse Fish S2 square-bracket delivery directions, and six shot briefs matched to the narration. Each shot needs exact on-screen text, the screen action or original visual, and a source or asset requirement. Draft one title and a short caption that add context without unearned claims.
+
+Use opened primary sources for product facts. If you cannot open a source, say so and omit the unsupported detail. Default to a low-risk workflow using clearly labelled fictional sample business data. Ask at most three necessary questions; otherwise deliver the whole first draft now. Finish with the spoken text alone in a block labelled narration.txt and a separately labelled shot-list.md so I can carry them into the build.</code></pre>
+</div>
+<div class="tip calm">💡 <strong>Keep the plan grounded.</strong> After publishing, paste actual results with the date range and a comparable baseline. Ask Claude for new angles and testable explanations, not a claim that one successful post proves a universal formula. Remove private audience or customer data first.</div>
+
+<hr class="rule">
+<span class="kicker">part two, the look</span>
+<h2>Give every shot a job</h2>
+<p>Use the six shot briefs from the first prompt. The starting route is your own screen recordings, photos and diagrams; generated footage is optional. Every visual should show the step, evidence or story beat being narrated.</p>
+<div class="cardgrid">
+  <div class="minicard"><b>Start with material you own</b> Capture the actual workflow using fictional data. Remove private tabs, messages and account details. Keep clips named 01 through 06 in a visuals folder so the edit follows the shot list.</div>
+  <div class="minicard"><b>Optional generated shots</b> <a href="https://higgsfield.ai/s/seedance-2-5-launch-cindiezhu-zoYRXH" target="_blank">Higgsfield</a> is an optional visual tool from the stack. Check the selected model's credits and output rights before generating; you do not need a visual subscription for the screenshot-based first video.</div>
+</div>
+<div class="tip"><strong>Keep the look consistent, the substance original.</strong> Reuse a readable type style and restrained colour palette. Do not reuse the same generic footage as a substitute for showing what each new video teaches.</div>
+
+<hr class="rule">
+<span class="kicker">part three</span>
+<h2>Choose and test your voice</h2>
+<p><a href="https://fish.audio/?fpr=cindy10" target="_blank">Fish Audio</a> generates the narration. Choose a voice for clarity and fit, then listen to your own text before committing to a full take. No voice tool guarantees retention or a particular result.</p>
+<div class="cardgrid">
+  <div class="minicard"><b>Design an original narrator</b> Use Voice Design for a description-based voice that does not imitate a real identifiable person. The exact save path is below.</div>
+  <div class="minicard"><b>Or clone your own voice</b> Instant cloning accepts a short clean reference. Professional Voice Clone is a separate paid feature with longer recordings and live ownership verification. Follow the <a href="https://fish.audio/blog/professional-voice-cloning/" target="_blank">official cloning walkthrough</a>, including its current storage limits, before uploading recordings.</div>
+  <div class="minicard"><b>Direct the delivery</b> The S2 family uses square-bracket directions such as <code>[calm]</code>. Keep them sparse and remove them from display captions. Fish's <a href="https://docs.fish.audio/developer-guide/best-practices/emotion-control" target="_blank">emotion guide</a> distinguishes this from S1's parentheses.</div>
+  <div class="minicard"><b>A timed free API offer</b> As checked on 15 September 2026, Fish advertises <code>s2.1-pro-free</code> through 30 November 2026. Its <a href="https://fish.audio/blog/s2-1-pro-free-api/" target="_blank">free-tier announcement</a> specifies best-effort access, possible model-improvement use of requests and commercial restrictions. It is not a blanket free commercial licence.</div>
+</div>
+<ol class="steps">
+<li><strong class="st">Design the narrator.</strong> Sign in and open <a href="https://fish.audio/app/create-voice/" target="_blank">Create Voice</a> → Voice Design. Describe tone, accent, pacing and use, for example: “A conversational educational narrator with a light Australian accent, measured pacing and a clear, friendly delivery.” Do not request a celebrity or a recognisable character imitation.</li>
+<li><strong class="st">Compare and save.</strong> Generate Samples, listen to both, select one, then Continue. Add the voice details, choose Private, complete the non-impersonation confirmation and Create Voice. Check the displayed generation cost before confirming. See Fish's <a href="https://fish.audio/blog/voice-design/" target="_blank">Voice Design steps</a>.</li>
+<li><strong class="st">Copy the voice's model ID.</strong> Open your saved voice and use its copy-ID control, or take the voice ID from its URL, as described in the <a href="https://docs.fish.audio/developer-guide/getting-started/quickstart" target="_blank">API quickstart</a>. This ID is the request's <code>reference_id</code>, not the speech engine's model name and not your secret API key.</li>
+</ol>
+<div class="tip warn"><strong>Voice and data permissions.</strong> Use your own voice or explicit permission that covers cloning and the intended use. Do not upload private client scripts or recordings to the free tier. A private voice is still hosted by Fish, and an unlisted link is not private. Confirm current <a href="https://fish.audio/terms/" target="_blank">terms</a> for your commercial scenario; if unclear, keep the result as a private prototype and contact Fish before publishing.</div>
+
+<span class="kicker">the walkthrough</span>
+<h2>Build a reusable narration tool</h2>
+<ol class="steps">
+<li><strong class="st">Install the two prerequisites.</strong> Install Python 3 from <a href="https://www.python.org/downloads/" target="_blank">python.org</a> and Claude Code using the <a href="https://code.claude.com/docs/en/quickstart" target="_blank">official quickstart</a>. In a terminal, confirm <code>python3 --version</code> on macOS/Linux or <code>py --version</code> on Windows, then <code>claude --version</code>. Complete Claude's account sign-in. No Fish key belongs in that sign-in.</li>
+<li><strong class="st">Start in an empty folder.</strong> Create a folder called <code>faceless-first-video</code> in Finder or File Explorer. Open a terminal in that folder, run <code>claude</code>, then paste the build prompt below with your approved narration, shot list and voice ID. Approve only changes in this folder; the build must not make a live Fish request.</li>
+<li><strong class="st">Create the Fish key separately.</strong> Open <a href="https://fish.audio/app/api-keys/" target="_blank">Fish API Keys</a>, choose Create New Key and save it in your password manager. Never paste the key into Claude, a source file, a screenshot, a command argument or a shared log. The generated program will ask for it privately when you run it yourself.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">The narration builder · paste into Claude Code</span>
+<pre><code>Build a complete local Python 3 narration tool in this empty folder. Use only Python's standard library, so there is no SDK or package installation. Work only inside this folder. Do not deploy, publish, upload media, make a live API call or ask me to put a secret in this chat.
+
+Use the approved narration and shot list pasted below. Save them as input/narration.txt and shot-list.md without changing their facts. Create input/preview.txt from the first one or two complete sentences, at most 25 spoken words. Save a voice-config.json with my non-secret reference_id and the exact model string s2.1-pro-free. If the voice ID is missing, ask for that ID, not my API key. Ask at most three necessary questions overall, then build.
+
+Implement generate_voice.py with --preview and --full modes. Use urllib.request to POST JSON to https://api.fish.audio/v1/tts with Authorization: Bearer plus the secret, Content-Type: application/json and model: s2.1-pro-free in the headers. Send text, reference_id and format: mp3 in the JSON body. Use a 120-second timeout. Read input files relative to the program's own folder, not an assumed working directory.
+
+Only accept that exact model string; never omit the header, guess a spelling or silently switch to a paid model. Before any request, show the mode, input UTF-8 byte count and model, then ask me to confirm sending this text to Fish. Reject empty inputs and full inputs over 5,000 UTF-8 bytes. Get the API key using getpass.getpass in a real local terminal after confirmation; fail safely if hidden entry is unavailable. Never read the key from a file or print it, headers or raw response bodies. Keep it only in process memory for this invocation.
+
+On a successful non-empty response, save output/preview.mp3 or output/narration.mp3 using a temporary file and an atomic rename. Check status, audio or binary content type and MP3 signature; reject JSON, HTML, empty or interrupted responses. These checks do not fully decode the recording: label it “audio saved, playback review required.” Do not overwrite an existing good take without my explicit confirmation. Show safe actionable errors for 401, 402, 400/422 and 429. Do not buy credits, auto-retry a possibly accepted request, or automatically regenerate after a timeout. Remove only this run's partial file on failure.
+
+Add test_generate_voice.py using unittest and mocked network responses. Cover the exact endpoint/header/payload, rejection of an unknown model, blank input, missing ID, key redaction, each error status, timeout, invalid audio, successful output and overwrite refusal. Tests must use an obviously fake token and perform no network calls. Run them, fix failures, and give the exact tested command.
+
+Create README.md with the macOS/Linux and Windows preview/full commands, how to enter the key only at the local hidden prompt, how to listen to the saved files and how to replace the next script. Include .gitignore entries for .env, secrets and generated audio, but explain that ignore rules are not a security guarantee. Do not create a .env with real credentials.
+
+Consult these current first-party sources before implementation, and report any discrepancy instead of improvising a paid fallback:
+https://docs.fish.audio/api-reference/endpoint/openapi-v1/text-to-speech
+https://fish.audio/blog/s2-1-pro-free-api/
+https://docs.fish.audio/developer-guide/getting-started/quickstart
+
+Finish with actual created filenames, mock test results and a clear “live synthesis not run” note. Do not claim the MP3 exists until I run the real request myself.
+
+Voice reference ID: [paste the non-secret ID]
+Approved tagged narration: [paste narration.txt from the first prompt]
+Approved shot list: [paste shot-list.md from the first prompt]</code></pre>
+</div>
+<p>The request shape above is documented in Fish's <a href="https://docs.fish.audio/api-reference/endpoint/openapi-v1/text-to-speech" target="_blank">TTS reference</a>. An omitted or unrecognised model can fall back to <code>s2.1-pro</code>, so exact spelling matters. The <a href="https://docs.fish.audio/developer-guide/models-pricing/pricing-and-rate-limits" target="_blank">current API price table</a> lists the free engine separately from paid S2.1 Pro at US$15 per million UTF-8 input bytes. The program's confirmation is not a billing cap; review your account's usage after the test.</p>
+<ol class="steps">
+<li><strong class="st">Run tests, then leave Claude Code.</strong> Confirm the mocked tests passed. Exit its interactive session with <code>/exit</code> and return to your own terminal in the same folder. The following commands go in the terminal, not the AI chat.</li>
+<li><strong class="st">Generate only the preview.</strong> Run <code>python3 generate_voice.py --preview</code> on macOS/Linux or <code>py generate_voice.py --preview</code> on Windows. Confirm the text upload, then paste your key at the hidden prompt. Double-click <code>output/preview.mp3</code>. Check the voice identity, pronunciation, naturalness and whether any direction is spoken literally.</li>
+<li><strong class="st">Generate the full take.</strong> If the preview works, run <code>python3 generate_voice.py --full</code> or <code>py generate_voice.py --full</code>. Listen to the entire <code>output/narration.mp3</code> while reading the script. Fix skipped words or awkward pacing before using it. Keep a good take before requesting another.</li>
+</ol>
+<div class="tip warn"><strong>Secrets are not magically safe in environment variables.</strong> This first build uses hidden terminal entry so the key is not stored in your project. It still exists in process memory while the request runs, and the program sends it to Fish for authentication. Review generated code before entering it. If a key reaches a chat, repository, recording or public log, revoke it in Fish and create a replacement.</div>
+<div class="tip"><strong>If a request fails:</strong> 401 means check the key; 400/422 means inspect the voice ID and request format; 402 means stop and inspect model selection and account billing before any top-up; 429 means wait before trying again. After a timeout, check usage first because the request may already have been processed. Share only a sanitised status and error summary when asking Claude to debug.</div>
+
+<hr class="rule">
+<span class="kicker">finish the first video</span>
+<h2>Assemble and export in CapCut</h2>
+<p>The API makes audio, not a finished video. Use <a href="https://www.capcut.com/resource/how-to-use-capcut" target="_blank">CapCut desktop's import, edit and export workflow</a> for the last mile. Stick to your own media and features your account can export; premium effects can trigger a paid requirement.</p>
+<ol class="steps">
+<li><strong class="st">Import the parts.</strong> Choose New project → Import and add narration.mp3 plus your six visual clips or images. For a Reel or Short, use a 9:16 canvas. Put the narration on the audio track and the numbered visuals in sequence above it.</li>
+<li><strong class="st">Fit visuals to the actual read.</strong> Split and trim at the six narration beats in shot-list.md. Use Text to add the planned on-screen labels. Remove emotion tags from displayed words. Make sure the last visual reaches the end of the narration and the key detail stays readable on a phone.</li>
+<li><strong class="st">Export a local draft.</strong> Choose Export, MP4, 1080p and 30 fps, then save first-video.mp4 locally. Do not use a sharing button yet. Watch the exported file start to finish and check audio, spelling, sources and crop before approving publication.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">read this first</span>
+<h2>Before you publish or repeat</h2>
+<div class="tip warn"><strong>Original content and rights still matter.</strong> YouTube's <a href="https://support.google.com/youtubecreatorstudio/answer/1311392?hl=en" target="_blank">monetisation policies</a> exclude mass-produced or repetitive inauthentic content. AI narration does not grant rights to someone else's clips, character or voice. Review the destination platform's synthetic-content disclosure controls when uploading, and disclose where required.</div>
+<div class="tip calm">🌱 <strong>Repeat the proven part.</strong> Keep the voice configuration and program, replace narration.txt with the next approved script, and run another preview. Keep the research, judgment and final watch-through in the loop. A monthly plan helps you make decisions; it is not permission to bulk-publish unchecked output.</div>
+
+<hr class="rule">
+<h2>Your next run</h2>
+<p>Keep the first-video folder, the original source links and the approved media rights together. The important proof is your own working result: a reviewed script, a playable narration and an MP4 that teaches the promised thing.</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

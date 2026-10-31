@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to build an AI content team from scratch · Cindy Zhu</title><meta name="description" content="How to build an AI content team with Claude Code that turns one topic into a researched, fact-checked script and an editing guide."><link rel="canonical" href="https://cindyzhu.com.au/guides/picture-ai-content-team">
+<meta property="og:title" content="How to build an AI content team from scratch"><meta property="og:description" content="How to build an AI content team with Claude Code that turns one topic into a researched, fact-checked script and an editing guide."><meta property="og:url" content="https://cindyzhu.com.au/guides/picture-ai-content-team"><meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles.css"><!-- seo:auto -->
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to build an AI content team from scratch">
+<meta name="twitter:description" content="How to build an AI content team with Claude Code that turns one topic into a researched, fact-checked script and an editing guide.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body><!-- GUIDES_CARD {t:"How to build an AI content team from scratch", u:"guides/picture-ai-content-team.html", topic:"content", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap"><main class="guidewrap"><a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a><div class="guidehead"><div class="gtags"><span class="gtag topic">Content creation</span><span class="gtag tool">Claude</span></div><h1>How to build an AI content team from scratch</h1></div><div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 How to build an AI content team with Claude Code that turns one topic into a researched, fact-checked script and an editing guide.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>The useful part is the handoff. A researcher should produce evidence the script writer can use. A fact-checker should point to the exact line that needs changing. The editing guide should tell your editor what goes on screen for every sentence, and the scheduler should post the approved version everywhere without you copying captions around. Five impressive role names won’t help if the work gets lost between them.</p>
+<p>This is the same shape as the content system I run: every script lives in one Notion database, research agents check the claims, a voice log keeps the writing sounding like me, and Blotato schedules the finished videos. The folder names below are suggestions, so adapt them to your own tools. You keep creative direction, filming, the edit and final approval.</p>
+<hr class="rule"/><span class="kicker">part 01</span><h2>Start with one content project</h2>
+<p>You need Claude Code installed and authenticated with suitable product access, plus a project folder you can edit. Model usage counts toward the access route you use. Web research and connected apps depend on configured tools and permissions. Creating a role does not automatically give it access to your browser, Notion or paid research services.</p>
+<p>For your first run, choose a topic you understand well enough to judge. Our worked example is a short carousel explaining how to organise a weekly work summary. The evidence should come from the actual product documentation and your supplied examples, not an invented story about your results.</p>
+<p>Save a short audience description, three pieces of writing you have approved and the source documents or URLs. Remove private information you don’t want used in the project. These inputs matter more than making the team elaborate.</p>
+<hr class="rule"/><span class="kicker">part 02</span><h2>Set up a shared starting point</h2>
+<p>Use <code>CLAUDE.md</code> for short project instructions: who the content is for, how to find the voice examples, what claims need evidence and what requires approval. Keep detailed material in separate files and tell Claude when to open it. The <a href="https://code.claude.com/docs/en/memory" rel="noopener noreferrer" target="_blank">memory documentation</a> explains how project instructions work.</p>
+<p>Here is a suggested layout, not a built-in requirement:</p>
+<pre><code class="language-text">content-project/
+  CLAUDE.md
+  audience.md
+  voice-examples.md
+  voice-log.md
+  approved-sources/
+  drafts/
+  reviews/
+  visuals/
+</code></pre>
+<p>Use <code>/agents</code> in Claude Code to create focused project roles, following the <a href="https://code.claude.com/docs/en/sub-agents" rel="noopener noreferrer" target="_blank">official subagent guide</a>. Give each role a clear description and only the tools it needs. The main conversation can coordinate these handoffs; you do not need a separate autonomous team feature to run this process.</p>
+<div class="tip">💡 Add one file most setups skip: a voice log. Every time you rewrite a line the AI wrote, paste the before and after into <code>voice-log.md</code> with a one-line rule, like “say ‘here’s how’, never ‘furthermore’”. Point the script writer at it. After a few weeks it knows your edits better than any style description could.</div>
+<hr class="rule"/><span class="kicker">part 03</span><h2>1. The researcher returns claim-level evidence</h2>
+<p>The researcher receives the topic and the audience question. Its output should connect each proposed claim to a source, an exact supporting section and any limitation. That gives the writer something more useful than a list of links.</p>
+<p>For the weekly-summary example, it might verify which product can read the supplied files and which parts require a connector. Ask it to distinguish documented capability from your proposed way of using it. If it cannot access a source, that should remain visibly unverified.</p>
+<p>Request an evidence file containing the claim, URL, supporting detail, access date and caveat. Prefer original documentation for product mechanics. Keep quotations short and use paraphrases for the draft.</p>
+<p>The handoff passes when you can select any factual claim and find the supporting material without searching again.</p>
+<p>For every script I run three researchers at once, each with a different job: one checks how the tool or feature actually works, one looks for a stat or source worth using, and one looks for anything that might be out of date. Running them in parallel is faster, and each one goes deeper than a single do-everything researcher.</p>
+<hr class="rule"/><span class="kicker">part 04</span><h2>2. The script writer returns a script your editor can film</h2>
+<p>Give the script writer a fixed format, so every script arrives ready to film instead of as a loose draft:</p>
+<ol class="steps">
+<li><strong class="st">An on-screen title.</strong> The text that shows in the first seconds, written so a silent viewer knows what the video is about.</li>
+<li><strong class="st">Three hook options.</strong> Each one uses a different angle, like a question, a surprising result or a relatable situation, so you pick the strongest on the day.</li>
+<li><strong class="st">The full script with a word count.</strong> Around 150 to 170 words lands close to 60 seconds, so the word count tells you if it will run long before you film.</li>
+<li><strong class="st">A caption with the keyword first.</strong> The comment keyword goes on the first line, and it must match what the video says.</li>
+</ol>
+<p>The writer receives your audience notes, the voice log and the evidence file. It must not invent a time-saving figure or put a fictional personal story in your mouth. I keep every script as a row in one Notion database with a status column, so my editors always know what’s ready to shoot and nothing lives in a random doc.</p>
+<p>Ask the writer to mark factual claims with their source in the working draft. Those references carry straight into the editing guide later.</p>
+<hr class="rule"/><span class="kicker">part 05</span><h2>3. The fact-checker gives specific corrections</h2>
+<p>Send the draft and original sources to a separate reviewer. Ask it to identify the exact line, what is wrong or unsupported, and a proposed correction that keeps the useful point.</p>
+<p>A separate context can reduce the influence of the writer’s earlier reasoning, but it does not make the reviewer infallible. For claims that matter, check the evidence yourself. Anthropic’s <a href="https://www.anthropic.com/engineering/building-effective-agents" rel="noopener noreferrer" target="_blank">Building Effective Agents</a> describes a writer/reviewer pattern; the five-role arrangement here is our practical application.</p>
+<p>For the weekly-summary carousel, test whether the instructions actually produce the promised output with a small sample. A source can confirm a feature exists while the draft still gives the reader an incomplete procedure.</p>
+<p>Send corrections back to the writer, then check the changed lines. Set a limited revision cycle so agents don’t keep rewriting a draft without a clear reason.</p>
+<div class="tip warn">My rule for numbers: every stat needs a source you can open, and it has to prove the exact point it sits next to. If the fact-checker can’t verify it, the number gets cut or rewritten, never left in the script with a note that says “check this later”.</div>
+<hr class="rule"/><span class="kicker">part 06</span><h2>4. The visual researcher turns the script into an editing guide</h2>
+<p>Instead of a separate list of visuals, ask this role for the script copied line by line, with the visual cue and the proof link directly under each line. Your editor then knows exactly what goes on screen for every sentence and where to grab the screenshot.</p>
+<div class="promptwrap"><span class="promptlabel">example editing guide line</span><pre><code class="language-text">"Blotato can schedule one video to nine platforms."
+[SCREEN: Blotato MCP setup page, crop the "What You Get" list]
+proof: help.blotato.com/api/mcp</code></pre></div>
+<p>Ask for one dominant visual per line and a crop that stays readable at phone size. A tiny full-page screenshot proves a page exists, but teaches very little. Include an original diagram only when it explains something more clearly than a screenshot, and label invented practice data as an example.</p>
+<p>The role can suggest layouts, while you or your editor make the final creative decisions. It should flag access or reuse limits instead of treating every image online as free stock.</p>
+<hr class="rule"/><span class="kicker">part 07</span><h2>5. The scheduler posts the approved version everywhere</h2>
+<p>Once you approve the final video, the scheduler rewrites the caption for each platform and schedules it. The adaptation matters: a searchable title for YouTube Shorts, a casual caption for TikTok, a clear professional one for LinkedIn. It works only from the version you approved, and it must not strengthen “can help” into a guaranteed result.</p>
+<p>For the posting itself, connect <a href="https://help.blotato.com/" target="_blank" rel="noopener">Blotato’s MCP server</a> to Claude Code. From a single prompt, Claude can post to your connected accounts, schedule posts to your content calendar, and view or reschedule what’s queued. Blotato supports Instagram, Facebook, TikTok, YouTube, LinkedIn, X, Threads, Pinterest and Bluesky, with plans from $29 a month and a 7-day free trial (<a href="https://www.blotato.com/pricing" target="_blank" rel="noopener">pricing</a>).</p>
+<div class="tip warn">Comment keyword CTAs only work where your DM automation runs, which for most creators is Instagram. Everywhere else, swap the keyword for a soft call to action. I post Instagram myself and let Blotato handle TikTok, YouTube and X.</div>
+<p>Start on approval: schedule one post to a single platform, check it landed the way you expected, then let the scheduler queue the rest.</p>
+<hr class="rule"/><span class="kicker">part 08</span><h2>Paste this to create the first working setup</h2>
+<p>Use this in Claude Code inside your content folder. The prompt asks it to build the files and run a supervised first piece.</p>
+<div class="promptwrap"><span class="promptlabel">copy this prompt</span><pre><code class="language-prompt">Set up a small content workflow in this project using five focused roles: researcher, script writer, fact-checker, visual researcher and scheduler. Inspect the existing files first and preserve my work.
+
+Audience: [paste who you help].
+Topic and useful outcome: [paste one topic and what the viewer should be able to do].
+Voice examples: [file paths or pasted approved writing].
+Sources: [URLs or file paths].
+Output: one short-form video script plus an editing guide and platform captions.
+
+Create concise project instructions and role definitions using current Claude Code subagent documentation. Create a voice-log.md file for before-and-after edits and tell the script writer to read it. Ask before overwriting an existing file. Give roles only the tools needed for their jobs. Use the main conversation to coordinate handoffs.
+
+Researcher: run three focused passes (how it works, a stat or source worth using, anything out of date) and return claims linked to primary evidence, scope and anything unverified.
+Script writer: return an on-screen title, three hook options, the full script with a word count aiming for about 60 seconds, and a caption with the lowercase comment keyword on the first line. No invented personal experience, statistics or testimonials.
+Fact-checker: identify exact lines needing correction. Every number must have an openable source that proves that line; cut or rewrite anything unverified. Review the corrected version once.
+Visual researcher: return the script line by line with the visual cue and proof link under each line, including exact capture areas. Label invented practice data as examples.
+Scheduler: work only from the version I approve. Write a caption for each platform I use, with the comment keyword on Instagram only and a soft call to action elsewhere. If the Blotato MCP server is connected, prepare the scheduled posts but do not schedule anything until I say yes.
+
+Create the files, then run research and drafting for the first piece. Stop with the script, evidence, review findings and editing guide ready for my inspection. Do not publish, send messages or invent a guide URL. Report which sources and procedures you actually checked.
+</code></pre></div>
+<hr class="rule"/><span class="kicker">part 09</span><h2>Inspect the first handoff before expanding</h2>
+<p>Open the evidence file and choose three claims at random. Follow their links. Then read the draft aloud and compare it with your approved writing. Then hand one editing guide line to someone who hasn’t seen the project and check whether they can find the right asset. Finally, schedule one post to a single platform and confirm it landed correctly.</p>
+<p>If the evidence is weak, tighten the researcher’s output. If the writing feels generic, add better voice examples and a specific audience situation. If the editing guide is vague, require exact capture areas. Fix the role responsible for the problem rather than adding another agent.</p>
+<p>Your first action is to choose one topic and supply three voice examples. The setup is working when one piece reaches review with traceable claims, a script you could film today, a usable editing guide and captions ready to schedule. You can then save the procedures that actually helped and reuse them for the next piece.</p>
+<div class="gcallout">Keep building from here. Find more practical walkthroughs in <a href='/guides'>my free guide library</a>.</div>
+</div></main></div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer><script src="../guide-kit.js" defer></script><script src="/site.js" defer></script>
+</body></html>

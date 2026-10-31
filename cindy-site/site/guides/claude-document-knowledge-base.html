@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turn a folder of documents into a Claude knowledge base · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Turn a folder of documents into a Claude knowledge base. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-document-knowledge-base">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Turn a folder of documents into a Claude knowledge base">
+<meta property="og:description" content="Turn a folder of documents into a Claude knowledge base. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-document-knowledge-base">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Turn a folder of documents into a Claude knowledge base">
+<meta name="twitter:description" content="Turn a folder of documents into a Claude knowledge base. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Turn a folder of documents into a Claude knowledge base", u:"guides/claude-document-knowledge-base.html", topic:"productivity", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Productivity &amp; thinking</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Turn a folder of documents into a Claude knowledge base</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented KNOWLEDGE, so here is the whole build: a Claude Project that becomes the brain your documents live inside.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">why this works</span>
+<h2>Folders store, knowledge bases answer <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Folders are built for putting things away. That is a completely different job from getting an answer out. So you can have twelve immaculate folders and still spend twenty minutes opening PDFs one at a time looking for one number. A knowledge base flips the direction: instead of you remembering where the fact lives, you ask a question and the system goes and finds it.</p>
+<p>Claude gives you both halves of that for free. A Project holds the documents and answers from them. An artifact turns the same material into a page you can search, click and share. You build the brain once, then the front door on top of it.</p>
+
+<hr class="rule">
+<span class="kicker">part one</span>
+<h2>Build the Project (the brain) <span class="gi" style="--gl:#9A7BBC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🧠 Open Projects.</strong> Go to <a href="https://claude.ai/projects" target="_blank">claude.ai/projects</a> or click Projects in the left sidebar of the Claude app, then click <b>+ New project</b> in the top right. Projects work on every plan including Free, and Free accounts can hold up to five projects at a time (<a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">source</a>).</li>
+<li><strong class="st">📄 Name it after the question you will ask.</strong> Not "documents" and not "misc". Name it the way you would search for it later: "client contracts", "my content library", "unit 3 lecture notes". Future you is scanning a list of five project names, so make them do some work.</li>
+<li><strong class="st">📥 Add your documents to project knowledge.</strong> Click the <b>+</b> inside the project and upload your files. Anything you add here is available to every chat inside that project, so you upload once instead of re-attaching the same PDF forever. Supported types include PDF, DOCX, XLSX, CSV, TXT, HTML, RTF, EPUB and JSON, and project files are capped at 30MB each (<a href="https://support.claude.com/en/articles/8241126-upload-files-to-claude" target="_blank">source</a>).</li>
+<li><strong class="st">🏷️ Rename files before you upload.</strong> This is the step people skip and it is the one that pays off most. "2026-Q2-supplier-contract-northside.pdf" beats "scan_0043.pdf" forever, because the file name is what Claude quotes back at you when it tells you where an answer came from.</li>
+<li><strong class="st">💡 Write the project instructions.</strong> Every project has a custom instructions box. This is where you tell Claude what these documents are, who you are, and how you want answers shaped. Use the prompt below and paste the result in.</li>
+<li><strong class="st">🌱 Add more than you think you need.</strong> When a project grows past what fits in one context window, Claude switches to retrieval automatically and searches your material instead of loading all of it, which lets a project hold roughly ten times more content. That is on every plan, Free included, and there is nothing to switch on (<a href="https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects" target="_blank">source</a>).</li>
+</ol>
+
+<span class="kicker">paste this in</span>
+<h2>The project instructions <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Paste this into the custom instructions box of your new project, filling in the two brackets. It is what makes answers come back sourced instead of vague.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 project instructions</span>
+<pre><code>These documents are [describe what they are, for example "every contract, invoice and supplier agreement for my business since 2024"]. I am [describe your role and what you use them for, for example "the owner, and I mostly need to find specific clauses, dates and amounts quickly"].
+
+When I ask you something, answer only from these documents. Always name the exact file you took the answer from, and quote the relevant line or paragraph so I can verify it myself. If the answer sits across several documents, list each one separately rather than blending them into one summary.
+
+If the documents do not contain the answer, say so plainly and tell me what kind of document would be needed to answer it. Never fill a gap with a general guess about how things usually work, because a plausible wrong answer is worse to me than no answer. Keep replies short and factual by default, and only go long when I ask you to explain something.</code></pre>
+</div>
+
+<span class="kicker">then ask</span>
+<h2>The question that proves it is working <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Start a chat inside the project and run this. It is deliberately a hard ask, because you want to see the sourcing behaviour before you trust it with anything real.</p>
+<div class="promptwrap">
+<span class="promptlabel">🔎 interrogate my own files</span>
+<pre><code>Search everything in this project's knowledge and answer this: [your real question, for example "which of these contracts auto-renew, and what is the notice period on each"].
+
+For every part of the answer, name the file it came from and quote the exact sentence. Then tell me which documents you checked and found nothing relevant in, so I know the search actually covered the whole set and not just the first thing it matched.
+
+Finish with anything that looks contradictory between documents, or any place where two files say different things about the same fact. Flag those separately at the bottom under a heading called "conflicts to check".</code></pre>
+</div>
+<div class="tip calm">The "tell me what you checked and found nothing in" line is the trust builder. It turns a confident-sounding answer into one you can actually audit, and it exposes the case where your file never made it into the project at all.</div>
+
+<hr class="rule">
+<span class="kicker">part two</span>
+<h2>Build the front door (the artifact) <span class="gi" style="--gl:#9A7BBC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The Project is great for asking. It is not great for browsing, and it is not something you can hand to another person. That is what the artifact is for: a single interactive page, built from the same documents, with a search box at the top.</p>
+<ol class="steps">
+<li><strong class="st">🧠 Stay inside the project.</strong> Open a new chat within the project so Claude still has all the documents in its knowledge. Building the page from outside the project means it has nothing to build from.</li>
+<li><strong class="st">💡 Ask for the page.</strong> Paste the build prompt below. Claude will write it as an artifact, which appears in its own window beside the chat. Artifacts are available on Free, Pro, Max, Team and Enterprise plans (<a href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank">source</a>).</li>
+<li><strong class="st">👀 Test it like a stranger.</strong> Type a half-remembered word into the search box. If nothing sensible comes back, tell Claude exactly what you searched and what you expected, and it will fix the filtering. Two or three rounds of this is normal and it is where the page gets genuinely good.</li>
+<li><strong class="st">📄 Keep it or share it.</strong> Use the download control in the lower right of the artifact window to save the file, or publish it to a link if you want someone else to browse it. Both are in the same panel.</li>
+</ol>
+
+<span class="kicker">copy this</span>
+<h2>The build prompt <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<div class="promptwrap">
+<span class="promptlabel">👩‍💻 build the searchable page</span>
+<pre><code>Using every document in this project's knowledge, build me a single self-contained interactive HTML page as an artifact. It should be a browsable index of everything in here, so I can find the right document without opening files one by one.
+
+Give it a search box at the top that filters live as I type, matching on title, summary text and tags, with no page reload. Under that, put filter buttons for the categories you think fit this material, and show a count of how many items are currently visible. Then render one card per document containing the file name, a two or three sentence plain-English summary of what is actually in it, the key dates, names or numbers it contains, and three to five tags. Clicking a card should expand it to show a longer summary and the most important quoted lines from that document.
+
+Read every document properly before you write the summaries, do not guess from the file names, and do not invent any detail that is not in the source. Sort the cards newest first where the documents have dates. Make it work on a phone as well as a laptop, keep the styling clean and readable with plenty of white space, and put everything in one file with no external dependencies so it still works if I save it and open it offline.</code></pre>
+</div>
+
+<span class="kicker">then upgrade it</span>
+<h2>Three refinements worth asking for <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Run these one at a time in the same chat, checking the page after each.</p>
+<div class="promptwrap">
+<span class="promptlabel">🔎 add a fuzzy search</span>
+<pre><code>Improve the search so it still finds the right card when I half-remember something. Make it case-insensitive, match partial words anywhere in the text rather than only from the start, and search the long summaries and quoted lines as well as the titles and tags.
+
+If a search returns nothing, show a friendly empty state that lists the five closest matches instead of a blank screen. Keep everything else on the page exactly as it is.</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">🧠 add a "what changed" view</span>
+<pre><code>Add a second view to the page, toggled by a button next to the search box, called "timeline". It should lay every document out in date order with the most recent at the top, each one showing its date, file name and one-line summary.
+
+Where two documents cover the same subject at different dates, group them together and note in plain language what changed between them. Use only what is actually in the documents, and if a document has no date, put it in a clearly labelled "undated" group at the bottom.</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">🌱 add an open-questions panel</span>
+<pre><code>Add a collapsible panel at the bottom of the page called "gaps and open questions". In it, list the things a reasonable person would expect this collection to contain but which are missing, and any place where two documents contradict each other.
+
+For each item, say which documents led you to that conclusion. Be specific and conservative: only raise something if the documents genuinely support it, and do not pad the list to make it look thorough.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">worth building</span>
+<h2>Four knowledge bases that earn their keep <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Your content library</b> Every script, caption and post you have written. Ask it what angles you have already covered before you write a new one.</div>
+<div class="minicard"><b>Client and contract admin</b> Contracts, invoices, scopes and briefs. Ask it what a client is actually owed and get the clause quoted back.</div>
+<div class="minicard"><b>Study or course notes</b> Lecture slides, readings and your own notes. Ask it exam-style questions and make it cite the week the answer came from.</div>
+<div class="minicard"><b>House and life admin</b> Insurance, warranties, leases, appliance manuals. The category everyone loses and nobody has indexed.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">honest limits</span>
+<h2>Four things to know before you rely on it <span class="gi" style="--gl:#B97C11" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9248 21H10.0752C5.44476 21 3.12955 21 2.27636 19.4939C1.42317 17.9879 2.60736 15.9914 4.97574 11.9985L6.90057 8.75333C9.17559 4.91778 10.3131 3 12 3C13.6869 3 14.8244 4.91777 17.0994 8.75332L19.0243 11.9985C21.3926 15.9914 22.5768 17.9879 21.7236 19.4939C20.8704 21 18.5552 21 13.9248 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 9V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip warn">A project is <b>not</b> synced to a folder on your computer. Nothing updates itself. When a document changes you upload the new version and delete the old one, otherwise Claude will happily answer from the outdated file. Build the top-up into a routine rather than trusting yourself to remember.</div>
+<div class="tip">Free accounts are capped at five projects, so pick your five categories rather than making a project per week. Project files are 30MB each, and very large scanned PDFs are the usual thing that trips this.</div>
+<div class="tip">Scanned documents that are really just photos of pages give weaker answers than text-based files, because there is less clean text to search. If a PDF was produced by a scanner, expect to check its answers more closely.</div>
+<div class="tip calm">The artifact is a snapshot, not a live mirror. It reflects the documents as they were the day you generated it. Regenerating it takes one message, so treat it as something you refresh rather than something that maintains itself.</div>
+
+<hr class="rule">
+<span class="kicker">keep it alive</span>
+<h2>The ten minute monthly top-up <span class="gi" style="--gl:#9A7BBC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">📥 Add what is new.</strong> Drop this month's documents into the project knowledge, renaming them properly on the way in.</li>
+<li><strong class="st">🗑️ Remove what is superseded.</strong> Delete the old version of anything you replaced. One outdated contract in there is enough to make an answer wrong.</li>
+<li><strong class="st">🔎 Ask it what shifted.</strong> Run the prompt below so you get a summary of what actually changed rather than assuming.</li>
+<li><strong class="st">💡 Regenerate the page.</strong> Say "rebuild the index page with everything currently in the project knowledge" and you get a fresh front door in one message.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">🌱 monthly review</span>
+<pre><code>I have just added new documents to this project. Compare them against what was already in the knowledge and tell me what has changed.
+
+List anything that supersedes an older document, anything that contradicts something already in here, and any new dates, amounts or obligations I should know about. Name the specific files on both sides of each comparison.
+
+Then tell me which older files are now safe to delete because a newer version covers them, and which ones I should keep even though they look redundant, with a one-line reason for each.</code></pre>
+</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">What are projects (Claude Help Center)</a><br>
+  <a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" target="_blank">How to create and manage projects</a><br>
+  <a href="https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects" target="_blank">Retrieval for projects, available on all plans</a><br>
+  <a href="https://support.claude.com/en/articles/8241126-upload-files-to-claude" target="_blank">Upload files to Claude, file types and size limits</a><br>
+  <a href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank">What are artifacts and how do I use them</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Give Claude vision: watch any video or carousel · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Give Claude vision: watch any video or carousel. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/give-claude-vision">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Give Claude vision: watch any video or carousel">
+<meta property="og:description" content="Give Claude vision: watch any video or carousel. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/give-claude-vision">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Give Claude vision: watch any video or carousel">
+<meta name="twitter:description" content="Give Claude vision: watch any video or carousel. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Give Claude vision: watch any video or carousel", u:"guides/give-claude-vision.html", topic:"power", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Claude</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Give Claude vision: watch any video or carousel</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented eyes, so here is the whole thing: the exact commands that pull a video down, cut it into frames, and hand it to Claude.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the outcome</span>
+<h2>What you're building <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Right now Claude can read a transcript. That tells you what was said, and it misses everything that isn't spoken: the on-screen text, the pacing, the fonts, the graphics, where the cut lands.</p>
+<p>By the end of this you'll be able to hand Claude the actual frames, and ask it questions like "what's the on-screen text in the first three seconds" or "describe the visual effect in this reel" and get a real answer.</p>
+<p><strong>You provide</strong> a link. <strong>This performs</strong> a download plus a frame extraction. <strong>You receive</strong> a folder of stills Claude can read like a flipbook.</p>
+
+<hr class="rule">
+<span class="kicker">before you start</span>
+<h2>The two things to install <span class="gi" style="--gl:#DB5C78" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15V14H21V15C21 17.8284 21 19.2426 20.1213 20.1213C19.2426 21 17.8284 21 15 21H9C6.17157 21 4.75736 21 3.87868 20.1213C3 19.2426 3 17.8284 3 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 14L3.00001 12.9999C3.00003 11.5278 3.00004 10.7918 3.31675 10.1584C3.63347 9.52493 4.22231 9.08329 5.39999 8.20002C6.19297 7.60528 6.58946 7.30791 7.05132 7.15395C7.51317 7 8.00879 7 9.00002 7H15C15.9912 7 16.4868 7 16.9487 7.15395C17.4105 7.3079 17.807 7.60527 18.6 8.2C19.7777 9.08328 20.3666 9.52492 20.6833 10.1584C21 10.7918 21 11.5279 21 13V14H3Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 12V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 12V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.49997 7.00006V6.50006C8.49997 5.0956 8.49997 4.39337 8.83703 3.88892C8.98295 3.67054 9.17045 3.48304 9.38883 3.33712C9.89328 3.00006 10.5955 3.00006 12 3.00006C13.4044 3.00006 14.1067 3.00006 14.6111 3.33712C14.8295 3.48304 15.017 3.67054 15.1629 3.88892C15.5 4.39337 15.5 5.0956 15.5 6.50006V7.00006" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong>ffmpeg</strong>, which does the actual frame cutting. On a Mac, run <code>brew install ffmpeg</code>. On Windows, download it from <a href="https://ffmpeg.org/download.html" target="_blank">ffmpeg.org</a>. It's free and it's the only tool here that never costs anything.</li>
+<li><strong>An Apify account</strong> for Instagram, at <a href="https://apify.com" target="_blank">apify.com</a>. You need this because Instagram doesn't let you download a reel directly. Free tier gives you 5 dollars of credit a month, which is roughly a hundred reels. Grab your API token from Settings, then Integrations.</li>
+</ol>
+<div class="tip">💡 If your videos are on YouTube or TikTok instead, you don't need Apify at all. Skip to the yt-dlp section near the bottom, and everything after step one stays the same.</div>
+
+<hr class="rule">
+<span class="kicker">step one</span>
+<h2>Pull the video off Instagram <span class="gi" style="--gl:#3082D2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.9504 12.1817C17.1981 12.814 16.5076 13.5726 15.1267 15.0899C13.6702 16.6902 12.9201 17.4904 12 17.5C11.0799 17.4904 10.3298 16.6902 8.87331 15.0899C7.49239 13.5726 6.80193 12.814 7.04964 12.1817C7.05868 12.1586 7.06851 12.1359 7.0791 12.1135C7.34928 11.542 8.24477 11.5029 10 11.5002V4.99998C10 4.53501 10 4.30253 10.0511 4.11179C10.1898 3.59414 10.5941 3.1898 11.1118 3.05111C11.3025 3 11.535 3 12 3C12.4649 3 12.6974 3 12.8882 3.05111C13.4058 3.1898 13.8102 3.59414 13.9489 4.11179C14 4.30253 14 4.53501 14 4.99998V11.5002C15.7552 11.5029 16.6507 11.542 16.9209 12.1135C16.9315 12.1359 16.9413 12.1586 16.9504 12.1817Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.00006 21H19.0001" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Paste this into your terminal, swapping in your token and the reel URL. It asks Apify for the post and saves the response.</p>
+<div class="promptwrap">
+<pre><code>curl -s -X POST "https://api.apify.com/v2/acts/xMc5Ga1oCONPmWJIa/run-sync-get-dataset-items?token=YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"username":["https://www.instagram.com/reel/SHORTCODE/"],"includeTranscript":true}' \
+  -o post.json</code></pre>
+</div>
+<p>Then pull the direct video link out of that response and download the file:</p>
+<div class="promptwrap">
+<pre><code>python3 -c "import json; print(json.load(open('post.json'))[0]['videoUrl'])" &gt; url.txt
+curl -L "$(cat url.txt)" -o video.mp4</code></pre>
+</div>
+<div class="tip">💡 That actor ID, <code>xMc5Ga1oCONPmWJIa</code>, is the Instagram reel scraper. Its <code>username</code> field takes direct reel URLs, profile URLs or bare handles, so you can pass a specific post instead of scraping a whole account.</div>
+
+<hr class="rule">
+<span class="kicker">step two</span>
+<h2>Cut it into frames <span class="gi" style="--gl:#5F4E8D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M2.5 7H21.5" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M2.5 17H21.5" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 17L12 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 7L8 3M16 7L16 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 21L8 17M16 21L16 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the step that does the watching. One still every two seconds, scaled down so the files stay small:</p>
+<div class="promptwrap">
+<pre><code>ffmpeg -i video.mp4 -vf "fps=0.5,scale=360:-1" frame_%02d.jpg</code></pre>
+</div>
+<p><code>fps=0.5</code> means one frame every two seconds. For a fast-cutting reel where things change quickly, use <code>fps=1.5</code> instead and you'll get roughly one still per beat.</p>
+
+<h3>The contact sheet trick</h3>
+<p>Uploading forty separate images is slow. Tile them into a single grid instead, and Claude reads the whole thing in one go:</p>
+<div class="promptwrap">
+<pre><code>ffmpeg -i video.mp4 -vf "fps=0.5,scale=320:-1,tile=4x4" sheet_%02d.jpg</code></pre>
+</div>
+<p>That gives you 16 frames per image. One sheet usually covers a whole reel.</p>
+
+<hr class="rule">
+<span class="kicker">step three</span>
+<h2>Hand it to Claude <span class="gi" style="--gl:#79323C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.544 11.045C21.848 11.4713 22 11.6845 22 12C22 12.3155 21.848 12.5287 21.544 12.955C20.1779 14.8706 16.6892 19 12 19C7.31078 19 3.8221 14.8706 2.45604 12.955C2.15201 12.5287 2 12.3155 2 12C2 11.6845 2.15201 11.4713 2.45604 11.045C3.8221 9.12944 7.31078 5 12 5C16.6892 5 20.1779 9.12944 21.544 11.045Z" stroke="currentColor" stroke-width="1.5"/><path d="M15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>Drag the frames or the contact sheet into Claude, then paste one of these depending on what you want back.</p>
+
+<h3>To understand what the video does</h3>
+<div class="promptwrap">
+<pre><code>These are sequential frames from a short-form video, in order, roughly two seconds apart. Walk me through what happens: the on-screen text at each stage, where the cuts land, the visual effect being used, and how the whole thing is structured. Tell me what makes it hold attention.</code></pre>
+</div>
+
+<h3>To reverse-engineer the effect so you can recreate it</h3>
+<div class="promptwrap">
+<pre><code>These are sequential frames from a video effect, in order. Work out exactly how it was made, then write me a short prompt I could paste into an image-to-video tool to recreate it. Name the specific words in that prompt that are doing the work.</code></pre>
+</div>
+
+<h3>To pull the hook structure out</h3>
+<div class="promptwrap">
+<pre><code>These frames are the first six seconds of a reel. Tell me the exact on-screen text, when each line appears, and what the hook is doing to stop the scroll. Then give me three hooks built on the same mechanism for a different topic.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">the part nobody mentions</span>
+<h2>This works on carousels too <span class="gi" style="--gl:#BB7751" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A carousel comes back from the same command as a list of child posts. Each slide is either an image or a video. Save every slide with this:</p>
+<div class="promptwrap">
+<pre><code>python3 -c "
+import json, urllib.request
+d = json.load(open('post.json'))[0]
+for i, c in enumerate(d.get('childPosts') or []):
+    u = c.get('videoUrl') or c.get('displayUrl')
+    urllib.request.urlretrieve(u, f'slide_{i:02d}.jpg')
+    print('saved', i, c.get('type'))
+"</code></pre>
+</div>
+<p>Then drag the slides into Claude and ask it to read the whole deck. This is how you break down someone's carousel structure in about thirty seconds: cover, the promise, how the middle slides carry it, and where the call to action sits.</p>
+
+<hr class="rule">
+<span class="kicker">if it's not on instagram</span>
+<h2>YouTube and TikTok <span class="gi" style="--gl:#2791BE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 8L13 8" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M2 11C2 7.70017 2 6.05025 3.02513 5.02513C4.05025 4 5.70017 4 9 4H10C13.2998 4 14.9497 4 15.9749 5.02513C17 6.05025 17 7.70017 17 11V13C17 16.2998 17 17.9497 15.9749 18.9749C14.9497 20 13.2998 20 10 20H9C5.70017 20 4.05025 20 3.02513 18.9749C2 17.9497 2 16.2998 2 13V11Z" stroke="currentColor" stroke-width="1.5"/><path d="M17 8.90585L17.1259 8.80196C19.2417 7.05623 20.2996 6.18336 21.1498 6.60482C22 7.02628 22 8.42355 22 11.2181V12.7819C22 15.5765 22 16.9737 21.1498 17.3952C20.2996 17.8166 19.2417 16.9438 17.1259 15.198L17 15.0941" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Swap Apify for <a href="https://github.com/yt-dlp/yt-dlp" target="_blank">yt-dlp</a>, which is free and needs no account. Install it with <code>brew install yt-dlp</code>, then:</p>
+<div class="promptwrap">
+<pre><code>yt-dlp -f mp4 -o video.mp4 "PASTE_THE_URL_HERE"</code></pre>
+</div>
+<p>Everything after that is identical. Same ffmpeg command, same prompts.</p>
+<div class="tip">💡 For a long video, drop the frame rate right down. <code>fps=0.1</code> gives you one still every ten seconds, which is plenty for a thirty minute talk and keeps you from generating six hundred images.</div>
+
+<hr class="rule">
+<span class="kicker">be honest with yourself</span>
+<h2>What this actually costs <span class="gi" style="--gl:#AB813D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 3H20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.5 3V5.03039C5.5 6.27227 6.07682 7.4437 7.06116 8.20089L12 12L16.9388 8.20089C17.9232 7.44371 18.5 6.27227 18.5 5.03039V3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.5 21V18.9696C5.5 17.7277 6.07682 16.5563 7.06116 15.7991L12 12L16.9388 15.7991C17.9232 16.5563 18.5 17.7277 18.5 18.9696V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M4 21H20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong>ffmpeg and yt-dlp are free</strong>, permanently, with no account.</li>
+<li><strong>Apify has a free tier</strong> of 5 dollars of credit a month that doesn't roll over. Scraping alone runs about 2.60 dollars per thousand posts, so the free tier covers far more than you'll use. Transcripts are what actually eat the credit, so leave <code>includeTranscript</code> off when you only want frames.</li>
+<li><strong>It's a terminal workflow.</strong> If you've never opened Terminal, do the first one on a short reel so the whole thing takes two minutes rather than twenty.</li>
+<li><strong>Public posts only.</strong> Private accounts won't return a video URL.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">everything in one place</span>
+<h2>The links <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>🎞️ ffmpeg: <a href="https://ffmpeg.org/download.html" target="_blank">ffmpeg.org/download.html</a><br>
+📥 Apify: <a href="https://apify.com" target="_blank">apify.com</a><br>
+🔎 The Instagram reel scraper: <a href="https://apify.com/apify/instagram-reel-scraper" target="_blank">apify.com/apify/instagram-reel-scraper</a><br>
+📺 yt-dlp: <a href="https://github.com/yt-dlp/yt-dlp" target="_blank">github.com/yt-dlp/yt-dlp</a><br>
+🤖 Claude: <a href="https://claude.ai" target="_blank">claude.ai</a></p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

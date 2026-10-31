@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to set up Claude Cowork and Claude Code (the complete guide) · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="This guide sets up both Claude Cowork and Claude Code end to end, and shows you which one to reach for when.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-cowork-code-setup">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="How to set up Claude Cowork and Claude Code (the complete guide)">
+<meta property="og:description" content="This guide sets up both Claude Cowork and Claude Code end to end, and shows you which one to reach for when.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-cowork-code-setup">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to set up Claude Cowork and Claude Code (the complete guide)">
+<meta name="twitter:description" content="This guide sets up both Claude Cowork and Claude Code end to end, and shows you which one to reach for when.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to set up Claude Cowork and Claude Code (the complete guide)","description":"This guide sets up both Claude Cowork and Claude Code end to end, and shows you which one to reach for when.","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/claude-cowork-code-setup"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"How to set up Claude Cowork and Claude Code (the complete guide)", u:"guides/claude-cowork-code-setup.html", topic:"start", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Getting started</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>How to set up Claude Cowork and Claude Code (the complete guide)</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This guide sets up both Claude Cowork and Claude Code end to end, and shows you which one to reach for when.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>Anthropic shipped two agentic products that change how marketers work: Claude Cowork (the desktop app version) and Claude Code (the terminal version). This guide sets up both, end to end, and shows you which one to reach for when.</p>
+<p>You need Claude Pro, Max, Team, or Enterprise to use either. The free plan doesn't include them.</p>
+
+<span class="kicker">the difference</span>
+<h2>The two-line difference</h2>
+<p>Claude Cowork = Claude with file access, app integrations, and scheduled tasks, inside the Claude Desktop app. It's the non-coder version. Best for: research, drafting, briefings, weekly automations, calendar and inbox triage.</p>
+<p>Claude Code = Claude with full file and terminal access, inside an IDE like Antigravity. It's the power-user version. Best for: building tools, multi-file projects, scripting, automating tasks that require running commands.</p>
+<p>Most marketers should set up both. Cowork for daily work, Claude Code when you want to build something.</p>
+
+<hr class="rule">
+<span class="kicker">the setup</span>
+<h2>Part 1: Set up Claude Cowork</h2>
+<p>This part takes about 20 minutes.</p>
+
+<h3>1.1 <span class="gi" style="--gl:#BA7A10" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Install Claude Desktop</h3>
+<ol class="steps">
+<li>Go to <a href="http://claude.ai" target="_blank">claude.ai</a>, click your profile, then Download Desktop.</li>
+<li>Install on Mac or Windows.</li>
+<li>Sign in with your Claude Pro or Max account.</li>
+</ol>
+<p>Cowork lives inside Claude Desktop. You don't install Cowork separately, it's a mode you turn on by giving Claude access to a folder.</p>
+
+<h3>1.2 <span class="gi" style="--gl:#AE8002" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7H16.75C18.8567 7 19.91 7 20.6667 7.50559C20.9943 7.72447 21.2755 8.00572 21.4944 8.33329C22 9.08996 22 10.1433 22 12.25C22 15.7612 22 17.5167 21.1573 18.7779C20.7926 19.3238 20.3238 19.7926 19.7779 20.1573C18.5167 21 16.7612 21 13.25 21H12C7.28595 21 4.92893 21 3.46447 19.5355C2 18.0711 2 15.714 2 11V7.94427C2 6.1278 2 5.21956 2.38032 4.53806C2.65142 4.05227 3.05227 3.65142 3.53806 3.38032C4.21956 3 5.1278 3 6.94427 3C8.10802 3 8.6899 3 9.19926 3.19101C10.3622 3.62712 10.8418 4.68358 11.3666 5.73313L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span> Build the folder structure that makes Cowork work</h3>
+<p>This is the most important part. Cowork without a folder structure is just chat with file access. With the right structure, it becomes an assistant that remembers who you are and what you're working on.</p>
+<p>On your computer (Mac: in your home directory, Windows: in Documents), create one parent folder called <code>Claude Cowork</code>. Inside it, create three subfolders:</p>
+<ol class="steps">
+<li><code>About me</code> (this is the brain, Cowork reads it on every task)</li>
+<li><code>Outputs from Claude</code> (where Claude saves drafts, briefings, exports)</li>
+<li><code>Templates</code> (your locked email templates, caption styles, brand guidelines)</li>
+</ol>
+<p>In Claude Desktop, open the Cowork panel, click Add folder, and point it at the parent <code>Claude Cowork</code> folder. Cowork now has access to all three.</p>
+
+<h3>1.3 <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> The "About me" file (load-bearing, don't skip)</h3>
+<p>Inside <code>About me</code>, create a file called <code>me.md</code>. Paste the following template and fill it in. Keep the total file under ~2,000 words. Past that, Cowork starts losing quality because it has to fit your context into the window before doing real work.</p>
+<p><strong>Template:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 the "About me" template</span>
+<pre><code>I am [name]. I run [business or role]. I'm based in [city, country].
+My audience and ICP: [who you serve]
+My voice: [3 to 5 adjectives]
+How I write: [examples of sentence rhythm, punctuation, what to avoid]
+What I'm working on right now: [top 3 priorities this quarter]
+Tools I use daily: [list]
+People I refer to often: [names + why]
+How to talk to me: [communication preferences, e.g. always summarise after long tasks, never use em dashes, end with one question]</code></pre>
+</div>
+<p>That's it. Don't paste full transcripts or massive bios. Summarise.</p>
+
+<h3>1.4 <span class="gi" style="--gl:#0792C1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M8 12C8 18 12 22 12 22C12 22 16 18 16 12C16 6 12 2 12 2C12 2 8 6 8 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M21 15H3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21 9H3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Layer global and folder-specific instructions</h3>
+<p>Two layers of instructions inside Cowork. Use both.</p>
+<p><strong>Global instructions</strong> (set in Claude Desktop settings → Profile or Custom Instructions): your voice, preferences, communication style across everything.</p>
+<p><strong>Folder-specific instructions</strong> (a file called <code>_instructions.md</code> inside each subfolder): what the folder is for and what "done" looks like inside it. Example: in <code>Outputs from Claude/Captions</code>, the <code>_instructions.md</code> says "every caption ends with the ManyChat CTA, lowercase keyword, no em dashes."</p>
+<p>This is what stops Cowork from giving you generic output. It writes like you because the instructions are layered, not pasted into every prompt.</p>
+
+<h3>1.5 <span class="gi" style="--gl:#4C395C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 2V6M8.5 6V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.00446 7.61331C5.93719 6.74273 6.63957 6 7.53014 6H16.4699C17.3604 6 18.0628 6.74273 17.9955 7.61331L17.8117 9.99197C17.6796 11.7019 17.1011 13.3498 16.132 14.7773L15.5312 15.6622C14.9638 16.4979 14.0077 17 12.9838 17H11.0162C9.99228 17 9.03617 16.4979 8.46881 15.6622L7.86803 14.7773C6.89885 13.3498 6.32041 11.7019 6.18827 9.99197L6.00446 7.61331Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 9H13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Connect your integrations</h3>
+<p>In Claude Desktop, go to Customize, then Connectors, and switch on the ones that match where your work actually lives. For most marketers, the right starting set:</p>
+<ol class="steps">
+<li>Gmail</li>
+<li>Google Calendar</li>
+<li>Notion</li>
+<li>Google Drive</li>
+<li>Slack (if you use it)</li>
+</ol>
+<p>Each opens an OAuth window the first time, log in, approve, done.</p>
+
+<h3>1.6 <span class="gi" style="--gl:#DD5E79" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M12 8V12L14 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Schedule a daily briefing</h3>
+<p>Cowork has Scheduled Tasks. Set up one that runs every morning and pulls together your day.</p>
+<ol class="steps">
+<li>In Cowork, click Scheduled Tasks → New schedule.</li>
+<li>Set it to fire at your wake-up time (e.g. 7am daily).</li>
+<li>Use this prompt as the task: "Pull my Google Calendar for today, my unread Gmail since yesterday, my Notion tasks marked due today. Summarise in under 200 words. Give me one sentence on what to focus on first."</li>
+</ol>
+<div class="tip warn"><strong>One caveat:</strong> scheduled tasks only fire if Claude Desktop is open. Leave it running in the background.</div>
+
+<h3>1.7 <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span> Enable Chrome and mobile</h3>
+<p>Final setup step. In Claude Desktop settings, enable Chrome integration so Cowork can read pages you're viewing. Also sign in to the Claude mobile app with the same account so any chat or output is accessible from your phone.</p>
+<p>You now have Cowork fully set up. Spend 20 minutes using it on a real task today to lock in the muscle memory.</p>
+
+<hr class="rule">
+<span class="kicker">level up</span>
+<h2>Part 2: Set up Claude Code in Antigravity</h2>
+<p>This part takes about 30 minutes from zero. You will end with Claude Code editing real files for you inside Antigravity.</p>
+
+<h3>2.1 What Antigravity is, and why use it as Claude Code's home</h3>
+<p>Antigravity is Google's free AI IDE. Think of it as a code editor that already has an AI built in. We're not using Antigravity's built-in AI for this guide. We're using Antigravity as the window we run Claude Code in, because it's free, beginner-friendly, and gives Claude Code everything it needs (a project folder, a terminal, and file editing).</p>
+<div class="tip calm">Quick jargon: an <strong>IDE</strong> is just a code editor app. A <strong>terminal</strong> is the text box inside it where you type commands. Claude Code lives in that text box.</div>
+
+<h3>2.2 <span class="gi" style="--gl:#3082D2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.9504 12.1817C17.1981 12.814 16.5076 13.5726 15.1267 15.0899C13.6702 16.6902 12.9201 17.4904 12 17.5C11.0799 17.4904 10.3298 16.6902 8.87331 15.0899C7.49239 13.5726 6.80193 12.814 7.04964 12.1817C7.05868 12.1586 7.06851 12.1359 7.0791 12.1135C7.34928 11.542 8.24477 11.5029 10 11.5002V4.99998C10 4.53501 10 4.30253 10.0511 4.11179C10.1898 3.59414 10.5941 3.1898 11.1118 3.05111C11.3025 3 11.535 3 12 3C12.4649 3 12.6974 3 12.8882 3.05111C13.4058 3.1898 13.8102 3.59414 13.9489 4.11179C14 4.30253 14 4.53501 14 4.99998V11.5002C15.7552 11.5029 16.6507 11.542 16.9209 12.1135C16.9315 12.1359 16.9413 12.1586 16.9504 12.1817Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.00006 21H19.0001" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Install Antigravity</h3>
+<ol class="steps">
+<li>Go to <code>antigravity.google</code> and click Download.</li>
+<li>Mac users: open the .dmg and drag Antigravity into your Applications folder.</li>
+<li>Open Antigravity, sign in with your Google account.</li>
+<li>When it asks which model to start with, pick anything (we're not using it).</li>
+</ol>
+
+<h3>2.3 <span class="gi" style="--gl:#D6692D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.22576 11.3294L12.224 2.34651C12.7713 1.64397 13.7972 2.08124 13.7972 3.01707V9.96994C13.7972 10.5305 14.1995 10.985 14.6958 10.985H18.0996C18.8729 10.985 19.2851 12.0149 18.7742 12.6706L11.776 21.6535C11.2287 22.356 10.2028 21.9188 10.2028 20.9829V14.0301C10.2028 13.4695 9.80048 13.015 9.3042 13.015H5.90035C5.12711 13.015 4.71494 11.9851 5.22576 11.3294Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Install Claude Code (one terminal command)</h3>
+<p>Claude Code is a separate program. Install it from Antigravity's terminal.</p>
+<ol class="steps">
+<li>In Antigravity, go to Terminal → New Terminal. A text box opens at the bottom.</li>
+<li>Paste this command and press enter:
+<div class="promptwrap">
+<span class="promptlabel">⚡ install claude code</span>
+<pre><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre>
+</div>
+</li>
+<li>Wait for it to finish (~30 seconds). It will say "installed" and show you the version.</li>
+<li>Quit Antigravity completely (Cmd+Q on Mac), then reopen. This is so it picks up the new <code>claude</code> command.</li>
+<li>Open Terminal → New Terminal again, type <code>claude</code> and press enter.</li>
+<li>A browser will open asking you to log in to your Claude Pro or Max account. Log in, approve, return to the terminal.</li>
+</ol>
+<p>You're in. The terminal now shows Claude Code's interactive prompt, including which model it's using (should be Opus 4.8 if you're on Max).</p>
+
+<h3>2.4 <span class="gi" style="--gl:#DC5D78" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.21875 11.618L3.31189 11.2378C2.71644 11.1606 2.31883 10.5841 2.58348 10.0458C3.42523 8.33365 5.6195 6.35437 9.73988 6.68079M6.21875 11.618C7.27445 9.85426 8.57175 8.00435 9.73988 6.68079M6.21875 11.618L11.882 17.2812M9.73988 6.68079C13.4105 2.58986 17.1745 1.728 19.5937 2.06685C20.5508 2.2009 21.2991 2.94917 21.4332 3.90626C21.772 6.32551 20.9101 10.0895 16.8192 13.7601M11.882 17.2812L12.2622 20.1881C12.3394 20.7836 12.9159 21.1812 13.4542 20.9165C15.1664 20.0748 17.1456 17.8805 16.8192 13.7601M11.882 17.2812C13.6457 16.2255 15.4956 14.9282 16.8192 13.7601" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17.5 8C17.5 6.89543 16.6046 6 15.5 6C14.3954 6 13.5 6.89543 13.5 8C13.5 9.10457 14.3954 10 15.5 10C16.6046 10 17.5 9.10457 17.5 8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M4 22L8 18M4 17L5.5 15.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Your first project in 5 minutes</h3>
+<ol class="steps">
+<li>On your computer's desktop, create a new folder called <code>claude-test</code>.</li>
+<li>In Antigravity, go to File → Open Folder, pick <code>claude-test</code>.</li>
+<li>Open Terminal → New Terminal. The terminal is now sitting in your <code>claude-test</code> folder.</li>
+<li>Type <code>claude</code> and press enter.</li>
+<li>When Claude Code is ready, type this prompt: "Make a file called captions.txt with 5 Instagram caption ideas about AI for marketers, in a casual voice, lowercase, no em dashes."</li>
+<li>Claude Code will plan, ask permission to write the file, you approve, it writes the file.</li>
+<li>Open captions.txt in Antigravity. There are your captions.</li>
+</ol>
+<p>That's the loop. You ask, Claude plans, you approve, Claude does it.</p>
+
+<h3>2.5 <span class="gi" style="--gl:#8F7FB3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.99963 5.00055L9.99963 5.00031" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.9996 5.00031L19.9996 5.00031" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.9996 9.00031L15.9996 15.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M9.99963 2.00031L9.99963 8.00031" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M11.9996 16.0003L11.9996 22.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.9996 12.0001L19.9996 12.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M3.99963 12.0005L12.9996 12.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M11.9996 19.0003L19.9996 19.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M3.99963 19.0005L8.99963 19.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span> The 5 commands you actually need</h3>
+<p>You'll see lots of slash commands in tutorials. These five are the only ones you need to get started.</p>
+<ol class="steps">
+<li><code>/init</code>: generates a starter CLAUDE.md file for your project (covered in 2.6).</li>
+<li><code>/clear</code>: wipes Claude's memory of the current conversation. Use when you're switching tasks.</li>
+<li><code>/compact</code>: when Claude says you're running out of context, this summarises and frees space.</li>
+<li><code>/model</code>: switches model mid-session. Use <code>/model claude-opus-4-8</code> for hard tasks.</li>
+<li><code>/exit</code>: closes Claude Code cleanly. Use this instead of just closing the terminal.</li>
+</ol>
+<p>Bonus: <code>Ctrl+C</code> cancels whatever Claude is currently doing without quitting the session.</p>
+
+<h3>2.6 <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> CLAUDE.md: teach Claude your brand once</h3>
+<p>CLAUDE.md is a markdown file Claude Code reads every time it starts in a folder. It's the most important file in your setup.</p>
+<ol class="steps">
+<li>Inside your project folder, type <code>/init</code> and press enter. Claude generates a starter CLAUDE.md.</li>
+<li>Open it and replace the contents with your own version. Use this template:</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">🧠 the CLAUDE.md template</span>
+<pre><code>Project name: [what you're building]
+What this project does: [one paragraph]
+My voice and brand: [the same content from your Cowork About me file, copy it across]
+Rules:
+- No em dashes
+- Sentence case headings
+- Lowercase ManyChat keywords
+- Output paste-ready (no meta instructions like "(edit this)")
+Tools Claude can use: [list]
+People to reference: [list]
+How to ask before editing: always plan first, never delete files without confirming.</code></pre>
+</div>
+<p>Save. From now on, every Claude Code session in this folder already knows all of this. You stop re-explaining yourself.</p>
+
+<h3>2.7 <span class="gi" style="--gl:#248EDA" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.7088 3.49534C16.8165 2.55382 14.5009 2 12 2C9.4991 2 7.1835 2.55382 5.29116 3.49534C4.36318 3.95706 3.89919 4.18792 3.4496 4.91378C3 5.63965 3 6.34248 3 7.74814V11.2371C3 16.9205 7.54236 20.0804 10.173 21.4338C10.9067 21.8113 11.2735 22 12 22C12.7265 22 13.0933 21.8113 13.8269 21.4338C16.4576 20.0804 21 16.9205 21 11.2371L21 7.74814C21 6.34249 21 5.63966 20.5504 4.91378C20.1008 4.18791 19.6368 3.95706 18.7088 3.49534Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Undo, safety, and "oh god what did Claude do"</h3>
+<p>Three things to know before Claude Code touches anything you care about.</p>
+<ol class="steps">
+<li><strong class="st">Git is your undo button.</strong> Before any real project, run <code>git init</code> in your project folder (one terminal command). After Claude makes changes, you can run <code>git status</code> to see what changed, and <code>git restore [filename]</code> to undo edits to any file.</li>
+<li><strong class="st">Never run with permissions skipped on important folders.</strong> Claude Code asks for permission before editing files or running terminal commands. The flag <code>--dangerously-skip-permissions</code> exists to bypass that. Use it only on a sandbox folder, never on your real work.</li>
+<li><strong class="st">When you don't know what folder you're in,</strong> type <code>pwd</code> (print working directory) in the terminal. The output tells you exactly where Claude is operating. If it's wrong, type <code>cd path/to/right/folder</code> to move.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">try these</span>
+<h2>Part 3: Three marketer workflows to try this week</h2>
+<p>Pick one. Each takes 15 to 30 minutes the first time. After that, it's seconds.</p>
+
+<h3>1. <span class="gi" style="--gl:#9281A4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L7 13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 17L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17 17L17 11" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span> CSV cleaner (Claude Code)</h3>
+<p>You have a messy CSV of leads or signups. Open it in Antigravity. Ask Claude Code: "Open leads.csv. Strip duplicates by email. Standardise the country column to country codes. Sort by signup date descending. Save as leads-clean.csv. Tell me how many rows were removed."</p>
+
+<h3>2. <span class="gi" style="--gl:#A68307" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.4249 4.60509L17.4149 3.6151C18.2351 2.79497 19.5648 2.79497 20.3849 3.6151C21.205 4.43524 21.205 5.76493 20.3849 6.58507L19.3949 7.57506M16.4249 4.60509L9.76558 11.2644C9.25807 11.772 8.89804 12.4078 8.72397 13.1041L8 16L10.8959 15.276C11.5922 15.102 12.228 14.7419 12.7356 14.2344L19.3949 7.57506M16.4249 4.60509L19.3949 7.57506" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18.9999 13.5C18.9999 16.7875 18.9999 18.4312 18.092 19.5376C17.9258 19.7401 17.7401 19.9258 17.5375 20.092C16.4312 21 14.7874 21 11.4999 21H11C7.22876 21 5.34316 21 4.17159 19.8284C3.00003 18.6569 3 16.7712 3 13V12.5C3 9.21252 3 7.56879 3.90794 6.46244C4.07417 6.2599 4.2599 6.07417 4.46244 5.90794C5.56879 5 7.21252 5 10.5 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Caption rewriter (Claude Cowork)</h3>
+<p>You have a doc of caption ideas. Drop it in <code>Claude Cowork/Templates/captions.md</code>. In Cowork, ask: "Rewrite every caption in my About me voice. Apply the rules in <code>_instructions.md</code>. Save the result to <code>Outputs from Claude/Captions/rewritten-[today].md</code>."</p>
+
+<h3>3. <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span> Competitor scraper (Claude Code)</h3>
+<p>You want to track three competitor IG bios weekly. In Antigravity, ask Claude Code: "Build me a Python script that takes a list of three Instagram handles, fetches the public bio for each via the IG web page, and writes them with today's date to a file called competitor-bios-[date].md. Run it now."</p>
+<p>Claude will build the script, run it, hand you the output. You now have a competitor tracker you can re-run any week.</p>
+
+<hr class="rule">
+<span class="kicker">the craft</span>
+<h2>Pro tips from the experts</h2>
+
+<h3>From Arthur Winer (the Cowork tutorial creator)</h3>
+<ul>
+<li>Keep your <code>About me</code> file under ~2,000 words. Longer files degrade output quality.</li>
+<li>The single biggest lever is folder-specific instructions. Generic prompts give generic output.</li>
+<li>Build Skills (saved instruction packets) for any task you run more than twice.</li>
+</ul>
+
+<h3>From Nick Saraev (Claude Code Full Course)</h3>
+<ul>
+<li>Watch Claude work in real time, don't accept output blind. The verification habit catches 90% of bad edits before they ship. (This is the part of his 4-hour course at the 46-minute mark.)</li>
+<li>Treat CLAUDE.md as your project brain. The course teaches this around the 30-minute mark and it's the single highest-leverage takeaway.</li>
+<li>For complete setup walkthrough, his VS Code setup is at the 14-minute mark and the first-project build is at the 24-minute mark.</li>
+</ul>
+<p>Watch the full course here: <a href="https://www.youtube.com/watch?v=QoQBzR1NIqI" target="_blank">Nick Saraev, Claude Code Full Course 4 Hours</a></p>
+<p>Watch the full Cowork tutorial here: <a href="https://www.youtube.com/watch?v=SNo_recKZyY" target="_blank">Arthur Winer, How to Use Claude Cowork</a></p>
+
+<hr class="rule">
+<span class="kicker">what to watch</span>
+<h2>Common stumbles</h2>
+<p>When Claude Code says command not found after install, quit Antigravity completely (Cmd+Q) and reopen. The shell needs to reload the path.</p>
+<p>When Cowork's Scheduled Tasks don't fire, check Claude Desktop is actually open. They don't run if the app is closed.</p>
+<p>When Claude Code asks for permission on every single action, run <code>/permissions</code> and set rules so it stops asking for routine reads.</p>
+<p>When Cowork or Claude Code feels slow, switch model: type <code>/model claude-haiku-4-5</code> for fast simple tasks, or <code>/model claude-opus-4-8</code> for hard ones.</p>
+<p>When the output reads AI-generated, your About me or CLAUDE.md doesn't have enough voice samples. Paste two of your real captions or emails into the file.</p>
+
+<hr class="rule">
+<span class="kicker">go further</span>
+<h2>Where to go next</h2>
+<p>You now have the foundation. Three optional layers to add when you're ready.</p>
+<ol class="steps">
+<li><strong class="st">Skills</strong> (<code>.claude/skills/</code> for Claude Code, Skills panel for Cowork): saved instruction packets Claude loads when relevant. Build one for your weekly content review, your client onboarding email, anything you run more than twice.</li>
+<li><strong class="st">MCP servers</strong>: connectors that plug other apps into Claude (Notion, Airtable, Supabase, Stripe). Inside Claude Code, type <code>/mcp</code> to see what's already available. Add more from Customize, then Connectors in Claude Desktop.</li>
+<li><strong class="st">Subagents</strong> (<code>.claude/agents/</code> for Claude Code): a way to spin up parallel Claude sessions for big tasks (research a topic, edit 30 files at once, audit a codebase). Ignore until you hit a task where a single session isn't enough.</li>
+</ol>
+<p>The foundation matters more than the extras. Get Cowork and Claude Code into your daily loop first, then layer the rest as needed.</p>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

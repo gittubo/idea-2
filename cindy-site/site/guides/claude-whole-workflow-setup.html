@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to run your whole business on one Claude setup · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="One context file, one Claude, four jobs it runs for you: your ad copy, your results analysis, your landing page, and your client report.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-whole-workflow-setup">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="How to run your whole business on one Claude setup">
+<meta property="og:description" content="One context file, one Claude, four jobs it runs for you: your ad copy, your results analysis, your landing page, and your client report.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-whole-workflow-setup">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to run your whole business on one Claude setup">
+<meta name="twitter:description" content="One context file, one Claude, four jobs it runs for you: your ad copy, your results analysis, your landing page, and your client report.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"How to run your whole business on one Claude setup", u:"guides/claude-whole-workflow-setup.html", topic:"start", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Power moves</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>How to run your whole business on one Claude setup</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 One context file, one Claude, four jobs it runs for you: your ad copy, your results analysis, your landing page, and your client report.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">start here</span>
+<h2>Why one file beats ten tools <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The labs are not building better chat apps. OpenAI's charter defines AGI as "highly autonomous systems that outperform humans at most economically valuable work" (<a href="https://openai.com/charter/" target="_blank">OpenAI Charter</a>). Anthropic's own Claude Sonnet 4.5 announcement says they have observed it "maintaining focus for more than 30 hours on complex, multi-step tasks" (<a href="https://www.anthropic.com/news/claude-sonnet-4-5" target="_blank">Anthropic, 29 Sep 2025</a>). And Demis Hassabis pitched DeepMind to investors on one line: "Step one: Solve intelligence. Step two: Use it to solve everything else." (<a href="https://www.gsb.stanford.edu/insights/demis-hassabis-thinks-were-foothills-singularity" target="_blank">Stanford GSB, 18 Jun 2026</a>).</p>
+<p>General is the word that matters, because general includes your job. The thing holding your output back is usually not the model's capability, it is that you re-explain your business from scratch in every new chat. So the fix is boring and it works: write your business down once, in one file, and give that file to the tool. Everything below is that setup.</p>
+<div class="tip calm">🌱 <strong>The whole idea in one line.</strong> Ten narrow tools each know one tenth of your business. One general tool plus one context file knows all of it, and gets better at every job at once.</div>
+
+<hr class="rule">
+<span class="kicker">step one</span>
+<h2>The one context file <span class="gi" style="--gl:#9380A9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7L16 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 11L12 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 21.5V21C13 18.1716 13 16.7574 13.8787 15.8787C14.7574 15 16.1716 15 19 15H19.5M20 13.3431V10C20 6.22876 20 4.34315 18.8284 3.17157C17.6569 2 15.7712 2 12 2C8.22877 2 6.34315 2 5.17157 3.17157C4 4.34314 4 6.22876 4 10L4 14.5442C4 17.7892 4 19.4117 4.88607 20.5107C5.06508 20.7327 5.26731 20.9349 5.48933 21.1139C6.58831 22 8.21082 22 11.4558 22C12.1614 22 12.5141 22 12.8372 21.886C12.9044 21.8623 12.9702 21.835 13.0345 21.8043C13.3436 21.6564 13.593 21.407 14.0919 20.9081L18.8284 16.1716C19.4065 15.5935 19.6955 15.3045 19.8478 14.9369C20 14.5694 20 14.1606 20 13.3431Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the piece everyone skips, and it is the piece that does the work. A context file is a plain document describing your business the way you would brief a new hire on day one: what you sell, who buys it, how you sound, your real numbers, and what you are not allowed to say. <strong>The mechanism:</strong> Claude never starts from zero, so your prompts drop from a paragraph of setup to a single line of instruction, and the output stops being generic because it is no longer working from a generic business.</p>
+<p>Here is the file. Everything in square brackets is yours to replace, and the headings are the part worth keeping as they are.</p>
+<div class="promptwrap">
+<span class="promptlabel">📄 the context file, fill in the blanks</span>
+<pre><code># Business context: [your business name]
+
+## What we sell
+Offer: [the main thing you sell, in one sentence]
+Price points: [e.g. $497 one-off, or $2,000 a month retainer]
+What is included: [deliverables, timeframe, what "done" looks like]
+What we do not sell: [so Claude stops suggesting it]
+
+## Who we sell to
+Primary audience: [role, industry, company size, or life stage]
+What they want: [the outcome, in their words not yours]
+What they tried first: [and why it did not work]
+Top three objections: [the exact phrasing you hear on calls]
+
+## How we sound
+Voice in three words: [e.g. warm, direct, specific]
+We always: [e.g. lead with the outcome, use real numbers]
+We never: [e.g. hype words, income promises, exclamation marks]
+Two lines that sound exactly like us:
+1. [paste a real line you wrote]
+2. [paste another real line]
+
+## Products and offers, in order
+1. [the free thing] leads to [what it leads to]
+2. [entry offer, price]
+3. [main offer, price]
+
+## Current numbers (update this monthly)
+Audience or list size: [number, and where it comes from]
+Best channel right now: [and the metric that proves it]
+Conversion rate: [from what, to what]
+Ad spend and cost per result: [if you run ads]
+This month's one goal: [e.g. book 3 discovery calls a week]
+
+## Constraints
+Monthly budget ceiling: [number]
+Tools we already pay for: [list them]
+Claims we cannot make: [e.g. no income or medical claims]</code></pre>
+</div>
+<p>Six sections, and each one is doing a specific job:</p>
+<div class="cardgrid">
+<div class="minicard"><b>The offer</b> What you sell, at what price, and what is included. Without it, Claude writes beautifully for a business that does not exist.</div>
+<div class="minicard"><b>The audience</b> Who buys, what they tried before you, and the three objections in their words. This is what turns copy from pleasant into persuasive.</div>
+<div class="minicard"><b>The voice</b> Three adjectives, an always list, a never list, and two real lines you actually wrote. Two real lines teach more than a paragraph of describing.</div>
+<div class="minicard"><b>Products in order</b> Free thing, entry offer, main offer, with prices. This is what stops Claude pitching the wrong product at the wrong moment.</div>
+<div class="minicard"><b>Current numbers</b> List size, conversion rate, spend, cost per result. The one section worth updating monthly, because it is what makes analysis useful instead of theoretical.</div>
+<div class="minicard"><b>Constraints</b> Budget, the tools you already pay for, and the claims you are not allowed to make. Cheapest insurance you will ever write.</div>
+</div>
+<p>If staring at a blank template is the thing that stops you, do not write it yourself. Open any Claude chat and paste this instead, and it will interview you and hand the finished file back.</p>
+<div class="promptwrap">
+<span class="promptlabel">💡 make Claude write it for me</span>
+<pre><code>I want you to build the context file that every future chat with you
+will start from, and I would rather answer questions than write it myself.
+
+Interview me about my business one question at a time, and do not move on
+until my answer is specific enough to act on. Start with what I sell and at
+what price, then who buys it and what they were doing before they found me,
+then how I sound when I write, then my current numbers (audience size,
+conversion rate, ad spend and cost per result if I run ads), and finally the
+budget and the claims I am not allowed to make. If I give you a vague answer
+like "small business owners" or "we sound professional", push back once and
+ask me for the specific version with an example.
+
+When you have everything, write the finished file as one markdown document
+under the headings What we sell, Who we sell to, How we sound, Products and
+offers, Current numbers, and Constraints, using my words rather than yours.
+Finish with a short list of anything you still do not know about my business,
+so I know exactly what to fill in later.</code></pre>
+</div>
+<div class="tip">💡 <strong>Ten minutes is enough for version one.</strong> An incomplete file beats no file by a mile, and the gaps become obvious the first time Claude writes something slightly off. Fix the file rather than the output, every time, and it gets sharper on its own.</div>
+
+<hr class="rule">
+<span class="kicker">pick your path</span>
+<h2>Where the file lives <span class="gi" style="--gl:#987CBE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3175 7.14139L20.8239 6.28479C20.4506 5.63696 20.264 5.31305 19.9464 5.18388C19.6288 5.05472 19.2696 5.15664 18.5513 5.36048L17.3311 5.70418C16.8725 5.80994 16.3913 5.74994 15.9726 5.53479L15.6357 5.34042C15.2766 5.11043 15.0004 4.77133 14.8475 4.37274L14.5136 3.37536C14.294 2.71534 14.1842 2.38533 13.9228 2.19657C13.6615 2.00781 13.3143 2.00781 12.6199 2.00781H11.5051C10.8108 2.00781 10.4636 2.00781 10.2022 2.19657C9.94085 2.38533 9.83106 2.71534 9.61149 3.37536L9.27753 4.37274C9.12465 4.77133 8.84845 5.11043 8.48937 5.34042L8.15249 5.53479C7.73374 5.74994 7.25259 5.80994 6.79398 5.70418L5.57375 5.36048C4.85541 5.15664 4.49625 5.05472 4.17867 5.18388C3.86109 5.31305 3.67445 5.63696 3.30115 6.28479L2.80757 7.14139C2.45766 7.74864 2.2827 8.05227 2.31666 8.37549C2.35061 8.69871 2.58483 8.95918 3.05326 9.48012L4.0843 10.6328C4.3363 10.9518 4.51521 11.5078 4.51521 12.0077C4.51521 12.5078 4.33636 13.0636 4.08433 13.3827L3.05326 14.5354C2.58483 15.0564 2.35062 15.3168 2.31666 15.6401C2.2827 15.9633 2.45766 16.2669 2.80757 16.8741L3.30114 17.7307C3.67443 18.3785 3.86109 18.7025 4.17867 18.8316C4.49625 18.9608 4.85542 18.8589 5.57377 18.655L6.79394 18.3113C7.25263 18.2055 7.73387 18.2656 8.15267 18.4808L8.4895 18.6752C8.84851 18.9052 9.12464 19.2442 9.2775 19.6428L9.61149 20.6403C9.83106 21.3003 9.94085 21.6303 10.2022 21.8191C10.4636 22.0078 10.8108 22.0078 11.5051 22.0078H12.6199C13.3143 22.0078 13.6615 22.0078 13.9228 21.8191C14.1842 21.6303 14.294 21.3003 14.5136 20.6403L14.8476 19.6428C15.0004 19.2442 15.2765 18.9052 15.6356 18.6752L15.9724 18.4808C16.3912 18.2656 16.8724 18.2055 17.3311 18.3113L18.5513 18.655C19.2696 18.8589 19.6288 18.9608 19.9464 18.8316C20.264 18.7025 20.4506 18.3785 20.8239 17.7307L21.3175 16.8741C21.6674 16.2669 21.8423 15.9633 21.8084 15.6401C21.7744 15.3168 21.5402 15.0564 21.0718 14.5354L20.0407 13.3827C19.7887 13.0636 19.6098 12.5078 19.6098 12.0077C19.6098 11.5078 19.7888 10.9518 20.0407 10.6328L21.0718 9.48012C21.5402 8.95918 21.7744 8.69871 21.8084 8.37549C21.8423 8.05227 21.6674 7.74864 21.3175 7.14139Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.5195 12C15.5195 13.933 13.9525 15.5 12.0195 15.5C10.0865 15.5 8.51953 13.933 8.51953 12C8.51953 10.067 10.0865 8.5 12.0195 8.5C13.9525 8.5 15.5195 10.067 15.5195 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>Two ways to install it, and they do the same job. The free path keeps everything in the browser. The power path puts the file in a folder on your computer so Claude can read and write your real files. Start free, upgrade only when you feel the ceiling.</p>
+
+<span class="kicker">the free path</span>
+<h2>A Claude Project, in the browser <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🌱 Open Projects.</strong> Go to <a href="https://claude.ai" target="_blank">claude.ai</a>, hover over the left sidebar, and click <strong>Projects</strong>. Projects show up on free accounts too, capped at five (<a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">Anthropic's help centre</a>), and Pro and above get unlimited.</li>
+<li><strong class="st">➕ Make the project.</strong> Click <strong>+ New Project</strong> in the top right, give it your business name and a one-line description, and create it.</li>
+<li><strong class="st">📄 Paste the context file in.</strong> Click <strong>Set project instructions</strong>, paste the whole filled-in file, then click <strong>Save instructions</strong>. Every chat you start inside this project now begins with your business already loaded (<a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" target="_blank">step-by-step from Anthropic</a>).</li>
+<li><strong class="st">📎 Add the proof files.</strong> Use the <strong>+</strong> button on the project page to upload the things you would hand a new hire: your best-performing ad, last month's report, a page that converted. Claude reads these across every chat in the project.</li>
+<li><strong class="st">💡 Work inside the project, always.</strong> New chat, inside the project, every time. A chat started outside it knows nothing, which is exactly the situation you just fixed.</li>
+</ol>
+<div class="tip calm">🌱 <strong>No Projects in your sidebar?</strong> The fallback works nearly as well: start a chat, paste the context file as your first message with the line "this is my business, keep it in mind for everything below", and carry on. You are re-pasting it once per chat instead of never, which is still a huge upgrade on explaining yourself from scratch.</div>
+
+<span class="kicker">the power path</span>
+<h2>Claude Code, with a CLAUDE.md <span class="gi" style="--gl:#9A7BBC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Same file, different home. Claude Code runs in your terminal and works on a folder, so it can read your actual exports, write files, and build the landing page as a real file instead of a block of text you copy out. Anthropic's own docs describe the file it reads as "instructions you write to give Claude persistent context", loaded at the start of every session (<a href="https://code.claude.com/docs/en/memory" target="_blank">Claude Code memory docs</a>).</p>
+<ol class="steps">
+<li><strong class="st">👩‍💻 Install it.</strong> On macOS, Linux or WSL, open Terminal and run <code>curl -fsSL https://claude.ai/install.sh | bash</code>. On Windows, open PowerShell and run <code>irm https://claude.ai/install.ps1 | iex</code>. Full options and troubleshooting: <a href="https://code.claude.com/docs/en/setup" target="_blank">Anthropic's setup page</a>.</li>
+<li><strong class="st">📁 Make a folder for the business.</strong> One folder per business or per client, wherever you keep your work. This folder is the boundary of what Claude can see, which is the point.</li>
+<li><strong class="st">📄 Save the context file as CLAUDE.md.</strong> Put it at the root of that folder, named exactly <code>CLAUDE.md</code>. That name is not decorative: it is the file Claude Code loads automatically at the start of every session in that folder.</li>
+<li><strong class="st">🚀 Start it.</strong> In Terminal, move into the folder and run <code>claude</code>. It opens an interactive session and logs you in through the browser the first time.</li>
+<li><strong class="st">💡 Check it actually loaded.</strong> Type <code>/context</code> and look under <strong>Memory files</strong> for your CLAUDE.md. If it is not listed, Claude cannot see it, and you are probably running from the wrong folder.</li>
+<li><strong class="st">🧠 Let it write the first draft.</strong> Running <code>/init</code> generates a starting CLAUDE.md from what is already in the folder, which is a fast way to begin if you have files there. Edit from there, since it can only describe what it can see.</li>
+</ol>
+<div class="tip warn"><strong>The honest plan gate.</strong> Claude Code needs a Pro, Max, Team, Enterprise or Console account: <a href="https://code.claude.com/docs/en/setup" target="_blank">the free Claude plan does not include it</a>. Pro is $20 a month, or $17 a month billed annually (<a href="https://www.claude.com/pricing" target="_blank">current pricing</a>). Everything in the four workflows below works on the free browser path too, the difference is that you paste and copy by hand instead of Claude touching your files directly.</div>
+<div class="cardgrid">
+<div class="minicard"><b>The Projects path</b> Browser only, nothing to install, works today. You will meet message limits on a heavy day, and you copy outputs out by hand.<span class="cost">Cost: $0, up to five projects</span></div>
+<div class="minicard"><b>The Claude Code path</b> Reads and writes real files, handles your CSV exports, builds the page as an actual file. Needs a terminal and about 15 minutes of setup.<span class="cost">Cost: from $17 a month</span></div>
+</div>
+
+<hr class="rule">
+<span class="kicker">job one</span>
+<h2>The ad copy writer <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p><strong>The mechanism:</strong> because Claude already holds your offer, your audience's objections and your voice rules, your brief shrinks to a single line and the output arrives as genuinely different angles you can test, rather than ten rewordings of one safe idea. This is also why the copy stops sounding like AI: it is working from your two real sample lines instead of an average of the internet.</p>
+<div class="promptwrap">
+<span class="promptlabel">💡 write the ad variants</span>
+<pre><code>Write me 10 ad variations for [the offer named in my context file], aimed at
+[the audience segment], for a [cold traffic / retargeting] campaign on
+[Meta / Google / TikTok].
+
+Use the objections and the voice rules from my context file rather than a
+generic ad formula, and make the variants genuinely different from each
+other: at least three distinct angles (for example the problem angle, the
+proof angle, and the contrarian angle), not ten rewordings of one idea. For
+each variant give me the primary text, a headline, and one sentence on the
+single reason you think this one might beat the others, so I know what I am
+actually testing rather than just what I am posting.
+
+Check every line against the constraints section of my context file, flag
+anything that makes a claim I am not allowed to make, and rewrite it into
+something I can say. Finish by telling me which one variant you would spend
+the first $50 on, and what result would prove you wrong.</code></pre>
+</div>
+<div class="tip">💡 <strong>Adapt it, do not just copy it.</strong> The load-bearing part of that prompt is "at least three distinct angles" plus "one sentence on why". Those two lines are what turn a pile of copy into a real test, and they work for email subject lines, hooks and headlines too.</div>
+
+<hr class="rule">
+<span class="kicker">job two</span>
+<h2>The results analyser <span class="gi" style="--gl:#9281A4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L7 13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 17L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17 17L17 11" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p><strong>The mechanism:</strong> you paste the numbers into the same conversation that wrote the copy, so Claude is grading its own work against benchmarks it already knows. That is the difference between "your CTR is 0.9%" and "the two winners both led with the objection, the loser led with the feature, here is what to write next". Same context, so the analysis connects to a decision.</p>
+<div class="promptwrap">
+<span class="promptlabel">📊 analyse what actually happened</span>
+<pre><code>Here are the results after 7 days of running the variants you wrote:
+[paste your export, or type it out per ad: spend, impressions, clicks,
+click-through rate, cost per result, conversions].
+
+Compare them against each other and against the benchmark numbers in my
+context file, and be honest about sample size: tell me plainly which
+differences are real and which are still noise because the conversion counts
+are too small to call. Then explain what the winners have in common at the
+level of the angle and the promise rather than the exact wording, because
+the angle is the part I can reuse and the wording is not.
+
+Give me three next moves in priority order: what to kill, what to scale, and
+what one new variant to write based on what the data actually showed. If
+anything here contradicts my context file, an audience assumption, a price
+point, or a conversion benchmark, say so and tell me exactly which line of
+the file to update.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">job three</span>
+<h2>The landing page builder <span class="gi" style="--gl:#9A7BBC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p><strong>The mechanism:</strong> the page inherits the same offer, objections and voice as the winning ad, so message match happens by default instead of by coordination. This is the step where the whole-workflow setup pays for itself, because the usual failure is a great ad pointing at a page written from a different brief three weeks earlier.</p>
+<div class="promptwrap">
+<span class="promptlabel">👩‍💻 build the page</span>
+<pre><code>Build the landing page for the winning ad, as a single self-contained HTML
+file I can open in a browser and hand to a developer.
+
+Match the promise in the winning ad exactly, so nobody who clicks it feels
+like they landed on a different offer, and handle the top three objections
+from my context file in the order a real buyer meets them. Structure it as:
+hero with the outcome, the proof, what is included, objection handling, a
+simple pricing block, and one call to action repeated twice. Use my voice
+rules, keep every claim inside my constraints section, and design it to be
+read on a phone first.
+
+Do not invent testimonials, logos, statistics or guarantees. Wherever social
+proof would normally go, leave a clearly labelled placeholder, and list
+underneath exactly what evidence I need to collect to fill each one.</code></pre>
+</div>
+<div class="tip calm">🌱 <strong>On the browser path this still works.</strong> Claude writes the page as an artifact you can preview and share straight from the chat. On the Claude Code path it writes the file into your folder instead, which matters when you want it version-controlled or deployed.</div>
+
+<hr class="rule">
+<span class="kicker">job four</span>
+<h2>The client report, in your voice <span class="gi" style="--gl:#A678B3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.50003L8.91302 9.42465C11.4387 10.8585 12.5613 10.8585 15.087 9.42465L22 5.50003" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M11.5 19.9959C11.0337 19.9898 9.56682 20.0077 9.09883 19.9959C5.95033 19.9166 4.37608 19.877 3.24496 18.7394C2.11383 17.6018 2.08114 16.0661 2.01577 12.9947C1.99475 12.0071 1.99474 11.0254 2.01576 10.0378C2.08114 6.96642 2.11382 5.43072 3.24495 4.29312C4.37608 3.15551 5.95033 3.11588 9.09882 3.03663C11.0393 2.98779 12.9607 2.98779 14.9012 3.03664C18.0497 3.1159 19.6239 3.15553 20.755 4.29313C21.8862 5.43073 21.9189 6.96643 21.9842 10.0378C21.9983 10.6973 22.0029 10.3542 21.9982 11.012" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15.015 14.3866C16.0876 13.7469 17.0238 14.0047 17.5863 14.4153C17.8169 14.5837 17.9322 14.6679 18 14.6679C18.0678 14.6679 18.1831 14.5837 18.4137 14.4153C18.9762 14.0047 19.9124 13.7469 20.985 14.3866C22.3928 15.2261 22.7113 17.9958 19.4642 20.3324C18.8457 20.7775 18.5365 21 18 21C17.4635 21 17.1543 20.7775 16.5358 20.3324C13.2887 17.9958 13.6072 15.2261 15.015 14.3866Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p><strong>The mechanism:</strong> the report is written by the same thing that ran the campaign, so the numbers, the reasoning and the wording all come from one place. No re-explaining what happened, no reconciling a spreadsheet against your memory, and no writing in a stiff voice that is not yours because it is 6pm on a Friday.</p>
+<div class="promptwrap">
+<span class="promptlabel">💌 write the report</span>
+<pre><code>Write the monthly report for [client or stakeholder name] covering
+[date range], using everything in this conversation: the copy you wrote, the
+results we analysed, and the page we built.
+
+Write it in the voice from my context file, for a reader who is [their role,
+and how technical they are], and lead with the outcome rather than the
+activity. Structure it as: a one-line summary, what we did, what happened
+with the real numbers, what we learned, and what we are doing next month.
+Keep it under 400 words, and put anything that needs a decision from them in
+a separate short list at the bottom so it does not get lost in the prose.
+
+Never invent a figure. Every number has to come from data in this
+conversation, and if something they will obviously ask about is missing,
+list it under "needs confirmation" rather than estimating it. Finish with the
+two sentences I could paste into an email as the covering note.</code></pre>
+</div>
+<div class="tip">💡 <strong>Turn the good version into a permanent one.</strong> Once a report comes back exactly right, paste it back and say: "add a Reporting section to my context file describing this format, structure and level of detail, using this as the reference example." Next month it lands right first time.</div>
+
+<hr class="rule">
+<span class="kicker">why it compounds</span>
+<h2>One file, four jobs, every upgrade <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Here is the part most people miss, and it is the actual argument for going deep on one general tool instead of collecting ten narrow ones. A narrow tool improves at its one job. A general tool with your context file improves at every job you have given it, on the same day, without you rebuilding anything.</p>
+<div class="cardgrid">
+<div class="minicard"><b>A better model ships</b> Your copy, your analysis, your pages and your reports all get better at once. Nothing to migrate, no new subscription, no new prompt library to rewrite.</div>
+<div class="minicard"><b>A new capability lands</b> File handling, longer sessions, a new surface to work from. The context file is the input to all of it, so a new capability arrives already knowing your business.</div>
+<div class="minicard"><b>You update the numbers</b> One monthly edit to the Current numbers section, and all four jobs get sharper together. In a ten-tool setup you would be updating five dashboards.</div>
+<div class="minicard"><b>You add a fifth job</b> Email sequences, sales call prep, competitor teardowns. Each new job starts at the quality the other four are at, because the hard part was never the prompt.</div>
+</div>
+<p>Which is why the move is not "learn more AI tools". It is: write your business down once, put it somewhere a general tool can read it, and then give that tool more of your work.</p>
+
+<hr class="rule">
+<span class="kicker">check it yourself</span>
+<h2>The proof behind the reel <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li><strong>The OpenAI Charter.</strong> The definition of AGI as "highly autonomous systems that outperform humans at most economically valuable work". <a href="https://openai.com/charter/" target="_blank">openai.com/charter</a></li>
+<li><strong>Anthropic, introducing Claude Sonnet 4.5.</strong> The 30-hour line: "we've observed it maintaining focus for more than 30 hours on complex, multi-step tasks", 29 September 2025. <a href="https://www.anthropic.com/news/claude-sonnet-4-5" target="_blank">anthropic.com/news</a></li>
+<li><strong>Stanford GSB, Demis Hassabis interview, 18 June 2026.</strong> DeepMind's founding pitch: "Step one: Solve intelligence. Step two: Use it to solve everything else." <a href="https://www.gsb.stanford.edu/insights/demis-hassabis-thinks-were-foothills-singularity" target="_blank">gsb.stanford.edu</a></li>
+<li><strong>Claude Projects, official help centre.</strong> Creating a project, setting project instructions, and the free-plan project cap. <a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" target="_blank">support.claude.com</a></li>
+<li><strong>Claude Code memory docs.</strong> What CLAUDE.md is, where it goes, and how <code>/init</code> and <code>/context</code> work. <a href="https://code.claude.com/docs/en/memory" target="_blank">code.claude.com/docs</a></li>
+<li><strong>Claude Code setup and plan requirements.</strong> Install commands and the Pro-and-above account requirement. <a href="https://code.claude.com/docs/en/setup" target="_blank">code.claude.com/docs</a></li>
+</ul>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

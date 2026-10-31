@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Claude prompt template: bad vs good vs great (+ 8 worked examples) · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="This is the full version of the prompt ladder from my carousel: the fill-in-the-blank template, the 6 parts that make a prompt great.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-prompt-template">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="The Claude prompt template: bad vs good vs great (+ 8 worked examples)">
+<meta property="og:description" content="This is the full version of the prompt ladder from my carousel: the fill-in-the-blank template, the 6 parts that make a prompt great.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-prompt-template">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Claude prompt template: bad vs good vs great (+ 8 worked examples)">
+<meta name="twitter:description" content="This is the full version of the prompt ladder from my carousel: the fill-in-the-blank template, the 6 parts that make a prompt great.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The Claude prompt template: bad vs good vs great (+ 8 worked examples)","description":"This is the full version of the prompt ladder from my carousel: the fill-in-the-blank template, the 6 parts that make a prompt great, all 3 examples from the...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/claude-prompt-template"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"The Claude prompt template: bad vs good vs great (+ 8 worked examples)", u:"guides/claude-prompt-template.html", topic:"start", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Getting started</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>The Claude prompt template: bad vs good vs great (+ 8 worked examples)</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This is the full version of the prompt ladder from my carousel: the fill-in-the-blank template, the 6 parts that make a prompt great.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">copy this</span>
+<h2>The template to steal <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<div class="promptwrap">
+<span class="promptlabel">📋 the fill-in-the-blank template</span>
+<pre><code>You are [role]. You are writing for [audience].
+Here is my context: [voice, docs, past work].
+Do this: [the task], following these rules: [length, format, tone, what to avoid].
+Here is an example of good: [example].
+Now write it, then think step by step.</code></pre>
+</div>
+
+<p>What goes in each bracket:</p>
+<ol class="steps">
+<li><strong class="st">🎭 [role]</strong> who Claude should be (a founder, a conversion copywriter, a researcher). This sets the altitude of the answer.</li>
+<li><strong class="st">👥 [audience]</strong> who the output is for. Writing for early-stage founders reads completely differently to writing for beginners.</li>
+<li><strong class="st">📁 [context]</strong> your voice, your docs, your past work. Paste real material, this is the single biggest quality jump.</li>
+<li><strong class="st">📏 [rules]</strong> length, format, tone, and what to AVOID. Telling Claude what you do not want is a cheat code.</li>
+<li><strong class="st">⭐ [example]</strong> show it one example of what good looks like. It will match the pattern.</li>
+<li><strong class="st">📨 The ask</strong> end with the actual request, then say "think step by step".</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">the reason</span>
+<h2>Why this works: the 6 parts <span class="gi" style="--gl:#1A8FD5" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.6671 22C9.20107 21.466 9.73505 20.9321 9.24127 18M8.6671 15.3336C7.33381 10.0004 8.33378 9.00042 8.6671 8.6671C9.00042 8.33378 10.0004 7.33381 15.3336 8.6671M8.6671 15.3336C3.33394 14.0003 2.66664 14.6663 2 15.3329M8.6671 15.3336C14.0003 16.6668 14.9996 15.6662 15.3329 15.3329C15.6662 14.9996 16.6668 14.0003 15.3336 8.6671M22 8.6671C21.3334 9.33375 20.6667 10.0004 15.3336 8.6671M15.3329 2C14.799 2.53394 14.2654 3.06829 14.7592 6" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Most great prompts have the same 6 parts: role and task, audience, context, rules, an example, and the ask. You do not need all 6 every time. The more of them that matter to your task, the better the answer. A bad prompt pulls the average of the whole internet. A great one pulls your angle.</p>
+
+<hr class="rule">
+<span class="kicker">the ladder</span>
+<h2>The 3 examples from the carousel <span class="gi" style="--gl:#8C4437" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 3.5H18.5C19.4428 3.5 19.9142 3.5 20.2071 3.79289C20.5 4.08579 20.5 4.55719 20.5 5.5V16.5C20.5 18.3856 20.5 19.3284 19.9142 19.9142C19.3284 20.5 18.3856 20.5 16.5 20.5H5.5C4.55719 20.5 4.08579 20.5 3.79289 20.2071C3.5 19.9142 3.5 19.4428 3.5 18.5V17.5C3.5 16.5572 3.5 16.0858 3.79289 15.7929C4.08579 15.5 4.55719 15.5 5.5 15.5H7.5V13.5C7.5 12.5572 7.5 12.0858 7.79289 11.7929C8.08579 11.5 8.55719 11.5 9.5 11.5H11.5V9.5C11.5 8.55719 11.5 8.08579 11.7929 7.79289C12.0858 7.5 12.5572 7.5 13.5 7.5H15.5V5.5C15.5 4.55719 15.5 4.08579 15.7929 3.79289C16.0858 3.5 16.5572 3.5 17.5 3.5Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+
+<h3>1. A LinkedIn post</h3>
+<p>❌ <strong>Bad:</strong> Write a LinkedIn post about niching down.</p>
+<p>👍 <strong>Good:</strong> Write a LinkedIn post on why founders should niche down early. Keep it practical and under 3,000 characters.</p>
+<p>🏆 <strong>Great:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">1 · the great LinkedIn post</span>
+<pre><code>You are a founder writing for early-stage founders. Explain why niching down
+early speeds up growth. Short paragraphs, practical, experience-led not
+motivational. Here are two hook ideas to pick from: [hook 1] / [hook 2].
+Write it under 3,000 characters, then think step by step.</code></pre>
+</div>
+
+<h3>2. A marketing plan</h3>
+<p>❌ <strong>Bad:</strong> Give me a marketing plan.</p>
+<p>👍 <strong>Good:</strong> Create a marketing strategy for a startup selling [product].</p>
+<p>🏆 <strong>Great:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">2 · the great marketing plan</span>
+<pre><code>You are a founder building a marketing strategy. Product: [product].
+Audience: [audience]. Budget: [budget]. Design a plan to get the first
+1,000 customers. Focus on the highest-leverage channels only. I want
+practical first actions, not a generic full-funnel plan. Write it, then
+think step by step.</code></pre>
+</div>
+
+<h3>3. Competitor analysis</h3>
+<p>❌ <strong>Bad:</strong> Analyze my competitors.</p>
+<p>👍 <strong>Good:</strong> Analyze these competitors and explain their strengths and weaknesses.</p>
+<p>🏆 <strong>Great:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">3 · the great competitor analysis</span>
+<pre><code>You are a founder analyzing competitors in your market. Company: [you].
+Competitors: [list]. Compare their positioning, pricing, and marketing.
+Find their biggest advantage and biggest weakness. I do not want
+surface-level notes, I want where they are genuinely stronger and where
+there is an opening. Write the analysis, then think step by step.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">more examples</span>
+<h2>5 more worked examples (the ones I promised) <span class="gi" style="--gl:#BA7A10" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+
+<h3>4. A welcome email sequence</h3>
+<p>❌ <strong>Bad:</strong> Write a welcome email.</p>
+<p>👍 <strong>Good:</strong> Write a 3-email welcome sequence for people who downloaded my free guide about [topic].</p>
+<p>🏆 <strong>Great:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">4 · the great welcome sequence</span>
+<pre><code>You are an email marketer writing for [audience] who just downloaded
+[freebie]. Here is my voice: [paste 3 lines of your own writing]. Write a
+3-email welcome sequence: email 1 delivers the freebie and one quick win,
+email 2 tells my story in 150 words, email 3 makes one soft offer for
+[product]. Rules: under 120 words each, plain text, one idea per email,
+no hype words like "unlock" or "game-changer". Here is a subject line
+style I like: [example]. Write all three, then think step by step.</code></pre>
+</div>
+
+<h3>5. Content ideas that actually fit your niche</h3>
+<p>❌ <strong>Bad:</strong> Give me content ideas.</p>
+<p>👍 <strong>Good:</strong> Give me 10 Instagram reel ideas about [your niche] for beginners.</p>
+<p>🏆 <strong>Great:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">5 · the great content ideas</span>
+<pre><code>You are a short-form content strategist for [your niche]. My audience:
+[who]. Here are my 3 best-performing posts: [paste hooks or links]. Give
+me 10 reel ideas ranked by likely watch time, each with a first-line hook
+and the payoff moment. Rules: specific over generic, no motivational
+filler, every idea must show something on screen. Match the pattern of my
+winners. Write the list, then think step by step.</code></pre>
+</div>
+
+<h3>6. Landing page copy</h3>
+<p>❌ <strong>Bad:</strong> Write landing page copy for my product.</p>
+<p>👍 <strong>Good:</strong> Write landing page copy for [product], aimed at [audience], with a headline and three benefits.</p>
+<p>🏆 <strong>Great:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">6 · the great landing page</span>
+<pre><code>You are a conversion copywriter. Product: [product]. Audience: [audience]
+whose main pain is [pain]. Structure: hero headline + subline, 3 benefit
+blocks written as outcomes not features, one social-proof line, one CTA.
+Rules: grade-6 reading level, no buzzwords, headline under 10 words. Here
+is a headline style I love: [example]. Write the page, then think step by
+step.</code></pre>
+</div>
+
+<h3>7. Making sense of customer feedback</h3>
+<p>❌ <strong>Bad:</strong> Summarize this feedback.</p>
+<p>👍 <strong>Good:</strong> Summarize these survey answers and tell me the main themes.</p>
+<p>🏆 <strong>Great:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">7 · the great feedback report</span>
+<pre><code>You are a customer researcher. Here are [number] raw survey answers:
+[paste]. Cluster them into themes ranked by how often they appear, with a
+verbatim quote for each theme. Then flag the 2 most surprising answers
+and what they suggest I should change. I do not want vague sentiment like
+"users want more features", I want specific, quotable findings. Write the
+report, then think step by step.</code></pre>
+</div>
+
+<h3>8. Meeting notes into an action plan</h3>
+<p>❌ <strong>Bad:</strong> Summarize this meeting.</p>
+<p>👍 <strong>Good:</strong> Summarize these meeting notes and list the action items.</p>
+<p>🏆 <strong>Great:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">8 · the great action plan</span>
+<pre><code>You are my chief of staff. Here are the raw notes from [meeting]: [paste].
+Split everything into three lists: decisions made, open questions, and
+action items with an owner and a deadline for each. Table format. If an
+action item has no owner, flag it in bold instead of guessing. Do not
+write a prose recap. Build the lists, then think step by step.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">go further</span>
+<h2>Bonus tricks <span class="gi" style="--gl:#AB8209" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 11V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 9C3 8.25231 3 7.87846 3.20096 7.6C3.33261 7.41758 3.52197 7.26609 3.75 7.16077C4.09808 7 4.56538 7 5.5 7H18.5C19.4346 7 19.9019 7 20.25 7.16077C20.478 7.26609 20.6674 7.41758 20.799 7.6C21 7.87846 21 8.25231 21 9C21 9.74769 21 10.1215 20.799 10.4C20.6674 10.5824 20.478 10.7339 20.25 10.8392C19.9019 11 19.4346 11 18.5 11H5.5C4.56538 11 4.09808 11 3.75 10.8392C3.52197 10.7339 3.33261 10.5824 3.20096 10.4C3 10.1215 3 9.74769 3 9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 3.78571C6 2.79949 6.79949 2 7.78571 2H8.14286C10.2731 2 12 3.7269 12 5.85714V7H9.21429C7.43908 7 6 5.56091 6 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 3.78571C18 2.79949 17.2005 2 16.2143 2H15.8571C13.7269 2 12 3.7269 12 5.85714V7H14.7857C16.5609 7 18 5.56091 18 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 11L12 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+
+<div class="tip">🚫 <strong>The "do NOT want" cheat code.</strong> The fastest quality upgrade in any prompt is one line about what to avoid. Steal these: "I do not want a generic listicle." / "Do not pad the answer, shorter is better." / "No motivational filler, practical only."</div>
+
+<div class="tip calm">🪄 <strong>Make Claude upgrade your prompt for you.</strong> Paste this: "Here is my prompt: [your lazy prompt]. Rewrite it as a great prompt using this structure: role, audience, context, rules, an example, then the ask ending with think step by step. Ask me for any bracket you cannot fill." Claude will interview you and hand back the great version.</div>
+
+<div class="tip"><strong>The 5-second checklist before you hit enter:</strong> did I say who Claude is, who it's for, what context it has, what rules to follow, and what good looks like? Even hitting 3 of the 5 puts you ahead of almost everyone.</div>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

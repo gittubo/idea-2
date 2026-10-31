@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build an interview room in Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="You&#x27;re going to turn Claude into a personal interview room that runs realistic mock interviews, grades every answer, and pushes back when you&#x27;re vague.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/interview-prep-with-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build an interview room in Claude">
+<meta property="og:description" content="You&#x27;re going to turn Claude into a personal interview room that runs realistic mock interviews, grades every answer, and pushes back when you&#x27;re vague.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/interview-prep-with-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build an interview room in Claude">
+<meta name="twitter:description" content="You&#x27;re going to turn Claude into a personal interview room that runs realistic mock interviews, grades every answer, and pushes back when you&#x27;re vague.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build an interview room in Claude", u:"guides/interview-prep-with-claude.html", topic:"career", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Career &amp; job</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Build an interview room in Claude that drills you until you stop freezing up</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You're going to turn Claude into a personal interview room that runs realistic mock interviews, grades every answer, and pushes back when you're vague.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">why this works</span>
+<h2>Practice beats memorising <span class="gi" style="--gl:#CD5174" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M14 2.20004C13.3538 2.06886 12.6849 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.3151 21.9311 10.6462 21.8 10" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0303 11.9625L16.5832 7.4096M19.7404 4.34462L19.1872 2.35748C19.0853 2.03011 18.6914 1.89965 18.4259 2.11662C16.9898 3.29018 15.4254 4.87091 16.703 7.36419C19.2771 8.56455 20.7466 6.94584 21.8733 5.5853C22.0975 5.3146 21.9623 4.90767 21.6247 4.81005L19.7404 4.34462Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Interviews feel random, but they're not. The most predictive interviews are <strong>structured</strong> ones, where the interviewer asks the same competency-based questions and scores against a rubric. Structured interviews are the single strongest predictor of on-the-job performance among common hiring methods (<a href="https://www.siop.org/research-publications/items-of-interest/personnel-selection-what-works/" target="_blank">Sackett et al., 2022, siop.org</a>). That's great news for you: if the interview is really a rubric, you can reverse-engineer the rubric, then rehearse against it until your answers are automatic. That's exactly what this Claude room does.</p>
+<div class="cardgrid">
+  <div class="minicard"><b>🗣 Your story</b> A tight 60 to 90 second "tell me about yourself" that opens strong and points at the role, not your whole life history.</div>
+  <div class="minicard"><b>⭐ Your STAR bank</b> 8 to 10 real stories, each mapped to several question themes, so one story covers conflict, pressure, and initiative depending on what they ask.</div>
+  <div class="minicard"><b>🎭 Your persona cast</b> Five interviewer characters you can swap in to change the pressure, from a warm screening call to a tough panel.</div>
+  <div class="minicard"><b>🔁 Real reps</b> Claude asks one question at a time, waits for your answer, scores it, and makes you redo the weak ones. That's the part a question list can't give you.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the opener</span>
+<h2>"Tell me about yourself" with Present, Past, Future <span class="gi" style="--gl:#533581" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 8V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9 10V14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 11V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15 10V14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 11V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This question opens almost every interview, and most people fumble it by reciting their resume top to bottom. Use a three-part shape instead. It keeps you to 60 to 90 seconds and lands you pointing straight at the role.</p>
+<div class="cardgrid">
+  <div class="minicard"><b>1. Present</b> Who you are professionally right now and what you're known for, aimed at what this role actually values. One or two sentences, no windup.</div>
+  <div class="minicard"><b>2. Past</b> A short highlight reel of only the 2 to 3 experiences that prove you can do <em>this</em> job. Not your whole CV, just the evidence that matters, each with a real outcome.</div>
+  <div class="minicard"><b>3. Future</b> Why you want this exact role, connecting where you're headed to something specific about their team, product, or mission.</div>
+  <div class="minicard"><b>The landing</b> End on the future beat so you finish pointing at the role, which naturally hands the conversation back to them.</div>
+</div>
+<div class="tip calm">💡 <strong>A quick worked example.</strong> "Right now I run paid social for a health brand, and I'm the person the team hands a campaign to when it needs to actually convert, not just look good (present). Before this I scaled a client's ad account from break-even to a 3x return in four months, and rebuilt their creative testing so they shipped 30 variants a week instead of 3 (past). What pulls me to this role is that you're taking that same testing rigour into a category I care about, and I want to own that end to end for you (future)." Roughly 70 words, lands in about 40 seconds spoken, and finishes on why them.</div>
+
+<hr class="rule">
+<span class="kicker">the story system</span>
+<h2>STAR and the reusable-story bank <span class="gi" style="--gl:#A68406" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.7276 3.44418L15.4874 6.99288C15.7274 7.48687 16.3673 7.9607 16.9073 8.05143L20.0969 8.58575C22.1367 8.92853 22.6167 10.4206 21.1468 11.8925L18.6671 14.3927C18.2471 14.8161 18.0172 15.6327 18.1471 16.2175L18.8571 19.3125C19.417 21.7623 18.1271 22.71 15.9774 21.4296L12.9877 19.6452C12.4478 19.3226 11.5579 19.3226 11.0079 19.6452L8.01827 21.4296C5.8785 22.71 4.57865 21.7522 5.13859 19.3125L5.84851 16.2175C5.97849 15.6327 5.74852 14.8161 5.32856 14.3927L2.84884 11.8925C1.389 10.4206 1.85895 8.92853 3.89872 8.58575L7.08837 8.05143C7.61831 7.9607 8.25824 7.48687 8.49821 6.99288L10.258 3.44418C11.2179 1.51861 12.7777 1.51861 13.7276 3.44418Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Behavioural questions ("tell me about a time you...") are where most interviews are won or lost. The fix is STAR, a four-part shape that stops you from rambling:</p>
+<div class="cardgrid">
+  <div class="minicard"><b>S · Situation</b> The context, in one or two lines. Enough to set the scene, no more.</div>
+  <div class="minicard"><b>T · Task</b> What you specifically were responsible for. Make your role clear, not "we".</div>
+  <div class="minicard"><b>A · Action</b> What <em>you</em> actually did, step by step. This is the bulk of the answer.</div>
+  <div class="minicard"><b>R · Result</b> How it turned out, with a number. This is where almost everyone is weakest.</div>
+</div>
+<p>Now the leverage move: don't write one story per question. Prep <strong>8 to 10 strong stories</strong>, then map each one to two or more question themes, because interviewers ask the same underlying themes in different words. A single "I turned around a failing project" story can answer conflict, pressure, and leadership depending on how you frame the telling.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Question theme</th><th>What they're really testing</th></tr></thead>
+<tbody>
+<tr><td>Conflict</td><td>Can you disagree with someone and keep the relationship</td></tr>
+<tr><td>Failure</td><td>Do you own mistakes and learn, or deflect</td></tr>
+<tr><td>Leadership</td><td>Can you move a group without formal authority</td></tr>
+<tr><td>Ambiguity</td><td>Can you make progress with no clear brief</td></tr>
+<tr><td>Pressure</td><td>Do you stay effective when the stakes and deadline are real</td></tr>
+<tr><td>Initiative</td><td>Do you start things, or wait to be told</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip warn">🔢 <strong>Force a number into every Result.</strong> The Result is where people go soft ("it went really well", "the client was happy"). That's a wasted answer. Put a real outcome on it: a percentage, a dollar figure, a time saved, a rank, a retention number. If you can't find a hard number, use a concrete proxy ("cut the weekly report from 3 hours to 20 minutes"). No number, no impact.</div>
+
+<hr class="rule">
+<span class="kicker">your turn to ask</span>
+<h2>Smart questions to ask, and when to ask them <span class="gi" style="--gl:#DB5C6F" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 9.5C9.5 8.11929 10.6193 7 12 7C13.3807 7 14.5 8.11929 14.5 9.5C14.5 10.3569 14.0689 11.1131 13.4117 11.5636C12.7283 12.0319 12 12.6716 12 13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>"Do you have any questions for us?" is not a formality, it's part of the evaluation. Good questions signal that you're already thinking like someone in the seat. Two things most people get wrong:</p>
+<div class="cardgrid">
+  <div class="minicard"><b>⏱ You can ask during, not just at the end</b> Dropping a sharp question mid-conversation ("how does the team measure success on this?") turns the interview into a two-way dialogue instead of an interrogation. It also lets you tailor your next answer to what they tell you.</div>
+  <div class="minicard"><b>🎯 Ask about the actual work</b> "What does a great first 90 days look like?", "What's the biggest thing slowing the team down right now?", "How will you know in six months that this hire worked?" These get real answers and show you're picturing the job.</div>
+</div>
+<div class="tip">🔓 <strong>The closer question, ask it before you leave.</strong> "Based on our conversation, is there anything about my background that makes you hesitant to move me forward?" This surfaces objections while you're still in the room to answer them, instead of losing silently after you walk out. It takes nerve, and it's worth it. If they name a gap, you get one last chance to address it. If they don't, you leave reassured.</div>
+
+<hr class="rule">
+<span class="kicker">the mindset shift</span>
+<h2>Treat the interview like a sales call <span class="gi" style="--gl:#884158" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.00127 8.5L1.99911 13.997C1.99782 17.2979 1.99717 18.9484 3.02235 19.974C4.04754 20.9996 5.69801 20.9996 8.99895 20.9997L15 20.9998C18.2994 20.9999 19.949 21 20.9741 19.9751C21.9992 18.9502 21.9996 17.3005 22.0002 14.0012L22.0013 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.49857 6.5C8.49857 5.09554 8.49857 4.39331 8.83563 3.88886C8.98154 3.67048 9.16904 3.48298 9.38743 3.33706C9.89187 3 10.5941 3 11.9986 3C13.403 3 14.1053 3 14.6097 3.33706C14.8281 3.48298 15.0156 3.67048 15.1615 3.88886C15.4986 4.39331 15.4986 5.09554 15.4986 6.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19.998 6.50016L3.99885 6.5C2.8944 6.50007 1.99876 7.39568 1.99866 8.50013C1.99876 10.7091 3.79005 12.5004 5.99901 12.5006H17.9978C20.2068 12.5005 21.998 10.7093 21.9981 8.5003C21.998 7.39582 21.1024 6.50023 19.998 6.50016Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.99857 12.5V13.5C9.99857 13.965 9.99857 14.1975 10.0497 14.3882C10.1884 14.9059 10.5927 15.3102 11.1103 15.4489C11.3011 15.5 11.5336 15.5 11.9986 15.5C12.4636 15.5 12.696 15.5 12.8868 15.4489C13.4044 15.3102 13.8088 14.9059 13.9475 14.3882C13.9986 14.1975 13.9986 13.965 13.9986 13.5V12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The best interviewees don't think "please pick me". They run the conversation like a good salesperson runs a discovery call: understand the need first, then show the one thing that fits it, check for objections, and ask for the next step. You are the product, and the job is a sale you're closing on yourself.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Sales call move</th><th>Interview version</th></tr></thead>
+<tbody>
+<tr><td>Discovery (ask before you pitch)</td><td>Ask what the role really needs and what "great" looks like before you launch into your stories</td></tr>
+<tr><td>Demo (show the fitting feature)</td><td>Tell the STAR story that maps to the exact need they just described, not a random highlight</td></tr>
+<tr><td>Trial close</td><td>"Does that line up with what you're looking for?" to check you're landing</td></tr>
+<tr><td>Handle objections</td><td>When they hesitate or probe a gap, address it directly instead of hoping they forget</td></tr>
+<tr><td>Ask for the next step</td><td>Close with "what are the next steps, and when should I expect to hear back?"</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip calm">💡 <strong>Discovery is the unlock.</strong> If you ask two good questions early and actually listen, every story you tell afterwards can be aimed at what they said they need. That's the difference between a generic answer and one that sounds custom-built for the job.</div>
+
+<hr class="rule">
+<span class="kicker">copy this</span>
+<h2>Prompt 1: your mock interviewer <span class="gi" style="--gl:#50336D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 6.5C7 4.01472 9.01472 2 11.5 2C13.9853 2 16 4.01472 16 6.5V11.5C16 13.9853 13.9853 16 11.5 16C9.01472 16 7 13.9853 7 11.5V6.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11.5 19H11.0828C7.57267 19 4.57706 16.4623 4 13M11.5 19H11.9172C15.4273 19 18.4229 16.4623 19 13M11.5 19V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>👇 This is the main event. Paste it into <a href="https://claude.ai" target="_blank">Claude</a>, fill in the two brackets (the role and your background), and it runs a realistic interview one question at a time, grading you after each answer. It runs beautifully in Claude's <strong>voice mode</strong>, so you can practice out loud the way the real thing happens.</p>
+<div class="promptwrap">
+<span class="promptlabel">🎤 the mock interviewer, runs great in Claude voice mode</span>
+<pre><code>You are my interviewer for a specific role, and you do not go easy on me. Your job is to run a realistic mock interview, one question at a time, then grade me honestly so I actually improve. The role: [paste the job title + full job description]. My background: [paste resume, or tell Claude to work from what it knows about me]. Difficulty: [warm-up / realistic / tough panel] (default realistic). How to run it: 1. First, based on the job description, tell me the 3-4 competencies this interview will really test. This is what you'll grade against. 2. Then interview me ONE question at a time, wait for my full answer before the next. Mix: 1 "tell me about yourself", 5-6 behavioral STAR questions from those competencies, 1-2 role-specific technical/scenario questions, and 1 curveball. 3. After EACH answer, before moving on, give me: a score out of 10, the single strongest thing about my answer, the single biggest fix, and if I used STAR flag any missing part (usually a weak Result). Keep it tight, then ask the next question. 4. If an answer is vague or missing a real outcome, push back and make me redo it before moving on. 5. At the end: an overall readiness score out of 100, my 3 recurring weaknesses, and the 2 answers I most need to rebuild. Be direct and specific, never inflate a score to be nice, never invent experience for me, if I'm not ready tell me plainly and exactly what to drill.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">copy this too</span>
+<h2>Prompt 2: your "tell me about yourself" builder <span class="gi" style="--gl:#533581" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 8V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9 10V14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 11V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15 10V14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 11V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>👇 Run this one first if you just want a clean opener. It builds your Present, Past, Future answer, tailored to the exact role, plus a 20-second version for phone screens.</p>
+<div class="promptwrap">
+<span class="promptlabel">🗣 the tell-me-about-yourself builder</span>
+<pre><code>You are an interview coach. Build me a tight, 60-90 second "tell me about yourself" answer using the Present > Past > Future structure, tailored to a specific role. My background: [paste resume]. The role I'm interviewing for: [paste job title + description]. Do this: 1. PRESENT: 1-2 sentences on who I am professionally right now and what I'm known for, aimed at what THIS role values. 2. PAST: a highlight reel of only the 2-3 experiences that most directly prove I can do this specific job, each with a real outcome or number, not my whole history. 3. FUTURE: why I want this exact role, connecting my direction to something specific about their team, product, or mission. 4. Keep it 60-90 seconds spoken (roughly 150-220 words), natural, human, no buzzwords. Then give me: the full answer in a clean block, a 20-second elevator version for a phone screen, and 2 delivery notes. Everything must be true to my resume, if the role needs something my background doesn't show tell me how to honestly bridge it, don't fabricate it.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">change the pressure</span>
+<h2>Swap the interviewer <span class="gi" style="--gl:#348CDF" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9C7.46589 8.38677 9.61061 8 12 8C14.3894 8 16.5341 8.38677 18 9" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M9 11.5C9.93974 11.176 10.9492 11 12 11C13.0508 11 14.0603 11.176 15 11.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M8 15C9.17669 15.636 10.5429 16 12 16C13.4571 16 14.8233 15.636 16 15" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M6 10C6 13.2571 4.1688 14.9419 3.05731 14.9985C3.02153 15.0003 2.98891 14.9808 2.97139 14.9496C2.15656 13.4966 2 11.7879 2 10C2 6.68629 2.89543 4 4 4C5.10457 4 6 6.68629 6 10Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 10C18 13.2571 19.8312 14.9419 20.9427 14.9985C20.9785 15.0003 21.0111 14.9808 21.0286 14.9496C21.8434 13.4966 22 11.7879 22 10C22 6.68629 21.1046 4 20 4C18.8954 4 18 6.68629 18 10Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21 15C19.2035 17.989 15.8458 20 12 20C8.15423 20 4.79648 17.989 3 15" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Here's the fun part. Add a persona line at the very top of Prompt 1 (something like "For this session, play The Skeptical Hiring Manager described below:") and the whole feel of the interview changes. Run the same role against all five so nothing on the day can surprise you.</p>
+<div class="cardgrid">
+  <div class="minicard"><b>😊 The Friendly Recruiter</b> A first-round screening call. Warm, high-level, checking basics and culture fit. Great for warming up and nailing your opener.</div>
+  <div class="minicard"><b>🧐 The Skeptical Hiring Manager</b> Digs into every claim you make and asks "how exactly did you do that?" Trains you to back up numbers and own your specific role.</div>
+  <div class="minicard"><b>🪖 The Behavioural Drill Sergeant</b> Pure STAR, question after question, no small talk. Forces you to keep every story tight and land a real Result each time.</div>
+  <div class="minicard"><b>👥 The Panel</b> Three voices at once: a technical interviewer, a peer, and a skip-level leader, each with different priorities. Trains you to read the room and pivot.</div>
+  <div class="minicard"><b>🤝 The Closer</b> Runs the ending: the "any questions for us?" round plus objection handling. Practice the closer question and asking for next steps here.</div>
+  <div class="minicard"><b>🧠 The Technical Reviewer</b> Tests how you reason through unfamiliar problems, asks for tradeoffs, and pushes you to explain decisions without hiding behind jargon.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the honest bit</span>
+<h2>Three things to keep in mind <span class="gi" style="--gl:#CF516C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21L8 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13.2585 18.8714C9.51516 18.0215 5.97844 14.4848 5.12853 10.7415C4.99399 10.1489 4.92672 9.85266 5.12161 9.37197C5.3165 8.89129 5.55457 8.74255 6.03071 8.44509C7.10705 7.77265 8.27254 7.55888 9.48209 7.66586C11.1793 7.81598 12.0279 7.89104 12.4512 7.67048C12.8746 7.44991 13.1622 6.93417 13.7376 5.90269L14.4664 4.59604C14.9465 3.73528 15.1866 3.3049 15.7513 3.10202C16.316 2.89913 16.6558 3.02199 17.3355 3.26771C18.9249 3.84236 20.1576 5.07505 20.7323 6.66449C20.978 7.34417 21.1009 7.68401 20.898 8.2487C20.6951 8.8134 20.2647 9.05346 19.4039 9.53358L18.0672 10.2792C17.0376 10.8534 16.5229 11.1406 16.3024 11.568C16.0819 11.9955 16.162 12.8256 16.3221 14.4859C16.4399 15.7068 16.2369 16.88 15.5555 17.9697C15.2577 18.4458 15.1088 18.6839 14.6283 18.8786C14.1477 19.0733 13.8513 19.006 13.2585 18.8714Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip warn">🚫 <strong>Never let it fabricate experience.</strong> Both prompts tell Claude not to invent things for you, and you should hold that line too. If your background doesn't show something the role wants, ask Claude how to honestly bridge the gap ("here's adjacent experience, here's what I'd learn fast"), not how to make something up. A story you can't back up in a follow-up question will sink you.</div>
+<div class="tip">🔢 <strong>The Result is the weak spot, every time.</strong> When Claude scores you, watch how often the note is "your Result was vague". That's the pattern for almost everyone. Rebuild those answers first and put a real number on each one.</div>
+<div class="tip calm">🎙 <strong>Run it in voice mode for the real reps.</strong> Reading answers in your head is easy. Saying them out loud, under a follow-up you didn't expect, is the actual skill. Use Claude's voice mode so you're rehearsing the thing you'll actually do, not a written version of it.</div>
+
+<hr class="rule">
+<div class="gcallout"><strong>Want the full system, not just the prompts?</strong> This is one room inside The AI System Club, where I teach non-technical people to build AI tools like this for their work, career, and income, from scratch. Doors open soon and founding pricing dies at close. 🌱 <a href='/ai-system' target='_blank'>Join the waitlist</a> (link in my bio too) so you're first in when we open.</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Have Claude remove your info from data-broker sites · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="This is how I get Claude to do the boring part: two copy-paste prompts to map every site holding your info and draft the removal requests.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/remove-your-info-from-data-brokers">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Have Claude remove your info from data-broker sites">
+<meta property="og:description" content="This is how I get Claude to do the boring part: two copy-paste prompts to map every site holding your info and draft the removal requests.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/remove-your-info-from-data-brokers">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Have Claude remove your info from data-broker sites">
+<meta name="twitter:description" content="This is how I get Claude to do the boring part: two copy-paste prompts to map every site holding your info and draft the removal requests.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Have Claude remove your info from data-broker sites", u:"guides/remove-your-info-from-data-brokers.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Life &amp; self</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Have Claude remove your info from data-broker sites</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This is how I get Claude to do the boring part: two copy-paste prompts to map every site holding your info and draft the removal requests.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip calm">💡 <strong>The whole idea.</strong> You are not deleting yourself from the internet, you are opting out of each broker one at a time. Claude builds the list, writes the requests, and does the clicking. You stay in the driver's seat and approve every single submission before it goes out.</div>
+
+<hr class="rule">
+<span class="kicker">read this first</span>
+<h2>What "opt-out" actually means <span class="gi" style="--gl:#CF516C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21L8 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13.2585 18.8714C9.51516 18.0215 5.97844 14.4848 5.12853 10.7415C4.99399 10.1489 4.92672 9.85266 5.12161 9.37197C5.3165 8.89129 5.55457 8.74255 6.03071 8.44509C7.10705 7.77265 8.27254 7.55888 9.48209 7.66586C11.1793 7.81598 12.0279 7.89104 12.4512 7.67048C12.8746 7.44991 13.1622 6.93417 13.7376 5.90269L14.4664 4.59604C14.9465 3.73528 15.1866 3.3049 15.7513 3.10202C16.316 2.89913 16.6558 3.02199 17.3355 3.26771C18.9249 3.84236 20.1576 5.07505 20.7323 6.66449C20.978 7.34417 21.1009 7.68401 20.898 8.2487C20.6951 8.8134 20.2647 9.05346 19.4039 9.53358L18.0672 10.2792C17.0376 10.8534 16.5229 11.1406 16.3024 11.568C16.0819 11.9955 16.162 12.8256 16.3221 14.4859C16.4399 15.7068 16.2369 16.88 15.5555 17.9697C15.2577 18.4458 15.1088 18.6839 14.6283 18.8786C14.1477 19.0733 13.8513 19.006 13.2585 18.8714Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="rolegrid">
+<div class="rolecard"><b>What you are doing: opt-out and suppression</b> Most US people-search sites run on an opt-out model. You ask them to suppress your listing and stop selling it. It works, but the record can still sit on their back end, and they can re-list you if they re-scrape a public source later.</div>
+<div class="rolecard"><b>What you are not doing: legal erasure</b> A true "right to erasure" only applies if a law covers you, like the EU's GDPR or, in a lighter form, California's CCPA. If you are in California or the EU, tell Claude and it will phrase the request under that right. Everyone else uses the plain opt-out route.</div>
+</div>
+<div class="tip warn">🚫 <strong>They come back.</strong> Brokers re-scrape public records, so listings often reappear within 30 to 90 days. This is a maintenance task, not a one-time fix. Re-run the first prompt every couple of months to catch the ones that crept back.</div>
+
+<hr class="rule">
+<span class="kicker">step one</span>
+<h2>Prompt 1: map every site holding your info <span class="gi" style="--gl:#2794B2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Open <a href="https://claude.ai" target="_blank">Claude</a> (the free tier is fine for this part) and paste this. Fill the brackets with the details a broker would list. The more past addresses you give it, the more listings it will surface.</p>
+<div class="promptwrap">
+<span class="promptlabel">paste into Claude</span>
+<pre><code>You are helping me remove my personal information from data-broker and
+people-search sites. Here are my details, which is what a broker would
+list:
+
+- Full name (plus any middle name, maiden name or nickname): [ ]
+- Current city and state: [ ]
+- Past cities I have lived in: [ ]
+- Age or year of birth: [ ]
+- Email addresses and phone numbers that might be attached to me: [ ]
+
+Build me a table of the major US data-broker and people-search sites
+that are likely showing my details. For each one give me:
+
+1. The site name.
+2. The exact opt-out or suppression URL (do not guess a link, only list
+   opt-out pages you can confirm exist).
+3. What the opt-out actually does (suppress the listing, stop the sale,
+   or fully remove).
+4. What verification it needs from me (email link, phone or text code,
+   photo ID, or an account signup).
+5. Roughly how long removal takes.
+
+Start with the biggest aggregators that feed the smaller sites, and flag
+any where a single opt-out covers multiple sites.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">step two</span>
+<h2>Prompt 2: draft every removal request <span class="gi" style="--gl:#A68307" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.4249 4.60509L17.4149 3.6151C18.2351 2.79497 19.5648 2.79497 20.3849 3.6151C21.205 4.43524 21.205 5.76493 20.3849 6.58507L19.3949 7.57506M16.4249 4.60509L9.76558 11.2644C9.25807 11.772 8.89804 12.4078 8.72397 13.1041L8 16L10.8959 15.276C11.5922 15.102 12.228 14.7419 12.7356 14.2344L19.3949 7.57506M16.4249 4.60509L19.3949 7.57506" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18.9999 13.5C18.9999 16.7875 18.9999 18.4312 18.092 19.5376C17.9258 19.7401 17.7401 19.9258 17.5375 20.092C16.4312 21 14.7874 21 11.4999 21H11C7.22876 21 5.34316 21 4.17159 19.8284C3.00003 18.6569 3 16.7712 3 13V12.5C3 9.21252 3 7.56879 3.90794 6.46244C4.07417 6.2599 4.2599 6.07417 4.46244 5.90794C5.56879 5 7.21252 5 10.5 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Stay in the same chat and follow up with this, so Claude turns the raw list into requests you can actually send.</p>
+<div class="promptwrap">
+<span class="promptlabel">paste into Claude</span>
+<pre><code>Using the list you just built, draft everything I need for each site,
+numbered so I can work through them one at a time.
+
+- For sites with a web form: write the exact text I should paste into
+  each field, including a short line stating I am the person named and I
+  am requesting suppression under the site's own opt-out process.
+- For sites that take an email: write a short, firm opt-out email, one
+  per broker, with a subject line and body, asking them to suppress and
+  stop selling my listing and to confirm in writing when it is done.
+
+Keep every request framed as an opt-out, do-not-sell and suppression
+request, NOT a legal "right to erasure" claim, unless I tell you I am in
+California or the EU. Keep the tone polite and factual.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">step three</span>
+<h2>Let Claude submit them for you <span class="gi" style="--gl:#398FBD" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 21H16M14 21C13.1716 21 12.5 20.3284 12.5 19.5V17L12 17M14 21H10M10 21H8M10 21C10.8284 21 11.5 20.3284 11.5 19.5V17L12 17M12 17V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 3H8C5.17157 3 3.75736 3 2.87868 3.87868C2 4.75736 2 6.17157 2 9V11C2 13.8284 2 15.2426 2.87868 16.1213C3.75736 17 5.17157 17 8 17H16C18.8284 17 20.2426 17 21.1213 16.1213C22 15.2426 22 13.8284 22 11V9C22 6.17157 22 4.75736 21.1213 3.87868C20.2426 3 18.8284 3 16 3Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>To have Claude fill and send the forms instead of you copy-pasting into 40 sites, add the browser connector.</p>
+<div class="tip">💰 <strong>What it costs.</strong> The two prompts work on Claude's free tier at <a href="https://claude.ai" target="_blank">claude.ai</a>. The browser connector, Claude in Chrome, needs a paid plan (Pro starts around US$20 per month) and runs on Chrome desktop only. If you would rather not pay, do steps one and two and submit the forms yourself.</div>
+<ol class="steps">
+<li><strong class="st">🧩 Install Claude in Chrome.</strong> It is the <a href="https://claude.ai" target="_blank">Claude</a> browser extension, in beta on all paid plans. Add it from the Chrome Web Store, pin it, and sign in. A side panel opens next to your tabs and can read and act on the page you have open.</li>
+<li><strong class="st">✅ Keep per-site approval ON.</strong> In the side panel, leave it set so Claude pauses and asks before it acts on each new site. Do not switch it to full auto for this job. You want to eyeball every form before it submits your name and address.</li>
+<li><strong class="st">📋 Hand Claude the list.</strong> Paste the requests from Prompt 2 and tell it: open each opt-out page one at a time, fill the form with my details, then stop and show me before you submit. It works down the list, pausing at each site for your yes.</li>
+<li><strong class="st">🙋 Do the human-only steps yourself.</strong> When a site throws a CAPTCHA, a phone or text code, an email confirmation link, or an ID upload, Claude stops. You complete that bit, then let it carry on to the next broker.</li>
+</ol>
+<div class="tip warn">🚫 <strong>Claude will not solve CAPTCHAs or fake identity checks, by design.</strong> Those steps stay with you. And do not paste a photo of your ID into a chat you are not comfortable with. Some brokers ask for it, most do not need it.</div>
+<div class="tip calm">💡 <strong>Approval on is the whole point.</strong> Because Claude pauses at every site, you see exactly what is being submitted and where. Nothing leaves under your name without you clicking yes.</div>
+
+<hr class="rule">
+<span class="kicker">start here</span>
+<h2>The big aggregators to hit first <span class="gi" style="--gl:#CD5174" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M14 2.20004C13.3538 2.06886 12.6849 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.3151 21.9311 10.6462 21.8 10" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0303 11.9625L16.5832 7.4096M19.7404 4.34462L19.1872 2.35748C19.0853 2.03011 18.6914 1.89965 18.4259 2.11662C16.9898 3.29018 15.4254 4.87091 16.703 7.36419C19.2771 8.56455 20.7466 6.94584 21.8733 5.5853C22.0975 5.3146 21.9623 4.90767 21.6247 4.81005L19.7404 4.34462Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Spokeo</b> <a href="https://www.spokeo.com/optout" target="_blank">spokeo.com/optout</a> Search your listing, paste the URL, confirm by email. Removal in about 1 to 3 days.</div>
+<div class="minicard"><b>Whitepages</b> <a href="https://www.whitepages.com/suppression-requests" target="_blank">whitepages.com/suppression-requests</a> Needs a phone or text code to prove it is you.</div>
+<div class="minicard"><b>BeenVerified</b> <a href="https://www.beenverified.com/app/optout/search" target="_blank">beenverified.com/app/optout</a> One opt-out covers its whole PeopleConnect network.</div>
+<div class="minicard"><b>Radaris</b> <a href="https://radaris.com/control-privacy" target="_blank">radaris.com/control-privacy</a> Expect an account signup and up to a week.</div>
+<div class="minicard"><b>Intelius</b> <a href="https://www.intelius.com/opt-out/" target="_blank">intelius.com/opt-out</a> Same broker family, confirm by email.</div>
+<div class="minicard"><b>TruePeopleSearch</b> <a href="https://www.truepeoplesearch.com/removal" target="_blank">truepeoplesearch.com/removal</a> Fast and free, needs a code sent to your phone.</div>
+</div>
+<div class="tip calm">💡 <strong>In California? Use DROP.</strong> The state's Delete Request and Opt-Out Platform lets you file one deletion request that reaches every data broker registered in California, for free. Ask Claude for the current link and add it to the top of your list.</div>
+
+<div class="gcallout"><strong>Want to build automations like this with me, step by step?</strong> Inside AI System Club I teach non-technical people to use AI for real life admin and income skills from scratch. Doors open soon and founding pricing dies at close. 🌱 <a href='/ai-system' target='_blank'>Join the waitlist</a> (link in my bio too).</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

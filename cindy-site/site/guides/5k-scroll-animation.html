@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a $5k scroll animation with zero code · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Build a $5k scroll animation with zero code. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/5k-scroll-animation">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build a $5k scroll animation with zero code">
+<meta property="og:description" content="Build a $5k scroll animation with zero code. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/5k-scroll-animation">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build a $5k scroll animation with zero code">
+<meta name="twitter:description" content="Build a $5k scroll animation with zero code. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Build a $5k scroll animation with zero code","description":"This is the full walkthrough from the reel: the Apple product-page scroll effect, built end to end with AI and wired up by Claude. Every prompt is here, plus...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/5k-scroll-animation"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build a $5k scroll animation with zero code", u:"guides/5k-scroll-animation.html", topic:"building", tool:"nocode"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building &amp; apps</span>
+        <span class="gtag tool">No-code build</span>
+      </div>
+      <h1>Build a $5k scroll animation with zero code</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This is the full walkthrough from the reel: the Apple product-page scroll effect, built end to end with AI and wired up by Claude.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>You know those scroll animations on Apple's product pages, where you scroll down and the product spins, builds itself, or comes apart? Agencies quote thousands for those, because the usual route is a 3D artist rendering a long image sequence and a developer wiring it to your scroll position.</p>
+<p>The shortcut is four moves. Generate the start and end of the animation with AI, let AI fill in every frame between them, slice that clip back into images, then hand the folder to an AI coding tool that writes the scroll code for you.</p>
+
+<span class="kicker">the idea</span>
+<h2>What you're actually building <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A scroll-linked image sequence. Instead of a video that plays on its own timeline, you have a stack of still frames painted onto an HTML canvas, and your scroll position decides which frame is showing. Scroll down, it steps forward. Scroll up, it steps back. That is why it feels like you are physically driving the animation with your finger.</p>
+<p>This is genuinely the technique behind those high-end product pages, not an approximation of it. The canonical write-up of the Apple AirPods Pro version is on <a href="https://css-tricks.com/lets-make-one-of-those-fancy-scrolling-animations-used-on-apple-product-pages/" target="_blank">CSS-Tricks</a>, which walks through the same canvas plus <code>drawImage</code> approach the browser uses (<a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage" target="_blank">MDN reference</a>).</p>
+<div class="tip"><strong>Why not a video?</strong> A video element is hard to scrub smoothly across browsers, and it decodes on its own schedule rather than yours. An image sequence gives you exact frame-level control at any scroll position, which is what makes the motion feel locked to your hand instead of laggy.</div>
+
+<hr class="rule">
+<span class="kicker">before you start</span>
+<h2>What this costs, honestly <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Two of the four steps are free, and one has a plan gate worth knowing about before you start clicking.</p>
+<div class="cardgrid">
+<div class="minicard"><b>🎨 Flow (steps 1 and 2)</b> Google Flow needs a paid Google AI plan. The plans page lists Flow credits per tier: 200 a month on Plus, 1,000 on Pro, and 10,000 or more on Ultra. <a href="https://one.google.com/about/google-ai-plans/" target="_blank">Plans page</a>.</div>
+<div class="minicard"><b>✂️ EZGIF (step 3)</b> Free in the browser, no account needed. It slices your clip into numbered JPGs and hands you a zip. <a href="https://ezgif.com/video-to-jpg" target="_blank">ezgif.com/video-to-jpg</a>.</div>
+<div class="minicard"><b>💻 Claude (step 4)</b> Any Claude plan that lets you attach files works for the code. Claude Code is the smoothest because it can write the file straight into your project folder.</div>
+<div class="minicard"><b>🌱 No paid plan?</b> Skip Flow and use a free first-and-last-frame generator instead. The two worth trying are in the callout below, with their real limits.</div>
+</div>
+<div class="tip calm"><strong>Free routes for the animation step.</strong> <a href="https://dreamina.capcut.com/" target="_blank">Dreamina</a> gives 225 free credits a day, which is the only free allowance any of these tools officially publishes, and it supports first-frame and last-frame generation. <a href="https://www.vidu.com/" target="_blank">Vidu</a> gives a recurring monthly allowance, roughly ten to sixteen short clips, at 720p with a watermark. Both free tiers are for personal, non-commercial use under their own terms, so if this is going on a client site, use a paid plan on whichever tool you pick.</div>
+<div class="tip warn"><strong>On the "$5k" figure.</strong> That is what agencies quote for this kind of bespoke scroll section, and it is the number the original creator used. Treat it as a market anecdote rather than a fixed rate, because the real price depends on how many frames, how much 3D work, and whose site it is going on.</div>
+
+<hr class="rule">
+<span class="kicker">the build</span>
+<h2>The four steps <span class="gi" style="--gl:#9281AD" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🎨 Generate two frames in Flow.</strong> Go to <a href="https://labs.google/fx/tools/flow" target="_blank">labs.google/fx/tools/flow</a> and generate two images from text: a start frame (how the animation begins) and an end frame (how it ends). The exact prompts are in the next section. Keep the subject, camera angle and lighting identical between them so only the thing you want to animate actually changes. If you are looking for Whisk, <a href="https://labs.google/whisk" target="_blank">labs.google/whisk</a> now redirects into Flow, so everything happens in one place.</li>
+<li><strong class="st">🎬 Animate the in-between.</strong> Still in Flow, choose <strong>Frames to Video: First + last</strong>, upload both images, add a short motion prompt (for example, "slow smooth 360 rotation"), and let it generate every frame between your start and end. Keep the clip short, two to four seconds is the sweet spot. Download it.</li>
+<li><strong class="st">✂️ Slice the clip into frames.</strong> Go to <a href="https://ezgif.com/video-to-jpg" target="_blank">ezgif.com/video-to-jpg</a>, upload the clip, choose <strong>Video to JPG (image sequence)</strong>, set the frame rate to 30fps, convert, then click <strong>Download frames as ZIP</strong>. The maths is simple: 30fps times the length of your clip, so an eight-second clip gives you about 240 numbered images. Unzip it and keep the folder tidy, because the file numbering is what the code counts on.</li>
+<li><strong class="st">💻 Hand the folder to Claude.</strong> Drop the whole frame folder into your project and paste the build prompt below. Claude writes the canvas code that links your scroll position to the frames. Full zero-to-running steps for Claude Code are two sections down if you have never opened it.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">copy these</span>
+<h2>The two image prompts <span class="gi" style="--gl:#BE7845" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7.5" cy="7.5" r="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M5 21C9.37246 15.775 14.2741 8.88406 21.4975 13.5424" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>Step 1 lives or dies here, so do not freestyle it. The trick: both prompts are word for word identical except the one thing that changes (assembled versus taken apart). That is what keeps the product, camera and lighting matching across both frames, which is what keeps the in-between animation clean.</p>
+<p><strong>Start frame, your product assembled:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🖼 generate this one first</span>
+<pre><code>High-end studio product photograph of [YOUR PRODUCT], fully assembled and intact, floating dead center against a seamless matte light-grey studio background. Straight-on view, perfectly level camera, soft even studio lighting, one subtle soft shadow directly beneath the product, photorealistic, ultra sharp, high detail. Keep the product small enough in frame that there is generous empty space on every side. No text, no watermark, no hands, no props, no brand logos. Landscape 16:9.</code></pre>
+</div>
+<p><strong>End frame, the same product taken apart:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🧩 same words, one thing changed</span>
+<pre><code>High-end studio product photograph of the same [YOUR PRODUCT] as a clean exploded view: the outer shell or casing lifted apart and every major part and layer separated and floating in an organized, evenly spaced arrangement along one axis, like a technical teardown render. Same straight-on view, same perfectly level camera, same soft even studio lighting, same seamless matte light-grey studio background, one subtle soft shadow beneath. The core body of the product stays in the exact center at the same size, with the parts spreading outward around it. Photorealistic, ultra sharp, high detail. No text, no watermark, no hands, no props, no brand logos. Landscape 16:9.</code></pre>
+</div>
+<p>Swap the bracket for anything: a smartphone, a mechanical watch, a film camera, an espresso machine, a sneaker. "Exploded view" is the magic phrase, it is the technical name for those pulled-apart product renders and image models know it well. For the end frame, name the four to six parts you want visible (for a phone: battery, circuit board, camera module, speaker, tiny screws; for a sneaker: outsole, midsole, insole, upper, laces; for an espresso machine: boiler, portafilter, pump, casing panels) so the model does not invent mush.</p>
+<div class="tip">Three consistency tips: generate the start frame first and only move on once you love it. If the tool lets you reference or reuse that first image while generating the end frame, do that. And if the two frames come out looking like different products, regenerate the end frame rather than fighting it later in the video step, because a retry here is cheap and a bad in-between is not.</div>
+<p><strong>Then the motion prompt for step 2</strong> (for a teardown like this one):</p>
+<div class="promptwrap">
+<span class="promptlabel">🎬 paste this into frames to video</span>
+<pre><code>The product slowly comes apart into an exploded view: the casing separates and the internal parts spread outward smoothly and evenly, at a constant unhurried speed with no easing at the end. Camera locked completely in place, no push in, no orbit, no handheld drift. Background unchanged and evenly lit throughout, and no new objects, text or reflections enter the frame at any point.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">wire it up</span>
+<h2>The build prompt <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Put your unzipped frame folder inside your project folder, then paste this.</p>
+<div class="promptwrap">
+<span class="promptlabel">💻 paste this with your frame folder attached</span>
+<pre><code>Using the folder of numbered image frames in this project, build a scroll-linked image sequence on an HTML canvas, the same technique Apple uses on its product pages. Read the folder to work out the exact file naming pattern and the total frame count rather than assuming either, then preload every frame before the animation starts and show a simple loading state until they are ready.
+
+Map scroll position to frame index so the animation steps forward and backward frame by frame as I scroll. Use GSAP with ScrollTrigger, pin the canvas while the sequence plays, and scrub it smoothly so there is no stutter between frames. Size the canvas for high-DPI screens, keep the subject centered and sharp on mobile, and make the pinned section height proportional to the frame count so the scrub speed feels natural.
+
+Respect prefers-reduced-motion by falling back to a single static frame. Give me one self-contained HTML file I can drop straight into my site, with the frame folder path set as a variable at the top so I can change it in one place. Then explain in three lines what I would edit to swap in a different frame folder later.</code></pre>
+</div>
+<div class="tip"><strong>Why GSAP and ScrollTrigger.</strong> ScrollTrigger is the standard library for binding an animation to scroll position, and its <code>scrub</code> option is the specific thing that makes the frames follow your finger instead of playing on their own. Reference: <a href="https://gsap.com/docs/v3/Plugins/ScrollTrigger/" target="_blank">GSAP ScrollTrigger docs</a>.</div>
+
+<hr class="rule">
+<span class="kicker">never opened it</span>
+<h2>Doing step 4 in Claude Code, from zero <span class="gi" style="--gl:#9A7BBC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>You do not have to use Claude Code, any Claude chat that accepts file uploads can write this file for you. Claude Code is smoother because it can see the actual frame folder and count the files itself, which removes the most common bug in this build.</p>
+<ol class="steps">
+<li><strong class="st">📁 Make a project folder.</strong> Create an empty folder on your desktop, call it something like <code>scroll-site</code>, and move your unzipped frames folder inside it so the structure is <code>scroll-site/frames/</code>.</li>
+<li><strong class="st">⬇️ Install Claude Code.</strong> Follow the official quickstart at <a href="https://code.claude.com/docs/en/quickstart" target="_blank">code.claude.com/docs/en/quickstart</a>, which covers installing it and signing in with your Claude account. It runs in your terminal, and you do not need to know any terminal commands beyond the two below.</li>
+<li><strong class="st">▶️ Open the folder and start it.</strong> In your terminal, type <code>cd</code>, a space, then drag the <code>scroll-site</code> folder onto the terminal window and hit enter. Then type <code>claude</code> and hit enter. You are now in a chat that can see your frames.</li>
+<li><strong class="st">📋 Paste the build prompt.</strong> Paste the prompt from the section above exactly as written and let it work. It will create the HTML file in your folder and tell you what it named it.</li>
+<li><strong class="st">👀 Look at it.</strong> Ask "open this in my browser so I can see it" and scroll the page. If the animation moves with your scroll, you are done. If not, the fixes are in the next section.</li>
+</ol>
+<div class="tip calm">If you would rather stay in the browser, upload a handful of frames to a normal Claude chat, tell it the total frame count and the exact filename pattern (for example <code>frame_0001.jpg</code> through <code>frame_0240.jpg</code>), and paste the same build prompt. You get the same file, you just paste it into your site yourself.</div>
+
+<hr class="rule">
+<span class="kicker">when it misbehaves</span>
+<h2>The four things that usually go wrong <span class="gi" style="--gl:#9082A7" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 7.10593C17.9999 8.55778 16.5891 9.89558 14.4697 11.9901C13.1062 13.3376 10.8936 13.336 9.52937 11.9892C7.41145 9.8961 5.99988 8.55754 6 7.10568C6.00012 5.65383 6.3543 5.36258 9.60848 2.14658C9.92161 1.83445 10.4602 2.05389 10.4602 2.49338L10.4604 5.80524C10.4604 6.64587 11.1488 7.32849 11.9994 7.32842C12.85 7.32835 13.5396 6.64688 13.5398 5.80625L13.5405 2.49435C13.5406 2.05485 14.0793 1.83532 14.3924 2.14739C17.646 5.36287 18.0001 5.65408 18 7.10593Z" stroke="currentColor" stroke-width="1.5"/><path d="M15 12L15 19.1652C15 20.7308 13.6569 22 12 22C10.3431 22 9 20.7308 9 19.1652L9 12" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0063 18.9995L12 19.0059" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>🕳️ Blank canvas</b> Almost always the filename pattern. Open the folder, check whether the numbers are zero-padded (<code>0001</code> versus <code>1</code>), and tell Claude the exact first and last filenames.</div>
+<div class="minicard"><b>🐌 Slow first load</b> 240 full-size JPGs is a heavy page. Run the folder through <a href="https://squoosh.app/" target="_blank">Squoosh</a> or ask Claude to resize every frame to the width it actually renders at, then re-test.</div>
+<div class="minicard"><b>🎞️ Jerky motion</b> Either too few frames or scrub turned off. Ask for <code>scrub: 1</code> rather than <code>scrub: true</code> for a slight smoothing lag, and re-export at 30fps if you dropped lower.</div>
+<div class="minicard"><b>👻 Warping product</b> That is the AI frames drifting, not the code. Generate the clip two or three times and keep the cleanest, and keep the motion to one simple action on a plain background.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">go further</span>
+<h2>3 bonus prompts to run next <span class="gi" style="--gl:#AB8209" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 11V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 9C3 8.25231 3 7.87846 3.20096 7.6C3.33261 7.41758 3.52197 7.26609 3.75 7.16077C4.09808 7 4.56538 7 5.5 7H18.5C19.4346 7 19.9019 7 20.25 7.16077C20.478 7.26609 20.6674 7.41758 20.799 7.6C21 7.87846 21 8.25231 21 9C21 9.74769 21 10.1215 20.799 10.4C20.6674 10.5824 20.478 10.7339 20.25 10.8392C19.9019 11 19.4346 11 18.5 11H5.5C4.56538 11 4.09808 11 3.75 10.8392C3.52197 10.7339 3.33261 10.5824 3.20096 10.4C3 10.1215 3 9.74769 3 9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 3.78571C6 2.79949 6.79949 2 7.78571 2H8.14286C10.2731 2 12 3.7269 12 5.85714V7H9.21429C7.43908 7 6 5.56091 6 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 3.78571C18 2.79949 17.2005 2 16.2143 2H15.8571C13.7269 2 12 3.7269 12 5.85714V7H14.7857C16.5609 7 18 5.56091 18 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 11L12 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Once the scroll sequence works, these turn one animation into a finished section. Same project, same tool.</p>
+<div class="promptwrap">
+<span class="promptlabel">🪟 the parallax section</span>
+<pre><code>Add a parallax section directly above my scroll sequence: a background layer, a midground product image, and headline text that each move at slightly different speeds as I scroll, so the section reads as having real depth rather than being flat.
+
+Use GSAP with ScrollTrigger and keep the motion subtle, no more than a small offset on each layer, because heavy parallax reads as cheap. Make sure the layers still stack cleanly on mobile and that the headline never overlaps the product image at any breakpoint. Respect prefers-reduced-motion by disabling the layer offsets entirely.</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">📌 the sticky-scroll reveal</span>
+<pre><code>Build a sticky-scroll section where the visual on the right stays pinned while three blocks of copy scroll past on the left, and each block fades up and highlights as it becomes the active one, like the feature walkthroughs on a product page.
+
+Use GSAP ScrollTrigger for the pinning and the active-state changes, and make the pin release cleanly at the end of the third block with no jump. Stack it into a single column on mobile with the visual above the copy so nothing overlaps, and keep the copy blocks readable at 390px wide.</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">🖱️ the hover animation</span>
+<pre><code>Add a hover animation to my product cards: on hover the card lifts slightly, a soft shadow grows underneath it, the image scales up a touch inside its frame without spilling outside, and a call-to-action fades in from the bottom of the card.
+
+Use GSAP for the timing so it feels springy rather than janky, and keep the whole transition under 300ms. Respect prefers-reduced-motion by leaving only the shadow change, and give touch devices a tap state instead of a hover state so the cards are not stuck mid-animation on mobile.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">use it well</span>
+<h2>How to get the most out of it <span class="gi" style="--gl:#4C326D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.99805 7.99928C1.99805 9.34126 10.0943 13 11.9857 13C13.8772 13 21.9734 9.34126 21.9734 7.99928C21.9734 6.6573 13.8772 2.99854 11.9857 2.99854C10.0943 2.99854 1.99805 6.6573 1.99805 7.99928Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.99219 11L7.24348 16.8002C7.32919 17.1975 7.52703 17.5687 7.85696 17.8054C10.0787 19.3998 13.8908 19.3998 16.1126 17.8054C16.4426 17.5687 16.6404 17.1975 16.7261 16.8002L17.9774 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20.4774 9.49951V16.5006M20.4774 16.5006C19.6864 17.9471 19.3366 18.7221 18.9813 20.0011C18.9042 20.4562 18.9654 20.6855 19.2786 20.8891C19.4059 20.9718 19.5588 21.0012 19.7104 21.0012H21.229C21.3904 21.0012 21.5533 20.9675 21.6863 20.8757C21.9774 20.6747 22.0523 20.4541 21.9734 20.0011C21.662 18.8135 21.2653 18.0016 20.4774 16.5006Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🎯 Lock your two frames before you animate.</strong> The whole effect lives or dies on the start and end images. Same subject, same camera angle, same background, so only the motion changes. If frame one and frame two look like two different products, the in-between will look like mush.</li>
+<li><strong class="st">🐢 More frames means smoother, but heavier.</strong> 30fps on a two to four second clip is the sweet spot. Longer or higher gives you buttery motion and a heavy page, so compress before you decide the effect is broken.</li>
+<li><strong class="st">🪜 New to this? Paste the build prompt exactly as written.</strong> You do not need to read the code. Drop the folder, paste the prompt, and ask for a preview so you can see it working before you touch anything.</li>
+<li><strong class="st">🧠 Comfortable already? Feed it your real page.</strong> Paste your existing site code or design tokens first, tell it your section width, fonts and breakpoints, and have it match your stack (React, a Webflow embed, plain HTML) instead of generating a generic file.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">what to watch</span>
+<h2>The honest bit <span class="gi" style="--gl:#119B5B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5L10.5 15L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip warn">This is genuinely how the professional version works, but AI-generated frames can drift: a logo warps, a reflection flickers, an edge wobbles. Generate a couple of clips and keep the cleanest one, and keep the animation to one simple action (a rotation, an assembly, a single reveal) rather than a busy scene. Simple subjects on clean backgrounds give the crispest result, and a short clean sequence beats a long wobbly one on a real site every time.</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

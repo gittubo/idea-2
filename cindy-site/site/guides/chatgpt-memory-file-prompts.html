@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>See and delete the hidden file ChatGPT built on you · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="This guide gives you 2 copy-paste prompts to pull the whole file, then shows you exactly where to delete it and switch off the tracking.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/chatgpt-memory-file-prompts">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="See and delete the hidden file ChatGPT built on you">
+<meta property="og:description" content="This guide gives you 2 copy-paste prompts to pull the whole file, then shows you exactly where to delete it and switch off the tracking.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/chatgpt-memory-file-prompts">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="See and delete the hidden file ChatGPT built on you">
+<meta name="twitter:description" content="This guide gives you 2 copy-paste prompts to pull the whole file, then shows you exactly where to delete it and switch off the tracking.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"See and delete the hidden file ChatGPT built on you","description":"Most people have no idea ChatGPT has been quietly keeping notes on them. There are two layers: a list of saved memories you can actually read, and a second...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/chatgpt-memory-file-prompts"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"See and delete the hidden file ChatGPT built on you", u:"guides/chatgpt-memory-file-prompts.html", topic:"power", tool:"chatgpt"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Life &amp; self</span>
+        <span class="gtag tool">ChatGPT</span>
+      </div>
+      <h1>See and delete the hidden file ChatGPT built on you</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This guide gives you 2 copy-paste prompts to pull the whole file, then shows you exactly where to delete it and switch off the tracking.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip calm">💡 <strong>The whole idea.</strong> ChatGPT remembers you in two ways. <strong>Saved memories</strong> is an explicit, editable list of facts it chose to keep. <strong>Reference chat history</strong> is implicit: it quietly reads patterns across your old chats and carries them forward. You can read both, and you can turn both off.</div>
+
+<hr class="rule">
+<span class="kicker">the 2 prompts</span>
+<h2>Pull your whole file in 2 prompts <span class="gi" style="--gl:#A9810B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7H16.75C18.8567 7 19.91 7 20.6667 7.50559C20.9943 7.72447 21.2755 8.00572 21.4944 8.33329C22 9.08996 22 10.1433 22 12.25C22 15.7612 22 17.5167 21.1573 18.7779C20.7926 19.3238 20.3238 19.7926 19.7779 20.1573C18.5167 21 16.7612 21 13.25 21H12C7.28595 21 4.92893 21 3.46447 19.5355C2 18.0711 2 15.714 2 11V7.94427C2 6.1278 2 5.21956 2.38032 4.53806C2.65142 4.05227 3.05227 3.65142 3.53806 3.38032C4.21956 3 5.1278 3 6.94427 3C8.10802 3 8.6899 3 9.19926 3.19101C10.3622 3.62712 10.8418 4.68358 11.3666 5.73313L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Run both of these in a normal chat (not a Temporary Chat, which bypasses memory entirely). The first prints the official saved list. The second is the interesting one: it asks ChatGPT to spell out what it has quietly inferred about you from everything you've ever typed.</p>
+<div class="promptwrap">
+<span class="promptlabel">prompt 1 · the saved file</span>
+<pre><code>Show me every saved memory you currently have about me, word for word, as a numbered list. Do not summarise, soften, group, or leave anything out, include the small and boring ones too. If you have no saved memories, say so plainly.</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">prompt 2 · what it inferred</span>
+<pre><code>Separate from your saved memories, tell me what you have quietly inferred about me from all of our past conversations: my personality, my values, my likely income range, my job, my relationships, my health, my politics, and my insecurities. Be specific and blunt, even if it feels uncomfortable. Then split your answer into two lists: things I actually told you, and things you are only guessing.</code></pre>
+</div>
+<div class="tip">🎯 <strong>Read prompt 2's answer twice.</strong> The "things you are only guessing" list is the part worth sitting with. That is the profile shaping the answers you get every day, built from inference, not from anything you consciously handed over.</div>
+
+<hr class="rule">
+<span class="kicker">read it honestly</span>
+<h2>What you're actually looking at <span class="gi" style="--gl:#9481A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.544 11.045C21.848 11.4713 22 11.6845 22 12C22 12.3155 21.848 12.5287 21.544 12.955C20.1779 14.8706 16.6892 19 12 19C7.31078 19 3.8221 14.8706 2.45604 12.955C2.15201 12.5287 2 12.3155 2 12C2 11.6845 2.15201 11.4713 2.45604 11.045C3.8221 9.12944 7.31078 5 12 5C16.6892 5 20.1779 9.12944 21.544 11.045Z" stroke="currentColor" stroke-width="1.5"/><path d="M15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>🗒️ Saved memories</b> The explicit list: your name, your job, projects, preferences, anything it decided to store. This is fully editable. You can see it in Settings and delete any line, and prompt 1 makes ChatGPT read it back to you.</div>
+<div class="minicard"><b>🌫️ Reference chat history</b> The implicit layer, live since April 2025. There is no tidy list for this one. ChatGPT decides which details from across all your chats are worth carrying forward, and that set shifts over time. Prompt 2 is how you drag it into the light.</div>
+</div>
+<div class="tip calm">💡 <strong>This is normal, not a breach.</strong> Memory is a real, documented feature, not a leak. The point of this guide is not to scare you, it is to make an invisible thing visible so you get to decide what stays.</div>
+
+<hr class="rule">
+<span class="kicker">take it back</span>
+<h2>Delete the saved memories (step by step) <span class="gi" style="--gl:#AF5F5E" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 3L13 11.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.44573 11.0854C6.96539 12.0368 4.98269 11.8736 3 11.0885C3.50059 17.531 6.50414 20.0089 10.5089 21C10.5089 21 13.5261 18.8664 13.961 13.8074C14.0081 13.2595 14.0317 12.9856 13.9178 12.6769C13.8038 12.3682 13.5802 12.1468 13.1329 11.704C12.3973 10.9757 12.0295 10.6116 11.5929 10.5204C11.1564 10.4293 10.5862 10.648 9.44573 11.0854Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M4.5 16.4464C4.5 16.4464 7 16.9286 9.5 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.5 7.25C8.5 7.94036 7.94036 8.5 7.25 8.5C6.55964 8.5 6 7.94036 6 7.25C6 6.55964 6.55964 6 7.25 6C7.94036 6 8.5 6.55964 8.5 7.25Z" stroke="currentColor" stroke-width="1.5"/><path d="M11.125 4H11M11.25 4C11.25 4.13807 11.1381 4.25 11 4.25C10.8619 4.25 10.75 4.13807 10.75 4C10.75 3.86193 10.8619 3.75 11 3.75C11.1381 3.75 11.25 3.86193 11.25 4Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">💻 Open ChatGPT.</strong> Go to <a href="https://chatgpt.com" target="_blank">chatgpt.com</a> or the app and sign in. Everything below works on the free plan.</li>
+<li><strong class="st">⚙️ Open Settings.</strong> On desktop, click your name or profile picture (bottom left) and choose Settings. On mobile, tap the menu, then your name at the bottom.</li>
+<li><strong class="st">🎛️ Go to Personalization.</strong> In the Settings menu, open the Personalization tab, then find the Memory row.</li>
+<li><strong class="st">📋 Open Manage memories.</strong> Click "Manage memories" to see the full saved list. Each memory is its own row, with the text on the left and the date it was added on the right.</li>
+<li><strong class="st">🗑️ Delete line by line.</strong> Click the trash icon next to any single memory to remove just that one. Great for surgically pulling one thing you'd rather it forgot.</li>
+<li><strong class="st">🧨 Or wipe it all.</strong> Scroll to the bottom of the list and click "Clear ChatGPT's memory" to delete every saved memory at once. You can also just type "forget everything you know about me" in a chat, but the Settings wipe is the clean, complete one.</li>
+</ol>
+<div class="tip warn">🚫 <strong>Clearing memory is not the same as deleting your chats.</strong> Your past conversations still exist in your history. If you want those gone too, delete them separately under Settings, then Data controls, then clear or delete conversations.</div>
+
+<hr class="rule">
+<span class="kicker">switch off the tracking</span>
+<h2>Turn off the two toggles that keep the file growing <span class="gi" style="--gl:#4C395C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 2V6M8.5 6V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.00446 7.61331C5.93719 6.74273 6.63957 6 7.53014 6H16.4699C17.3604 6 18.0628 6.74273 17.9955 7.61331L17.8117 9.99197C17.6796 11.7019 17.1011 13.3498 16.132 14.7773L15.5312 15.6622C14.9638 16.4979 14.0077 17 12.9838 17H11.0162C9.99228 17 9.03617 16.4979 8.46881 15.6622L7.86803 14.7773C6.89885 13.3498 6.32041 11.7019 6.18827 9.99197L6.00446 7.61331Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 9H13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🔕 Reference saved memories → off.</strong> Back in Settings, Personalization, Memory, switch off "Reference saved memories" so ChatGPT stops using that saved list in future replies.</li>
+<li><strong class="st">🌫️ Reference chat history → off.</strong> In the same Memory section, switch off "Reference chat history" so it stops quietly pulling patterns from your old conversations. This is the one that builds the inferred profile from prompt 2.</li>
+<li><strong class="st">🏋️ Improve the model for everyone → off.</strong> Go to Settings, then Data controls, and turn off "Improve the model for everyone". This stops your future chats being used to train OpenAI's models. It does not retroactively pull back anything already used, so switching it off sooner is better.</li>
+<li><strong class="st">🕶️ Use Temporary Chat when you want zero memory.</strong> Start a Temporary Chat (the toggle near the model name) for any conversation you don't want remembered at all. It skips memory both ways and won't be used to improve the model.</li>
+</ol>
+<div class="tip calm">💡 <strong>You don't have to nuke everything.</strong> A lot of people keep memory on because it genuinely makes ChatGPT more useful. The move is to read the file first, delete the lines that feel too personal, and then decide toggle by toggle. Informed beats paranoid.</div>
+
+<hr class="rule">
+<span class="kicker">the link</span>
+<h2>Everything you need <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip calm">💡 <strong>ChatGPT:</strong> <a href="https://chatgpt.com" target="_blank">chatgpt.com</a>. Sign in, run the two prompts, then head to Settings, Personalization, Memory. All of this is free, no paid plan needed.</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

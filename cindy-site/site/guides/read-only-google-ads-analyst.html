@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Read-only Google Ads analyst · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Set up a Claude analyst that can read your Google Ads data but can never spend money, so you get answers safely.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/read-only-google-ads-analyst">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Read-only Google Ads analyst">
+<meta property="og:description" content="Set up a Claude analyst that can read your Google Ads data but can never spend money, so you get answers safely.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/read-only-google-ads-analyst">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Read-only Google Ads analyst">
+<meta name="twitter:description" content="Set up a Claude analyst that can read your Google Ads data but can never spend money, so you get answers safely.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Read-only Google Ads analyst", u:"guides/read-only-google-ads-analyst.html", topic:"marketing", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Marketing</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Read-only Google Ads analyst</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Set up a Claude analyst that can read your Google Ads data but can never spend money, so you get answers safely.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<h2 id="what-you-need">What you need</h2>
+<ul>
+<li>a Google Ads account you are authorised to access</li>
+<li>a 22-character Google Ads developer token</li>
+<li>a Google Cloud project ID</li>
+<li>OAuth credentials or Application Default Credentials</li>
+<li>Python and <code>pipx</code></li>
+<li>Claude Code or another local MCP-compatible host</li>
+</ul>
+<p>Official source: <a
+href="https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server">https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server</a></p>
+<p>Read-only does not mean no setup. The developer token, Cloud project,
+OAuth, and local server are required.</p>
+<h2 id="connect-the-official-server">Connect the official server</h2>
+<p>Add this to your MCP configuration. Replace both placeholders
+locally. Never record or publish the real token.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;mcpServers&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;google-ads-mcp&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;command&quot;</span><span class="fu">:</span> <span class="st">&quot;pipx&quot;</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;args&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;run&quot;</span><span class="ot">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;--spec&quot;</span><span class="ot">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;git+https://github.com/googleads/google-ads-mcp.git&quot;</span><span class="ot">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;google-ads-mcp&quot;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;env&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;GOOGLE_PROJECT_ID&quot;</span><span class="fu">:</span> <span class="st">&quot;YOUR_PROJECT_ID&quot;</span><span class="fu">,</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;GOOGLE_ADS_DEVELOPER_TOKEN&quot;</span><span class="fu">:</span> <span class="st">&quot;YOUR_DEVELOPER_TOKEN&quot;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div></div>
+<p>Authenticate with the OAuth method approved for your account, restart
+the host, then ask:</p>
+<pre class="text"><code>What customers do I have access to through google-ads-mcp? Return customer ID and account name only.</code></pre></div>
+<p>If that fails, check the developer token, project ID, OAuth account,
+the Google Ads account permissions, and whether <code>pipx</code> is
+available.</p>
+<h2 id="what-gaql-means">What GAQL means</h2>
+<p>GAQL is Google Ads Query Language. It selects resources, segments,
+and metrics from the Google Ads API. The MCP server exposes:</p>
+<ul>
+<li><code>list_accessible_customers</code></li>
+<li><code>search</code> for GAQL reporting</li>
+<li><code>get_resource_metadata</code> to inspect available fields</li>
+</ul>
+<p>Start by asking Claude to show the fields it queried. That makes the
+result auditable.</p>
+<h2 id="the-first-trust-test">The first trust test</h2>
+<p>Paste:</p>
+<pre class="text"><code>Use google-ads-mcp in read-only mode.
+
+For account [CUSTOMER ID], compare the last 7 complete days with the previous 7 complete days by campaign and device.
+
+Return:
+1. The exact date windows and timezone used.
+2. Spend, conversions, conversion value, cost per conversion, and conversion value / cost.
+3. Campaigns where spend increased but conversions did not rise proportionally.
+4. Observations separated from hypotheses.
+5. The GAQL fields and filters queried.
+6. Missing tracking or business context that could change the interpretation.
+
+Do not recommend a budget or bid change until you have shown the evidence. Do not imply you can edit the account.</code></pre></div>
+<p>Check three rows manually inside Google Ads. If the numbers disagree,
+stop and resolve date range, timezone, attribution, currency, conversion
+actions, or manager-account selection before trusting the analysis.</p>
+<h2 id="ten-useful-read-only-prompts">Ten useful read-only prompts</h2>
+<ol type="1">
+<li>Compare the last 7 complete days with the prior 7 by campaign and
+device.</li>
+<li>Rank campaigns by incremental spend, then show whether conversions
+moved with it.</li>
+<li>Find campaigns with cost and clicks but zero primary
+conversions.</li>
+<li>Split branded and non-branded Search performance using the naming
+rules I provide.</li>
+<li>Show conversion action mix by campaign and flag changes in what
+counts as a conversion.</li>
+<li>Find device segments whose cost per conversion is at least 30% worse
+than the account median. Show sample size.</li>
+<li>Compare weekday and weekend performance without recommending
+action.</li>
+<li>Find campaigns limited by missing or ambiguous data rather than poor
+performance.</li>
+<li>Produce an observation, hypothesis, evidence-needed table for the
+five largest anomalies.</li>
+<li>Create a weekly analyst memo with exact queried fields and a “human
+context required” section.</li>
+</ol>
+<h2 id="the-evidence-ladder">The evidence ladder</h2>
+<p>Claude earns trust in stages:</p>
+<ol type="1">
+<li><strong>Reproduce:</strong> the query matches the account UI for a
+small sample.</li>
+<li><strong>Explain:</strong> it separates measured observations from
+possible causes.</li>
+<li><strong>Repeat:</strong> the same prompt remains useful across
+several weekly reviews.</li>
+<li><strong>Improve:</strong> your instructions capture business context
+it previously missed.</li>
+</ol>
+<p>Do not add write access because one confident answer sounded right.
+The current official server is intentionally read-only.</p>
+<h2 id="approval-rule-for-any-future-automation">Approval rule for any
+future automation</h2>
+<p>Keep campaign creation, publishing, spend, bids, budgets, audiences,
+and destructive actions behind explicit human approval. Use separate
+credentials and tools if you ever add write capability. A reporting
+server is not a permission system for future tools.</p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li>Official Google Ads MCP guide: <a
+href="https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server">https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server</a></li>
+<li>Official repository: <a
+href="https://github.com/googleads/google-ads-mcp">https://github.com/googleads/google-ads-mcp</a></li>
+<li>GAQL overview: <a
+href="https://developers.google.com/google-ads/api/docs/query/overview">https://developers.google.com/google-ads/api/docs/query/overview</a></li>
+</ul>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to spy on your competitors with Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="How to spy on your competitors with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/competitor-teardown-with-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="How to spy on your competitors with Claude">
+<meta property="og:description" content="How to spy on your competitors with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/competitor-teardown-with-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to spy on your competitors with Claude">
+<meta name="twitter:description" content="How to spy on your competitors with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"How to spy on your competitors with Claude", u:"guides/competitor-teardown-with-claude.html", topic:"marketing", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Marketing</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>How to spy on your competitors with Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented SPY, so here is the whole thing: my exact competitor teardown prompt, the four follow-up prompts that go with it.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip calm">🧠 What this is and is not. Everything below uses public information: pages anyone can load, a transparency library Meta publishes on purpose, and reviews customers chose to post. There is no logging into anyone's account, no buying leaked data, no scraping behind a paywall or a login, and no tools that need someone else's credentials. That line matters practically as well as ethically: public-source research holds up when you present it to a client or a boss, and the other kind does not.</div>
+
+<span class="kicker">first, 30 seconds</span>
+<h2>Turn on web search <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Claude cannot read a live website unless web search is on, so this is the one bit of setup. It takes about half a minute.</p>
+<ol class="steps">
+<li><strong class="st">🔛 Flip the toggle.</strong> Open a new chat, click the slider icon in the chat input, find <b>Web search</b> in the menu, and switch it on. Same path to switch it off later. Anthropic's own walkthrough is <a href="https://support.claude.com/en/articles/10684626-enable-and-use-web-search" target="_blank">here</a>.</li>
+<li><strong class="st">💳 Check your plan reality.</strong> Web search works on <a href="https://www.anthropic.com/news/web-search" target="_blank">every plan worldwide, including Free</a>. On Free it counts toward your daily usage, and a long teardown burns through that quickly, so if you are on Free, run one competitor per session rather than five.</li>
+<li><strong class="st">🗣 Say it out loud in the prompt.</strong> Even with the toggle on, adding "search the web and read these pages" makes Claude actually go and fetch instead of answering from memory. Every prompt below already includes that instruction.</li>
+</ol>
+<div class="tip warn">⚠️ If Claude answers instantly with no citations, it did not go and look. Ask it directly: "which URLs did you open?" If the answer is none, re-run with the toggle on. Anything Claude tells you about a competitor without a source link is a guess, and guesses are the whole reason people distrust this kind of research.</div>
+
+<hr class="rule">
+<span class="kicker">the main one</span>
+<h2>The competitor teardown prompt <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the prompt from the reel, in full. Paste it, swap the two brackets, and let it run. It is long on purpose: the length is what stops Claude from handing back a generic "they focus on quality and customer service" summary.</p>
+<div class="promptwrap">
+<span class="promptlabel">🕵️ full competitor teardown</span>
+<pre><code>Search the web and read every page you can reach on [competitor URL]. I run [describe your business in one line, including who you sell to], so read them as a direct competitor of mine, not as a neutral observer.
+
+Work through their site properly: the homepage, the pricing or packages page, the about page, at least three product or service pages, and their blog or resources index if they have one. Open the pages, do not infer them from search snippets.
+
+Then give me a teardown in these six sections. 1. Positioning: the exact promise they lead with, in their words, plus the customer they are clearly writing for and the customer they are clearly not. 2. Offers: every product, package or tier they sell, with what is included in each. 3. Pricing: the real numbers if published, and if not, every clue on the page about how they charge, such as "starting from", "custom quote", or a minimum spend. 4. Proof: the case studies, logos, review counts, guarantees and named results they use to make you believe them. 5. Funnel: what they ask a first-time visitor to do, every free thing they offer to capture an email, and how many clicks it takes to talk to a human. 6. Language: ten words or phrases they repeat across pages, which tells me the vocabulary their buyers use.
+
+Rules: quote them verbatim wherever you can, put a source URL next to every claim, and write "not published" instead of estimating anything you could not find on a page. Finish with the three things they do better than the average competitor in this market and the two places their message is weakest.</code></pre>
+</div>
+<p>Give it a minute. What comes back is the document a strategist would charge for, and you can now interrogate it in the same chat.</p>
+
+<hr class="rule">
+<span class="kicker">the four follow-ups</span>
+<h2>Then go deeper, one prompt at a time <span class="gi" style="--gl:#689425" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.828 6.00096C12.9388 5.68791 12.999 5.35099 12.999 5C12.999 3.34315 11.6559 2 9.99904 2C8.34219 2 6.99904 3.34315 6.99904 5C6.99904 5.35099 7.05932 5.68791 7.17008 6.00096C4.88532 6.0093 3.66601 6.09039 2.87772 6.87868C2.08951 7.66689 2.00836 8.88603 2 11.1704C2.31251 11.06 2.64876 11 2.99904 11C4.6559 11 5.99904 12.3431 5.99904 14C5.99904 15.6569 4.6559 17 2.99904 17C2.64876 17 2.31251 16.94 2 16.8296C2.00836 19.114 2.08951 20.3331 2.87772 21.1213C3.66593 21.9095 4.88508 21.9907 7.16941 21.999C7.05908 21.6865 6.99904 21.3503 6.99904 21C6.99904 19.3431 8.34219 18 9.99904 18C11.6559 18 12.999 19.3431 12.999 21C12.999 21.3503 12.939 21.6865 12.8287 21.999C15.113 21.9907 16.3322 21.9095 17.1204 21.1213C17.9086 20.333 17.9897 19.1137 17.9981 16.829C18.3111 16.9397 18.648 17 18.999 17C20.6559 17 21.999 15.6569 21.999 14C21.999 12.3431 20.6559 11 18.999 11C18.648 11 18.3111 11.0603 17.9981 11.171C17.9897 8.88627 17.9086 7.66697 17.1204 6.87868C16.3321 6.09039 15.1128 6.0093 12.828 6.00096Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Run these in the same chat so Claude keeps the teardown in context. Each one adds a layer the website alone cannot tell you.</p>
+
+<h3>1. Their live ads <span class="gi" style="--gl:#BF7832" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 14V6H6C5.07003 6 4.60504 6 4.22354 6.10222C3.18827 6.37962 2.37962 7.18827 2.10222 8.22354C2 8.60504 2 9.07003 2 10C2 10.93 2 11.395 2.10222 11.7765C2.37962 12.8117 3.18827 13.6204 4.22354 13.8978C4.60504 14 5.07003 14 6 14H9Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9 14L9.96466 18.8233C9.98816 18.9408 10 19.0604 10 19.1802V19.3411C10 20.2573 9.25728 21 8.34109 21C7.55885 21 6.8829 20.4536 6.719 19.6887L5.5 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10 6H9V14H10C11.2982 14 12.5614 14.4211 13.6 15.2L15.747 16.8103C15.9112 16.9334 16.111 17 16.3162 17C16.7246 17 17.0909 16.7404 17.2088 16.3495C17.5537 15.2067 18 13.2728 18 10C18 6.72718 17.5537 4.79327 17.2088 3.65054C17.0909 3.25961 16.7246 3 16.3162 3C16.111 3 15.9112 3.06658 15.747 3.18974L13.6 4.8C12.5614 5.57893 11.2982 6 10 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21 9.99996H22M20.5 6.00109L21.5 5.40637M20.5 14L21.5 14.6481" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h3>
+<p>Meta publishes every ad currently running on Facebook and Instagram in a free, public library, no login needed: <a href="https://www.facebook.com/ads/library/" target="_blank">facebook.com/ads/library</a>. It is the single best free window into what a competitor is actually spending money to say.</p>
+<div class="promptwrap">
+<span class="promptlabel">📣 read their ad library</span>
+<pre><code>Search the Meta Ad Library for [brand name] and read what they currently have running. If you cannot load the library directly, tell me plainly and I will paste screenshots of the results for you to analyse instead.
+
+For every ad you can see, give me: the hook or first line, the format (static image, carousel, video, or UGC style), the offer or call to action, and how long it has been running. Group ads that are clear variations of one another so I can see which angle they are testing hardest.
+
+Then answer three things. Which angle are they betting the most on, judging by how many variations and how long they have been live? Which audience or objection is each angle written for? And what is the one angle nobody in this market is running, that I could own?</code></pre>
+</div>
+<div class="tip calm">💡 A shortcut when the brand name is generic: open their Facebook page, scroll to <b>Page transparency</b>, and click through to their ad library. It filters straight to that exact page instead of every business with a similar name. Long-running ads are the tell worth chasing. Nobody keeps paying for an ad that is not working.</div>
+
+<h3>2. Their tech stack <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h3>
+<div class="promptwrap">
+<span class="promptlabel">🛠️ name their tools</span>
+<pre><code>Fetch the raw HTML of [competitor URL] and tell me which tools and platforms you can positively identify from it, such as the ecommerce or CMS platform, the email or SMS provider, the review widget, the chat widget, the analytics and any advertising pixels.
+
+Only list something if you can point to the specific evidence in the page: a script source, a class name, a meta tag, or a visible widget. Show me that evidence next to each tool, and mark anything you are unsure about as "possible" rather than confirmed.
+
+Then tell me what their stack implies about how they operate: roughly what that stack costs a month, whether it suggests a small team or a big one, and which two tools I would need if I wanted to match their setup.</code></pre>
+</div>
+<div class="tip warn">⚠️ Honest limit: Claude reads what is in the page it can fetch, so it catches the obvious things and misses tools that load later or server-side. Treat the answer as a strong first pass, then confirm with a free lookup on <a href="https://builtwith.com" target="_blank">BuiltWith</a> or the <a href="https://www.wappalyzer.com/" target="_blank">Wappalyzer</a> browser extension, both of which detect the same way but with a much bigger fingerprint database.</div>
+
+<h3>3. What their customers actually complain about <span class="gi" style="--gl:#8B8690" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 14.5H15.5M8.5 9.5H12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.1706 20.8905C18.3536 20.6125 21.6856 17.2332 21.9598 12.9909C22.0134 12.1607 22.0134 11.3009 21.9598 10.4707C21.6856 6.22838 18.3536 2.84913 14.1706 2.57107C12.7435 2.47621 11.2536 2.47641 9.8294 2.57107C5.64639 2.84913 2.31441 6.22838 2.04024 10.4707C1.98659 11.3009 1.98659 12.1607 2.04024 12.9909C2.1401 14.536 2.82343 15.9666 3.62791 17.1746C4.09501 18.0203 3.78674 19.0758 3.30021 19.9978C2.94941 20.6626 2.77401 20.995 2.91484 21.2351C3.05568 21.4752 3.37026 21.4829 3.99943 21.4982C5.24367 21.5285 6.08268 21.1757 6.74868 20.6846C7.1264 20.4061 7.31527 20.2668 7.44544 20.2508C7.5756 20.2348 7.83177 20.3403 8.34401 20.5513C8.8044 20.7409 9.33896 20.8579 9.8294 20.8905C11.2536 20.9852 12.7435 20.9854 14.1706 20.8905Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h3>
+<div class="promptwrap">
+<span class="promptlabel">💬 mine their reviews</span>
+<pre><code>Search the web for public reviews of [brand name] across review sites, app stores, marketplace listings and forum threads, and read the actual review pages rather than summaries of them.
+
+Pull out the twenty most repeated specific complaints, in the customers' own words, and group them into themes. Ignore anything vague like "bad experience" and keep anything concrete, such as a delivery time, a missing feature, a support delay or a pricing surprise. Put a source link next to each theme.
+
+Then do the same for the praise: what do happy customers name as the reason they stayed? Finish by telling me which of their complaint themes I could credibly fix or avoid in my own offer, and write me the one sentence of marketing copy that speaks directly to the biggest one.</code></pre>
+</div>
+
+<h3>4. The gaps, which is the actual point <span class="gi" style="--gl:#CD5174" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M14 2.20004C13.3538 2.06886 12.6849 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.3151 21.9311 10.6462 21.8 10" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0303 11.9625L16.5832 7.4096M19.7404 4.34462L19.1872 2.35748C19.0853 2.03011 18.6914 1.89965 18.4259 2.11662C16.9898 3.29018 15.4254 4.87091 16.703 7.36419C19.2771 8.56455 20.7466 6.94584 21.8733 5.5853C22.0975 5.3146 21.9623 4.90767 21.6247 4.81005L19.7404 4.34462Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h3>
+<div class="promptwrap">
+<span class="promptlabel">🎯 turn it into my plan</span>
+<pre><code>Using everything in this chat, the teardown, the ads, the stack and the reviews, give me three gaps I can attack in the next 30 days. A gap is something their customers clearly want that this competitor is not offering, not saying, or not saying well.
+
+For each gap, give me: the evidence from our research that it exists, the specific thing I would do about it (an offer change, a piece of content, an ad angle or a page rewrite), what it costs me in time or money, and how I would know within 30 days whether it worked.
+
+Then rank the three by how fast I could ship them, and write the first draft of the highest-ranked one so I have something to edit tonight rather than a to-do list.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">know the edges</span>
+<h2>What the Ad Library shows, and what it doesn't <span class="gi" style="--gl:#4E9932" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 7H8.5M12.499 11H8.49902" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20 22H6C4.89543 22 4 21.1046 4 20M4 20C4 18.8954 4.89543 18 6 18H20V6C20 4.11438 20 3.17157 19.4142 2.58579C18.8284 2 17.8856 2 16 2H10C7.17157 2 5.75736 2 4.87868 2.87868C4 3.75736 4 5.17157 4 8V20Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19.5 18C19.5 18 18.5 18.7628 18.5 20C18.5 21.2372 19.5 22 19.5 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>You get the creative</b> The image or video, the headline, the body copy, the call to action, which platforms it runs on, and the date it started.</div>
+<div class="minicard"><b>You get the variations</b> Every version of an ad running side by side, which shows you exactly what a brand is split-testing right now.</div>
+<div class="minicard"><b>You don't get their spend</b> Commercial ad spend and results are not published. Anyone selling you "their exact ROAS" from a public library is guessing.</div>
+<div class="minicard"><b>You don't get their targeting</b> Detailed audience targeting is not shown for ordinary commercial ads outside the EU transparency rules. Read the ad copy to infer the audience instead.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the raw material</span>
+<h2>Six free public sources worth pointing Claude at <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Their pricing page, over time</b> Paste an old snapshot from the <a href="https://web.archive.org/" target="_blank">Wayback Machine</a> next to today's page and ask Claude what changed. Price and positioning moves tell you what worked for them.</div>
+<div class="minicard"><b>Their careers page</b> Open roles are a roadmap. Hiring three salespeople, or a lifecycle marketer, tells you where the next year of their strategy is going.</div>
+<div class="minicard"><b>Their blog and resources index</b> Ask Claude which topics they publish most. That is usually where their search traffic and their content bets live.</div>
+<div class="minicard"><b>Search demand</b> <a href="https://trends.google.com/trends/" target="_blank">Google Trends</a> is free. Compare their brand name against yours and against the category over 12 months to see who is gaining attention.</div>
+<div class="minicard"><b>Their social grid</b> Ask Claude to read their most-engaged recent posts and name the format and hook pattern they repeat. Public posts only, no scraping tools needed.</div>
+<div class="minicard"><b>Their own FAQ</b> Underrated. Every question a company answers publicly is a question that cost them enough sales to be worth answering.</div>
+</div>
+<div class="tip calm">💡 On traffic numbers: Claude cannot produce real traffic estimates, and neither can any free source. Paid tools estimate them from panel data, and those estimates are directional at best. Skip the traffic-stat theatre. Positioning, live ads, reviews and gaps are the parts that actually change what you do on Monday.</div>
+
+<hr class="rule">
+<span class="kicker">make it a habit</span>
+<h2>The 20-minute monthly rhythm <span class="gi" style="--gl:#8E82A5" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 2V6M8 2V6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 4H11C7.22876 4 5.34315 4 4.17157 5.17157C3 6.34315 3 8.22876 3 12V14C3 17.7712 3 19.6569 4.17157 20.8284C5.34315 22 7.22876 22 11 22H13C16.7712 22 18.6569 22 19.8284 20.8284C21 19.6569 21 17.7712 21 14V12C21 8.22876 21 6.34315 19.8284 5.17157C18.6569 4 16.7712 4 13 4Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 10H21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.1258 14H12.0008M12.1258 18H12.0008M7.625 14H7.5M7.625 18H7.5M16.625 14H16.5M12.2508 14C12.2508 14.1381 12.1389 14.25 12.0008 14.25C11.8628 14.25 11.7508 14.1381 11.7508 14C11.7508 13.8619 11.8628 13.75 12.0008 13.75C12.1389 13.75 12.2508 13.8619 12.2508 14ZM12.2508 18C12.2508 18.1381 12.1389 18.25 12.0008 18.25C11.8628 18.25 11.7508 18.1381 11.7508 18C11.7508 17.8619 11.8628 17.75 12.0008 17.75C12.1389 17.75 12.2508 17.8619 12.2508 18ZM7.75 14C7.75 14.1381 7.63807 14.25 7.5 14.25C7.36193 14.25 7.25 14.1381 7.25 14C7.25 13.8619 7.36193 13.75 7.5 13.75C7.63807 13.75 7.75 13.8619 7.75 14ZM7.75 18C7.75 18.1381 7.63807 18.25 7.5 18.25C7.36193 18.25 7.25 18.1381 7.25 18C7.25 17.8619 7.36193 17.75 7.5 17.75C7.63807 17.75 7.75 17.8619 7.75 18ZM16.75 14C16.75 14.1381 16.6381 14.25 16.5 14.25C16.3619 14.25 16.25 14.1381 16.25 14C16.25 13.8619 16.3619 13.75 16.5 13.75C16.6381 13.75 16.75 13.8619 16.75 14Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">📌 Pick three competitors, not ten.</strong> One who is clearly ahead of you, one who is level with you, and one insurgent who is newer and weirder. Three is enough to see a pattern and few enough that you will actually do it.</li>
+<li><strong class="st">🔁 Re-run the teardown monthly.</strong> Keep last month's output in a doc and ask Claude to diff it: "here is last month's teardown, here is this month's, tell me only what changed and what that change implies." Changes are the signal, the static parts are noise.</li>
+<li><strong class="st">✍️ End every session with one action.</strong> One page rewrite, one ad angle, one offer tweak. Research you never act on is expensive procrastination in a very convincing costume.</li>
+</ol>
+
+<hr class="rule">
+<h2>Play fair <span class="gi" style="--gl:#AE8113" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 8.49951C13.6329 8.93304 11.1118 9.66731 8.63166 9.5941C7.98001 9.57486 7.5 9.01526 7.5 8.36333C7.5 7.83928 7.81029 7.36341 8.28079 7.13264C9.28416 6.64049 10.867 5.81798 12.2709 5.05868C13.1233 4.5977 13.5495 4.3672 13.8726 4.25809C14.7383 3.96573 15.4351 3.95453 16.3097 4.21893C16.6362 4.3176 17.0283 4.51365 17.8124 4.90573L18.7167 5.35787C18.7884 5.39372 18.8243 5.41165 18.861 5.42651C18.9555 5.46475 19.0553 5.48831 19.1569 5.49637C19.1964 5.49951 19.2365 5.49951 19.3167 5.49951C19.9522 5.49951 20.2699 5.49951 20.5302 5.57107C21.2102 5.75804 21.7415 6.28929 21.9284 6.96928C22 7.22956 22 7.5473 22 8.18279V13.7138C22 14.4239 21.4244 14.9995 20.7143 14.9995C20.5752 14.9995 20.4398 15.0446 20.3286 15.1281L20 15.3745C19.3066 15.8945 18.9599 16.1546 18.5624 16.3051C18.4871 16.3336 18.4108 16.359 18.3335 16.3814C17.9251 16.4995 17.4917 16.4995 16.625 16.4995H14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.5 8.49902L17.5713 11.9775C18.0912 12.5494 18.0703 13.4287 17.5238 13.9752C16.9584 14.5407 16.0416 14.5407 15.4762 13.9752C16.0285 14.5275 16.0523 15.4467 15.5 15.999C14.9477 16.5513 14.0523 16.5513 13.5 15.999L13 15.499C13.5523 16.0513 13.5523 16.9467 13 17.499C12.4477 18.0513 11.5523 18.0513 11 17.499C11.5523 18.0513 11.5523 18.9467 11 19.499L10.9393 19.5597C10.658 19.841 10.2765 19.999 9.87868 19.999H9.75C9.26978 19.999 8.80923 19.8083 8.46967 19.4687L4.41421 15.4132C4.149 15.148 3.78929 14.999 3.41421 14.999C2.63317 14.999 2 14.3659 2 13.5848L2 9.49902C2 7.61341 2 6.6706 2.58579 6.08481C3.17157 5.49902 4.11438 5.49902 6 5.49902L11 5.49902" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip warn">⚠️ Keep it to public pages, respect each site's terms of use and its <a href="https://www.robotstxt.org/robotstxt.html" target="_blank">robots.txt</a>, never share or use anyone else's login, and never present a competitor's copy as your own. Use what you learn to find the gap and say something truer than they do. Copying their page word for word is both a legal problem and a strategic one, because you end up sounding like the person you were trying to beat.</div>
+
+<hr class="rule">
+<h2>The links <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>🔎 Turn on web search: <a href="https://support.claude.com/en/articles/10684626-enable-and-use-web-search" target="_blank">Anthropic's help article</a>, and the <a href="https://www.anthropic.com/news/web-search" target="_blank">announcement that it is on every plan</a><br>
+📣 Meta Ad Library: <a href="https://www.facebook.com/ads/library/" target="_blank">facebook.com/ads/library</a><br>
+🛠️ Tech stack lookups: <a href="https://builtwith.com" target="_blank">BuiltWith</a> and <a href="https://www.wappalyzer.com/" target="_blank">Wappalyzer</a><br>
+🕰 Page history: <a href="https://web.archive.org/" target="_blank">Wayback Machine</a> · 📈 Search demand: <a href="https://trends.google.com/trends/" target="_blank">Google Trends</a></p>
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

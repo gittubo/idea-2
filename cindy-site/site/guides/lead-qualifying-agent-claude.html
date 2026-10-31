@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The lead-qualifying agent: turn your dream customer into a scoring spec Claude writes · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+  <!-- GUIDES_CARD {t:"Build a lead-qualifying agent with Claude", u:"guides/lead-qualifying-agent-claude.html", topic:"marketing", tool:"claude"} -->
+<!-- seo:auto -->
+<meta name="description" content="The real skill was never the scraping, it was the qualifying. This guide shows you how to have Claude write that judgment for you as a reusable scoring...">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/lead-qualifying-agent-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="The lead-qualifying agent: turn your dream customer into a scoring spec Claude writes">
+<meta property="og:description" content="The real skill was never the scraping, it was the qualifying. This guide shows you how to have Claude write that judgment for you as a reusable scoring...">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/lead-qualifying-agent-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The lead-qualifying agent: turn your dream customer into a scoring spec Claude writes">
+<meta name="twitter:description" content="The real skill was never the scraping, it was the qualifying. This guide shows you how to have Claude write that judgment for you as a reusable scoring...">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Marketing &amp; ads</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>The lead-qualifying agent: turn your dream customer into a scoring spec Claude writes</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 The real skill was never the scraping, it was the qualifying. This guide shows you how to have Claude write that judgment for you as a reusable scoring spec.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the four moves</span>
+<h2>What you're actually building <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Most "lead gen agent" content skips the hard part and just shows a tool spitting out names. The build here is smarter and it is the bit nobody shows you: you use Claude as the brain that decides who counts, and a scraping or enrichment tool as the hands that go fetch them.</p>
+<p>The flow has four moves:</p>
+<ol class="steps">
+<li>🗣️ You describe your dream customer to Claude in plain words.</li>
+<li>🧾 Claude turns that into a scoring spec: the exact signals that mean "hot lead", what to ignore, and which fields to pull.</li>
+<li>🛠️ You hand the spec to a tool (Apollo, Clay, or an Apify actor) that actually pulls the contacts.</li>
+<li>✍️ Claude writes the filters and a tiered outreach angle so you know exactly who to message and what to say.</li>
+</ol>
+<p>The point: the tool executes, Claude judges. That judgment is the reusable asset, you can run it again next month with fresh data.</p>
+
+<hr class="rule">
+<span class="kicker">the brain</span>
+<h2>Step 1: turn your dream customer into a scoring spec <span class="gi" style="--gl:#CD5174" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M14 2.20004C13.3538 2.06886 12.6849 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.3151 21.9311 10.6462 21.8 10" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0303 11.9625L16.5832 7.4096M19.7404 4.34462L19.1872 2.35748C19.0853 2.03011 18.6914 1.89965 18.4259 2.11662C16.9898 3.29018 15.4254 4.87091 16.703 7.36419C19.2771 8.56455 20.7466 6.94584 21.8733 5.5853C22.0975 5.3146 21.9623 4.90767 21.6247 4.81005L19.7404 4.34462Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Open Claude and paste this. Fill the brackets with your real business, the more specific you are, the sharper the spec.</p>
+<div class="promptwrap">
+<span class="promptlabel">🎯 the scoring spec</span>
+<pre>You are my lead-qualification strategist. I sell [what you sell] to [who you sell to]. My best-ever customers looked like this: [describe 2-3 real past customers, their role, company size, what made them a great fit, why they bought].
+
+Build me a lead-scoring spec I can hand to a scraping or enrichment tool. Include:
+1. A tiered scoring model (Hot / Warm / Skip) with the exact signals for each tier (job title, company size, industry, funding stage, tech they use, hiring signals, recent triggers).
+2. The specific data fields I need to pull for each lead to score them (e.g. title, headcount, LinkedIn URL, company domain, last funding, job postings).
+3. Hard disqualifiers, the signals that mean "do not bother", so I stop wasting credits on bad fits.
+4. For each tier, a one-line reason it qualifies, so I can sanity-check the logic.
+
+Ask me up to 5 clarifying questions first if it would make the spec sharper.</pre>
+</div>
+<div class="tip calm"><strong>Why the clarifying questions line matters:</strong> it forces Claude to interrogate your assumptions instead of guessing, which is where a generic spec turns into one that actually fits your niche.</div>
+
+<hr class="rule">
+<span class="kicker">the hands</span>
+<h2>Step 2: pick the tool that does the pulling <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>Claude writes the spec, but it can't scrape the live web for verified contacts on its own. You pass the spec (the fields and filters) into one of these. Here is what each one is, when to use it, and the honest catch. Free tiers verified July 2026.</p>
+<p><strong>Apollo</strong> (<a href="https://apollo.io">apollo.io</a>)</p>
+<ul>
+<li><strong>What it is:</strong> a B2B contact database with verified emails and filters for title, company size, industry, and buying signals.</li>
+<li><strong>Use it when:</strong> you want ready-made, verified B2B contacts fast and your dream customer is a defined job title at a defined company type.</li>
+</ul>
+<div class="tip warn"><strong>Heads up:</strong> the free plan was cut hard, it is now 100 email credits, 5 mobile credits, and 10 export credits per month, with a 25-record export cap (<a href="https://www.apollo.io/pricing">Apollo pricing</a>, via <a href="https://phantombuster.com/blog/ai-automation/apollo-pricing/">PhantomBuster's 2026 breakdown</a>). Great for testing your spec and previewing data quality, not for real outbound volume. Paid starts around $49/user/mo.</div>
+<p><strong>Clay</strong> (<a href="https://clay.com">clay.com</a>)</p>
+<ul>
+<li><strong>What it is:</strong> an enrichment and scoring workbench that pulls from 150+ data providers into one table and can run your scoring logic on each row (including its Claygent AI research agent).</li>
+<li><strong>Use it when:</strong> you want to enrich AND score in one place, or blend multiple data sources instead of relying on one database.</li>
+</ul>
+<div class="tip warn"><strong>Heads up:</strong> the free plan is 100 data credits, 500 actions, and 200 rows per table per month (<a href="https://www.clay.com/pricing">Clay pricing</a>). Fully enriching one contact with email plus company plus phone burns several data credits, so a few dozen leads can drain the free tier. It is an evaluation tier, not production. Paid starts around $167/mo.</div>
+<p><strong>Apify</strong> (<a href="https://apify.com">apify.com</a>)</p>
+<ul>
+<li><strong>What it is:</strong> a marketplace of pre-built scrapers ("actors") that can pull leads from niche directories, maps, or sites where the big databases have thin coverage.</li>
+<li><strong>Use it when:</strong> your dream customer lives somewhere Apollo and Clay don't cover well, like a local directory, a niche marketplace, or a specific site.</li>
+</ul>
+<div class="tip warn"><strong>Heads up:</strong> the free plan gives about $5 of platform credit per month at $0.20 per compute unit, and many actors add a per-result fee on top (<a href="https://apify.com/pricing">Apify pricing</a>, via <a href="https://scrapegraphai.com/blog/apify-pricing">ScrapeGraphAI's 2026 guide</a>). Credits don't roll over. Best for a targeted niche pull, not scraping the whole internet.</div>
+<div class="tip"><strong>The honest truth about "free":</strong> all three have real free tiers, but they are for testing and small runs, not endless free leads. The value here is that Claude's scoring spec is reusable across any of them, so you are not locked in, you pick the cheapest tool that reaches your exact audience.</div>
+
+<hr class="rule">
+<span class="kicker">close the loop</span>
+<h2>Step 3: have Claude write the filters and the outreach <span class="gi" style="--gl:#8776B8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11C2 7.70017 2 6.05025 3.02513 5.02513C4.05025 4 5.70017 4 9 4H10C13.2998 4 14.9497 4 15.9749 5.02513C17 6.05025 17 7.70017 17 11V13C17 16.2998 17 17.9497 15.9749 18.9749C14.9497 20 13.2998 20 10 20H9C5.70017 20 4.05025 20 3.02513 18.9749C2 17.9497 2 16.2998 2 13V11Z" stroke="currentColor" stroke-width="1.5"/><path d="M17 8.90585L17.1259 8.80196C19.2417 7.05623 20.2996 6.18336 21.1498 6.60482C22 7.02628 22 8.42355 22 11.2181V12.7819C22 15.5765 22 16.9737 21.1498 17.3952C20.2996 17.8166 19.2417 16.9438 17.1259 15.198L17 15.0941" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><circle cx="11.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>Once you know your tool, paste the spec back into Claude with this:</p>
+<div class="promptwrap">
+<span class="promptlabel">🎬 filters and first lines</span>
+<pre>Here is my lead-scoring spec: [paste the spec from step 1].
+
+I'm pulling contacts in [Apollo / Clay / an Apify actor]. Do two things:
+1. Translate my Hot and Warm tiers into the exact filter settings I should enter in that tool (job titles, headcount ranges, industries, keywords, any exclusions).
+2. For each tier, write a 2-line opening outreach message that references the specific signal that made them qualify, so it doesn't read like a mass blast.
+
+Keep the outreach human and specific, no "I hope this email finds you well".</pre>
+</div>
+<p>Now the whole loop is closed: Claude decided who counts, told you exactly how to find them, and wrote the first line of the conversation.</p>
+
+<hr class="rule">
+<span class="kicker">go further</span>
+<h2>3 bonus prompts to run next <span class="gi" style="--gl:#AB8209" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 11V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 9C3 8.25231 3 7.87846 3.20096 7.6C3.33261 7.41758 3.52197 7.26609 3.75 7.16077C4.09808 7 4.56538 7 5.5 7H18.5C19.4346 7 19.9019 7 20.25 7.16077C20.478 7.26609 20.6674 7.41758 20.799 7.6C21 7.87846 21 8.25231 21 9C21 9.74769 21 10.1215 20.799 10.4C20.6674 10.5824 20.478 10.7339 20.25 10.8392C19.9019 11 19.4346 11 18.5 11H5.5C4.56538 11 4.09808 11 3.75 10.8392C3.52197 10.7339 3.33261 10.5824 3.20096 10.4C3 10.1215 3 9.74769 3 9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 3.78571C6 2.79949 6.79949 2 7.78571 2H8.14286C10.2731 2 12 3.7269 12 5.85714V7H9.21429C7.43908 7 6 5.56091 6 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 3.78571C18 2.79949 17.2005 2 16.2143 2H15.8571C13.7269 2 12 3.7269 12 5.85714V7H14.7857C16.5609 7 18 5.56091 18 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 11L12 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p><strong>1. Score a list you already have.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">1 · score a list you have</span>
+<pre>Here is a CSV of leads I already pulled: [paste 10-20 rows]. Score each against my spec as Hot, Warm, or Skip, and tell me which single field is doing the most work to separate good from bad, so I can tighten my filters next time.</pre>
+</div>
+<p><strong>2. Find the trigger signals I'm missing.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">2 · the trigger signals</span>
+<pre>Based on my dream customer, list the "buying trigger" events I should watch for (new funding, a specific hire, a tool switch, a job posting) and where I could realistically detect each one for free or cheap. Rank them by how strongly each predicts a hot lead.</pre>
+</div>
+<p><strong>3. Build a weekly refresh routine.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">3 · the weekly refresh</span>
+<pre>Design a simple weekly process where I re-run this pull, dedupe against the leads I already contacted, and only surface net-new Hot leads. Give me the exact checklist so it takes me under 15 minutes a week.</pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">pick your level</span>
+<h2>How to get the most out of it <span class="gi" style="--gl:#4C326D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.99805 7.99928C1.99805 9.34126 10.0943 13 11.9857 13C13.8772 13 21.9734 9.34126 21.9734 7.99928C21.9734 6.6573 13.8772 2.99854 11.9857 2.99854C10.0943 2.99854 1.99805 6.6573 1.99805 7.99928Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.99219 11L7.24348 16.8002C7.32919 17.1975 7.52703 17.5687 7.85696 17.8054C10.0787 19.3998 13.8908 19.3998 16.1126 17.8054C16.4426 17.5687 16.6404 17.1975 16.7261 16.8002L17.9774 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20.4774 9.49951V16.5006M20.4774 16.5006C19.6864 17.9471 19.3366 18.7221 18.9813 20.0011C18.9042 20.4562 18.9654 20.6855 19.2786 20.8891C19.4059 20.9718 19.5588 21.0012 19.7104 21.0012H21.229C21.3904 21.0012 21.5533 20.9675 21.6863 20.8757C21.9774 20.6747 22.0523 20.4541 21.9734 20.0011C21.662 18.8135 21.2653 18.0016 20.4774 16.5006Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+  <div class="minicard"><b>🌱 If you're newer</b> don't skip the "describe 2-3 real past customers" part. The spec is only as good as the examples you feed it, one specific real customer beats a vague "marketing managers at startups". Start on a free tier and pull just 20 leads to sanity-check the logic before you spend anything.</div>
+  <div class="minicard"><b>⚡ If you're more advanced</b> save the finished scoring spec as a reusable file and version it. Every time a deal closes or bombs, feed the outcome back to Claude and ask it to update the spec, over a few months your qualifier gets sharper than any list you could buy.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the honest bit</span>
+<h2>When this isn't the move <span class="gi" style="--gl:#B17E17" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip warn">If you sell to consumers (B2C) rather than businesses, Apollo and Clay won't help much, they are built for B2B firmographics. And if you only need a handful of leads once, buying a small targeted list can genuinely be faster than building the loop. This shines when you need qualified leads repeatedly and want the judgment to compound.</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

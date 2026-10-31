@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event-driven lead response blueprint · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="A blueprint for responding to every new lead right away, with guardrails for consent, calling hours and handing off to a human.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/event-driven-lead-response-blueprint">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Event-driven lead response blueprint">
+<meta property="og:description" content="A blueprint for responding to every new lead right away, with guardrails for consent, calling hours and handing off to a human.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/event-driven-lead-response-blueprint">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Event-driven lead response blueprint">
+<meta name="twitter:description" content="A blueprint for responding to every new lead right away, with guardrails for consent, calling hours and handing off to a human.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Event-driven lead response blueprint", u:"guides/event-driven-lead-response-blueprint.html", topic:"marketing", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Business systems</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Event-driven lead response blueprint</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 A blueprint for responding to every new lead right away, with guardrails for consent, calling hours and handing off to a human.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<h2 id="the-architecture">The architecture</h2>
+<pre class="text"><code>Website form
+  → Notion lead row
+  → database automation sends webhook
+  → small server-side call endpoint
+  → fixed consent / duplicate / calling-hours gates
+  → Retell starts outbound call through Twilio
+  → Claude handles the narrow approved conversation
+  → book, warm-transfer, or notify a person
+  → signed Retell webhook writes outcome back to Notion</code></pre></div>
+<p>Do not use a Claude scheduled task for a 60-second response target.
+Claude’s recurring schedules are hourly, daily, weekly, or weekdays. The
+form event must trigger the workflow.</p>
+<h2 id="1-build-the-notion-lead-table">1. Build the Notion lead
+table</h2>
+<p>Create these properties:</p>
+<table class="guide-table">
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>title</td>
+<td>Lead name</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>phone or text</td>
+<td>Store E.164 format, for example +614…</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>email</td>
+<td>Optional follow-up</td>
+</tr>
+<tr>
+<td>Consent to phone contact</td>
+<td>checkbox</td>
+<td>Must be true before any call</td>
+</tr>
+<tr>
+<td>Consent source</td>
+<td>text</td>
+<td>Exact form and wording shown</td>
+</tr>
+<tr>
+<td>Submitted at</td>
+<td>created time</td>
+<td>Used for latency</td>
+</tr>
+<tr>
+<td>Timezone</td>
+<td>select or text</td>
+<td>Needed for legal calling window</td>
+</tr>
+<tr>
+<td>Lead source</td>
+<td>select</td>
+<td>Form or campaign</td>
+</tr>
+<tr>
+<td>Call status</td>
+<td>select</td>
+<td>New, queued, calling, answered, transferred, booked, failed,
+suppressed</td>
+</tr>
+<tr>
+<td>Attempt count</td>
+<td>number</td>
+<td>Stop after the approved limit</td>
+</tr>
+<tr>
+<td>Idempotency key</td>
+<td>text</td>
+<td>Prevent duplicate dials</td>
+</tr>
+<tr>
+<td>Retell call ID</td>
+<td>text</td>
+<td>Reconcile callbacks</td>
+</tr>
+<tr>
+<td>Last outcome</td>
+<td>text</td>
+<td>Human-readable result</td>
+</tr>
+</tbody>
+</table>
+<p>The website form must include a clear, unbundled phone-contact
+consent statement. Store the wording and timestamp. Consent is not “the
+model thinks this looks interested.”</p>
+<h2 id="2-trigger-the-endpoint">2. Trigger the endpoint</h2>
+<p>In Notion database automations:</p>
+<ol type="1">
+<li>Trigger: <strong>Page added</strong>.</li>
+<li>Add an action: <strong>Send webhook</strong>.</li>
+<li>Send the new page ID and an unguessable workflow token to your HTTPS
+endpoint.</li>
+</ol>
+<p>Notion’s database automations are a paid feature. Official guide: <a
+href="https://www.notion.com/help/database-automations">https://www.notion.com/help/database-automations</a></p>
+<p>The endpoint keeps the Notion integration token, Retell key, Twilio
+credentials, and Claude key server-side. Never put them in the form,
+Notion page, browser code, or video.</p>
+<h2 id="3-run-fixed-gates-before-ai">3. Run fixed gates before AI</h2>
+<p>The endpoint should reject the call unless every gate passes:</p>
+<ol type="1">
+<li><strong>Consent:</strong> explicit phone-contact consent is true and
+the stored wording is present.</li>
+<li><strong>Phone:</strong> valid destination in E.164 format.</li>
+<li><strong>Duplicate:</strong> no successful, queued, or in-progress
+attempt exists for the same lead and source.</li>
+<li><strong>Idempotency:</strong> the event ID has not already been
+processed.</li>
+<li><strong>Calling hours:</strong> calculate against the lead’s local
+timezone.</li>
+<li><strong>Suppression:</strong> not on your internal do-not-call list
+and, where required, checked against the Australian Do Not Call
+Register.</li>
+<li><strong>Attempt limit:</strong> under your approved maximum.</li>
+</ol>
+<p>For Australian telemarketing, ACMA lists 9am–8pm Monday to Friday,
+9am–5pm Saturday, no Sunday calls, and no calls on national public
+holidays. Consent and exemption rules still matter. Source: <a
+href="https://www.acma.gov.au/say-no-to-telemarketers">https://www.acma.gov.au/say-no-to-telemarketers</a></p>
+<p>If a gate fails, set <code>Call status = suppressed</code>, record
+the reason, and stop. Claude never overrides this decision.</p>
+<h2 id="4-start-the-call">4. Start the call</h2>
+<p>Use Retell’s create phone call endpoint with your approved
+from-number, the lead’s to-number, and metadata containing the Notion
+page ID and idempotency key.</p>
+<ul>
+<li>Create outbound call: <a
+href="https://docs.retellai.com/api-references/create-phone-call">https://docs.retellai.com/api-references/create-phone-call</a></li>
+<li>Twilio deployment: <a
+href="https://docs.retellai.com/deploy/twilio">https://docs.retellai.com/deploy/twilio</a></li>
+<li>Current Retell pricing: <a
+href="https://www.retellai.com/pricing">https://www.retellai.com/pricing</a></li>
+<li>Current Twilio Australia pricing: <a
+href="https://www.twilio.com/en-us/voice/pricing/au">https://www.twilio.com/en-us/voice/pricing/au</a></li>
+</ul>
+<p>Write the Retell call ID back before another event can create a
+second dial.</p>
+<h2 id="5-keep-claudes-conversation-narrow">5. Keep Claude’s
+conversation narrow</h2>
+<p>The opening should be explicit:</p>
+<pre class="text"><code>Hi [first name], this is the AI assistant for [business]. You asked us to contact you about [form topic]. Is now an okay time for two quick questions, or would you prefer a person to call later?</code></pre></div>
+<p>Approved jobs:</p>
+<ul>
+<li>confirm what they asked about</li>
+<li>collect three defined qualification fields</li>
+<li>offer approved booking times</li>
+<li>warm-transfer to the approved number</li>
+<li>notify a customer-service representative</li>
+</ul>
+<p>Forbidden jobs:</p>
+<ul>
+<li>invent pricing, guarantees, availability, eligibility, or
+policy</li>
+<li>pressure the lead</li>
+<li>continue after “stop,” “do not call,” or uncertainty about
+consent</li>
+<li>take payment details</li>
+<li>improvise around a sensitive or high-risk request</li>
+</ul>
+<p>One misheard answer should not become a confident CRM fact. Read back
+important fields and let the person correct them.</p>
+<h2 id="6-human-handoff">6. Human handoff</h2>
+<p>Configure Retell’s transfer-call tool for the approved team number.
+Transfer immediately when:</p>
+<ul>
+<li>the lead asks for a person</li>
+<li>the answer is outside the approved knowledge</li>
+<li>the model has low confidence or asks the same question twice</li>
+<li>the request is sensitive, urgent, financial, legal, medical, or
+complaint-related</li>
+</ul>
+<p>Retell transfer tool: <a
+href="https://docs.retellai.com/build/single-multi-prompt/transfer-call">https://docs.retellai.com/build/single-multi-prompt/transfer-call</a></p>
+<p>If nobody is available, offer a booking or record a callback request.
+Do not trap the person in the bot.</p>
+<h2 id="7-write-the-outcome-back">7. Write the outcome back</h2>
+<p>Use signed Retell webhooks to update:</p>
+<ul>
+<li>call started, answered, completed, or failed</li>
+<li>latency from form submission to dial request</li>
+<li>outcome</li>
+<li>qualification fields confirmed</li>
+<li>booking ID or transfer result</li>
+<li>do-not-call request</li>
+</ul>
+<p>Retell webhooks: <a
+href="https://docs.retellai.com/features/webhook-overview">https://docs.retellai.com/features/webhook-overview</a></p>
+<p>Verify the webhook signature, reject replays, and keep the raw event
+for troubleshooting.</p>
+<h2 id="optional-fish-audio-voice-layer">Optional Fish Audio voice
+layer</h2>
+<p>Fish Audio can provide real-time WebSocket TTS, and it has published
+telephony support. In this blueprint it is the voice layer only. It is
+not the trigger, consent gate, conversation brain, phone carrier, or
+human-transfer logic.</p>
+<ul>
+<li>Real-time WebSocket TTS: <a
+href="https://docs.fish.audio/api-reference/endpoint/websocket/tts-live">https://docs.fish.audio/api-reference/endpoint/websocket/tts-live</a></li>
+<li>Telephony announcement: <a
+href="https://fish.audio/ja/blog/voice-agents-telephony-support/?articleLocale=en">https://fish.audio/ja/blog/voice-agents-telephony-support/?articleLocale=en</a></li>
+<li>Current plans: <a
+href="https://fish.audio/plan/">https://fish.audio/plan/</a></li>
+</ul>
+<p>This is a custom integration, not a documented one-click Retell
+connector. Test latency, pronunciation, barge-in, disclosure, and
+fallback before production.</p>
+<h2 id="cost-map">Cost map</h2>
+<table class="guide-table">
+<thead>
+<tr>
+<th>Layer</th>
+<th>Cost driver</th>
+<th>Check here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Notion automation</td>
+<td>Paid Notion plan</td>
+<td><a
+href="https://www.notion.com/pricing">https://www.notion.com/pricing</a></td>
+</tr>
+<tr>
+<td>Endpoint</td>
+<td>Requests and runtime</td>
+<td>Your chosen Cloudflare, Vercel, or server host</td>
+</tr>
+<tr>
+<td>Retell</td>
+<td>Per-minute agent and telephony components</td>
+<td><a
+href="https://www.retellai.com/pricing">https://www.retellai.com/pricing</a></td>
+</tr>
+<tr>
+<td>Twilio</td>
+<td>Australian number and call minutes</td>
+<td><a
+href="https://www.twilio.com/en-us/voice/pricing/au">https://www.twilio.com/en-us/voice/pricing/au</a></td>
+</tr>
+<tr>
+<td>Claude</td>
+<td>Tokens used by the conversation</td>
+<td><a
+href="https://www.anthropic.com/pricing">https://www.anthropic.com/pricing</a></td>
+</tr>
+<tr>
+<td>Fish Audio, optional</td>
+<td>Real-time TTS usage</td>
+<td><a href="https://fish.audio/plan/" target="_blank">https://fish.audio/plan/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="launch-checklist">Launch checklist</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" />Written consent language
+reviewed</label></li>
+<li><label><input type="checkbox" />Do-not-call and internal suppression
+process in place</label></li>
+<li><label><input type="checkbox" />Local calling-hours calculation
+tested</label></li>
+<li><label><input type="checkbox" />Recording off unless separately
+lawful and consented</label></li>
+<li><label><input type="checkbox" />AI disclosure included</label></li>
+<li><label><input type="checkbox" />Human handoff tested</label></li>
+<li><label><input type="checkbox" />Duplicate event replay
+tested</label></li>
+<li><label><input type="checkbox" />Failure writes back to
+Notion</label></li>
+<li><label><input type="checkbox" />Secrets removed from logs and screen
+recordings</label></li>
+<li><label><input type="checkbox" />Ten internal test calls reviewed
+before real leads</label></li>
+</ul>
+<p>Speed matters, but a faster unsafe call is still a bad system.</p>
+<h2 id="evidence-behind-the-speed-framing">Evidence behind the speed
+framing</h2>
+<ul>
+<li>InsideSales reports 8x higher conversion within five minutes versus
+after six minutes, from 5.7 million inbound leads and 55 million
+activities: <a
+href="https://www.insidesales.com/wp-content/uploads/2021/02/infographic_LeadRespMgmt2021.pdf">https://www.insidesales.com/wp-content/uploads/2021/02/infographic_LeadRespMgmt2021.pdf</a></li>
+<li>Harvard Business Review reported that companies attempting contact
+within one hour were nearly seven times as likely to qualify a lead as
+companies waiting another hour: <a
+href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads">https://hbr.org/2011/03/the-short-life-of-online-sales-leads</a></li>
+</ul>
+<p>Neither source proves a universal 60-second revenue guarantee. Use 60
+seconds as an operational dial target.</p>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

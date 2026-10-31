@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build an automatic safety check-in with Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="How to build a safety check-in with Claude that quietly texts someone you choose if you haven&#x27;t tapped &quot;I&#x27;m okay&quot; by a set time.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/automatic-safety-checkin-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build an automatic safety check-in with Claude">
+<meta property="og:description" content="How to build a safety check-in with Claude that quietly texts someone you choose if you haven&#x27;t tapped &quot;I&#x27;m okay&quot; by a set time.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/automatic-safety-checkin-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build an automatic safety check-in with Claude">
+<meta name="twitter:description" content="How to build a safety check-in with Claude that quietly texts someone you choose if you haven&#x27;t tapped &quot;I&#x27;m okay&quot; by a set time.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build an automatic safety check-in with Claude", u:"guides/automatic-safety-checkin-claude.html", topic:"productivity", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Life &amp; self</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Build an automatic safety check-in with Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 How to build a safety check-in with Claude that quietly texts someone you choose if you haven't tapped "I'm okay" by a set time.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the setup</span>
+<h2>What you're actually building <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The pattern has a name: a <strong>dead man's switch</strong>. It stays silent while you keep checking in, and only fires if you go quiet past a deadline. That is the opposite of a normal reminder, which is why it feels a bit magic.</p>
+<div class="tip"><strong>One honest thing up front:</strong> Claude does not send texts by itself. Claude designs the logic and writes the build, then a tool you already have (your phone's Shortcuts app, or a texting service like Twilio) is what actually sends the message. Any guide that says "Claude will text your mum" is skipping this part. We are not going to.</div>
+<p>Every version below has the same three pieces:</p>
+<ul>
+<li>⏰ <strong>A deadline:</strong> the time by which you need to have checked in (say 9pm).</li>
+<li>✅ <strong>A check-in:</strong> a simple "I'm okay" tap that resets the clock.</li>
+<li>📤 <strong>A fallback message:</strong> the calm text that goes to your person if the deadline passes with no check-in.</li>
+</ul>
+
+<hr class="rule">
+<span class="kicker">no code</span>
+<h2>Path A: fully no-code, phone only (Apple Shortcuts) <span class="gi" style="--gl:#5A3F7C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 2H10.5C8.14298 2 6.96447 2 6.23223 2.73223C5.5 3.46447 5.5 4.64298 5.5 7V17C5.5 19.357 5.5 20.5355 6.23223 21.2678C6.96447 22 8.14298 22 10.5 22H13.5C15.857 22 17.0355 22 17.7678 21.2678C18.5 20.5355 18.5 19.357 18.5 17V7C18.5 4.64298 18.5 3.46447 17.7678 2.73223C17.0355 2 15.857 2 13.5 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 19H12M12.25 19C12.25 19.1381 12.1381 19.25 12 19.25C11.8619 19.25 11.75 19.1381 11.75 19C11.75 18.8619 11.8619 18.75 12 18.75C12.1381 18.75 12.25 18.8619 12.25 19Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Best if you want zero setup files and you are on an iPhone. This lives entirely in the free <strong>Shortcuts</strong> app that comes with iOS.</p>
+<p><strong>The simplest honest version:</strong> a daily time automation that texts your person, which you cancel on days you are fine.</p>
+<ol class="steps">
+<li>Open Shortcuts, tap <strong>Automation</strong>, tap <strong>+</strong>, choose <strong>Time of Day</strong>, set it to your deadline (e.g. 9:00pm).</li>
+<li>Turn on <strong>Run Immediately</strong> and turn OFF <strong>Notify When Run</strong> so it can send on its own. On iOS 17 and later, the native Messages "Send Message" action is allowed to send with no confirmation this way.</li>
+<li>Add the action <strong>Send Message</strong>, write your calm message, pick your contact.</li>
+<li>Each night you are home safe, you open Shortcuts and toggle tomorrow's run off, or delay it. It is manual, but it is real and it works today.</li>
+</ol>
+<p><strong>The smarter "only if I forget" version:</strong> use a shared flag so it skips the text when you HAVE checked in.</p>
+<ol class="steps">
+<li>Make a second shortcut called "I'm okay" that writes the current time into a note or a Data Jar / Reminders entry. You tap it whenever you get home.</li>
+<li>Your 9pm automation first READS that flag: if the last "I'm okay" was today, it does nothing. If not, it sends the text.</li>
+<li>This "read the flag, decide, then send" logic is the exact part to hand to Claude (prompt below). It is fiddly to wire by hand, and that is where Claude earns its keep.</li>
+</ol>
+<div class="tip warn"><strong>Heads up:</strong> iOS <strong>Message-trigger</strong> automations (the kind that fire when a specific text arrives) always ask for confirmation and cannot be silenced, per Apple. That is why we use a <strong>Time of Day</strong> trigger instead, which can run unattended. Source: <a href="https://support.apple.com/guide/shortcuts/enable-or-disable-a-personal-automation-apd602971e63/ios" target="_blank">Apple Support, personal automations</a>.</div>
+<p><strong>The prompt to give Claude for Path A:</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">📱 Wires both shortcuts, action by action</span>
+<pre>I want to build a safety check-in on my iPhone using the Shortcuts app, no coding. I want a shortcut called "I'm okay" that I tap when I get home safe, which records the time. And I want a daily automation at 9pm that checks: if I have not tapped "I'm okay" since this morning, send a calm text to my mum saying I have not checked in, otherwise do nothing. Walk me through building both step by step, tell me exactly which Shortcuts actions to add and in what order, and where to store the check-in time so both shortcuts can read it. Assume I am on the latest iOS.</pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">always on</span>
+<h2>Path B: Claude actually writes the build (Twilio + a scheduled task) <span class="gi" style="--gl:#987CBE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3175 7.14139L20.8239 6.28479C20.4506 5.63696 20.264 5.31305 19.9464 5.18388C19.6288 5.05472 19.2696 5.15664 18.5513 5.36048L17.3311 5.70418C16.8725 5.80994 16.3913 5.74994 15.9726 5.53479L15.6357 5.34042C15.2766 5.11043 15.0004 4.77133 14.8475 4.37274L14.5136 3.37536C14.294 2.71534 14.1842 2.38533 13.9228 2.19657C13.6615 2.00781 13.3143 2.00781 12.6199 2.00781H11.5051C10.8108 2.00781 10.4636 2.00781 10.2022 2.19657C9.94085 2.38533 9.83106 2.71534 9.61149 3.37536L9.27753 4.37274C9.12465 4.77133 8.84845 5.11043 8.48937 5.34042L8.15249 5.53479C7.73374 5.74994 7.25259 5.80994 6.79398 5.70418L5.57375 5.36048C4.85541 5.15664 4.49625 5.05472 4.17867 5.18388C3.86109 5.31305 3.67445 5.63696 3.30115 6.28479L2.80757 7.14139C2.45766 7.74864 2.2827 8.05227 2.31666 8.37549C2.35061 8.69871 2.58483 8.95918 3.05326 9.48012L4.0843 10.6328C4.3363 10.9518 4.51521 11.5078 4.51521 12.0077C4.51521 12.5078 4.33636 13.0636 4.08433 13.3827L3.05326 14.5354C2.58483 15.0564 2.35062 15.3168 2.31666 15.6401C2.2827 15.9633 2.45766 16.2669 2.80757 16.8741L3.30114 17.7307C3.67443 18.3785 3.86109 18.7025 4.17867 18.8316C4.49625 18.9608 4.85542 18.8589 5.57377 18.655L6.79394 18.3113C7.25263 18.2055 7.73387 18.2656 8.15267 18.4808L8.4895 18.6752C8.84851 18.9052 9.12464 19.2442 9.2775 19.6428L9.61149 20.6403C9.83106 21.3003 9.94085 21.6303 10.2022 21.8191C10.4636 22.0078 10.8108 22.0078 11.5051 22.0078H12.6199C13.3143 22.0078 13.6615 22.0078 13.9228 21.8191C14.1842 21.6303 14.294 21.3003 14.5136 20.6403L14.8476 19.6428C15.0004 19.2442 15.2765 18.9052 15.6356 18.6752L15.9724 18.4808C16.3912 18.2656 16.8724 18.2055 17.3311 18.3113L18.5513 18.655C19.2696 18.8589 19.6288 18.9608 19.9464 18.8316C20.264 18.7025 20.4506 18.3785 20.8239 17.7307L21.3175 16.8741C21.6674 16.2669 21.8423 15.9633 21.8084 15.6401C21.7744 15.3168 21.5402 15.0564 21.0718 14.5354L20.0407 13.3827C19.7887 13.0636 19.6098 12.5078 19.6098 12.0077C19.6098 11.5078 19.7888 10.9518 20.0407 10.6328L21.0718 9.48012C21.5402 8.95918 21.7744 8.69871 21.8084 8.37549C21.8423 8.05227 21.6674 7.74864 21.3175 7.14139Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.5195 12C15.5195 13.933 13.9525 15.5 12.0195 15.5C10.0865 15.5 8.51953 13.933 8.51953 12C8.51953 10.067 10.0865 8.5 12.0195 8.5C13.9525 8.5 15.5195 10.067 15.5195 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>Best if you want it to run even when your phone is off or dead, and you are okay pasting a short script Claude writes. This is the version where Claude does the real work.</p>
+<p>How it works: a tiny script keeps a <strong>flag file</strong> with your last check-in time. A <strong>scheduled task</strong> (cron on a Mac, or a Claude Code routine) runs at your deadline, reads the flag, and if it is stale, sends the SMS through <strong>Twilio</strong>.</p>
+<ul>
+<li>🧾 <strong>Twilio</strong> is a service that sends real text messages from code. US SMS is <strong>$0.0083 per message</strong> sent from a long code or toll-free number, plus small carrier fees, and scheduling itself is free. Source: <a href="https://www.twilio.com/en-us/sms/pricing/us" target="_blank">Twilio US SMS pricing</a> and <a href="https://www.twilio.com/docs/messaging/features/message-scheduling" target="_blank">message scheduling</a>. At one text a day worst case, that is well under a dollar a month.</li>
+<li>⏱️ <strong>The scheduler</strong> can be plain <strong>cron</strong> on your Mac, or a <strong>Claude Code scheduled task / routine</strong>, which runs a prompt on a set cadence. Note the built-in Claude Code schedule fires only while the app is open, and session tasks auto-expire after 7 days, so for always-on use a real cron job or cloud routine is safer. Source: <a href="https://code.claude.com/docs/en/scheduled-tasks" target="_blank">Claude Code scheduled tasks</a>.</li>
+<li>✅ <strong>Your check-in</strong> can be the same "I'm okay" iPhone shortcut from Path A, pointed at a tiny endpoint, or literally editing one line in a file. Claude sets this up with you.</li>
+</ul>
+<p><strong>The prompt to give Claude for Path B (paste into Claude Code):</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">⚙️ The full script, cron line and a safe dry run</span>
+<pre>Build me a personal safety check-in as a small Python project I can run on my Mac. Requirements: a flag file that stores my last "I'm okay" timestamp. A check-in command I can run to update that timestamp. A checker script that, when run, sees if my last check-in is older than a window I set (default: nothing since 6am today), and if so sends one calm SMS to a phone number I configure, using Twilio. Keep my Twilio credentials in a .env file, never hardcoded. Write the calm message in a friendly human tone, not robotic, and make the deadline, recipient, and message text easy to edit at the top. Then show me the exact cron line to schedule the checker at 9pm daily, and explain how to test it safely without actually texting anyone the first time.</pre>
+</div>
+<div class="tip warn"><strong>Safety note to keep in the build:</strong> ask Claude to include a <strong>test mode</strong> that prints the message instead of sending it, so you can dry-run before a real text ever goes out. It is in the prompt above on purpose.</div>
+
+<hr class="rule">
+<h2>Path C: no build at all (a ready-made app) <span class="gi" style="--gl:#997BB8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>If you want the outcome without building anything, dedicated check-in apps already do exactly this pattern: you check in on a schedule, and if you miss the deadline they text or email your emergency contacts for you. <strong>Snug</strong> is a well-known one that sends your contacts an alert with your location if you miss a daily check-in. Source: <a href="https://www.snugsafe.com/all-posts/snug-is-a-dead-man-switch-app" target="_blank">Snug Safety</a>. Use this if you would rather not touch Shortcuts or a script at all, and save the build for when you want to customise it.</p>
+
+<hr class="rule">
+<span class="kicker">go further</span>
+<h2>3 bonus prompts to run next <span class="gi" style="--gl:#AB8209" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 11V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 9C3 8.25231 3 7.87846 3.20096 7.6C3.33261 7.41758 3.52197 7.26609 3.75 7.16077C4.09808 7 4.56538 7 5.5 7H18.5C19.4346 7 19.9019 7 20.25 7.16077C20.478 7.26609 20.6674 7.41758 20.799 7.6C21 7.87846 21 8.25231 21 9C21 9.74769 21 10.1215 20.799 10.4C20.6674 10.5824 20.478 10.7339 20.25 10.8392C19.9019 11 19.4346 11 18.5 11H5.5C4.56538 11 4.09808 11 3.75 10.8392C3.52197 10.7339 3.33261 10.5824 3.20096 10.4C3 10.1215 3 9.74769 3 9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 3.78571C6 2.79949 6.79949 2 7.78571 2H8.14286C10.2731 2 12 3.7269 12 5.85714V7H9.21429C7.43908 7 6 5.56091 6 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 3.78571C18 2.79949 17.2005 2 16.2143 2H15.8571C13.7269 2 12 3.7269 12 5.85714V7H14.7857C16.5609 7 18 5.56091 18 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 11L12 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>🗣️ <strong>Make it sound like you, not a robot.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🗣️ Three warmer versions to choose from</span>
+<pre>Here are three versions of my safety text. Rewrite each so it sounds like how I actually talk to my mum: warm, a little casual, reassuring rather than alarming. Give me three options I can choose from.</pre>
+</div>
+<p>📍 <strong>Add a last-known location.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">📍 The private way to share where you were</span>
+<pre>Update my check-in build so the fallback message also includes a Google Maps link to my last known location. Tell me the most private way to do this, what it can and cannot see, and how to turn it off.</pre>
+</div>
+<p>🪜 <strong>Add an escalation step.</strong></p>
+<div class="promptwrap">
+<span class="promptlabel">🪜 Loops in a second person if you stay quiet</span>
+<pre>Change the logic so that if I still have not checked in 30 minutes after the first message, a second contact gets notified too. Keep it simple and show me where to set the second person and the delay.</pre>
+</div>
+
+<hr class="rule">
+<h2>How to get the most out of it <span class="gi" style="--gl:#4C326D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.99805 7.99928C1.99805 9.34126 10.0943 13 11.9857 13C13.8772 13 21.9734 9.34126 21.9734 7.99928C21.9734 6.6573 13.8772 2.99854 11.9857 2.99854C10.0943 2.99854 1.99805 6.6573 1.99805 7.99928Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M5.99219 11L7.24348 16.8002C7.32919 17.1975 7.52703 17.5687 7.85696 17.8054C10.0787 19.3998 13.8908 19.3998 16.1126 17.8054C16.4426 17.5687 16.6404 17.1975 16.7261 16.8002L17.9774 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20.4774 9.49951V16.5006M20.4774 16.5006C19.6864 17.9471 19.3366 18.7221 18.9813 20.0011C18.9042 20.4562 18.9654 20.6855 19.2786 20.8891C19.4059 20.9718 19.5588 21.0012 19.7104 21.0012H21.229C21.3904 21.0012 21.5533 20.9675 21.6863 20.8757C21.9774 20.6747 22.0523 20.4541 21.9734 20.0011C21.662 18.8135 21.2653 18.0016 20.4774 16.5006Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>🌱 If you are new:</b> start with Path A's simple version tonight, just the 9pm text you toggle off when you are home. It is a real safety net in five minutes, and you can graduate to the smarter versions later.</div>
+<div class="minicard"><b>🚀 If you are comfortable with a terminal:</b> go straight to Path B and have Claude build the Twilio version with a test mode, then wrap the check-in in your iPhone shortcut so tapping "I'm okay" hits it automatically. That is the version that survives a dead phone.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">before you rely on it</span>
+<h2>When to be careful <span class="gi" style="--gl:#B97C11" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9248 21H10.0752C5.44476 21 3.12955 21 2.27636 19.4939C1.42317 17.9879 2.60736 15.9914 4.97574 11.9985L6.90057 8.75333C9.17559 4.91778 10.3131 3 12 3C13.6869 3 14.8244 4.91777 17.0994 8.75332L19.0243 11.9985C21.3926 15.9914 22.5768 17.9879 21.7236 19.4939C20.8704 21 18.5552 21 13.9248 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 9V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li>🔋 A phone-only build (Path A) will not fire if your phone is dead or off, which is sometimes the exact moment you would want it to. Path B or Path C are sturdier for real safety-critical use.</li>
+<li>🧪 Always dry-run before you rely on it. Send the fallback to yourself first and confirm it actually arrives before you point it at family.</li>
+<li>🆘 This is peace-of-mind automation, not an emergency service. For genuine danger, always use real emergency numbers first.</li>
+</ul>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

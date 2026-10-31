@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenMontage: a free video production system inside Claude Code · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- GUIDES_CARD {t:"OpenMontage: a free video production system inside Claude Code", u:"guides/openmontage-video-production-in-claude-code.html", topic:"building", tool:"claude"} -->
+<!-- seo:auto -->
+<meta name="description" content="OpenMontage: a free video production system inside Claude Code. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/openmontage-video-production-in-claude-code">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="OpenMontage: a free video production system inside Claude Code">
+<meta property="og:description" content="OpenMontage: a free video production system inside Claude Code. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/openmontage-video-production-in-claude-code">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OpenMontage: a free video production system inside Claude Code">
+<meta name="twitter:description" content="OpenMontage: a free video production system inside Claude Code. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building things</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>OpenMontage: a free video production system inside Claude Code</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented MONTAGE, so here is the repo that turns Claude Code into a video production crew: research, script, footage, voiceover, captions, render.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip calm">💡 <strong>You are not writing code, but you are using a terminal.</strong> Three commands to install, then everything after that is you typing what you want in plain English. If a terminal is new to you, that is fine, the commands are below in full and you paste them one at a time. Nothing here asks you to read or edit code.</div>
+
+<span class="kicker">honest first</span>
+<h2>What it is actually best at <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Point it at a blank prompt and ask for a video about a topic, and you will get something competent and generic. That is the trap. The value is in the repurposing pipelines, the ones that start from footage that already exists, because that is where the machine does the tedious work and your taste still decides the output.</p>
+<p>So the framing I would give you: this is a rough-cut assistant, not a creative director. Feed it long footage you already made, let it do the passes that make your eyes glaze over, and keep the final cut on your desk.</p>
+<div class="cardgrid">
+<div class="minicard"><b>Clip factory</b> Takes one long source and returns a batch of ranked short-form clips. This is the pipeline that pays for the whole setup.</div>
+<div class="minicard"><b>Podcast repurpose</b> Turns podcast highlights into video. Good for the audiogram and highlight-reel work nobody wants to do manually.</div>
+<div class="minicard"><b>Talking head</b> Footage-led speaker videos, for presentations, vlogs and interviews. This is the one to test with your own camera footage.</div>
+<div class="minicard"><b>Localisation and dub</b> Subtitles, dubbing and translation for a video you already have, which is the cheapest reach you will ever buy.</div>
+</div>
+<div class="tip warn">⚠️ <strong>Licence check before you use it commercially.</strong> OpenMontage is released under the <a href="https://github.com/calesthio/OpenMontage/blob/main/LICENSE" target="_blank">GNU AGPLv3</a>, not a permissive licence. Making videos for your own channel or your clients is fine. Building it into a product you host for other people is where the AGPL's conditions bite, so read the licence properly before you do that.</div>
+
+<hr class="rule">
+<span class="kicker">before you install</span>
+<h2>Four things you need <span class="gi" style="--gl:#689425" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.828 6.00096C12.9388 5.68791 12.999 5.35099 12.999 5C12.999 3.34315 11.6559 2 9.99904 2C8.34219 2 6.99904 3.34315 6.99904 5C6.99904 5.35099 7.05932 5.68791 7.17008 6.00096C4.88532 6.0093 3.66601 6.09039 2.87772 6.87868C2.08951 7.66689 2.00836 8.88603 2 11.1704C2.31251 11.06 2.64876 11 2.99904 11C4.6559 11 5.99904 12.3431 5.99904 14C5.99904 15.6569 4.6559 17 2.99904 17C2.64876 17 2.31251 16.94 2 16.8296C2.00836 19.114 2.08951 20.3331 2.87772 21.1213C3.66593 21.9095 4.88508 21.9907 7.16941 21.999C7.05908 21.6865 6.99904 21.3503 6.99904 21C6.99904 19.3431 8.34219 18 9.99904 18C11.6559 18 12.999 19.3431 12.999 21C12.999 21.3503 12.939 21.6865 12.8287 21.999C15.113 21.9907 16.3322 21.9095 17.1204 21.1213C17.9086 20.333 17.9897 19.1137 17.9981 16.829C18.3111 16.9397 18.648 17 18.999 17C20.6559 17 21.999 15.6569 21.999 14C21.999 12.3431 20.6559 11 18.999 11C18.648 11 18.3111 11.0603 17.9981 11.171C17.9897 8.88627 17.9086 7.66697 17.1204 6.87868C16.3321 6.09039 15.1128 6.0093 12.828 6.00096Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Python 3.10 or later</b> Free, from <a href="https://www.python.org/downloads/" target="_blank">python.org</a>. Most Macs already have a version, and the installer will tell you.</div>
+<div class="minicard"><b>Node.js 18 or higher</b> Free, from <a href="https://nodejs.org/" target="_blank">nodejs.org</a>. This is what runs the rendering engine.</div>
+<div class="minicard"><b>FFmpeg</b> The free video toolkit that does the encoding and mixing. <code>brew install ffmpeg</code> on a Mac, <code>sudo apt install ffmpeg</code> on Linux, or grab it from <a href="https://ffmpeg.org/download.html" target="_blank">ffmpeg.org</a>.</div>
+<div class="minicard"><b>An AI coding assistant</b> Claude Code is what I use, and the repo also works with other AI coding assistants like Cursor and Codex. Install steps are in the <a href="https://code.claude.com/docs/en/overview" target="_blank">Claude Code docs</a>.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">setup</span>
+<h2>Install it in three commands <span class="gi" style="--gl:#9A7BBC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.4999 16.5V8.5C20.4999 6.14298 20.4999 4.96447 19.7676 4.23223C19.0354 3.5 17.8569 3.5 15.4999 3.5H8.49988C6.14286 3.5 4.96434 3.5 4.23211 4.23223C3.49988 4.96447 3.49988 6.14298 3.49988 8.5V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21.9841 20.5H2.01567C1.63273 20.5 1.38367 20.1088 1.55493 19.7764L3.49988 16.5H20.4999L22.4448 19.7764C22.6161 20.1088 22.367 20.5 21.9841 20.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">📥 Clone the repo.</strong> Open your terminal, go to wherever you keep projects, and run <code>git clone https://github.com/calesthio/OpenMontage.git</code>. This downloads the whole thing to your machine.</li>
+<li><strong class="st">📂 Move into the folder.</strong> Run <code>cd OpenMontage</code>. Everything from here happens inside that folder, which is also the folder you will open in Claude Code.</li>
+<li><strong class="st">⚙️ Run the setup.</strong> Run <code>make setup</code>. This builds a Python environment, installs the dependencies, installs the Remotion rendering engine, installs the free Piper text-to-speech voice, and creates your <code>.env</code> file. It takes a few minutes and prints a lot of text, which is normal.</li>
+<li><strong class="st">🪟 On Windows, or if make is missing.</strong> The repo's readme has a full one-line fallback for macOS, Linux and Windows PowerShell that does exactly the same steps by hand. If <code>npm install</code> fails on Windows with an <code>ERR_INVALID_ARG_TYPE</code> error, the documented fix is to run <code>npx --yes npm install</code> instead.</li>
+<li><strong class="st">💻 Open the folder in Claude Code.</strong> In your terminal, inside the OpenMontage folder, start Claude Code. It reads the project's own instruction files and becomes the thing that runs the pipelines. There is no separate app to launch.</li>
+</ol>
+<div class="tip">🧠 There is no API key step, and that is deliberate. The setup gives you a working free path out of the box. Keys are optional extras you can add later, and every one of them costs money, so skip them until you have a reason.</div>
+
+<hr class="rule">
+<span class="kicker">first message</span>
+<h2>Orient it before you ask for anything <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>The repo ships with its own instruction files, and the difference between a good first session and a confusing one is whether your assistant read them. Make that the first thing you ask for.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧭 orient yourself in this repo</span>
+<pre><code>Read AGENT_GUIDE.md and PROJECT_CONTEXT.md in this project before you do anything else, then tell me what I'm working with in plain English, assuming I'm a creator and not an engineer.
+
+Specifically: list the pipelines available to me, say which of them work right now with no API keys configured, and name which free tools are doing the work in that no-key path. Then tell me the single pipeline you'd recommend I try first if my goal is [cutting my long videos into short clips / editing my own talking-head footage / making an explainer from scratch], and why that one.
+
+Do not start a production yet. I want the lay of the land first.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">the real use case</span>
+<h2>Turn one long video into a batch of clips <span class="gi" style="--gl:#DE5E63" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.4368 9.55807L10.6 12M10.6 12L7 15M10.6 12L13.4949 14.3865M10.6 12L7 9M16 8.5C16 9.32843 15.3284 10 14.5 10C13.6716 10 13 9.32843 13 8.5C13 7.67157 13.6716 7 14.5 7C15.3284 7 16 7.67157 16 8.5ZM16 15.5C16 16.3284 15.3284 17 14.5 17C13.6716 17 13 16.3284 13 15.5C13 14.6716 13.6716 14 14.5 14C15.3284 14 16 14.6716 16 15.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the pipeline to test first, because it is the one where the output is judged against footage you already trust. Have a long video ready: a webinar, a podcast episode, a long-form YouTube video, anything over ten minutes.</p>
+<div class="promptwrap">
+<span class="promptlabel">🎬 run the clip factory on my long video</span>
+<pre><code>Use the clip factory pipeline on this source video: [file path or link]. My goal is vertical short-form clips for Instagram and TikTok, each between 30 and 60 seconds.
+
+Before you cut anything, transcribe it and give me a ranked shortlist of the ten strongest moments, with a timestamp, a one-line reason each is strong, and a suggested hook line for each. I want moments that are a complete thought on their own, not a sentence that only makes sense if you heard the previous five minutes. Wait for me to pick which ones to build.
+
+Then, for the ones I choose, cut them, add word-level captions, and render them vertically. Show me the ranking logic you used so I can tell you what you got wrong about my audience.</code></pre>
+</div>
+<div class="tip calm">🌱 The shortlist is the whole point. Reading ten timestamped moments takes you two minutes and it is where your taste enters the process. If you let it cut straight to finished clips, you have outsourced the one judgement call that was actually yours.</div>
+
+<hr class="rule">
+<span class="kicker">make it yours</span>
+<h2>Train it on your editing style <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The system's knowledge lives in readable markdown files, over 700 of them, in a <code>skills/</code> folder. That is the customisation surface. You are not editing code, you are writing down your editing preferences in plain English so the agent applies them every run instead of you re-explaining them.</p>
+<div class="promptwrap">
+<span class="promptlabel">✍️ write my house style into a skill file</span>
+<pre><code>I want you to capture my editing style as a reusable style file in this project, so every future production follows it without me repeating myself.
+
+Here's how I edit: captions are [style, position, font feel], cuts are [tight with no dead air / breathing room between beats], my hook is always in the first [X] seconds and it is [a question / a claim / a result], I never use [stock-looking B-roll / trending audio / zoom transitions], and my videos end on [your sign-off]. My audience is [who they are] and the tone is [warm and practical / fast and punchy].
+
+Read how the existing style and skill files in this repo are structured, write mine in the same format and the correct location, and then tell me exactly which pipelines will pick it up and how I'd change it later.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">what it costs</span>
+<h2>The free path is real, the paid path is optional <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the part I want to be exact about, because "free AI video" usually means "animate some still images and hope". Here, with zero API keys configured, the setup gives you a genuinely working stack.</p>
+<ul>
+<li><strong>Narration:</strong> Piper TTS, a free offline text-to-speech engine that runs on your own machine.</li>
+<li><strong>Real footage:</strong> a searchable corpus built from Archive.org, NASA and Wikimedia Commons, so the documentary montage pipeline cuts actual motion footage rather than panning across photos.</li>
+<li><strong>Extra stock:</strong> Pexels, Unsplash and Pixabay, whose developer keys are free to get.</li>
+<li><strong>Rendering:</strong> <a href="https://www.remotion.dev" target="_blank">Remotion</a> for React-based compositions, plus an HTML and GSAP renderer for motion-graphics-heavy briefs.</li>
+<li><strong>Post and captions:</strong> FFmpeg for encoding, mixing and subtitle burn-in, with auto-generated word-level captions built in.</li>
+</ul>
+<p>The paid layer is a long list of optional generation providers you add as API keys in the <code>.env</code> file, and every one of them bills you directly. None of them are free tiers dressed up, they are pay-as-you-go accounts you open yourself. The repo publishes real costs for its own showcase videos, including a 60 second animated short it produced for $1.33 and a 50 second vertical film for about $4, which is a useful reality check on what generated footage actually costs. The full provider list with pricing is in the repo's <a href="https://github.com/calesthio/OpenMontage/blob/main/docs/PROVIDERS.md" target="_blank">providers document</a>.</p>
+<div class="tip warn">⚠️ Add a spend cap before you add a key. The system has budget controls, cost estimation before execution and per-action approval thresholds built in. Turn them on in your first paid session rather than the session after the surprise.</div>
+
+<hr class="rule">
+<span class="kicker">when it goes sideways</span>
+<h2>The four things that trip people up <span class="gi" style="--gl:#9082A7" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 7.10593C17.9999 8.55778 16.5891 9.89558 14.4697 11.9901C13.1062 13.3376 10.8936 13.336 9.52937 11.9892C7.41145 9.8961 5.99988 8.55754 6 7.10568C6.00012 5.65383 6.3543 5.36258 9.60848 2.14658C9.92161 1.83445 10.4602 2.05389 10.4602 2.49338L10.4604 5.80524C10.4604 6.64587 11.1488 7.32849 11.9994 7.32842C12.85 7.32835 13.5396 6.64688 13.5398 5.80625L13.5405 2.49435C13.5406 2.05485 14.0793 1.83532 14.3924 2.14739C17.646 5.36287 18.0001 5.65408 18 7.10593Z" stroke="currentColor" stroke-width="1.5"/><path d="M15 12L15 19.1652C15 20.7308 13.6569 22 12 22C10.3431 22 9 20.7308 9 19.1652L9 12" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0063 18.9995L12 19.0059" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>"ffmpeg: command not found"</b> FFmpeg is not installed or not on your path. Install it, close the terminal completely, reopen it, and run the setup again.</div>
+<div class="minicard"><b>The render looks like a slideshow</b> You asked for a topic with no footage source. Ask for the documentary montage path and say "use real footage only" explicitly, which is the documented way to get motion footage.</div>
+<div class="minicard"><b>It invents a workflow</b> Your assistant skipped the instruction files. Tell it to read AGENT_GUIDE.md and the pipeline manifest and to follow the pipeline rather than improvising.</div>
+<div class="minicard"><b>The output is generic</b> Expected, on a blank-prompt topic video with no style file. Write your style file, and start from footage or a reference video rather than a bare topic.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">worth trying</span>
+<h2>Start from a video you already like <span class="gi" style="--gl:#CD5174" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M14 2.20004C13.3538 2.06886 12.6849 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.3151 21.9311 10.6462 21.8 10" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0303 11.9625L16.5832 7.4096M19.7404 4.34462L19.1872 2.35748C19.0853 2.03011 18.6914 1.89965 18.4259 2.11662C16.9898 3.29018 15.4254 4.87091 16.703 7.36419C19.2771 8.56455 20.7466 6.94584 21.8733 5.5853C22.0975 5.3146 21.9623 4.90767 21.6247 4.81005L19.7404 4.34462Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>One feature genuinely worth knowing about: it can take a reference video, a YouTube video, a Short, a Reel or a local clip, analyse its transcript, pacing, scenes and style, and come back with differentiated concepts, an honest tool path and a cost estimate before it produces anything. For anyone who finds a blank prompt paralysing, that is a much better on-ramp than inventing the perfect brief from nothing. The repo's <a href="https://github.com/calesthio/OpenMontage/blob/main/PROMPT_GALLERY.md" target="_blank">prompt gallery</a> has tested prompts with expected costs if you want more starting points.</p>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://github.com/calesthio/OpenMontage" target="_blank">OpenMontage on GitHub, the repo itself (prerequisites, install commands, pipelines, zero-key tool table)</a><br>
+  <a href="https://github.com/calesthio/OpenMontage/blob/main/LICENSE" target="_blank">The AGPLv3 licence it ships under</a><br>
+  <a href="https://github.com/calesthio/OpenMontage/blob/main/AGENT_GUIDE.md" target="_blank">AGENT_GUIDE.md, the instruction file your assistant should read first</a><br>
+  <a href="https://github.com/calesthio/OpenMontage/blob/main/docs/PROVIDERS.md" target="_blank">The provider list with pricing and free tiers</a><br>
+  <a href="https://code.claude.com/docs/en/overview" target="_blank">Claude Code docs, for installing the assistant that runs it</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

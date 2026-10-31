@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to set up Claude Code the right way · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="How to set up Claude Code the right way. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-code-setup-the-right-way">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="How to set up Claude Code the right way">
+<meta property="og:description" content="How to set up Claude Code the right way. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-code-setup-the-right-way">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to set up Claude Code the right way">
+<meta name="twitter:description" content="How to set up Claude Code the right way. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to set up Claude Code the right way","description":"This is the full Claude Code setup from the reel, start to finish, plus the one step almost every tutorial skips: giving Claude your context so it stops...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/claude-code-setup-the-right-way"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Set up Claude Code the right way", u:"guides/claude-code-setup-the-right-way.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Getting started</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>How to set up Claude Code the right way</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 This is the full Claude Code setup from the reel, start to finish.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the shape of it</span>
+<h2>What you're setting up <span class="gi" style="--gl:#DB5C78" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15V14H21V15C21 17.8284 21 19.2426 20.1213 20.1213C19.2426 21 17.8284 21 15 21H9C6.17157 21 4.75736 21 3.87868 20.1213C3 19.2426 3 17.8284 3 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 14L3.00001 12.9999C3.00003 11.5278 3.00004 10.7918 3.31675 10.1584C3.63347 9.52493 4.22231 9.08329 5.39999 8.20002C6.19297 7.60528 6.58946 7.30791 7.05132 7.15395C7.51317 7 8.00879 7 9.00002 7H15C15.9912 7 16.4868 7 16.9487 7.15395C17.4105 7.3079 17.807 7.60527 18.6 8.2C19.7777 9.08328 20.3666 9.52492 20.6833 10.1584C21 10.7918 21 11.5279 21 13V14H3Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 12V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 12V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.49997 7.00006V6.50006C8.49997 5.0956 8.49997 4.39337 8.83703 3.88892C8.98295 3.67054 9.17045 3.48304 9.38883 3.33712C9.89328 3.00006 10.5955 3.00006 12 3.00006C13.4044 3.00006 14.1067 3.00006 14.6111 3.33712C14.8295 3.48304 15.017 3.67054 15.1629 3.88892C15.5 4.39337 15.5 5.0956 15.5 6.50006V7.00006" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Claude Code is Claude that lives in your code editor and can actually build things: apps, websites, automations, whole projects, writing all the code for you. You don't need to type a single line yourself. The setup is four small steps, and then one extra step that's the real difference between "I installed it" and "it works like it knows me".</p>
+<hr class="rule">
+<span class="kicker">gather these</span>
+<h2>Before you start <span class="gi" style="--gl:#119B5B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5L10.5 15L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+  <div class="minicard"><b>💳 A paid Claude plan.</b> Claude Code needs Pro ($20/mo), Max, Team, Enterprise, or a pay-as-you-go Console account. The free plan doesn't include it. Pro is plenty to start.</div>
+  <div class="minicard"><b>💻 Any computer.</b> Mac or Windows both work.</div>
+</div>
+<hr class="rule">
+<h2>Step 1, make your Claude account <span class="gi" style="--gl:#0792C1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M8 12C8 18 12 22 12 22C12 22 16 18 16 12C16 6 12 2 12 2C12 2 8 6 8 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M21 15H3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21 9H3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Go to <a href="https://claude.ai" target="_blank">claude.ai</a>, create an account, and upgrade to <strong>Pro</strong> ($20/month). That's the plan that unlocks Claude Code and Claude Cowork. Worth every dollar, and no, nobody's paying me to say that.</p>
+<hr class="rule">
+<h2>Step 2, get a code editor <span class="gi" style="--gl:#9B7FA4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 2V5M7.5 2V5M12 2V5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 3.5H11C7.70017 3.5 6.05025 3.5 5.02513 4.52513C4 5.55025 4 7.20017 4 10.5V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V10.5C20 7.20017 20 5.55025 18.9749 4.52512C17.9497 3.5 16.2998 3.5 13 3.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 15H12M8 11H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>I use Google's <a href="https://antigravity.google" target="_blank">Antigravity</a> for my day-to-day work. <a href="https://code.visualstudio.com" target="_blank">VS Code</a> is another option. Choose one editor, then open a folder for the project you want Claude to work on. Your project files and <code>CLAUDE.md</code> will live there.</p>
+<hr class="rule">
+<span class="kicker">check the publisher</span>
+<h2>Step 3, install the official Claude extension <span class="gi" style="--gl:#689425" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.828 6.00096C12.9388 5.68791 12.999 5.35099 12.999 5C12.999 3.34315 11.6559 2 9.99904 2C8.34219 2 6.99904 3.34315 6.99904 5C6.99904 5.35099 7.05932 5.68791 7.17008 6.00096C4.88532 6.0093 3.66601 6.09039 2.87772 6.87868C2.08951 7.66689 2.00836 8.88603 2 11.1704C2.31251 11.06 2.64876 11 2.99904 11C4.6559 11 5.99904 12.3431 5.99904 14C5.99904 15.6569 4.6559 17 2.99904 17C2.64876 17 2.31251 16.94 2 16.8296C2.00836 19.114 2.08951 20.3331 2.87772 21.1213C3.66593 21.9095 4.88508 21.9907 7.16941 21.999C7.05908 21.6865 6.99904 21.3503 6.99904 21C6.99904 19.3431 8.34219 18 9.99904 18C11.6559 18 12.999 19.3431 12.999 21C12.999 21.3503 12.939 21.6865 12.8287 21.999C15.113 21.9907 16.3322 21.9095 17.1204 21.1213C17.9086 20.333 17.9897 19.1137 17.9981 16.829C18.3111 16.9397 18.648 17 18.999 17C20.6559 17 21.999 15.6569 21.999 14C21.999 12.3431 20.6559 11 18.999 11C18.648 11 18.3111 11.0603 17.9981 11.171C17.9897 8.88627 17.9086 7.66697 17.1204 6.87868C16.3321 6.09039 15.1128 6.0093 12.828 6.00096Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li>🧱 Open your editor and click the <strong>Extensions</strong> icon in the left sidebar</li>
+<li>🔎 Search <strong>Claude Code</strong></li>
+<li>✅ Install the official one, published by <strong>Anthropic</strong> (check the publisher name so you don't grab a copycat)</li>
+</ol>
+<p>Prefer the terminal? You can also install Claude Code directly with one command: <code>curl -fsSL https://claude.ai/install.sh | bash</code> (Mac/Linux) or <code>irm https://claude.ai/install.ps1 | iex</code> in Windows PowerShell. The extension gives you a visual workspace for conversations and file changes.</p>
+<hr class="rule">
+<h2>Step 4, log in and you're live <span class="gi" style="--gl:#DC5D78" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.21875 11.618L3.31189 11.2378C2.71644 11.1606 2.31883 10.5841 2.58348 10.0458C3.42523 8.33365 5.6195 6.35437 9.73988 6.68079M6.21875 11.618C7.27445 9.85426 8.57175 8.00435 9.73988 6.68079M6.21875 11.618L11.882 17.2812M9.73988 6.68079C13.4105 2.58986 17.1745 1.728 19.5937 2.06685C20.5508 2.2009 21.2991 2.94917 21.4332 3.90626C21.772 6.32551 20.9101 10.0895 16.8192 13.7601M11.882 17.2812L12.2622 20.1881C12.3394 20.7836 12.9159 21.1812 13.4542 20.9165C15.1664 20.0748 17.1456 17.8805 16.8192 13.7601M11.882 17.2812C13.6457 16.2255 15.4956 14.9282 16.8192 13.7601" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17.5 8C17.5 6.89543 16.6046 6 15.5 6C14.3954 6 13.5 6.89543 13.5 8C13.5 9.10457 14.3954 10 15.5 10C16.6046 10 17.5 9.10457 17.5 8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M4 22L8 18M4 17L5.5 15.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Open your project folder, click the <strong>Claude Code icon</strong> in your editor and sign in with your paid Claude account. In Antigravity, use the Claude Code extension for the steps below. Claude can now read the project files and help you build inside this folder.</p>
+<hr class="rule">
+<h2>Set up two work panels for multitasking <span class="gi" style="--gl:#3E91B9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.49609 9L20.4961 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M18.25 5.8125V6M18.5 6C18.5 6.13807 18.3881 6.25 18.25 6.25C18.1119 6.25 18 6.13807 18 6C18 5.86193 18.1119 5.75 18.25 5.75C18.3881 5.75 18.5 5.86193 18.5 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15.25 5.8125V6M15.5 6C15.5 6.13807 15.3881 6.25 15.25 6.25C15.1119 6.25 15 6.13807 15 6C15 5.86193 15.1119 5.75 15.25 5.75C15.3881 5.75 15.5 5.86193 15.5 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.25 5.8125V6M12.5 6C12.5 6.13807 12.3881 6.25 12.25 6.25C12.1119 6.25 12 6.13807 12 6C12 5.86193 12.1119 5.75 12.25 5.75C12.3881 5.75 12.5 5.86193 12.5 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 12C3 7.75736 3 5.63604 4.31802 4.31802C5.63604 3 7.75736 3 12 3C16.2426 3 18.364 3 19.682 4.31802C21 5.63604 21 7.75736 21 12C21 16.2426 21 18.364 19.682 19.682C18.364 21 16.2426 21 12 21C7.75736 21 5.63604 21 4.31802 19.682C3 18.364 3 16.2426 3 12Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Keep separate Claude conversations visible for independent tasks. One can research while the other drafts. Each conversation has its own context.</p>
+<ol class="steps">
+<li>Hold <strong>Command and Shift</strong>, then tap <strong>P</strong> on Mac. On Windows, hold <strong>Control and Shift</strong>, then tap <strong>P</strong>. A command search opens.</li>
+<li>Type <strong>Claude Code: Open in New Tab</strong> and press Enter. A Claude conversation opens as an editor tab.</li>
+<li>Run the same command again for a second conversation.</li>
+<li>Drag the second tab to the right-hand edge of the editor. When the split preview appears, drop it. The conversations now sit in separate work panels.</li>
+<li>Give each conversation a distinct task and the context it needs. Assign each file to one conversation at a time.</li>
+</ol>
+<div class="cardgrid"><div class="minicard"><b>Panel 1: research</b>Compare the options and save a recommendation.</div><div class="minicard"><b>Panel 2: draft</b>Turn an approved outline into a first draft in a separate file.</div></div>
+<p>If the tabs are cramped, widen the editor or use <strong>Claude Code: Open in New Window</strong>. Share your project instructions through <code>CLAUDE.md</code>, and give each conversation any extra context it needs.</p>
+<p>Setup references: <a href="https://code.claude.com/docs/en/vs-code#run-multiple-conversations" target="_blank">Anthropic's conversation guide</a> and <a href="https://code.visualstudio.com/docs/editing/getting-started/userinterface#_side-by-side-editing" target="_blank">VS Code's panel layout guide</a>.</p>
+
+<hr class="rule">
+<span class="kicker">the step that matters</span>
+<h2>The part most people miss: give it your context <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The install is not where the power is. A fresh Claude Code starts every project knowing nothing about you, so it makes generic choices and you re-explain yourself constantly. The fix is a single file.</p>
+<p>In your project folder, create a file called <code>CLAUDE.md</code> and write a few plain-English lines about who you are and how you work:</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 Save this as CLAUDE.md</span>
+<pre><code># About me and this project
+
+I run [your business / brand]. My audience is [who].
+Voice: [how you like things written].
+Rules: [e.g. no em dashes, always sentence case, use British spelling].
+Tools I use: [e.g. Netlify to deploy, my brand colours are #...].
+When in doubt, ask before making big changes.</code></pre>
+</div>
+<p>Claude Code automatically reads <code>CLAUDE.md</code> at the start of every session, so from then on it already knows your brand, your rules, and your preferences, no re-explaining. Think of it as a tiny employee handbook. It's the difference between a tool you fight with and one that feels like it already gets you.</p>
+<hr class="rule">
+<h2>The recap <span class="gi" style="--gl:#CD5174" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M14 2.20004C13.3538 2.06886 12.6849 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.3151 21.9311 10.6462 21.8 10" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0303 11.9625L16.5832 7.4096M19.7404 4.34462L19.1872 2.35748C19.0853 2.03011 18.6914 1.89965 18.4259 2.11662C16.9898 3.29018 15.4254 4.87091 16.703 7.36419C19.2771 8.56455 20.7466 6.94584 21.8733 5.5853C22.0975 5.3146 21.9623 4.90767 21.6247 4.81005L19.7404 4.34462Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li>Pro account at <a href="https://claude.ai" target="_blank">claude.ai</a></li>
+<li>An editor: Antigravity (the one I use) or VS Code</li>
+<li>The official Anthropic Claude extension</li>
+<li>Open the project folder and sign in</li>
+<li>Open separate conversations and arrange two work panels</li>
+<li>Add a <code>CLAUDE.md</code> so it knows your context</li>
+</ol>
+<hr class="rule">
+<span class="kicker">ship something small</span>
+<h2>3 things to build this week <span class="gi" style="--gl:#9281AD" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>The fastest way to actually learn this is to ship something small. Pick the one that matches where you're at:</p>
+<ul>
+<li>🌱 <strong>Beginner: a one-page site you actually put online.</strong> "Build me a simple one-page site about me with my links and a photo, then help me deploy it free." You'll do the whole loop (build, see it, publish) in an afternoon, and end with a real URL you can share. That first "it's live on the internet" moment is the one that hooks you.</li>
+<li>🌿 <strong>Intermediate: a script that kills a chore.</strong> Point Claude at a messy folder and say "write me a script that renames these photos by date" or "merge these CSVs and flag duplicates." You hand it the annoying task, it writes and runs the code, you keep the hours. This is where Claude Code stops being a toy and starts saving you time.</li>
+<li>🌳 <strong>Power user: a small app with a brain.</strong> "Build a little app that takes my saved links and sorts them by topic," or one that calls a free API (weather, currency, your own data). Add a CLAUDE.md so it knows your style, and you've built something with real logic, not just a page.</li>
+</ul>
+<div class="tip calm">Whatever you pick, if it breaks, paste the error straight back and say "fix this and explain what went wrong." That loop solves almost everything.</div>
+<hr class="rule">
+<span class="kicker">three gears</span>
+<h2>Level up: beginner → intermediate → power user <span class="gi" style="--gl:#957DBF" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.99963 5.00055L9.99963 5.00031" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.9996 5.00031L19.9996 5.00031" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.9996 9.00031L15.9996 15.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M9.99963 2.00031L9.99963 8.00031" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M11.9996 16.0003L11.9996 22.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.9996 12.0001L19.9996 12.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M3.99963 12.0005L12.9996 12.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M11.9996 19.0003L19.9996 19.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M3.99963 19.0005L8.99963 19.0003" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>🌱 <strong>Beginner, the mindset shifts that matter most:</strong></p>
+<ul>
+<li>🗣️ <strong>Describe outcomes, not code.</strong> "Make the button bigger and move it to the top" works. You never need the technical words.</li>
+<li>🔁 <strong>The error loop is your superpower.</strong> Copy the whole error, paste it back, ask it to explain. You'll fix things you don't understand yet, and understand them by the third time.</li>
+<li>🧑‍🏫 <strong>Ask it to teach as it goes.</strong> "Explain what you just did in plain terms" turns every build into a lesson.</li>
+</ul>
+<p>🌿 <strong>Intermediate, work cleaner and faster:</strong></p>
+<div class="cardgrid">
+  <div class="minicard"><b>🧹 Type <code>/clear</code> between different tasks.</b> A fresh context gives sharper answers and stops you paying to drag old conversation around. Make it a habit.</div>
+  <div class="minicard"><b>📸 Screenshot for design feedback.</b> Drag an image into the chat and say "match this" or "here's what's broken, fix it." Claude Code can look and compare.</div>
+  <div class="minicard"><b>💾 Commit checkpoints.</b> After anything works, "commit this as a checkpoint." Then you can let it try bold changes and undo in one step if they flop.</div>
+  <div class="minicard"><b>📋 Ask for a plan first on big jobs.</b> "Before you touch anything, tell me your plan in a paragraph." You catch wrong turns before they cost you.</div>
+</div>
+<p>🌳 <strong>Power user, where the real leverage is:</strong></p>
+<div class="cardgrid">
+  <div class="minicard"><b>🧩 Subagents.</b> Have Claude spin up specialist helpers (one researches, one builds, one reviews) so work runs in parallel and each stays focused. Ask it to "create a reviewer subagent that checks your work before it reaches me."</div>
+  <div class="minicard"><b>🔌 Connect your tools with MCP.</b> Plug in Notion, your files, Google Drive, and more (Customize, then Connectors) so Claude Code can act across your actual stack, not just its own folder.</div>
+  <div class="minicard"><b>⚡ Save repeat workflows as skills.</b> If you do the same kind of task twice, turn it into a reusable skill so it runs the same way every time, and share it with a team with one command.</div>
+  <div class="minicard"><b>🪝 Automate the boring guardrails with hooks.</b> Run a formatter or a check automatically every time Claude edits a file, so quality is enforced without you asking.</div>
+</div>
+<div class="tip calm">You don't need any of the power-user layer to start. Set it up, build one small thing this week, and let the rest come as you go.</div>
+<hr class="rule">
+<h2>The links <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>🤖 Claude: <a href="https://claude.ai" target="_blank">claude.ai</a> (Pro plan unlocks Claude Code)<br>
+📝 VS Code: <a href="https://code.visualstudio.com" target="_blank">code.visualstudio.com</a> · Antigravity: <a href="https://antigravity.google" target="_blank">antigravity.google</a><br>
+📚 The docs: <a href="https://code.claude.com/docs" target="_blank">code.claude.com/docs</a></p>
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

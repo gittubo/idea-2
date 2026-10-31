@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to stress-test a scary AI prediction with Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="The doom reels all share one shape: a scary number, then a chain of consequences where each link is treated as certain. This walks that chain back to its...">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/stress-test-scary-ai-predictions">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="How to stress-test a scary AI prediction with Claude">
+<meta property="og:description" content="The doom reels all share one shape: a scary number, then a chain of consequences where each link is treated as certain. This walks that chain back to its...">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/stress-test-scary-ai-predictions">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to stress-test a scary AI prediction with Claude">
+<meta name="twitter:description" content="The doom reels all share one shape: a scary number, then a chain of consequences where each link is treated as certain. This walks that chain back to its...">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"How to stress-test a scary AI prediction with Claude", u:"guides/stress-test-scary-ai-predictions.html", topic:"productivity", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Productivity &amp; thinking</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>How to stress-test a scary AI prediction with Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 The doom reels all share one shape: a scary number, then a chain of consequences where each link is treated as certain. This walks that chain back to its actual sources.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn"><strong>What this does, honestly.</strong> It does not tell you what will happen, and nothing can. What it does is separate the parts of a scary story that are measured from the parts that are one person's forecast, so you stop reacting to both with the same weight. That distinction is the whole game.</div>
+
+<span class="kicker">one setting first</span>
+<h2>Turn on web search <span class="gi" style="--gl:#987CBE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3175 7.14139L20.8239 6.28479C20.4506 5.63696 20.264 5.31305 19.9464 5.18388C19.6288 5.05472 19.2696 5.15664 18.5513 5.36048L17.3311 5.70418C16.8725 5.80994 16.3913 5.74994 15.9726 5.53479L15.6357 5.34042C15.2766 5.11043 15.0004 4.77133 14.8475 4.37274L14.5136 3.37536C14.294 2.71534 14.1842 2.38533 13.9228 2.19657C13.6615 2.00781 13.3143 2.00781 12.6199 2.00781H11.5051C10.8108 2.00781 10.4636 2.00781 10.2022 2.19657C9.94085 2.38533 9.83106 2.71534 9.61149 3.37536L9.27753 4.37274C9.12465 4.77133 8.84845 5.11043 8.48937 5.34042L8.15249 5.53479C7.73374 5.74994 7.25259 5.80994 6.79398 5.70418L5.57375 5.36048C4.85541 5.15664 4.49625 5.05472 4.17867 5.18388C3.86109 5.31305 3.67445 5.63696 3.30115 6.28479L2.80757 7.14139C2.45766 7.74864 2.2827 8.05227 2.31666 8.37549C2.35061 8.69871 2.58483 8.95918 3.05326 9.48012L4.0843 10.6328C4.3363 10.9518 4.51521 11.5078 4.51521 12.0077C4.51521 12.5078 4.33636 13.0636 4.08433 13.3827L3.05326 14.5354C2.58483 15.0564 2.35062 15.3168 2.31666 15.6401C2.2827 15.9633 2.45766 16.2669 2.80757 16.8741L3.30114 17.7307C3.67443 18.3785 3.86109 18.7025 4.17867 18.8316C4.49625 18.9608 4.85542 18.8589 5.57377 18.655L6.79394 18.3113C7.25263 18.2055 7.73387 18.2656 8.15267 18.4808L8.4895 18.6752C8.84851 18.9052 9.12464 19.2442 9.2775 19.6428L9.61149 20.6403C9.83106 21.3003 9.94085 21.6303 10.2022 21.8191C10.4636 22.0078 10.8108 22.0078 11.5051 22.0078H12.6199C13.3143 22.0078 13.6615 22.0078 13.9228 21.8191C14.1842 21.6303 14.294 21.3003 14.5136 20.6403L14.8476 19.6428C15.0004 19.2442 15.2765 18.9052 15.6356 18.6752L15.9724 18.4808C16.3912 18.2656 16.8724 18.2055 17.3311 18.3113L18.5513 18.655C19.2696 18.8589 19.6288 18.9608 19.9464 18.8316C20.264 18.7025 20.4506 18.3785 20.8239 17.7307L21.3175 16.8741C21.6674 16.2669 21.8423 15.9633 21.8084 15.6401C21.7744 15.3168 21.5402 15.0564 21.0718 14.5354L20.0407 13.3827C19.7887 13.0636 19.6098 12.5078 19.6098 12.0077C19.6098 11.5078 19.7888 10.9518 20.0407 10.6328L21.0718 9.48012C21.5402 8.95918 21.7744 8.69871 21.8084 8.37549C21.8423 8.05227 21.6674 7.74864 21.3175 7.14139Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.5195 12C15.5195 13.933 13.9525 15.5 12.0195 15.5C10.0865 15.5 8.51953 13.933 8.51953 12C8.51953 10.067 10.0865 8.5 12.0195 8.5C13.9525 8.5 15.5195 10.067 15.5195 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>Without live search, Claude answers from memory and can produce a source that sounds right and does not exist. With it on, every claim comes back with a link you can open yourself, which is the entire point of the exercise.</p>
+<ol class="steps">
+<li><strong class="st">🔎 Switch web search on.</strong> Open a new chat at <a href="https://claude.ai" target="_blank">claude.ai</a>, click the settings slider in the message box, and turn on <strong>Web search</strong>. Anthropic's walkthrough is <a href="https://support.claude.com/en/articles/10684626-enabling-and-using-web-search" target="_blank">here</a>. It is available on every plan, the free one included (<a href="https://claude.com/blog/web-search" target="_blank">Anthropic announcement</a>).</li>
+<li><strong class="st">🧠 Add Research if you have a paid plan.</strong> Research runs many searches and compiles a sourced answer instead of a single pass. Click the <strong>+</strong> button at the bottom left of the chat box and pick <strong>Research</strong>. It is on Pro, Max, Team and Enterprise (<a href="https://support.claude.com/en/articles/11088861-using-research-on-claude-ai" target="_blank">how Research works</a>). On the free plan, web search alone still runs this whole method.</li>
+<li><strong class="st">📄 Get the transcript.</strong> On Instagram or TikTok, open the caption and transcript, or screenshot the video and let Claude read the frames. Type it out if you have to. The stress test needs the claims in text.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">the method</span>
+<h2>The stress test, in 4 moves <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🗂️ Extract every claim.</strong> Doom videos work because the claims blur together into one feeling. Splitting them into separate numbered lines breaks the spell before you evaluate anything, because you can see how many of the lines are actually forecasts.</li>
+<li><strong class="st">🔗 Trace each one to its origin.</strong> Every number came from somewhere. Claude finds the earliest source, names who said it and when, and links it. This is where most scary stats quietly turn out to be a quote rather than a measurement.</li>
+<li><strong class="st">⚖️ Argue both sides properly.</strong> You ask for the strongest honest case for the prediction, then the strongest evidence-based case against it. One-sided framing is what makes a story feel inevitable, and this is the step that removes it.</li>
+<li><strong class="st">📋 Compress it into a brief.</strong> What actually holds up, what is speculation in a confident voice, and what you personally control in the next year. Two minutes to reread, instead of a night lost to a caption.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">copy this</span>
+<h2>The full stress-test prompt <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the one I run. Paste it into a new chat, then paste the transcript underneath when Claude asks for it.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 the stress test</span>
+<pre><code>You are my claim auditor. I am going to paste the transcript of a viral video that makes a scary prediction, and I want you to stress-test it rather than agree with it. Use web search for everything and give me a real, clickable link for every source you cite.
+
+Work in four labelled passes.
+
+PASS 1, EXTRACT. List every distinct factual claim in the transcript as its own numbered line, in the video's own wording, without softening it. Tag each line as one of three things: a measurable fact about the past or present, a forecast about the future, or a value judgement. Count how many of each you found and tell me the totals.
+
+PASS 2, TRACE. For each claim, find where it originally came from. Give me the earliest source you can locate, who said it, the date, and a direct link. Where the claim is a number, say clearly whether it comes from published data or from one person's estimate, because those carry very different weight. If a claim has no traceable source, write "no source found" rather than filling the gap with something plausible.
+
+PASS 3, BOTH SIDES. Write the strongest honest case FOR the prediction in one paragraph using the best real evidence that exists, with links. Then write the strongest evidence-based case AGAINST it in a second paragraph, with links, including any data that contradicts it directly. Finish by naming the single assumption the whole chain rests on, the one that collapses everything else if it is wrong.
+
+PASS 4, BRIEF. Give me a one-page summary in three sections: what is genuinely well supported, what is speculation delivered in the tone of fact, and what I actually control over the next 12 months given what survived. Keep the last section concrete and specific to my situation, not general life advice. Under 400 words.
+
+Ask me for the transcript now, and ask me one question about my situation so pass 4 is useful.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">or one at a time</span>
+<h2>Run it move by move <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Same method, split into four prompts. Use these when the video is long or when you want to read each pass before the next one runs. Keep them in the same chat so Claude holds the context.</p>
+<div class="promptwrap">
+<span class="promptlabel">1 · extract the claims</span>
+<pre><code>Here is the transcript of a video I saw. Pull out every distinct factual claim and list them as numbered lines using the video's own wording, without softening any of them. Then tag each line as a past or present fact, a forecast, or an opinion, and give me the totals for each tag. Do not evaluate whether they are true yet, I want a clean inventory of what is being asserted first.
+
+TRANSCRIPT:
+[paste the transcript here]</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">2 · trace them to a source</span>
+<pre><code>Now search the web and trace each claim on that list back to where it originally came from. For each one, give me the earliest source you can find, who said it, the date, and a direct link I can open. Where the claim is a number, tell me whether it comes from published data or from a single person's estimate or prediction, and say which explicitly. If a claim has no traceable source, write "no source found" instead of offering something that sounds close.</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">3 · both sides, properly</span>
+<pre><code>Argue the strongest honest case FOR this prediction in one paragraph, using the best real evidence that exists, with links. Then argue the strongest evidence-based case against it in a second paragraph, also with links, including any data that contradicts it. Finish by naming the one assumption the entire chain depends on, and tell me bluntly which side currently has the better evidence rather than staying neutral to be diplomatic.</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">4 · the one-page brief</span>
+<pre><code>Turn everything above into a one-page brief I can reread in two minutes. Section one: what is genuinely well supported, in plain sentences, with the source next to each point. Section two: what is speculation being delivered in the tone of fact. Section three: what I can actually control over the next 12 months given what held up, written as concrete moves for [describe your role and situation in one line], not generic advice. Keep the whole brief under 400 words.</code></pre>
+</div>
+<div class="tip calm">A chain of "and then this happens" is worth one extra question: <em>assign a rough probability to each step in the chain and multiply them out</em>. Five steps that each feel 70% likely land the full chain near 17%. Seeing that number does more for your nervous system than any reassurance.</div>
+
+<hr class="rule">
+<span class="kicker">watch it work</span>
+<h2>The doom reel, stress-tested <span class="gi" style="--gl:#669520" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16.2187 13.0044L15.9921 13.6151C15.5219 14.65 14.1115 15.7439 11.7609 14.3182C10.2471 13.4001 8.93663 12.6631 7.9997 13.16L7.21891 13.5412" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.5323 2V8.56602C14.5323 9.27829 14.5323 9.63442 14.6304 9.97222C14.7285 10.31 14.9197 10.612 15.3021 11.216L17.2861 14.35C19.4275 17.7326 20.4982 19.4238 19.7751 20.7119C19.0519 22 17.0317 22 12.9914 22H11.0086C6.96825 22 4.94807 22 4.22495 20.7119C3.50182 19.4238 4.57251 17.7326 6.71389 14.35L8.69792 11.216C9.08029 10.612 9.27148 10.31 9.36961 9.97222C9.46773 9.63442 9.46773 9.27829 9.46773 8.56602V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15.125 19H15M15.25 19C15.25 19.1381 15.1381 19.25 15 19.25C14.8619 19.25 14.75 19.1381 14.75 19C14.75 18.8619 14.8619 18.75 15 18.75C15.1381 18.75 15.25 18.8619 15.25 19Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.125 17H10M10.25 17C10.25 17.1381 10.1381 17.25 10 17.25C9.86193 17.25 9.75 17.1381 9.75 17C9.75 16.8619 9.86193 16.75 10 16.75C10.1381 16.75 10.25 16.8619 10.25 17Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The video that started this claimed half of white-collar jobs vanish in five years, then walked that into mortgage defaults, then a housing collapse three times the size of 2008, then money printing that eats federal tax revenue. Here is what the four passes turned up.</p>
+<p>🔗 <strong>The headline number is a quote, not a measurement.</strong> It traces to May 2025, when Anthropic CEO Dario Amodei told Axios that AI could wipe out half of all <em>entry-level</em> white-collar jobs within five years (<a href="https://www.forbes.com/sites/kolawolesamueladebayo/2026/02/21/dario-amodei-doubled-down-on-his-ai-jobs-warning-heres-whats-different-now/" target="_blank">Forbes recap of the original prediction</a>). Two things change the moment you see the source. It was about entry-level roles, not all white-collar work, and the reel dropped that qualifier. And it is a prediction from one leader, which is a different kind of thing from a statistic.</p>
+<p>⚖️ <strong>There is real evidence on the other side.</strong> The Budget Lab at Yale tracked occupational and industry mix after ChatGPT's release and found no discernible broad disruption to the labour market so far (<a href="https://budgetlab.yale.edu/research/evaluating-impact-ai-labor-market-current-state-affairs" target="_blank">Evaluating the impact of AI on the labor market</a>). Anthropic also publishes measured data on which tasks people actually bring to Claude, rather than forecasts (<a href="https://www.anthropic.com/economic-index" target="_blank">the Anthropic Economic Index</a>). Neither says nothing is happening. Both say the measured picture is slower and messier than the reel's version.</p>
+<p>🔎 <strong>The economics links each need their own check.</strong> "$14 trillion of mortgages" is exactly the kind of number worth opening for yourself. The primary source is the New York Fed's <a href="https://www.newyorkfed.org/microeconomics/hhdc" target="_blank">Household Debt and Credit Report</a>, published every quarter, where the mortgage balance sits on its own line. Reading it takes a minute and you will never again accept that figure from a caption.</p>
+<p>✅ <strong>What survived:</strong> entry-level hiring in some white-collar fields is genuinely worth watching, and senior leaders in AI companies do expect real displacement. <strong>What did not:</strong> the tidy chain, where every step triggers the next with certainty and no counter-force exists anywhere in the system.</p>
+
+<hr class="rule">
+<span class="kicker">the tells</span>
+<h2>4 signs you are reading a story, not a forecast <span class="gi" style="--gl:#D85A76" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7L4 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11.7576 3.90865C8.45236 2.22497 5.85125 3.21144 4.55426 4.2192C4.32048 4.40085 4.20358 4.49167 4.10179 4.69967C4 4.90767 4 5.10138 4 5.4888V14.7319C4.9697 13.6342 7.87879 11.9328 11.7576 13.9086C15.224 15.6744 18.1741 14.9424 19.5697 14.1795C19.7633 14.0737 19.8601 14.0207 19.9301 13.9028C20 13.7849 20 13.6569 20 13.4009V5.87389C20 5.04538 20 4.63113 19.8027 4.48106C19.6053 4.33099 19.1436 4.459 18.2202 4.71504C16.64 5.15319 14.3423 5.22532 11.7576 3.90865Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>A prediction dressed as a statistic</b> A number about the future, delivered in the grammar of a measured fact. "50% vanish" is a forecast wearing a data point's clothes.</div>
+<div class="minicard"><b>A chain with no probabilities</b> Each step presented as automatic. Real analysts attach odds to every link, because the odds are what make a chain fall apart.</div>
+<div class="minicard"><b>One source, a thousand posts</b> Trace it and hundreds of videos collapse back to a single quote or a single working paper. Volume of reposts is not corroboration.</div>
+<div class="minicard"><b>Nothing you could look up</b> A solid claim points at a report you can open. A storyish claim points at nothing, or at another video that also points at nothing.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">make it permanent</span>
+<h2>Save it so you never rewrite it <span class="gi" style="--gl:#BA7A10" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">📁 Put it in a Project.</strong> In the Claude sidebar, open <strong>Projects</strong>, create one called "claim audit", and paste the full stress-test prompt into the project instructions. Every chat you start inside it runs the method automatically, so you paste a transcript and nothing else.</li>
+<li><strong class="st">⚡ Or make it a skill.</strong> Ask Claude to write you a SKILL.md that packages the four passes, then in the app go to <strong>Customize</strong>, then <strong>Skills</strong>, then <strong>Add</strong>, then <strong>Upload a skill</strong>. Anthropic's steps are <a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills" target="_blank">here</a>. Skills work on every plan, Free included, and after that you type <code>/claim-audit</code> and paste.</li>
+<li><strong class="st">🌱 Run it on things you agree with too.</strong> This is the part people skip. A method you only point at claims you dislike is not a method, it is a preference. Run it on a prediction you want to be true and see how it holds.</li>
+</ol>
+<div class="tip">Claude is the fast first pass that tells you WHERE to look, not the final word. For anything you are about to repeat publicly, click through to the primary source and read it yourself. The links are the deliverable, not the summary.</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://www.forbes.com/sites/kolawolesamueladebayo/2026/02/21/dario-amodei-doubled-down-on-his-ai-jobs-warning-heres-whats-different-now/" target="_blank">Forbes, on Amodei's May 2025 Axios prediction and what changed since</a><br>
+  <a href="https://budgetlab.yale.edu/research/evaluating-impact-ai-labor-market-current-state-affairs" target="_blank">The Budget Lab at Yale, evaluating the impact of AI on the labor market</a><br>
+  <a href="https://www.anthropic.com/economic-index" target="_blank">The Anthropic Economic Index</a><br>
+  <a href="https://www.newyorkfed.org/microeconomics/hhdc" target="_blank">New York Fed, Household Debt and Credit Report</a><br>
+  <a href="https://claude.com/blog/web-search" target="_blank">Claude web search, available on all plans</a><br>
+  <a href="https://support.claude.com/en/articles/11088861-using-research-on-claude-ai" target="_blank">Using Research on Claude</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

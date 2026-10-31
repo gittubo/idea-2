@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a custom gift app with Claude · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Build a custom gift app with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/build-a-custom-gift-app-with-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Build a custom gift app with Claude">
+<meta property="og:description" content="Build a custom gift app with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/build-a-custom-gift-app-with-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build a custom gift app with Claude">
+<meta name="twitter:description" content="Build a custom gift app with Claude. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Build a custom gift app with Claude", u:"guides/build-a-custom-gift-app-with-claude.html", topic:"building", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Building with AI</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Build a custom gift app with Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented GIFT, so here is the exact prompt, plus the setup from zero and the build.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn">💡 <strong>The consent bit, and I do mean it.</strong> The reel that inspired this ends with someone installing an extension on their partner's <em>work</em> laptop. Please do not do that. Company devices are usually managed, often monitored, and installing unapproved software on one can genuinely put someone's job at risk. Build it, show them, and let them install it on their own machine. The surprise is the idea, not the sneaking.</div>
+
+<span class="kicker">what you are building</span>
+<h2>The gift, in four pieces <span class="gi" style="--gl:#AB8209" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 11V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 9C3 8.25231 3 7.87846 3.20096 7.6C3.33261 7.41758 3.52197 7.26609 3.75 7.16077C4.09808 7 4.56538 7 5.5 7H18.5C19.4346 7 19.9019 7 20.25 7.16077C20.478 7.26609 20.6674 7.41758 20.799 7.6C21 7.87846 21 8.25231 21 9C21 9.74769 21 10.1215 20.799 10.4C20.6674 10.5824 20.478 10.7339 20.25 10.8392C19.9019 11 19.4346 11 18.5 11H5.5C4.56538 11 4.09808 11 3.75 10.8392C3.52197 10.7339 3.33261 10.5824 3.20096 10.4C3 10.1215 3 9.74769 3 9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 3.78571C6 2.79949 6.79949 2 7.78571 2H8.14286C10.2731 2 12 3.7269 12 5.85714V7H9.21429C7.43908 7 6 5.56091 6 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 3.78571C18 2.79949 17.2005 2 16.2143 2H15.8571C13.7269 2 12 3.7269 12 5.85714V7H14.7857C16.5609 7 18 5.56091 18 3.78571Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 11L12 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The version from the reel is a VS Code extension that gently interrupts someone's coding until they do the silly thing you want them to do. Underneath, every gift app like this is the same four parts, which is why the prompt below works for a hundred other jokes too.</p>
+<div class="cardgrid">
+<div class="minicard"><b>⏱️ A timer</b> Something that fires on a schedule you choose. Fifteen minutes in the original, though five is funnier and thirty is kinder.</div>
+<div class="minicard"><b>🚧 An interruption</b> A message or panel that takes over their attention when the timer fires, so it cannot be ignored by accident.</div>
+<div class="minicard"><b>🔓 An unlock</b> The thing they have to do to make it go away. This is where the joke lives, and where your inside references go.</div>
+<div class="minicard"><b>💌 The personal layer</b> Their name, your names for each other, real photos, real dates, the specific phrasing only the two of you would find funny.</div>
+</div>
+<div class="tip">💡 <strong>One honest limit up front.</strong> An extension on their laptop cannot actually confirm that a person watched a reel, or read a message, or did anything at all inside another app. So the unlock is an honour system: it opens the link and shows a button that says something like "okay, I watched it". That is not a compromise, it is the joke. The whole thing is funnier when both people know it runs on trust.</div>
+
+<hr class="rule">
+<span class="kicker">pick your route</span>
+<h2>Two ways in, both real <span class="gi" style="--gl:#1094AE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>🖥️ Route A: the VS Code extension</b> The exact gift from the reel. Needs Claude Code, which needs a Claude Pro, Max, Team or Enterprise plan (<a href="https://code.claude.com/docs/en/setup" target="_blank">Anthropic's setup docs</a>). Best if the person you are gifting to writes code.</div>
+<div class="minicard"><b>🌱 Route B: the tiny web app</b> Works on any Claude plan, including Free, with no terminal and nothing to install. You get a single page you can send as a link or a file. Best for everyone who does not live in a code editor.</div>
+</div>
+<p>Route A is written out in full below. Route B is at the bottom, with its own complete prompt, and it is genuinely lovely, so do not treat it as the consolation prize.</p>
+
+<hr class="rule">
+<span class="kicker">route a, setup</span>
+<h2>Get the tools on your machine <span class="gi" style="--gl:#987CBE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3175 7.14139L20.8239 6.28479C20.4506 5.63696 20.264 5.31305 19.9464 5.18388C19.6288 5.05472 19.2696 5.15664 18.5513 5.36048L17.3311 5.70418C16.8725 5.80994 16.3913 5.74994 15.9726 5.53479L15.6357 5.34042C15.2766 5.11043 15.0004 4.77133 14.8475 4.37274L14.5136 3.37536C14.294 2.71534 14.1842 2.38533 13.9228 2.19657C13.6615 2.00781 13.3143 2.00781 12.6199 2.00781H11.5051C10.8108 2.00781 10.4636 2.00781 10.2022 2.19657C9.94085 2.38533 9.83106 2.71534 9.61149 3.37536L9.27753 4.37274C9.12465 4.77133 8.84845 5.11043 8.48937 5.34042L8.15249 5.53479C7.73374 5.74994 7.25259 5.80994 6.79398 5.70418L5.57375 5.36048C4.85541 5.15664 4.49625 5.05472 4.17867 5.18388C3.86109 5.31305 3.67445 5.63696 3.30115 6.28479L2.80757 7.14139C2.45766 7.74864 2.2827 8.05227 2.31666 8.37549C2.35061 8.69871 2.58483 8.95918 3.05326 9.48012L4.0843 10.6328C4.3363 10.9518 4.51521 11.5078 4.51521 12.0077C4.51521 12.5078 4.33636 13.0636 4.08433 13.3827L3.05326 14.5354C2.58483 15.0564 2.35062 15.3168 2.31666 15.6401C2.2827 15.9633 2.45766 16.2669 2.80757 16.8741L3.30114 17.7307C3.67443 18.3785 3.86109 18.7025 4.17867 18.8316C4.49625 18.9608 4.85542 18.8589 5.57377 18.655L6.79394 18.3113C7.25263 18.2055 7.73387 18.2656 8.15267 18.4808L8.4895 18.6752C8.84851 18.9052 9.12464 19.2442 9.2775 19.6428L9.61149 20.6403C9.83106 21.3003 9.94085 21.6303 10.2022 21.8191C10.4636 22.0078 10.8108 22.0078 11.5051 22.0078H12.6199C13.3143 22.0078 13.6615 22.0078 13.9228 21.8191C14.1842 21.6303 14.294 21.3003 14.5136 20.6403L14.8476 19.6428C15.0004 19.2442 15.2765 18.9052 15.6356 18.6752L15.9724 18.4808C16.3912 18.2656 16.8724 18.2055 17.3311 18.3113L18.5513 18.655C19.2696 18.8589 19.6288 18.9608 19.9464 18.8316C20.264 18.7025 20.4506 18.3785 20.8239 17.7307L21.3175 16.8741C21.6674 16.2669 21.8423 15.9633 21.8084 15.6401C21.7744 15.3168 21.5402 15.0564 21.0718 14.5354L20.0407 13.3827C19.7887 13.0636 19.6098 12.5078 19.6098 12.0077C19.6098 11.5078 19.7888 10.9518 20.0407 10.6328L21.0718 9.48012C21.5402 8.95918 21.7744 8.69871 21.8084 8.37549C21.8423 8.05227 21.6674 7.74864 21.3175 7.14139Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M15.5195 12C15.5195 13.933 13.9525 15.5 12.0195 15.5C10.0865 15.5 8.51953 13.933 8.51953 12C8.51953 10.067 10.0865 8.5 12.0195 8.5C13.9525 8.5 15.5195 10.067 15.5195 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>Twenty minutes, once, and then you have a setup that builds anything. Do these in order and do not skip the version check.</p>
+<ol class="steps">
+<li><strong class="st">📝 Install VS Code.</strong> Download it free from <a href="https://code.visualstudio.com/download" target="_blank">code.visualstudio.com/download</a> and open it once so it finishes setting itself up. This is the editor your extension will run inside, and it is also where you will watch it work.</li>
+<li><strong class="st">🟢 Install Node.js.</strong> Grab the LTS version from <a href="https://nodejs.org/en/download" target="_blank">nodejs.org/en/download</a>. VS Code extensions are built on Node, so this one is not optional for Route A. Confirm it landed by opening a terminal and running <code>node --version</code>.</li>
+<li><strong class="st">🤖 Install Claude Code.</strong> On macOS, Linux or WSL, run <code>curl -fsSL https://claude.ai/install.sh | bash</code> in your terminal. On Windows PowerShell, run <code>irm https://claude.ai/install.ps1 | iex</code>. Then check it with <code>claude --version</code>, which should print something like <code>2.1.211 (Claude Code)</code>.</li>
+<li><strong class="st">💳 Know the plan gate.</strong> Claude Code needs a Pro, Max, Team, Enterprise or Console account. The free Claude.ai plan does not include Claude Code access, which is stated plainly in <a href="https://code.claude.com/docs/en/setup" target="_blank">the setup docs</a>. If you are on Free, jump to Route B instead of paying for a one-off joke.</li>
+<li><strong class="st">📁 Make a folder and start Claude.</strong> Create an empty folder somewhere obvious, for example <code>gift-app</code> on your desktop. Open a terminal in that folder and type <code>claude</code>. You are now in an interactive session, sitting in the folder where your gift will be built.</li>
+<li><strong class="st">🖱️ Prefer buttons to terminals?</strong> The Claude Desktop app gives you the same thing with a graphical interface, downloadable from <a href="https://claude.ai/download" target="_blank">claude.ai/download</a>. Everything below works identically there.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">the exact prompt</span>
+<h2>Paste this, then answer its questions <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the one you commented for. It is deliberately long because the detail is what makes the result feel like a gift instead of a generic tutorial project. Fill in the brackets before you send it.</p>
+<div class="promptwrap">
+<span class="promptlabel">🎁 the master gift app prompt</span>
+<pre><code>Build me a VS Code extension as a personalised birthday gift for [name], who is a [their job, for example backend engineer] and works in VS Code most of the day.
+
+Here is the joke. Every [15] minutes while they have VS Code open, the extension interrupts them with a message that says [your line, for example "your girlfriend has sent you 3 reels and you are ignoring them"]. The interruption shows a button that opens [the link you want them to open], and a second button labelled [your unlock text, for example "fine, I watched it"]. Nothing unlocks until they press the second button, and then the timer resets and it leaves them alone until the next interval. Be clear in the code that we cannot verify they actually watched anything, so the unlock is an honour system button, and write the copy so that is obviously part of the joke.
+
+Make it feel personal rather than generic. Rotate through this list of messages so it never says the same thing twice in a row: [paste five to ten of your own lines, inside jokes, nicknames, references to specific things that happened]. Use [their nickname] in the copy, and add a small easter egg: on [their birthday date] the messages should change to a set of birthday-only lines, which are [paste two or three].
+
+Build it properly so it survives being installed on a real machine. Add a settings section so they can change the interval or turn it off entirely without editing code, because a gift they cannot escape is not a gift. Add a command in the command palette called "Gift: pause for today". Make sure it never blocks saving, running or debugging their actual work, and never touches their files.
+
+Then walk me through it as someone who has never built an extension before. Tell me what each file does in one line, exactly how to run it locally to test it, and exactly how to package it into an installable file I can hand over. Do not assume I know any of the tooling.</code></pre>
+</div>
+<div class="tip calm">🌱 <strong>Why the brackets matter more than the code.</strong> Claude can write the extension either way. The difference between a forgettable demo and something they screenshot and send to their group chat is entirely in the lines you put in that message list. Spend fifteen minutes on the jokes and five on the build.</div>
+
+<hr class="rule">
+<span class="kicker">try it before they do</span>
+<h2>Test it on your own laptop <span class="gi" style="--gl:#669520" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16.2187 13.0044L15.9921 13.6151C15.5219 14.65 14.1115 15.7439 11.7609 14.3182C10.2471 13.4001 8.93663 12.6631 7.9997 13.16L7.21891 13.5412" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.5323 2V8.56602C14.5323 9.27829 14.5323 9.63442 14.6304 9.97222C14.7285 10.31 14.9197 10.612 15.3021 11.216L17.2861 14.35C19.4275 17.7326 20.4982 19.4238 19.7751 20.7119C19.0519 22 17.0317 22 12.9914 22H11.0086C6.96825 22 4.94807 22 4.22495 20.7119C3.50182 19.4238 4.57251 17.7326 6.71389 14.35L8.69792 11.216C9.08029 10.612 9.27148 10.31 9.36961 9.97222C9.46773 9.63442 9.46773 9.27829 9.46773 8.56602V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15.125 19H15M15.25 19C15.25 19.1381 15.1381 19.25 15 19.25C14.8619 19.25 14.75 19.1381 14.75 19C14.75 18.8619 14.8619 18.75 15 18.75C15.1381 18.75 15.25 18.8619 15.25 19Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.125 17H10M10.25 17C10.25 17.1381 10.1381 17.25 10 17.25C9.86193 17.25 9.75 17.1381 9.75 17C9.75 16.8619 9.86193 16.75 10 16.75C10.1381 16.75 10.25 16.8619 10.25 17Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Never hand over something you have not watched run. VS Code has a built-in way to test an extension without installing it anywhere permanent.</p>
+<ol class="steps">
+<li><strong class="st">📂 Open the folder in VS Code.</strong> File, then Open Folder, then pick the <code>gift-app</code> folder Claude just filled with files. You should see a <code>package.json</code> and an extension source file.</li>
+<li><strong class="st">▶️ Press F5.</strong> This launches a second VS Code window called the Extension Development Host, with your extension already loaded into it. Microsoft's <a href="https://code.visualstudio.com/api/get-started/your-first-extension" target="_blank">Your First Extension</a> walkthrough covers this same flow if you want the official version.</li>
+<li><strong class="st">⏲️ Shorten the timer while testing.</strong> Tell Claude "set the interval to 10 seconds so I can test it", watch it fire a few times, check the buttons work, then tell it to put the interval back. Waiting fifteen real minutes to find a typo is a bad evening.</li>
+<li><strong class="st">🐛 Feed errors straight back.</strong> If something breaks, copy the red text from the Debug Console and paste it into Claude with "this is the error, fix it and tell me what caused it". This loop is the actual skill. The first build is rarely the working one, and that is completely normal.</li>
+<li><strong class="st">😅 Live with it for an hour.</strong> Leave it running while you do your own work at the real interval. You will discover fast whether your joke is charming or genuinely annoying, and it is much better that you find that out than them.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">make it giftable</span>
+<h2>Package it into one installable file <span class="gi" style="--gl:#B9794D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C11.1818 22 10.4002 21.6698 8.83693 21.0095C4.94564 19.3657 3 18.5438 3 17.1613C3 16.7742 3 10.0645 3 7M12 22C12.8182 22 13.5998 21.6698 15.1631 21.0095C19.0544 19.3657 21 18.5438 21 17.1613V7M12 22L12 11.3548" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.32592 9.69138L5.40472 8.27785C3.80157 7.5021 3 7.11423 3 6.5C3 5.88577 3.80157 5.4979 5.40472 4.72215L8.32592 3.30862C10.1288 2.43621 11.0303 2 12 2C12.9697 2 13.8712 2.4362 15.6741 3.30862L18.5953 4.72215C20.1984 5.4979 21 5.88577 21 6.5C21 7.11423 20.1984 7.5021 18.5953 8.27785L15.6741 9.69138C13.8712 10.5638 12.9697 11 12 11C11.0303 11 10.1288 10.5638 8.32592 9.69138Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 12L8 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 4L7 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>An extension folder is not a gift. A single file they double-click is. Ask Claude to do this part for you.</p>
+<div class="promptwrap">
+<span class="promptlabel">📦 package it for handover</span>
+<pre><code>Package this extension into a single installable .vsix file I can send to someone, and walk me through it step by step.
+
+Before packaging, check the package.json has everything the packager needs: a sensible name, a display name, a version, a description written for a human rather than a developer, a publisher field, and a license field so the tool does not stop and complain. Fix anything missing and tell me what you changed.
+
+Then give me the exact command to run in this folder to produce the .vsix, tell me what the resulting file will be called, and give me the two ways the person receiving it can install it: the click path inside VS Code, and the one-line terminal command. Finish with a short plain-language note I can send alongside the file explaining what it does, that it can be turned off in settings, and how to uninstall it in two clicks if they have had enough.</code></pre>
+</div>
+<p>For reference, these are the commands that prompt is heading towards, straight from Microsoft's <a href="https://code.visualstudio.com/api/working-with-extensions/publishing-extension" target="_blank">publishing docs</a>. Run the first in your extension folder, and give the second to whoever is installing it.</p>
+<ol class="steps">
+<li><strong class="st">🏗️ Build the file.</strong> <code>npx @vscode/vsce package</code> creates a <code>.vsix</code> file in your extension folder, named something like <code>gift-app-0.0.1.vsix</code>. Using <code>npx</code> means you do not have to install the packaging tool globally first.</li>
+<li><strong class="st">🖱️ Install it by clicking.</strong> In VS Code, open the Extensions view, click <strong>Views and More Actions</strong>, then <strong>Install from VSIX</strong>, and choose the file. This is the path to put in your note, because most people prefer buttons.</li>
+<li><strong class="st">⌨️ Or install it by command.</strong> <code>code --install-extension gift-app-0.0.1.vsix</code> does the same thing in one line. Reload the window afterwards and it is live.</li>
+<li><strong class="st">🎀 Hand it over properly.</strong> Send the file with the note Claude wrote, on their own device, with them watching. That is the moment the gift actually lands.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">route b</span>
+<h2>No Claude Code? Build the web version <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This route works on every Claude plan including Free, needs nothing installed, and produces a single page you can send as a link or as a file they open in any browser. For a lot of people it is the better gift, because they can actually open it.</p>
+<div class="promptwrap">
+<span class="promptlabel">🌱 the one-page gift app prompt</span>
+<pre><code>Build me a single self-contained HTML page as a personalised birthday gift for [name]. Everything must be in one file, with the CSS and JavaScript inline and no external libraries or fonts, so it works offline when they open it from their downloads folder.
+
+Here is the idea. [Describe the joke or the sentiment in three or four sentences, for example: a page that shows a countdown to our next trip, and every time they click the plane it reveals one of my favourite memories from a list, with the last one unlocking a hidden note.] Use their name throughout, and use these lines as the content: [paste your list of memories, jokes, reasons, dates, whatever the gift is made of].
+
+Design it warmly rather than corporately. Cream background, one accent colour, generous spacing, a friendly rounded font stack, gentle animation on reveal, and it must look right on a phone screen because that is where they will open it. Save their progress in local storage so closing the tab does not wipe what they have already unlocked.
+
+Then tell me two things: how to save this as a file I can send them, and the simplest free way to put it on a real link if I would rather text them a URL than a file.</code></pre>
+</div>
+<div class="tip">💡 Ask Claude to build it as an artifact so you can see it live in the chat, click through it, and say "make the reveal slower" or "the pink is too much" until it is right. Then download the file. Iterating on something you can see beats describing changes to something you cannot.</div>
+
+<hr class="rule">
+<span class="kicker">steal these</span>
+<h2>Six gift apps that are not the reel one <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Same prompts, different joke. Swap the idea paragraph and everything else holds.</p>
+<div class="cardgrid">
+<div class="minicard"><b>📅 The countdown</b> A page counting down to your next trip, with a new photo and memory unlocking every day until you go.</div>
+<div class="minicard"><b>🎰 The decision wheel</b> A spinner loaded with the twelve restaurants you actually argue about, so the "where do you want to eat" loop finally ends.</div>
+<div class="minicard"><b>📔 The reasons jar</b> One hundred reasons written by you, one revealed per day, saved so they cannot binge the whole thing on day one.</div>
+<div class="minicard"><b>🧠 The quiz</b> A how-well-do-you-know-me quiz with your real answers, a score at the end, and a custom roast for every score band.</div>
+<div class="minicard"><b>🌱 The habit nudge</b> A gentle desktop reminder for the thing they keep saying they want to do, with encouragement written in your voice rather than an app's.</div>
+<div class="minicard"><b>💌 The time capsule</b> A page with letters that unlock on specific future dates, so the gift keeps arriving for a year after the birthday.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">be realistic</span>
+<h2>What it genuinely cannot do <span class="gi" style="--gl:#DE5E6A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6.00081 17.9992M17.9992 18L6 6.00085" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>👀 It cannot watch other apps</b> No extension can confirm a reel was watched, a message was read, or a task was done elsewhere. Honour-system buttons only, and make that part of the joke.</div>
+<div class="minicard"><b>🔒 It cannot go on a managed device</b> Work laptops often block unsigned extensions outright, and where they do not, installing one can breach company policy. Personal machines only.</div>
+<div class="minicard"><b>🏪 It is not marketplace ready</b> A <code>.vsix</code> you hand over privately is fine. Publishing publicly needs a publisher account and review, which is a whole other project.</div>
+<div class="minicard"><b>🤖 The first build is a draft</b> Expect two or three rounds of "that broke, here is the error". Budget an evening, not ten minutes, and the loop itself is the thing worth learning.</div>
+</div>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://code.claude.com/docs/en/setup" target="_blank">Claude Code setup, install commands and plan requirements</a><br>
+  <a href="https://code.claude.com/docs/en/quickstart" target="_blank">Claude Code quickstart</a><br>
+  <a href="https://code.visualstudio.com/api/get-started/your-first-extension" target="_blank">VS Code: your first extension</a><br>
+  <a href="https://code.visualstudio.com/api/working-with-extensions/publishing-extension" target="_blank">VS Code: packaging and installing a .vsix</a><br>
+  <a href="https://code.visualstudio.com/api/references/vscode-api" target="_blank">The VS Code extension API reference</a><br>
+  <a href="https://nodejs.org/en/download" target="_blank">Node.js downloads</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

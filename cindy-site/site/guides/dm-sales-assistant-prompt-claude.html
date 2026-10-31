@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Make Claude write your DM sales-assistant prompt · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Make Claude write your DM sales-assistant prompt. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/dm-sales-assistant-prompt-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Make Claude write your DM sales-assistant prompt">
+<meta property="og:description" content="Make Claude write your DM sales-assistant prompt. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/dm-sales-assistant-prompt-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Make Claude write your DM sales-assistant prompt">
+<meta name="twitter:description" content="Make Claude write your DM sales-assistant prompt. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Make Claude write your DM sales-assistant prompt", u:"guides/dm-sales-assistant-prompt-claude.html", topic:"marketing", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Marketing with AI</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Make Claude write your DM sales-assistant prompt</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented closer, so here is the part every "connect AI to your DMs" tutorial skips. The thing that decides whether a lead buys is the system prompt.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn"><strong>Read this before you build anything.</strong> An assistant in your DMs is answering real people on your behalf, so this guide builds it the safe way: it replies only to people who message you first, it says out loud that it is an assistant, it hands off to you the moment a conversation gets sensitive, and for the first two weeks it drafts replies for you to approve instead of sending on its own. Every rule below is baked into the prompts. Do not strip them out to make it faster.</div>
+
+<hr class="rule">
+<span class="kicker">why this is the whole job</span>
+<h2>The brain versus the wiring <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Connecting a DM tool to Claude is plumbing. You paste an API key, you add a step to a flow, you turn it on. Anyone can do that in an afternoon, which is why every tutorial stops there.</p>
+<p>What you are actually shipping is a system prompt: the standing instructions your assistant reads before every single reply. It holds your offer, your price, what you refuse to promise, the questions that separate a real lead from a browser, and the exact moment it should stop talking and tag you in. Most DM bots sound like a broken robot because that document is three sad sentences long. A good one runs to a page and reads like an onboarding doc for a new sales hire, because that is exactly what it is.</p>
+<div class="tip calm">Good news: a page-long system prompt is boring to write and Claude is very good at boring structured writing. You supply the facts about your business, Claude supplies the structure, the tone rules and the guardrails you would have forgotten.</div>
+
+<hr class="rule">
+<span class="kicker">start here</span>
+<h2>Build it from zero <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🗒️ Write your offer facts down first.</strong> Before you open anything, get five things on paper: what you sell, the real price, who it is genuinely for, who it is not for, and the one action you want a qualified person to take next. Vague inputs are the number one reason these assistants sound generic.</li>
+<li><strong class="st">💬 Open Claude and run the writer prompt.</strong> Go to <a href="https://claude.com/pricing" target="_blank">Claude</a> (the free plan handles this fine) and paste the writer prompt below. It interviews you first, then writes the full system prompt.</li>
+<li><strong class="st">🔍 Read every line of what it produces.</strong> You are checking three things: are the facts right, are the promises ones you can keep, and does the escalation rule fire early enough. Fix the facts yourself, do not ask Claude to guess them.</li>
+<li><strong class="st">🧪 Stress test it before it touches a real person.</strong> Run the red-team prompt further down. It throws fifteen hard DMs at your assistant so you find the embarrassing answers in a chat window instead of in someone's inbox.</li>
+<li><strong class="st">🔌 Wire it into your DM tool.</strong> Paste the finished prompt into the assistant field of whatever tool handles your DMs. The wiring section below covers the ManyChat route, which is the one most creators use.</li>
+<li><strong class="st">👀 Run it in review mode for two weeks.</strong> Have it draft, you approve. You will edit roughly the first thirty replies, and every edit is a line you add back into the system prompt. After that it earns the right to send on its own.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">copy this</span>
+<h2>Prompt 1: the one that writes your assistant <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the prompt from the reel. Paste it into a new Claude chat and answer its questions properly.</p>
+<div class="promptwrap">
+<span class="promptlabel">✍️ write my DM assistant prompt</span>
+<pre><code>I want you to write the complete system prompt for an AI assistant that replies to inbound Instagram DMs about my offer. Before you write anything, interview me: ask me what I sell, the exact price and what is included, who it is genuinely right for, who it is wrong for, the three objections I hear most often, the single next step I want a qualified person to take, and three examples of how I actually talk so you can match my tone.
+
+Then write the system prompt as a structured document with these sections: role and identity, the facts about the offer, the qualifying questions to work through conversationally, how to handle each objection honestly, tone rules, hard guardrails, and an escalation rule. It must open by identifying itself as an assistant for my account rather than pretending to be me, it must never invent a price, a discount, a result or a guarantee that is not in the facts section, it must never claim a specific income outcome, and it must reply only to people who have messaged me first.
+
+The escalation rule matters most: write it so the assistant stops and tags me in whenever someone asks something not covered by the facts, sounds distressed or vulnerable, mentions money they cannot afford, asks for a refund or a legal or medical opinion, or asks the same question twice. When it escalates it should say plainly that it is passing the conversation to a human and roughly when I will reply.
+
+Keep every message it writes under sixty words, one question at a time, no stacked questions, no hype language, no emoji spam. Finish by giving me a short checklist of the facts I need to keep updated in this prompt whenever my offer changes.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">steal this shape</span>
+<h2>What a finished one looks like <span class="gi" style="--gl:#9380A9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7L16 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 11L12 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 21.5V21C13 18.1716 13 16.7574 13.8787 15.8787C14.7574 15 16.1716 15 19 15H19.5M20 13.3431V10C20 6.22876 20 4.34315 18.8284 3.17157C17.6569 2 15.7712 2 12 2C8.22877 2 6.34315 2 5.17157 3.17157C4 4.34314 4 6.22876 4 10L4 14.5442C4 17.7892 4 19.4117 4.88607 20.5107C5.06508 20.7327 5.26731 20.9349 5.48933 21.1139C6.58831 22 8.21082 22 11.4558 22C12.1614 22 12.5141 22 12.8372 21.886C12.9044 21.8623 12.9702 21.835 13.0345 21.8043C13.3436 21.6564 13.593 21.407 14.0919 20.9081L18.8284 16.1716C19.4065 15.5935 19.6955 15.3045 19.8478 14.9369C20 14.5694 20 14.1606 20 13.3431Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Claude writes yours from your answers, but here is a complete example so you know what you are aiming for. This is the structure that makes the difference, so swap the details and keep the bones.</p>
+<div class="promptwrap">
+<span class="promptlabel">📄 example system prompt</span>
+<pre><code>ROLE
+You are the assistant for @examplestudio on Instagram. You reply to people who have messaged this account first. In your first message, say you are the studio's assistant and that a human reads every conversation. Never claim to be the owner and never use her name as a signature.
+
+THE FACTS (only these are true, never add to them)
+- Offer: a 6-week 1:1 brand design programme.
+- Price: 2,400 AUD, payable in full or in three monthly instalments of 850 AUD.
+- Included: weekly 60-minute calls, a full logo and brand kit, two rounds of revisions, and a Notion handover doc.
+- Right for: service businesses with an existing website that are rebranding.
+- Not right for: pre-launch businesses with no offer yet, and anyone needing it delivered in under 4 weeks.
+- Next step: a 20-minute fit call booked through the link in bio.
+
+QUALIFYING (conversational, one question at a time, never a form)
+1. What does your business do right now, and who buys from you?
+2. What is making you look at rebranding this month specifically?
+3. Do you have a timeline you are working to?
+4. Is a 2,400 AUD investment workable for you right now?
+If the answers show a good fit, invite them to the fit call. If they are pre-launch or need it in under 4 weeks, say so honestly and point them to the free brand checklist instead of pushing the programme.
+
+OBJECTIONS (answer honestly, never pressure)
+- "That is more than I expected." Acknowledge it, restate exactly what is included, mention the three-instalment option once, and stop. Do not offer a discount, there is no discount.
+- "Can you guarantee more sales?" No. Say clearly that branding is not a sales guarantee, describe what the programme does deliver, and offer two past examples if asked.
+- "I need to think about it." Agree that it is worth thinking about, ask if there is a specific unknown you can answer, and offer to send the programme outline. Do not follow up more than once.
+
+TONE
+Warm, plain, specific. Under 60 words per message. One question at a time. No hype, no fake urgency, no stacked emoji. Match their formality. Australian English.
+
+GUARDRAILS
+Never invent a price, discount, timeline, result or guarantee. Never give legal, medical, financial or visa advice. Never comment on a person's appearance, body or personal circumstances. Never ask for payment details in DMs. If you are unsure of a fact, say you will check with a human rather than guessing.
+
+ESCALATION (do this early rather than late)
+Stop and tag the owner in when: the question is not covered above, the person sounds distressed or vulnerable, they mention money stress, they ask about refunds, contracts or legal terms, they are asking on behalf of a brand or agency, or they repeat a question you already answered. When you escalate, say: "That one is better answered by a person, so I am passing this to the team now and someone will reply here." Then stop replying in that thread.</code></pre>
+</div>
+<div class="tip">Notice what makes it work: every claim traces back to a facts list, the objection answers include a real "no", and the escalation rule fires early. Those three things are what separate an assistant people trust from a bot people screenshot.</div>
+
+<hr class="rule">
+<span class="kicker">the six parts</span>
+<h2>What every good one contains <span class="gi" style="--gl:#689425" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.828 6.00096C12.9388 5.68791 12.999 5.35099 12.999 5C12.999 3.34315 11.6559 2 9.99904 2C8.34219 2 6.99904 3.34315 6.99904 5C6.99904 5.35099 7.05932 5.68791 7.17008 6.00096C4.88532 6.0093 3.66601 6.09039 2.87772 6.87868C2.08951 7.66689 2.00836 8.88603 2 11.1704C2.31251 11.06 2.64876 11 2.99904 11C4.6559 11 5.99904 12.3431 5.99904 14C5.99904 15.6569 4.6559 17 2.99904 17C2.64876 17 2.31251 16.94 2 16.8296C2.00836 19.114 2.08951 20.3331 2.87772 21.1213C3.66593 21.9095 4.88508 21.9907 7.16941 21.999C7.05908 21.6865 6.99904 21.3503 6.99904 21C6.99904 19.3431 8.34219 18 9.99904 18C11.6559 18 12.999 19.3431 12.999 21C12.999 21.3503 12.939 21.6865 12.8287 21.999C15.113 21.9907 16.3322 21.9095 17.1204 21.1213C17.9086 20.333 17.9897 19.1137 17.9981 16.829C18.3111 16.9397 18.648 17 18.999 17C20.6559 17 21.999 15.6569 21.999 14C21.999 12.3431 20.6559 11 18.999 11C18.648 11 18.3111 11.0603 17.9981 11.171C17.9897 8.88627 17.9086 7.66697 17.1204 6.87868C16.3321 6.09039 15.1128 6.0093 12.828 6.00096Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Identity</b> Who it is, whose account it speaks for, and an upfront line saying it is an assistant. Never a fake human name.</div>
+<div class="minicard"><b>A closed facts list</b> Price, inclusions, timeline, fit. The rule "only these are true" is what stops invented discounts.</div>
+<div class="minicard"><b>Qualifying questions</b> Three or four, asked one at a time, in an order that ends with the budget question rather than opening on it.</div>
+<div class="minicard"><b>Honest objection answers</b> Including the ones where the honest answer is no. A bot that cannot say no reads as a bot immediately.</div>
+<div class="minicard"><b>Guardrails</b> The topics it refuses: legal, medical, financial advice, payment details, anything personal about the sender.</div>
+<div class="minicard"><b>An escalation trigger</b> The named list of moments it hands over to you, plus the exact sentence it uses when it does.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">before it goes live</span>
+<h2>Prompt 2: stress test it <span class="gi" style="--gl:#669520" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16.2187 13.0044L15.9921 13.6151C15.5219 14.65 14.1115 15.7439 11.7609 14.3182C10.2471 13.4001 8.93663 12.6631 7.9997 13.16L7.21891 13.5412" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.5323 2V8.56602C14.5323 9.27829 14.5323 9.63442 14.6304 9.97222C14.7285 10.31 14.9197 10.612 15.3021 11.216L17.2861 14.35C19.4275 17.7326 20.4982 19.4238 19.7751 20.7119C19.0519 22 17.0317 22 12.9914 22H11.0086C6.96825 22 4.94807 22 4.22495 20.7119C3.50182 19.4238 4.57251 17.7326 6.71389 14.35L8.69792 11.216C9.08029 10.612 9.27148 10.31 9.36961 9.97222C9.46773 9.63442 9.46773 9.27829 9.46773 8.56602V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15.125 19H15M15.25 19C15.25 19.1381 15.1381 19.25 15 19.25C14.8619 19.25 14.75 19.1381 14.75 19C14.75 18.8619 14.8619 18.75 15 18.75C15.1381 18.75 15.25 18.8619 15.25 19Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.125 17H10M10.25 17C10.25 17.1381 10.1381 17.25 10 17.25C9.86193 17.25 9.75 17.1381 9.75 17C9.75 16.8619 9.86193 16.75 10 16.75C10.1381 16.75 10.25 16.8619 10.25 17Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Paste your finished system prompt into a fresh Claude chat, then paste this underneath it.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧪 red-team my assistant</span>
+<pre><code>Above is the system prompt for an assistant that replies to inbound Instagram DMs for my business. Your job is to break it, not to praise it.
+
+Write fifteen realistic DMs designed to make it fail, and for each one show the reply my prompt would produce and then rate it pass or fail with one line on why. Include at least: someone pushing hard for a discount, someone asking for a guaranteed result, someone who cannot afford it and is clearly stressed about money, someone asking a question my facts section does not cover, someone asking for legal or tax advice, someone trying to get it to say it is a real human, someone sending a long rambling message with three questions at once, someone being rude, someone asking about a competitor, and someone asking it to hold a spot without paying.
+
+Then give me a specific rewrite for every failure: quote the exact line to add or change in the system prompt, not general advice. Finish with the three biggest remaining risks in this prompt and what a person could still get out of it that I would not want said in my name.</code></pre>
+</div>
+<div class="tip calm">Do this before every launch, not once. Whenever your price, offer or timeline changes, the facts section changes, and a stale facts section is how an assistant confidently quotes last year's price.</div>
+
+<hr class="rule">
+<span class="kicker">the plumbing</span>
+<h2>Wire it into your DMs <span class="gi" style="--gl:#4C395C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 2V6M8.5 6V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.00446 7.61331C5.93719 6.74273 6.63957 6 7.53014 6H16.4699C17.3604 6 18.0628 6.74273 17.9955 7.61331L17.8117 9.99197C17.6796 11.7019 17.1011 13.3498 16.132 14.7773L15.5312 15.6622C14.9638 16.4979 14.0077 17 12.9838 17H11.0162C9.99228 17 9.03617 16.4979 8.46881 15.6622L7.86803 14.7773C6.89885 13.3498 6.32041 11.7019 6.18827 9.99197L6.00446 7.61331Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 9H13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>ManyChat is the tool most creators use for this, and it has a native Claude integration, so you do not need a middleware layer. Here is the honest version of the setup, including what it costs.</p>
+<ol class="steps">
+<li><strong class="st">🔑 Create an Anthropic API key.</strong> This is separate from your Claude chat subscription. Sign in at the <a href="https://console.anthropic.com/settings/keys" target="_blank">Anthropic Console API keys page</a>, create a key, and copy it somewhere safe because you cannot view it again after you close the dialog. Getting-started detail is in the <a href="https://platform.claude.com/docs/en/api/getting-started" target="_blank">API docs</a>.</li>
+<li><strong class="st">💳 Understand the two bills.</strong> The API is pay as you go and billed per token, priced per model on the <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank">Anthropic pricing page</a>, and your DM tool has its own subscription on top. A long system prompt is re-read on every reply, so a wordy prompt costs more per conversation than a tight one.</li>
+<li><strong class="st">🔗 Connect the key in ManyChat.</strong> In ManyChat, open Settings, then Integrations, find the Claude integration, paste your API key and connect. ManyChat documents this in its own Claude integration help article, and integration screens move around, so if the layout differs from this, trust what is on your screen over any tutorial including mine.</li>
+<li><strong class="st">🧵 Build the flow.</strong> Create a new automation with your trigger, which should be an inbound DM or a comment on a post, never an outbound list. Add the Claude action step, pick your model, and paste your system prompt into the instructions field. Keep the reply length limit you wrote into the prompt.</li>
+<li><strong class="st">🙋 Add the human handoff.</strong> Add a branch that ends the automation and notifies you whenever the assistant escalates or the person types something like "human", "person" or "speak to someone". If your tool cannot do this, do not run the assistant unattended.</li>
+<li><strong class="st">🚦 Turn it on for one entry point first.</strong> One keyword, one post, one week. Read every conversation. Then widen it.</li>
+</ol>
+<div class="tip">Cheaper starter version with no API key at all: run the same system prompt inside a normal Claude Project, paste in real DMs each morning, and reply yourself with the drafts it writes. You get most of the value, you keep full control, and you find out whether the prompt is any good before you pay for anything.</div>
+
+<hr class="rule">
+<span class="kicker">stay out of trouble</span>
+<h2>The rules that protect your account <span class="gi" style="--gl:#B97C11" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9248 21H10.0752C5.44476 21 3.12955 21 2.27636 19.4939C1.42317 17.9879 2.60736 15.9914 4.97574 11.9985L6.90057 8.75333C9.17559 4.91778 10.3131 3 12 3C13.6869 3 14.8244 4.91777 17.0994 8.75332L19.0243 11.9985C21.3926 15.9914 22.5768 17.9879 21.7236 19.4939C20.8704 21 18.5552 21 13.9248 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 9V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip warn">Automating replies to people who contacted you is normal. Automating outbound messages to people who did not is how accounts get restricted. Meta's <a href="https://transparency.meta.com/policies/community-standards/spam/" target="_blank">spam policy</a> covers bulk and unsolicited contact, and Instagram publishes its own <a href="https://help.instagram.com/2896033757708728" target="_blank">community guidelines</a>. Keep the trigger inbound-only, forever.</div>
+<ul>
+<li><strong>Disclose it.</strong> The first message says it is an assistant. Letting someone believe they are talking to you personally when they are not is the fastest way to lose trust, and it is the one thing people never forgive.</li>
+<li><strong>Never harvest DMs into a mailing list.</strong> If you want their email, ask for it explicitly and say what you will send. In Australia that consent requirement is spelled out by the <a href="https://www.acma.gov.au/avoid-sending-spam" target="_blank">ACMA spam rules</a>, and most countries have an equivalent.</li>
+<li><strong>Keep a person in the loop.</strong> Read the transcripts daily at first, weekly after that. An assistant nobody reads drifts, and you find out from a screenshot.</li>
+<li><strong>No pressure tactics.</strong> No invented deadlines, no fake spot counts, no "only two left" unless it is literally true. Your prompt should ban these explicitly.</li>
+<li><strong>Do not take payment details in DMs.</strong> Always send people to your real checkout link. This one is in the guardrails for a reason.</li>
+</ul>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://console.anthropic.com/settings/keys" target="_blank">Anthropic Console, API keys</a><br>
+  <a href="https://platform.claude.com/docs/en/api/getting-started" target="_blank">Anthropic API, getting started</a><br>
+  <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank">Claude model pricing (per token)</a><br>
+  <a href="https://transparency.meta.com/policies/community-standards/spam/" target="_blank">Meta community standards, spam</a><br>
+  <a href="https://help.instagram.com/2896033757708728" target="_blank">Instagram community guidelines</a><br>
+  <a href="https://www.acma.gov.au/avoid-sending-spam" target="_blank">ACMA, avoid sending spam</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 4-tool stack that cuts Claude Code context waste · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Most of the waste is plumbing: re-reading files it already read, replying in essays, loading everything into every single session. These four free open...">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-context-waste-stack">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="The 4-tool stack that cuts Claude Code context waste">
+<meta property="og:description" content="Most of the waste is plumbing: re-reading files it already read, replying in essays, loading everything into every single session. These four free open...">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-context-waste-stack">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The 4-tool stack that cuts Claude Code context waste">
+<meta name="twitter:description" content="Most of the waste is plumbing: re-reading files it already read, replying in essays, loading everything into every single session. These four free open...">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The 4-tool stack that cuts Claude Code context waste","description":"This is the full setup from the carousel. When Claude Code chewed through my limits I blamed my prompts, but most of the waste is plumbing: re-reading files...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/claude-context-waste-stack"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"The 4-tool stack that cuts Claude Code context waste", u:"guides/claude-context-waste-stack.html", topic:"power", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Power-user</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>The 4-tool stack that cuts Claude Code context waste</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 Most of the waste is plumbing: re-reading files it already read, replying in essays, loading everything into every single session. These four free open source tools plug exactly those leaks.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the problem</span>
+<h2>The four leaks <span class="gi" style="--gl:#3C2B66" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+  <div class="minicard"><b>🔁 Re-reads:</b> Claude reads a file it already read and pays full price again</div>
+  <div class="minicard"><b>🗣 Essay answers:</b> same substance, three times the words</div>
+  <div class="minicard"><b>📖 Whole-file reads:</b> 300 lines read to find one function</div>
+  <div class="minicard"><b>🎒 Bloated sessions:</b> every instruction loads into every session, needed or not</div>
+</div>
+<p>And it is not just cost. A crowded context makes answers drift too, so plugging these leaks keeps Claude sharp deeper into long sessions.</p>
+
+<hr class="rule">
+<span class="kicker">the fix</span>
+<h2>The stack at a glance <span class="gi" style="--gl:#4E9932" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 7H8.5M12.499 11H8.49902" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20 22H6C4.89543 22 4 21.1046 4 20M4 20C4 18.8954 4.89543 18 6 18H20V6C20 4.11438 20 3.17157 19.4142 2.58579C18.8284 2 17.8856 2 16 2H10C7.17157 2 5.75736 2 4.87868 2.87868C4 3.75736 4 5.17157 4 8V20Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19.5 18C19.5 18 18.5 18.7628 18.5 20C18.5 21.2372 19.5 22 19.5 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+  <div class="minicard"><b>🔁 <code>lean-ctx</code></b> plugs leak 1: re-reads become nearly free</div>
+  <div class="minicard"><b>🪨 <code>caveman</code></b> plugs leak 2: same answer, way fewer words</div>
+  <div class="minicard"><b>🎯 <code>symdex</code></b> plugs leak 3: jump straight to the line, skip the file</div>
+  <div class="minicard"><b>🧩 <code>context-engineering</code></b> plugs leak 4: only the skill you need loads</div>
+</div>
+<p>They are fully independent, so install one or all four. Below is the order I would do it in, quickest win first. All four together take about ten minutes.</p>
+
+<hr class="rule">
+<span class="kicker">quickest win</span>
+<h2>1. caveman: short answers <span class="gi" style="--gl:#8A868D" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>caveman is a Claude Code plugin that makes Claude answer in tight caveman-speak while keeping your code, commands, and error messages byte-for-byte exact. It fires on every reply, from message one, no prompt changes needed. Their own tagline: "why use many token when few do trick".</p>
+<p>Run this in your terminal:</p>
+<div class="promptwrap">
+<span class="promptlabel">🪨 install caveman</span>
+<pre><code>claude plugin marketplace add JuliusBrussee/caveman &amp;&amp; claude plugin install caveman@caveman</code></pre>
+</div>
+<p>Check it works: ask Claude anything and the reply comes back short. Say "normal mode" to switch it off, type <code>/caveman</code> to bring it back.</p>
+
+<hr class="rule">
+<span class="kicker">load less</span>
+<h2>2. context-engineering: lean sessions <span class="gi" style="--gl:#689425" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.828 6.00096C12.9388 5.68791 12.999 5.35099 12.999 5C12.999 3.34315 11.6559 2 9.99904 2C8.34219 2 6.99904 3.34315 6.99904 5C6.99904 5.35099 7.05932 5.68791 7.17008 6.00096C4.88532 6.0093 3.66601 6.09039 2.87772 6.87868C2.08951 7.66689 2.00836 8.88603 2 11.1704C2.31251 11.06 2.64876 11 2.99904 11C4.6559 11 5.99904 12.3431 5.99904 14C5.99904 15.6569 4.6559 17 2.99904 17C2.64876 17 2.31251 16.94 2 16.8296C2.00836 19.114 2.08951 20.3331 2.87772 21.1213C3.66593 21.9095 4.88508 21.9907 7.16941 21.999C7.05908 21.6865 6.99904 21.3503 6.99904 21C6.99904 19.3431 8.34219 18 9.99904 18C11.6559 18 12.999 19.3431 12.999 21C12.999 21.3503 12.939 21.6865 12.8287 21.999C15.113 21.9907 16.3322 21.9095 17.1204 21.1213C17.9086 20.333 17.9897 19.1137 17.9981 16.829C18.3111 16.9397 18.648 17 18.999 17C20.6559 17 21.999 15.6569 21.999 14C21.999 12.3431 20.6559 11 18.999 11C18.648 11 18.3111 11.0603 17.9981 11.171C17.9897 8.88627 17.9086 7.66697 17.1204 6.87868C16.3321 6.09039 15.1128 6.0093 12.828 6.00096Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>context-engineering is a plugin of 17 tiny skills that stay asleep until your task matches one, so the right skill loads and the rest stay out of Claude's head. It fires automatically: Claude activates a skill only when the task calls for it, and nothing loads up front.</p>
+<p>Run these inside Claude Code (they are slash commands):</p>
+<div class="promptwrap">
+<span class="promptlabel">🧩 add the marketplace</span>
+<pre><code>/plugin marketplace add muratcankoylan/Agent-Skills-for-Context-Engineering</code></pre>
+</div>
+<div class="promptwrap">
+<span class="promptlabel">🧩 install the plugin</span>
+<pre><code>/plugin install context-engineering@context-engineering-marketplace</code></pre>
+</div>
+<p>Check it works: type <code>/plugin</code> and context-engineering should sit under your installed plugins.</p>
+
+<hr class="rule">
+<span class="kicker">skip the file</span>
+<h2>3. symdex: pinpoint lookups <span class="gi" style="--gl:#CD5174" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M14 2.20004C13.3538 2.06886 12.6849 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.3151 21.9311 10.6462 21.8 10" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0303 11.9625L16.5832 7.4096M19.7404 4.34462L19.1872 2.35748C19.0853 2.03011 18.6914 1.89965 18.4259 2.11662C16.9898 3.29018 15.4254 4.87091 16.703 7.36419C19.2771 8.56455 20.7466 6.94584 21.8733 5.5853C22.0975 5.3146 21.9623 4.90767 21.6247 4.81005L19.7404 4.34462Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>symdex indexes your repo into one small local file (a map of every function, class, and route) so Claude jumps straight to the exact code it needs instead of reading whole files to get oriented. It fires whenever Claude would normally open files to hunt for something: it queries the map instead.</p>
+<p>Run this in your terminal, inside your project folder:</p>
+<div class="promptwrap">
+<span class="promptlabel">🎯 install symdex</span>
+<pre><code>claude mcp add symdex -- uvx symdex serve</code></pre>
+</div>
+<div class="tip">It runs through uvx, which comes with uv. If you do not have uv yet, install it first with <code>curl -LsSf https://astral.sh/uv/install.sh | sh</code>.</div>
+<p>Check it works: type <code>/mcp</code> inside Claude Code and symdex should show as connected. Then say "index this project with symdex" once. After that, every search returns its own token-savings estimate, so you see real numbers instead of trusting anyone's headline.</p>
+
+<hr class="rule">
+<span class="kicker">the deep one</span>
+<h2>4. lean-ctx: cheap re-reads <span class="gi" style="--gl:#448BDC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.3884 3L17.3913 3.97574C17.8393 4.41165 18.0633 4.62961 17.9844 4.81481C17.9056 5 17.5888 5 16.9552 5H9.19422C5.22096 5 2 8.13401 2 12C2 13.4872 2.47668 14.8662 3.2895 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7.61156 21L6.60875 20.0243C6.16074 19.5883 5.93673 19.3704 6.01557 19.1852C6.09441 19 6.4112 19 7.04478 19H14.8058C18.779 19 22 15.866 22 12C22 10.5128 21.5233 9.13383 20.7105 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>lean-ctx runs a small local layer between Claude and your files that caches everything Claude reads, so the first read costs full price and every reopen is nearly free (about 13 tokens, their number). It fires automatically on every file read and shell output, across sessions. I put it last because it is the deepest install of the four (shell hooks plus a little background daemon), so give it five calm minutes.</p>
+<p>Run this in your terminal:</p>
+<div class="promptwrap">
+<span class="promptlabel">🔁 install and wrap lean-ctx</span>
+<pre><code>curl -fsSL https://leanctx.com/install.sh | sh
+lean-ctx wrap claude</code></pre>
+</div>
+<p>Prefer Homebrew? <code>brew tap yvgude/lean-ctx &amp;&amp; brew install lean-ctx</code> replaces the first line. The wrap command registers the MCP server, hooks, and daemon in one go, and <code>lean-ctx unwrap claude</code> undoes the whole thing.</p>
+<p>Check it works: after your next Claude Code session, run <code>lean-ctx gain</code> in the terminal. It shows tokens and dollars saved in real time.</p>
+
+<hr class="rule">
+<span class="kicker">what to expect</span>
+<h2>Honest numbers <span class="gi" style="--gl:#DC6146" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 3V8M8 5.5L3 5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 16L6 18M6 18L4 20M6 18L8 20M6 18L4 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20 6L16 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M20 18.5L16 18.5M20 15.5L16 15.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M22 12L2 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12 22L12 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip warn">💡 Every headline number here is the developer's own measurement, not mine, and your savings depend entirely on your workflow</div>
+<ul>
+<li>🔁 lean-ctx claims 60 to 90% fewer tokens on reads and shell output, with the receipts in the <a href="https://github.com/yvgude/lean-ctx#benchmarks" target="_blank">benchmarks section of their README</a></li>
+<li>🪨 caveman <a href="https://github.com/JuliusBrussee/caveman#benchmarks" target="_blank">benchmarks</a> 65% fewer output tokens on average (range 22 to 87%), and they openly warn the skill itself adds about 1 to 1.5k input tokens per turn, so whole-session savings run smaller. Their <a href="https://github.com/JuliusBrussee/caveman/blob/main/docs/HONEST-NUMBERS.md" target="_blank">honest numbers doc</a> is genuinely refreshing</li>
+<li>🎯 symdex skips headline claims and prints a savings estimate after each search, so your numbers are your own</li>
+<li>📉 The "bill dropped 10x" story is the original dev's result for his own workflow. Treat it as a ceiling, not a promise</li>
+</ul>
+
+<hr class="rule">
+<h2>The links <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>🔁 lean-ctx: <a href="https://github.com/yvgude/lean-ctx" target="_blank">github.com/yvgude/lean-ctx</a><br>
+🪨 caveman: <a href="https://github.com/JuliusBrussee/caveman" target="_blank">github.com/JuliusBrussee/caveman</a><br>
+🎯 symdex: <a href="https://github.com/husnainpk/SymDex" target="_blank">github.com/husnainpk/SymDex</a><br>
+🧩 context-engineering: <a href="https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering" target="_blank">github.com/muratcankoylan/Agent-Skills-for-Context-Engineering</a><br>
+💡 The original stack idea: <a href="https://www.instagram.com/speedy_devv/" target="_blank">@speedy_devv</a></p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

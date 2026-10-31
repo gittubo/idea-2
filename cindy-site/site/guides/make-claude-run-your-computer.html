@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to make Claude run your computer for you · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="How to make Claude run your computer for you. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/make-claude-run-your-computer">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="How to make Claude run your computer for you">
+<meta property="og:description" content="How to make Claude run your computer for you. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/make-claude-run-your-computer">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to make Claude run your computer for you">
+<meta name="twitter:description" content="How to make Claude run your computer for you. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"How to make Claude run your computer for you", u:"guides/make-claude-run-your-computer.html", topic:"power", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">AI power moves</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>How to make Claude run your computer for you</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented LOOP, so here is the full setup for all four layers from the reel: Claude driving your browser, Claude Code building and then testing its own work.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<span class="kicker">the shape of it</span>
+<h2>What "Claude runs your computer" actually means <span class="gi" style="--gl:#398FBD" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 21H16M14 21C13.1716 21 12.5 20.3284 12.5 19.5V17L12 17M14 21H10M10 21H8M10 21C10.8284 21 11.5 20.3284 11.5 19.5V17L12 17M12 17V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M16 3H8C5.17157 3 3.75736 3 2.87868 3.87868C2 4.75736 2 6.17157 2 9V11C2 13.8284 2 15.2426 2.87868 16.1213C3.75736 17 5.17157 17 8 17H16C18.8284 17 20.2426 17 21.1213 16.1213C22 15.2426 22 13.8284 22 11V9C22 6.17157 22 4.75736 21.1213 3.87868C20.2426 3 18.8284 3 16 3Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>There is no single button called autopilot. What exists is four separate capabilities that stack, and the reason the phrase sounds dramatic is that most people have only ever used the chat box. Chat is Claude answering. These four are Claude doing: opening tabs, clicking things, writing files, checking its own work, and starting again tomorrow without you.</p>
+<p>You do not need all four. Pick the one that matches the task you keep redoing, get it working once, then add the next layer when you feel the friction.</p>
+<div class="cardgrid">
+<div class="minicard"><b>🌐 The browser layer</b> Claude in Chrome, an extension that drives your real browser in your real logged-in tabs while you watch.</div>
+<div class="minicard"><b>🔁 The build loop</b> Claude Code writes something, opens it in the browser, reads the console errors, and fixes what it broke.</div>
+<div class="minicard"><b>⏰ The schedule layer</b> Routines and scheduled tasks that start a session on their own, hourly, nightly or on an event.</div>
+<div class="minicard"><b>🔌 The connector layer</b> MCP connectors that give Claude direct access to Notion, Gmail, Drive, Slack and hundreds more.</div>
+</div>
+
+<div class="tip warn"><strong>⚠️ The plan gates, all in one place, so nothing surprises you.</strong> Claude in Chrome and the Claude Code Chrome integration need a direct paid Anthropic plan (Pro, Max, Team or Enterprise) and a Chromium browser on desktop, with no mobile version (<a href="https://code.claude.com/docs/en/chrome" target="_blank">Chrome integration docs</a>). Cloud routines are a research preview available on Pro, Max, Team and Enterprise with Claude Code on the web enabled (<a href="https://code.claude.com/docs/en/routines" target="_blank">routines docs</a>). Desktop scheduled tasks need the Claude Code desktop app, which requires a paid subscription. Connectors work on claude.ai on every plan, free included. Full pricing: <a href="https://claude.com/pricing" target="_blank">claude.com/pricing</a>.</div>
+
+<hr class="rule">
+<span class="kicker">layer one</span>
+<h2>Claude in Chrome: it clicks, you watch <span class="gi" style="--gl:#0792C1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M8 12C8 18 12 22 12 22C12 22 16 18 16 12C16 6 12 2 12 2C12 2 8 6 8 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M21 15H3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M21 9H3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the one that makes people sit up. The extension puts Claude in a side panel next to whatever you have open, and it drives <em>your</em> browser: your tabs, your logins, your session. That matters, because it means Claude can work inside things you are already signed into rather than hitting a login wall on every site.</p>
+<ol class="steps">
+<li><strong class="st">🧩 Install the extension.</strong> Search "Claude in Chrome" in the <a href="https://chromewebstore.google.com/" target="_blank">Chrome Web Store</a> and add it. It works in Chrome and Edge, and it also connects in other Chromium browsers like Brave, Arc, Vivaldi and Opera. There is no version for Safari or for phones.</li>
+<li><strong class="st">🔐 Sign in on a paid plan.</strong> Sign in to the extension with the same account you use on claude.ai. This is a beta feature on paid plans, so a free account will not see it. Anthropic's overview of what it does and how they thought about the safety side is here: <a href="https://claude.com/blog/claude-for-chrome" target="_blank">Claude for Chrome</a>.</li>
+<li><strong class="st">📍 Open the side panel on the site you want.</strong> Navigate to the page first, then open the panel. Claude reads the page you are on, so you do not need to paste screenshots or describe what is on screen.</li>
+<li><strong class="st">✅ Grant permission per site.</strong> The first time Claude wants to act on a site, it asks. You can allow that one action or allow the site for the session. This per-site gate is the whole safety model, so read the dialog rather than clicking through it on reflex.</li>
+<li><strong class="st">👀 Stay in the room for the first few runs.</strong> Watch what it clicks. Agentic browsing is a multi-minute thing, not a two-second thing, and the first time you run a new task is when you find out your instructions were vaguer than you thought.</li>
+<li><strong class="st">🛑 Know where stop is.</strong> You can interrupt at any point. Claude also pauses on its own at logins and CAPTCHAs and asks you to handle those manually, and it will not push through a payment step without checking with you.</li>
+</ol>
+<p>Getting-started details and the current feature list live in Anthropic's help centre article: <a href="https://support.claude.com/en/articles/12012173-get-started-with-claude-in-chrome" target="_blank">Get started with Claude in Chrome</a>.</p>
+
+<span class="kicker">copy this</span>
+<h2>A first browser task worth running <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Start with something read-only and boring. The point of run one is to see how it moves, not to hand it your bank account.</p>
+<div class="promptwrap">
+<span class="promptlabel">🌐 the browser research run</span>
+<pre><code>I have [site or tool] open. Work through it in my browser and pull together the information I keep collecting by hand, without changing, sending or deleting anything.
+
+Specifically: go through [the section, list or filter, for example "my orders from the last three months" or "the first three pages of listings"], open each item, and record [the fields you actually need, for example the name, the date, the price, the status and the link]. Keep going until you have covered every item in that view, and tell me how many you found so I know nothing was skipped.
+
+Give me the result as a table I can paste into a spreadsheet, sorted by [the field that matters to you]. If anything is ambiguous, or a page will not load, or you hit a login, stop and tell me rather than guessing or filling in a plausible-looking value. Before you start, list the actions you are about to take so I can approve them.</code></pre>
+</div>
+<div class="tip calm">🌱 A tiny detail that saves you: tell it what NOT to touch. "Do not send, submit, delete, purchase or reply to anything" in your first line costs you eight words and removes almost every way a browser run can embarrass you.</div>
+
+<hr class="rule">
+<span class="kicker">layer two</span>
+<h2>The build loop: Claude tests its own work <span class="gi" style="--gl:#448BDC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.3884 3L17.3913 3.97574C17.8393 4.41165 18.0633 4.62961 17.9844 4.81481C17.9056 5 17.5888 5 16.9552 5H9.19422C5.22096 5 2 8.13401 2 12C2 13.4872 2.47668 14.8662 3.2895 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7.61156 21L6.60875 20.0243C6.16074 19.5883 5.93673 19.3704 6.01557 19.1852C6.09441 19 6.4112 19 7.04478 19H14.8058C18.779 19 22 15.866 22 12C22 10.5128 21.5233 9.13383 20.7105 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the layer people underrate, and it is the one the whole reel is named after. On its own, a coding assistant writes something plausible and hands it to you to find the bugs. Connect it to a browser and the shape changes: it builds, opens the page, reads the actual console errors and the actual DOM, and fixes what is broken before you have seen it. That closed loop is the difference between a draft and something that works.</p>
+<ol class="steps">
+<li><strong class="st">💻 Install Claude Code.</strong> It runs in your terminal, in VS Code and JetBrains, in a desktop app, and on the web. Pick whichever is least scary. Install instructions: <a href="https://code.claude.com/docs/en/overview" target="_blank">Claude Code overview</a>.</li>
+<li><strong class="st">🧩 Use the same Chrome extension.</strong> Claude Code drives the browser through the Claude in Chrome extension you installed in layer one, version 1.0.36 or higher. One install covers both layers.</li>
+<li><strong class="st">▶️ Start the session with the browser turned on.</strong> Launch with <code>claude --chrome</code>. The first time, you get a one-time dialog explaining how site permissions work. You can also set Chrome on by default so you stop typing the flag.</li>
+<li><strong class="st">🔍 Check the connection.</strong> Type <code>/chrome</code> at any point. It is connected when the panel shows "Status: Enabled" and "Extension: Installed". If you have several browsers open, this is also where you choose which one Claude drives.</li>
+<li><strong class="st">🔑 Sign in properly.</strong> Chrome integration needs a normal <code>/login</code> sign-in on a direct Anthropic plan. If you authenticate with an API key or a long-lived token, Claude Code keeps the browser integration switched off, which is the usual reason it silently does not work.</li>
+<li><strong class="st">🧪 Ask for the loop, not the code.</strong> The phrasing matters. "Build it" gets you code. "Build it, open it, test it, and fix what you find" gets you the loop. The prompt below does that explicitly.</li>
+</ol>
+
+<div class="promptwrap">
+<span class="promptlabel">🔁 build it, then break it yourself</span>
+<pre><code>Build [what you want, for example "a single page that takes a CSV of my expenses and shows a monthly total and a category breakdown"], then verify it yourself in the browser before you tell me it is done.
+
+Work in this order and do not skip a stage. Write the code. Start it locally and open it in Chrome. Then actually use it the way a first-time visitor would: click every button, submit the form with valid input, submit it again with empty and obviously wrong input, resize the window to phone width, and read the browser console for errors and warnings after each action.
+
+For every problem you find, tell me what broke, what caused it, and fix it, then re-run the whole check from the top. Keep looping until a full pass produces no console errors and no broken interaction. When you are done, give me a short list of what you tested, what you fixed, and anything you could not test without me, for example something that needs a real login or a real payment.</code></pre>
+</div>
+<div class="tip">💡 The same loop works on things that already exist. Point it at a page you own and ask it to walk the flow, read the console, and report what a real user would hit. It is the cheapest QA pass you will ever run.</div>
+<div class="tip calm">🧠 Bonus layer, honestly labelled: Claude Code can also drive your actual desktop, not only the browser. Computer use is a research preview on macOS that needs a Pro or Max plan and an interactive session, and it is not available on Team or Enterprise. It lets Claude open apps, click, type and see your screen, which is how it tests native apps it has written. Details: <a href="https://code.claude.com/docs/en/computer-use" target="_blank">computer use in the CLI</a>.</div>
+
+<hr class="rule">
+<span class="kicker">layer three</span>
+<h2>Scheduled agents: work that starts without you <span class="gi" style="--gl:#DD5E79" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M12 8V12L14 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A session you have to start is still a task on your list. Scheduling is what turns a workflow into something that has already happened by the time you sit down. There are three ways to do it and they are genuinely different, so pick on the constraint rather than the name.</p>
+<ul>
+<li><strong>Routines</strong> run in Anthropic's cloud, so they keep running with your laptop shut. They can fire on a recurring schedule, on an API call, or on GitHub events like a new pull request, and one routine can carry several triggers. Minimum interval is one hour, and they run autonomously with no permission prompts. Research preview, on Pro, Max, Team and Enterprise: <a href="https://code.claude.com/docs/en/routines" target="_blank">routines docs</a>.</li>
+<li><strong>Desktop scheduled tasks</strong> run on your own machine through the Claude Code desktop app, so they can touch your local files and your local tools. They fire only while the app is open and the computer is awake, and the minimum interval is one minute: <a href="https://code.claude.com/docs/en/desktop-scheduled-tasks" target="_blank">desktop scheduled tasks</a>.</li>
+<li><strong><code>/loop</code></strong> repeats a prompt inside a session you already have open, which is the right tool for polling something for the next twenty minutes rather than for a nightly job: <a href="https://code.claude.com/docs/en/scheduled-tasks" target="_blank">running prompts on a schedule</a>.</li>
+</ul>
+<ol class="steps">
+<li><strong class="st">📝 Write the job as a paragraph first.</strong> Before you touch any scheduling UI, get the instruction working in a normal session. A routine is a saved prompt plus repositories plus connectors, so if the prompt is vague you have automated a vague result.</li>
+<li><strong class="st">➕ Create it.</strong> Routines are created from the web at <code>claude.ai/code/routines</code>, from the Routines page in the desktop app, or by typing <code>/schedule</code> in the CLI. The desktop Routines page is also where you choose between a local task and a cloud routine.</li>
+<li><strong class="st">🕘 Set the cadence, honestly.</strong> Nightly beats hourly for almost everything. Ask what time you actually want to read the output, then schedule it to finish an hour before that.</li>
+<li><strong class="st">🔒 Scope the permissions.</strong> Cloud routines run without asking you anything, so keep the first ones to reading, summarising and drafting. Anything that sends, publishes or deletes should stay in a session where you are watching.</li>
+<li><strong class="st">🧾 Make it report to you.</strong> End every scheduled prompt with an instruction to write its output somewhere you will actually look: a file, a doc, an email draft. An agent that ran perfectly into a void is the same as one that did not run.</li>
+<li><strong class="st">🔁 Read the first three runs properly.</strong> Then adjust the prompt. Automation that nobody has checked is the kind that quietly does the wrong thing for a month.</li>
+</ol>
+
+<div class="promptwrap">
+<span class="promptlabel">⏰ the Monday morning brief routine</span>
+<pre><code>Every Monday at 6am, put together my week-ahead brief and save it as a dated markdown file in [folder], then leave the whole thing in the run output so I can read it on my phone.
+
+Pull from the sources I have connected: my calendar for the next seven days, anything in [tool, for example Notion or a task list] that is due or overdue, and unanswered items from [inbox or channel] that are older than two days. Do not act on any of it. Do not send, reply, publish, schedule or delete anything, and if something looks urgent, flag it in the brief instead of handling it.
+
+Structure the brief as: the three things that genuinely matter this week and why, anything with a hard deadline and the date, what slipped from last week, and the single task I should do first on Monday morning with one sentence of reasoning. Keep it under 400 words, plain language, no motivational filler. If a source is empty or fails to load, say so explicitly rather than leaving a gap that looks like good news.</code></pre>
+</div>
+<div class="tip warn">⚠️ Routines are a research preview, which means the behaviour, the limits and the interface can change. Treat anything you build here as something to re-check every few weeks, and do not put a business-critical process behind it until you have watched it run clean for a while.</div>
+
+<hr class="rule">
+<span class="kicker">layer four</span>
+<h2>Connectors: give Claude the tools you already pay for <span class="gi" style="--gl:#4C395C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 2V6M8.5 6V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.00446 7.61331C5.93719 6.74273 6.63957 6 7.53014 6H16.4699C17.3604 6 18.0628 6.74273 17.9955 7.61331L17.8117 9.99197C17.6796 11.7019 17.1011 13.3498 16.132 14.7773L15.5312 15.6622C14.9638 16.4979 14.0077 17 12.9838 17H11.0162C9.99228 17 9.03617 16.4979 8.46881 15.6622L7.86803 14.7773C6.89885 13.3498 6.32041 11.7019 6.18827 9.99197L6.00446 7.61331Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 17V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11 9H13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A connector plugs Claude into a system directly, so it can read and act there instead of working from whatever you paste into the chat. They run on the Model Context Protocol, an open standard that any tool can implement, which is why the list keeps growing rather than being a fixed set of integrations (<a href="https://modelcontextprotocol.io/" target="_blank">MCP</a>).</p>
+<ol class="steps">
+<li><strong class="st">🧭 Find the directory.</strong> In Claude, open <strong>Customize</strong>, then <strong>Connectors</strong>. That is the browse-and-add screen, and it works on every plan including free. Background reading: <a href="https://support.claude.com/en/articles/11176164-about-connectors" target="_blank">about connectors</a>.</li>
+<li><strong class="st">➕ Add the ones you use daily.</strong> Connect the tool, sign in through its normal login screen, and approve the access it asks for. Read that approval screen properly, because it is where you decide what Claude can reach.</li>
+<li><strong class="st">🔧 Add anything missing as a custom connector.</strong> If a tool is not in the gallery but publishes a remote MCP server, choose add a custom connector and paste the URL: <a href="https://support.claude.com/en/articles/11175166-about-custom-connectors-remote-mcp" target="_blank">custom connectors</a>.</li>
+<li><strong class="st">⌨️ In Claude Code, use the CLI.</strong> Run <code>claude mcp add</code> to attach a server to a project, and <code>/mcp</code> to see status, authenticate or disable one. Start here: <a href="https://code.claude.com/docs/en/mcp-quickstart" target="_blank">MCP quickstart</a>.</li>
+<li><strong class="st">🧹 Keep the list short.</strong> Every connected tool is more surface area and more for Claude to sift through. Four you use beats twenty you added once and forgot.</li>
+<li><strong class="st">🔍 Check what each one can actually do.</strong> Some connectors are read-only, some can write. Knowing which is which before you schedule anything is the difference between a summary and a surprise.</li>
+</ol>
+<div class="cardgrid">
+<div class="minicard"><b>🗂️ Your notes or docs tool</b> Notion, Drive or similar. This is the one that makes Claude answer from your actual work instead of general knowledge.</div>
+<div class="minicard"><b>📅 Calendar and email</b> Turns "what is my week like" and "draft the reply" into one message. Keep email on drafting rather than sending.</div>
+<div class="minicard"><b>💬 Your team chat</b> Slack or equivalent, so Claude can catch up on a thread you were tagged in and summarise the decision.</div>
+<div class="minicard"><b>🎨 Whatever you make things in</b> A design or publishing tool. Being able to hand off the finished thing is what stops the workflow one step short.</div>
+</div>
+
+<div class="promptwrap">
+<span class="promptlabel">🔌 the connected weekly catch-up</span>
+<pre><code>Using the tools I have connected, catch me up on [project or client] and tell me what needs a decision from me. Read only, no sending or editing anything.
+
+Go through: every message in [channel or thread] since [date], the notes or pages in [notes tool] tagged to this project, anything on the calendar that relates to it, and any documents that changed in the last two weeks. Then tell me what actually happened, in order, with dates.
+
+Split your answer into: decisions that were already made and by whom, open questions with the person who is waiting on me, anything that has slipped past a date, and the two or three things I should handle first. Quote the source line for anything important so I can click through and check it myself. If two sources disagree, show me both instead of picking one, and if you could not access something, name it.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">put it together</span>
+<h2>Pick one boring task and hand over the whole loop <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Four layers is interesting. One task running end to end is useful. The upgrade is going from "Claude helped me with that" to "that happens now", and the way in is a task that repeats weekly, has a clear finished state, and does not need your judgement in the middle.</p>
+<ol class="steps">
+<li><strong class="st">🎯 Choose the task by boredom, not importance.</strong> The weekly numbers pull, the standing report, the folder of receipts, the same three sites you check every Monday. If it makes you sigh, it qualifies.</li>
+<li><strong class="st">🖐️ Do it once with Claude watching.</strong> Run it manually in a session and narrate what you are doing and why you make each call. This is where the real instructions come from, because you know things about this task that you have never written down.</li>
+<li><strong class="st">📄 Write it down as a repeatable instruction.</strong> Turn that session into a paragraph precise enough that a competent stranger could follow it. If you want it permanent, save it as a skill so it triggers by name every time. There is a full walkthrough in my <a href='/guides/build-claude-skills-to-land-a-promotion'>Claude skills guide</a>.</li>
+<li><strong class="st">⏰ Schedule it and let it run supervised.</strong> Put it on a routine or a desktop task, then read the output for three runs before you trust it. Adjust the prompt each time rather than accepting output you would not have sent yourself.</li>
+</ol>
+<div class="promptwrap">
+<span class="promptlabel">🧠 design my loop</span>
+<pre><code>Here is a task I do every week and want to hand over: [describe it properly, including what you open, what you copy, what you decide, and what finished looks like]. Help me turn it into something that runs without me.
+
+First, ask me the questions you need to pin down the parts I have left vague, especially anything where I make a judgement call, and wait for my answers before designing anything. Then tell me which parts of this are genuinely safe to automate and which parts should keep a human approval step, and be honest if the whole thing should stay manual.
+
+Then design it across the four capabilities: what needs your browser, what needs to be built or written, what should run on a schedule and how often, and which connected tools you would need. Write me the exact prompt I would save as the scheduled job, including the instruction to report its output somewhere I will see it. Finish with what could go wrong on a bad run and what I should check on the first three runs.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">the honest bit</span>
+<h2>What this does not do <span class="gi" style="--gl:#AD8014" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6H6C4.59987 6 3.8998 6 3.36502 6.27248C2.89462 6.51217 2.51217 6.89462 2.27248 7.36502C2 7.8998 2 8.59987 2 10C2 11.4001 2 12.1002 2.27248 12.635C2.51217 13.1054 2.89462 13.4878 3.36502 13.7275C3.8998 14 4.59987 14 6 14H18C19.4001 14 20.1002 14 20.635 13.7275C21.1054 13.4878 21.4878 13.1054 21.7275 12.635C22 12.1002 22 11.4001 22 10C22 8.59987 22 7.8998 21.7275 7.36502C21.4878 6.89462 21.1054 6.51217 20.635 6.27248C20.1002 6 19.4001 6 18 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14 6L21 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 6L16 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 7L10 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 3V6M6 14V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M18 3V6M18 14V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="tip warn"><strong>Three things worth knowing before you build your week around it.</strong> Agentic runs are slow compared to the demos: a real browser task is minutes, not seconds, so this buys back attention rather than raw clock time. Permissions are the whole safety story, which means anything running unattended should be scoped to reading, summarising and drafting, with sending and deleting kept in sessions where you are present. And Claude cannot tell that the source data was wrong, so an automation that runs perfectly on bad inputs produces confident, wrong output on a schedule. The review step is the part you keep.</div>
+<p>The reason the loop matters more than any single feature is that checking its own work is what makes handing something over reasonable at all. Build, test, fix, repeat, then report back to you. That is the whole thing, and it scales from one page you are debugging to one task you never think about again.</p>
+
+<hr class="rule">
+<h2>Proof <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li>Claude in Chrome, getting started: <a href="https://support.claude.com/en/articles/12012173-get-started-with-claude-in-chrome" target="_blank">support.claude.com</a> and Anthropic's <a href="https://claude.com/blog/claude-for-chrome" target="_blank">Claude for Chrome</a> post</li>
+<li>Claude Code with Chrome, prerequisites, <code>--chrome</code> and <code>/chrome</code>: <a href="https://code.claude.com/docs/en/chrome" target="_blank">code.claude.com</a></li>
+<li>Computer use in the CLI, research preview, macOS, Pro or Max: <a href="https://code.claude.com/docs/en/computer-use" target="_blank">code.claude.com</a></li>
+<li>Routines, triggers, plans and limits: <a href="https://code.claude.com/docs/en/routines" target="_blank">code.claude.com</a></li>
+<li>Desktop scheduled tasks and how the three scheduling options compare: <a href="https://code.claude.com/docs/en/desktop-scheduled-tasks" target="_blank">code.claude.com</a></li>
+<li>Repeating a prompt in a session with <code>/loop</code>: <a href="https://code.claude.com/docs/en/scheduled-tasks" target="_blank">code.claude.com</a></li>
+<li>Connectors and custom connectors: <a href="https://support.claude.com/en/articles/11176164-about-connectors" target="_blank">about connectors</a>, <a href="https://support.claude.com/en/articles/11175166-about-custom-connectors-remote-mcp" target="_blank">custom connectors</a>, <a href="https://code.claude.com/docs/en/mcp-quickstart" target="_blank">MCP quickstart</a></li>
+<li>Plans and pricing: <a href="https://claude.com/pricing" target="_blank">claude.com/pricing</a></li>
+</ul>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

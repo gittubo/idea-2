@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude's finance plugins: the analyst research setup · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="Claude&#x27;s finance plugins: the analyst research setup. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-finance-plugins-analyst-setup">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Claude&#x27;s finance plugins: the analyst research setup">
+<meta property="og:description" content="Claude&#x27;s finance plugins: the analyst research setup. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-finance-plugins-analyst-setup">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude&#x27;s finance plugins: the analyst research setup">
+<meta name="twitter:description" content="Claude&#x27;s finance plugins: the analyst research setup. A free step-by-step guide from Cindy Zhu, with every prompt ready to copy.">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Claude's finance plugins: the analyst research setup", u:"guides/claude-finance-plugins-analyst-setup.html", topic:"money", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Money</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>Claude's finance plugins: the analyst research setup</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 You commented ANALYST, so here is the whole setup from the reel. Anthropic open-sourced the plugin pack it built for financial services firms.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn"><strong>Read this before anything else.</strong> Nothing here is financial advice, and I am not a financial adviser. These plugins draft analyst work product for a human to check: they do not make investment recommendations, execute trades, or tell you what to buy. Anthropic says the same thing in the repository itself (<a href="https://github.com/anthropics/financial-services-plugins" target="_blank">"Nothing in this repository constitutes investment, legal, tax, or accounting advice"</a>). Every number a model gives you has to be checked against the primary source, which means the actual filing on the company's investor relations page or on <a href="https://www.sec.gov/edgar/search/" target="_blank">SEC EDGAR</a>, not a summary and not the model's memory. If a figure is not in the document you handed it, treat it as unverified.</div>
+
+<span class="kicker">what this actually is</span>
+<h2>The pack, in plain English <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Anthropic publishes a public GitHub repository of reference agents and skills for finance work, the same ones it ships to banks and asset managers, and anyone can add it as a plugin marketplace (<a href="https://claude.com/resources/tutorials/install-financial-services-plugins-for-cowork" target="_blank">official tutorial</a>). There are two layers in it, which is the bit most explainers get muddled:</p>
+<ul>
+<li>🧩 <strong>Vertical plugins</strong> are bundles of skills and slash commands: <code>financial-analysis</code> (the core one, install first), <code>equity-research</code>, <code>investment-banking</code>, <code>private-equity</code>, <code>wealth-management</code>.</li>
+<li>🤖 <strong>Agent plugins</strong> are self-contained workflow agents built on top of those skills: <code>earnings-reviewer</code>, <code>model-builder</code>, <code>market-researcher</code> and seven more.</li>
+</ul>
+<p>The three worth your time as an individual investor are the earnings reviewer, the model builder and the market researcher. That is the trio in the reel.</p>
+<div class="tip"><strong>Plan honesty.</strong> The plugins themselves are free and open source. They run inside Claude Cowork or Claude Code, and Cowork works with a paid Claude plan (<a href="https://claude.com/product/cowork" target="_blank">claude.com/product/cowork</a>). The repository also lists connectors to paid data providers like FactSet, Morningstar and PitchBook, and those genuinely need a subscription from the provider. You do not need any of them for this guide, because everything here runs on free public filings.</div>
+
+<hr class="rule">
+<span class="kicker">setup</span>
+<h2>Step 1: add the marketplace <span class="gi" style="--gl:#9281A8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M5.50896 18.5H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></h2>
+<p>Two routes, pick whichever matches how you use Claude.</p>
+<ol class="steps">
+<li><strong class="st">🖥️ In Claude Cowork (the desktop app).</strong> Open the Claude desktop app, click the <strong>Cowork</strong> tab in the mode selector at the top, click <strong>Customize</strong> in the left sidebar, then <strong>Browse plugins</strong>, then <strong>Personal</strong>. Click the <strong>+</strong> button, choose <strong>Add marketplace from GitHub</strong>, and paste <code>https://github.com/anthropics/financial-services-plugins</code>.</li>
+<li><strong class="st">⌨️ In Claude Code (the terminal).</strong> Run <code>claude plugin marketplace add anthropics/financial-services</code>. That registers the same catalogue under the name <code>claude-for-financial-services</code>.</li>
+<li><strong class="st">🧱 Install the core plugin first.</strong> Whichever route you took, install <strong>financial analysis</strong> before anything else, because it carries the shared modelling skills the other plugins lean on. In Claude Code that is <code>claude plugin install financial-analysis@claude-for-financial-services</code>.</li>
+<li><strong class="st">📦 Then add the three.</strong> Install <code>earnings-reviewer</code>, <code>model-builder</code> and <code>market-researcher</code> the same way. Once installed, the skills fire automatically when they are relevant, and you can also trigger them by typing <code>/</code> and picking one.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">free inputs</span>
+<h2>Step 2: get the documents, without paying <span class="gi" style="--gl:#9380A9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7L16 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8 11L12 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 21.5V21C13 18.1716 13 16.7574 13.8787 15.8787C14.7574 15 16.1716 15 19 15H19.5M20 13.3431V10C20 6.22876 20 4.34315 18.8284 3.17157C17.6569 2 15.7712 2 12 2C8.22877 2 6.34315 2 5.17157 3.17157C4 4.34314 4 6.22876 4 10L4 14.5442C4 17.7892 4 19.4117 4.88607 20.5107C5.06508 20.7327 5.26731 20.9349 5.48933 21.1139C6.58831 22 8.21082 22 11.4558 22C12.1614 22 12.5141 22 12.8372 21.886C12.9044 21.8623 12.9702 21.835 13.0345 21.8043C13.3436 21.6564 13.593 21.407 14.0919 20.9081L18.8284 16.1716C19.4065 15.5935 19.6955 15.3045 19.8478 14.9369C20 14.5694 20 14.1606 20 13.3431Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The plugins are only as good as what you feed them. Handing Claude the real filing is what stops it answering from stale training data. All three of these are free.</p>
+<div class="cardgrid">
+<div class="minicard"><b>SEC EDGAR</b> The official US filings database. Full-text search every 10-K (annual), 10-Q (quarterly) and 8-K at <a href="https://www.sec.gov/edgar/search/" target="_blank">sec.gov/edgar/search</a>. This is the primary source, and it is the one to check figures against.</div>
+<div class="minicard"><b>Investor relations pages</b> Nearly every listed company posts its results deck, press release and webcast on its own IR page. Search the company name plus "investor relations". Often the clearest single summary of a quarter.</div>
+<div class="minicard"><b>Earnings call transcripts</b> The Motley Fool publishes free transcripts of most US earnings calls at <a href="https://www.fool.com/earnings-call-transcripts/" target="_blank">fool.com/earnings-call-transcripts</a>. This is what you paste in when you want the management commentary, not only the numbers.</div>
+<div class="minicard"><b>Non-US companies</b> Foreign companies listed in the US file a 20-F annual report instead of a 10-K, and it is on EDGAR too. Companies listed only overseas post the equivalent on their local exchange and their IR page.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">plugin one</span>
+<h2>Earnings reviewer: read the call properly <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the one that changes how a normal person reads results. It ships with <code>/earnings-analysis</code>, <code>/earnings-preview</code>, <code>/model-update</code> and <code>/morning-note</code>. You paste in the transcript or the filing, run the command, and it writes an analyst-style note: what management actually said, what changed against last quarter, and where the soft spots are.</p>
+<p>Paste your transcript first, then this:</p>
+<div class="promptwrap">
+<span class="promptlabel">📞 the earnings read</span>
+<pre><code>I have pasted [COMPANY]'s [QUARTER] earnings call transcript and results release above. Work only from these documents and do not use anything from your training data for the numbers.
+
+Write me an analyst-style note with these sections: what changed versus the prior quarter and versus guidance; the revenue and margin picture with the actual figures and the exact line or paragraph you took each one from; what management chose to emphasise and, just as importantly, what they were asked about and answered vaguely; any change in guidance or in the language around guidance; and the three things that would most change this picture next quarter.
+
+Then do the part I care about most. State the bull case and the bear case in three sentences each, drawn only from this document, and tell me which specific number in the next report would settle the argument between them.
+
+Finish with a list of anything I asked for that is not in the documents I gave you. Mark those as not found rather than filling them in, and do not give me a buy, hold or sell view.</code></pre>
+</div>
+<div class="tip"><strong>Why the "not found" instruction matters.</strong> A model asked for ten things will usually produce ten things. Explicitly giving it permission to return a gap is what turns a confident-sounding summary into something you can actually rely on.</div>
+
+<hr class="rule">
+<span class="kicker">plugin two</span>
+<h2>Model builder: the numbers, in Excel <span class="gi" style="--gl:#9281A4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L7 13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 17L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17 17L17 11" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This one builds live spreadsheets rather than a wall of text. Its skills are <code>/dcf-model</code>, <code>/3-statement-model</code>, <code>/comps-analysis</code>, <code>/lbo-model</code> and <code>/audit-xls</code>. A discounted cash flow model is a structured way of asking what a company's future cash is worth today, and the value of building one is not the number it spits out, it is that every assumption behind the number is sitting in a cell you can argue with.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧮 build a DCF you can argue with</span>
+<pre><code>Build a simple discounted cash flow model for [COMPANY] in Excel, using the filings I have given you for the historical figures.
+
+Put every assumption on its own clearly labelled input tab: revenue growth per year, operating margin, tax rate, capital expenditure as a percentage of revenue, working capital, discount rate and terminal growth rate. No assumption should be hard-coded inside a formula anywhere in the model, because I want to change one cell and watch the whole thing move.
+
+Show the historical figures next to the forecast so I can see whether the growth you have assumed is anything like what this company has actually delivered. Add a sensitivity table across discount rate and terminal growth so I can see how much of the valuation is coming from those two inputs alone.
+
+Then write a short plain-English note under the model: which assumption the valuation is most sensitive to, which assumption you are least confident in, and where each historical number came from. Do not tell me whether the stock is cheap or expensive.</code></pre>
+</div>
+<div class="tip warn"><strong>The trap with any DCF.</strong> Move the discount rate and the terminal growth rate a little and the valuation swings enormously, which means it is very easy to build a model that quietly confirms whatever you already believed. That is exactly why the prompt asks for the sensitivity table. Treat the output as a map of the assumptions, not a price target.</div>
+
+<hr class="rule">
+<span class="kicker">plugin three</span>
+<h2>Market researcher: the wider view <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The third one zooms out from a single company to a sector or theme. Its skills are <code>/sector-overview</code>, <code>/competitive-analysis</code>, <code>/comps-analysis</code> and <code>/idea-generation</code>. This is the one to use before you get attached to a company, because it forces you to look at the competitors alongside it.</p>
+<div class="promptwrap">
+<span class="promptlabel">🗺️ the sector map</span>
+<pre><code>Give me an overview of the [SECTOR OR THEME] sector as it stands now, then place [COMPANY] inside it.
+
+Cover: how the sector actually makes money and what drives demand; the five or six companies that matter most and roughly how big each one is; what structurally separates the leaders from everyone else; and the two or three forces most likely to reshape the sector over the next few years.
+
+Then build a comparison table of [COMPANY] against its closest three to five competitors, with revenue growth, gross margin, operating margin and the common valuation multiples side by side. For every figure, give me the date and the source it came from, and mark anything you could not verify as unverified rather than estimating it.
+
+Finish by telling me the single strongest argument that [COMPANY] is not the best business in this group. I want the counter-case in writing before I read anything else about it.</code></pre>
+</div>
+<div class="tip">Turn on Claude's web search for this one, because sector context moves faster than any model's training data. Then click through the citations. Valuation multiples in particular change with the share price every single day, so treat any multiple as a prompt to go and check, not as a fact.</div>
+
+<hr class="rule">
+<span class="kicker">put it together</span>
+<h2>The full research pass, in order <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">1️⃣ Map the sector first.</strong> Run the market researcher prompt before you look closely at any one company. Deciding a company is great and then researching it is how confirmation bias gets in.</li>
+<li><strong class="st">2️⃣ Read the last two calls.</strong> Pull two consecutive transcripts and run the earnings prompt on each. The interesting signal is almost always the change between them, not either one alone.</li>
+<li><strong class="st">3️⃣ Build the model.</strong> Only now build the DCF, using the growth and margin figures the filings actually support rather than the ones that make the answer come out nicely.</li>
+<li><strong class="st">4️⃣ Verify every number that matters.</strong> Take the five figures the conclusion rests on and find each one yourself in the filing on EDGAR or the IR page. If you cannot find it, it does not count.</li>
+<li><strong class="st">5️⃣ Write your own view, in your own words.</strong> One paragraph, unaided, on what you think and what would change your mind. If you cannot write it without the AI, you have not finished the research.</li>
+</ol>
+
+<hr class="rule">
+<span class="kicker">the limits</span>
+<h2>What this setup cannot do <span class="gi" style="--gl:#AB820B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16.4998C6.7725 15.4011 6 13.7768 6 11.9998C6 8.68605 8.68629 5.99976 12 5.99976C15.3137 5.99976 18 8.68605 18 11.9998C18 13.7768 17.2275 15.4011 16 16.4998" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 11.9998V16.4998" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.5 18.9998H14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M10.5 21.4998H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3.5 11.9998H2.5M5.98438 5.97632L5.23438 5.23022M18.0195 5.97632L18.7695 5.23022M21.5 11.9998H20.5M12 2.49976V3.49976" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>It cannot predict</b> No model here forecasts a share price. It reads documents and structures analysis faster than you can, which is a different and much smaller claim.</div>
+<div class="minicard"><b>It cannot verify itself</b> A confident summary of a number it misread still sounds confident. The check against the primary filing is your job and it is not optional.</div>
+<div class="minicard"><b>It has no live market data</b> Not without a paid provider connector. Prices, multiples and anything intraday must come from a real source you have opened yourself.</div>
+<div class="minicard"><b>It is not advice</b> Anthropic designed these for qualified professionals to review before use. Same rule applies at home, with you as the reviewer, and consider a licensed adviser for anything that actually matters.</div>
+</div>
+
+<hr class="rule">
+<h2>Every link in one place <span class="gi" style="--gl:#1E93B1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>
+  <a href="https://github.com/anthropics/financial-services-plugins" target="_blank">The financial services plugins repository</a><br>
+  <a href="https://claude.com/resources/tutorials/install-financial-services-plugins-for-cowork" target="_blank">Official install tutorial</a><br>
+  <a href="https://www.anthropic.com/news/finance-agents" target="_blank">Anthropic, agents for financial services</a><br>
+  <a href="https://www.sec.gov/edgar/search/" target="_blank">SEC EDGAR full-text search</a><br>
+  <a href="https://www.fool.com/earnings-call-transcripts/" target="_blank">Free earnings call transcripts</a>
+</p>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

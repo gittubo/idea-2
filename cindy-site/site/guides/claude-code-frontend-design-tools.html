@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top 5 Claude Code front-end skills: the anti-AI-slop toolkit · Cindy Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="These are the 5 free skills that finally made the stuff I build with Claude look designed instead of &quot;made by AI.&quot;">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/claude-code-frontend-design-tools">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Top 5 Claude Code front-end skills: the anti-AI-slop toolkit">
+<meta property="og:description" content="These are the 5 free skills that finally made the stuff I build with Claude look designed instead of &quot;made by AI.&quot;">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/claude-code-frontend-design-tools">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Top 5 Claude Code front-end skills: the anti-AI-slop toolkit">
+<meta name="twitter:description" content="These are the 5 free skills that finally made the stuff I build with Claude look designed instead of &quot;made by AI.&quot;">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta name="author" content="Cindy Zhu">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Top 5 Claude Code front-end skills: the anti-AI-slop toolkit","description":"These are the 5 free skills that finally made the stuff I build with Claude look designed instead of \"made by AI.\" Every tool here is real, free, and open...","image":"https://cindyzhu.com.au/img/og-default.jpg","author":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"publisher":{"@type":"Person","name":"Cindy Zhu","url":"https://cindyzhu.com.au"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cindyzhu.com.au/guides/claude-code-frontend-design-tools"},"inLanguage":"en"}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<!-- GUIDES_CARD {t:"Top 5 Claude Code front-end skills: the anti-AI-slop toolkit", u:"guides/claude-code-frontend-design-tools.html", topic:"design", tool:"claude"} -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Design &amp; building</span>
+        <span class="gtag tool">Claude Code</span>
+      </div>
+      <h1>Top 5 Claude Code front-end skills: the anti-AI-slop toolkit</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 These are the 5 free skills that finally made the stuff I build with Claude look designed instead of "made by AI."</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<p>Here is the thing nobody tells you when you start building with AI: the code usually works, but it all looks the same. Purple gradients. Glassy cards. Cramped spacing. Rounded everything. One writer put it perfectly, an AI model outputs the statistical average of every Tailwind tutorial it ever scraped, "and that average is purple" (<a href="https://prg.sh/ramblings/Why-Your-AI-Keeps-Building-the-Same-Purple-Gradient-Website" target="_blank">source</a>).</p>
+
+<p>The fix is not more prompting. It is giving Claude real design rules and a way to check its own work. These 5 free skills do exactly that. I have ordered them the way I actually use them: catch the tells, hand it a design system, give it taste, polish the output, then let it see what it shipped.</p>
+
+<span class="kicker">learn the tells</span>
+<h2>First, what "AI slop" actually looks like <span class="gi" style="--gl:#BF7362" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C12.8417 22 14 22.1163 14 21C14 20.391 13.6832 19.9212 13.3686 19.4544C12.9082 18.7715 12.4523 18.0953 13 17C13.6667 15.6667 14.7778 15.6667 16.4815 15.6667C17.3334 15.6667 18.3334 15.6667 19.5 15.5C21.601 15.1999 22 13.9084 22 12Z" stroke="currentColor" stroke-width="1.5"/><circle cx="9.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M7.125 15H7M7.25 15C7.25 15.1381 7.13807 15.25 7 15.25C6.86193 15.25 6.75 15.1381 6.75 15C6.75 14.8619 6.86193 14.75 7 14.75C7.13807 14.75 7.25 14.8619 7.25 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>So you can spot it in your own builds. These are the dead giveaways of an AI-made front-end:</p>
+<ul>
+<li>🟣 Purple or violet gradients as the default hero background.</li>
+<li>🫧 Glassmorphism everywhere (frosted, semi-transparent cards).</li>
+<li>🔲 Generic rounded cards in a flat 3-across grid, no hierarchy.</li>
+<li>🔡 The Inter font on absolutely everything.</li>
+<li>📏 Cramped, inconsistent spacing that never quite breathes.</li>
+</ul>
+<div class="tip">Once you see these, you cannot unsee them. The tools below either stop Claude from making them, or catch them before you ship.</div>
+
+<hr class="rule">
+<span class="kicker">the spell-check</span>
+<h2>1. impeccable, catch the AI tells before you ship <span class="gi" style="--gl:#AF5F5E" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 3L13 11.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.44573 11.0854C6.96539 12.0368 4.98269 11.8736 3 11.0885C3.50059 17.531 6.50414 20.0089 10.5089 21C10.5089 21 13.5261 18.8664 13.961 13.8074C14.0081 13.2595 14.0317 12.9856 13.9178 12.6769C13.8038 12.3682 13.5802 12.1468 13.1329 11.704C12.3973 10.9757 12.0295 10.6116 11.5929 10.5204C11.1564 10.4293 10.5862 10.648 9.44573 11.0854Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M4.5 16.4464C4.5 16.4464 7 16.9286 9.5 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.5 7.25C8.5 7.94036 7.94036 8.5 7.25 8.5C6.55964 8.5 6 7.94036 6 7.25C6 6.55964 6.55964 6 7.25 6C7.94036 6 8.5 6.55964 8.5 7.25Z" stroke="currentColor" stroke-width="1.5"/><path d="M11.125 4H11M11.25 4C11.25 4.13807 11.1381 4.25 11 4.25C10.8619 4.25 10.75 4.13807 10.75 4C10.75 3.86193 10.8619 3.75 11 3.75C11.1381 3.75 11.25 3.86193 11.25 4Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>A free tool that scans your design and flags the dead giveaways of AI-made UI: 46 deterministic checks for things like purple gradients, glassy cards, cramped padding, and bouncy easing. Think of it as spell-check for "does this look AI-made." Built by Paul Bakaus, the person who created jQuery UI, so this is not a random weekend repo.</p>
+<ul>
+<li>⭐ 46k+ stars on GitHub, Apache-2.0 license, completely free.</li>
+<li>🔎 Run a one-off scan of your project from the terminal:</li>
+</ul>
+<div class="promptwrap">
+<span class="promptlabel">🧹 A one-off terminal scan</span>
+<pre><code>npx impeccable</code></pre>
+</div>
+<p>To wire it into Claude as a skill so it checks your design as it builds, open a new Claude chat and paste this:</p>
+<div class="promptwrap">
+<span class="promptlabel">🧹 Install it as a skill instead</span>
+<pre><code>Please install this as a skill for me. The repo is https://github.com/pbakaus/impeccable
+Then scan my current project for AI-design tells and fix what you find.</code></pre>
+</div>
+<p>🔗 Repo and docs: <a href="https://github.com/pbakaus/impeccable" target="_blank">github.com/pbakaus/impeccable</a></p>
+
+<hr class="rule">
+<span class="kicker">stop the guessing</span>
+<h2>2. ui-ux-pro-max, a whole design system in one skill <span class="gi" style="--gl:#689425" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.828 6.00096C12.9388 5.68791 12.999 5.35099 12.999 5C12.999 3.34315 11.6559 2 9.99904 2C8.34219 2 6.99904 3.34315 6.99904 5C6.99904 5.35099 7.05932 5.68791 7.17008 6.00096C4.88532 6.0093 3.66601 6.09039 2.87772 6.87868C2.08951 7.66689 2.00836 8.88603 2 11.1704C2.31251 11.06 2.64876 11 2.99904 11C4.6559 11 5.99904 12.3431 5.99904 14C5.99904 15.6569 4.6559 17 2.99904 17C2.64876 17 2.31251 16.94 2 16.8296C2.00836 19.114 2.08951 20.3331 2.87772 21.1213C3.66593 21.9095 4.88508 21.9907 7.16941 21.999C7.05908 21.6865 6.99904 21.3503 6.99904 21C6.99904 19.3431 8.34219 18 9.99904 18C11.6559 18 12.999 19.3431 12.999 21C12.999 21.3503 12.939 21.6865 12.8287 21.999C15.113 21.9907 16.3322 21.9095 17.1204 21.1213C17.9086 20.333 17.9897 19.1137 17.9981 16.829C18.3111 16.9397 18.648 17 18.999 17C20.6559 17 21.999 15.6569 21.999 14C21.999 12.3431 20.6559 11 18.999 11C18.648 11 18.3111 11.0603 17.9981 11.171C17.9897 8.88627 17.9086 7.66697 17.1204 6.87868C16.3321 6.09039 15.1128 6.0093 12.828 6.00096Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Instead of Claude guessing at a look, this hands it a searchable design library and lets it pick the right one for your app: 67 UI styles, 161 colour palettes, 99 UX rules, plus 57 font pairings. It ranks them against your product type, so a fintech dashboard and a florist portfolio come out looking like two different, intentional products.</p>
+<ul>
+<li>⭐ Free, MIT license, and it works inside Claude, Cursor, Windsurf and more.</li>
+<li>🎨 It is a Claude skill, so install it by pointing Claude at the repo:</li>
+</ul>
+<div class="promptwrap">
+<span class="promptlabel">🧩 Hands Claude a real library</span>
+<pre><code>Please install this skill for me from https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+Then use it to choose a style and palette for [describe your app].</code></pre>
+</div>
+<p>🔗 Repo: <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank">github.com/nextlevelbuilder/ui-ux-pro-max-skill</a></p>
+
+<hr class="rule">
+<span class="kicker">my favourite</span>
+<h2>3. taste-skill, gives Claude actual design taste <span class="gi" style="--gl:#BA7A10" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>This is the one nobody talks about, and it is my favourite. It calls itself "the anti-slop frontend framework for AI agents," and it works by locking in the specific fonts, spacing, shadows, card structure, and motion that stop a page looking generic. Not "make it work," but "make it look intentional." It is the difference between a page that functions and a page that feels designed.</p>
+<ul>
+<li>⭐ 63k+ stars on GitHub, MIT license, free, and framework-agnostic (Claude Code, Cursor, Codex).</li>
+<li>🛠 Install the default frontend variant with one command:</li>
+</ul>
+<div class="promptwrap">
+<span class="promptlabel">✨ One command, default variant</span>
+<pre><code>npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend"</code></pre>
+</div>
+<p>🔗 Repo: <a href="https://github.com/Leonxlnx/taste-skill" target="_blank">github.com/Leonxlnx/taste-skill</a> · Site: <a href="https://www.tasteskill.dev/" target="_blank">tasteskill.dev</a></p>
+
+<hr class="rule">
+<span class="kicker">the finished version</span>
+<h2>4. huashu-design, polish without hitting a wall <span class="gi" style="--gl:#BC7745" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7.5" cy="7.5" r="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-width="1.5"/><path d="M5 21C9.37246 15.775 14.2741 8.88406 21.4975 13.5424" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>When you want the pretty, finished version and not just a rough draft. This free skill builds hi-fi prototypes, slide decks, and animations, then exports them as clean HTML, MP4 video (with smooth frame interpolation and background music), or editable slides. Great for turning a working page into something you would actually put in front of a client.</p>
+<ul>
+<li>⭐ 21k+ stars on GitHub, MIT license, free for commercial use.</li>
+<li>📐 Install it as a skill by pointing Claude at the repo:</li>
+</ul>
+<div class="promptwrap">
+<span class="promptlabel">🖼️ Builds a client-ready prototype</span>
+<pre><code>Please install this skill for me from https://github.com/alchaincyf/huashu-design
+Then build a hi-fi prototype of [describe your page] and export it as HTML.</code></pre>
+</div>
+<p>🔗 Repo: <a href="https://github.com/alchaincyf/huashu-design" target="_blank">github.com/alchaincyf/huashu-design</a></p>
+
+<hr class="rule">
+<span class="kicker">give it eyes</span>
+<h2>5. Playwright MCP, let Claude see what it built <span class="gi" style="--gl:#9481A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.544 11.045C21.848 11.4713 22 11.6845 22 12C22 12.3155 21.848 12.5287 21.544 12.955C20.1779 14.8706 16.6892 19 12 19C7.31078 19 3.8221 14.8706 2.45604 12.955C2.15201 12.5287 2 12.3155 2 12C2 11.6845 2.15201 11.4713 2.45604 11.045C3.8221 9.12944 7.31078 5 12 5C16.6892 5 20.1779 9.12944 21.544 11.045Z" stroke="currentColor" stroke-width="1.5"/><path d="M15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12Z" stroke="currentColor" stroke-width="1.5"/></svg></span></h2>
+<p>Every tool above helps Claude make better design decisions. This one lets it check its own work with its eyes, not just guesses. Playwright opens a real browser, loads your page, screenshots it, and catches the layout bugs that are invisible in the code. It is Microsoft's open-source browser automation tool, and Claude Code talks to it through the official Playwright MCP.</p>
+<ul>
+<li>⭐ 90k+ stars on GitHub, Apache-2.0 license, free.</li>
+<li>🔌 Add the Playwright MCP to Claude Code with one command:</li>
+</ul>
+<div class="promptwrap">
+<span class="promptlabel">👀 Lets Claude screenshot its own work</span>
+<pre><code>claude mcp add playwright npx @playwright/mcp@latest</code></pre>
+</div>
+<p>Then ask Claude to open your page, screenshot it, and tell you what looks off. If you would rather not touch the terminal, Anthropic's own <a href="https://claude.com/claude-for-chrome" target="_blank">Claude for Chrome</a> extension and the <a href="https://claude.com/plugins/chrome-devtools-mcp" target="_blank">Chrome DevTools MCP</a> do a similar job of letting Claude view rendered output.</p>
+<p>🔗 Playwright: <a href="https://github.com/microsoft/playwright" target="_blank">github.com/microsoft/playwright</a> · Playwright MCP: <a href="https://github.com/microsoft/playwright-mcp" target="_blank">github.com/microsoft/playwright-mcp</a></p>
+
+<hr class="rule">
+<span class="kicker">the order</span>
+<h2>How I actually stack them <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>You do not need all 5 at once. Here is the order that works:</p>
+<ol class="steps">
+<li>🎨 Start a build with <strong>ui-ux-pro-max</strong> so Claude picks a real style and palette instead of defaulting to purple.</li>
+<li>✨ Layer <strong>taste-skill</strong> on top for the fonts, spacing, and motion that make it feel intentional.</li>
+<li>👀 Add the <strong>Playwright MCP</strong> so Claude can screenshot the page and catch its own layout bugs.</li>
+<li>🧹 Run <strong>impeccable</strong> as your final check before you ship, to flag any AI tells that slipped through.</li>
+<li>🖼️ Reach for <strong>huashu-design</strong> only when you need a polished, exportable finished version (a client deck, a demo video).</li>
+</ol>
+
+<hr class="rule">
+<h2>Every link in one place <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li>🧹 impeccable: <a href="https://github.com/pbakaus/impeccable" target="_blank">github.com/pbakaus/impeccable</a></li>
+<li>🧩 ui-ux-pro-max: <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank">github.com/nextlevelbuilder/ui-ux-pro-max-skill</a></li>
+<li>✨ taste-skill: <a href="https://github.com/Leonxlnx/taste-skill" target="_blank">github.com/Leonxlnx/taste-skill</a></li>
+<li>🖼️ huashu-design: <a href="https://github.com/alchaincyf/huashu-design" target="_blank">github.com/alchaincyf/huashu-design</a></li>
+<li>👀 Playwright MCP: <a href="https://github.com/microsoft/playwright-mcp" target="_blank">github.com/microsoft/playwright-mcp</a></li>
+<li>🤖 Claude (skills work from the Pro plan): <a href="https://claude.com" target="_blank">claude.com</a></li>
+</ul>
+    </div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "95a66a7f945945aca39ef1df4084fb08"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/site.js" defer></script>
+</body>
+</html>

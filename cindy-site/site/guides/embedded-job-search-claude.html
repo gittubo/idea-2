@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to run an embedded job search with Claude · Cindy Zhu</title>
+<!-- GUIDES_CARD {t:"How to run an embedded job search with Claude", u:"guides/embedded-job-search-claude.html", topic:"career", tool:"claude"} -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<!-- seo:auto -->
+<meta name="description" content="An embedded job search flips the whole thing around: instead of applying to a hundred openings and waiting, you pick fifteen companies, get genuinely...">
+<link rel="canonical" href="https://cindyzhu.com.au/guides/embedded-job-search-claude">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cindy Zhu">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="How to run an embedded job search with Claude">
+<meta property="og:description" content="An embedded job search flips the whole thing around: instead of applying to a hundred openings and waiting, you pick fifteen companies, get genuinely...">
+<meta property="og:url" content="https://cindyzhu.com.au/guides/embedded-job-search-claude">
+<meta property="og:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cindy Zhu, AI you can actually use">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to run an embedded job search with Claude">
+<meta name="twitter:description" content="An embedded job search flips the whole thing around: instead of applying to a hundred openings and waiting, you pick fifteen companies, get genuinely...">
+<meta name="twitter:image" content="https://cindyzhu.com.au/img/og-default.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Cindy Zhu<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/guides" class="active" aria-current="page">Free guides</a>
+      <a href="/ai-system">AI System Club</a>
+      <a href="/media-kit">Media kit</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-system" class="btn nav-cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+<span id="main" tabindex="-1"></span>
+<div class="wrap">
+  <div class="guidewrap">
+    <a class="guideback" href="/guides"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free guides</a>
+    <div class="guidehead">
+      <div class="gtags">
+        <span class="gtag topic">Career &amp; job</span>
+        <span class="gtag tool">Claude</span>
+      </div>
+      <h1>How to run an embedded job search with Claude</h1>
+    </div>
+    <div class="guidebody">
+<div class="gcallout intro">Hey, it's Cindy 🌱 An embedded job search flips the whole thing around: instead of applying to a hundred openings and waiting, you pick fifteen companies, get genuinely known inside them.</div>
+<!-- aisc-top-callout --><div class="gcallout orange">btw the waitlist for AI System Club is now open! If you're keen on using AI to automate your content, video editing, job search, business or build AI agents, <a href='/ai-system'>feel free to sign up</a> (only if you want to hehe). Ps. the waitlist gets first dibs:)</div><!-- /aisc-top-callout -->
+<div class="tip warn">💡 <strong>The honest framing.</strong> This is slower to start and much better at finishing. Mass applying gives you activity you can measure today and results you cannot control. Embedding gives you almost nothing in week one and compounds hard from week four, because every conversation you have stays useful long after the role you were looking at gets filled.</div>
+
+<hr class="rule">
+<span class="kicker">the numbers</span>
+<h2>Why the volume game stopped working <span class="gi" style="--gl:#977FAB" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L7 13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12 17L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17 17L17 11" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The advice to "apply to more things" was written for a market that no longer exists. Ashby, which makes hiring software and can therefore see the whole funnel, analysed over 109 million applications and 247,000 jobs from January 2021 through March 2026. Their finding, in their own words: <a href="https://www.ashbyhq.com/talent-trends-report/reports/2023-recruiter-productivity-trends-report" target="_blank">"Candidates are roughly 50% less likely to receive an interview today than they were five years ago."</a> Applications per hire went past 300, and the share of applications that turn into an interview fell from 7% to 8% in 2021 down to somewhere between 3.6% and 4.7% today.</p>
+<p>Then look at what happens when someone knows your name. In a <a href="https://www.ashbyhq.com/talent-trends-report/reports/referrals" target="_blank">separate Ashby analysis of 38 million applications across 93,000 jobs</a>, referrals were about 1% of all applications received, and yet "40% of referred candidates go from application to interview". By the end of 2024 the offer rate for referrals sat at 7.3%, against 0.2% for people who applied cold.</p>
+<div class="cardgrid">
+<div class="minicard"><b>300+</b> applications per hire on average through 2025, up from roughly 100 in early 2021. The queue you are standing in tripled.</div>
+<div class="minicard"><b>3.6% to 4.7%</b> of applications now reach an interview, down from 7% to 8% five years ago. Doubling your volume roughly gets you back to 2021.</div>
+<div class="minicard"><b>40%</b> of referred candidates reach an interview. Same people, same resumes, one difference: somebody inside already knew who they were.</div>
+<div class="minicard"><b>7.3% vs 0.2%</b> offer rates for referrals against cold applications at the end of 2024. That gap is the entire argument for embedding.</div>
+</div>
+<div class="tip warn">⚠️ <strong>One myth to leave behind while you are here.</strong> You will be told that "80% of jobs are never advertised". Nobody can source it. It traces back to career-counselling books from the 1970s and 80s rather than to any measurement, which <a href="https://www.collegerecruiter.com/blog/2024/07/09/is-it-true-that-80-of-job-openings-are-not-advertised" target="_blank">College Recruiter walks through in detail</a>. The real version is less dramatic and more useful: about half of all hires come from something other than someone answering a posting, mostly referrals and recruiter sourcing. Half is plenty of reason to build relationships. You do not need the myth.</div>
+
+<hr class="rule">
+<span class="kicker">the difference</span>
+<h2>Applying versus embedding <span class="gi" style="--gl:#448BDC" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.3884 3L17.3913 3.97574C17.8393 4.41165 18.0633 4.62961 17.9844 4.81481C17.9056 5 17.5888 5 16.9552 5H9.19422C5.22096 5 2 8.13401 2 12C2 13.4872 2.47668 14.8662 3.2895 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M7.61156 21L6.60875 20.0243C6.16074 19.5883 5.93673 19.3704 6.01557 19.1852C6.09441 19 6.4112 19 7.04478 19H14.8058C18.779 19 22 15.866 22 12C22 10.5128 21.5233 9.13383 20.7105 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<div class="cardgrid">
+<div class="minicard"><b>Applying</b> You enter at the moment of maximum competition, in a pile, judged on a document, by someone who has never heard your name. Your only lever is volume, and volume is the one thing everyone else also has.</div>
+<div class="minicard"><b>Embedding</b> You enter before the role exists, as a name someone already recognises, judged on what you have said and shared. Your lever is recall, and recall is the one thing a queue of applicants cannot manufacture.</div>
+<div class="minicard"><b>What you send</b> Applying sends a tailored resume into a form. Embedding sends a specific, useful message to a specific human about something they actually said or shipped.</div>
+<div class="minicard"><b>What you build</b> Applying builds a spreadsheet of rejections. Embedding builds a network of fifteen companies that stays valuable in your next search, and the one after that.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">set up once</span>
+<h2>Build your job search HQ in Claude <span class="gi" style="--gl:#A9810B" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7H16.75C18.8567 7 19.91 7 20.6667 7.50559C20.9943 7.72447 21.2755 8.00572 21.4944 8.33329C22 9.08996 22 10.1433 22 12.25C22 15.7612 22 17.5167 21.1573 18.7779C20.7926 19.3238 20.3238 19.7926 19.7779 20.1573C18.5167 21 16.7612 21 13.25 21H12C7.28595 21 4.92893 21 3.46447 19.5355C2 18.0711 2 15.714 2 11V7.94427C2 6.1278 2 5.21956 2.38032 4.53806C2.65142 4.05227 3.05227 3.65142 3.53806 3.38032C4.21956 3 5.1278 3 6.94427 3C8.10802 3 8.6899 3 9.19926 3.19101C10.3622 3.62712 10.8418 4.68358 11.3666 5.73313L12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>Do not run this out of scattered chats. Everything below works far better inside one Claude project, because the project carries your resume, your target list and your voice into every conversation without you re-pasting them.</p>
+<ol class="steps">
+<li><strong class="st">👩‍💻 Open Claude and create a project.</strong> Projects work on every plan including Free, where you can have up to five of them, per Anthropic's <a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">projects documentation</a>. Call it "Job search HQ".</li>
+<li><strong class="st">📄 Add your real resume to project knowledge.</strong> Upload the full version, the honest one with everything in it, not the trimmed one-page file you send out. Claude needs the raw material to spot what is genuinely rare about you.</li>
+<li><strong class="st">✍️ Add three things you have written.</strong> Old emails, a LinkedIn post, a message to a colleague. This is what stops the outreach drafts sounding like a template, and it takes two minutes.</li>
+<li><strong class="st">🧭 Set the project instructions.</strong> Paste the instructions block below into the project's custom instructions field. It sets the rules once so you never have to repeat them in individual chats.</li>
+<li><strong class="st">🌐 Turn web search on.</strong> Several of these prompts need current information about who works where and what companies have recently announced. Without it Claude is working from training data and will confidently hand you people who left two years ago.</li>
+</ol>
+
+<div class="promptwrap">
+<span class="promptlabel">🧭 project instructions</span>
+<pre><code>You are helping me run an embedded job search. That means I am not mass applying. I am picking a small number of target companies, building genuine relationships inside them before roles open, and staying top of mind so that I am considered early when something appears.
+
+Ground every recommendation in my actual resume and writing samples in this project. When you name a person, a team or a company fact, use web search and tell me the source and the date, and say plainly when you are not sure, because I am going to contact real humans and being wrong about them is worse than being slow. Never invent a job title, a mutual connection, or a quote.
+
+Write anything I might send in my own voice, matched to my writing samples: short sentences, specific, warm, no corporate filler, no em dashes, and never a paragraph that opens by flattering someone. Assume the person reading it is busy and slightly sceptical. If a piece of outreach has no reason to exist other than that I want a job, tell me so and help me find a real reason instead.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">step one</span>
+<h2>Build the target list of 15 <span class="gi" style="--gl:#CD5174" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M14 2.20004C13.3538 2.06886 12.6849 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.3151 21.9311 10.6462 21.8 10" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M12.0303 11.9625L16.5832 7.4096M19.7404 4.34462L19.1872 2.35748C19.0853 2.03011 18.6914 1.89965 18.4259 2.11662C16.9898 3.29018 15.4254 4.87091 16.703 7.36419C19.2771 8.56455 20.7466 6.94584 21.8733 5.5853C22.0975 5.3146 21.9623 4.90767 21.6247 4.81005L19.7404 4.34462Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Fifteen is the number because it is small enough to be real. You can hold fifteen companies in your head, notice their news, and have a genuine opinion about them. Fifty target companies is just mass applying with extra steps.</p>
+<div class="promptwrap">
+<span class="promptlabel">🎯 the target list</span>
+<pre><code>Using my resume in this project, build me a target list of 15 companies for an embedded job search. I am based in [your city] and open to [remote / hybrid / on-site], and the work I want to be doing is [describe the role in plain words, not a job title].
+
+Rank them by leverage, not by whether they are hiring right now. Leverage means the overlap between what they are visibly trying to do and something in my background that is genuinely uncommon, so for each company tell me the specific thing they are working on, the specific thing in my resume that meets it, and why that combination is rarer than it looks. Search the web for recent signals: funding, launches, expansion into a market, a new leader with a stated agenda, a public problem they are trying to solve.
+
+Give me a mix: five companies where I am an obvious fit, five where I am a strong fit that they would not think to search for, and five that are earlier-stage or less obvious and where one conversation could matter disproportionately. Include a source link and a date for every signal you cite. At the end, flag any company you were not able to verify current information about, and tell me the three companies from the list you would drop first if I wanted to cut it to twelve.</code></pre>
+</div>
+<div class="tip calm">🌱 Argue with this list. Cut anything you would not be happy to talk about at a dinner party, because you are going to be reading their news every week for the next three months. Genuine curiosity is the whole engine here, and it cannot be faked at volume.</div>
+
+<hr class="rule">
+<span class="kicker">step two</span>
+<h2>Find the people who actually matter <span class="gi" style="--gl:#D060A1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5C5.34315 4.5 4 5.84315 4 7.5C4 8.06866 4.15822 8.60037 4.43304 9.0535C3.04727 9.31855 2 10.537 2 12C2 13.463 3.04727 14.6814 4.43304 14.9465M7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V19.5C12 20.8807 10.8807 22 9.5 22C8.11929 22 7 20.8807 7 19.5C5.34315 19.5 4 18.1569 4 16.5C4 15.9313 4.15822 15.3996 4.43304 14.9465M7 4.5C7 5.31791 7.39278 6.04408 8 6.50018M4.43304 14.9465C4.78948 14.3588 5.34207 13.9032 6 13.6707" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 19.4999C18.6569 19.4999 20 18.1567 20 16.4999C20 15.9312 19.8418 15.3995 19.567 14.9464C20.9527 14.6813 22 13.4629 22 11.9999C22 10.5369 20.9527 9.31843 19.567 9.05338M17 19.4999C17 20.8806 15.8807 21.9999 14.5 21.9999C13.1193 21.9999 12 20.8806 12 19.4999L12 4.49988C12 3.11917 13.1193 1.99988 14.5 1.99988C15.8807 1.99988 17 3.11917 17 4.49988C18.6569 4.49988 20 5.84302 20 7.49988C20 8.06854 19.8418 8.60024 19.567 9.05338M17 19.4999C17 18.682 16.6072 17.9558 16 17.4997M19.567 9.05338C19.2105 9.64109 18.6579 10.0966 18 10.3292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Not the recruiter, and usually not the CEO. The person you want is one or two levels above the role you would take: close enough to feel the problem, senior enough to create a headcount when they feel it badly.</p>
+<div class="promptwrap">
+<span class="promptlabel">🧠 map the humans</span>
+<pre><code>For each of my top 8 target companies, map who I should actually get to know. For each company give me three names: the person who would most likely be my future manager, one peer already doing work adjacent to mine, and one person who talks publicly about the company's work, for example on LinkedIn, a podcast, a conference talk or an engineering or marketing blog.
+
+For every person, use web search and give me: their current title, roughly how long they have been there, a link to the profile or post where you found them, and one specific, recent, verifiable thing they have said or shipped that I could genuinely respond to. That last part is the whole point, so if you cannot find something specific and real for a person, say so and suggest someone else rather than filling the gap with a generic description.
+
+Then tell me, in one line per company, which of the three is the right first contact and why. Rank all 8 companies by how reachable their people actually are, because a warm door at a smaller company is worth more than a cold one at a famous name.</code></pre>
+</div>
+<div class="tip warn">⚠️ <strong>Verify every human before you contact them.</strong> Open the profile yourself and check the title and the dates. Models get people wrong, and there is no recovering from a first message that congratulates someone on a job they left in 2024. Treat Claude's output as a research shortlist, never as a verified fact.</div>
+
+<hr class="rule">
+<span class="kicker">step three</span>
+<h2>Write outreach that is not asking for a job <span class="gi" style="--gl:#A68307" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.4249 4.60509L17.4149 3.6151C18.2351 2.79497 19.5648 2.79497 20.3849 3.6151C21.205 4.43524 21.205 5.76493 20.3849 6.58507L19.3949 7.57506M16.4249 4.60509L9.76558 11.2644C9.25807 11.772 8.89804 12.4078 8.72397 13.1041L8 16L10.8959 15.276C11.5922 15.102 12.228 14.7419 12.7356 14.2344L19.3949 7.57506M16.4249 4.60509L19.3949 7.57506" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/><path d="M18.9999 13.5C18.9999 16.7875 18.9999 18.4312 18.092 19.5376C17.9258 19.7401 17.7401 19.9258 17.5375 20.092C16.4312 21 14.7874 21 11.4999 21H11C7.22876 21 5.34316 21 4.17159 19.8284C3.00003 18.6569 3 16.7712 3 13V12.5C3 9.21252 3 7.56879 3.90794 6.46244C4.07417 6.2599 4.2599 6.07417 4.46244 5.90794C5.56879 5 7.21252 5 10.5 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>The message that works is the one that would still make sense if you were not job hunting at all. You are giving something small, reacting to something specific, or asking a question only that person can answer. The job comes up later, or it never comes up and they think of you anyway.</p>
+<div class="promptwrap">
+<span class="promptlabel">✍️ first contact drafts</span>
+<pre><code>Draft first-contact messages for the five people you ranked highest. Match my writing samples in this project so they sound like me, and keep each one under 90 words.
+
+Each message must be built on the specific thing that person recently said or shipped, and must contain something of my own: a reaction they have not heard before, a relevant observation from my experience, or a question that is genuinely interesting to answer. None of them may ask for a job, a referral, a coffee chat, or "15 minutes of your time", because those all put the cost on them and give them nothing back. If the only thing I have to offer a particular person is enthusiasm, tell me the message is not worth sending yet and what I would need to learn or make first.
+
+For each one, give me the message, the platform to send it on, and a one-line note on what a good reply would look like versus what a polite brush-off looks like, so I know how to read the response. Then write me one short alternative version of each that I could post publicly as a comment instead, since a thoughtful public comment is often a lower-friction first touch than a DM.</code></pre>
+</div>
+
+<p>Then the part almost everyone skips, which is what you say the second and third time.</p>
+<div class="promptwrap">
+<span class="promptlabel">🔁 the follow-up ladder</span>
+<pre><code>For each of the five people, build me a three-touch follow-up ladder spread across the next eight weeks, assuming the first message got either a short friendly reply or no reply at all.
+
+Each touch has to carry new value rather than repeating the ask, so give me concrete options: sharing something relevant I genuinely read, reacting to a company announcement, sending a short piece of work or analysis I made that touches their problem, or answering a question they posted publicly. Tell me what to do differently if they replied warmly versus if they went silent, and be honest about when to stop, because persistence stops being charming at a point and I want to know where that point is.
+
+Write the actual draft text for touch two and touch three in my voice, leaving obvious blanks for the thing that will only exist later. Then tell me the single strongest touch on the whole ladder and why, so I know which one to put real effort into.</code></pre>
+</div>
+
+<hr class="rule">
+<span class="kicker">step four</span>
+<h2>The tracker that keeps it alive <span class="gi" style="--gl:#957FA9" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.247 11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358Z" stroke="currentColor" stroke-width="1.5"/><path d="M16.8538 7.43306C16.8538 8.24714 16.1901 8.90709 15.3714 8.90709C14.5527 8.90709 13.889 8.24714 13.889 7.43306C13.889 6.61898 14.5527 5.95904 15.3714 5.95904C16.1901 5.95904 16.8538 6.61898 16.8538 7.43306Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3059 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97731 2.31177 7.89904C2.84167 6.96631 4 7.00027 5.5 7.00015" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<p>An embedded search dies from forgetting, not from rejection. Fifteen companies and forty people is more than anyone holds in their head, and the whole strategy depends on the second and third touch happening at all.</p>
+<div class="promptwrap">
+<span class="promptlabel">📋 build the tracker</span>
+<pre><code>Build me a simple tracker for this search as a table I can paste into Notion, Google Sheets or Excel, and give me the rows already filled in with my 15 companies and the people we mapped.
+
+Columns: company, person, role, platform, first contact date, last touch date, what the last touch was, their response, next touch date, next touch idea, and a warmth rating from one to five. Then tell me the rules for maintaining it in plain language: how often I update it, what warmth ratings actually mean in behaviour rather than feeling, and what triggers moving a company down the list or off it entirely.
+
+Finally, write me a short weekly review prompt I can paste back to you every Sunday with the updated table, so you can tell me who is overdue for a touch, which relationships are going cold, and which two people I should put real effort into this week. Keep that review prompt under 120 words so I will actually use it.</code></pre>
+</div>
+
+<div class="tip calm">💡 The Sunday review is the entire habit. Twenty minutes, once a week, paste the table back into your project and let Claude tell you who is going cold. That single loop is the difference between an embedded search and a list of people you messaged once in March.</div>
+
+<hr class="rule">
+<span class="kicker">the touches</span>
+<h2>Four touches that build real recall <span class="gi" style="--gl:#66960A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10C18 10 12 14 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9.34882 11.1825C7.73784 12.3891 5.44323 12.26 3.9785 10.7953C1.55484 8.37164 2.03957 3.03957 2.03957 3.03957C2.03957 3.03957 7.37164 2.55484 9.7953 4.9785C10.7548 5.93803 11.1412 7.25369 10.9543 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9638 12.8175C13.644 11.3832 13.6797 9.14983 15.0708 7.75867C17.2252 5.6043 21.9648 6.03517 21.9648 6.03517C21.9648 6.03517 22.3957 10.7748 20.2413 12.9292C19.4877 13.6828 18.487 14.0386 17.5 13.9967" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6 7C6 7 12 12 12 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<p>Recall is not the same as contact. These are the four that make people think of you unprompted, roughly in order of effort and of how much they are worth.</p>
+<div class="cardgrid">
+<div class="minicard"><b>The specific comment</b> A public reply that adds a real point to something they posted. Low effort, visible to their whole network, and the easiest thing to do consistently every week.</div>
+<div class="minicard"><b>The useful send</b> An article, a tool or a data point that is obviously relevant to a problem they described. It only works when it is clearly for them and not a broadcast.</div>
+<div class="minicard"><b>The made thing</b> A short teardown, a mock-up, a small analysis of something they work on. Highest effort, dramatically highest return, and the one that turns you from a name into a candidate.</div>
+<div class="minicard"><b>The genuine question</b> Something only they can answer, asked because you actually want to know. It gives them the pleasure of being an expert and gives you a reason to come back with what you did with the answer.</div>
+</div>
+
+<hr class="rule">
+<span class="kicker">the first month</span>
+<h2>What the first four weeks look like <span class="gi" style="--gl:#8E82A7" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 2V6M8 2V6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 4H11C7.22876 4 5.34315 4 4.17157 5.17157C3 6.34315 3 8.22876 3 12V14C3 17.7712 3 19.6569 4.17157 20.8284C5.34315 22 7.22876 22 11 22H13C16.7712 22 18.6569 22 19.8284 20.8284C21 19.6569 21 17.7712 21 14V12C21 8.22876 21 6.34315 19.8284 5.17157C18.6569 4 16.7712 4 13 4Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M3 10H21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.1258 14H12.0008M12.1258 18H12.0008M7.625 14H7.5M7.625 18H7.5M16.625 14H16.5M12.2508 14C12.2508 14.1381 12.1389 14.25 12.0008 14.25C11.8628 14.25 11.7508 14.1381 11.7508 14C11.7508 13.8619 11.8628 13.75 12.0008 13.75C12.1389 13.75 12.2508 13.8619 12.2508 14ZM12.2508 18C12.2508 18.1381 12.1389 18.25 12.0008 18.25C11.8628 18.25 11.7508 18.1381 11.7508 18C11.7508 17.8619 11.8628 17.75 12.0008 17.75C12.1389 17.75 12.2508 17.8619 12.2508 18ZM7.75 14C7.75 14.1381 7.63807 14.25 7.5 14.25C7.36193 14.25 7.25 14.1381 7.25 14C7.25 13.8619 7.36193 13.75 7.5 13.75C7.63807 13.75 7.75 13.8619 7.75 14ZM7.75 18C7.75 18.1381 7.63807 18.25 7.5 18.25C7.36193 18.25 7.25 18.1381 7.25 18C7.25 17.8619 7.36193 17.75 7.5 17.75C7.63807 17.75 7.75 17.8619 7.75 18ZM16.75 14C16.75 14.1381 16.6381 14.25 16.5 14.25C16.3619 14.25 16.25 14.1381 16.25 14C16.25 13.8619 16.3619 13.75 16.5 13.75C16.6381 13.75 16.75 13.8619 16.75 14Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span></h2>
+<ol class="steps">
+<li><strong class="st">🎯 Week one, build.</strong> Set up the project, run the target list prompt, cut it to fifteen yourself, and map people at your top eight. Contact nobody yet. This week is research and it is meant to feel slow.</li>
+<li><strong class="st">✍️ Week two, first touches.</strong> Five first contacts, spread across the week, each verified by hand before it goes. Five real messages beat fifty templated ones, and you will feel the difference in the replies.</li>
+<li><strong class="st">📚 Week three, get visible.</strong> Comment publicly on your target companies' posts, and make one small thing connected to a problem one of them talks about. This is the week you stop being a stranger.</li>
+<li><strong class="st">🔁 Week four, follow up and widen.</strong> Run touch two on everyone from week two, map people at the remaining seven companies, and do your Sunday review properly. By now the tracker is doing the remembering for you.</li>
+</ol>
+
+<div class="tip warn">⚠️ <strong>Keep applying while you do this.</strong> Embedding is a second engine, not a replacement for the first one. Apply to the roles you genuinely want, and let the embedded work run underneath it. The people who get hurt by this strategy are the ones who treat it as permission to stop doing the obvious thing.</div>
+
+<hr class="rule">
+<span class="kicker">keep going</span>
+<h2>The rest of the job hunt <span class="gi" style="--gl:#997FA6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span></h2>
+<ul>
+<li><strong>Finding real, live roles</strong> (not ghost jobs): <a href="https://cindyzhu.com.au/guides/find-real-jobs-with-claude" target="_blank">how to find real jobs with Claude</a></li>
+<li><strong>The whole search, end to end</strong>: <a href="https://cindyzhu.com.au/guides/run-your-job-hunt-with-claude" target="_blank">run your job hunt with Claude</a></li>
+<li><strong>Claude projects</strong> (what they are, what each plan gets): <a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank">Anthropic's projects guide</a></li>
+</ul>
+
+<div class="gcallout"><strong>Want to be the person companies chase?</strong> Inside AI System Club I teach people to build real AI skills and systems, which is currently the fastest way to become the obvious hire rather than one of four hundred applicants. Doors open soon and founding pricing dies at close. 🌱 <a href='/ai-system' target='_blank'>Join the waitlist</a> (link in my bio too).</div>
+
+</div>
+  </div>
+</div>
+<!-- guide-end -->
+<div class="wrap"><div class="guidewrap guide-end">
+  <!-- aisc-waitlist-band -->
+  <section class="wl-card" aria-labelledby="wl-end-h">
+    <span class="eyebrow">the waitlist is now open</span>
+    <h2 id="wl-end-h">AI System Club is launching soon</h2>
+    <p>Build AI systems with me through recorded lessons you can follow at your own pace. Join the waitlist for first access and the founding price.</p>
+    <div class="wl-slot">
+      <form action='/' class='wl-form' method='POST' name='waitlist'>
+        <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <label class="sr-only" for="wl-end-email">Your email</label>
+        <input id="wl-end-email" type="email" name="email" placeholder="your email" autocomplete="email" required>
+        <button type="submit" class="btn">Join the waitlist</button>
+      </form>
+    </div>
+    <div class="dibs"><svg width="30" height="44" viewBox="0 0 34 50" fill="none" aria-hidden="true"><path d="M10 48C0 36 2 18 21 5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 6.5L21 5L20.5 15.5" stroke="#C96F4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>btw this list gets first dibs<br>the moment doors open :)</span></div>
+  </section>
+  <!-- /aisc-waitlist-band -->
+</div></div>
+<!-- /guide-end -->
+<footer class="site-foot">
+  <p class="foot-line">Cindy Zhu · <a href="https://instagram.com/cindiezhu" target="_blank" rel="noopener">@cindiezhu</a> · AI you can actually use</p>
+  <nav class="foot-links" aria-label="Footer"><a href="/guides">Free guides</a><a href="/ai-system">AI System Club</a><a href="/media-kit">Media kit</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+  <div class="copyright">&copy; 2026 Cindy Zhu. All rights reserved.</div>
+</footer>
+<script src="../guide-kit.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>
