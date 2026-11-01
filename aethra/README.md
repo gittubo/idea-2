@@ -40,7 +40,7 @@ Shards are earned only. Nothing in the prototype uses real money.
 
 ## Worlds
 
-`worlds.html` lets you walk all eleven worlds as the woman or the man. Open it with a world id in the hash (`#nexus`, `#kahem`, and so on) or pick one from the list. Each world takes its colours from its part of the master map. When you arrive, about 70,000 atoms (26,000 on phones) stream in from the sky and weave every structure, starting near you and spreading outward; then the structures turn solid.
+`worlds.html` lets you walk all eleven worlds as the woman or the man. Open it with a world id in the hash (`#nexus`, `#kahem`, and so on) or pick one from the list. Each world takes its colours from its part of the master map. Worlds appear complete when you arrive. The player's planted foot is kept on the ground surface each frame, so feet don't sink into slopes or floors.
 
 - **The Core:** the hub tower, a holographic globe and ten World Gates. Walk into a gate to travel.
 - **Orbital Station:** a hangar deck, docked ships and a planet beyond the windows.

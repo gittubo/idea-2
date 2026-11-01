@@ -77,7 +77,6 @@ body.touch #hint { display: none; }
     </div>
   </div>
   <div id="prompt" class="panel" hidden></div>
-  <div id="weaving" hidden>Weaving world</div>
   <div id="hint"><kbd>W A S D</kbd> move · <kbd>Shift</kbd> run · <kbd>Space</kbd> jump<br>drag or click to look (click locks the mouse) · <kbd>Esc</kbd> release</div>
 </div>
 <div id="touch" hidden>
@@ -88,7 +87,6 @@ body.touch #hint { display: none; }
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/utils/SkeletonUtils.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/math/MeshSurfaceSampler.js"></script>
 <script>
 (() => {
 'use strict';
@@ -101,9 +99,8 @@ const TAU = Math.PI * 2;
 const angDiff = (a, b) => ((b - a + Math.PI) % TAU + TAU) % TAU - Math.PI;
 const isTouch = matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
 if (isTouch) document.body.classList.add('touch');
-if (!window.THREE || !THREE.GLTFLoader || !THREE.SkeletonUtils || !THREE.MeshSurfaceSampler) { $('#loading').textContent = 'The 3D engine could not load. Check your connection and reload.'; return; }
+if (!window.THREE || !THREE.GLTFLoader || !THREE.SkeletonUtils) { $('#loading').textContent = 'The 3D engine could not load. Check your connection and reload.'; return; }
 const FLIGHT_URL = 'https://claude.ai/artifact/XiFJ9QRMg652oCDrr1euL1';
-const ATOMS = isTouch ? 26000 : 70000;
 
 /* ---------- the worlds ---------- */
 // crop: the part of your master map each world takes its colours from (same crops as Universe Flight)
@@ -215,7 +212,7 @@ function collideCircle(p, r) {
   const lim = 230, d = Math.hypot(p.x, p.z); if (d > lim) { p.x *= lim / d; p.z *= lim / d; }
 }
 function standHeight(x, z, y) { // the highest walkable surface under (x, z) that is not above the player's knees
-  let top = world.h(x, z);
+  let top = world.groundH(x, z);
   for (const b of boxes) if (x > b.x0 && x < b.x1 && z > b.z0 && z < b.z1 && b.h <= y + 0.6 && b.h > top) top = b.h;
   for (const c of posts) if (c.r > 1.2 && Math.hypot(x - c.x, z - c.z) < c.r && c.h <= y + 0.6 && c.h > top) top = c.h;
   return top;
@@ -241,10 +238,10 @@ const BUILD = {
   core() {
     const floor = std(0x30344a, { metalness: 0.6, roughness: 0.3 }), trim = glowMat(PAL.accent.clone().lerp(new THREE.Color(0x5fd0ff), 0.6));
     const tower = std(0xc8d2e6, { metalness: 0.8, roughness: 0.25 });
-    add(new THREE.CylinderGeometry(70, 70, 0.4, 64), floor, 0, 0.2, 0, { shadow: false, atoms: false });
-    for (const r of [18, 34, 52]) add(new THREE.TorusGeometry(r, 0.12, 6, 96), trim, 0, 0.42, 0, { rx: Math.PI / 2, shadow: false });
+    add(new THREE.CylinderGeometry(70, 70, 0.4, 64), floor, 0, -0.19, 0, { shadow: false, atoms: false });
+    for (const r of [18, 34, 52]) add(new THREE.TorusGeometry(r, 0.12, 6, 96), trim, 0, 0.03, 0, { rx: Math.PI / 2, shadow: false });
     // central tower: stacked tiers with glowing bands and a spire
-    let y = 0.4;
+    let y = 0;
     for (const [r, h] of [[9, 6], [7, 10], [5.5, 14], [4, 18], [2.6, 16]]) { cyl(0, 0, r * 0.85, r, h, tower, { y }); add(new THREE.CylinderGeometry(r * 0.86, r * 0.86, 0.5, 32), trim, 0, y + h - 0.3, 0); y += h; }
     cyl(0, 0, 0.05, 1.2, 26, trim, { y, solid: false });
     const globe = add(new THREE.IcosahedronGeometry(4, 2), new THREE.MeshBasicMaterial({ color: 0x7fd8ff, wireframe: true, transparent: true, opacity: 0.7 }), 0, 24, 18, { shadow: false });
@@ -407,52 +404,6 @@ function gate(x, z, face, target) {
   world.gates.push({ pos: new THREE.Vector3(x, y, z), target, fill });
 }
 
-/* ---------- atoms: every world weaves itself before it turns solid ---------- */
-const atomMat = new THREE.ShaderMaterial({
-  transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
-  uniforms: { uT: { value: 0 }, uScale: { value: 1 }, uFade: { value: 1 } },
-  vertexShader: `
-    attribute vec3 aStart; attribute float aDelay; attribute vec3 color;
-    uniform float uT, uScale;
-    varying vec3 vColor;
-    void main() {
-      float t = clamp((uT - aDelay) / 1.4, 0.0, 1.0); float e = t * t * (3.0 - 2.0 * t);
-      vec3 p = mix(aStart, position, e);
-      float a = (1.0 - e) * 6.0 + aDelay * 9.0; p.xz += vec2(cos(a), sin(a)) * (1.0 - e) * 6.0;
-      vec4 mv = modelViewMatrix * vec4(p, 1.0); gl_Position = projectionMatrix * mv;
-      gl_PointSize = clamp(0.5 * uScale / -mv.z * (2.0 - e), 1.0, 7.0);
-      vColor = color * (0.7 + 0.6 * (1.0 - e)) + vec3(0.15, 0.3, 0.6) * (1.0 - e);
-    }`,
-  fragmentShader: `
-    uniform float uFade; varying vec3 vColor;
-    void main() { float d = length(gl_PointCoord - 0.5); if (d > 0.5) discard; gl_FragColor = vec4(vColor, smoothstep(0.5, 0.0, d) * uFade); }`
-});
-let atomPoints = null, weaveT = 0;
-const WEAVE_END = 4.2;
-function buildAtoms(spawn) {
-  if (atomPoints) { scene.remove(atomPoints); atomPoints.geometry.dispose(); atomPoints = null; }
-  const meshes = world.meshes.filter(m => m.geometry && m.geometry.attributes.position);
-  const sizes = meshes.map(m => { m.geometry.computeBoundingSphere(); return Math.pow(m.geometry.boundingSphere.radius, 1.6); });
-  const total = sizes.reduce((a, b) => a + b, 0) || 1;
-  const pos = [], start = [], col = [], delay = [], v = new THREE.Vector3(), c = new THREE.Color();
-  meshes.forEach((m, i) => {
-    const n = Math.max(8, Math.round(ATOMS * sizes[i] / total)); m.updateMatrixWorld(true);
-    let sampler; try { sampler = new THREE.MeshSurfaceSampler(m).build(); } catch (e) { return; }
-    const base = m.material.emissive && m.material.emissive.getHex() !== 0 ? m.material.emissive.clone().add(m.material.color) : m.material.color.clone();
-    for (let k = 0; k < n; k++) {
-      sampler.sample(v); v.applyMatrix4(m.matrixWorld);
-      pos.push(v.x, v.y, v.z); start.push(v.x + rand(-30, 30), v.y + rand(20, 60), v.z + rand(-30, 30));
-      c.copy(base).multiplyScalar(rand(0.8, 1.2)); col.push(c.r, c.g, c.b);
-      delay.push(Math.hypot(v.x - spawn.x, v.z - spawn.z) / 220 * 2.2 + Math.random() * 0.4);
-    }
-  });
-  const g = new THREE.BufferGeometry();
-  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('aStart', new THREE.Float32BufferAttribute(start, 3));
-  g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); g.setAttribute('aDelay', new THREE.Float32BufferAttribute(delay, 1));
-  atomPoints = new THREE.Points(g, atomMat); atomPoints.frustumCulled = false; scene.add(atomPoints);
-  return pos.length / 3;
-}
-
 /* ---------- particles (snow, embers, fireflies...) ---------- */
 const PARTICLE = { snow: [0xffffff, 0.35, [0, -3, 0]], embers: [0xff7a2a, 0.3, [0, 2.5, 0]], fireflies: [0xc8ff7a, 0.3, [0, 0.2, 0]], petals: [0xffb8d8, 0.3, [0.6, -1.2, 0.3]], dust: [0xffe0b0, 0.18, [1.2, 0.1, 0.4]], sparks: [0x7fd8ff, 0.25, [0, 1.5, 0]] };
 let particles = null;
@@ -497,7 +448,15 @@ function loadWorld(id) {
     return y;
   };
   world = { group: G, def, h, meshes: [], gates: [], spin: [], bob: [], lava: [], pads: [], spawn: new THREE.Vector3(0, 0, 20), face: Math.PI, woven: false };
-  const geo = new THREE.PlaneGeometry(500, 500, isTouch ? 100 : 160, isTouch ? 100 : 160); geo.rotateX(-Math.PI / 2);
+  const SEG = isTouch ? 100 : 160, CELL = 500 / SEG;
+  const geo = new THREE.PlaneGeometry(500, 500, SEG, SEG); geo.rotateX(-Math.PI / 2);
+  // the ground the eye sees is flat triangles between grid points; feet stand on those, not on the curve between them
+  world.groundH = (x, z) => {
+    const gx = (x + 250) / CELL, gz = (z + 250) / CELL, ix = Math.floor(gx), iz = Math.floor(gz), fx = gx - ix, fz = gz - iz;
+    const P = (i, k) => h(i * CELL - 250, k * CELL - 250), ha = P(ix, iz), hb = P(ix, iz + 1), hd = P(ix + 1, iz);
+    if (fx + fz <= 1) return ha + (hd - ha) * fx + (hb - ha) * fz;
+    const hc = P(ix + 1, iz + 1); return hc + (hb - hc) * (1 - fx) + (hd - hc) * (1 - fz);
+  };
   const pa = geo.attributes.position, colors = new Float32Array(pa.count * 3), ca = new THREE.Color(def.ground[0]).convertSRGBToLinear(), cb = new THREE.Color(def.ground[1]).convertSRGBToLinear(), tint = PAL.mid.clone(), cc = new THREE.Color();
   for (let i = 0; i < pa.count; i++) { const x = pa.getX(i), z = pa.getZ(i); pa.setY(i, h(x, z)); cc.copy(ca).lerp(cb, fbm(x * 0.05, z * 0.05)).lerp(tint, 0.12); colors[i * 3] = cc.r; colors[i * 3 + 1] = cc.g; colors[i * 3 + 2] = cc.b; }
   geo.setAttribute('color', new THREE.BufferAttribute(colors, 3)); geo.computeVertexNormals();
@@ -511,21 +470,17 @@ function loadWorld(id) {
   hemi.color.set(def.sky[1]); hemi.groundColor.set(def.ground[0]); hemi.intensity = def.space ? 0.35 : 0.65;
   stars.visible = !!def.space || ['core', 'velocity', 'oblivion', 'nexus'].includes(def.id);
   buildParticles(def.particles);
-  // everything but the ground starts as atoms
-  G.traverse(o => { if (o !== G && o !== terrain) o.visible = false; });
-  player.pos.copy(world.spawn); player.pos.y = h(player.pos.x, player.pos.z); player.vel.set(0, 0, 0); player.vy = 0; player.face = world.face;
+  player.pos.copy(world.spawn); player.pos.y = world.groundH(player.pos.x, player.pos.z); player.vel.set(0, 0, 0); player.vy = 0; player.face = world.face;
   cam.yaw = world.face; cam.pitch = 0.2;
-  atomMat.blending = def.sun[1] >= 1.7 && !def.space ? THREE.NormalBlending : THREE.AdditiveBlending; atomMat.needsUpdate = true;
-  const n = buildAtoms(world.spawn); weaveT = 0; atomMat.uniforms.uFade.value = 1;
   $('#wName').textContent = def.name; $('#wType').textContent = def.type; $('#wActs').textContent = def.acts;
-  $('#worldSel').value = def.id; $('#weaving').hidden = false; $('#wStatus').textContent = `Weaving ${n.toLocaleString()} atoms…`;
-  document.documentElement.dataset.world = def.id; document.documentElement.dataset.atoms = n;
+  $('#worldSel').value = def.id;
+  document.documentElement.dataset.world = def.id; finishWeave();
   gateCooldown = 1.5;
 }
 function finishWeave() {
   world.woven = true;
   G.traverse(o => { o.visible = true; });
-  $('#weaving').hidden = true; $('#wStatus').textContent = world.def.id === 'core' ? 'Walk into a World Gate to travel.' : 'The gate beside you leads back to The Core.';
+  $('#wStatus').textContent = world.def.id === 'core' ? 'Walk into a World Gate to travel.' : 'The gate beside you leads back to The Core.';
 }
 
 /* ---------- player ---------- */
@@ -574,7 +529,8 @@ function buildAvatar() {
   root.traverse(o => { if (o.isMesh) { o.castShadow = !isTouch; o.frustumCulled = false; } });
   const g = new THREE.Group(); g.add(root); scene.add(g);
   const mixer = new THREE.AnimationMixer(root), actions = {}; for (const [k, c] of Object.entries(CLIPS[body])) actions[k] = mixer.clipAction(c);
-  avatar = { g, mixer, actions, state: null }; setAnim('idle', 0);
+  const toes = []; root.traverse(o => { if (o.isBone && /ToeBase$|Toe_End$|Foot$/.test(o.name)) toes.push(o); });
+  avatar = { g, mixer, actions, state: null, toes, lift: 0 }; setAnim('idle', 0);
   $('#bodySeg').querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.b === body));
 }
 function setAnim(st, fade = 0.25) { if (avatar.state === st) return; const a = avatar.actions[st]; a.reset(); a.play(); if (avatar.state && fade > 0) a.crossFadeFrom(avatar.actions[avatar.state], fade, false); else if (avatar.state) avatar.actions[avatar.state].stop(); avatar.state = st; }
@@ -609,10 +565,10 @@ $('#worldSel').innerHTML = DEFS.map(d => `<option value="${d.id}">${d.name}</opt
 $('#worldSel').addEventListener('change', e => { loadWorld(e.target.value); e.target.blur(); });
 $('#bodySeg').addEventListener('click', e => { const b = e.target.closest('[data-b]'); if (!b || !avatar) return; body = b.dataset.b; try { localStorage.setItem('vu-body', body); } catch (err) {} buildAvatar(); });
 $('#orbit').href = FLIGHT_URL;
-addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); atomMat.uniforms.uScale.value = innerHeight * renderer.getPixelRatio() / 2 / Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)); });
+addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); });
 
 /* ---------- loop ---------- */
-const fwd = new THREE.Vector3(), right = new THREE.Vector3(), camTarget = new THREE.Vector3(), back = new THREE.Vector3(), dir = new THREE.Vector3();
+const tmpV = new THREE.Vector3(), fwd = new THREE.Vector3(), right = new THREE.Vector3(), camTarget = new THREE.Vector3(), back = new THREE.Vector3(), dir = new THREE.Vector3();
 function rayToBoxes(o, d, max) {
   let best = max;
   for (const b of boxes) { if (b.h - b.y0 < 2.5) continue; let t0 = 0, t1 = best, ok = true;
@@ -625,13 +581,6 @@ function frame(now) {
   requestAnimationFrame(frame);
   const dt = Math.min(0.05, (now - last) / 1000); last = now; time += dt;
   if (!world || !avatar) { renderer.render(scene, camera); return; }
-  // weaving
-  if (weaveT < WEAVE_END + 1) {
-    weaveT += dt; atomMat.uniforms.uT.value = weaveT;
-    if (weaveT >= WEAVE_END - 0.6 && !world.woven) finishWeave();
-    atomMat.uniforms.uFade.value = clamp((WEAVE_END + 0.8 - weaveT) / 1.2, 0, 1);
-    if (atomPoints) atomPoints.visible = atomMat.uniforms.uFade.value > 0.01;
-  }
   // movement
   let mx = (keys.KeyD || keys.ArrowRight ? 1 : 0) - (keys.KeyA || keys.ArrowLeft ? 1 : 0), mz = (keys.KeyW || keys.ArrowUp ? 1 : 0) - (keys.KeyS || keys.ArrowDown ? 1 : 0);
   if (joy.id !== null) { mx = joy.x; mz = joy.y; }
@@ -656,6 +605,14 @@ function frame(now) {
   if (avatar.state === 'walk') avatar.actions.walk.timeScale = clamp(hs / 1.9, 0.6, 1.6);
   if (avatar.state === 'run') avatar.actions.run.timeScale = clamp(hs / 5.5, 0.75, 1.6);
   avatar.g.position.copy(player.pos); avatar.g.rotation.y = player.face; avatar.mixer.update(dt);
+  // keep the planted foot on the ground: the lowest toe sits on the surface under it, never inside it
+  if (player.grounded) {
+    avatar.g.updateMatrixWorld(true); let low = Infinity, lx = 0, lz = 0;
+    for (const b of avatar.toes) { b.getWorldPosition(tmpV); if (tmpV.y < low) { low = tmpV.y; lx = tmpV.x; lz = tmpV.z; } }
+    const want = standHeight(lx, lz, player.pos.y + 0.3) + 0.02 - low;
+    avatar.lift += (clamp(want, -0.15, 0.35) - avatar.lift) * Math.min(1, 14 * dt);
+  } else avatar.lift *= Math.max(0, 1 - 8 * dt);
+  avatar.g.position.y = player.pos.y + avatar.lift;
   // gates, boost pads, lava, motion
   gateCooldown -= dt;
   let promptMsg = '';
@@ -676,7 +633,7 @@ function frame(now) {
   back.set(-Math.sin(cam.yaw) * Math.cos(cam.pitch), Math.sin(cam.pitch), -Math.cos(cam.yaw) * Math.cos(cam.pitch));
   const want = 5.2, free = rayToBoxes(camTarget, back, want), dist = free < want ? Math.max(0.3, free - 0.3) : want;
   camera.position.copy(camTarget).addScaledVector(back, dist);
-  const gyCam = world.h(camera.position.x, camera.position.z) + 0.4; if (camera.position.y < gyCam) camera.position.y = gyCam;
+  const gyCam = world.groundH(camera.position.x, camera.position.z) + 0.4; if (camera.position.y < gyCam) camera.position.y = gyCam;
   camera.lookAt(camTarget); avatar.g.visible = dist > 0.8;
   sky.position.copy(camera.position); stars.position.copy(camera.position);
   sun.position.copy(player.pos).addScaledVector(sunDir, 200); sun.target.position.copy(player.pos);
@@ -684,7 +641,6 @@ function frame(now) {
 }
 
 /* ---------- start ---------- */
-atomMat.uniforms.uScale.value = innerHeight * renderer.getPixelRatio() / 2 / Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
 const img = new Image();
 const mapReady = new Promise(res => { img.onload = () => { mapImg = img; res(); }; img.onerror = () => res(); img.src = 'world/universe-map-2.jpg'; });
 Promise.all([mapReady, loadModels()]).then(() => {
@@ -693,7 +649,7 @@ Promise.all([mapReady, loadModels()]).then(() => {
   loadWorld(byId[hash] ? hash : 'core');
   $('#loading').hidden = true; $('#hud').hidden = false; $('#touch').hidden = !isTouch;
 }).catch(err => { console.error(err); $('#loading').textContent = 'The worlds could not load. Reload to try again.'; });
-window.__vu = { player, boxes, posts, get world() { return world.def.id; } }; // read by the headless tests
+window.__vu = { player, boxes, posts, get avatar() { return avatar; }, ground: (x, z) => world.groundH(x, z), get world() { return world.def.id; } }; // read by the headless tests
 requestAnimationFrame(t => { last = t; frame(t); });
 })();
 </script>
