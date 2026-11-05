@@ -721,7 +721,7 @@ Promise.all([mapReady, loadModels()]).then(() => {
   loadWorld(byId[hash] ? hash : 'core');
   $('#loading').hidden = true; $('#hud').hidden = false; $('#touch').hidden = !isTouch;
 }).catch(err => { console.error(err); $('#loading').textContent = 'The worlds could not load. Reload to try again.'; });
-window.__vu = { player, boxes, posts, cam, get avatar() { return avatar; }, ground: (x, z) => world.groundH(x, z), get world() { return world.def.id; } }; // read by the headless tests
+window.__vu = { player, boxes, posts, cam, scene, get avatar() { return avatar; }, ground: (x, z) => world.groundH(x, z), get world() { return world.def.id; } }; // read by the headless tests
 requestAnimationFrame(t => { last = t; frame(t); });
 })();
 </script>
