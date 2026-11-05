@@ -20,7 +20,7 @@ This is the start of the realistic version of Aethra: a photoreal city and lifel
 
 ## Setup
 
-1. Install **Unreal Engine 5.6** from the Epic Games Launcher (5.4 or later should also work). On Windows, also install **Visual Studio 2022** with the "Game development with C++" workload; on a Mac, install **Xcode**.
+1. Use **Unreal Engine 5.8** (the project is set to 5.8; 5.4 or later should also work). On Windows, also install **Visual Studio 2022** with the "Game development with C++" workload; on a Mac, install **Xcode**.
 2. Right-click `Aethra.uproject` and choose **Generate Visual Studio project files** (Windows), then double-click `Aethra.uproject` and let it build the module.
 3. In the editor, add starter content with **Add → Add Feature or Content Pack**: **Third Person** (mannequin and animations) and **Vehicle** (a ready car with wheels).
 4. Create the Blueprints:
@@ -32,12 +32,28 @@ This is the start of the realistic version of Aethra: a photoreal city and lifel
 5. Create the input assets and assign them on the Blueprints, following the controls table in the design document: Input Actions `IA_Move` (Axis2D), `IA_Look` (Axis2D), `IA_Jump`, `IA_Sprint`, `IA_Cast`, `IA_NextElement`, `IA_PreviousElement`, `IA_Interact`, plus `IA_Throttle`, `IA_Brake`, `IA_Steer`, `IA_Handbrake`, `IA_Exit` and `IA_Power` for cars. Then make an Input Mapping Context for walking and one for driving.
 6. Build a test race: place `RaceCheckpoint` actors along a road and set each one's **Manager** to a `RaceManager`. In that manager, list the checkpoints in order, add four **Grid Slots** and set **Rival Class** to `BP_Car`. Call **Start Race** from a trigger.
 
-## Realistic people and city
+## Photoreal people and worlds (Unreal 5.8)
 
-- **People:** enable the **MetaHuman** plugin and create MetaHumans for the player and the pedestrians. MetaHumans can also be made from a 3D face scan, which is the route to "scan your face into the game". Check Epic's MetaHuman documentation for the current steps, as the tools change between engine versions.
-- **City:** build streets from photo-scanned assets on **Fab** (Quixel Megascans), and lay out blocks with the **PCG** framework. `Config/DefaultEngine.ini` already turns on Lumen lighting and reflections and virtual shadow maps.
-- **Motion:** replace the template animations with motion-captured walk, run, driving and combat moves.
-- **Solid objects:** every prop must block the player and cars. Fab and Megascans meshes ship with collision; check each one in the Static Mesh editor (Show → Simple Collision) and add a capsule or box where it is missing. For trees painted with the Foliage tool, set the foliage type's Collision Presets to **BlockAll** so trunks are solid. Keep **Use Complex Collision as Simple** off for props, so the physics stays fast.
+This is where the GTA-level look comes from. The browser prototype can't reach it; Unreal with Lumen, Nanite, scanned assets and MetaHumans can. Menu names below may differ slightly in 5.8; Epic's MetaHuman and Fab documentation has the exact current steps.
+
+**1. Your player as a MetaHuman (photoreal, from a face scan)**
+1. Enable the **MetaHuman** plugins (Edit → Plugins, search "MetaHuman"), then restart the editor.
+2. Create a MetaHuman in the editor's **MetaHuman Creator**. To use a real face, start from a **MetaHuman Identity**: either a short video of your face filmed on a phone (MetaHuman Animator), or a 3D scan of your head (Mesh to MetaHuman). Then pick hair, skin, body type and clothing.
+3. Make `BP_AethraPlayer` from `AAethraCharacter`. Set its **Mesh** to the MetaHuman's body mesh and its Anim Class to a locomotion Animation Blueprint retargeted to the MetaHuman skeleton (UE5's IK Retargeter does this from the Third Person mannequin). Add the MetaHuman's face, hair and clothing parts as child components of the mesh, the same way the MetaHuman's own Blueprint has them, so the face follows the body.
+4. In `BP_AethraGameMode`, set **Default Pawn Class** to `BP_AethraPlayer`.
+5. Make a second MetaHuman for the female player and as many as you like for pedestrians.
+
+**2. Veladara as a real place (first world to build)**
+1. New level from the **Open World** template (World Partition, landscape, sky atmosphere, volumetric clouds, Lumen).
+2. Sculpt and paint the landscape; use free **Fab** (Quixel Megascans) surfaces for grass, soil and rock. Megascans are free with Unreal.
+3. Scatter Megascans trees, boulders, ferns and grass with the **PCG** plugin (Procedural Content Generation) or the Foliage tool. Keep Nanite on for rocks and trunks. Trunks and boulders must have collision (see *Solid objects*).
+4. Add castle ruins from Fab's medieval kits, and a World Gate back to The Core.
+5. Light it with **Sky Atmosphere**, **Volumetric Clouds**, a **Directional Light** as the sun and **Exponential Height Fog**. `Config/DefaultEngine.ini` already turns on Lumen and virtual shadow maps.
+
+**3. Space and planets**
+Use **Sky Atmosphere** on large planet meshes for real atmospheric scattering, so a planet's sky turns blue as you descend and you can fly down to land. The browser's Universe Flight shows the intended layout and the land-on-entry behaviour.
+
+**Solid objects:** every prop must block the player and cars. Fab and Megascans meshes ship with collision; check each one in the Static Mesh editor (Show → Simple Collision) and add a capsule or box where it is missing. For trees painted with the Foliage tool or PCG, set Collision Presets to **BlockAll** so trunks are solid. Keep **Use Complex Collision as Simple** off for props, so the physics stays fast.
 
 ## Rules tests
 
