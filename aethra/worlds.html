@@ -87,6 +87,7 @@ body.touch #hint { display: none; }
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/utils/SkeletonUtils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/RGBELoader.js"></script>
 <script>
 (() => {
 'use strict';
@@ -99,7 +100,7 @@ const TAU = Math.PI * 2;
 const angDiff = (a, b) => ((b - a + Math.PI) % TAU + TAU) % TAU - Math.PI;
 const isTouch = matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
 if (isTouch) document.body.classList.add('touch');
-if (!window.THREE || !THREE.GLTFLoader || !THREE.SkeletonUtils) { $('#loading').textContent = 'The 3D engine could not load. Check your connection and reload.'; return; }
+if (!window.THREE || !THREE.GLTFLoader || !THREE.SkeletonUtils || !THREE.RGBELoader) { $('#loading').textContent = 'The 3D engine could not load. Check your connection and reload.'; return; }
 const FLIGHT_URL = 'https://claude.ai/artifact/XiFJ9QRMg652oCDrr1euL1';
 
 /* ---------- the worlds ---------- */
@@ -112,7 +113,7 @@ const DEFS = [
   { id: 'nexus', name: 'Nexus', type: 'Metropolis', acts: 'Shopping · Housing · Events · Social · PvP', crop: [0.293, 0.186, 0.07],
     sky: ['#121a3e', '#5a3a6e', '#ff8a5a'], fog: ['#4a3358', 60, 320], sun: ['#ffc59a', 1.4, 12], ground: ['#1a1b22', '#23252f'], amp: 0, particles: 'dust' },
   { id: 'veladara', name: 'Veladara', type: 'Fantasy realm', acts: 'Magic · Quests · Raids · Legendary gear', crop: [0.714, 0.172, 0.065],
-    sky: ['#3d78c8', '#9cc8f0', '#f4e6d0'], fog: ['#b8d2ec', 90, 420], sun: ['#fff1d8', 2.2, 40], ground: ['#3e6a2c', '#5a8a3a'], amp: 9, particles: 'petals' },
+    sky: ['#3d78c8', '#9cc8f0', '#f4e6d0'], fog: ['#c3cfdb', 90, 650], sun: ['#fff1dc', 3.0, 38], ground: ['#b9c4a8', '#ffffff'], amp: 7, real: true, flats: [[8, -100, 58]] },
   { id: 'kahem', name: 'Kahem', type: 'Ancient ruins', acts: 'Exploration · Puzzles · Lore · Rare artefacts', crop: [0.891, 0.293, 0.058],
     sky: ['#3d6aa8', '#e8b07a', '#ffd9a0'], fog: ['#e2b989', 80, 400], sun: ['#ffd6a0', 2.4, 22], ground: ['#c49a62', '#d8b07a'], amp: 7, dunes: true, particles: 'dust' },
   { id: 'frostborn', name: 'Frostborn', type: 'Ice world', acts: 'Survival · Extreme conditions · Rare materials · Bosses', crop: [0.898, 0.512, 0.045],
@@ -209,7 +210,7 @@ function collideCircle(p, r) {
     const d2 = dx * dx + dz * dz; if (d2 >= rr * rr) continue;
     const d = Math.sqrt(d2) || 1e-3; p.x = c.x + (d2 ? dx / d : 1) * rr; p.z = c.z + (d2 ? dz / d : 0) * rr;
   }
-  const lim = 230, d = Math.hypot(p.x, p.z); if (d > lim) { p.x *= lim / d; p.z *= lim / d; }
+  const lim = world.lim || 230, d = Math.hypot(p.x, p.z - (world.lim ? 20 : 0)); if (d > lim) { const cz = world.lim ? 20 : 0; p.x *= lim / d; p.z = cz + (p.z - cz) * lim / d; }
 }
 function standHeight(x, z, y) { // the highest walkable surface under (x, z) that is not above the player's knees
   let top = world.groundH(x, z);
@@ -232,6 +233,66 @@ function box(x, z, w, h, d, mat, o = {}) { const y = (o.y ?? groundY(x, z)); con
 function cyl(x, z, rTop, rBot, h, mat, o = {}) { const y = (o.y ?? groundY(x, z)); const m = add(new THREE.CylinderGeometry(rTop, rBot, h, o.seg || 20), mat, x, y + h / 2, z, o); if (o.solid !== false) solidPost(x, z, Math.max(rTop, rBot) * (o.hit ?? 1), y + h); return m; }
 function cone(x, z, r, h, mat, o = {}) { const y = (o.y ?? groundY(x, z)); const m = add(new THREE.ConeGeometry(r, h, o.seg || 16), mat, x, y + h / 2, z, o); if (o.solid !== false) solidPost(x, z, r * (o.hit ?? 0.6), y + h * 0.8); return m; }
 function tree(x, z, s, leaf, trunk) { const y = groundY(x, z); cyl(x, z, 0.18 * s, 0.28 * s, 3.2 * s, trunk, { y, seg: 7, atoms: false }); add(new THREE.IcosahedronGeometry(1.9 * s, 1), leaf, x, y + 4.2 * s, z, { atoms: Math.random() < 0.3 }); }
+
+/* ---------- realistic worlds: scanned models, ground and a photographed sky (Poly Haven, CC0) ---------- */
+const REAL = { veladara: { files: ['tree', 'boulder', 'grass', 'fern', 'fort', 'cliff', 'sky'] } };
+const pmrem = new THREE.PMREMGenerator(renderer);
+const photoSky = new THREE.Mesh(new THREE.SphereGeometry(1700, 48, 24), new THREE.ShaderMaterial({
+  side: THREE.BackSide, depthWrite: false, fog: false, uniforms: { map: { value: null }, exposure: { value: 1 } },
+  vertexShader: 'varying vec3 vD; void main(){ vD = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
+  // the same equirectangular lookup three.js uses for reflections, so the sky you see matches the light on things
+  fragmentShader: 'uniform sampler2D map; uniform float exposure; varying vec3 vD; void main(){ vec3 d = normalize(vD); vec2 uv = vec2(atan(d.z, d.x) * 0.1591549 + 0.5, asin(clamp(d.y, -1.0, 1.0)) * 0.3183099 + 0.5); vec4 t = texture2D(map, uv); vec3 c = t.rgb * exp2(t.a * 255.0 - 128.0) * exposure; gl_FragColor = vec4(c, 1.0); }'
+}));
+photoSky.visible = false; scene.add(photoSky);
+function loadReal(id) {
+  const R = REAL[id]; if (R.promise) return R.promise;
+  const gl = new THREE.GLTFLoader(), tl = new THREE.TextureLoader();
+  const groundTex = (n, srgb) => { const t = tl.load(`assets/${id}/ground_${n}.jpg`); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(70, 70); t.anisotropy = 8; if (srgb) t.encoding = THREE.sRGBEncoding; return t; };
+  R.ground = new THREE.MeshStandardMaterial({ vertexColors: true, color: 0x8fa874, map: groundTex('diff', true), normalMap: groundTex('nor_gl'), roughnessMap: groundTex('rough'), normalScale: new THREE.Vector2(1.2, 1.2) });
+  R.promise = Promise.all(R.files.map(k => loadScript(`assets/${id}/${k}.js`).then(() => new Promise((res, rej) => {
+    const buf = toBuffer(window.VU_ASSETS[k]); delete window.VU_ASSETS[k];
+    if (k === 'sky') { const url = URL.createObjectURL(new Blob([buf])); new THREE.RGBELoader().setDataType(THREE.UnsignedByteType).load(url, t => { URL.revokeObjectURL(url); R.skyData = t.image; t.magFilter = t.minFilter = THREE.LinearFilter; R.sky = t; R.env = pmrem.fromEquirectangular(t).texture; res(); }, undefined, rej); }
+    else gl.parse(buf, '', g => { g.scene.updateMatrixWorld(true); g.scene.traverse(o => { if (o.isMesh) o.userData.shared = true; }); R[k] = g; res(); }, rej);
+  })))).then(() => {
+    // put the sunlight where the sun is in the photo: the brightest spot of the sky
+    const { data, width: w, height: h } = R.skyData; let best = -1, bi = 0;
+    for (let i = 0; i < w * h; i++) { const e = data[i * 4 + 3]; if (e < best) continue; const l = (data[i * 4] + data[i * 4 + 1] + data[i * 4 + 2]) * Math.pow(2, e - 128); if (l > best) { best = l; bi = i; } }
+    const u = (bi % w) / w, v = 1 - Math.floor(bi / w) / h, a = (u - 0.5) * TAU, el = (v - 0.5) * Math.PI;
+    R.sunDir = new THREE.Vector3(Math.cos(el) * Math.cos(a), Math.sin(el), Math.cos(el) * Math.sin(a)).normalize();
+    R.ready = true;
+  });
+  return R.promise;
+}
+// many copies of one scanned model, drawn in one go per part
+function scatter(gltf, places, o = {}) {
+  const P = new THREE.Matrix4(), M = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), v = new THREE.Vector3(), sc = new THREE.Vector3();
+  gltf.scene.traverse(m => {
+    if (!m.isMesh || !places.length) return;
+    const mat = m.material;
+    if (mat.transparent || mat.alphaTest > 0) { mat.transparent = false; mat.alphaTest = 0.45; mat.depthWrite = true; mat.side = THREE.DoubleSide; }
+    mat.envMapIntensity = o.env ?? 1;
+    const im = new THREE.InstancedMesh(m.geometry, mat, places.length); im.userData.shared = true;
+    places.forEach((p, i) => { q.setFromEuler(e.set(0, p.ry, 0)); P.compose(v.set(p.x, p.y, p.z), q, sc.setScalar(p.s)); M.multiplyMatrices(P, m.matrixWorld); im.setMatrixAt(i, M); });
+    im.castShadow = o.shadow !== false && !isTouch; im.receiveShadow = true; G.add(im);
+  });
+}
+// solid ground plan of a scanned model: its surface is sampled into columns, each a collider from its lowest to its highest point
+function solidFrom(gltf, place, cell = 1.5) {
+  const P = new THREE.Matrix4().compose(new THREE.Vector3(place.x, place.y, place.z), new THREE.Quaternion().setFromEuler(new THREE.Euler(0, place.ry, 0)), new THREE.Vector3().setScalar(place.s));
+  const cols = new Map(), a = new THREE.Vector3(), b = new THREE.Vector3(), c = new THREE.Vector3(), p = new THREE.Vector3(), M = new THREE.Matrix4();
+  const mark = v => { const g = world.h(v.x, v.z); if (v.y < g + 0.35) return; const k = Math.floor(v.x / cell) + ',' + Math.floor(v.z / cell); const col = cols.get(k); if (col) { col[0] = Math.min(col[0], v.y); col[1] = Math.max(col[1], v.y); } else cols.set(k, [v.y, v.y]); };
+  gltf.scene.traverse(m => {
+    if (!m.isMesh) return; M.multiplyMatrices(P, m.matrixWorld);
+    const pos = m.geometry.attributes.position, idx = m.geometry.index, n = idx ? idx.count : pos.count;
+    for (let t = 0; t < n; t += 3) {
+      a.fromBufferAttribute(pos, idx ? idx.getX(t) : t).applyMatrix4(M); b.fromBufferAttribute(pos, idx ? idx.getX(t + 1) : t + 1).applyMatrix4(M); c.fromBufferAttribute(pos, idx ? idx.getX(t + 2) : t + 2).applyMatrix4(M);
+      const k = Math.max(1, Math.min(24, Math.ceil(Math.max(a.distanceTo(b), b.distanceTo(c), c.distanceTo(a)) / (cell * 0.6))));
+      for (let i = 0; i <= k; i++) for (let j = 0; j <= k - i; j++) { p.copy(a).multiplyScalar(1 - (i + j) / k).addScaledVector(b, i / k).addScaledVector(c, j / k); mark(p); }
+    }
+  });
+  for (const [k, [y0, y1]] of cols) { const [i, j] = k.split(',').map(Number); boxes.push({ x0: i * cell, x1: (i + 1) * cell, z0: j * cell, z1: (j + 1) * cell, h: y1, y0: y0 < world.h(i * cell, j * cell) + 1.2 ? -50 : y0 }); }
+}
+const freeSpot = (x, z, keep) => keep.every(([kx, kz, r]) => Math.hypot(x - kx, z - kz) > r);
 
 /* ---------- world builders ---------- */
 const BUILD = {
@@ -287,21 +348,25 @@ const BUILD = {
     gate(0, 18, Math.PI, byId.core);
   },
   veladara() {
-    const stone = std(PAL.bright.clone().lerp(new THREE.Color(0xd8cfc0), 0.6), { roughness: 0.85 }), roof = std(PAL.accent2.clone().lerp(new THREE.Color(0x3a4a8a), 0.5)), leaf = std(PAL.mid.clone().lerp(new THREE.Color(0x3a7a32), 0.6)), trunk = std(0x5a4030), grass = std(0x4a7a30);
-    // castle: keep, four towers and curtain walls with a gate gap facing the spawn
-    const cx = 0, cz = -45, gy = groundY(cx, cz);
-    cyl(cx, cz, 8, 9, 34, stone, { y: gy }); cone(cx, cz, 10, 16, roof, { y: gy + 34, solid: false });
-    for (const [dx, dz] of [[-20, -20], [20, -20], [-20, 20], [20, 20]]) { cyl(cx + dx, cz + dz, 4, 4.5, 22, stone, { y: gy }); cone(cx + dx, cz + dz, 5.5, 10, roof, { y: gy + 22, solid: false }); }
-    box(cx, cz - 20, 40, 12, 3, stone, { y: gy }); box(cx - 20, cz, 3, 12, 40, stone, { y: gy }); box(cx + 20, cz, 3, 12, 40, stone, { y: gy });
-    box(cx - 13, cz + 20, 14, 12, 3, stone, { y: gy }); box(cx + 13, cz + 20, 14, 12, 3, stone, { y: gy });
-    // floating islands drift overhead
-    for (let k = 0; k < 9; k++) {
-      const a = rand(0, TAU), r = rand(50, 140), x = Math.cos(a) * r, z = Math.sin(a) * r, y = rand(35, 80), s = rand(5, 12), p = rand(0, TAU);
-      const isl = add(new THREE.ConeGeometry(s, s * 1.6, 9), std(0x6a5a4a, { roughness: 1 }), x, y - s * 0.8, z, { rx: Math.PI });
-      const top = add(new THREE.CylinderGeometry(s, s, 0.8, 9), grass, x, y, z);
-      world.bob.push({ m: isl, y: y - s * 0.8, p }, { m: top, y, p });
-    }
-    for (let k = 0; k < 110; k++) { const x = rand(-200, 200), z = rand(-200, 200); if (Math.hypot(x - cx, z - cz) < 32 || Math.hypot(x, z - 30) < 16) continue; tree(x, z, rand(0.9, 1.6), leaf, trunk); }
+    const R = REAL.veladara, gy = (x, z) => world.h(x, z), keep = [[0, 28, 16], [0, 40, 6], [8, -100, 52]];
+    const ring = (n, r0, r1, extra = []) => { const out = []; let guard = 0; while (out.length < n && guard++ < n * 40) { const a = rand(0, TAU), r = Math.sqrt(rand(r0 * r0, r1 * r1)), x = Math.cos(a) * r, z = Math.sin(a) * r + 20; if (freeSpot(x, z, keep.concat(extra))) out.push({ x, z }); } return out; };
+    // the ruins of an old stone fort, half a field away
+    const fort = { x: 8, z: -100, ry: 0.35, s: 1 }; fort.y = gy(fort.x, fort.z) - 0.15;
+    scatter(R.fort, [fort], { env: 0.8 }); solidFrom(R.fort, fort, 1.5);
+    // a ring of cliffs closes the valley
+    const cliffs = []; for (let k = 0; k < 16; k++) { const a = k / 16 * TAU + rand(0, 0.3), r = rand(225, 245), x = Math.cos(a) * r, z = Math.sin(a) * r, s = rand(4.5, 7.5); cliffs.push({ x, z, y: gy(x, z) - 3, s, ry: rand(0, TAU) }); }
+    scatter(R.cliff, cliffs, { shadow: false, env: 0.7 }); world.lim = 205; // the cliffs are the edge of the valley
+    // trees: solid trunks
+    const trees = ring(isTouch ? 14 : 30, 22, 190).map(p => ({ ...p, y: gy(p.x, p.z) - 0.1, s: rand(2.0, 3.2), ry: rand(0, TAU) }));
+    scatter(R.tree, trees); for (const t of trees) solidPost(t.x, t.z, 0.28 * t.s, t.y + 6 * t.s);
+    // boulders: solid
+    const rocks = ring(isTouch ? 12 : 22, 14, 170).map(p => ({ ...p, s: rand(1.2, 3.4), ry: rand(0, TAU) })); for (const r of rocks) r.y = gy(r.x, r.z) - 0.2 * r.s;
+    scatter(R.boulder, rocks); for (const r of rocks) solidPost(r.x, r.z, 0.72 * r.s, r.y + 0.9 * r.s);
+    // grass and ferns underfoot (you walk through these)
+    const tufts = []; for (let k = 0; k < (isTouch ? 1200 : 4200); k++) { const a = rand(0, TAU), r = Math.sqrt(rand(4, 80 * 80)), x = Math.cos(a) * r, z = Math.sin(a) * r + 20; if (Math.hypot(x, z - 28) < 3.5 || Math.hypot(x - 8, z + 100) < 44) continue; tufts.push({ x, z, y: gy(x, z) - 0.03, s: rand(0.7, 1.3), ry: rand(0, TAU) }); }
+    scatter(R.grass, tufts, { shadow: false });
+    const ferns = []; for (const t of trees) for (let j = 0; j < 6; j++) { const x = t.x + rand(-5, 5), z = t.z + rand(-5, 5); ferns.push({ x, z, y: gy(x, z) - 0.03, s: rand(0.8, 1.6), ry: rand(0, TAU) }); }
+    scatter(R.fern, ferns, { shadow: false });
     world.spawn = new THREE.Vector3(0, 0, 30); world.face = Math.PI;
     gate(0, 40, Math.PI, byId.core);
   },
@@ -395,7 +460,7 @@ function dockedShip(x, z) {
 }
 // a gate: an arch with a shimmering portal; stepping through takes you to its world
 function gate(x, z, face, target) {
-  const y = groundY(x, z), frame = std(0xc0c8d8, { metalness: 0.85, roughness: 0.25 }), col = new THREE.Color(target.sky[2]).lerp(new THREE.Color(0x5fb7ff), 0.4);
+  const y = groundY(x, z), frame = world.def.real ? std(0x77736b, { roughness: 0.92 }) : std(0xc0c8d8, { metalness: 0.85, roughness: 0.25 }), col = new THREE.Color(target.sky[2]).lerp(new THREE.Color(0x5fb7ff), 0.4);
   add(new THREE.TorusGeometry(3.6, 0.35, 10, 40), frame, x, y + 3.9, z, { ry: face });
   const fill = add(new THREE.CircleGeometry(3.3, 40), new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: 0.55, side: THREE.DoubleSide }), x, y + 3.9, z, { ry: face, shadow: false, atoms: false });
   const ox = Math.cos(face) * 3.6, oz = -Math.sin(face) * 3.6;
@@ -434,7 +499,8 @@ function updateParticles(dt, t) {
 let gateCooldown = 0;
 function loadWorld(id) {
   const def = byId[id] || byId.core;
-  if (world) { scene.remove(world.group); world.group.traverse(o => { if (o.geometry) o.geometry.dispose(); }); }
+  if (def.real && !REAL[def.id].ready) { $('#wStatus').textContent = `Loading ${def.name}…`; loadReal(def.id).then(() => loadWorld(def.id)).catch(err => { console.error(err); $('#wStatus').textContent = `${def.name} could not load. Try again.`; }); return; }
+  if (world) { scene.remove(world.group); world.group.traverse(o => { if (o.geometry && !o.userData.shared) o.geometry.dispose(); }); }
   boxes.length = 0; posts.length = 0;
   PAL = paletteFor(def) || { dark: new THREE.Color(0x222222), mid: new THREE.Color(0x666666), bright: new THREE.Color(0xcccccc), accent: new THREE.Color(0x5fb7ff), accent2: new THREE.Color(0xff8a5a) };
   G = new THREE.Group(); scene.add(G);
@@ -442,9 +508,10 @@ function loadWorld(id) {
   const amp = def.amp;
   const h = (x, z) => {
     const flat = clamp((Math.hypot(x, z - 25) - 26) / 40, 0, 1), f = flat * flat * (3 - 2 * flat);
-    let y = amp * (fbm(x * 0.018 + 7, z * 0.018 + 3) - 0.5) * 2 * f;
-    if (def.dunes) y += Math.sin(x * 0.05 + z * 0.02) * 2.5 * f;
-    if (def.craters) for (const [cx, cz, r] of [[60, -50, 22], [-80, 40, 30], [30, 90, 18]]) { const d = Math.hypot(x - cx, z - cz) / r; if (d < 1.3) y += (d < 1 ? -(1 - d * d) * 6 : (1.3 - d) * 6) * f; }
+    let ff = f; for (const [fx, fz, fr] of def.flats || []) { const t = clamp((Math.hypot(x - fx, z - fz) - fr) / 30, 0, 1); ff *= t * t * (3 - 2 * t); }
+    let y = amp * (fbm(x * 0.018 + 7, z * 0.018 + 3) - 0.5) * 2 * ff;
+    if (def.dunes) y += Math.sin(x * 0.05 + z * 0.02) * 2.5 * ff;
+    if (def.craters) for (const [cx, cz, r] of [[60, -50, 22], [-80, 40, 30], [30, 90, 18]]) { const d = Math.hypot(x - cx, z - cz) / r; if (d < 1.3) y += (d < 1 ? -(1 - d * d) * 6 : (1.3 - d) * 6) * ff; }
     return y;
   };
   world = { group: G, def, h, meshes: [], gates: [], spin: [], bob: [], lava: [], pads: [], spawn: new THREE.Vector3(0, 0, 20), face: Math.PI, woven: false };
@@ -458,20 +525,25 @@ function loadWorld(id) {
     const hc = P(ix + 1, iz + 1); return hc + (hb - hc) * (1 - fx) + (hd - hc) * (1 - fz);
   };
   const pa = geo.attributes.position, colors = new Float32Array(pa.count * 3), ca = new THREE.Color(def.ground[0]).convertSRGBToLinear(), cb = new THREE.Color(def.ground[1]).convertSRGBToLinear(), tint = PAL.mid.clone(), cc = new THREE.Color();
-  for (let i = 0; i < pa.count; i++) { const x = pa.getX(i), z = pa.getZ(i); pa.setY(i, h(x, z)); cc.copy(ca).lerp(cb, fbm(x * 0.05, z * 0.05)).lerp(tint, 0.12); colors[i * 3] = cc.r; colors[i * 3 + 1] = cc.g; colors[i * 3 + 2] = cc.b; }
+  for (let i = 0; i < pa.count; i++) { const x = pa.getX(i), z = pa.getZ(i); pa.setY(i, h(x, z)); cc.copy(ca).lerp(cb, fbm(x * 0.05, z * 0.05)).lerp(tint, def.real ? 0 : 0.12); colors[i * 3] = cc.r; colors[i * 3 + 1] = cc.g; colors[i * 3 + 2] = cc.b; }
   geo.setAttribute('color', new THREE.BufferAttribute(colors, 3)); geo.computeVertexNormals();
-  const terrain = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: def.id === 'frostborn' ? 0.6 : 0.95 })); terrain.receiveShadow = true; G.add(terrain);
+  const terrain = new THREE.Mesh(geo, def.real ? REAL[def.id].ground : new THREE.MeshStandardMaterial({ vertexColors: true, roughness: def.id === 'frostborn' ? 0.6 : 0.95 })); terrain.receiveShadow = true; G.add(terrain);
   BUILD[def.id]();
   // sky, light and air
   const u = sky.material.uniforms; u.top.value.set(def.sky[0]); u.mid.value.set(def.sky[1]); u.bot.value.set(def.sky[2]);
   scene.fog = new THREE.Fog(def.fog[0], def.fog[1], def.fog[2]); scene.background = new THREE.Color(def.sky[2]);
+  // realistic worlds are lit by a photographed sky
+  sky.visible = !def.real; photoSky.visible = !!def.real; scene.environment = def.real ? REAL[def.id].env : null;
+  if (def.real) photoSky.material.uniforms.map.value = REAL[def.id].sky;
+  renderer.toneMappingExposure = def.real ? 0.72 : 0.9;
   sun.color.set(def.sun[0]); sun.intensity = def.sun[1];
   sunDir.setFromSphericalCoords(1, THREE.MathUtils.degToRad(90 - def.sun[2]), THREE.MathUtils.degToRad(210));
-  hemi.color.set(def.sky[1]); hemi.groundColor.set(def.ground[0]); hemi.intensity = def.space ? 0.35 : 0.65;
-  stars.visible = !!def.space || ['core', 'velocity', 'oblivion', 'nexus'].includes(def.id);
+  if (def.real && REAL[def.id].sunDir.y > 0.1) sunDir.copy(REAL[def.id].sunDir);
+  hemi.color.set(def.sky[1]); hemi.groundColor.set(def.ground[0]); hemi.intensity = def.real ? 0.15 : def.space ? 0.35 : 0.65;
+  stars.visible = !def.real && !!def.space || ['core', 'velocity', 'oblivion', 'nexus'].includes(def.id);
   buildParticles(def.particles);
   player.pos.copy(world.spawn); player.pos.y = world.groundH(player.pos.x, player.pos.z); player.vel.set(0, 0, 0); player.vy = 0; player.face = world.face;
-  cam.yaw = world.face; cam.pitch = 0.2;
+  cam.yaw = world.face; cam.pitch = 0.2; sky.position.set(0, 0, 0);
   $('#wName').textContent = def.name; $('#wType').textContent = def.type; $('#wActs').textContent = def.acts;
   $('#worldSel').value = def.id;
   document.documentElement.dataset.world = def.id; finishWeave();
@@ -486,10 +558,10 @@ function finishWeave() {
 /* ---------- player ---------- */
 const MODELS = { man: { url: 'models/soldier.js', yaw: Math.PI }, woman: { url: 'models/michelle.js', yaw: 0 } };
 const CLIPS = {};
+const loadScript = src => new Promise((res, rej) => { const el = document.createElement('script'); el.src = src; el.onload = res; el.onerror = rej; document.head.appendChild(el); });
+const toBuffer = b64 => { const bin = atob(b64), u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return u.buffer; };
 function loadModels() {
   const loader = new THREE.GLTFLoader();
-  const loadScript = src => new Promise((res, rej) => { const el = document.createElement('script'); el.src = src; el.onload = res; el.onerror = rej; document.head.appendChild(el); });
-  const toBuffer = b64 => { const bin = atob(b64), u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return u.buffer; };
   return Promise.all(Object.entries(MODELS).map(([k, m]) => loadScript(m.url).then(() => new Promise((res, rej) => { loader.parse(toBuffer(window.AETHRA_MODELS[k]), '', g => { m.gltf = g; delete window.AETHRA_MODELS[k]; res(); }, rej); })))).then(() => {
     const man = MODELS.man.gltf.animations, find = (l, n) => l.find(a => a.name === n);
     CLIPS.man = { idle: find(man, 'Idle'), walk: find(man, 'Walk'), run: find(man, 'Run') };
@@ -635,7 +707,7 @@ function frame(now) {
   camera.position.copy(camTarget).addScaledVector(back, dist);
   const gyCam = world.groundH(camera.position.x, camera.position.z) + 0.4; if (camera.position.y < gyCam) camera.position.y = gyCam;
   camera.lookAt(camTarget); avatar.g.visible = dist > 0.8;
-  sky.position.copy(camera.position); stars.position.copy(camera.position);
+  sky.position.copy(camera.position); stars.position.copy(camera.position); photoSky.position.copy(camera.position);
   sun.position.copy(player.pos).addScaledVector(sunDir, 200); sun.target.position.copy(player.pos);
   renderer.render(scene, camera);
 }
@@ -649,7 +721,7 @@ Promise.all([mapReady, loadModels()]).then(() => {
   loadWorld(byId[hash] ? hash : 'core');
   $('#loading').hidden = true; $('#hud').hidden = false; $('#touch').hidden = !isTouch;
 }).catch(err => { console.error(err); $('#loading').textContent = 'The worlds could not load. Reload to try again.'; });
-window.__vu = { player, boxes, posts, get avatar() { return avatar; }, ground: (x, z) => world.groundH(x, z), get world() { return world.def.id; } }; // read by the headless tests
+window.__vu = { player, boxes, posts, cam, get avatar() { return avatar; }, ground: (x, z) => world.groundH(x, z), get world() { return world.def.id; } }; // read by the headless tests
 requestAnimationFrame(t => { last = t; frame(t); });
 })();
 </script>
